@@ -1,0 +1,1825 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots InputRow disabled 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "inputrow--disabled",
+      "kind": "InputRow",
+      "name": "disabled",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/InputRow/InputRow.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "disabled",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <InputRow
+      disabled={true}
+      field={
+        Object {
+          "name": "Name",
+          "onBlur": [Function],
+          "onChange": [Function],
+          "value": "value",
+        }
+      }
+      type="text"
+    >
+      <InputRowstyle__Row>
+        <StyledComponent
+          forwardedClass={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "InputRowstyle__Row-jt7egi-2",
+                "isStatic": true,
+                "lastClassName": "cqfxRi",
+                "rules": Array [
+                  "margin-bottom:",
+                  "25px",
+                  ";width:100%;",
+                ],
+              },
+              "displayName": "InputRowstyle__Row",
+              "render": [Function],
+              "styledComponentId": "InputRowstyle__Row-jt7egi-2",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <div
+            className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+          >
+            <Input
+              disabled={true}
+              hasError={false}
+              name="Name"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value="value"
+            >
+              <StyledComponent
+                disabled={true}
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Input-lswqho-0",
+                      "isStatic": false,
+                      "lastClassName": "itqMQt",
+                      "rules": Array [
+                        "font-family:",
+                        "'Lato', 'Helvetica', 'Arial', sans-serif",
+                        ";font-size:",
+                        "16px",
+                        ";width:100%;height:60px;background-color:",
+                        "#FFFFFF",
+                        ";padding:0 ",
+                        "15px",
+                        ";border-radius:",
+                        "4px",
+                        ";border:1px solid;border-color:",
+                        [Function],
+                        ";:hover{border-color:",
+                        [Function],
+                        ";}:focus{border-color:",
+                        [Function],
+                        ";}::placeholder{color:",
+                        "rgba(0, 0, 0, 0.24)",
+                        ";}",
+                      ],
+                    },
+                    "displayName": "Input",
+                    "render": [Function],
+                    "styledComponentId": "Input-lswqho-0",
+                    "target": "input",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hasError={false}
+                name="Name"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="text"
+                value="value"
+              >
+                <input
+                  className="Input-lswqho-0 itqMQt"
+                  disabled={true}
+                  name="Name"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="text"
+                  value="value"
+                />
+              </StyledComponent>
+            </Input>
+          </div>
+        </StyledComponent>
+      </InputRowstyle__Row>
+    </InputRow>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots InputRow error 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "inputrow--error",
+      "kind": "InputRow",
+      "name": "error",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/InputRow/InputRow.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "error",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <InputRow
+      error="error message"
+      field={
+        Object {
+          "name": "Name",
+          "onBlur": [Function],
+          "onChange": [Function],
+          "value": "value",
+        }
+      }
+      type="text"
+    >
+      <InputRowstyle__Row>
+        <StyledComponent
+          forwardedClass={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "InputRowstyle__Row-jt7egi-2",
+                "isStatic": true,
+                "lastClassName": "cqfxRi",
+                "rules": Array [
+                  "margin-bottom:",
+                  "25px",
+                  ";width:100%;",
+                ],
+              },
+              "displayName": "InputRowstyle__Row",
+              "render": [Function],
+              "styledComponentId": "InputRowstyle__Row-jt7egi-2",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <div
+            className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+          >
+            <Input
+              hasError={true}
+              name="Name"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value="value"
+            >
+              <StyledComponent
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Input-lswqho-0",
+                      "isStatic": false,
+                      "lastClassName": "hhQdbo",
+                      "rules": Array [
+                        "font-family:",
+                        "'Lato', 'Helvetica', 'Arial', sans-serif",
+                        ";font-size:",
+                        "16px",
+                        ";width:100%;height:60px;background-color:",
+                        "#FFFFFF",
+                        ";padding:0 ",
+                        "15px",
+                        ";border-radius:",
+                        "4px",
+                        ";border:1px solid;border-color:",
+                        [Function],
+                        ";:hover{border-color:",
+                        [Function],
+                        ";}:focus{border-color:",
+                        [Function],
+                        ";}::placeholder{color:",
+                        "rgba(0, 0, 0, 0.24)",
+                        ";}",
+                      ],
+                    },
+                    "displayName": "Input",
+                    "render": [Function],
+                    "styledComponentId": "Input-lswqho-0",
+                    "target": "input",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hasError={true}
+                name="Name"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="text"
+                value="value"
+              >
+                <input
+                  className="Input-lswqho-0 hhQdbo"
+                  name="Name"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="text"
+                  value="value"
+                />
+              </StyledComponent>
+            </Input>
+            <InputRowstyle__Error>
+              <StyledComponent
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "InputRowstyle__Error-jt7egi-1",
+                      "isStatic": true,
+                      "lastClassName": "bhyGMm",
+                      "rules": Array [
+                        "color:",
+                        "#FF7373",
+                        ";font-family:",
+                        "'Lato', 'Helvetica', 'Arial', sans-serif",
+                        ";font-weight:",
+                        "400",
+                        ";font-size:",
+                        "14px",
+                        ";margin-top:",
+                        "5px",
+                        ";",
+                      ],
+                    },
+                    "displayName": "InputRowstyle__Error",
+                    "render": [Function],
+                    "styledComponentId": "InputRowstyle__Error-jt7egi-1",
+                    "target": "p",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <p
+                  className="InputRowstyle__Error-jt7egi-1 bhyGMm"
+                >
+                  error message
+                </p>
+              </StyledComponent>
+            </InputRowstyle__Error>
+          </div>
+        </StyledComponent>
+      </InputRowstyle__Row>
+    </InputRow>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots InputRow field 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "inputrow--field",
+      "kind": "InputRow",
+      "name": "field",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/InputRow/InputRow.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "field",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <InputRow
+      field={
+        Object {
+          "name": "Name",
+          "onBlur": [Function],
+          "onChange": [Function],
+          "value": "value",
+        }
+      }
+      type="text"
+    >
+      <InputRowstyle__Row>
+        <StyledComponent
+          forwardedClass={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "InputRowstyle__Row-jt7egi-2",
+                "isStatic": true,
+                "lastClassName": "cqfxRi",
+                "rules": Array [
+                  "margin-bottom:",
+                  "25px",
+                  ";width:100%;",
+                ],
+              },
+              "displayName": "InputRowstyle__Row",
+              "render": [Function],
+              "styledComponentId": "InputRowstyle__Row-jt7egi-2",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <div
+            className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+          >
+            <Input
+              hasError={false}
+              name="Name"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value="value"
+            >
+              <StyledComponent
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Input-lswqho-0",
+                      "isStatic": false,
+                      "lastClassName": "itqMQt",
+                      "rules": Array [
+                        "font-family:",
+                        "'Lato', 'Helvetica', 'Arial', sans-serif",
+                        ";font-size:",
+                        "16px",
+                        ";width:100%;height:60px;background-color:",
+                        "#FFFFFF",
+                        ";padding:0 ",
+                        "15px",
+                        ";border-radius:",
+                        "4px",
+                        ";border:1px solid;border-color:",
+                        [Function],
+                        ";:hover{border-color:",
+                        [Function],
+                        ";}:focus{border-color:",
+                        [Function],
+                        ";}::placeholder{color:",
+                        "rgba(0, 0, 0, 0.24)",
+                        ";}",
+                      ],
+                    },
+                    "displayName": "Input",
+                    "render": [Function],
+                    "styledComponentId": "Input-lswqho-0",
+                    "target": "input",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hasError={false}
+                name="Name"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="text"
+                value="value"
+              >
+                <input
+                  className="Input-lswqho-0 itqMQt"
+                  name="Name"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="text"
+                  value="value"
+                />
+              </StyledComponent>
+            </Input>
+          </div>
+        </StyledComponent>
+      </InputRowstyle__Row>
+    </InputRow>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots InputRow label 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "inputrow--label",
+      "kind": "InputRow",
+      "name": "label",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/InputRow/InputRow.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "label",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <InputRow
+      field={
+        Object {
+          "name": "Name",
+          "onBlur": [Function],
+          "onChange": [Function],
+          "value": "value",
+        }
+      }
+      label="Label"
+      type="text"
+    >
+      <InputRowstyle__Row>
+        <StyledComponent
+          forwardedClass={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "InputRowstyle__Row-jt7egi-2",
+                "isStatic": true,
+                "lastClassName": "cqfxRi",
+                "rules": Array [
+                  "margin-bottom:",
+                  "25px",
+                  ";width:100%;",
+                ],
+              },
+              "displayName": "InputRowstyle__Row",
+              "render": [Function],
+              "styledComponentId": "InputRowstyle__Row-jt7egi-2",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <div
+            className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+          >
+            <InputRowstyle__Label>
+              <StyledComponent
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "InputRowstyle__Label-jt7egi-0",
+                      "isStatic": true,
+                      "lastClassName": "iueVXB",
+                      "rules": Array [
+                        "display:block;font-family:",
+                        "'Lato', 'Helvetica', 'Arial', sans-serif",
+                        ";font-weight:",
+                        "700",
+                        ";font-size:",
+                        "16px",
+                        ";color:",
+                        "#222",
+                        ";margin-bottom:",
+                        "5px",
+                        ";",
+                      ],
+                    },
+                    "displayName": "InputRowstyle__Label",
+                    "render": [Function],
+                    "styledComponentId": "InputRowstyle__Label-jt7egi-0",
+                    "target": "label",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <label
+                  className="InputRowstyle__Label-jt7egi-0 iueVXB"
+                >
+                  Label
+                </label>
+              </StyledComponent>
+            </InputRowstyle__Label>
+            <Input
+              hasError={false}
+              name="Name"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value="value"
+            >
+              <StyledComponent
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Input-lswqho-0",
+                      "isStatic": false,
+                      "lastClassName": "itqMQt",
+                      "rules": Array [
+                        "font-family:",
+                        "'Lato', 'Helvetica', 'Arial', sans-serif",
+                        ";font-size:",
+                        "16px",
+                        ";width:100%;height:60px;background-color:",
+                        "#FFFFFF",
+                        ";padding:0 ",
+                        "15px",
+                        ";border-radius:",
+                        "4px",
+                        ";border:1px solid;border-color:",
+                        [Function],
+                        ";:hover{border-color:",
+                        [Function],
+                        ";}:focus{border-color:",
+                        [Function],
+                        ";}::placeholder{color:",
+                        "rgba(0, 0, 0, 0.24)",
+                        ";}",
+                      ],
+                    },
+                    "displayName": "Input",
+                    "render": [Function],
+                    "styledComponentId": "Input-lswqho-0",
+                    "target": "input",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hasError={false}
+                name="Name"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="text"
+                value="value"
+              >
+                <input
+                  className="Input-lswqho-0 itqMQt"
+                  name="Name"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="text"
+                  value="value"
+                />
+              </StyledComponent>
+            </Input>
+          </div>
+        </StyledComponent>
+      </InputRowstyle__Row>
+    </InputRow>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots InputRow placeholder 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "inputrow--placeholder",
+      "kind": "InputRow",
+      "name": "placeholder",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/InputRow/InputRow.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "placeholder",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <InputRow
+      field={
+        Object {
+          "name": "Name",
+          "onBlur": [Function],
+          "onChange": [Function],
+          "value": "",
+        }
+      }
+      placeholder="placeholder here"
+      type="text"
+    >
+      <InputRowstyle__Row>
+        <StyledComponent
+          forwardedClass={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "InputRowstyle__Row-jt7egi-2",
+                "isStatic": true,
+                "lastClassName": "cqfxRi",
+                "rules": Array [
+                  "margin-bottom:",
+                  "25px",
+                  ";width:100%;",
+                ],
+              },
+              "displayName": "InputRowstyle__Row",
+              "render": [Function],
+              "styledComponentId": "InputRowstyle__Row-jt7egi-2",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <div
+            className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+          >
+            <Input
+              hasError={false}
+              name="Name"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="placeholder here"
+              type="text"
+              value=""
+            >
+              <StyledComponent
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Input-lswqho-0",
+                      "isStatic": false,
+                      "lastClassName": "itqMQt",
+                      "rules": Array [
+                        "font-family:",
+                        "'Lato', 'Helvetica', 'Arial', sans-serif",
+                        ";font-size:",
+                        "16px",
+                        ";width:100%;height:60px;background-color:",
+                        "#FFFFFF",
+                        ";padding:0 ",
+                        "15px",
+                        ";border-radius:",
+                        "4px",
+                        ";border:1px solid;border-color:",
+                        [Function],
+                        ";:hover{border-color:",
+                        [Function],
+                        ";}:focus{border-color:",
+                        [Function],
+                        ";}::placeholder{color:",
+                        "rgba(0, 0, 0, 0.24)",
+                        ";}",
+                      ],
+                    },
+                    "displayName": "Input",
+                    "render": [Function],
+                    "styledComponentId": "Input-lswqho-0",
+                    "target": "input",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hasError={false}
+                name="Name"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="placeholder here"
+                type="text"
+                value=""
+              >
+                <input
+                  className="Input-lswqho-0 itqMQt"
+                  name="Name"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="placeholder here"
+                  type="text"
+                  value=""
+                />
+              </StyledComponent>
+            </Input>
+          </div>
+        </StyledComponent>
+      </InputRowstyle__Row>
+    </InputRow>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots InputRow playground 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "inputrow--playground",
+      "kind": "InputRow",
+      "name": "playground",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/InputRow/InputRow.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "playground",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <InputRow
+      disabled={true}
+      error="error"
+      field={
+        Object {
+          "name": "Name",
+          "onBlur": [Function],
+          "onChange": [Function],
+          "value": "value",
+        }
+      }
+      label="example"
+      placeholder="placeholder here"
+      type="text"
+    >
+      <InputRowstyle__Row>
+        <StyledComponent
+          forwardedClass={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "InputRowstyle__Row-jt7egi-2",
+                "isStatic": true,
+                "lastClassName": "cqfxRi",
+                "rules": Array [
+                  "margin-bottom:",
+                  "25px",
+                  ";width:100%;",
+                ],
+              },
+              "displayName": "InputRowstyle__Row",
+              "render": [Function],
+              "styledComponentId": "InputRowstyle__Row-jt7egi-2",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <div
+            className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+          >
+            <InputRowstyle__Label>
+              <StyledComponent
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "InputRowstyle__Label-jt7egi-0",
+                      "isStatic": true,
+                      "lastClassName": "iueVXB",
+                      "rules": Array [
+                        "display:block;font-family:",
+                        "'Lato', 'Helvetica', 'Arial', sans-serif",
+                        ";font-weight:",
+                        "700",
+                        ";font-size:",
+                        "16px",
+                        ";color:",
+                        "#222",
+                        ";margin-bottom:",
+                        "5px",
+                        ";",
+                      ],
+                    },
+                    "displayName": "InputRowstyle__Label",
+                    "render": [Function],
+                    "styledComponentId": "InputRowstyle__Label-jt7egi-0",
+                    "target": "label",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <label
+                  className="InputRowstyle__Label-jt7egi-0 iueVXB"
+                >
+                  example
+                </label>
+              </StyledComponent>
+            </InputRowstyle__Label>
+            <Input
+              disabled={true}
+              hasError={true}
+              name="Name"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="placeholder here"
+              type="text"
+              value="value"
+            >
+              <StyledComponent
+                disabled={true}
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Input-lswqho-0",
+                      "isStatic": false,
+                      "lastClassName": "hhQdbo",
+                      "rules": Array [
+                        "font-family:",
+                        "'Lato', 'Helvetica', 'Arial', sans-serif",
+                        ";font-size:",
+                        "16px",
+                        ";width:100%;height:60px;background-color:",
+                        "#FFFFFF",
+                        ";padding:0 ",
+                        "15px",
+                        ";border-radius:",
+                        "4px",
+                        ";border:1px solid;border-color:",
+                        [Function],
+                        ";:hover{border-color:",
+                        [Function],
+                        ";}:focus{border-color:",
+                        [Function],
+                        ";}::placeholder{color:",
+                        "rgba(0, 0, 0, 0.24)",
+                        ";}",
+                      ],
+                    },
+                    "displayName": "Input",
+                    "render": [Function],
+                    "styledComponentId": "Input-lswqho-0",
+                    "target": "input",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hasError={true}
+                name="Name"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="placeholder here"
+                type="text"
+                value="value"
+              >
+                <input
+                  className="Input-lswqho-0 hhQdbo"
+                  disabled={true}
+                  name="Name"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="placeholder here"
+                  type="text"
+                  value="value"
+                />
+              </StyledComponent>
+            </Input>
+            <InputRowstyle__Error>
+              <StyledComponent
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "InputRowstyle__Error-jt7egi-1",
+                      "isStatic": true,
+                      "lastClassName": "bhyGMm",
+                      "rules": Array [
+                        "color:",
+                        "#FF7373",
+                        ";font-family:",
+                        "'Lato', 'Helvetica', 'Arial', sans-serif",
+                        ";font-weight:",
+                        "400",
+                        ";font-size:",
+                        "14px",
+                        ";margin-top:",
+                        "5px",
+                        ";",
+                      ],
+                    },
+                    "displayName": "InputRowstyle__Error",
+                    "render": [Function],
+                    "styledComponentId": "InputRowstyle__Error-jt7egi-1",
+                    "target": "p",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <p
+                  className="InputRowstyle__Error-jt7egi-1 bhyGMm"
+                >
+                  error
+                </p>
+              </StyledComponent>
+            </InputRowstyle__Error>
+          </div>
+        </StyledComponent>
+      </InputRowstyle__Row>
+    </InputRow>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots InputRow type 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "inputrow--type",
+      "kind": "InputRow",
+      "name": "type",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/InputRow/InputRow.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "type",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div>
+      type = text
+    </div>
+    <InputRow
+      field={
+        Object {
+          "name": "Name",
+          "onBlur": [Function],
+          "onChange": [Function],
+          "value": "value",
+        }
+      }
+      type="text"
+    >
+      <InputRowstyle__Row>
+        <StyledComponent
+          forwardedClass={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "InputRowstyle__Row-jt7egi-2",
+                "isStatic": true,
+                "lastClassName": "cqfxRi",
+                "rules": Array [
+                  "margin-bottom:",
+                  "25px",
+                  ";width:100%;",
+                ],
+              },
+              "displayName": "InputRowstyle__Row",
+              "render": [Function],
+              "styledComponentId": "InputRowstyle__Row-jt7egi-2",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <div
+            className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+          >
+            <Input
+              hasError={false}
+              name="Name"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value="value"
+            >
+              <StyledComponent
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Input-lswqho-0",
+                      "isStatic": false,
+                      "lastClassName": "itqMQt",
+                      "rules": Array [
+                        "font-family:",
+                        "'Lato', 'Helvetica', 'Arial', sans-serif",
+                        ";font-size:",
+                        "16px",
+                        ";width:100%;height:60px;background-color:",
+                        "#FFFFFF",
+                        ";padding:0 ",
+                        "15px",
+                        ";border-radius:",
+                        "4px",
+                        ";border:1px solid;border-color:",
+                        [Function],
+                        ";:hover{border-color:",
+                        [Function],
+                        ";}:focus{border-color:",
+                        [Function],
+                        ";}::placeholder{color:",
+                        "rgba(0, 0, 0, 0.24)",
+                        ";}",
+                      ],
+                    },
+                    "displayName": "Input",
+                    "render": [Function],
+                    "styledComponentId": "Input-lswqho-0",
+                    "target": "input",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hasError={false}
+                name="Name"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="text"
+                value="value"
+              >
+                <input
+                  className="Input-lswqho-0 itqMQt"
+                  name="Name"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="text"
+                  value="value"
+                />
+              </StyledComponent>
+            </Input>
+          </div>
+        </StyledComponent>
+      </InputRowstyle__Row>
+    </InputRow>
+    <div>
+      type = password
+    </div>
+    <InputRow
+      field={
+        Object {
+          "name": "Name",
+          "onBlur": [Function],
+          "onChange": [Function],
+          "value": "value",
+        }
+      }
+      type="password"
+    >
+      <InputRowstyle__Row>
+        <StyledComponent
+          forwardedClass={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "InputRowstyle__Row-jt7egi-2",
+                "isStatic": true,
+                "lastClassName": "cqfxRi",
+                "rules": Array [
+                  "margin-bottom:",
+                  "25px",
+                  ";width:100%;",
+                ],
+              },
+              "displayName": "InputRowstyle__Row",
+              "render": [Function],
+              "styledComponentId": "InputRowstyle__Row-jt7egi-2",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <div
+            className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+          >
+            <Input
+              hasError={false}
+              name="Name"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="password"
+              value="value"
+            >
+              <StyledComponent
+                forwardedClass={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Input-lswqho-0",
+                      "isStatic": false,
+                      "lastClassName": "itqMQt",
+                      "rules": Array [
+                        "font-family:",
+                        "'Lato', 'Helvetica', 'Arial', sans-serif",
+                        ";font-size:",
+                        "16px",
+                        ";width:100%;height:60px;background-color:",
+                        "#FFFFFF",
+                        ";padding:0 ",
+                        "15px",
+                        ";border-radius:",
+                        "4px",
+                        ";border:1px solid;border-color:",
+                        [Function],
+                        ";:hover{border-color:",
+                        [Function],
+                        ";}:focus{border-color:",
+                        [Function],
+                        ";}::placeholder{color:",
+                        "rgba(0, 0, 0, 0.24)",
+                        ";}",
+                      ],
+                    },
+                    "displayName": "Input",
+                    "render": [Function],
+                    "styledComponentId": "Input-lswqho-0",
+                    "target": "input",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                hasError={false}
+                name="Name"
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="password"
+                value="value"
+              >
+                <input
+                  className="Input-lswqho-0 itqMQt"
+                  name="Name"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="password"
+                  value="value"
+                />
+              </StyledComponent>
+            </Input>
+          </div>
+        </StyledComponent>
+      </InputRowstyle__Row>
+    </InputRow>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;

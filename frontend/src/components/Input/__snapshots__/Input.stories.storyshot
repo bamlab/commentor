@@ -1,0 +1,3636 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Input CheckBox 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--checkbox",
+      "kind": "Input",
+      "name": "CheckBox",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "CheckBox",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="checkbox"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="checkbox"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="checkbox"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Color 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--color",
+      "kind": "Input",
+      "name": "Color",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Color",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="color"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="color"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="color"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Date: 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--date",
+      "kind": "Input",
+      "name": "Date:",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Date:",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="date"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="date"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="date"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Datetime-local 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--datetime-local",
+      "kind": "Input",
+      "name": "Datetime-local",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Datetime-local",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="datetime-local"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="datetime-local"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="datetime-local"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Email 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--email",
+      "kind": "Input",
+      "name": "Email",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Email",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="email"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="email"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="email"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input File 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--file",
+      "kind": "Input",
+      "name": "File",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "File",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="file"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="file"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="file"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Hidden 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--hidden",
+      "kind": "Input",
+      "name": "Hidden",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Hidden",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="hidden"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="hidden"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="hidden"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Image 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--image",
+      "kind": "Input",
+      "name": "Image",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Image",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="image"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="image"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="image"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Month 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--month",
+      "kind": "Input",
+      "name": "Month",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Month",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="month"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="month"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="month"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Number 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--number",
+      "kind": "Input",
+      "name": "Number",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Number",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="number"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="number"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="number"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Password 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--password",
+      "kind": "Input",
+      "name": "Password",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Password",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="password"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="password"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="password"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Radio 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--radio",
+      "kind": "Input",
+      "name": "Radio",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Radio",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="radio"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="radio"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="radio"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Range 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--range",
+      "kind": "Input",
+      "name": "Range",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Range",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="range"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="range"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="range"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Reset 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--reset",
+      "kind": "Input",
+      "name": "Reset",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Reset",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="reset"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="reset"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="reset"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Search 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--search",
+      "kind": "Input",
+      "name": "Search",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Search",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="search"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="search"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="search"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Submit 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--submit",
+      "kind": "Input",
+      "name": "Submit",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Submit",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="submit"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="submit"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="submit"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Tel 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--tel",
+      "kind": "Input",
+      "name": "Tel",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Tel",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="tel"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="tel"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="tel"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Text 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--text",
+      "kind": "Input",
+      "name": "Text",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Text",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="text"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="text"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="text"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Time 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--time",
+      "kind": "Input",
+      "name": "Time",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Time",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="time"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="time"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="time"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Url 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--url",
+      "kind": "Input",
+      "name": "Url",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Url",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="url"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="url"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="url"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input Week 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--week",
+      "kind": "Input",
+      "name": "Week",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "Week",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      type="week"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "itqMQt",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        type="week"
+      >
+        <input
+          className="Input-lswqho-0 itqMQt"
+          type="week"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input hasError 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--haserror",
+      "kind": "Input",
+      "name": "hasError",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "hasError",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      hasError={true}
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "hhQdbo",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        hasError={true}
+      >
+        <input
+          className="Input-lswqho-0 hhQdbo"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;
+
+exports[`Storyshots Input playground 1`] = `
+<Story
+  PropTable={[Function]}
+  components={
+    Object {
+      "a": [Function],
+      "code": [Function],
+      "h1": [Function],
+      "h2": [Function],
+      "h3": [Function],
+      "h4": [Function],
+      "h5": [Function],
+      "h6": [Function],
+      "li": [Function],
+      "p": [Function],
+      "ul": [Function],
+    }
+  }
+  context={
+    Object {
+      "hooks": HooksContext {
+        "currentContext": [Circular],
+        "currentDecoratorName": null,
+        "currentEffects": Array [
+          Object {
+            "create": [Function],
+          },
+        ],
+        "currentHooks": Array [],
+        "currentPhase": "NONE",
+        "hasUpdates": false,
+        "hookListsMap": WeakMap {},
+        "mountedDecorators": Set {
+          [Function],
+          [Function],
+          [Function],
+          [Function],
+        },
+        "nextHookIndex": 0,
+        "prevEffects": Array [],
+        "prevMountedDecorators": Set {},
+        "renderListener": [Function],
+      },
+      "id": "input--playground",
+      "kind": "Input",
+      "name": "playground",
+      "parameters": Object {
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/Input/Input.stories.tsx",
+        "framework": "react",
+        "options": Object {
+          "hierarchyRootSeparator": "|",
+          "hierarchySeparator": /\\\\/\\|\\\\\\./,
+        },
+      },
+      "story": "playground",
+    }
+  }
+  excludedPropTypes={Array []}
+  info=""
+  maxPropArrayLength={3}
+  maxPropObjectKeys={3}
+  maxPropStringLength={50}
+  maxPropsIntoLine={3}
+  propTableCompare={[Function]}
+  propTables={Array []}
+  propTablesExclude={Array []}
+  showHeader={true}
+  showInline={false}
+  showSource={true}
+  styles={[Function]}
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <Input
+      hasError={true}
+      type="text"
+    >
+      <StyledComponent
+        forwardedClass={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input-lswqho-0",
+              "isStatic": false,
+              "lastClassName": "hhQdbo",
+              "rules": Array [
+                "font-family:",
+                "'Lato', 'Helvetica', 'Arial', sans-serif",
+                ";font-size:",
+                "16px",
+                ";width:100%;height:60px;background-color:",
+                "#FFFFFF",
+                ";padding:0 ",
+                "15px",
+                ";border-radius:",
+                "4px",
+                ";border:1px solid;border-color:",
+                [Function],
+                ";:hover{border-color:",
+                [Function],
+                ";}:focus{border-color:",
+                [Function],
+                ";}::placeholder{color:",
+                "rgba(0, 0, 0, 0.24)",
+                ";}",
+              ],
+            },
+            "displayName": "Input",
+            "render": [Function],
+            "styledComponentId": "Input-lswqho-0",
+            "target": "input",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        hasError={true}
+        type="text"
+      >
+        <input
+          className="Input-lswqho-0 hhQdbo"
+          type="text"
+        />
+      </StyledComponent>
+    </Input>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</Story>
+`;

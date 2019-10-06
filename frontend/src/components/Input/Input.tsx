@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { borderRadius, colorUsage, fontFamily, fontSize, getSpacing } from 'stylesheet';
 
-const getBorderColor = (hasError: boolean, originalColor: string): string =>
+const getBorderColor = (originalColor: string, hasError?: boolean): string =>
   hasError ? colorUsage.error : originalColor;
 
 interface Props {
-  hasError: boolean;
+  hasError?: boolean;
 }
 
 const Input = styled.input<Props>`
@@ -17,14 +17,14 @@ const Input = styled.input<Props>`
   padding: 0 ${getSpacing(3)};
   border-radius: ${borderRadius.medium};
   border: 1px solid;
-  border-color: ${props => getBorderColor(props.hasError, colorUsage.inputBorderColor)};
+  border-color: ${props => getBorderColor(colorUsage.inputBorderColor, props.hasError)};
 
   :hover {
-    border-color: ${props => getBorderColor(props.hasError, colorUsage.primaryTextColor)};
+    border-color: ${props => getBorderColor(colorUsage.primaryTextColor, props.hasError)};
   }
 
   :focus {
-    border-color: ${props => getBorderColor(props.hasError, colorUsage.primary)};
+    border-color: ${props => getBorderColor(colorUsage.primary, props.hasError)};
   }
 
   ::placeholder {

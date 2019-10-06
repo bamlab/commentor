@@ -2,7 +2,7 @@ import React, { ChangeEvent } from 'react';
 import Input from 'components/Input';
 import { Label, Error, Row } from './InputRow.style';
 
-interface Props {
+interface propTypes {
   label?: string | null;
   error?: string | null;
   type: string;
@@ -18,7 +18,7 @@ interface Props {
   };
 }
 
-const InputRow: React.FunctionComponent<Props> = props => {
+const InputRow: React.FunctionComponent<propTypes> = props => {
   const { error, field, label, disabled, type, placeholder } = props;
   const hasError = !!error;
 

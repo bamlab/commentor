@@ -1,13 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { boolean, withKnobs, text } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 import Input from './Input';
 
 storiesOf('Input', module)
-  .addDecorator((story, context) => withInfo()(story)(context))
-  .addDecorator((story, context) => withKnobs({ escapeHTML: false })(story)(context))
+  .addDecorator(withKnobs)
 
   .add('hasError', () => <Input hasError={boolean('hasError', true)} />)
   .add('CheckBox', () => <Input type={text('checkbox', 'checkbox')} />)

@@ -3,7 +3,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, object, text, withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import InputRow from './InputRow';
 
 const defaultLabel = 'Label';
@@ -15,8 +14,7 @@ const defaultField = {
 };
 
 storiesOf('InputRow', module)
-  .addDecorator((story, context) => withInfo()(story)(context))
-  .addDecorator((story, context) => withKnobs({ escapeHTML: false })(story)(context))
+  .addDecorator(withKnobs)
 
   .add('label', () => (
     <InputRow

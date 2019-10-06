@@ -12,6 +12,7 @@ import {
 interface IButton {
   href?: string;
   to?: string;
+  disabled?: boolean;
 }
 
 const Button = styled.button<IButton>`

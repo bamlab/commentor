@@ -6,7 +6,7 @@ import { User } from './user.entity';
 import { UserService } from './user.service';
 import { Roles } from '../auth/role.decorator';
 import { RolesGuard } from '../auth/role.guard';
-import { Crud, CrudController, Override, ParsedRequest, CrudRequest, ParsedBody } from '@nestjsx/crud';
+import { Crud, CrudController, Override, ParsedRequest, CrudRequest } from '@nestjsx/crud';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 

@@ -1,14 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { boolean, text, withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 import Button from './Button';
 
 storiesOf('Button', module)
-  .addDecorator((story, context) => withInfo()(story)(context))
-  .addDecorator((story, context) => withKnobs({ escapeHTML: false })(story)(context))
+  .addDecorator(withKnobs)
 
   .add('with no props', () => <Button />)
   .add('label', () => <Button>{text('Label', 'Coucou')}</Button>)

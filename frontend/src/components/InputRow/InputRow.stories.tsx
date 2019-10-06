@@ -66,19 +66,3 @@ storiesOf('InputRow', module)
       field={object('field', defaultField)}
     />
   ));
-
-interface Props {
-  label?: string | null;
-  error?: string | null;
-  type: string;
-  disabled?: boolean;
-  placeholder?: string;
-  field: {
-    name?: string;
-    onBlur?: () => void;
-    onChange: (
-      event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
-    ) => void;
-    value?: string;
-  };
-}

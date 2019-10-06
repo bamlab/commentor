@@ -1,13 +1,23 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
+import { storiesOf } from '@storybook/react';
+import { boolean, color, object, select, text, withKnobs } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
 import Button from './Button';
 
-const stories = storiesOf('Button', module);
+storiesOf('Button', module)
+  .addDecorator((story, context) => withInfo()(story)(context))
+  .addDecorator((story, context) => withKnobs({ escapeHTML: false })(story)(context))
 
-stories.addDecorator(withKnobs);
+  .add('with no props', () => <Button />)
+  .add('label', () => <Button>{text('Label', 'Coucou')}</Button>)
 
-stories.add('with a button', () => (
-  <Button disabled={boolean('Disabled', false)}>{text('Label', 'Hello Storybook')}</Button>
-));
+  .add('disabled', () => <Button disabled={boolean('disabled', true)} />)
+  .add('onClick', () => <Button onClick={action('on Click')} />)
+
+  .add('playground', () => (
+    <Button onClick={action('on Click')} disabled={boolean('disabled', true)}>
+      {text('Label', 'Hello Storybook')}
+    </Button>
+  ));

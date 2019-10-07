@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontFamily, fontSize, fontWeight, getSpacing, lineHeight, colorUsage } from 'stylesheet';
+import { fontFamily, fontSize, fontWeight, getSpacing, lineHeight } from 'stylesheet';
 
 export const HomeContainer = styled.div`
   display: flex;

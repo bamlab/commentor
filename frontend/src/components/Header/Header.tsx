@@ -26,7 +26,7 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = ({
       </Link>
     )}
     {!isUserLoggedIn && (
-      <Link as="button" onClick={() => {}}>
+      <Link as={RouterLink} to={PATHS.COMMENTS}>
         <FormattedMessage id="header.comment" />
       </Link>
     )}

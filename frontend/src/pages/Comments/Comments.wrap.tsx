@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 import Comments from './Comments';
+import { getComments } from 'redux/Comment';
+import { RootState } from 'redux/types';
 
-function mapStateToProps() {
-  return {};
-}
+const mapStateToProps = (state: RootState) => ({
+  comments: getComments(state),
+});
 
 function mapDispatchToProps() {
   return {};

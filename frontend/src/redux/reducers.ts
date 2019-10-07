@@ -7,6 +7,7 @@ import { LocationChangeAction, RouterState } from 'connected-react-router';
 import { combineReducers, Reducer } from 'redux';
 
 import { reducer as login } from './Login';
+import { reducer as comment } from './Comment';
 import { RootAction, RootState } from './types';
 
 /**
@@ -18,5 +19,6 @@ export default function createReducer(asyncReducers: {
   return combineReducers<RootState, RootAction>({
     ...asyncReducers,
     login,
+    comment,
   });
 }

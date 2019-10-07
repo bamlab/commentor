@@ -23,6 +23,9 @@
     "fetch-github-avatar": "Show github avatar",
     "add-github-username": "Enter a github username"
   },
+  "comments": {
+    "tmp": "tmp"
+  },
   "login": {
     "title": "Launch your project in seconds",
     "login-button": "Connexion",

@@ -16,7 +16,7 @@ export const Logo = styled.img`
 
 Logo.displayName = 'Logo';
 
-export const WelcomeMessage = styled.text`
+export const WelcomeMessage = styled.div`
   font-weight: ${fontWeight.bold};
   font-family: ${fontFamily.main};
   font-size: ${fontSize.large};

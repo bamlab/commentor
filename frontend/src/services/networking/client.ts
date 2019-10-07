@@ -105,6 +105,12 @@ class Client {
     return token;
   }
 
+  async fetchComments(data: object) {
+    const result = await this.get('/comments');
+    console.log('comments:', result);
+    return result;
+  }
+
   async logout() {
     const result = await this.post('/auth/jwt/logout', {});
     return result;

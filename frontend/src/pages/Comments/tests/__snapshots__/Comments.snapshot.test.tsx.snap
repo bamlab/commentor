@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Snapshot] <Comments /> should render a button with a label 1`] = `
+<Commentsstyle__StyledComments>
+  <FormattedMessage
+    id="comments.tmp"
+    values={Object {}}
+  />
+  <div />
+</Commentsstyle__StyledComments>
+`;

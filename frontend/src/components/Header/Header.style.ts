@@ -14,7 +14,8 @@ export const HeaderContainer = styled.header`
 HeaderContainer.displayName = 'HeaderContainer';
 
 export const Logo = styled.img`
-  height: ${getSpacing(9)};
+  padding: 0 ${getSpacing(4)};
+  height: ${getSpacing(11)};
 `;
 
 Logo.displayName = 'Logo';

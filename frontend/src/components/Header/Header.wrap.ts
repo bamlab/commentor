@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { Dispatch } from 'redux';
 import { getUserToken } from 'redux/Login';
-import { logoutUser } from 'redux/Login/actions';
+import { logoutUser } from 'redux/Login/login.actions';
 import { RootState } from 'redux/types';
 import { PATHS } from 'routes';
 import Header from './Header';

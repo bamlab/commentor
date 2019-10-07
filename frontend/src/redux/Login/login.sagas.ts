@@ -3,7 +3,7 @@ import jwt_decode from 'jwt-decode';
 import { call, put, takeEvery } from 'redux-saga/effects';
 import client from 'services/networking/client';
 import { ActionType, getType } from 'typesafe-actions';
-import { loginUser, logoutUser } from './actions';
+import { loginUser, logoutUser } from './login.actions';
 import { push } from 'connected-react-router';
 
 export function* loginUserSaga(action: ActionType<typeof loginUser.request>) {

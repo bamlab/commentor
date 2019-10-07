@@ -1,5 +1,5 @@
-import { loginUser, logoutUser } from '../actions';
-import reducer from '../reducer';
+import { loginUser, logoutUser } from '../login.actions';
+import reducer from '../login.reducer';
 
 const token = 'OX1dSSVRFX1BPU1QsQ0FOX1JFQURfTkV';
 const initialState = { token: null, loginError: null };

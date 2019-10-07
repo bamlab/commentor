@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { Dispatch } from 'redux';
 import { getLoginError, getUserToken } from 'redux/Login';
-import { loginUser } from 'redux/Login/actions';
+import { loginUser } from 'redux/Login/login.actions';
 import { RootState } from 'redux/types';
 
 import LoginFormContainer from './Login';

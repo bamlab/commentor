@@ -6,13 +6,8 @@
 import { LocationChangeAction, RouterState } from 'connected-react-router';
 import { combineReducers, Reducer } from 'redux';
 
-import { reducer as avatar } from './Avatar';
 import { reducer as login } from './Login';
 import { RootAction, RootState } from './types';
-
-/**
- * Example of the Avatar module which should export a reducer.
- */
 
 /**
  * Creates the main reducer with the asynchronously loaded ones
@@ -23,6 +18,5 @@ export default function createReducer(asyncReducers: {
   return combineReducers<RootState, RootAction>({
     ...asyncReducers,
     login,
-    avatar,
   });
 }

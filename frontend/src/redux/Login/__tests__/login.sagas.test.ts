@@ -5,8 +5,8 @@ import { getType } from 'typesafe-actions';
 
 import client from 'services/networking/client';
 
-import { loginUser } from '../actions';
-import { loginUserSaga } from '../sagas';
+import { loginUser } from '../login.actions';
+import { loginUserSaga } from '../login.sagas';
 
 const loginUserRequestAction = loginUser.request({
   email: 'bilbo@culdesac.gnd',

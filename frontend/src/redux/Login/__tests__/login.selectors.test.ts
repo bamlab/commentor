@@ -1,5 +1,5 @@
 import { state } from '__fixtures__/state';
-import { getLoginError, getUserToken } from '../selectors';
+import { getLoginError, getUserToken } from '../login.selectors';
 
 const token = 'OX1dSSVRFX1BPU1QsQ0FOX1JFQURfTkV';
 const loginError = 'User not logged in';

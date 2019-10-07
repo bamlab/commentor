@@ -1,6 +1,6 @@
-export * from './selectors';
-export { default as actions } from './actions';
-export * from './actions';
-export { default as reducer } from './reducer';
-export * from './reducer';
-export { default as sagas } from './sagas';
+export * from './login.selectors';
+export { default as actions } from './login.actions';
+export * from './login.actions';
+export { default as reducer } from './login.reducer';
+export * from './login.reducer';
+export { default as sagas } from './login.sagas';

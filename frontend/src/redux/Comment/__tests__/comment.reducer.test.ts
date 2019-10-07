@@ -1,7 +1,7 @@
 import { loadComments } from '../comment.actions';
 import reducer from '../comment.reducer';
 
-const initialState = { comments: [] };
+const initialState = { comments: [], isLoading: false, commentError: null };
 const defaultComment = {
   id: 2,
   body: 'ed',
@@ -31,6 +31,15 @@ describe('Comment reducer', () => {
       const errorMessage = 'Could not get comments from server';
       const action = loadComments.failure({ errorMessage });
       const expectedState = { ...initialState, commentError: errorMessage };
+
+      expect(reducer(initialState, action)).toEqual(expectedState);
+    });
+  });
+
+  describe('USER_LOGIN_REQUESt case', () => {
+    it('Should return an initial state loading true', () => {
+      const action = loadComments.request({});
+      const expectedState = { ...initialState, isLoading: true };
 
       expect(reducer(initialState, action)).toEqual(expectedState);
     });

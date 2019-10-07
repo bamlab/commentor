@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
-
-import StyledComments from './Comments.style';
+import Loader from 'components/Loader';
+import StyledComments, { LoaderContainer } from './Comments.style';
 import { CommentType } from 'redux/Comment';
-
 interface IProps {
   comments: CommentType[];
   loadComments: () => void;
+  isCommentLoading: boolean;
 }
 
 const Comments = React.memo<IProps>(props => {
@@ -17,6 +17,11 @@ const Comments = React.memo<IProps>(props => {
 
   return (
     <StyledComments>
+      {props.isCommentLoading && (
+        <LoaderContainer>
+          <Loader />
+        </LoaderContainer>
+      )}
       <FormattedMessage id="comments.tmp" />
       <div>{JSON.stringify(props.comments)}</div>
     </StyledComments>

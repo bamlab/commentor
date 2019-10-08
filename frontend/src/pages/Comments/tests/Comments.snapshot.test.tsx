@@ -9,11 +9,11 @@ Snapshot tests allow you to easily lock the comportment of a component.
 Given props, it renders the component and compares it to the saved snapshot.
 */
 describe('[Snapshot] <Comments />', () => {
-  it('should render a button with a label', () => {
+  it('should comments page', () => {
     const props = {
-      intl: {
-        formatMessage: jest.fn(),
-      },
+      comments: [],
+      loadComments: jest.fn(),
+      isCommentLoading: true,
     };
     const wrapper = shallow(<Comments {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();

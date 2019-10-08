@@ -11,16 +11,14 @@ This file contains all unit tests. The standard is:
   - The test can fail.
 */
 describe('[Component] <Comments />', () => {
-  it('should be a test with an explicit name', () => {
-    const props = {
-      intl: {
-        comments: [],
-        loadComments: {
-          success: jest.fn(),
-        },
-      },
-    };
+  const props = {
+    comments: [],
+    loadComments: jest.fn(),
+    isCommentLoading: true,
+  };
+  it('should call loadComment on button click', () => {
     const wrapper = shallow(<Comments {...props} />);
-    expect(wrapper.exists()).toEqual(true);
+    wrapper.find('Button').simulate('click');
+    expect(props.loadComments).toHaveBeenCalledWith();
   });
 });

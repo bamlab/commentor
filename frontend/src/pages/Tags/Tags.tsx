@@ -6,6 +6,7 @@ import { GenericTable } from 'components/GenericTable/GenericTable';
 import StyledTags from './Tags.style';
 import { TagType } from 'redux/Tag';
 import { columnsConfig, fixedColumnCount } from './columnsConfig';
+import Button from 'components/Button';
 
 interface IProps {
   tags: TagType[];
@@ -26,7 +27,10 @@ const Tags = React.memo<IProps>(props => {
           <Loader />
         </LoaderContainer>
       )}
-      <FormattedMessage id="tags.text" />
+      <Button onClick={() => {}}>
+        <FormattedMessage id="tags.add-tag" />
+      </Button>
+
       <GenericTable
         columnsConfig={columnsConfig}
         values={props.tags}

@@ -71,7 +71,7 @@ storiesOf('GenericTable', module)
     const pullRequestUrl = text('body', 'pullRequestUrl');
     const repositoryId = number('id', 123421);
     // @ts-ignore date is connsidered as number where creationDate is Date
-    const creationDate: Date = date('creationDate', new Date());
+    const creationDate: Date = date('creationDate', new Date('2019-10-09T20:35:55.068Z'));
     const fixedColumnCount = number('id', 1);
     return (
       <GenericTable

@@ -138,7 +138,7 @@ exports[`Storyshots GenericTable playground 1`] = `
           Object {
             "body": "body",
             "commentor": "commentor",
-            "creationDate": 1570659025807,
+            "creationDate": 1570653355068,
             "filePath": "filePath",
             "id": 1,
             "pullRequestUrl": "pullRequestUrl",

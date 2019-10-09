@@ -11,9 +11,17 @@ describe('[Component] <Tags />', () => {
     addTag: jest.fn(),
   };
 
-  it('should call addTag on button click', () => {
+  it('should open Modal on button 0 click', () => {
     const wrapper = shallow(<Tags {...props} />);
-    wrapper.find('Button').simulate('click');
-    expect(props.addTag).toHaveBeenCalledWith();
+    expect(wrapper.find('#addTagModal').props().isOpen).toBe(false);
+  });
+
+  it('should call addTag on button1  click', () => {
+    const wrapper = shallow(<Tags {...props} />);
+    wrapper
+      .find('Button')
+      .at(1)
+      .simulate('click');
+    expect(props.addTag).toHaveBeenCalledWith('', '');
   });
 });

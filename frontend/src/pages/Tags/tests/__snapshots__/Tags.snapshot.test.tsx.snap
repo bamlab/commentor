@@ -7,7 +7,7 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
   </Tagsstyle__LoaderContainer>
   <Button
     disabled={true}
-    onClick={[MockFunction]}
+    onClick={[Function]}
   >
     <FormattedMessage
       id="tags.add-tag"
@@ -46,5 +46,44 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
     fixedColumnCount={2}
     values={Array []}
   />
+  <[object Object]
+    contentLabel="Add Tag Modal"
+    id="addTagModal"
+    isOpen={false}
+  >
+    <InputRow
+      field={
+        Object {
+          "name": "code",
+          "onChange": [Function],
+          "value": "",
+        }
+      }
+      label="code"
+      placeholder="Code..."
+      type="text"
+    />
+    <InputRow
+      field={
+        Object {
+          "name": "description",
+          "onChange": [Function],
+          "value": "",
+        }
+      }
+      label="description"
+      placeholder="Description..."
+      type="text"
+    />
+    <Button
+      disabled={true}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        id="tags.add-tag"
+        values={Object {}}
+      />
+    </Button>
+  </[object Object]>
 </Tagsstyle__StyledTags>
 `;

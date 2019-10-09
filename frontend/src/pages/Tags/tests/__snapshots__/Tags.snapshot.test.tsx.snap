@@ -6,5 +6,36 @@ exports[`[Snapshot] <Tags /> should render a button with a label 1`] = `
     id="tags.text"
     values={Object {}}
   />
+  <GenericTable
+    columnsConfig={
+      Array [
+        Object {
+          "columnWidth": 75,
+          "index": 0,
+          "key": "id",
+          "name": "id",
+        },
+        Object {
+          "columnWidth": 300,
+          "index": 1,
+          "key": "code",
+          "name": "code",
+        },
+        Object {
+          "columnWidth": 300,
+          "index": 2,
+          "key": "description",
+          "name": "decription",
+        },
+        Object {
+          "columnWidth": 200,
+          "index": 6,
+          "key": "creationDate",
+          "name": "creationDate",
+        },
+      ]
+    }
+    fixedColumnCount={2}
+  />
 </Tagsstyle__StyledTags>
 `;

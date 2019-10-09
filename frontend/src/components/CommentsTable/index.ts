@@ -1,1 +1,0 @@
-export { CommentsTable } from './CommentsTable';

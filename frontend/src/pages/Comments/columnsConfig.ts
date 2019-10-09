@@ -1,24 +1,6 @@
-export type RendererInputType = {
-  columnIndex: number;
-  key: string;
-  rowIndex: number;
-  style?: Object;
-};
+import { ColumnType } from 'components/GenericTable/GenericTable.type';
 
-type ColumnType = {
-  index: number;
-  key: string;
-  name: string;
-  columnWidth: number;
-  // renderer: ({ columnIndex, key, rowIndex, style }: RendererInputType) => JSX.Element;
-};
-
-interface MultiGridConfigType {
-  fixed: ColumnType[];
-  dynamic: ColumnType[];
-}
-
-export const tableConfig: ColumnType[] = [
+export const columnsConfig: ColumnType[] = [
   {
     index: 0,
     key: 'id',
@@ -68,8 +50,5 @@ export const tableConfig: ColumnType[] = [
     columnWidth: 200,
   },
 ];
-
-// @ts-ignore
-export const columnConfig = (columnIndex: number): ColumnType => columnIndex[columnIndex];
 
 export const fixedColumnCount = 2; // this is the reference

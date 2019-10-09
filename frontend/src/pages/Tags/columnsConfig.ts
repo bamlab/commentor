@@ -27,4 +27,4 @@ export const columnsConfig: ColumnType[] = [
   },
 ];
 
-export const fixedColumnCount = 2; // this is the reference
+export const fixedColumnCount = 0; // this is the reference

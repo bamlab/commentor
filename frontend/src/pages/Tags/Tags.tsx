@@ -49,7 +49,12 @@ const Tags = React.memo<IProps>(props => {
         values={props.tags}
         fixedColumnCount={fixedColumnCount}
       />
-      <Modal id="addTagModal" isOpen={isAddTagModalOpen} contentLabel="Add Tag Modal">
+      <Modal
+        id="addTagModal"
+        isOpen={isAddTagModalOpen}
+        contentLabel="Add Tag Modal"
+        onRequestClose={() => setAddTagModalValue(false)}
+      >
         <InputRow
           label="code"
           type="text"

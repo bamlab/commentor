@@ -3,21 +3,21 @@ import { Route, Switch } from 'react-router';
 import Loader from './components/Loader/Loader';
 
 const Home = lazy(() => import('./pages/Home'));
+const Comments = lazy(() => import('./pages/Comments'));
 const Login = lazy(() => import('./pages/Login'));
-const Avatar = lazy(() => import('./pages/Avatar'));
 
 export const PATHS = {
   HOME: '/',
+  COMMENTS: '/comments',
   LOGIN: '/login',
-  AVATAR: '/avatar',
 };
 
 const routes = () => (
   <Suspense fallback={<Loader />}>
     <Switch>
       <Route exact path={PATHS.HOME} component={Home} />
+      <Route path={PATHS.COMMENTS} component={Comments} />
       <Route path={PATHS.LOGIN} component={Login} />
-      <Route path={PATHS.AVATAR} component={Avatar} />
     </Switch>
   </Suspense>
 );

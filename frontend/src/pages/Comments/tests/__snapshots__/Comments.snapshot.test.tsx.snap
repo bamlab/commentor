@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Snapshot] <Comments /> should comments page 1`] = `
+<Commentsstyle__StyledComments>
+  <Commentsstyle__LoaderContainer>
+    <Loader />
+  </Commentsstyle__LoaderContainer>
+  <FormattedMessage
+    id="comments.tmp"
+    values={Object {}}
+  />
+  <CommentsTable
+    comments={Array []}
+  />
+  <Commentsstyle__ButtonContainer>
+    <Button
+      disabled={true}
+      onClick={[MockFunction]}
+    >
+      Refresh Comments
+    </Button>
+  </Commentsstyle__ButtonContainer>
+</Commentsstyle__StyledComments>
+`;

@@ -1,6 +1,9 @@
 {
   "header": {
     "login": "Connexion",
+    "project": "Projet",
+    "comment": "Retours",
+    "graph": "Graphiques",
     "logout": "Déconnexion"
   },
   "home": {
@@ -11,13 +14,17 @@
     "generate-component": "Pour créer une page ou un simple composant, lance: ",
     "generate-module": "Pour ajouter de la logique métier, créer un dossier dans redux avec tes reducers/actions/sagas/selectors/constants/...",
     "click-me": "Click sur moi",
-    "readme": "Lis le README.md pour découvrir les super commandes npm que nous avons ajouté"
+    "readme": "Lis le README.md pour découvrir les super commandes npm que nous avons ajouté",
+    "welcome-message": "Bienvenue sur commentor !"
   },
   "page": {
     "back": "Retour",
     "api-to-translate-example": "Ce message est traduit en utilisant directement l'API react-intl",
     "fetch-github-avatar": "Affiche l'avatar github",
     "add-github-username": "Entrer un username github"
+  },
+  "comments": {
+    "tmp": "tmp"
   },
   "login": {
     "title": "Démarrer un projet Theodo en quelques secondes",

@@ -1,7 +1,7 @@
 import { ActionType, getType } from 'typesafe-actions';
 
 import { AnyAction } from 'redux';
-import { loginUser, logoutUser } from './actions';
+import { loginUser, logoutUser } from './login.actions';
 
 export type LoginAction = ActionType<
   typeof loginUser.success | typeof loginUser.failure | typeof logoutUser

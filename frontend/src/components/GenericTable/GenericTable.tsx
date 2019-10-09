@@ -29,9 +29,9 @@ interface PropsType {
 
 export const GenericTable = (props: PropsType) => {
   const header = {};
-  Object.keys(props.values[0]).forEach(key => {
+  props.columnsConfig.forEach(column => {
     // @ts-ignore
-    if (key) header[`${key}`] = key;
+    if (column) header[`${column.key}`] = column.name;
   });
 
   const valuesWithHeaders: Object[] = [header, ...props.values];

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const StyledTags = styled.div`
   display: flex;
+  flex-direction: column;
 `;
 
 export const LoaderContainer = styled.div`

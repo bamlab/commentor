@@ -1,7 +1,7 @@
 {
   "header": {
     "login": "Login",
-    "project": "Project",
+    "project": "Tags",
     "comment": "Comments",
     "graph": "Graphics",
     "logout": "Logout"
@@ -25,6 +25,9 @@
   },
   "comments": {
     "tmp": "tmp"
+  },
+  "tags": {
+    "text": "Some text"
   },
   "login": {
     "title": "Launch your project in seconds",

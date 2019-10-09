@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { AutoSizer, MultiGrid } from 'react-virtualized';
 import styled from 'styled-components';
-import { CommentType } from 'redux/Comment';
 import { ColumnType, RendererInputType } from './GenericTable.type';
 
 const STYLE = {
@@ -23,29 +22,19 @@ const Cell = styled.div`
 `;
 
 interface PropsType {
-  values: any[];
+  values: Object[];
   columnsConfig: ColumnType[];
   fixedColumnCount: number;
 }
 
 export const GenericTable = (props: PropsType) => {
-  const valuesWithHeaders: CommentType[] = [
-    {
-      // @ts-ignore header comment is string
-      id: 'id',
-      body: 'body',
-      filePath: 'filePath',
-      url: 'url',
-      commentor: 'commentor',
-      requester: 'requester',
-      pullRequestUrl: 'pullRequestUrl',
-      // @ts-ignore to fixheader comment is string
-      repositoryId: 'repositoryId',
-      // @ts-ignore to fix header comment is string
-      creationDate: 'creationDate',
-    },
-    ...props.values,
-  ];
+  const header = {};
+  Object.keys(props.values[0]).forEach(key => {
+    // @ts-ignore
+    if (key) header[`${key}`] = key;
+  });
+
+  const valuesWithHeaders: Object[] = [header, ...props.values];
 
   const cellRenderer = ({ columnIndex, key, rowIndex, style }: RendererInputType): JSX.Element => {
     const configKey = props.columnsConfig[columnIndex].key || 'error';

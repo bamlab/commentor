@@ -14,6 +14,7 @@ interface IProps {
 const Comments = React.memo<IProps>(props => {
   useEffect(() => {
     props.loadComments();
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -12,7 +12,7 @@ const mapStateToProps = (state: RootState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   loadTags: () => dispatch(loadTags.request({})),
-  addTag: () => dispatch(addTag.request({ code: 'new code', description: 'newdescription' })),
+  addTag: () => dispatch(addTag.request({ code: '✅', description: 'newdescription' })),
 });
 
 export default connect(

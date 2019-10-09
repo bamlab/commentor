@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots CommentsTable playground 1`] = `
+exports[`Storyshots GenericTable playground 1`] = `
 <Story
   PropTable={[Function]}
   components={
@@ -43,11 +43,11 @@ exports[`Storyshots CommentsTable playground 1`] = `
         "prevMountedDecorators": Set {},
         "renderListener": [Function],
       },
-      "id": "commentstable--playground",
-      "kind": "CommentsTable",
+      "id": "generictable--playground",
+      "kind": "GenericTable",
       "name": "playground",
       "parameters": Object {
-        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/CommentsTable/CommentsTable.stories.tsx",
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/GenericTable/GenericTable.stories.tsx",
         "framework": "react",
         "options": Object {
           "hierarchyRootSeparator": "|",
@@ -79,13 +79,66 @@ exports[`Storyshots CommentsTable playground 1`] = `
       }
     }
   >
-    <CommentsTable
-      comments={
+    <GenericTable
+      columnsConfig={
+        Array [
+          Object {
+            "columnWidth": 75,
+            "index": 0,
+            "key": "id",
+            "name": "id",
+          },
+          Object {
+            "columnWidth": 300,
+            "index": 1,
+            "key": "body",
+            "name": "body",
+          },
+          Object {
+            "columnWidth": 300,
+            "index": 2,
+            "key": "filePath",
+            "name": "filePath",
+          },
+          Object {
+            "columnWidth": 300,
+            "index": 3,
+            "key": "url",
+            "name": "url",
+          },
+          Object {
+            "columnWidth": 200,
+            "index": 4,
+            "key": "commentor",
+            "name": "commentor",
+          },
+          Object {
+            "columnWidth": 200,
+            "index": 5,
+            "key": "pullRequestUrl",
+            "name": "pullRequestUrl",
+          },
+          Object {
+            "columnWidth": 200,
+            "index": 6,
+            "key": "repositoryId",
+            "name": "repositoryId",
+          },
+          Object {
+            "columnWidth": 200,
+            "index": 6,
+            "key": "creationDate",
+            "name": "creationDate",
+          },
+        ]
+      }
+      fixedColumnCount={1}
+      values={
         Array [
           Object {
             "body": "body",
             "commentor": "commentor",
-            "creationDate": 1570654530406,
+            "creationDate": 1570657837046,
             "filePath": "filePath",
             "id": 1,
             "pullRequestUrl": "pullRequestUrl",
@@ -96,23 +149,23 @@ exports[`Storyshots CommentsTable playground 1`] = `
         ]
       }
     >
-      <CommentsTable__Wrapper>
+      <GenericTable__Wrapper>
         <StyledComponent
           forwardedClass={
             Object {
               "$$typeof": Symbol(react.forward_ref),
               "attrs": Array [],
               "componentStyle": ComponentStyle {
-                "componentId": "CommentsTable__Wrapper-sc-2ymgbz-0",
+                "componentId": "GenericTable__Wrapper-sc-1d4ovw3-0",
                 "isStatic": true,
-                "lastClassName": "SGuHx",
+                "lastClassName": "bUHYlT",
                 "rules": Array [
                   "flex:1 1 auto;display:flex;flex-direction:column;",
                 ],
               },
-              "displayName": "CommentsTable__Wrapper",
+              "displayName": "GenericTable__Wrapper",
               "render": [Function],
-              "styledComponentId": "CommentsTable__Wrapper-sc-2ymgbz-0",
+              "styledComponentId": "GenericTable__Wrapper-sc-1d4ovw3-0",
               "target": "div",
               "toString": [Function],
               "warnTooManyClasses": [Function],
@@ -122,7 +175,7 @@ exports[`Storyshots CommentsTable playground 1`] = `
           forwardedRef={null}
         >
           <div
-            className="CommentsTable__Wrapper-sc-2ymgbz-0 SGuHx"
+            className="GenericTable__Wrapper-sc-1d4ovw3-0 bUHYlT"
           >
             <AutoSizer
               disableHeight={false}
@@ -149,7 +202,7 @@ exports[`Storyshots CommentsTable playground 1`] = `
                   columnWidth={[Function]}
                   enableFixedColumnScroll={true}
                   enableFixedRowScroll={true}
-                  fixedColumnCount={2}
+                  fixedColumnCount={1}
                   fixedRowCount={1}
                   height={500}
                   hideBottomLeftGridScrollbar={true}
@@ -173,8 +226,8 @@ exports[`Storyshots CommentsTable playground 1`] = `
             </AutoSizer>
           </div>
         </StyledComponent>
-      </CommentsTable__Wrapper>
-    </CommentsTable>
+      </GenericTable__Wrapper>
+    </GenericTable>
   </div>
   <button
     className="info__show-button"
@@ -202,7 +255,7 @@ exports[`Storyshots CommentsTable playground 1`] = `
 </Story>
 `;
 
-exports[`Storyshots CommentsTable with empty comments 1`] = `
+exports[`Storyshots GenericTable with empty comments 1`] = `
 <Story
   PropTable={[Function]}
   components={
@@ -245,11 +298,11 @@ exports[`Storyshots CommentsTable with empty comments 1`] = `
         "prevMountedDecorators": Set {},
         "renderListener": [Function],
       },
-      "id": "commentstable--with-empty-comments",
-      "kind": "CommentsTable",
+      "id": "generictable--with-empty-comments",
+      "kind": "GenericTable",
       "name": "with empty comments",
       "parameters": Object {
-        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/CommentsTable/CommentsTable.stories.tsx",
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/GenericTable/GenericTable.stories.tsx",
         "framework": "react",
         "options": Object {
           "hierarchyRootSeparator": "|",
@@ -281,26 +334,79 @@ exports[`Storyshots CommentsTable with empty comments 1`] = `
       }
     }
   >
-    <CommentsTable
-      comments={Array []}
+    <GenericTable
+      columnsConfig={
+        Array [
+          Object {
+            "columnWidth": 75,
+            "index": 0,
+            "key": "id",
+            "name": "id",
+          },
+          Object {
+            "columnWidth": 300,
+            "index": 1,
+            "key": "body",
+            "name": "body",
+          },
+          Object {
+            "columnWidth": 300,
+            "index": 2,
+            "key": "filePath",
+            "name": "filePath",
+          },
+          Object {
+            "columnWidth": 300,
+            "index": 3,
+            "key": "url",
+            "name": "url",
+          },
+          Object {
+            "columnWidth": 200,
+            "index": 4,
+            "key": "commentor",
+            "name": "commentor",
+          },
+          Object {
+            "columnWidth": 200,
+            "index": 5,
+            "key": "pullRequestUrl",
+            "name": "pullRequestUrl",
+          },
+          Object {
+            "columnWidth": 200,
+            "index": 6,
+            "key": "repositoryId",
+            "name": "repositoryId",
+          },
+          Object {
+            "columnWidth": 200,
+            "index": 6,
+            "key": "creationDate",
+            "name": "creationDate",
+          },
+        ]
+      }
+      fixedColumnCount={2}
+      values={Array []}
     >
-      <CommentsTable__Wrapper>
+      <GenericTable__Wrapper>
         <StyledComponent
           forwardedClass={
             Object {
               "$$typeof": Symbol(react.forward_ref),
               "attrs": Array [],
               "componentStyle": ComponentStyle {
-                "componentId": "CommentsTable__Wrapper-sc-2ymgbz-0",
+                "componentId": "GenericTable__Wrapper-sc-1d4ovw3-0",
                 "isStatic": true,
-                "lastClassName": "SGuHx",
+                "lastClassName": "bUHYlT",
                 "rules": Array [
                   "flex:1 1 auto;display:flex;flex-direction:column;",
                 ],
               },
-              "displayName": "CommentsTable__Wrapper",
+              "displayName": "GenericTable__Wrapper",
               "render": [Function],
-              "styledComponentId": "CommentsTable__Wrapper-sc-2ymgbz-0",
+              "styledComponentId": "GenericTable__Wrapper-sc-1d4ovw3-0",
               "target": "div",
               "toString": [Function],
               "warnTooManyClasses": [Function],
@@ -310,7 +416,7 @@ exports[`Storyshots CommentsTable with empty comments 1`] = `
           forwardedRef={null}
         >
           <div
-            className="CommentsTable__Wrapper-sc-2ymgbz-0 SGuHx"
+            className="GenericTable__Wrapper-sc-1d4ovw3-0 bUHYlT"
           >
             <AutoSizer
               disableHeight={false}
@@ -361,8 +467,8 @@ exports[`Storyshots CommentsTable with empty comments 1`] = `
             </AutoSizer>
           </div>
         </StyledComponent>
-      </CommentsTable__Wrapper>
-    </CommentsTable>
+      </GenericTable__Wrapper>
+    </GenericTable>
   </div>
   <button
     className="info__show-button"

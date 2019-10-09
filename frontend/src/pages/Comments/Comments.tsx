@@ -3,8 +3,9 @@ import { FormattedMessage } from 'react-intl';
 import Loader from 'components/Loader';
 import StyledComments, { LoaderContainer, ButtonContainer } from './Comments.style';
 import { CommentType } from 'redux/Comment';
-import { CommentsTable } from 'components/CommentsTable';
+import { GenericTable } from 'components/GenericTable/GenericTable';
 import Button from 'components/Button';
+import { fixedColumnCount, columnsConfig } from './columnsConfig';
 interface IProps {
   comments: CommentType[];
   loadComments: () => void;
@@ -25,7 +26,11 @@ const Comments = React.memo<IProps>(props => {
         </LoaderContainer>
       )}
       <FormattedMessage id="comments.tmp" />
-      <CommentsTable comments={props.comments} />
+      <GenericTable
+        values={props.comments}
+        fixedColumnCount={fixedColumnCount}
+        columnsConfig={columnsConfig}
+      />
       <ButtonContainer>
         <Button disabled={props.isCommentLoading} onClick={props.loadComments}>
           Refresh Comments

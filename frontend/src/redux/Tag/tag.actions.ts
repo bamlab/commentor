@@ -15,4 +15,21 @@ export const loadTags = createAsyncAction(
   }
 >();
 
-export default { loadTags };
+export const addTag = createAsyncAction(
+  'Tag/ADD_TAG_REQUEST',
+  'Tag/ADD_TAG_SUCCESS',
+  'Tag/ADD_TAG_FAILURE',
+)<
+  {
+    code: string;
+    description: string;
+  },
+  {
+    tag: TagType;
+  },
+  {
+    errorMessage: string;
+  }
+>();
+
+export default { loadTags, addTag };

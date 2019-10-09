@@ -2,9 +2,7 @@
 
 exports[`[Snapshot] <Tags /> should render a button with a label 1`] = `
 <Tagsstyle__StyledTags>
-  <Button
-    onClick={[Function]}
-  >
+  <Button>
     <FormattedMessage
       id="tags.add-tag"
       values={Object {}}

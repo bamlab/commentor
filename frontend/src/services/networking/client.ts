@@ -117,6 +117,11 @@ class Client {
     return result;
   };
 
+  addTag = async (data: object): Promise<TagType> => {
+    const result = await this.post('/tags', data);
+    return result;
+  };
+
   async logout() {
     const result = await this.post('/auth/jwt/logout', {});
     return result;

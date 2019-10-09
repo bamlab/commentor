@@ -83,26 +83,15 @@ exports[`Storyshots CommentsTable playground 1`] = `
       comments={
         Array [
           Object {
-            "body": "ed",
-            "commentor": "Amaury",
-            "creationDate": 2019-10-08T21:11:59.897Z,
-            "filePath": "weff",
-            "id": 2,
-            "pullRequestUrl": "ewffew",
-            "repositoryId": 31312,
-            "requester": "wfwef",
-            "url": "wffew",
-          },
-          Object {
-            "body": "ed",
-            "commentor": "Amaury",
-            "creationDate": 2019-10-08T21:11:59.897Z,
-            "filePath": "weff",
-            "id": 2,
-            "pullRequestUrl": "ewffew",
-            "repositoryId": 31312,
-            "requester": "wfwef",
-            "url": "wffew",
+            "body": "body",
+            "commentor": "commentor",
+            "creationDate": 1570654530406,
+            "filePath": "filePath",
+            "id": 1,
+            "pullRequestUrl": "pullRequestUrl",
+            "repositoryId": 123421,
+            "requester": "requester",
+            "url": "url",
           },
         ]
       }
@@ -165,7 +154,7 @@ exports[`Storyshots CommentsTable playground 1`] = `
                   height={500}
                   hideBottomLeftGridScrollbar={true}
                   hideTopRightGridScrollbar={true}
-                  rowCount={4}
+                  rowCount={3}
                   rowHeight={40}
                   scrollToColumn={0}
                   scrollToRow={0}

@@ -21,6 +21,7 @@ export default function createReducer(asyncReducers: {
     ...asyncReducers,
     login,
     comment,
+    // @ts-ignore todo check this onne
     tag,
   });
 }

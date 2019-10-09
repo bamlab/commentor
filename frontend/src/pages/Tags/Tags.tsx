@@ -12,6 +12,7 @@ interface IProps {
   tags: TagType[];
   loadTags: () => void;
   isTagLoading: boolean;
+  addTag: () => void;
 }
 
 const Tags = React.memo<IProps>(props => {
@@ -27,7 +28,7 @@ const Tags = React.memo<IProps>(props => {
           <Loader />
         </LoaderContainer>
       )}
-      <Button onClick={() => {}}>
+      <Button onClick={props.addTag} disabled={props.isTagLoading}>
         <FormattedMessage id="tags.add-tag" />
       </Button>
 

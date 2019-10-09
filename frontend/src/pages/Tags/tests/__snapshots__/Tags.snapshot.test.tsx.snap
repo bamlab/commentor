@@ -1,8 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[Snapshot] <Tags /> should render a button with a label 1`] = `
+exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
 <Tagsstyle__StyledTags>
-  <Button>
+  <Tagsstyle__LoaderContainer>
+    <Loader />
+  </Tagsstyle__LoaderContainer>
+  <Button
+    disabled={true}
+    onClick={[MockFunction]}
+  >
     <FormattedMessage
       id="tags.add-tag"
       values={Object {}}
@@ -38,6 +44,7 @@ exports[`[Snapshot] <Tags /> should render a button with a label 1`] = `
       ]
     }
     fixedColumnCount={2}
+    values={Array []}
   />
 </Tagsstyle__StyledTags>
 `;

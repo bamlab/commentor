@@ -27,7 +27,7 @@ export default function configureStore(history) {
   const rootReducer = createReducer({ router: connectRouter(history) });
   const persistConfig = {
     key: 'root',
-    whitelist: ['login'],
+    whitelist: ['login', 'tag', 'comment'],
     storage,
   };
   const persistedReducer = persistReducer(persistConfig, rootReducer);

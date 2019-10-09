@@ -21,8 +21,8 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = ({
       <Logo alt="Forge logo" src={logo} />
     </RouterLink>
     {!isUserLoggedIn && (
-      <Link as="button" onClick={() => {}}>
-        <FormattedMessage id="header.project" />
+      <Link as={RouterLink} to={PATHS.TAGS}>
+        <FormattedMessage id="header.tag" />
       </Link>
     )}
     {!isUserLoggedIn && (

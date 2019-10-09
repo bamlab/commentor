@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Snapshot] <Tags /> should render a button with a label 1`] = `
+<Tagsstyle__StyledTags>
+  <FormattedMessage
+    id="tags.text"
+    values={Object {}}
+  />
+</Tagsstyle__StyledTags>
+`;

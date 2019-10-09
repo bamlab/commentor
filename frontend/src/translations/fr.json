@@ -1,7 +1,7 @@
 {
   "header": {
     "login": "Connexion",
-    "project": "Projet",
+    "tag": "Tags",
     "comment": "Retours",
     "graph": "Graphiques",
     "logout": "Déconnexion"
@@ -25,6 +25,9 @@
   },
   "comments": {
     "tmp": "tmp"
+  },
+  "tags": {
+    "text": "du texte"
   },
   "login": {
     "title": "Démarrer un projet Theodo en quelques secondes",

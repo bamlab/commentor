@@ -27,7 +27,7 @@
     "tmp": "tmp"
   },
   "tags": {
-    "text": "Some text"
+    "add-tag": "Add Tag"
   },
   "login": {
     "title": "Launch your project in seconds",

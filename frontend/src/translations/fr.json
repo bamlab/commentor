@@ -27,7 +27,7 @@
     "tmp": "tmp"
   },
   "tags": {
-    "text": "du texte"
+    "add-tag": "Ajouter un Tag"
   },
   "login": {
     "title": "Démarrer un projet en quelques secondes",

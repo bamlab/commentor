@@ -68,7 +68,7 @@ export const columnsConfig: ColumnType[] = [
       objectId: number | 'id',
       style?: Object,
       options?: Object,
-    ): JSX.Element => defaultTagCellRenderer(key, value, objectId, style),
+    ): JSX.Element => colorCellRenderer(key, value, style),
   },
   {
     index: 5,
@@ -132,6 +132,15 @@ const DeleteIconCellRenderer = (
     </Cell>
   );
 };
+
+const colorCellRenderer = (key: string, value: string, style?: Object): JSX.Element => {
+  return (
+    <Cell key={key} style={{ ...style, backgroundColor: value }}>
+      {value}
+    </Cell>
+  );
+};
+
 const defaultTagCellRenderer = (
   key: string,
   value: any,

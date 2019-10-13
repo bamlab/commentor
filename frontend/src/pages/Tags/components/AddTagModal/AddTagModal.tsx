@@ -15,14 +15,14 @@ type PropsType = {
 export const AddTagModal = (props: PropsType) => {
   const [newCode, setNewCode] = useState('');
   const [newDescription, setNewDescription] = useState('');
-  const [newColor, setNewColor] = useState('#fff');
+  const [newColor, setNewColor] = useState('#000000');
 
   const addTag = async () => {
     props.addTag(newCode, newDescription, newColor);
     props.closeAddTagModal();
     setNewCode('');
     setNewDescription('');
-    setNewColor('#fff');
+    setNewColor('#000000');
   };
 
   return (

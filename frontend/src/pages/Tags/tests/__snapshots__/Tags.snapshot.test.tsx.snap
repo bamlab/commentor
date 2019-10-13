@@ -22,34 +22,39 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
           "index": 0,
           "key": "id",
           "name": "id",
+          "renderer": [Function],
         },
         Object {
           "columnWidth": 300,
           "index": 1,
           "key": "code",
           "name": "code",
+          "renderer": [Function],
         },
         Object {
           "columnWidth": 300,
           "index": 2,
           "key": "description",
           "name": "decription",
+          "renderer": [Function],
         },
         Object {
           "columnWidth": 200,
           "index": 6,
           "key": "creationDate",
           "name": "creationDate",
+          "renderer": [Function],
         },
       ]
     }
-    fixedColumnCount={2}
+    fixedColumnCount={0}
     values={Array []}
   />
   <[object Object]
     contentLabel="Add Tag Modal"
     id="addTagModal"
     isOpen={false}
+    onRequestClose={[Function]}
   >
     <InputRow
       field={

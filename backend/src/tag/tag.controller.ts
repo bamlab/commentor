@@ -19,7 +19,7 @@ export class TagController implements CrudController<TagEntity> {
     public readonly service: TagService,
   ) {}
 
-  get base(): CrudController<Tag> {
+  get base(): CrudController<TagEntity> {
     return this;
   }
 

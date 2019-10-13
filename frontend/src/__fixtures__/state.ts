@@ -1,4 +1,6 @@
-export const state = {
+import { RootState } from 'redux/types';
+
+export const state: RootState = {
   login: {
     token: 'someToken',
     loginError: 'some login error message',
@@ -31,5 +33,6 @@ export const state = {
     ],
     isLoading: true,
     tagError: null,
+    selectedTagId: null,
   },
 };

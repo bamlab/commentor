@@ -1,9 +1,10 @@
 import { state } from '__fixtures__/state';
+import { RootState } from 'redux/types';
 import { getTags, isTagLoading, getErrorMessage, getSelectedTagId } from '../tag.selectors';
 import { TagType } from '..';
 
 const tags: TagType[] = [];
-const initialState = {
+const initialState: RootState = {
   ...state,
   tag: { tags, isLoading: true, tagError: 'some error', selectedTagId: 23 },
 };

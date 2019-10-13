@@ -7,7 +7,7 @@ import { FormattedMessage } from 'react-intl';
 type PropsType = {
   id: string;
   isOpen: boolean;
-  setAddTagModalValue: (value: boolean) => void;
+  closeAddTagModal: () => void;
   addTag: (code: string, description: string) => void;
   isTagLoading: boolean;
 };
@@ -18,7 +18,7 @@ export const AddTagModal = (props: PropsType) => {
 
   const addTag = async () => {
     props.addTag(newCode, newDescription);
-    props.setAddTagModalValue(false);
+    props.closeAddTagModal();
     setNewCode('');
     setNewDescription('');
   };
@@ -28,7 +28,7 @@ export const AddTagModal = (props: PropsType) => {
       id={props.id}
       isOpen={props.isOpen}
       contentLabel="Add Tag Modal"
-      onRequestClose={() => props.setAddTagModalValue(false)}
+      onRequestClose={props.closeAddTagModal}
     >
       <InputRow
         label="code"

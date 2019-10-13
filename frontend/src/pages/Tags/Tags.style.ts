@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledTags = styled.div`
+export const StyledTags = styled.div`
   display: flex;
   flex-direction: column;
 `;
@@ -10,5 +10,6 @@ export const LoaderContainer = styled.div`
   top: 50%;
   left: 50%;
 `;
-
-export default StyledTags;
+export const ErrorMessage = styled.div`
+  color: red;
+`;

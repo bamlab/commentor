@@ -5,6 +5,7 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
   <Tagsstyle__LoaderContainer>
     <Loader />
   </Tagsstyle__LoaderContainer>
+  <Tagsstyle__ErrorMessage />
   <Button
     disabled={true}
     onClick={[Function]}
@@ -71,14 +72,14 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
     values={Array []}
   />
   <Connect(AddTagModal)
+    closeAddTagModal={[Function]}
     id="addTagModal"
     isOpen={false}
-    setAddTagModalValue={[Function]}
   />
   <Connect(UpdateTagModal)
+    closeUpdateModal={[Function]}
     id="updateTagModal"
     isOpen={false}
-    setUpdateTagModalValue={[Function]}
   />
   <Connect(DeleteTagModal)
     closeRemoveTageModal={[Function]}

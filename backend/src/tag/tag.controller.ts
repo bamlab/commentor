@@ -1,4 +1,4 @@
-import { Controller, Body, Post } from '@nestjs/common';
+import { Controller, Body, Delete, Param } from '@nestjs/common';
 
 import { Tag } from './interfaces/tag.dto';
 import { Tag as TagEntity } from './tag.entity';
@@ -23,16 +23,17 @@ export class TagController implements CrudController<TagEntity> {
     return this;
   }
 
-  @Post('delete')
-  async deleteTagById(@Body() tagId: string) {
-    return this.service.deleteTagById(tagId);
-  }
-
   @Override()
   createOne(@Body() tag: Tag) {
     return this.service.createTag({
       code: tag.code,
       description: tag.description,
     });
+  }
+
+  @Delete(':id/delete')
+  async deleteTagById(@Param('id') id: string) {
+    const idNumber = parseInt(id, 10);
+    return this.service.deleteTagById(idNumber);
   }
 }

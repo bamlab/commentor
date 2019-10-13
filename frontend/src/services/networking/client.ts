@@ -50,7 +50,7 @@ class Client {
       promise = promise.set('Authorization', `Bearer ${token}`);
     }
 
-    if (['post', 'put', 'patch'].includes(method) && data) {
+    if (['post', 'put', 'patch', 'delete'].includes(method) && data) {
       promise = promise.send(data);
     }
 
@@ -100,6 +100,10 @@ class Client {
     return this.request('put', endpoint, data);
   }
 
+  delete(endpoint: string, id: number) {
+    return this.request('delete', `${endpoint}/${id}/delete`);
+  }
+
   async login(data: object) {
     const result = await this.post('/auth/jwt/create', data);
     const token: string | undefined = result.token || result.access;
@@ -122,8 +126,8 @@ class Client {
     return result;
   };
 
-  removeTag = async (data: { tagId: string }): Promise<number> => {
-    const numberOfDeletedTags = await this.post('/tags/delete', data);
+  deleteTag = async (tagId: number): Promise<number> => {
+    const numberOfDeletedTags = await this.delete('/tags', tagId);
     return numberOfDeletedTags;
   };
 

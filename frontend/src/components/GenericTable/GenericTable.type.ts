@@ -3,7 +3,7 @@ export type ColumnType = {
   key: string;
   name: string;
   columnWidth: number;
-  renderer: (key: string, value: any, style?: Object) => JSX.Element;
+  renderer: (key: string, value: any, objectId: number | 'id', style?: Object) => JSX.Element;
 };
 
 export type RendererInputType = {

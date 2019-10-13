@@ -16,7 +16,7 @@ export class TagService extends TypeOrmCrudService<Tag> {
     return createdTag;
   };
 
-  deleteTagById = async (tagId: string) => {
-    return this.tagRepository.delete(tagId);
+  deleteTagById = async (id: number) => {
+    return this.tagRepository.delete(id);
   };
 }

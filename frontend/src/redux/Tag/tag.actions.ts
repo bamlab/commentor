@@ -15,6 +15,22 @@ export const loadTags = createAsyncAction(
   }
 >();
 
+export const deleteTag = createAsyncAction(
+  'Tag/DELETE_TAG_REQUEST',
+  'Tag/DELETE_TAG_SUCCESS',
+  'Tag/DELETE_TAG_FAILURE',
+)<
+  {
+    tagId: number;
+  },
+  {
+    tagId: number;
+  },
+  {
+    errorMessage: string;
+  }
+>();
+
 export const addTag = createAsyncAction(
   'Tag/ADD_TAG_REQUEST',
   'Tag/ADD_TAG_SUCCESS',

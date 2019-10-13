@@ -122,6 +122,11 @@ class Client {
     return result;
   };
 
+  removeTag = async (data: { tagId: string }): Promise<number> => {
+    const numberOfDeletedTags = await this.post('/tags/delete', data);
+    return numberOfDeletedTags;
+  };
+
   async logout() {
     const result = await this.post('/auth/jwt/logout', {});
     return result;

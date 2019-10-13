@@ -27,7 +27,8 @@
     "tmp": "tmp"
   },
   "tags": {
-    "add-tag": "Add Tag"
+    "add-tag": "Add Tag",
+    "update-tag": "Update Tag"
   },
   "login": {
     "title": "Launch your Theodo project in seconds",

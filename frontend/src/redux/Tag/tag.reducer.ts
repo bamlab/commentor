@@ -2,7 +2,7 @@ import { ActionType, getType } from 'typesafe-actions';
 
 import { AnyAction } from 'redux';
 import { TagType } from './tag.types';
-import { loadTags, addTag, deleteTag } from './tag.actions';
+import { loadTags, addTag, deleteTag, updateTag } from './tag.actions';
 
 export type TagAction = ActionType<
   | typeof loadTags.success
@@ -14,7 +14,11 @@ export type TagAction = ActionType<
   | typeof deleteTag.success
   | typeof deleteTag.failure
   | typeof deleteTag
+  | typeof updateTag.success
+  | typeof updateTag.failure
+  | typeof updateTag
 >;
+
 export type TagState = Readonly<{
   tags: TagType[];
   tagError: string | null;
@@ -45,6 +49,7 @@ const reducer = (state: TagState = initialState, action: AnyAction) => {
     case getType(addTag.failure):
     case getType(loadTags.failure):
     case getType(deleteTag.failure):
+    case getType(updateTag.failure):
       return {
         ...state,
         tagError: typedAction.payload.errorMessage,
@@ -53,6 +58,7 @@ const reducer = (state: TagState = initialState, action: AnyAction) => {
     case getType(addTag.request):
     case getType(deleteTag.request):
     case getType(loadTags.request):
+    case getType(updateTag.request):
       return {
         ...state,
         isLoading: true,
@@ -62,6 +68,14 @@ const reducer = (state: TagState = initialState, action: AnyAction) => {
         ...state,
         isLoading: false,
         tags: state.tags.filter(tag => tag.id !== typedAction.payload.tagId),
+      };
+    case getType(updateTag.success):
+      return {
+        ...state,
+        isLoading: false,
+        tags: state.tags.map(tag =>
+          tag.id === typedAction.payload.tag.id ? typedAction.payload.tag : tag,
+        ),
       };
     default:
       return state;

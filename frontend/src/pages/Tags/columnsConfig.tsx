@@ -68,7 +68,7 @@ export const columnsConfig: ColumnType[] = [
       objectId: number | 'id',
       style?: Object,
       options?: Object,
-    ): JSX.Element => DeleteIconCellRenderer(key, objectId, style),
+    ): JSX.Element => DeleteIconCellRenderer(key, objectId, style, options),
   },
   {
     index: 8,
@@ -106,10 +106,16 @@ const DeleteIconCellRenderer = (
   key: string,
   objectId: number | 'id',
   style?: Object,
+  options?: Object,
 ): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      {objectId !== 'id' ? <DeleteIcon objectId={objectId} /> : 'Del ?'}
+      {objectId !== 'id' ? (
+        // @ts-ignore
+        <DeleteIcon objectId={objectId} onIconClick={options && options.openDeleteTagModal} />
+      ) : (
+        'Del ?'
+      )}
     </Cell>
   );
 };

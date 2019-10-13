@@ -2,10 +2,15 @@ import React from 'react';
 import { Wrapper } from './DeleteIcon.style';
 
 type propsType = {
-  deleteObject: (id: number) => void;
   objectId: number;
+  onIconClick: () => void;
+  selectTag: (value: number | null) => void;
 };
 
 export const DeleteIcon: React.FunctionComponent<propsType> = props => {
-  return <Wrapper onClick={() => props.deleteObject(props.objectId)} />;
+  const onClick = () => {
+    props.selectTag(props.objectId);
+    props.onIconClick();
+  };
+  return <Wrapper onClick={onClick} />;
 };

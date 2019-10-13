@@ -28,7 +28,8 @@
   },
   "tags": {
     "add-tag": "Ajouter un Tag",
-    "update-tag": "Mettre à jour ce Tag"
+    "update-tag": "Mettre à jour ce Tag",
+    "delete-tag": "Supprimer Tag"
   },
   "login": {
     "title": "Démarrer un projet en quelques secondes",

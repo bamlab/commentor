@@ -53,7 +53,7 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
           "renderer": [Function],
         },
         Object {
-          "columnWidth": 50,
+          "columnWidth": 80,
           "index": 8,
           "key": "update",
           "name": "update",
@@ -62,12 +62,28 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
       ]
     }
     fixedColumnCount={0}
+    options={
+      Object {
+        "openDeleteTagModal": [Function],
+        "openUpdateTagModal": [Function],
+      }
+    }
     values={Array []}
   />
   <Connect(AddTagModal)
     id="addTagModal"
     isOpen={false}
     setAddTagModalValue={[Function]}
+  />
+  <Connect(UpdateTagModal)
+    id="updateTagModal"
+    isOpen={false}
+    setUpdateTagModalValue={[Function]}
+  />
+  <Connect(DeleteTagModal)
+    closeRemoveTageModal={[Function]}
+    id="deleteTagModal"
+    isOpen={false}
   />
 </Tagsstyle__StyledTags>
 `;

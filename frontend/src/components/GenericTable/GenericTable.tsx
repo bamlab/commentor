@@ -27,7 +27,6 @@ export const GenericTable = (props: PropsType) => {
   };
 
   const getValue = (columnIndex: number, rowIndex: number): string | null => {
-    console.log('ada: rowIndex', rowIndex);
     const configKey = getColumnKey(columnIndex);
     if (configKey) return valuesWithHeaders[rowIndex][configKey];
     return null;
@@ -51,6 +50,7 @@ export const GenericTable = (props: PropsType) => {
                 props.columnsConfig[columnIndex].renderer(
                   key,
                   getValue(columnIndex, rowIndex),
+                  valuesWithHeaders[rowIndex].id || null, // null for header or where object has no id
                   style,
                 )) ||
               defaultCellRenderer(key, style)

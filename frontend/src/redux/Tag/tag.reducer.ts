@@ -2,7 +2,7 @@ import { ActionType, getType } from 'typesafe-actions';
 
 import { AnyAction } from 'redux';
 import { TagType } from './tag.types';
-import { loadTags, addTag } from './tag.actions';
+import { loadTags, addTag, deleteTag } from './tag.actions';
 
 export type TagAction = ActionType<
   | typeof loadTags.success
@@ -11,6 +11,9 @@ export type TagAction = ActionType<
   | typeof addTag.success
   | typeof addTag.failure
   | typeof addTag
+  | typeof deleteTag.success
+  | typeof deleteTag.failure
+  | typeof deleteTag
 >;
 export type TagState = Readonly<{
   tags: TagType[];
@@ -41,16 +44,24 @@ const reducer = (state: TagState = initialState, action: AnyAction) => {
       };
     case getType(addTag.failure):
     case getType(loadTags.failure):
+    case getType(deleteTag.failure):
       return {
         ...state,
         tagError: typedAction.payload.errorMessage,
         isLoading: false,
       };
     case getType(addTag.request):
+    case getType(deleteTag.request):
     case getType(loadTags.request):
       return {
         ...state,
         isLoading: true,
+      };
+    case getType(deleteTag.success):
+      return {
+        ...state,
+        isLoading: false,
+        tags: state.tags.filter(tag => tag.id !== typedAction.payload.tagId),
       };
     default:
       return state;

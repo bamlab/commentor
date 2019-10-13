@@ -20,21 +20,15 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = ({
     <RouterLink to={PATHS.HOME}>
       <Logo alt="Forge logo" src={logo} />
     </RouterLink>
-    {!isUserLoggedIn && (
-      <Link as={RouterLink} to={PATHS.TAGS}>
-        <FormattedMessage id="header.tag" />
-      </Link>
-    )}
-    {!isUserLoggedIn && (
-      <Link as={RouterLink} to={PATHS.COMMENTS}>
-        <FormattedMessage id="header.comment" />
-      </Link>
-    )}
-    {!isUserLoggedIn && (
-      <Link as="button" onClick={() => {}}>
-        <FormattedMessage id="header.graph" />
-      </Link>
-    )}
+    <Link as={RouterLink} to={PATHS.TAGS}>
+      <FormattedMessage id="header.tag" />
+    </Link>
+    <Link as={RouterLink} to={PATHS.COMMENTS}>
+      <FormattedMessage id="header.comment" />
+    </Link>
+    <Link as={RouterLink} to={PATHS.GRAPHS}>
+      <FormattedMessage id="header.graph" />
+    </Link>
     {!isUserLoggedIn && location.pathname !== PATHS.LOGIN && (
       <Link as={RouterLink} to={PATHS.LOGIN}>
         <FormattedMessage id="header.login" />

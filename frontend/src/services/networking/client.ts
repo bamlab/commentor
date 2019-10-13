@@ -121,7 +121,7 @@ class Client {
     return result;
   };
 
-  addTag = async (data: { code: string; description: string }): Promise<TagType> => {
+  addTag = async (data: { code: string; description: string; color: string }): Promise<TagType> => {
     const result = await this.post('/tags', data);
     return result;
   };
@@ -135,12 +135,14 @@ class Client {
     tagId: number;
     code: string;
     description: string;
+    color: string;
   }): Promise<TagType> => {
     const result = await this.put(
       '/tags',
-      { code: data.code, description: data.description },
+      { code: data.code, description: data.description, color: data.color },
       data.tagId,
     );
+
     return result;
   };
 

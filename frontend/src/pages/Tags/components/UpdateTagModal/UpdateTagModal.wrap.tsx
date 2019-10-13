@@ -11,8 +11,8 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  updateTag: (tagId: number, code: string, description: string) =>
-    dispatch(updateTag.request({ tagId, code, description })),
+  updateTag: (tagId: number, code: string, description: string, color: string) =>
+    dispatch(updateTag.request({ tagId, code, description, color })),
 });
 
 export default connect(

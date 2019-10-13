@@ -11,6 +11,9 @@ export class Tag {
   @Column({ nullable: false })
   description: string;
 
+  @Column({ nullable: false })
+  color: string;
+
   @Column({ default: () => 'CURRENT_TIMESTAMP' })
   creationDate: Date;
 }

@@ -8,7 +8,7 @@ type PropsType = {
   id: string;
   isOpen: boolean;
   closeUpdateModal: () => void;
-  updateTag: (tagId: number, code: string, description: string) => void;
+  updateTag: (tagId: number, code: string, description: string, color: string) => void;
   isTagLoading: boolean;
   selectedTagId: number | null;
 };
@@ -16,9 +16,10 @@ type PropsType = {
 export const UpdateTagModal = (props: PropsType) => {
   const [newCode, setNewCode] = useState('');
   const [newDescription, setNewDescription] = useState('');
+  const [newColor, setNewColor] = useState('#fff');
 
   const updateTag = async () => {
-    props.selectedTagId && props.updateTag(props.selectedTagId, newCode, newDescription);
+    props.selectedTagId && props.updateTag(props.selectedTagId, newCode, newDescription, newColor);
     props.closeUpdateModal();
   };
 
@@ -50,6 +51,18 @@ export const UpdateTagModal = (props: PropsType) => {
           value: newDescription,
           onChange: event => {
             setNewDescription(event.target.value);
+          },
+        }}
+      />
+      <InputRow
+        label="color"
+        type="text"
+        placeholder="Color..."
+        field={{
+          name: 'color',
+          value: newColor,
+          onChange: event => {
+            setNewColor(event.target.value);
           },
         }}
       />

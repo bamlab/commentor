@@ -38,6 +38,7 @@ export const addTag = createAsyncAction(
 )<
   {
     code: string;
+    color: string;
     description: string;
   },
   {
@@ -57,6 +58,7 @@ export const updateTag = createAsyncAction(
     tagId: number;
     code: string;
     description: string;
+    color: string;
   },
   {
     tag: TagType;

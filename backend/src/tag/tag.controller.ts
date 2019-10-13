@@ -28,6 +28,7 @@ export class TagController implements CrudController<TagEntity> {
     return this.service.createTag({
       code: inputTag.code,
       description: inputTag.description,
+      color: inputTag.color,
     });
   }
 

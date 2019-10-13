@@ -4,7 +4,12 @@ import { shallow } from 'enzyme';
 import Graphs from '../Graphs';
 
 describe('[Component] <Graphs />', () => {
-  const props = {};
+  const props = {
+    tags: [],
+    comments: [],
+    loadComments: jest.fn(),
+    loadTags: jest.fn(),
+  };
 
   it('should do thing', () => {
     const wrapper = shallow(<Graphs {...props} />);

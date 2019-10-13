@@ -10,7 +10,8 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  addTag: (code: string, description: string) => dispatch(addTag.request({ code, description })),
+  addTag: (code: string, description: string, color: string) =>
+    dispatch(addTag.request({ code, description, color })),
 });
 
 export default connect(

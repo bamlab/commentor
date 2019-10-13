@@ -4,12 +4,14 @@ import reducer from '../tag.reducer';
 const tag0 = {
   id: 0,
   code: 'refacto',
+  color: '#fff',
   description: 'this is refacto done with mistake',
   creationDate: new Date(),
 };
 
 const tag1 = {
   id: 1,
+  color: '#fff',
   code: 'readable',
   description: 'This is elegant but remove it ',
   creationDate: new Date(),
@@ -18,6 +20,7 @@ const tag1 = {
 const newTag = {
   id: 2,
   code: 'code',
+  color: '#fff',
   description: 'description',
   creationDate: new Date(),
 };
@@ -31,12 +34,12 @@ describe('Actions test', () => {
       selectedTagId: null,
     };
     test.each`
-      action                                                                        | expectedState
-      ${selectTag.request({ tagId: 12 })}                                           | ${{ ...initialState, selectedTagId: 12 }}
-      ${addTag.request({ code: 'code', description: 'description' })}               | ${{ ...initialState, isLoading: true }}
-      ${loadTags.request({})}                                                       | ${{ ...initialState, isLoading: true }}
-      ${deleteTag.request({ tagId: 1 })}                                            | ${{ ...initialState, isLoading: true }}
-      ${updateTag.request({ tagId: 12, code: 'code', description: 'description' })} | ${{ ...initialState, isLoading: true }}
+      action                                                                                       | expectedState
+      ${selectTag.request({ tagId: 12 })}                                                          | ${{ ...initialState, selectedTagId: 12 }}
+      ${addTag.request({ code: 'code', description: 'description', color: '#fff' })}               | ${{ ...initialState, isLoading: true }}
+      ${loadTags.request({})}                                                                      | ${{ ...initialState, isLoading: true }}
+      ${deleteTag.request({ tagId: 1 })}                                                           | ${{ ...initialState, isLoading: true }}
+      ${updateTag.request({ tagId: 12, code: 'code', description: 'description', color: '#fff' })} | ${{ ...initialState, isLoading: true }}
     `(
       'should the expected value',
 

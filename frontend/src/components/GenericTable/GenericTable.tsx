@@ -19,7 +19,7 @@ export const GenericTable = (props: PropsType) => {
 
   const valuesWithHeaders: any[] = [header, ...props.values];
 
-  const defaultCellRenderer = (key: string, style?: Object): JSX.Element => {
+  const defaultCellRenderer = (key: string, style?: Object, options?: Object): JSX.Element => {
     return (
       <Cell key={key} style={style}>
         Empty
@@ -53,6 +53,7 @@ export const GenericTable = (props: PropsType) => {
                   getValue(columnIndex, rowIndex),
                   valuesWithHeaders[rowIndex].id || null, // null for header or where object has no id
                   style,
+                  props.options,
                 )) ||
               defaultCellRenderer(key, style)
             }

@@ -66,4 +66,19 @@ export const updateTag = createAsyncAction(
   }
 >();
 
+export const selectTag = createAsyncAction(
+  'Tag/SELECT_TAG_REQUEST',
+  'Tag/SELECT_TAG_SUCCESS',
+  'Tag/SELECT_TAG_FAILURE',
+)<
+  {
+    tagId: number | null;
+  },
+  {
+    // not used
+  },
+  {
+    // not used
+  }
+>();
 export default { loadTags, addTag, deleteTag, updateTag };

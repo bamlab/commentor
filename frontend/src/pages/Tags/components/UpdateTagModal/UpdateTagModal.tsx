@@ -26,7 +26,7 @@ export const UpdateTagModal = (props: PropsType) => {
     <Modal
       id={props.id}
       isOpen={props.isOpen}
-      contentLabel="Add Tag Modal"
+      contentLabel="Update Tag Modal"
       onRequestClose={() => props.setUpdateTagModalValue(false)}
     >
       <InputRow

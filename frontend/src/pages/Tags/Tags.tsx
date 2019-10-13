@@ -9,6 +9,7 @@ import Button from 'components/Button';
 import { FormattedMessage } from 'react-intl';
 import AddTagModal from './components/AddTagModal';
 import UpdateTagModal from './components/UpdateTagModal';
+import DeleteTagModal from './components/DeleteTagModal';
 
 interface IProps {
   tags: TagType[];
@@ -19,6 +20,7 @@ interface IProps {
 const Tags = React.memo<IProps>(props => {
   const [isAddTagModalOpen, setAddTagModalValue] = useState(false);
   const [isUpdateTagModalOpen, setUpdateTagModalValue] = useState(false);
+  const [isDeleteTagModalOpen, setDeleteTagModalValue] = useState(false);
 
   useEffect(() => {
     props.loadTags();
@@ -40,7 +42,10 @@ const Tags = React.memo<IProps>(props => {
         columnsConfig={columnsConfig}
         values={props.tags}
         fixedColumnCount={fixedColumnCount}
-        options={{ openUpdateTagModal: () => setUpdateTagModalValue(true) }}
+        options={{
+          openUpdateTagModal: () => setUpdateTagModalValue(true),
+          openDeleteTagModal: () => setDeleteTagModalValue(true),
+        }}
       />
       <AddTagModal
         id="addTagModal"
@@ -48,9 +53,14 @@ const Tags = React.memo<IProps>(props => {
         setAddTagModalValue={setAddTagModalValue}
       />
       <UpdateTagModal
-        id="ediTagModal"
+        id="updateTagModal"
         isOpen={isUpdateTagModalOpen}
         setUpdateTagModalValue={setUpdateTagModalValue}
+      />
+      <DeleteTagModal
+        id="deleteTagModal"
+        isOpen={isDeleteTagModalOpen}
+        closeRemoveTageModal={() => setDeleteTagModalValue(false)}
       />
     </StyledTags>
   );

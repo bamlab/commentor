@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { RootState } from 'redux/types';
-import { UpdateTagModal } from './UpdateTagModal';
+import { DeleteTagModal } from './DeleteTagModal';
 import { Dispatch } from 'redux';
-import { updateTag } from 'redux/Tag/tag.actions';
+import { deleteTag } from 'redux/Tag/tag.actions';
 import { isTagLoading, getSelectedTagId } from 'redux/Tag/tag.selectors';
 
 const mapStateToProps = (state: RootState) => ({
@@ -11,11 +11,10 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  updateTag: (tagId: number, code: string, description: string) =>
-    dispatch(updateTag.request({ tagId, code, description })),
+  deleteTag: (tagId: number) => dispatch(deleteTag.request({ tagId })),
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(UpdateTagModal);
+)(DeleteTagModal);

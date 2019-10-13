@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Snapshot] <Tags /> should render Graphs page 1`] = `
+<Graphsstyle__StyledGraphs>
+  COUCOU
+</Graphsstyle__StyledGraphs>
+`;

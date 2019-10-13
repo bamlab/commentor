@@ -2,6 +2,7 @@ import React from 'react';
 import { ColumnType } from 'components/GenericTable/GenericTable.type';
 import { Cell } from 'components/GenericTable/GenericTable.style';
 import DeleteIcon from './components/DeleteIcon';
+import UpdateIcon from './components/UpdateIcon';
 
 export const columnsConfig: ColumnType[] = [
   {
@@ -42,13 +43,31 @@ export const columnsConfig: ColumnType[] = [
     name: 'delete',
     columnWidth: 50,
     renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      IconCellRenderer(key, value, objectId, style),
+      DeleteIconCellRenderer(key, objectId, style),
+  },
+  {
+    index: 8,
+    key: 'update',
+    name: 'update',
+    columnWidth: 50,
+    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
+      UpdateIconCellRenderer(key, objectId, style),
   },
 ];
 
-const IconCellRenderer = (
+const UpdateIconCellRenderer = (
   key: string,
-  value: string,
+  objectId: number | 'id',
+  style?: Object,
+): JSX.Element => {
+  return (
+    <Cell key={key} style={style}>
+      {objectId !== 'id' ? <UpdateIcon objectId={objectId} /> : 'Update ?'}
+    </Cell>
+  );
+};
+const DeleteIconCellRenderer = (
+  key: string,
   objectId: number | 'id',
   style?: Object,
 ): JSX.Element => {

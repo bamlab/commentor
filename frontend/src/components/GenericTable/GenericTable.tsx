@@ -7,6 +7,7 @@ interface PropsType {
   values: any[];
   columnsConfig: ColumnType[];
   fixedColumnCount: number;
+  options?: Object;
 }
 
 export const GenericTable = (props: PropsType) => {

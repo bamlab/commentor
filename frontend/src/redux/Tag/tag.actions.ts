@@ -48,4 +48,22 @@ export const addTag = createAsyncAction(
   }
 >();
 
-export default { loadTags, addTag };
+export const updateTag = createAsyncAction(
+  'Tag/UPDATE_TAG_REQUEST',
+  'Tag/UPDATE_TAG_SUCCESS',
+  'Tag/UPDATE_TAG_FAILURE',
+)<
+  {
+    tagId: number;
+    code: string;
+    description: string;
+  },
+  {
+    tag: TagType;
+  },
+  {
+    errorMessage: string;
+  }
+>();
+
+export default { loadTags, addTag, deleteTag, updateTag };

@@ -6,6 +6,9 @@ export const Cell = styled.div`
   justify-content: center;
   border-bottom: 1px solid #eee;
   border-right: 1px solid #eee;
+  &:hover {
+    background-color: orange;
+  }
 `;
 
 export const STYLE = {

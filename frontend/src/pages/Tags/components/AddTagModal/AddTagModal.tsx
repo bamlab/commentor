@@ -58,7 +58,7 @@ export const AddTagModal = (props: PropsType) => {
       />
       <InputRow
         label="color"
-        type="text"
+        type="color"
         placeholder="Color..."
         field={{
           name: 'color',

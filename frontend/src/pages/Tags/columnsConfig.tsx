@@ -35,8 +35,23 @@ export const columnsConfig: ColumnType[] = [
     renderer: (key: string, value: any, style?: Object): JSX.Element =>
       defaultTagCellRenderer(key, value, style),
   },
+  {
+    index: 7,
+    key: 'delete',
+    name: 'delete',
+    columnWidth: 50,
+    renderer: (key: string, value: any, style?: Object): JSX.Element =>
+      IconCellRenderer(key, value, style),
+  },
 ];
 
+const IconCellRenderer = (key: string, value: string, style?: Object): JSX.Element => {
+  return (
+    <Cell key={key} style={style}>
+      this is icon
+    </Cell>
+  );
+};
 const defaultTagCellRenderer = (key: string, value: string, style?: Object): JSX.Element => {
   return (
     <Cell key={key} style={style}>

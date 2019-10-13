@@ -45,6 +45,13 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
           "name": "creationDate",
           "renderer": [Function],
         },
+        Object {
+          "columnWidth": 50,
+          "index": 7,
+          "key": "delete",
+          "name": "delete",
+          "renderer": [Function],
+        },
       ]
     }
     fixedColumnCount={0}

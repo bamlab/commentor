@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LoaderContainer } from './Tags.style';
 import Loader from 'components/Loader';
 import { GenericTable } from 'components/GenericTable/GenericTable';
-import StyledTags from './Tags.style';
+import { StyledTags, ErrorMessage } from './Tags.style';
 import { TagType } from 'redux/Tag';
 import { columnsConfig, fixedColumnCount } from './columnsConfig';
 import Button from 'components/Button';
@@ -15,6 +15,7 @@ interface IProps {
   tags: TagType[];
   loadTags: () => void;
   isTagLoading: boolean;
+  errorMessage: string | null;
 }
 
 const Tags = React.memo<IProps>(props => {
@@ -34,6 +35,7 @@ const Tags = React.memo<IProps>(props => {
           <Loader />
         </LoaderContainer>
       )}
+      <ErrorMessage>{props.errorMessage || ''}</ErrorMessage>
       <Button onClick={() => setAddTagModalValue(true)} disabled={props.isTagLoading}>
         <FormattedMessage id="tags.add-tag" />
       </Button>
@@ -50,12 +52,12 @@ const Tags = React.memo<IProps>(props => {
       <AddTagModal
         id="addTagModal"
         isOpen={isAddTagModalOpen}
-        setAddTagModalValue={setAddTagModalValue}
+        closeAddTagModal={() => setAddTagModalValue(false)}
       />
       <UpdateTagModal
         id="updateTagModal"
         isOpen={isUpdateTagModalOpen}
-        setUpdateTagModalValue={setUpdateTagModalValue}
+        closeUpdateModal={() => setUpdateTagModalValue(false)}
       />
       <DeleteTagModal
         id="deleteTagModal"

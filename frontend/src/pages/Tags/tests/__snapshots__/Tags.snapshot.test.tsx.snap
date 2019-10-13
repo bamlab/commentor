@@ -57,45 +57,10 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
     fixedColumnCount={0}
     values={Array []}
   />
-  <[object Object]
-    contentLabel="Add Tag Modal"
+  <Connect(AddTagModal)
     id="addTagModal"
     isOpen={false}
-    onRequestClose={[Function]}
-  >
-    <InputRow
-      field={
-        Object {
-          "name": "code",
-          "onChange": [Function],
-          "value": "",
-        }
-      }
-      label="code"
-      placeholder="Code..."
-      type="text"
-    />
-    <InputRow
-      field={
-        Object {
-          "name": "description",
-          "onChange": [Function],
-          "value": "",
-        }
-      }
-      label="description"
-      placeholder="Description..."
-      type="text"
-    />
-    <Button
-      disabled={true}
-      onClick={[Function]}
-    >
-      <FormattedMessage
-        id="tags.add-tag"
-        values={Object {}}
-      />
-    </Button>
-  </[object Object]>
+    setAddTagModalValue={[Function]}
+  />
 </Tagsstyle__StyledTags>
 `;

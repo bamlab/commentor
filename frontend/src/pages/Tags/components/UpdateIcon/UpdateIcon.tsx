@@ -2,10 +2,15 @@ import React from 'react';
 import { Wrapper } from './UpdateIcon.style';
 
 type propsType = {
-  updateTag: (tagId: number, code: string, description: string) => void;
   objectId: number;
+  onIconClick: () => void;
+  selectTag: (value: number | null) => void;
 };
 
 export const UpdateIcon: React.FunctionComponent<propsType> = props => {
-  return <Wrapper onClick={() => props.updateTag(props.objectId, 'edited', 'edited')} />;
+  const onClick = () => {
+    props.selectTag(props.objectId);
+    props.onIconClick();
+  };
+  return <Wrapper onClick={onClick} />;
 };

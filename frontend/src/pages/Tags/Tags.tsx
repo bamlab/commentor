@@ -8,6 +8,7 @@ import { columnsConfig, fixedColumnCount } from './columnsConfig';
 import Button from 'components/Button';
 import { FormattedMessage } from 'react-intl';
 import AddTagModal from './components/AddTagModal';
+import UpdateTagModal from './components/UpdateTagModal';
 
 interface IProps {
   tags: TagType[];
@@ -17,6 +18,7 @@ interface IProps {
 
 const Tags = React.memo<IProps>(props => {
   const [isAddTagModalOpen, setAddTagModalValue] = useState(false);
+  const [isUpdateTagModalOpen, setUpdateTagModalValue] = useState(false);
 
   useEffect(() => {
     props.loadTags();
@@ -38,11 +40,17 @@ const Tags = React.memo<IProps>(props => {
         columnsConfig={columnsConfig}
         values={props.tags}
         fixedColumnCount={fixedColumnCount}
+        options={{ openUpdateTagModal: () => setUpdateTagModalValue(true) }}
       />
       <AddTagModal
         id="addTagModal"
         isOpen={isAddTagModalOpen}
         setAddTagModalValue={setAddTagModalValue}
+      />
+      <UpdateTagModal
+        id="ediTagModal"
+        isOpen={isUpdateTagModalOpen}
+        setUpdateTagModalValue={setUpdateTagModalValue}
       />
     </StyledTags>
   );

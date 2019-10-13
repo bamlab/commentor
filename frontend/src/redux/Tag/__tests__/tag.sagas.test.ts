@@ -9,18 +9,24 @@ import { addTag, deleteTag, updateTag, loadTags } from '../tag.actions';
 import { addTagSaga, updateTagSaga, deleteTagSaga, loadTagsSaga } from '../tag.sagas';
 
 const loadTagsRequestAction = loadTags.request({});
-const addTagsRequestAction = addTag.request({ code: 'code', description: 'description' });
+const addTagsRequestAction = addTag.request({
+  code: 'code',
+  description: 'description',
+  color: '#fff',
+});
 const deleteTagsRequestAction = deleteTag.request({ tagId: 1 });
 const updateTagsRequestAction = updateTag.request({
   tagId: 1,
   code: 'code',
   description: 'description',
+  color: '#fff',
 });
 
 const tag = {
   id: 2,
   code: 'refacto',
   description: 'this is refacto done with mistake',
+  color: '#fff',
   creationDate: new Date(),
 };
 const tags = [tag];

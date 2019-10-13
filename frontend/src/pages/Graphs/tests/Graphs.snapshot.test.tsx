@@ -9,7 +9,12 @@ Snapshot tests allow you to easily lock the comportment of a component.
 Given props, it renders the component and compares it to the saved snapshot.
 */
 describe('[Snapshot] <Tags />', () => {
-  const props = {};
+  const props = {
+    tags: [],
+    comments: [],
+    loadComments: jest.fn(),
+    loadTags: jest.fn(),
+  };
   it('should render Graphs page', () => {
     const wrapper = shallow(<Graphs {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();

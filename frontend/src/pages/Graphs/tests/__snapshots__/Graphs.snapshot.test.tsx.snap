@@ -2,6 +2,27 @@
 
 exports[`[Snapshot] <Tags /> should render Graphs page 1`] = `
 <Graphsstyle__StyledGraphs>
-  COUCOU
+  <Doughnut
+    data={
+      Object {
+        "datasets": Array [
+          Object {
+            "backgroundColor": Array [
+              "#000",
+            ],
+            "data": Array [
+              0,
+            ],
+            "hoverBackgroundColor": Array [
+              "#51d",
+            ],
+          },
+        ],
+        "labels": Array [
+          "⁉️",
+        ],
+      }
+    }
+  />
 </Graphsstyle__StyledGraphs>
 `;

@@ -24,7 +24,13 @@ const Graphs = React.memo<IProps>(props => {
     return data;
   };
 
-  // ths is best-effort
+  const getTagColor = (tags: TagType[]): string[] => {
+    let data = tags.map(data => data.color);
+    data.push('#000'); // add no label color
+    return data;
+  };
+
+  // ths is best-effort 😇
   const getCommentData = (comments: CommentType[], tags: TagType[]): number[] => {
     const labels = tags.map(data => data.code);
     let data: number[] = new Array(labels.length + 1); // add no label label
@@ -49,8 +55,8 @@ const Graphs = React.memo<IProps>(props => {
     datasets: [
       {
         data: getCommentData(props.comments, props.tags),
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#e21313', '#faa'],
-        hoverBackgroundColor: ['#aa6384', '#aaA2EB', '#aaCE56', '#aa1313', '#aaa'],
+        backgroundColor: getTagColor(props.tags),
+        hoverBackgroundColor: getTagColor(props.tags).map(() => '#51d'),
       },
     ],
   };

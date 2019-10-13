@@ -45,7 +45,7 @@ export const columnsConfig: ColumnType[] = [
     ): JSX.Element => defaultTagCellRenderer(key, value, objectId, style),
   },
   {
-    index: 6,
+    index: 3,
     key: 'creationDate',
     name: 'creationDate',
     columnWidth: 200,
@@ -58,7 +58,20 @@ export const columnsConfig: ColumnType[] = [
     ): JSX.Element => defaultTagCellRenderer(key, value, objectId, style),
   },
   {
-    index: 7,
+    index: 4,
+    key: 'color',
+    name: 'color',
+    columnWidth: 100,
+    renderer: (
+      key: string,
+      value: any,
+      objectId: number | 'id',
+      style?: Object,
+      options?: Object,
+    ): JSX.Element => defaultTagCellRenderer(key, value, objectId, style),
+  },
+  {
+    index: 5,
     key: 'delete',
     name: 'delete',
     columnWidth: 50,
@@ -71,7 +84,7 @@ export const columnsConfig: ColumnType[] = [
     ): JSX.Element => DeleteIconCellRenderer(key, objectId, style, options),
   },
   {
-    index: 8,
+    index: 6,
     key: 'update',
     name: 'update',
     columnWidth: 80,

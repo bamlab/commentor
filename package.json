@@ -1,0 +1,11 @@
+{
+  "name": "commentor",
+  "version": "0.0.0",
+  "description": "description",
+  "author": "BAM",
+  "license": "MIT",
+  "scripts": {
+    "deploy:api:staging": "git subtree push --prefix backend api-staging master"
+  },
+  "dependencies": {}
+}

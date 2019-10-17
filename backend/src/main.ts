@@ -18,6 +18,6 @@ async function bootstrap() {
   app.useGlobalFilters(new EntityNotFoundFilter());
   app.useGlobalFilters(new QueryFailedFilter());
 
-  await app.listen(process.env.SERVER_PORT);
+  await app.listen(process.env.PORT);
 }
 bootstrap();

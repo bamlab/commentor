@@ -12,7 +12,7 @@ export class TagService extends TypeOrmCrudService<TagEntity> {
     super(tagRepository);
   }
 
-  createTag = async (tag: Pick<TagEntity, 'code' | 'description'>) => {
+  createTag = async (tag: Pick<TagEntity, 'code' | 'description' | 'color'>) => {
     const createdTag = await this.tagRepository.save(tag);
     return createdTag;
   };

@@ -27,6 +27,7 @@ export const state: RootState = {
       {
         id: 2,
         code: 'refacto',
+        color: '#fff',
         description: 'this is refacto done with mistake',
         creationDate: new Date(),
       },

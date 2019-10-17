@@ -1,24 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal } from 'components/Modal/Modal';
 import InputRow from 'components/InputRow';
 import Button from 'components/Button';
 import { FormattedMessage } from 'react-intl';
+import { TagType } from 'redux/Tag';
 
 type PropsType = {
   id: string;
   isOpen: boolean;
   closeUpdateModal: () => void;
-  updateTag: (tagId: number, code: string, description: string) => void;
+  updateTag: (tagId: number, code: string, description: string, color: string) => void;
   isTagLoading: boolean;
-  selectedTagId: number | null;
+  selectedTag: TagType;
 };
 
 export const UpdateTagModal = (props: PropsType) => {
   const [newCode, setNewCode] = useState('');
   const [newDescription, setNewDescription] = useState('');
+  const [newColor, setNewColor] = useState('#000000');
+
+  useEffect(
+    () => {
+      setNewCode(props.selectedTag.code);
+      setNewDescription(props.selectedTag.description);
+      setNewColor(props.selectedTag.color);
+    },
+    [props.selectedTag],
+  );
 
   const updateTag = async () => {
-    props.selectedTagId && props.updateTag(props.selectedTagId, newCode, newDescription);
+    props.updateTag(props.selectedTag.id, newCode, newDescription, newColor);
     props.closeUpdateModal();
   };
 
@@ -50,6 +61,18 @@ export const UpdateTagModal = (props: PropsType) => {
           value: newDescription,
           onChange: event => {
             setNewDescription(event.target.value);
+          },
+        }}
+      />
+      <InputRow
+        label="color"
+        type="color"
+        placeholder="Color..."
+        field={{
+          name: 'color',
+          value: newColor,
+          onChange: event => {
+            setNewColor(event.target.value);
           },
         }}
       />

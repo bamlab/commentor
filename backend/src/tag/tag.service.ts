@@ -18,11 +18,9 @@ export class TagService extends TypeOrmCrudService<TagEntity> {
   };
 
   updateById = async (tag: InputTag, tagId: number): Promise<TagEntity | void> => {
-    const result = await this.tagRepository.update(tagId, tag);
-    if (result.affected > 0) {
-      const updatedTag = await this.tagRepository.findOne({ id: tagId });
-      return updatedTag;
-    }
+    await this.tagRepository.update(tagId, tag);
+    const updatedTag = await this.tagRepository.findOne({ id: tagId });
+    return updatedTag;
   };
 
   deleteTagById = async (id: number) => {

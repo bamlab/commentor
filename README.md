@@ -13,11 +13,11 @@ A Github App to help you analyze github comments 📈
 - get dependencies: `cd backend` && `yarn install`
 - create file `.env` in folder with secret key with same format `.env.example`
 - create db in docker container: `docker-compose up`
-- exec `yarn start` when db is up
+- run `yarn start:dev` when db is up
 
-execute migration:
+run migration:
 
-- exec `yarn migration:run`
+- run `yarn migration:run`
 
 # frontend
 

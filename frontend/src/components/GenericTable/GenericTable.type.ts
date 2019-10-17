@@ -3,7 +3,13 @@ export type ColumnType = {
   key: string;
   name: string;
   columnWidth: number;
-  // renderer: ({ columnIndex, key, rowIndex, style }: RendererInputType) => JSX.Element;
+  renderer: (
+    key: string,
+    value: any,
+    objectId: number | 'id',
+    style?: Object,
+    options?: Object,
+  ) => JSX.Element;
 };
 
 export type RendererInputType = {

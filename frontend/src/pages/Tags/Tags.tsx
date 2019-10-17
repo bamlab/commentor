@@ -1,33 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { LoaderContainer } from './Tags.style';
 import Loader from 'components/Loader';
 import { GenericTable } from 'components/GenericTable/GenericTable';
-import StyledTags from './Tags.style';
+import { StyledTags, ErrorMessage } from './Tags.style';
 import { TagType } from 'redux/Tag';
 import { columnsConfig, fixedColumnCount } from './columnsConfig';
 import Button from 'components/Button';
-import { Modal } from 'components/Modal/Modal';
-import InputRow from 'components/InputRow';
+import { FormattedMessage } from 'react-intl';
+import AddTagModal from './components/AddTagModal';
+import UpdateTagModal from './components/UpdateTagModal';
+import DeleteTagModal from './components/DeleteTagModal';
 
 interface IProps {
   tags: TagType[];
   loadTags: () => void;
   isTagLoading: boolean;
-  addTag: (code: string, description: string) => void;
+  errorMessage: string | null;
 }
 
 const Tags = React.memo<IProps>(props => {
   const [isAddTagModalOpen, setAddTagModalValue] = useState(false);
-  const [newCode, setNewCode] = useState('');
-  const [newDescription, setNewDescription] = useState('');
+  const [isUpdateTagModalOpen, setUpdateTagModalValue] = useState(false);
+  const [isDeleteTagModalOpen, setDeleteTagModalValue] = useState(false);
 
-  const addTag = async () => {
-    props.addTag(newCode, newDescription);
-    setAddTagModalValue(false);
-    setNewCode('');
-    setNewDescription('');
-  };
   useEffect(() => {
     props.loadTags();
     // eslint-disable-next-line
@@ -40,6 +35,7 @@ const Tags = React.memo<IProps>(props => {
           <Loader />
         </LoaderContainer>
       )}
+      <ErrorMessage>{props.errorMessage || ''}</ErrorMessage>
       <Button onClick={() => setAddTagModalValue(true)} disabled={props.isTagLoading}>
         <FormattedMessage id="tags.add-tag" />
       </Button>
@@ -48,41 +44,26 @@ const Tags = React.memo<IProps>(props => {
         columnsConfig={columnsConfig}
         values={props.tags}
         fixedColumnCount={fixedColumnCount}
+        options={{
+          openUpdateTagModal: () => setUpdateTagModalValue(true),
+          openDeleteTagModal: () => setDeleteTagModalValue(true),
+        }}
       />
-      <Modal
+      <AddTagModal
         id="addTagModal"
         isOpen={isAddTagModalOpen}
-        contentLabel="Add Tag Modal"
-        onRequestClose={() => setAddTagModalValue(false)}
-      >
-        <InputRow
-          label="code"
-          type="text"
-          placeholder="Code..."
-          field={{
-            name: 'code',
-            value: newCode,
-            onChange: event => {
-              setNewCode(event.target.value);
-            },
-          }}
-        />
-        <InputRow
-          label="description"
-          type="text"
-          placeholder="Description..."
-          field={{
-            name: 'description',
-            value: newDescription,
-            onChange: event => {
-              setNewDescription(event.target.value);
-            },
-          }}
-        />
-        <Button onClick={addTag} disabled={props.isTagLoading}>
-          <FormattedMessage id="tags.add-tag" />
-        </Button>
-      </Modal>
+        closeAddTagModal={() => setAddTagModalValue(false)}
+      />
+      <UpdateTagModal
+        id="updateTagModal"
+        isOpen={isUpdateTagModalOpen}
+        closeUpdateModal={() => setUpdateTagModalValue(false)}
+      />
+      <DeleteTagModal
+        id="deleteTagModal"
+        isOpen={isDeleteTagModalOpen}
+        closeRemoveTageModal={() => setDeleteTagModalValue(false)}
+      />
     </StyledTags>
   );
 });

@@ -15,13 +15,4 @@ describe('[Component] <Tags />', () => {
     const wrapper = shallow(<Tags {...props} />);
     expect(wrapper.find('#addTagModal').props().isOpen).toBe(false);
   });
-
-  it('should call addTag on button1  click', () => {
-    const wrapper = shallow(<Tags {...props} />);
-    wrapper
-      .find('Button')
-      .at(1)
-      .simulate('click');
-    expect(props.addTag).toHaveBeenCalledWith('', '');
-  });
 });

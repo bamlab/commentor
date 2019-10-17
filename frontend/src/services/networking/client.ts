@@ -50,7 +50,7 @@ class Client {
       promise = promise.set('Authorization', `Bearer ${token}`);
     }
 
-    if (['post', 'put', 'patch'].includes(method) && data) {
+    if (['post', 'put', 'patch', 'delete'].includes(method) && data) {
       promise = promise.send(data);
     }
 
@@ -96,8 +96,12 @@ class Client {
     return this.request('post', endpoint, data);
   }
 
-  put(endpoint: string, data: object) {
-    return this.request('put', endpoint, data);
+  put(endpoint: string, data: object, id: number) {
+    return this.request('put', `${endpoint}/${id}/update`, data);
+  }
+
+  delete(endpoint: string, id: number) {
+    return this.request('delete', `${endpoint}/${id}/delete`);
   }
 
   async login(data: object) {
@@ -117,8 +121,26 @@ class Client {
     return result;
   };
 
-  addTag = async (data: object): Promise<TagType> => {
+  addTag = async (data: { code: string; description: string }): Promise<TagType> => {
     const result = await this.post('/tags', data);
+    return result;
+  };
+
+  deleteTag = async (tagId: number): Promise<number> => {
+    const numberOfDeletedTags = await this.delete('/tags', tagId);
+    return numberOfDeletedTags;
+  };
+
+  updateTag = async (data: {
+    tagId: number;
+    code: string;
+    description: string;
+  }): Promise<TagType> => {
+    const result = await this.put(
+      '/tags',
+      { code: data.code, description: data.description },
+      data.tagId,
+    );
     return result;
   };
 

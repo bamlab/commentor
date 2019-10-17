@@ -87,48 +87,56 @@ exports[`Storyshots GenericTable playground 1`] = `
             "index": 0,
             "key": "id",
             "name": "id",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 300,
             "index": 1,
             "key": "body",
             "name": "body",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 300,
             "index": 2,
             "key": "filePath",
             "name": "filePath",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 300,
             "index": 3,
             "key": "url",
             "name": "url",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 200,
             "index": 4,
             "key": "commentor",
             "name": "commentor",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 200,
             "index": 5,
             "key": "pullRequestUrl",
             "name": "pullRequestUrl",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 200,
             "index": 6,
             "key": "repositoryId",
             "name": "repositoryId",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 200,
             "index": 6,
             "key": "creationDate",
             "name": "creationDate",
+            "renderer": [Function],
           },
         ]
       }
@@ -149,23 +157,23 @@ exports[`Storyshots GenericTable playground 1`] = `
         ]
       }
     >
-      <GenericTable__Wrapper>
+      <GenericTablestyle__Wrapper>
         <StyledComponent
           forwardedClass={
             Object {
               "$$typeof": Symbol(react.forward_ref),
               "attrs": Array [],
               "componentStyle": ComponentStyle {
-                "componentId": "GenericTable__Wrapper-sc-1d4ovw3-0",
+                "componentId": "GenericTablestyle__Wrapper-sc-13rcpxg-1",
                 "isStatic": true,
-                "lastClassName": "bUHYlT",
+                "lastClassName": "nneDj",
                 "rules": Array [
                   "flex:1 1 auto;display:flex;flex-direction:column;",
                 ],
               },
-              "displayName": "GenericTable__Wrapper",
+              "displayName": "GenericTablestyle__Wrapper",
               "render": [Function],
-              "styledComponentId": "GenericTable__Wrapper-sc-1d4ovw3-0",
+              "styledComponentId": "GenericTablestyle__Wrapper-sc-13rcpxg-1",
               "target": "div",
               "toString": [Function],
               "warnTooManyClasses": [Function],
@@ -175,7 +183,7 @@ exports[`Storyshots GenericTable playground 1`] = `
           forwardedRef={null}
         >
           <div
-            className="GenericTable__Wrapper-sc-1d4ovw3-0 bUHYlT"
+            className="GenericTablestyle__Wrapper-sc-13rcpxg-1 nneDj"
           >
             <AutoSizer
               disableHeight={false}
@@ -226,7 +234,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             </AutoSizer>
           </div>
         </StyledComponent>
-      </GenericTable__Wrapper>
+      </GenericTablestyle__Wrapper>
     </GenericTable>
   </div>
   <button
@@ -342,71 +350,79 @@ exports[`Storyshots GenericTable with empty comments 1`] = `
             "index": 0,
             "key": "id",
             "name": "id",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 300,
             "index": 1,
             "key": "body",
             "name": "body",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 300,
             "index": 2,
             "key": "filePath",
             "name": "filePath",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 300,
             "index": 3,
             "key": "url",
             "name": "url",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 200,
             "index": 4,
             "key": "commentor",
             "name": "commentor",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 200,
             "index": 5,
             "key": "pullRequestUrl",
             "name": "pullRequestUrl",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 200,
             "index": 6,
             "key": "repositoryId",
             "name": "repositoryId",
+            "renderer": [Function],
           },
           Object {
             "columnWidth": 200,
             "index": 6,
             "key": "creationDate",
             "name": "creationDate",
+            "renderer": [Function],
           },
         ]
       }
       fixedColumnCount={2}
       values={Array []}
     >
-      <GenericTable__Wrapper>
+      <GenericTablestyle__Wrapper>
         <StyledComponent
           forwardedClass={
             Object {
               "$$typeof": Symbol(react.forward_ref),
               "attrs": Array [],
               "componentStyle": ComponentStyle {
-                "componentId": "GenericTable__Wrapper-sc-1d4ovw3-0",
+                "componentId": "GenericTablestyle__Wrapper-sc-13rcpxg-1",
                 "isStatic": true,
-                "lastClassName": "bUHYlT",
+                "lastClassName": "nneDj",
                 "rules": Array [
                   "flex:1 1 auto;display:flex;flex-direction:column;",
                 ],
               },
-              "displayName": "GenericTable__Wrapper",
+              "displayName": "GenericTablestyle__Wrapper",
               "render": [Function],
-              "styledComponentId": "GenericTable__Wrapper-sc-1d4ovw3-0",
+              "styledComponentId": "GenericTablestyle__Wrapper-sc-13rcpxg-1",
               "target": "div",
               "toString": [Function],
               "warnTooManyClasses": [Function],
@@ -416,7 +432,7 @@ exports[`Storyshots GenericTable with empty comments 1`] = `
           forwardedRef={null}
         >
           <div
-            className="GenericTable__Wrapper-sc-1d4ovw3-0 bUHYlT"
+            className="GenericTablestyle__Wrapper-sc-13rcpxg-1 nneDj"
           >
             <AutoSizer
               disableHeight={false}
@@ -467,7 +483,7 @@ exports[`Storyshots GenericTable with empty comments 1`] = `
             </AutoSizer>
           </div>
         </StyledComponent>
-      </GenericTable__Wrapper>
+      </GenericTablestyle__Wrapper>
     </GenericTable>
   </div>
   <button

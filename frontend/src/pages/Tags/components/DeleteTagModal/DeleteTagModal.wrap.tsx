@@ -1,21 +1,20 @@
 import { connect } from 'react-redux';
 import { RootState } from 'redux/types';
-import Tags from './Tags';
+import { DeleteTagModal } from './DeleteTagModal';
 import { Dispatch } from 'redux';
-import { loadTags } from 'redux/Tag/tag.actions';
-import { getTags, isTagLoading, getErrorMessage } from 'redux/Tag/tag.selectors';
+import { deleteTag } from 'redux/Tag/tag.actions';
+import { isTagLoading, getSelectedTagId } from 'redux/Tag/tag.selectors';
 
 const mapStateToProps = (state: RootState) => ({
-  tags: getTags(state),
   isTagLoading: isTagLoading(state),
-  errorMessage: getErrorMessage(state),
+  selectedTagId: getSelectedTagId(state),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  loadTags: () => dispatch(loadTags.request({})),
+  deleteTag: (tagId: number) => dispatch(deleteTag.request({ tagId })),
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Tags);
+)(DeleteTagModal);

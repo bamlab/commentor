@@ -1,42 +1,94 @@
-import { loadTags } from '../tag.actions';
+import { loadTags, selectTag, addTag, deleteTag, updateTag } from '../tag.actions';
 import reducer from '../tag.reducer';
 
-const initialState = { tags: [], isLoading: false, tagError: null };
-const defaultTag = {
-  id: 2,
+const tag0 = {
+  id: 0,
   code: 'refacto',
   description: 'this is refacto done with mistake',
   creationDate: new Date(),
 };
 
-describe('Tag reducer', () => {
-  describe('GET_TAGS_SUCCESS case', () => {
-    it('Should return an initial state with comments in the comments field', () => {
-      const action = loadTags.success({
-        tags: [defaultTag],
-      });
-      const expectedState = { ...initialState, tags: [defaultTag] };
+const tag1 = {
+  id: 1,
+  code: 'readable',
+  description: 'This is elegant but remove it ',
+  creationDate: new Date(),
+};
 
-      expect(reducer(initialState, action)).toEqual(expectedState);
-    });
+const newTag = {
+  id: 2,
+  code: 'code',
+  description: 'description',
+  creationDate: new Date(),
+};
+
+describe('Actions test', () => {
+  describe('Request test', () => {
+    const initialState = {
+      tags: [tag0, tag1],
+      isLoading: false,
+      tagError: null,
+      selectedTagId: null,
+    };
+    test.each`
+      action                                                                        | expectedState
+      ${selectTag.request({ tagId: 12 })}                                           | ${{ ...initialState, selectedTagId: 12 }}
+      ${addTag.request({ code: 'code', description: 'description' })}               | ${{ ...initialState, isLoading: true }}
+      ${loadTags.request({})}                                                       | ${{ ...initialState, isLoading: true }}
+      ${deleteTag.request({ tagId: 1 })}                                            | ${{ ...initialState, isLoading: true }}
+      ${updateTag.request({ tagId: 12, code: 'code', description: 'description' })} | ${{ ...initialState, isLoading: true }}
+    `(
+      'should the expected value',
+
+      ({ action, expectedState }) => {
+        expect(reducer(initialState, action)).toEqual(expectedState);
+      },
+    );
   });
 
-  describe('GET_TAGS_FAILURE case', () => {
-    it('Should return an initial state with an error in the loginError field', () => {
-      const errorMessage = 'Could not get tags from server';
-      const action = loadTags.failure({ errorMessage });
-      const expectedState = { ...initialState, tagError: errorMessage };
+  describe('Success test', () => {
+    const initialState = {
+      tags: [tag0, tag1],
+      isLoading: true,
+      tagError: 'some eroor',
+      selectedTagId: null,
+    };
+    const updatedTag1 = { ...tag1, code: 'code', description: 'description' };
 
-      expect(reducer(initialState, action)).toEqual(expectedState);
-    });
+    test.each`
+      action                                     | expectedState
+      ${addTag.success({ tag: newTag })}         | ${{ ...initialState, tags: [tag0, tag1, newTag], isLoading: false, tagError: null }}
+      ${loadTags.success({ tags: [newTag] })}    | ${{ ...initialState, tags: [newTag], isLoading: false, tagError: null }}
+      ${deleteTag.success({ tagId: 0 })}         | ${{ ...initialState, tags: [tag1], isLoading: false, tagError: null }}
+      ${updateTag.success({ tag: updatedTag1 })} | ${{ ...initialState, tags: [tag0, updatedTag1], isLoading: false, tagError: null }}
+    `(
+      'should the expected value',
+
+      ({ action, expectedState }) => {
+        expect(reducer(initialState, action)).toEqual(expectedState);
+      },
+    );
   });
 
-  describe('GET_TAGS_REQUEST case', () => {
-    it('Should return an initial state loading true', () => {
-      const action = loadTags.request({});
-      const expectedState = { ...initialState, isLoading: true };
+  describe('Failure test', () => {
+    const initialState = {
+      tags: [tag0, tag1],
+      isLoading: true,
+      tagError: null,
+      selectedTagId: null,
+    };
+    test.each`
+      action                                          | expectedState
+      ${addTag.failure({ errorMessage: 'error' })}    | ${{ ...initialState, tags: [tag0, tag1], isLoading: false, tagError: 'error' }}
+      ${loadTags.failure({ errorMessage: 'error' })}  | ${{ ...initialState, tags: [tag0, tag1], isLoading: false, tagError: 'error' }}
+      ${deleteTag.failure({ errorMessage: 'error' })} | ${{ ...initialState, tags: [tag0, tag1], isLoading: false, tagError: 'error' }}
+      ${updateTag.failure({ errorMessage: 'error' })} | ${{ ...initialState, tags: [tag0, tag1], isLoading: false, tagError: 'error' }}
+    `(
+      'should the expected value',
 
-      expect(reducer(initialState, action)).toEqual(expectedState);
-    });
+      ({ action, expectedState }) => {
+        expect(reducer(initialState, action)).toEqual(expectedState);
+      },
+    );
   });
 });

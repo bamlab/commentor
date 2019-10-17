@@ -1,30 +1,13 @@
 import * as React from 'react';
 import { AutoSizer, MultiGrid } from 'react-virtualized';
-import styled from 'styled-components';
-import { ColumnType, RendererInputType } from './GenericTable.type';
-
-const STYLE = {
-  border: '1px solid #ddd',
-};
-
-const Wrapper = styled.div`
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-`;
-
-const Cell = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid #eee;
-  border-right: 1px solid #eee;
-`;
+import { ColumnType } from './GenericTable.type';
+import { STYLE, Wrapper, Cell } from './GenericTable.style';
 
 interface PropsType {
-  values: Object[];
+  values: any[];
   columnsConfig: ColumnType[];
   fixedColumnCount: number;
+  options?: Object;
 }
 
 export const GenericTable = (props: PropsType) => {
@@ -34,26 +17,24 @@ export const GenericTable = (props: PropsType) => {
     if (column) header[`${column.key}`] = column.name;
   });
 
-  const valuesWithHeaders: Object[] = [header, ...props.values];
+  const valuesWithHeaders: any[] = [header, ...props.values];
 
-  const cellRenderer = ({ columnIndex, key, rowIndex, style }: RendererInputType): JSX.Element => {
-    const configKey = props.columnsConfig[columnIndex].key || 'error';
-    if (!valuesWithHeaders[rowIndex]) {
-      return (
-        <Cell key={key} style={style}>
-          vide
-        </Cell>
-      );
-    }
+  const defaultCellRenderer = (key: string, style?: Object, options?: Object): JSX.Element => {
     return (
       <Cell key={key} style={style}>
-        {
-          // @ts-ignore too much check to do on this commit
-          valuesWithHeaders[rowIndex][configKey]
-        }
+        Empty
       </Cell>
     );
   };
+
+  const getValue = (columnIndex: number, rowIndex: number): string | null => {
+    const configKey = getColumnKey(columnIndex);
+    if (configKey) return valuesWithHeaders[rowIndex][configKey];
+    return null;
+  };
+
+  const getColumnKey = (columnIndex: number): string | null =>
+    props.columnsConfig[columnIndex].key || null;
 
   return (
     <Wrapper>
@@ -65,7 +46,17 @@ export const GenericTable = (props: PropsType) => {
             fixedRowCount={1}
             scrollToColumn={0}
             scrollToRow={0}
-            cellRenderer={cellRenderer}
+            cellRenderer={({ columnIndex, key, rowIndex, style }) =>
+              (valuesWithHeaders[rowIndex] &&
+                props.columnsConfig[columnIndex].renderer(
+                  key,
+                  getValue(columnIndex, rowIndex),
+                  valuesWithHeaders[rowIndex].id || null, // null for header or where object has no id
+                  style,
+                  props.options,
+                )) ||
+              defaultCellRenderer(key, style)
+            }
             columnWidth={({ index }) =>
               props.columnsConfig[index] && props.columnsConfig[index].columnWidth
             }

@@ -9,8 +9,61 @@ exports[`[Snapshot] <Comments /> should comments page 1`] = `
     id="comments.tmp"
     values={Object {}}
   />
-  <CommentsTable
-    comments={Array []}
+  <GenericTable
+    columnsConfig={
+      Array [
+        Object {
+          "columnWidth": 75,
+          "index": 0,
+          "key": "id",
+          "name": "id",
+        },
+        Object {
+          "columnWidth": 300,
+          "index": 1,
+          "key": "body",
+          "name": "body",
+        },
+        Object {
+          "columnWidth": 300,
+          "index": 2,
+          "key": "filePath",
+          "name": "filePath",
+        },
+        Object {
+          "columnWidth": 300,
+          "index": 3,
+          "key": "url",
+          "name": "url",
+        },
+        Object {
+          "columnWidth": 200,
+          "index": 4,
+          "key": "commentor",
+          "name": "commentor",
+        },
+        Object {
+          "columnWidth": 200,
+          "index": 5,
+          "key": "pullRequestUrl",
+          "name": "pullRequestUrl",
+        },
+        Object {
+          "columnWidth": 200,
+          "index": 6,
+          "key": "repositoryId",
+          "name": "repositoryId",
+        },
+        Object {
+          "columnWidth": 200,
+          "index": 6,
+          "key": "creationDate",
+          "name": "creationDate",
+        },
+      ]
+    }
+    fixedColumnCount={2}
+    values={Array []}
   />
   <Commentsstyle__ButtonContainer>
     <Button

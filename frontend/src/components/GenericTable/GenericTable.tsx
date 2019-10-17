@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { AutoSizer, MultiGrid } from 'react-virtualized';
 import styled from 'styled-components';
-import { tableConfig, fixedColumnCount, RendererInputType } from './columnConfig';
-import { CommentType } from 'redux/Comment';
+import { ColumnType, RendererInputType } from './GenericTable.type';
 
 const STYLE = {
   border: '1px solid #ddd',
@@ -23,31 +22,23 @@ const Cell = styled.div`
 `;
 
 interface PropsType {
-  comments: CommentType[];
+  values: Object[];
+  columnsConfig: ColumnType[];
+  fixedColumnCount: number;
 }
 
-export const CommentsTable = (props: PropsType) => {
-  const commentsWithHeader: CommentType[] = [
-    {
-      // @ts-ignore header comment is string
-      id: 'id',
-      body: 'body',
-      filePath: 'filePath',
-      url: 'url',
-      commentor: 'commentor',
-      requester: 'requester',
-      pullRequestUrl: 'pullRequestUrl',
-      // @ts-ignore to fixheader comment is string
-      repositoryId: 'repositoryId',
-      // @ts-ignore to fix header comment is string
-      creationDate: 'creationDate',
-    },
-    ...props.comments,
-  ];
+export const GenericTable = (props: PropsType) => {
+  const header = {};
+  props.columnsConfig.forEach(column => {
+    // @ts-ignore
+    if (column) header[`${column.key}`] = column.name;
+  });
+
+  const valuesWithHeaders: Object[] = [header, ...props.values];
 
   const cellRenderer = ({ columnIndex, key, rowIndex, style }: RendererInputType): JSX.Element => {
-    const configKey = tableConfig[columnIndex].key || 'error';
-    if (!commentsWithHeader[rowIndex]) {
+    const configKey = props.columnsConfig[columnIndex].key || 'error';
+    if (!valuesWithHeaders[rowIndex]) {
       return (
         <Cell key={key} style={style}>
           vide
@@ -58,7 +49,7 @@ export const CommentsTable = (props: PropsType) => {
       <Cell key={key} style={style}>
         {
           // @ts-ignore too much check to do on this commit
-          commentsWithHeader[rowIndex][configKey]
+          valuesWithHeaders[rowIndex][configKey]
         }
       </Cell>
     );
@@ -70,19 +61,21 @@ export const CommentsTable = (props: PropsType) => {
         {({ width }) => (
           // @ts-ignore
           <MultiGrid
-            fixedColumnCount={fixedColumnCount}
+            fixedColumnCount={props.fixedColumnCount}
             fixedRowCount={1}
             scrollToColumn={0}
             scrollToRow={0}
             cellRenderer={cellRenderer}
-            columnWidth={({ index }) => tableConfig[index] && tableConfig[index].columnWidth}
-            columnCount={tableConfig.length}
+            columnWidth={({ index }) =>
+              props.columnsConfig[index] && props.columnsConfig[index].columnWidth
+            }
+            columnCount={props.columnsConfig.length}
             enableFixedColumnScroll
             enableFixedRowScroll
             height={500}
             rowHeight={40}
             // +1 is for empty value => will be used for lazy loading
-            rowCount={commentsWithHeader.length + 1}
+            rowCount={valuesWithHeaders.length + 1}
             style={STYLE}
             width={width}
             hideTopRightGridScrollbar

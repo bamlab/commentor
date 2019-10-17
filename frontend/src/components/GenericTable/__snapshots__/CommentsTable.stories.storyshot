@@ -47,7 +47,7 @@ exports[`Storyshots CommentsTable playground 1`] = `
       "kind": "CommentsTable",
       "name": "playground",
       "parameters": Object {
-        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/CommentsTable/CommentsTable.stories.tsx",
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/GenericTable/CommentsTable.stories.tsx",
         "framework": "react",
         "options": Object {
           "hierarchyRootSeparator": "|",
@@ -83,26 +83,15 @@ exports[`Storyshots CommentsTable playground 1`] = `
       comments={
         Array [
           Object {
-            "body": "ed",
-            "commentor": "Amaury",
-            "creationDate": 2019-10-08T21:11:59.897Z,
-            "filePath": "weff",
-            "id": 2,
-            "pullRequestUrl": "ewffew",
-            "repositoryId": 31312,
-            "requester": "wfwef",
-            "url": "wffew",
-          },
-          Object {
-            "body": "ed",
-            "commentor": "Amaury",
-            "creationDate": 2019-10-08T21:11:59.897Z,
-            "filePath": "weff",
-            "id": 2,
-            "pullRequestUrl": "ewffew",
-            "repositoryId": 31312,
-            "requester": "wfwef",
-            "url": "wffew",
+            "body": "body",
+            "commentor": "commentor",
+            "creationDate": 1570656854837,
+            "filePath": "filePath",
+            "id": 1,
+            "pullRequestUrl": "pullRequestUrl",
+            "repositoryId": 123421,
+            "requester": "requester",
+            "url": "url",
           },
         ]
       }
@@ -114,16 +103,16 @@ exports[`Storyshots CommentsTable playground 1`] = `
               "$$typeof": Symbol(react.forward_ref),
               "attrs": Array [],
               "componentStyle": ComponentStyle {
-                "componentId": "CommentsTable__Wrapper-sc-2ymgbz-0",
+                "componentId": "CommentsTable__Wrapper-uqw2vv-0",
                 "isStatic": true,
-                "lastClassName": "SGuHx",
+                "lastClassName": "iPftBM",
                 "rules": Array [
                   "flex:1 1 auto;display:flex;flex-direction:column;",
                 ],
               },
               "displayName": "CommentsTable__Wrapper",
               "render": [Function],
-              "styledComponentId": "CommentsTable__Wrapper-sc-2ymgbz-0",
+              "styledComponentId": "CommentsTable__Wrapper-uqw2vv-0",
               "target": "div",
               "toString": [Function],
               "warnTooManyClasses": [Function],
@@ -133,7 +122,7 @@ exports[`Storyshots CommentsTable playground 1`] = `
           forwardedRef={null}
         >
           <div
-            className="CommentsTable__Wrapper-sc-2ymgbz-0 SGuHx"
+            className="CommentsTable__Wrapper-uqw2vv-0 iPftBM"
           >
             <AutoSizer
               disableHeight={false}
@@ -165,7 +154,7 @@ exports[`Storyshots CommentsTable playground 1`] = `
                   height={500}
                   hideBottomLeftGridScrollbar={true}
                   hideTopRightGridScrollbar={true}
-                  rowCount={4}
+                  rowCount={3}
                   rowHeight={40}
                   scrollToColumn={0}
                   scrollToRow={0}
@@ -260,7 +249,7 @@ exports[`Storyshots CommentsTable with empty comments 1`] = `
       "kind": "CommentsTable",
       "name": "with empty comments",
       "parameters": Object {
-        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/CommentsTable/CommentsTable.stories.tsx",
+        "fileName": "/Users/amauryw/dev/commentor/frontend/src/components/GenericTable/CommentsTable.stories.tsx",
         "framework": "react",
         "options": Object {
           "hierarchyRootSeparator": "|",
@@ -302,16 +291,16 @@ exports[`Storyshots CommentsTable with empty comments 1`] = `
               "$$typeof": Symbol(react.forward_ref),
               "attrs": Array [],
               "componentStyle": ComponentStyle {
-                "componentId": "CommentsTable__Wrapper-sc-2ymgbz-0",
+                "componentId": "CommentsTable__Wrapper-uqw2vv-0",
                 "isStatic": true,
-                "lastClassName": "SGuHx",
+                "lastClassName": "iPftBM",
                 "rules": Array [
                   "flex:1 1 auto;display:flex;flex-direction:column;",
                 ],
               },
               "displayName": "CommentsTable__Wrapper",
               "render": [Function],
-              "styledComponentId": "CommentsTable__Wrapper-sc-2ymgbz-0",
+              "styledComponentId": "CommentsTable__Wrapper-uqw2vv-0",
               "target": "div",
               "toString": [Function],
               "warnTooManyClasses": [Function],
@@ -321,7 +310,7 @@ exports[`Storyshots CommentsTable with empty comments 1`] = `
           forwardedRef={null}
         >
           <div
-            className="CommentsTable__Wrapper-sc-2ymgbz-0 SGuHx"
+            className="CommentsTable__Wrapper-uqw2vv-0 iPftBM"
           >
             <AutoSizer
               disableHeight={false}

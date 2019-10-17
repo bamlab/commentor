@@ -1,5 +1,7 @@
 import jwt_decode from 'jwt-decode';
 import request from 'superagent';
+import { CommentType } from 'redux/Comment';
+import { TagType } from 'redux/Tag';
 
 const backendBaseUrl = process.env.REACT_APP_API_BASE_URL || '';
 
@@ -105,11 +107,20 @@ class Client {
     return token;
   }
 
-  async fetchComments(data: object) {
+  fetchComments = async (data: object): Promise<CommentType[]> => {
     const result = await this.get('/comments');
-    console.log('comments:', result);
     return result;
-  }
+  };
+
+  fetchTags = async (data: object): Promise<TagType[]> => {
+    const result = await this.get('/tags');
+    return result;
+  };
+
+  addTag = async (data: object): Promise<TagType> => {
+    const result = await this.post('/tags', data);
+    return result;
+  };
 
   async logout() {
     const result = await this.post('/auth/jwt/logout', {});

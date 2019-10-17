@@ -1,7 +1,7 @@
 {
   "header": {
     "login": "Login",
-    "project": "Project",
+    "project": "Tags",
     "comment": "Comments",
     "graph": "Graphics",
     "logout": "Logout"
@@ -25,6 +25,9 @@
   },
   "comments": {
     "tmp": "tmp"
+  },
+  "tags": {
+    "add-tag": "Add Tag"
   },
   "login": {
     "title": "Launch your Theodo project in seconds",

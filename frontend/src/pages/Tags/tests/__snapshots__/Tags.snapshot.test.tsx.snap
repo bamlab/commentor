@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
+<Tagsstyle__StyledTags>
+  <Tagsstyle__LoaderContainer>
+    <Loader />
+  </Tagsstyle__LoaderContainer>
+  <Button
+    disabled={true}
+    onClick={[Function]}
+  >
+    <FormattedMessage
+      id="tags.add-tag"
+      values={Object {}}
+    />
+  </Button>
+  <GenericTable
+    columnsConfig={
+      Array [
+        Object {
+          "columnWidth": 75,
+          "index": 0,
+          "key": "id",
+          "name": "id",
+        },
+        Object {
+          "columnWidth": 300,
+          "index": 1,
+          "key": "code",
+          "name": "code",
+        },
+        Object {
+          "columnWidth": 300,
+          "index": 2,
+          "key": "description",
+          "name": "decription",
+        },
+        Object {
+          "columnWidth": 200,
+          "index": 6,
+          "key": "creationDate",
+          "name": "creationDate",
+        },
+      ]
+    }
+    fixedColumnCount={2}
+    values={Array []}
+  />
+  <[object Object]
+    contentLabel="Add Tag Modal"
+    id="addTagModal"
+    isOpen={false}
+  >
+    <InputRow
+      field={
+        Object {
+          "name": "code",
+          "onChange": [Function],
+          "value": "",
+        }
+      }
+      label="code"
+      placeholder="Code..."
+      type="text"
+    />
+    <InputRow
+      field={
+        Object {
+          "name": "description",
+          "onChange": [Function],
+          "value": "",
+        }
+      }
+      label="description"
+      placeholder="Description..."
+      type="text"
+    />
+    <Button
+      disabled={true}
+      onClick={[Function]}
+    >
+      <FormattedMessage
+        id="tags.add-tag"
+        values={Object {}}
+      />
+    </Button>
+  </[object Object]>
+</Tagsstyle__StyledTags>
+`;

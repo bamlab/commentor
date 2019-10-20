@@ -9,6 +9,7 @@ import { combineReducers, Reducer } from 'redux';
 import { reducer as login } from './Login';
 import { reducer as comment } from './Comment';
 import { reducer as tag } from './Tag';
+import { reducer as filters } from './Filters';
 import { RootAction, RootState } from './types';
 
 /**
@@ -21,7 +22,7 @@ export default function createReducer(asyncReducers: {
     ...asyncReducers,
     login,
     comment,
-    // @ts-ignore todo check this onne
     tag,
+    filters,
   });
 }

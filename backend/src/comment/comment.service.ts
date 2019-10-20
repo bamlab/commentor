@@ -20,4 +20,13 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     const createdComment = await this.commentRepository.save(comment);
     return createdComment;
   };
+
+  getAvailableProjectIdsFromComments = async (): Promise<number[]> => {
+    const availableProjectsId = await this.commentRepository
+      .createQueryBuilder()
+      .select('DISTINCT "repositoryId"')
+      .getRawMany();
+
+    return availableProjectsId.map(project => project.repositoryId);
+  };
 }

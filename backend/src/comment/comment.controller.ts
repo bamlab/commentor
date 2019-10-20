@@ -1,4 +1,4 @@
-import { Controller, Body } from '@nestjs/common';
+import { Controller, Body, Get } from '@nestjs/common';
 
 import { CommentEvent } from './interfaces/comment.dto';
 import { Comment } from './comment.entity';
@@ -34,5 +34,10 @@ export class CommentController implements CrudController<Comment> {
       pullRequestUrl: commentEvent.pull_request.url,
       repositoryId: commentEvent.repository.id,
     });
+  }
+
+  @Get('projects')
+  async getAllAvailableProjectIds(): Promise<number[]> {
+    return this.service.getAvailableProjectIdsFromComments();
   }
 }

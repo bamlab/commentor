@@ -27,6 +27,6 @@ export class CommentService extends TypeOrmCrudService<Comment> {
       .select('DISTINCT "repositoryId"')
       .getRawMany();
 
-    return availableProjectsId.map(project => project.repositoryId);
+    return availableProjectsId;
   };
 }

@@ -23,3 +23,5 @@ export const WelcomeMessage = styled.div`
   line-height: ${lineHeight.medium};
   margin-bottom: ${getSpacing(12)};
 `;
+
+export const SelectProjectWrapper = styled.div``;

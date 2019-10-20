@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { HomeContainer, Logo, WelcomeMessage } from './Home.style';
+import { HomeContainer, Logo, WelcomeMessage, SelectProjectWrapper } from './Home.style';
+import { MultiSelect } from '../../components/MultiSelect';
 import logo from 'assets/final_low.png';
 
 const Home: React.FunctionComponent = () => (
@@ -9,6 +10,10 @@ const Home: React.FunctionComponent = () => (
     <WelcomeMessage>
       <FormattedMessage id="home.welcome-message" />
     </WelcomeMessage>
+    <SelectProjectWrapper>
+      <FormattedMessage id="home.select-project-label" />
+      <MultiSelect />
+    </SelectProjectWrapper>
   </HomeContainer>
 );
 

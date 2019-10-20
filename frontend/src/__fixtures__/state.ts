@@ -39,4 +39,9 @@ export const state: RootState = {
   filters: {
     selectedProjectIds: [],
   },
+  project: {
+    projects: [],
+    isLoading: false,
+    projectError: null,
+  },
 };

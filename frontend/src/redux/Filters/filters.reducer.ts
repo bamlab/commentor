@@ -5,6 +5,7 @@ import { selectProjectIds } from './filters.actions';
 import { ISelectedOptionsType } from './filters.type';
 
 export type FiltersAction = ActionType<typeof selectProjectIds.request>;
+
 export type FiltersState = Readonly<{
   selectedProjectIds: ISelectedOptionsType[];
 }>;

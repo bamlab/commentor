@@ -2,6 +2,7 @@ import jwt_decode from 'jwt-decode';
 import request from 'superagent';
 import { CommentType } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
+import { ProjectType } from 'redux/Project';
 
 const backendBaseUrl = process.env.REACT_APP_API_BASE_URL || '';
 
@@ -118,6 +119,11 @@ class Client {
 
   fetchTags = async (data: object): Promise<TagType[]> => {
     const result = await this.get('/tags');
+    return result;
+  };
+
+  fetchProjects = async (data: object): Promise<ProjectType[]> => {
+    const result = await this.get('/comments/projects');
     return result;
   };
 

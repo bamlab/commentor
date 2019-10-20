@@ -36,4 +36,7 @@ export const state: RootState = {
     tagError: null,
     selectedTagId: null,
   },
+  filters: {
+    selectedProjectIds: [],
+  },
 };

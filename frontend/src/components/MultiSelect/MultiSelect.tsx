@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import { SelectWrapper } from './MultiSelect.style';
+import { ISelectedOptionsType } from '../../redux/Filters/filters.type';
 
 const options = [
   { value: 'chocolate', label: 'Chocolate' },
@@ -8,39 +9,21 @@ const options = [
   { value: 'vanilla', label: 'Vanilla' },
 ];
 
-type PropsType = {};
-type StateType = {
-  selectedOptions: ISelectOptionType[];
+type PropsType = {
+  selectedOptions: ISelectedOptionsType[];
+  selectOptions: () => void;
 };
 
-export interface ISelectOptionType {
-  value: string;
-  label: string;
-}
-export class MultiSelect extends Component<PropsType, StateType> {
-  constructor(props: PropsType) {
-    super(props);
-    this.state = {
-      selectedOptions: [],
-    };
-  }
-
-  handleChange = (selectedOptions: ISelectOptionType[]) => {
-    this.setState({ selectedOptions });
-  };
-
-  render() {
-    return (
-      <SelectWrapper>
-        <Select
-          value={this.state.selectedOptions}
-          // @ts-ignore
-          onChange={this.handleChange}
-          options={options}
-          isMulti
-          isSearchable
-        />
-      </SelectWrapper>
-    );
-  }
-}
+export const MultiSelect = (props: PropsType) => {
+  return (
+    <SelectWrapper>
+      <Select
+        value={props.selectedOptions}
+        onChange={props.selectOptions}
+        options={options}
+        isMulti
+        isSearchable
+      />
+    </SelectWrapper>
+  );
+};

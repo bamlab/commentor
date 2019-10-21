@@ -5,7 +5,8 @@
   "author": "BAM",
   "license": "MIT",
   "scripts": {
-    "deploy:api:staging": "git subtree push --prefix backend api-staging master"
+    "deploy:api:staging": "git subtree push --prefix backend api-staging master",
+    "deploy:api:prod": "git subtree push --prefix backend api-prod master"
   },
   "dependencies": {}
 }

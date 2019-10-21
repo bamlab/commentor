@@ -2,12 +2,11 @@ import { ActionType, getType } from 'typesafe-actions';
 
 import { AnyAction } from 'redux';
 import { selectProjectIds } from './filters.actions';
-import { ISelectedOptionsType } from './filters.type';
 
 export type FiltersAction = ActionType<typeof selectProjectIds.request>;
 
 export type FiltersState = Readonly<{
-  selectedProjectIds: ISelectedOptionsType[];
+  selectedProjectIds: number[];
 }>;
 
 const initialState: FiltersState = {
@@ -20,7 +19,9 @@ const reducer = (state: FiltersState = initialState, action: AnyAction) => {
     case getType(selectProjectIds.request):
       return {
         ...state,
-        selectedProjectIds: typedAction.payload.selectedProjectIds,
+        selectedProjectIds: typedAction.payload.selectedProjectIds.map(item =>
+          parseInt(item.value),
+        ),
       };
     default:
       return state;

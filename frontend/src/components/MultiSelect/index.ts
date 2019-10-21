@@ -1,2 +1,2 @@
 export { MultiSelect } from './MultiSelect';
-export { adaptProjectToMultiSelectOptions } from './MultiSelect.adapter';
+export { adaptProjectToMultiSelectOptions, adaptOptionFromId } from './MultiSelect.adapter';

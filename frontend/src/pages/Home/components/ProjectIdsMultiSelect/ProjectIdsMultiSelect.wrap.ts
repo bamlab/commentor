@@ -1,14 +1,18 @@
 import { connect } from 'react-redux';
-import { MultiSelect, adaptProjectToMultiSelectOptions } from '../../../../components/MultiSelect';
+import {
+  MultiSelect,
+  adaptProjectToMultiSelectOptions,
+  adaptOptionFromId,
+} from '../../../../components/MultiSelect';
+import { ISelectedOptionsType } from '../../../../components/MultiSelect/MultiSelect.type';
 import { Dispatch } from 'redux';
 import { RootState } from 'redux/types';
 import { getSelectedProjectIds } from 'redux/Filters';
-import { ISelectedOptionsType } from 'redux/Filters/filters.type';
 import { selectProjectIds } from 'redux/Filters/filters.actions';
 import { getProjects } from 'redux/Project';
 
 const mapStateToProps = (state: RootState) => ({
-  selectedOptions: getSelectedProjectIds(state),
+  selectedOptions: adaptOptionFromId(getSelectedProjectIds(state), getProjects(state)),
   options: adaptProjectToMultiSelectOptions(getProjects(state)),
 });
 

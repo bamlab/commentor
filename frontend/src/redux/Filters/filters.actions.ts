@@ -1,5 +1,5 @@
 import { createAsyncAction } from 'typesafe-actions';
-import { ISelectedOptionsType } from './filters.type';
+import { ISelectedOptionsType } from '../../components/MultiSelect/MultiSelect.type';
 
 export const selectProjectIds = createAsyncAction(
   'Filters/SELECT_PROJECT_IDS_REQUEST',

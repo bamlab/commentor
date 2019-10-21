@@ -112,8 +112,8 @@ class Client {
     return token;
   }
 
-  fetchComments = async (data: object): Promise<CommentType[]> => {
-    const result = await this.get('/comments');
+  fetchComments = async (data: { projectIds: number[] }): Promise<CommentType[]> => {
+    const result = await this.post('/comments/filtered', data);
     return result;
   };
 

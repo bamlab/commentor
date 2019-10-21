@@ -6,7 +6,9 @@ export const loadComments = createAsyncAction(
   'Comment/GET_COMMENTS_SUCCESS',
   'Comment/GET_COMMENTS_FAILURE',
 )<
-  {},
+  {
+    projectIds: number[];
+  },
   {
     comments: CommentType[];
   },

@@ -1,5 +1,4 @@
 import { RootState } from 'redux/types';
-import { ISelectedOptionsType } from './filters.type';
 
-export const getSelectedProjectIds = (store: RootState): ISelectedOptionsType[] =>
+export const getSelectedProjectIds = (store: RootState): number[] =>
   store.filters.selectedProjectIds;

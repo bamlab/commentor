@@ -1,4 +1,4 @@
-import { Controller, Body, Get } from '@nestjs/common';
+import { Controller, Body, Get, Post } from '@nestjs/common';
 
 import { CommentEvent } from './interfaces/comment.dto';
 import { Comment } from './comment.entity';
@@ -21,6 +21,11 @@ export class CommentController implements CrudController<Comment> {
 
   get base(): CrudController<Comment> {
     return this;
+  }
+
+  @Post('filtered')
+  async getFilteredComments(@Body() filters: { projectIds: number[] }): Promise<Comment[]> {
+    return this.service.getFilteredProjects(filters);
   }
 
   @Override()

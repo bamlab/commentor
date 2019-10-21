@@ -8,13 +8,18 @@ import Button from 'components/Button';
 import { fixedColumnCount, columnsConfig } from './columnsConfig';
 interface IProps {
   comments: CommentType[];
-  loadComments: () => void;
+  loadComments: (filters: { projectIds: number[] }) => void;
   isCommentLoading: boolean;
+  selectedProjectIds: number[];
 }
 
 const Comments = React.memo<IProps>(props => {
+  const loadComments = () => {
+    props.loadComments({ projectIds: props.selectedProjectIds });
+  };
+
   useEffect(() => {
-    props.loadComments();
+    loadComments();
     // eslint-disable-next-line
   }, []);
 
@@ -32,7 +37,7 @@ const Comments = React.memo<IProps>(props => {
         columnsConfig={columnsConfig}
       />
       <ButtonContainer>
-        <Button disabled={props.isCommentLoading} onClick={props.loadComments}>
+        <Button disabled={props.isCommentLoading} onClick={loadComments}>
           Refresh Comments
         </Button>
       </ButtonContainer>

@@ -9,20 +9,17 @@ import { loadComments } from 'redux/Comment/comment.actions';
 import { TagType } from 'redux/Tag';
 import { CommentType } from 'redux/Comment';
 
-import { getSelectedProjectIds } from 'redux/Filters';
+import { getSelectedRepositoryIds } from 'redux/Filters';
 
 const mapStateToProps = (state: RootState) => ({
   tags: getTags(state),
   comments: getComments(state),
-  selectedProjectIds: getSelectedProjectIds(state),
+  repositoryIds: getSelectedRepositoryIds(state),
 });
 
-const mapDispatchToProps = (
-  dispatch: Dispatch,
-  ownProps: { tags: TagType[]; comments: CommentType[]; selectedProjectIds: number[] },
-) => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   loadTags: () => dispatch(loadTags.request({})),
-  loadComments: (filters: { projectIds: number[] }) =>
+  loadComments: (filters: { repositoryIds: number[] }) =>
     dispatch(
       loadComments.request({
         ...filters,

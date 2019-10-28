@@ -112,7 +112,7 @@ class Client {
     return token;
   }
 
-  fetchComments = async (data: { projectIds: number[] }): Promise<CommentType[]> => {
+  fetchComments = async (data: { repositoryIds: number[] }): Promise<CommentType[]> => {
     const result = await this.post('/comments/filtered', data);
     return result;
   };
@@ -122,7 +122,8 @@ class Client {
     return result;
   };
 
-  fetchProjects = async (data: object): Promise<RepositoryType[]> => {
+  fetchRepositories = async (data: object): Promise<RepositoryType[]> => {
+    // to change
     const result = await this.get('/projects/repositoryIds');
     return result;
   };

@@ -8,7 +8,7 @@
   },
   "home": {
     "welcome-message": "Bienvenue sur commentor !",
-    "select-project-label": "Veuillez selectionner vos projets: "
+    "select-repository-label": "Veuillez selectionner vos repos: "
   },
   "page": {
     "back": "Retour",

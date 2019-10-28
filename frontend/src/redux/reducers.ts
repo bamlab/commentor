@@ -10,7 +10,7 @@ import { reducer as login } from './Login';
 import { reducer as comment } from './Comment';
 import { reducer as tag } from './Tag';
 import { reducer as filters } from './Filters';
-import { reducer as project } from './Repository';
+import { reducer as repository } from './Repository';
 import { RootAction, RootState } from './types';
 
 /**
@@ -25,6 +25,6 @@ export default function createReducer(asyncReducers: {
     comment,
     tag,
     filters,
-    project,
+    repository,
   });
 }

@@ -1,13 +1,13 @@
 import { createAsyncAction } from 'typesafe-actions';
 import { ISelectedOptionsType } from '../../components/MultiSelect/MultiSelect.type';
 
-export const selectProjectIds = createAsyncAction(
-  'Filters/SELECT_PROJECT_IDS_REQUEST',
-  'Filters/SELECT_PROJECT_IDS_SUCCESS',
-  'Filters/SELECT_PROJECT_IDS_FAILURE',
+export const selectRepositoryIds = createAsyncAction(
+  'Filters/SELECT_REPOSITORY_IDS_REQUEST',
+  'Filters/SELECT_REPOSITORY_IDS_SUCCESS',
+  'Filters/SELECT_REPOSITORY_IDS_FAILURE',
 )<
   {
-    selectedProjectIds: ISelectedOptionsType[];
+    repositoryIds: ISelectedOptionsType[];
   },
   {
     // not used
@@ -17,4 +17,4 @@ export const selectProjectIds = createAsyncAction(
   }
 >();
 
-export default { selectProjectIds };
+export default { selectRepositoryIds };

@@ -1,4 +1,3 @@
 import { RootState } from 'redux/types';
 
-export const getSelectedProjectIds = (store: RootState): number[] =>
-  store.filters.selectedProjectIds;
+export const getSelectedRepositoryIds = (store: RootState): number[] => store.filters.repositoryIds;

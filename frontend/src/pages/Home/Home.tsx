@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { HomeContainer, Logo, WelcomeMessage, SelectProjectWrapper } from './Home.style';
-import { ProjectIdsMultiSelect } from './components/ProjectIdsMultiSelect';
+import { HomeContainer, Logo, WelcomeMessage, SelectRepositoryWrapper } from './Home.style';
+import { RepositoryIdsMultiSelect } from './components/RepositoryIdsMultiSelect';
 import logo from 'assets/final_low.png';
 
 type PropsType = {
@@ -15,16 +15,17 @@ const Home = React.memo<PropsType>(props => {
     },
     [props],
   );
+
   return (
     <HomeContainer>
       <Logo alt="commentorlogo" src={logo} />
       <WelcomeMessage>
         <FormattedMessage id="home.welcome-message" />
       </WelcomeMessage>
-      <SelectProjectWrapper>
-        <FormattedMessage id="home.select-project-label" />
-        <ProjectIdsMultiSelect />
-      </SelectProjectWrapper>
+      <SelectRepositoryWrapper>
+        <FormattedMessage id="home.select-repository-label" />
+        <RepositoryIdsMultiSelect />
+      </SelectRepositoryWrapper>
     </HomeContainer>
   );
 });

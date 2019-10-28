@@ -1,4 +1,4 @@
 import { RootState } from 'redux/types';
-import { ProjectType } from './repository.types';
+import { RepositoryType } from './repository.types';
 
-export const getProjects = (store: RootState): ProjectType[] => store.project.projects;
+export const getProjects = (store: RootState): RepositoryType[] => store.project.projects;

@@ -1,25 +1,26 @@
 import * as React from 'react';
 import { AutoSizer, MultiGrid } from 'react-virtualized';
-import { ColumnType } from './GenericTable.type';
+import { ColumnType, OptionsType } from './GenericTable.type';
 import { STYLE, Wrapper, Cell } from './GenericTable.style';
 
-interface PropsType {
+interface PropsType<T extends OptionsType> {
   values: any[];
-  columnsConfig: ColumnType[];
+  columnsConfig: ColumnType<T>[];
   fixedColumnCount: number;
-  options?: Object;
+  options: T;
 }
 
-export const GenericTable = (props: PropsType) => {
-  const header = {};
-  props.columnsConfig.forEach(column => {
-    // @ts-ignore
-    if (column) header[`${column.key}`] = column.name;
+export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
+  const header: { [key: string]: string } = {};
+  props.columnsConfig.forEach((column: ColumnType<T>) => {
+    if (column) {
+      header[`${column.key}`] = column.name;
+    }
   });
 
   const valuesWithHeaders: any[] = [header, ...props.values];
 
-  const defaultCellRenderer = (key: string, style?: Object, options?: Object): JSX.Element => {
+  const defaultCellRenderer = (key: string, style: Object): JSX.Element => {
     return (
       <Cell key={key} style={style}>
         Empty
@@ -40,7 +41,6 @@ export const GenericTable = (props: PropsType) => {
     <Wrapper>
       <AutoSizer>
         {({ width }) => (
-          // @ts-ignore
           <MultiGrid
             fixedColumnCount={props.fixedColumnCount}
             fixedRowCount={1}

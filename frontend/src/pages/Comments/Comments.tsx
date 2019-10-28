@@ -5,7 +5,8 @@ import StyledComments, { LoaderContainer, ButtonContainer } from './Comments.sty
 import { CommentType } from 'redux/Comment';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import Button from 'components/Button';
-import { fixedColumnCount, columnsConfig } from './columnsConfig';
+import { fixedColumnCount, columnsConfig, CommentTableOptionsType } from './columnsConfig';
+
 interface IProps {
   comments: CommentType[];
   loadComments: (filters: { repositoryIds: number[] }) => void;
@@ -31,10 +32,11 @@ const Comments = React.memo<IProps>(props => {
         </LoaderContainer>
       )}
       <FormattedMessage id="comments.tmp" />
-      <GenericTable
+      <GenericTable<CommentTableOptionsType>
         values={props.comments}
         fixedColumnCount={fixedColumnCount}
         columnsConfig={columnsConfig}
+        options={{}}
       />
       <ButtonContainer>
         <Button disabled={props.isCommentLoading} onClick={loadComments}>

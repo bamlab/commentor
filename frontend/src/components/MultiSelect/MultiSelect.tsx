@@ -17,7 +17,6 @@ export const MultiSelect = (props: PropsType) => {
     <SelectWrapper>
       <Select
         value={props.selectedOptions}
-        // @ts-ignore
         onChange={selectOptions}
         options={props.options}
         isMulti

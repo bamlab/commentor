@@ -24,5 +24,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 export const RepositoryIdsMultiSelect = connect(
   mapStateToProps,
   mapDispatchToProps,
-  //@ts-ignore
 )(MultiSelect);

@@ -1,7 +1,7 @@
 import { ActionType, getType } from 'typesafe-actions';
 
 import { AnyAction } from 'redux';
-import { ProjectType } from './repository.types';
+import { RepositoryType } from './repository.types';
 import { loadProjects } from './repository.actions';
 
 export type ProjectAction = ActionType<
@@ -9,7 +9,7 @@ export type ProjectAction = ActionType<
 >;
 
 export type ProjectState = Readonly<{
-  projects: ProjectType[];
+  projects: RepositoryType[];
   projectError: string | null;
   isLoading: boolean;
 }>;

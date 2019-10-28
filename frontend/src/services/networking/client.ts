@@ -2,7 +2,7 @@ import jwt_decode from 'jwt-decode';
 import request from 'superagent';
 import { CommentType } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
-import { ProjectType } from 'redux/Repository';
+import { RepositoryType } from 'redux/Repository';
 
 const backendBaseUrl = process.env.REACT_APP_API_BASE_URL || '';
 
@@ -122,7 +122,7 @@ class Client {
     return result;
   };
 
-  fetchProjects = async (data: object): Promise<ProjectType[]> => {
+  fetchProjects = async (data: object): Promise<RepositoryType[]> => {
     const result = await this.get('/projects/repositoryIds');
     return result;
   };

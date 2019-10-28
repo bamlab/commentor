@@ -1,8 +1,10 @@
-import { ProjectType } from 'redux/Repository';
+import { RepositoryType } from 'redux/Repository';
 import { ISelectedOptionsType } from './MultiSelect.type';
 
 //to do
-export const adaptProjectToMultiSelectOptions = (projects: ProjectType[]): ISelectedOptionsType[] =>
+export const adaptProjectToMultiSelectOptions = (
+  projects: RepositoryType[],
+): ISelectedOptionsType[] =>
   projects.map(item => ({
     value: item.id.toString(),
     label: item.name,
@@ -10,7 +12,7 @@ export const adaptProjectToMultiSelectOptions = (projects: ProjectType[]): ISele
 
 export const adaptOptionFromId = (
   projectsId: number[],
-  projects: ProjectType[],
+  projects: RepositoryType[],
 ): ISelectedOptionsType[] => {
   let result: ISelectedOptionsType[] = [];
   projects.forEach(item => {

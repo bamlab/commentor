@@ -26,6 +26,15 @@ export class ProjectController implements CrudController<ProjectEntity> {
   async getProjects(): Promise<ProjectEntity[]> {
     const COMMENTOR_REPO_ID = 212067833;
     const EXEMPLE_REPO_ID = 186853002;
-    return [{ id: COMMENTOR_REPO_ID, name: 'Commentor' }, { id: EXEMPLE_REPO_ID, name: 'Example' }];
+    const GBH_REPO_ID = 169545712;
+    const ZEBET_REPO_ID = 197189213;
+    const ADA_REPO_ID = 85054537;
+    return [
+      { id: COMMENTOR_REPO_ID, name: 'Commentor' },
+      { id: EXEMPLE_REPO_ID, name: 'Example' },
+      { id: GBH_REPO_ID, name: 'GBH' },
+      { id: ZEBET_REPO_ID, name: 'Ze-Bet' },
+      { id: ADA_REPO_ID, name: 'Ada' },
+    ];
   }
 }

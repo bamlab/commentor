@@ -4,7 +4,7 @@ import Loader from 'components/Loader';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import { StyledTags, ErrorMessage } from './Tags.style';
 import { TagType } from 'redux/Tag';
-import { columnsConfig, fixedColumnCount, TagTableOptionsType } from './columnsConfig';
+import { columnsConfig, fixedColumnCount, lineHeight, TagTableOptionsType } from './columnsConfig';
 import Button from 'components/Button';
 import { FormattedMessage } from 'react-intl';
 import AddTagModal from './components/AddTagModal';
@@ -44,6 +44,7 @@ const Tags = React.memo<IProps>(props => {
         columnsConfig={columnsConfig}
         values={props.tags}
         fixedColumnCount={fixedColumnCount}
+        defaultLineHeight={lineHeight}
         options={{
           openUpdateTagModal: () => setUpdateTagModalValue(true),
           openDeleteTagModal: () => setDeleteTagModalValue(true),

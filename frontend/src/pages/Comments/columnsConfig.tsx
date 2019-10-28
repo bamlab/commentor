@@ -83,5 +83,5 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
       defaultCommentCellRenderer(key, value, objectId, style),
   },
 ];
-
+export const lineHeight = 1000;
 export const fixedColumnCount = 2; // this is the reference

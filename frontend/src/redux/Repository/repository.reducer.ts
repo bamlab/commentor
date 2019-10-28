@@ -4,36 +4,36 @@ import { AnyAction } from 'redux';
 import { RepositoryType } from './repository.types';
 import { loadRepositories } from './repository.actions';
 
-export type ProjectAction = ActionType<
+export type RepositoryAction = ActionType<
   typeof loadRepositories.success | typeof loadRepositories.failure | typeof loadRepositories
 >;
 
-export type ProjectState = Readonly<{
-  projects: RepositoryType[];
-  projectError: string | null;
+export type RepositoryState = Readonly<{
+  repositories: RepositoryType[];
+  repositoryError: string | null;
   isLoading: boolean;
 }>;
 
-const initialState: ProjectState = {
-  projects: [],
-  projectError: null,
+const initialState: RepositoryState = {
+  repositories: [],
+  repositoryError: null,
   isLoading: false,
 };
 
-const reducer = (state: ProjectState = initialState, action: AnyAction) => {
-  const typedAction = action as ProjectAction;
+const reducer = (state: RepositoryState = initialState, action: AnyAction) => {
+  const typedAction = action as RepositoryAction;
   switch (typedAction.type) {
     case getType(loadRepositories.success):
       return {
         ...state,
-        projects: typedAction.payload.projects,
+        repositories: typedAction.payload.repositories,
         isLoading: false,
-        tagError: null,
+        repositoryError: null,
       };
     case getType(loadRepositories.failure):
       return {
         ...state,
-        projectError: typedAction.payload.errorMessage,
+        repositoryError: typedAction.payload.errorMessage,
         isLoading: false,
       };
     case getType(loadRepositories.request):

@@ -6,8 +6,11 @@ import { RepositoryType } from './repository.types';
 
 export function* loadRepositoriesSaga(action: ActionType<typeof loadRepositories.request>) {
   try {
-    const projects: RepositoryType[] = yield call([client, client.fetchProjects], action.payload);
-    yield put(loadRepositories.success({ projects }));
+    const repositories: RepositoryType[] = yield call(
+      [client, client.fetchRepositories],
+      action.payload,
+    );
+    yield put(loadRepositories.success({ repositories }));
   } catch (error) {
     yield put(loadRepositories.failure({ errorMessage: error.message }));
   }

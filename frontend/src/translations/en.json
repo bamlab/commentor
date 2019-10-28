@@ -1,14 +1,14 @@
 {
   "header": {
     "login": "Login",
-    "project": "Tags",
+    "tag": "Tags",
     "comment": "Comments",
     "graph": "Graphics",
     "logout": "Logout"
   },
   "home": {
     "welcome-message": "Welcome on commentor !",
-    "select-project-label": "Selection your projects: "
+    "select-repository-label": "Select your repositories : "
   },
   "page": {
     "back": "Back",

@@ -37,11 +37,11 @@ export const state: RootState = {
     selectedTagId: null,
   },
   filters: {
-    selectedProjectIds: [],
+    repositoryIds: [],
   },
-  project: {
-    projects: [],
+  repository: {
+    repositories: [],
     isLoading: false,
-    projectError: null,
+    repositoryError: null,
   },
 };

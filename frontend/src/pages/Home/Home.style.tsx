@@ -24,4 +24,4 @@ export const WelcomeMessage = styled.div`
   margin-bottom: ${getSpacing(12)};
 `;
 
-export const SelectProjectWrapper = styled.div``;
+export const SelectRepositoryWrapper = styled.div``;

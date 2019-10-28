@@ -8,14 +8,14 @@ import Button from 'components/Button';
 import { fixedColumnCount, columnsConfig } from './columnsConfig';
 interface IProps {
   comments: CommentType[];
-  loadComments: (filters: { projectIds: number[] }) => void;
+  loadComments: (filters: { repositoryIds: number[] }) => void;
   isCommentLoading: boolean;
-  selectedProjectIds: number[];
+  repositoryIds: number[];
 }
 
 const Comments = React.memo<IProps>(props => {
   const loadComments = () => {
-    props.loadComments({ projectIds: props.selectedProjectIds });
+    props.loadComments({ repositoryIds: props.repositoryIds });
   };
 
   useEffect(() => {

@@ -7,7 +7,7 @@ export const loadComments = createAsyncAction(
   'Comment/GET_COMMENTS_FAILURE',
 )<
   {
-    projectIds: number[];
+    repositoryIds: number[];
   },
   {
     comments: CommentType[];

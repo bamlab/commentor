@@ -1,8 +1,8 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import client from 'services/networking/client';
 import { ActionType, getType } from 'typesafe-actions';
-import { loadProjects } from './project.actions';
-import { ProjectType } from './project.types';
+import { loadProjects } from './repository.actions';
+import { ProjectType } from './repository.types';
 
 export function* loadTagsSaga(action: ActionType<typeof loadProjects.request>) {
   try {

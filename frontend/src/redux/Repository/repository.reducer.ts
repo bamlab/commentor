@@ -1,8 +1,8 @@
 import { ActionType, getType } from 'typesafe-actions';
 
 import { AnyAction } from 'redux';
-import { ProjectType } from './project.types';
-import { loadProjects } from './project.actions';
+import { ProjectType } from './repository.types';
+import { loadProjects } from './repository.actions';
 
 export type ProjectAction = ActionType<
   typeof loadProjects.success | typeof loadProjects.failure | typeof loadProjects

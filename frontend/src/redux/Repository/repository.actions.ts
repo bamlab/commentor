@@ -1,5 +1,5 @@
 import { createAsyncAction } from 'typesafe-actions';
-import { ProjectType } from './project.types';
+import { ProjectType } from './repository.types';
 
 export const loadProjects = createAsyncAction(
   'Tag/GET_PROJECTS_REQUEST',

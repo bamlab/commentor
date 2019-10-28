@@ -10,7 +10,7 @@ import { reducer as login } from './Login';
 import { reducer as comment } from './Comment';
 import { reducer as tag } from './Tag';
 import { reducer as filters } from './Filters';
-import { reducer as project } from './Project';
+import { reducer as project } from './Repository';
 import { RootAction, RootState } from './types';
 
 /**

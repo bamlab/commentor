@@ -2,7 +2,7 @@ import jwt_decode from 'jwt-decode';
 import request from 'superagent';
 import { CommentType } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
-import { ProjectType } from 'redux/Project';
+import { ProjectType } from 'redux/Repository';
 
 const backendBaseUrl = process.env.REACT_APP_API_BASE_URL || '';
 

@@ -1,4 +1,4 @@
-import { ProjectType } from 'redux/Project';
+import { ProjectType } from 'redux/Repository';
 import { ISelectedOptionsType } from './MultiSelect.type';
 
 //to do

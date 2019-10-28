@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Home from './Home';
-import { loadProjects } from 'redux/Project/project.actions';
+import { loadProjects } from 'redux/Repository/project.actions';
 import { Dispatch } from 'react';
 
 const mapStateToProps = () => ({});

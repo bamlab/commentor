@@ -9,7 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { CommentModule } from './comment/comment.module';
 import { TagModule } from './tag/tag.module';
-import { ProjectModule } from './project/project.module';
+import { RepositoryModule } from './repository/repository.module';
 
 @Module({
   imports: [
@@ -19,7 +19,7 @@ import { ProjectModule } from './project/project.module';
     AuthModule,
     CommentModule,
     TagModule,
-    ProjectModule,
+    RepositoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

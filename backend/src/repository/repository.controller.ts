@@ -1,29 +1,30 @@
 import { Controller, Get } from '@nestjs/common';
 
-import { Project as ProjectEntity } from './project.entity';
-import { ProjectService } from './project.service';
+import { Repository as RepositoryEntity } from './repository.entity';
+import { RepositoryService } from './repository.service';
 import { Crud, CrudController } from '@nestjsx/crud';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 @Crud({
   model: {
-    type: ProjectEntity,
+    type: RepositoryEntity,
   },
 })
-@Controller('projects')
-export class ProjectController implements CrudController<ProjectEntity> {
+@Controller('repositories')
+export class RepositoryController implements CrudController<RepositoryEntity> {
   constructor(
-    @InjectRepository(ProjectEntity) private readonly tagRepository: Repository<ProjectEntity>,
-    public readonly service: ProjectService,
+    @InjectRepository(RepositoryEntity)
+    private readonly repositoryRepository: Repository<RepositoryEntity>,
+    public readonly service: RepositoryService,
   ) {}
 
-  get base(): CrudController<ProjectEntity> {
+  get base(): CrudController<RepositoryEntity> {
     return this;
   }
 
-  @Get('repositoryIds')
-  async getProjects(): Promise<ProjectEntity[]> {
+  @Get('/hardcoded')
+  async getRepositories(): Promise<RepositoryEntity[]> {
     const COMMENTOR_REPO_ID = 212067833;
     const EXEMPLE_REPO_ID = 186853002;
     const GBH_REPO_ID = 169545712;

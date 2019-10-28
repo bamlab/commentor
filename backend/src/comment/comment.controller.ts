@@ -24,8 +24,8 @@ export class CommentController implements CrudController<Comment> {
   }
 
   @Post('filtered')
-  async getFilteredComments(@Body() filters: { projectIds: number[] }): Promise<Comment[]> {
-    return this.service.getFilteredProjects(filters);
+  async getFilteredComments(@Body() filters: { repositoryIds: number[] }): Promise<Comment[]> {
+    return this.service.getFilteredComments(filters);
   }
 
   @Override()

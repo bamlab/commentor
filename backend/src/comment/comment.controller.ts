@@ -40,9 +40,4 @@ export class CommentController implements CrudController<Comment> {
       repositoryId: commentEvent.repository.id,
     });
   }
-
-  @Get('projects')
-  async getAllAvailableProjectIds(): Promise<number[]> {
-    return this.service.getAvailableProjectIdsFromComments();
-  }
 }

@@ -21,15 +21,6 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     return createdComment;
   };
 
-  getAvailableProjectIdsFromComments = async (): Promise<number[]> => {
-    const availableProjectsId = await this.commentRepository
-      .createQueryBuilder()
-      .select('DISTINCT "repositoryId"')
-      .getRawMany();
-
-    return availableProjectsId;
-  };
-
   getFilteredProjects = async (filters: { projectIds: number[] }): Promise<Comment[]> => {
     const filteredComments = await this.commentRepository.find({
       where: {

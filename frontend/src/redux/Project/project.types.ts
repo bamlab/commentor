@@ -1,3 +1,4 @@
 export type ProjectType = {
-  repositoryId: number;
+  id: number;
+  name: string;
 };

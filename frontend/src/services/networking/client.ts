@@ -123,7 +123,7 @@ class Client {
   };
 
   fetchProjects = async (data: object): Promise<ProjectType[]> => {
-    const result = await this.get('/comments/projects');
+    const result = await this.get('/projects/repositoryIds');
     return result;
   };
 

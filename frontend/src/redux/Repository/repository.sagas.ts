@@ -4,7 +4,7 @@ import { ActionType, getType } from 'typesafe-actions';
 import { loadProjects } from './repository.actions';
 import { ProjectType } from './repository.types';
 
-export function* loadTagsSaga(action: ActionType<typeof loadProjects.request>) {
+export function* loadRepositoriesSaga(action: ActionType<typeof loadProjects.request>) {
   try {
     const projects: ProjectType[] = yield call([client, client.fetchProjects], action.payload);
     yield put(loadProjects.success({ projects }));
@@ -13,6 +13,6 @@ export function* loadTagsSaga(action: ActionType<typeof loadProjects.request>) {
   }
 }
 
-export default function* commentSagas() {
-  yield takeEvery(getType(loadProjects.request), loadTagsSaga);
+export default function* repositorySagas() {
+  yield takeEvery(getType(loadProjects.request), loadRepositoriesSaga);
 }

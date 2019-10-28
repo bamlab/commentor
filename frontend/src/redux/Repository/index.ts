@@ -1,5 +1,5 @@
-export * from './project.selectors';
-export { default as reducer } from './project.reducer';
-export * from './project.reducer';
-export * from './project.types';
-export { default as sagas } from './project.sagas';
+export * from './repository.selectors';
+export { default as reducer } from './repository.reducer';
+export * from './repository.reducer';
+export * from './repository.types';
+export { default as sagas } from './repository.sagas';

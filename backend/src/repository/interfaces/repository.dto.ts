@@ -1,4 +1,4 @@
-export interface Project {
+export interface Repository {
   id: number;
   name: string;
 }

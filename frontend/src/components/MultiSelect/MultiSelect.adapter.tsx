@@ -4,8 +4,8 @@ import { ISelectedOptionsType } from './MultiSelect.type';
 //to do
 export const adaptProjectToMultiSelectOptions = (projects: ProjectType[]): ISelectedOptionsType[] =>
   projects.map(item => ({
-    value: item.repositoryId.toString(),
-    label: item.repositoryId.toString(),
+    value: item.id.toString(),
+    label: item.name,
   }));
 
 export const adaptOptionFromId = (
@@ -14,10 +14,10 @@ export const adaptOptionFromId = (
 ): ISelectedOptionsType[] => {
   let result: ISelectedOptionsType[] = [];
   projects.forEach(item => {
-    if (projectsId.includes(item.repositoryId)) {
+    if (projectsId.includes(item.id)) {
       result.push({
-        value: item.repositoryId.toString(),
-        label: item.repositoryId.toString(),
+        value: item.id.toString(),
+        label: item.name,
       });
     }
   });

@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { CommentModule } from './comment/comment.module';
 import { TagModule } from './tag/tag.module';
+import { ProjectModule } from './project/project.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { TagModule } from './tag/tag.module';
     AuthModule,
     CommentModule,
     TagModule,
+    ProjectModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,18 +1,18 @@
 import { createAsyncAction } from 'typesafe-actions';
 import { RepositoryType } from './repository.types';
 
-export const loadProjects = createAsyncAction(
-  'Tag/GET_PROJECTS_REQUEST',
-  'Tag/GET_PROJECTS_SUCCESS',
-  'Tag/GET_PROJECTS_FAILURE',
+export const loadRepositories = createAsyncAction(
+  'Tag/GET_REPOSITORIES_REQUEST',
+  'Tag/GET_REPOSITORIES_SUCCESS',
+  'Tag/GET_REPOSITORIES_FAILURE',
 )<
   {},
   {
-    projects: RepositoryType[];
+    repositories: RepositoryType[];
   },
   {
     errorMessage: string;
   }
 >();
 
-export default { loadProjects };
+export default { loadRepositories };

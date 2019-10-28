@@ -5,13 +5,13 @@ import { ProjectIdsMultiSelect } from './components/ProjectIdsMultiSelect';
 import logo from 'assets/final_low.png';
 
 type PropsType = {
-  loadProjects: () => void;
+  loadRepositories: () => void;
 };
 
 const Home = React.memo<PropsType>(props => {
   useEffect(
     () => {
-      props.loadProjects();
+      props.loadRepositories();
     },
     [props],
   );

@@ -1,7 +1,7 @@
 import { LoginAction, LoginState } from './Login';
 import { CommentAction, CommentState } from './Comment';
 import { TagAction, TagState } from './Tag';
-import { ProjectAction, ProjectState } from './Project';
+import { ProjectAction, ProjectState } from './Repository';
 import { FiltersAction, FiltersState } from './Filters';
 
 export type RootState = Readonly<{

@@ -9,7 +9,7 @@ import { Dispatch } from 'redux';
 import { RootState } from 'redux/types';
 import { getSelectedProjectIds } from 'redux/Filters';
 import { selectProjectIds } from 'redux/Filters/filters.actions';
-import { getProjects } from 'redux/Project';
+import { getProjects } from 'redux/Repository';
 
 const mapStateToProps = (state: RootState) => ({
   selectedOptions: adaptOptionFromId(getSelectedProjectIds(state), getProjects(state)),

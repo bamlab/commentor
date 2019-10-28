@@ -5,7 +5,7 @@ import { Dispatch } from 'react';
 
 const mapStateToProps = () => ({});
 
-// @ts-ignore
+// @ts-ignore Generic type 'Dispatch' requires 1 type argument(s)
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   loadRepositories: () => dispatch(loadRepositories.request({})),
 });

@@ -89,7 +89,7 @@ storiesOf('GenericTable', module)
   .addDecorator(withKnobs)
 
   .add('with empty comments', () => (
-    <GenericTable values={[]} fixedColumnCount={2} columnsConfig={columnsConfig} />
+    <GenericTable values={[]} fixedColumnCount={2} columnsConfig={columnsConfig} options={{}} />
   ))
   .add('playground', () => {
     const id = number('id', 1);
@@ -100,13 +100,14 @@ storiesOf('GenericTable', module)
     const requester = text('body', 'requester');
     const pullRequestUrl = text('body', 'pullRequestUrl');
     const repositoryId = number('id', 123421);
-    // @ts-ignore date is connsidered as number where creationDate is Date
+    // @ts-ignore date is considered as number where creationDate is Date
     const creationDate: Date = date('creationDate', new Date('2019-10-09T20:35:55.068Z'));
     const fixedColumnCount = number('id', 1);
     return (
       <GenericTable
         columnsConfig={columnsConfig}
         fixedColumnCount={fixedColumnCount}
+        options={{}}
         values={[
           {
             id,

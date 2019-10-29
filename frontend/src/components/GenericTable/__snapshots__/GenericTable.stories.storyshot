@@ -141,6 +141,7 @@ exports[`Storyshots GenericTable playground 1`] = `
         ]
       }
       fixedColumnCount={1}
+      options={Object {}}
       values={
         Array [
           Object {
@@ -404,6 +405,7 @@ exports[`Storyshots GenericTable with empty comments 1`] = `
         ]
       }
       fixedColumnCount={2}
+      options={Object {}}
       values={Array []}
     >
       <GenericTablestyle__Wrapper>

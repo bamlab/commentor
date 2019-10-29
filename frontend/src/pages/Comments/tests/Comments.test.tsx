@@ -15,10 +15,11 @@ describe('[Component] <Comments />', () => {
     comments: [],
     loadComments: jest.fn(),
     isCommentLoading: true,
+    repositoryIds: [2, 3],
   };
   it('should call loadComment on button click', () => {
     const wrapper = shallow(<Comments {...props} />);
     wrapper.find('Button').simulate('click');
-    expect(props.loadComments).toHaveBeenCalledWith();
+    expect(props.loadComments).toHaveBeenCalledWith({ repositoryIds: [2, 3] });
   });
 });

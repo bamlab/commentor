@@ -8,13 +8,14 @@ interface IProps {
   tags: TagType[];
   comments: CommentType[];
   loadTags: () => void;
-  loadComments: () => void;
+  loadComments: (filters: { repositoryIds: number[] }) => void;
+  repositoryIds: number[];
 }
 
 const Graphs = React.memo<IProps>(props => {
   useEffect(() => {
     props.loadTags();
-    props.loadComments();
+    props.loadComments({ repositoryIds: props.repositoryIds });
     // eslint-disable-next-line
   }, []);
 

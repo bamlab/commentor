@@ -1,21 +1,14 @@
 {
   "header": {
     "login": "Login",
-    "project": "Tags",
+    "tag": "Tags",
     "comment": "Comments",
     "graph": "Graphics",
     "logout": "Logout"
   },
   "home": {
-    "use-a-link": "Or use a link",
-    "get-started": "To get started, edit",
-    "save-to-reload": "and save to reload.",
-    "create-route": "To create a route, edit routes.js and link it to a page",
-    "generate-component": "To create a page or a simple component, run: ",
-    "generate-module": "To add business logic, add a file in ./redux with your reducers/actions/sagas/selectors/constants/...",
-    "click-me": "Click me",
-    "readme": "Look at the README.md to discover the awesome npm commands we added",
-    "welcome-message": "Bienvenue sur commentor !"
+    "welcome-message": "Welcome on commentor !",
+    "select-repository-label": "Select your repositories : "
   },
   "page": {
     "back": "Back",

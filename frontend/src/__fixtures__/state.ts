@@ -36,4 +36,12 @@ export const state: RootState = {
     tagError: null,
     selectedTagId: null,
   },
+  filters: {
+    repositoryIds: [],
+  },
+  repository: {
+    repositories: [],
+    isLoading: false,
+    repositoryError: null,
+  },
 };

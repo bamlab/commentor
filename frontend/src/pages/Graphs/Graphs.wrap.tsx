@@ -7,14 +7,22 @@ import { getTags } from 'redux/Tag/tag.selectors';
 import { getComments } from 'redux/Comment/comment.selectors';
 import { loadComments } from 'redux/Comment/comment.actions';
 
+import { getSelectedRepositoryIds } from 'redux/Filters';
+
 const mapStateToProps = (state: RootState) => ({
   tags: getTags(state),
   comments: getComments(state),
+  repositoryIds: getSelectedRepositoryIds(state),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   loadTags: () => dispatch(loadTags.request({})),
-  loadComments: () => dispatch(loadComments.request({})),
+  loadComments: (filters: { repositoryIds: number[] }) =>
+    dispatch(
+      loadComments.request({
+        ...filters,
+      }),
+    ),
 });
 
 export default connect(

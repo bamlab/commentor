@@ -2,6 +2,7 @@ import jwt_decode from 'jwt-decode';
 import request from 'superagent';
 import { CommentType } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
+import { RepositoryType } from 'redux/Repository';
 
 const backendBaseUrl = process.env.REACT_APP_API_BASE_URL || '';
 
@@ -111,13 +112,18 @@ class Client {
     return token;
   }
 
-  fetchComments = async (data: object): Promise<CommentType[]> => {
-    const result = await this.get('/comments');
+  fetchComments = async (data: { repositoryIds: number[] }): Promise<CommentType[]> => {
+    const result = await this.post('/comments/filtered', data);
     return result;
   };
 
   fetchTags = async (data: object): Promise<TagType[]> => {
     const result = await this.get('/tags');
+    return result;
+  };
+
+  fetchRepositories = async (data: object): Promise<RepositoryType[]> => {
+    const result = await this.get('/repositories/hardcoded');
     return result;
   };
 

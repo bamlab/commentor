@@ -30,4 +30,11 @@ export class CommentService extends TypeOrmCrudService<Comment> {
 
     return filteredComments;
   };
+
+  checkIfCommentsExistForRepository = async (repositoryId: number): Promise<boolean> => {
+    const commentForRepository = await this.commentRepository.findOne({
+      where: { repositoryId },
+    });
+    return !!commentForRepository;
+  };
 }

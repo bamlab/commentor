@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 import queryString from 'query-string';
+import client from '../../services/networking/client';
 import {
   HomeContainer,
   Logo,
@@ -19,16 +20,16 @@ type PropsType = {
 };
 
 const Home = React.memo<PropsType>(props => {
-  useEffect(
-    () => {
-      const params = queryString.parse(props.location.search);
-      if (params.code) {
-        props.setAccessToken(params.code);
-      }
-      props.loadRepositories();
-    },
-    [props],
-  );
+  const componentDidMount = async () => {
+    const params = queryString.parse(props.location.search);
+    if (params.code && typeof params.code === 'string') {
+      await client.createAccessToken(params.code);
+    }
+    await props.loadRepositories();
+  };
+  useEffect(() => {
+    componentDidMount();
+  }, []);
 
   return (
     <HomeContainer>
@@ -40,7 +41,11 @@ const Home = React.memo<PropsType>(props => {
         <GithubAuthentTitleWrapper>
           <FormattedMessage id="home.authenticate-via-github" />
         </GithubAuthentTitleWrapper>
-        <GithubAuthentButton href="https://github.com/login/oauth/authorize?client_id=Iv1.2125db5cc55ea22c">
+        <GithubAuthentButton
+          href={`https://github.com/login/oauth/authorize?client_id=${
+            process.env.GITHUB_APP_CLIENT_ID
+          }`}
+        >
           Login via Github
         </GithubAuthentButton>
       </GithubAuthentWrapper>

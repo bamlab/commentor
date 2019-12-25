@@ -1,36 +1,42 @@
-import { Controller, Post, Body, Req, Res } from '@nestjs/common';
-import { AuthService } from './auth.service';
-import { Credentials } from './interfaces/credentials.dto';
-import { Response, Request } from 'express';
+import * as request from 'request-promise';
 
-const REFRESH_TOKEN = 'refresh_token';
+import { Controller, Post, Body, Res } from '@nestjs/common';
+import { AuthService } from './auth.service';
+import { Response } from 'express';
+
+const ACCESS_TOKEN_COOKIE_KEY = 'access_token';
 
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @Post('jwt/create')
-  async createJwt(@Body() credentials: Credentials, @Res() res: Response): Promise<Response> {
-    const { access, refresh } = await this.authService.checkCredentials(credentials);
-
-    res.cookie(REFRESH_TOKEN, refresh, {
+  @Post('accessToken/create')
+  async createJwt(@Body() body: { code: string }, @Res() res: Response): Promise<Response> {
+    const githubOauthResponse = await request({
+      uri: 'https://github.com/login/oauth/access_token',
+      method: 'GET',
+      qs: {
+        code: body.code,
+        client_id: process.env.GITHUB_APP_CLIENT_ID,
+        client_secret: process.env.GITHUB_APP_CLIENT_SECRET,
+      },
+      headers: {
+        'User-Agent': 'Request-Promise',
+      },
+      json: true,
+    });
+    const accessToken = githubOauthResponse.access_token;
+    res.cookie(ACCESS_TOKEN_COOKIE_KEY, accessToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
     });
 
-    return res.send({ access });
+    return res.send();
   }
 
-  @Post('jwt/refresh')
-  async refreshJwt(@Req() req: Request): Promise<{ access: string }> {
-    const access = await this.authService.checkRefreshToken(req.cookies[REFRESH_TOKEN] as string);
-
-    return { access };
-  }
-
-  @Post('jwt/logout')
+  @Post('accessToken/logout')
   async logout(@Res() res: Response): Promise<Response> {
-    res.clearCookie(REFRESH_TOKEN);
+    res.clearCookie(ACCESS_TOKEN_COOKIE_KEY);
     return res.sendStatus(200);
   }
 }

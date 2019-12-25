@@ -20,14 +20,14 @@ type PropsType = {
 };
 
 const Home = React.memo<PropsType>(props => {
-  const componentDidMount = async () => {
-    const params = queryString.parse(props.location.search);
-    if (params.code && typeof params.code === 'string') {
-      await client.createAccessToken(params.code);
-    }
-    await props.loadRepositories();
-  };
   useEffect(() => {
+    const componentDidMount = async () => {
+      const params = queryString.parse(props.location.search);
+      if (params.code && typeof params.code === 'string') {
+        await client.createAccessToken(params.code);
+      }
+      await props.loadRepositories();
+    };
     componentDidMount();
   }, []);
 
@@ -43,7 +43,7 @@ const Home = React.memo<PropsType>(props => {
         </GithubAuthentTitleWrapper>
         <GithubAuthentButton
           href={`https://github.com/login/oauth/authorize?client_id=${
-            process.env.GITHUB_APP_CLIENT_ID
+            process.env.REACT_APP_GITHUB_APP_CLIENT_ID
           }`}
         >
           Login via Github

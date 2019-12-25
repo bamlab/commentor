@@ -6,16 +6,9 @@ import Link from 'components/Link';
 import { PATHS } from 'routes';
 import { Logo, HeaderContainer } from './Header.style';
 
-interface IHeaderProps {
-  isUserLoggedIn: boolean;
-  logout: () => void;
-}
+interface IHeaderProps {}
 
-const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = ({
-  isUserLoggedIn,
-  location,
-  logout,
-}) => (
+const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = () => (
   <HeaderContainer>
     <RouterLink to={PATHS.HOME}>
       <Logo alt="Forge logo" src={logo} />
@@ -29,11 +22,6 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = ({
     <Link as={RouterLink} to={PATHS.GRAPHS}>
       <FormattedMessage id="header.graph" />
     </Link>
-    {!isUserLoggedIn && location.pathname !== PATHS.LOGIN && (
-      <Link as={RouterLink} to={PATHS.LOGIN}>
-        <FormattedMessage id="header.login" />
-      </Link>
-    )}
   </HeaderContainer>
 );
 

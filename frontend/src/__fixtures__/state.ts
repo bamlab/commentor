@@ -1,10 +1,6 @@
 import { RootState } from 'redux/types';
 
 export const state: RootState = {
-  login: {
-    token: 'someToken',
-    loginError: 'some login error message',
-  },
   comment: {
     comments: [
       {

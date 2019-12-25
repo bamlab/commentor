@@ -18,7 +18,7 @@ export class RepositoryService extends TypeOrmCrudService<RepositoryEntity> {
     super(repositoryRepository);
   }
   getUserRepositories = async (
-    userToken: string = '0235579edc0b7ac8086647a14a2b6a3bbb4c7532',
+    userToken: string,
     previousPageUserRepositories: GithubRepository[] = [],
     previousPageCursor?: string,
   ): Promise<RepositoryEntity[]> => {

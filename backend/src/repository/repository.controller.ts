@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Request } from '@nestjs/common';
+import { Request as RequestType } from 'express';
 
 import { Repository as RepositoryEntity } from './repository.entity';
 import { RepositoryService } from './repository.service';
@@ -24,9 +25,15 @@ export class RepositoryController implements CrudController<RepositoryEntity> {
   }
 
   @Get()
-  async getUserRepositories(): Promise<RepositoryEntity[]> {
-    const userRepositories = await this.service.getUserRepositories();
-    return userRepositories;
+  async getUserRepositories(
+    @Request()
+    request: RequestType,
+  ): Promise<RepositoryEntity[]> {
+    if (request.cookies.access_token) {
+      const userRepositories = await this.service.getUserRepositories(request.cookies.access_token);
+      return userRepositories;
+    }
+    return [];
   }
 
   @Get('/hardcoded')

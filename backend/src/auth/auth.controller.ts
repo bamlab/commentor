@@ -25,11 +25,12 @@ export class AuthController {
       },
       json: true,
     });
-    const accessToken = githubOauthResponse.access_token;
-    res.cookie(ACCESS_TOKEN_COOKIE_KEY, accessToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-    });
+    if (githubOauthResponse.access_token) {
+      res.cookie(ACCESS_TOKEN_COOKIE_KEY, githubOauthResponse.access_token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+      });
+    }
 
     return res.send();
   }

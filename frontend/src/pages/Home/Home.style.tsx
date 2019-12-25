@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontFamily, fontSize, fontWeight, getSpacing, lineHeight } from 'stylesheet';
+import { fontFamily, fontSize, fontWeight, getSpacing, lineHeight, colorUsage } from 'stylesheet';
 
 export const HomeContainer = styled.div`
   display: flex;
@@ -17,6 +17,28 @@ export const Logo = styled.img`
 Logo.displayName = 'Logo';
 
 export const WelcomeMessage = styled.div`
+  font-weight: ${fontWeight.bold};
+  font-family: ${fontFamily.main};
+  font-size: ${fontSize.large};
+  line-height: ${lineHeight.medium};
+  margin-bottom: ${getSpacing(12)};
+`;
+
+export const GithubAuthentWrapper = styled.div`
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: ${getSpacing(12)};
+`;
+
+export const GithubAuthentButton = styled.a`
+  justify-content: center;
+  align-items: center;
+  background-color: ${colorUsage.primaryButtonBackground};
+  padding: ${getSpacing(6)};
+`;
+
+export const GithubAuthentTitleWrapper = styled.div`
   font-weight: ${fontWeight.bold};
   font-family: ${fontFamily.main};
   font-size: ${fontSize.large};

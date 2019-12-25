@@ -123,7 +123,7 @@ class Client {
   };
 
   fetchRepositories = async (data: object): Promise<RepositoryType[]> => {
-    const result = await this.get('/repositories/hardcoded');
+    const result = await this.get('/repositories');
     return result;
   };
 

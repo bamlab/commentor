@@ -23,6 +23,12 @@ export class RepositoryController implements CrudController<RepositoryEntity> {
     return this;
   }
 
+  @Get()
+  async getUserRepositories(): Promise<RepositoryEntity[]> {
+    const userRepositories = await this.service.getUserRepositories();
+    return userRepositories;
+  }
+
   @Get('/hardcoded')
   async getRepositories(): Promise<RepositoryEntity[]> {
     const COMMENTOR_REPO_ID = 212067833;

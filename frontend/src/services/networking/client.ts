@@ -105,12 +105,10 @@ class Client {
     return this.request('delete', `${endpoint}/${id}/delete`);
   }
 
-  async login(data: object) {
-    const result = await this.post('/auth/jwt/create', data);
-    const token: string | undefined = result.token || result.access;
-    if (token) this.updateToken(token);
-    return token;
-  }
+  createAccessToken = async (code: string): Promise<void> => {
+    const result = await this.post('/auth/accessToken/create', { code });
+    return result;
+  };
 
   fetchComments = async (data: { repositoryIds: number[] }): Promise<CommentType[]> => {
     const result = await this.post('/comments/filtered', data);
@@ -153,13 +151,8 @@ class Client {
   };
 
   async logout() {
-    const result = await this.post('/auth/jwt/logout', {});
+    const result = await this.post('/auth/accessToken/logout', {});
     return result;
-  }
-
-  async refreshToken() {
-    const { access } = await this.request('post', '/auth/jwt/refresh', {}, false);
-    this.updateToken(access);
   }
 }
 

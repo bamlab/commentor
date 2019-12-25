@@ -13,6 +13,7 @@
     "history": "4.7.2",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
+    "query-string": "^6.9.0",
     "react": "^16.8.3",
     "react-chartjs-2": "^2.8.0",
     "react-dom": "^16.8.3",

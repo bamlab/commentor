@@ -1,12 +1,10 @@
-import { Controller, Body, Delete, Param, Put } from '@nestjs/common';
+import { Controller, Body, Delete, Param, Put, Get } from '@nestjs/common';
 import { GithubLogin } from '../auth/decorators/githubLogin.decorator';
 
 import { InputTag } from './interfaces/tag.dto';
 import { Tag as TagEntity } from './tag.entity';
 import { TagService } from './tag.service';
 import { Crud, CrudController, Override } from '@nestjsx/crud';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
 
 @Crud({
   model: {
@@ -15,14 +13,7 @@ import { Repository } from 'typeorm';
 })
 @Controller('tags')
 export class TagController implements CrudController<TagEntity> {
-  constructor(
-    @InjectRepository(TagEntity) private readonly tagRepository: Repository<TagEntity>,
-    public readonly service: TagService,
-  ) {}
-
-  get base(): CrudController<TagEntity> {
-    return this;
-  }
+  constructor(public readonly service: TagService) {}
 
   @Override()
   createOne(@Body() inputTag: InputTag, @GithubLogin() githubLogin: string) {
@@ -32,6 +23,11 @@ export class TagController implements CrudController<TagEntity> {
       color: inputTag.color,
       githubLogin,
     });
+  }
+
+  @Get()
+  getAuthenticatedTags(@GithubLogin() githubLogin: string) {
+    return this.service.getByGithubLogin(githubLogin);
   }
 
   @Delete(':id/delete')

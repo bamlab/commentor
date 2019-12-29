@@ -36,7 +36,6 @@ const Home = React.memo<PropsType>(props => {
 
   useEffect(
     () => {
-      console.log('COUCOU', isAuthentified);
       if (isAuthentified) {
         props.loadRepositories();
       }

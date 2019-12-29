@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import queryString from 'query-string';
 import client from '../../services/networking/client';
+import Cookies from 'universal-cookie';
 import {
   HomeContainer,
   Logo,
@@ -18,18 +19,30 @@ type PropsType = {
   loadRepositories: () => void;
   location: { search: string };
 };
+const cookies = new Cookies();
 
 const Home = React.memo<PropsType>(props => {
+  const [isAuthentified, setIsAuthentified] = useState(!!cookies.get('is_authentified'));
   useEffect(() => {
     const componentDidMount = async () => {
       const params = queryString.parse(props.location.search);
       if (params.code && typeof params.code === 'string') {
         await client.createAccessToken(params.code);
+        setIsAuthentified(!!cookies.get('is_authentified'));
       }
-      await props.loadRepositories();
     };
     componentDidMount();
   }, []);
+
+  useEffect(
+    () => {
+      console.log('COUCOU', isAuthentified);
+      if (isAuthentified) {
+        props.loadRepositories();
+      }
+    },
+    [isAuthentified],
+  );
 
   return (
     <HomeContainer>
@@ -37,22 +50,26 @@ const Home = React.memo<PropsType>(props => {
       <WelcomeMessage>
         <FormattedMessage id="home.welcome-message" />
       </WelcomeMessage>
-      <GithubAuthentWrapper>
-        <GithubAuthentTitleWrapper>
-          <FormattedMessage id="home.authenticate-via-github" />
-        </GithubAuthentTitleWrapper>
-        <GithubAuthentButton
-          href={`https://github.com/login/oauth/authorize?client_id=${
-            process.env.REACT_APP_GITHUB_APP_CLIENT_ID
-          }`}
-        >
-          Login via Github
-        </GithubAuthentButton>
-      </GithubAuthentWrapper>
-      <SelectRepositoryWrapper>
-        <FormattedMessage id="home.select-repository-label" />
-        <RepositoryIdsMultiSelect />
-      </SelectRepositoryWrapper>
+      {!isAuthentified && (
+        <GithubAuthentWrapper>
+          <GithubAuthentTitleWrapper>
+            <FormattedMessage id="home.authenticate-via-github" />
+          </GithubAuthentTitleWrapper>
+          <GithubAuthentButton
+            href={`https://github.com/login/oauth/authorize?client_id=${
+              process.env.REACT_APP_GITHUB_APP_CLIENT_ID
+            }`}
+          >
+            Login via Github
+          </GithubAuthentButton>
+        </GithubAuthentWrapper>
+      )}
+      {isAuthentified && (
+        <SelectRepositoryWrapper>
+          <FormattedMessage id="home.select-repository-label" />
+          <RepositoryIdsMultiSelect />
+        </SelectRepositoryWrapper>
+      )}
     </HomeContainer>
   );
 });

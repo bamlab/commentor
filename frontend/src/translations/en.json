@@ -8,6 +8,7 @@
   },
   "home": {
     "welcome-message": "Welcome on commentor !",
+    "authenticate-via-github": "Please authenticate using Github",
     "select-repository-label": "Select your repositories : "
   },
   "page": {

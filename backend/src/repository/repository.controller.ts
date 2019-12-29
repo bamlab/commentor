@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Request } from '@nestjs/common';
+import { Request as RequestType } from 'express';
 
 import { Repository as RepositoryEntity } from './repository.entity';
 import { RepositoryService } from './repository.service';
@@ -23,19 +24,17 @@ export class RepositoryController implements CrudController<RepositoryEntity> {
     return this;
   }
 
-  @Get('/hardcoded')
-  async getRepositories(): Promise<RepositoryEntity[]> {
-    const COMMENTOR_REPO_ID = 212067833;
-    const EXEMPLE_REPO_ID = 186853002;
-    const GBH_REPO_ID = 169545712;
-    const ZEBET_REPO_ID = 197189213;
-    const ADA_REPO_ID = 85054537;
-    return [
-      { id: COMMENTOR_REPO_ID, name: 'Commentor' },
-      { id: EXEMPLE_REPO_ID, name: 'Example' },
-      { id: GBH_REPO_ID, name: 'GBH' },
-      { id: ZEBET_REPO_ID, name: 'Ze-Bet' },
-      { id: ADA_REPO_ID, name: 'Ada' },
-    ];
+  @Get()
+  async getUserRepositories(
+    @Request()
+    request: RequestType,
+  ): Promise<RepositoryEntity[]> {
+    if (request.cookies.access_token) {
+      const userRepositories = await this.service.getUserCommentedRepositories(
+        request.cookies.access_token,
+      );
+      return userRepositories;
+    }
+    return [];
   }
 }

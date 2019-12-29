@@ -13,6 +13,7 @@
     "history": "4.7.2",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
+    "query-string": "^6.9.0",
     "react": "^16.8.3",
     "react-chartjs-2": "^2.8.0",
     "react-dom": "^16.8.3",
@@ -29,7 +30,8 @@
     "redux-saga": "^1.0.2",
     "styled-components": "4.1.1",
     "superagent": "4.0.0",
-    "typesafe-actions": "^3.0.0"
+    "typesafe-actions": "^3.0.0",
+    "universal-cookie": "^4.0.3"
   },
   "scripts": {
     "start": "REACT_APP_ENV=local react-app-rewired start",

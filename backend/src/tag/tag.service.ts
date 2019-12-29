@@ -12,18 +12,26 @@ export class TagService extends TypeOrmCrudService<TagEntity> {
     super(tagRepository);
   }
 
-  createTag = async (tag: Pick<TagEntity, 'code' | 'description' | 'color'>) => {
+  createTag = async (tag: Pick<TagEntity, 'code' | 'description' | 'color' | 'githubLogin'>) => {
     const createdTag = await this.tagRepository.save(tag);
     return createdTag;
   };
 
-  updateById = async (tag: InputTag, tagId: number): Promise<TagEntity | void> => {
-    await this.tagRepository.update(tagId, tag);
+  getByGithubLogin = async (githubLogin: string) => {
+    return this.tagRepository.find({ githubLogin });
+  };
+
+  updateById = async (
+    tag: InputTag,
+    tagId: number,
+    githubLogin: string,
+  ): Promise<TagEntity | void> => {
+    await this.tagRepository.update({ id: tagId, githubLogin }, tag);
     const updatedTag = await this.tagRepository.findOne({ id: tagId });
     return updatedTag;
   };
 
-  deleteTagById = async (id: number) => {
-    return this.tagRepository.delete(id);
+  deleteTagById = async (id: number, githubLogin: string) => {
+    return this.tagRepository.delete({ id, githubLogin });
   };
 }

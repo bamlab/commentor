@@ -1,78 +1,43 @@
-import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
-import { JwtService } from '@nestjs/jwt';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Injectable } from '@nestjs/common';
+import { Response } from 'express';
+import * as request from 'request-promise';
 
-import { Credentials } from './interfaces/credentials.dto';
-import { JwtPayload } from './interfaces/jwt-payload.interface';
-import { User } from '../user/user.entity';
-import { EntityNotFoundError } from 'typeorm/error/EntityNotFoundError';
-import { JwtToken } from './interfaces/jwt-token.interface';
-import { compare } from 'bcrypt';
-
-const ACCESS_TOKEN_MINUTES_TO_LIVE = 10;
-const REFRESH_TOKEN_MINUTES_TO_LIVE = 525600; // 1 year
+const ACCESS_TOKEN_COOKIE_KEY = 'access_token';
+const IS_AUTHENTIFIED_COOKIE_KEY = 'is_authentified';
 
 @Injectable()
 export class AuthService {
-  constructor(
-    private readonly jwtService: JwtService,
-    @InjectRepository(User) private readonly userRepository: Repository<User>,
-  ) {}
-
-  async checkCredentials(credentials: Credentials): Promise<JwtToken> {
-    let user: User;
-    try {
-      user = await this.userRepository.findOneOrFail({ email: credentials.email });
-    } catch (error) {
-      if (error instanceof EntityNotFoundError) {
-        throw new NotFoundException();
-      }
-      throw error;
-    }
-    const areCredentialsValid = await compare(credentials.password, user.password);
-    if (!areCredentialsValid) {
-      throw new UnauthorizedException();
-    }
-
-    return {
-      access: this.createJwt(user, ACCESS_TOKEN_MINUTES_TO_LIVE),
-      refresh: this.createJwt(user, REFRESH_TOKEN_MINUTES_TO_LIVE),
-    };
+  logout(res: Response) {
+    res.clearCookie(ACCESS_TOKEN_COOKIE_KEY);
+    res.clearCookie(IS_AUTHENTIFIED_COOKIE_KEY);
+    return res.sendStatus(200);
   }
 
-  async checkRefreshToken(stringToken: string): Promise<string> {
-    try {
-      const now = new Date();
-
-      const refreshToken: JwtPayload = this.jwtService.verify(stringToken);
-
-      if (now.getTime() / 1000 > refreshToken.exp) {
-        throw new UnauthorizedException();
-      }
-
-      const user = await this.userRepository.findOneOrFail(refreshToken.user_id);
-      return this.createJwt(user, ACCESS_TOKEN_MINUTES_TO_LIVE);
-    } catch (error) {
-      if (error instanceof EntityNotFoundError) {
-        throw new UnauthorizedException();
-      }
-      throw error;
+  async createJwt(code: string, res: Response) {
+    const githubOauthResponse = await request({
+      uri: 'https://github.com/login/oauth/access_token',
+      method: 'GET',
+      qs: {
+        code,
+        client_id: process.env.GITHUB_APP_CLIENT_ID,
+        client_secret: process.env.GITHUB_APP_CLIENT_SECRET,
+      },
+      headers: {
+        'User-Agent': 'Request-Promise',
+      },
+      json: true,
+    });
+    if (githubOauthResponse.access_token) {
+      res.cookie(ACCESS_TOKEN_COOKIE_KEY, githubOauthResponse.access_token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+      });
+      res.cookie(IS_AUTHENTIFIED_COOKIE_KEY, true, {
+        httpOnly: false,
+        secure: process.env.NODE_ENV === 'production',
+      });
     }
-  }
 
-  createJwt(user: User, minutesToLive: number): string {
-    return this.jwtService.sign({ user_id: user.id }, { expiresIn: minutesToLive * 60 });
-  }
-
-  async validateUser(payload: JwtPayload): Promise<User> {
-    try {
-      return await this.userRepository.findOneOrFail(payload.user_id);
-    } catch (error) {
-      if (error instanceof EntityNotFoundError) {
-        throw new UnauthorizedException();
-      }
-      throw error;
-    }
+    return res.send();
   }
 }

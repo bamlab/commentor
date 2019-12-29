@@ -21,10 +21,10 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     return createdComment;
   };
 
-  getFilteredComments = async (filters: { repositoryIds: number[] }): Promise<Comment[]> => {
+  getCommentsFilteredByRepositoriesIds = async (repositoriesIds: number[]): Promise<Comment[]> => {
     const filteredComments = await this.commentRepository.find({
       where: {
-        repositoryId: filters.repositoryIds.length > 0 ? In(filters.repositoryIds) : null,
+        repositoryId: repositoriesIds.length > 0 ? In(repositoriesIds) : null,
       },
     });
 

@@ -1,11 +1,12 @@
-import { Controller, Get, Request } from '@nestjs/common';
-import { Request as RequestType } from 'express';
+import { Controller, Get } from '@nestjs/common';
 
 import { Repository as RepositoryEntity } from './repository.entity';
 import { RepositoryService } from './repository.service';
 import { Crud, CrudController } from '@nestjsx/crud';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { GithubRepository } from './interfaces/repository.dto';
+import { GithubRepositories } from './decorators/GithubRepositories.decorator';
 
 @Crud({
   model: {
@@ -26,15 +27,8 @@ export class RepositoryController implements CrudController<RepositoryEntity> {
 
   @Get()
   async getUserRepositories(
-    @Request()
-    request: RequestType,
+    @GithubRepositories() githubRepositories: GithubRepository[],
   ): Promise<RepositoryEntity[]> {
-    if (request.cookies.access_token) {
-      const userRepositories = await this.service.getUserCommentedRepositories(
-        request.cookies.access_token,
-      );
-      return userRepositories;
-    }
-    return [];
+    return this.service.getUserCommentedRepositories(githubRepositories);
   }
 }

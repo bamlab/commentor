@@ -5,7 +5,7 @@ import * as request from 'request-promise';
 
 import { Repository as RepositoryEntity } from './repository.entity';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
-import { GithubAnswer, GithubRepository } from './interfaces/repository.dto';
+import { GithubRepository } from './interfaces/repository.dto';
 import { CommentService } from '../comment/comment.service';
 
 @Injectable()
@@ -18,51 +18,9 @@ export class RepositoryService extends TypeOrmCrudService<RepositoryEntity> {
     super(repositoryRepository);
   }
   getUserCommentedRepositories = async (
-    userToken: string,
-    previousPageUserRepositories: GithubRepository[] = [],
-    previousPageCursor?: string,
+    githubRepositories: GithubRepository[],
   ): Promise<RepositoryEntity[]> => {
-    const query = `
-      query {
-        viewer {
-          repositories(first: 100, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER] ${
-            previousPageCursor ? `, after:"${previousPageCursor}"` : ''
-          }) {
-            totalCount
-            pageInfo {
-              endCursor
-              hasNextPage
-            }
-            nodes {
-              databaseId,
-              name
-            }
-          }
-        }
-      }
-    `;
-    const githubAnswer: GithubAnswer = await request({
-      uri: 'https://api.github.com/graphql',
-      headers: {
-        Authorization: `bearer ${userToken}`,
-        'User-Agent': 'Request-Promise',
-      },
-      method: 'POST',
-      json: true,
-      body: {
-        query,
-      },
-    });
-
-    const repositoriesList = previousPageUserRepositories.concat(
-      githubAnswer.data.viewer.repositories.nodes,
-    );
-    const pageInfo = githubAnswer.data.viewer.repositories.pageInfo;
-    if (pageInfo.hasNextPage) {
-      return this.getUserCommentedRepositories(userToken, repositoriesList, pageInfo.endCursor);
-    }
-
-    const promiseList = repositoriesList.map(async repository => {
+    const promiseList = githubRepositories.map(async repository => {
       const isRepositoryLinkedToExistingComment = await this.commentService.checkIfCommentsExistForRepository(
         repository.databaseId,
       );

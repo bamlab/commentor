@@ -1,4 +1,6 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState, useEffect } from 'react';
+import Cookies from 'universal-cookie';
+
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import fr from 'react-intl/locale-data/fr';
@@ -15,19 +17,30 @@ const locales = {
   en: flattenMessages(enMessages),
 };
 
+const cookies = new Cookies();
+
 addLocaleData([...fr, ...en]);
 
 interface Props {
   children: ReactNode;
 }
 
-const Root: React.FunctionComponent<Props> = ({ children }) => (
-  <IntlProvider locale="fr" messages={locales.fr}>
-    <RootContainer>
-      <Header />
-      <PageContent>{children}</PageContent>
-    </RootContainer>
-  </IntlProvider>
-);
+const Root: React.FunctionComponent<Props> = ({ children }) => {
+  const [isAuthentified, setIsAuthentified] = useState(!!cookies.get('is_authentified'));
+  useEffect(() => {
+    const componentDidMount = async () => {
+      setIsAuthentified(!!cookies.get('is_authentified'));
+    };
+    componentDidMount();
+  }, []);
+  return (
+    <IntlProvider locale="fr" messages={locales.fr}>
+      <RootContainer>
+        {isAuthentified && <Header />}
+        <PageContent>{children}</PageContent>
+      </RootContainer>
+    </IntlProvider>
+  );
+};
 
 export default Root;

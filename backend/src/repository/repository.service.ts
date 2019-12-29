@@ -17,7 +17,7 @@ export class RepositoryService extends TypeOrmCrudService<RepositoryEntity> {
   ) {
     super(repositoryRepository);
   }
-  getUserRepositories = async (
+  getUserCommentedRepositories = async (
     userToken: string,
     previousPageUserRepositories: GithubRepository[] = [],
     previousPageCursor?: string,
@@ -59,7 +59,7 @@ export class RepositoryService extends TypeOrmCrudService<RepositoryEntity> {
     );
     const pageInfo = githubAnswer.data.viewer.repositories.pageInfo;
     if (pageInfo.hasNextPage) {
-      return this.getUserRepositories(userToken, repositoriesList, pageInfo.endCursor);
+      return this.getUserCommentedRepositories(userToken, repositoriesList, pageInfo.endCursor);
     }
 
     const promiseList = repositoriesList.map(async repository => {

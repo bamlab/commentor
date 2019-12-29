@@ -5,6 +5,7 @@ import { AuthService } from './auth.service';
 import { Response } from 'express';
 
 const ACCESS_TOKEN_COOKIE_KEY = 'access_token';
+const IS_AUTHENTIFIED_COOKIE_KEY = 'is_authentified';
 
 @Controller('auth')
 export class AuthController {
@@ -30,6 +31,10 @@ export class AuthController {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
       });
+      res.cookie(IS_AUTHENTIFIED_COOKIE_KEY, true, {
+        httpOnly: false,
+        secure: process.env.NODE_ENV === 'production',
+      });
     }
 
     return res.send();
@@ -38,6 +43,7 @@ export class AuthController {
   @Post('accessToken/logout')
   async logout(@Res() res: Response): Promise<Response> {
     res.clearCookie(ACCESS_TOKEN_COOKIE_KEY);
+    res.clearCookie(IS_AUTHENTIFIED_COOKIE_KEY);
     return res.sendStatus(200);
   }
 }

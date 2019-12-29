@@ -30,17 +30,22 @@ export class TagController implements CrudController<TagEntity> {
       code: inputTag.code,
       description: inputTag.description,
       color: inputTag.color,
+      githubLogin,
     });
   }
 
   @Delete(':id/delete')
-  async deleteTagById(@Param('id') id: string) {
+  async deleteTagById(@Param('id') id: string, @GithubLogin() githubLogin: string) {
     const idNumber = Number(id);
-    return this.service.deleteTagById(idNumber);
+    return this.service.deleteTagById(idNumber, githubLogin);
   }
 
   @Put(':id/update')
-  async updateById(@Param('id') id: string, @Body() inputTag: InputTag): Promise<any> {
-    return this.service.updateById(inputTag, Number(id));
+  async updateById(
+    @Param('id') id: string,
+    @Body() inputTag: InputTag,
+    @GithubLogin() githubLogin: string,
+  ): Promise<any> {
+    return this.service.updateById(inputTag, Number(id), githubLogin);
   }
 }

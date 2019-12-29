@@ -3,23 +3,16 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import * as request from 'request-promise';
 
-import { Repository as RepositoryEntity } from './repository.entity';
-import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
-import { GithubRepository } from './interfaces/repository.dto';
+import { GithubRepository } from './interfaces/GithubRepositoriesAnswer';
 import { CommentService } from '../comment/comment.service';
+import { RepositoryDto } from './interfaces/Repository.dto';
 
 @Injectable()
-export class RepositoryService extends TypeOrmCrudService<RepositoryEntity> {
-  constructor(
-    @InjectRepository(RepositoryEntity)
-    private readonly repositoryRepository: Repository<RepositoryEntity>,
-    private readonly commentService: CommentService,
-  ) {
-    super(repositoryRepository);
-  }
+export class RepositoryService {
+  constructor(private readonly commentService: CommentService) {}
   getUserCommentedRepositories = async (
     githubRepositories: GithubRepository[],
-  ): Promise<RepositoryEntity[]> => {
+  ): Promise<RepositoryDto[]> => {
     const promiseList = githubRepositories.map(async repository => {
       const isRepositoryLinkedToExistingComment = await this.commentService.checkIfCommentsExistForRepository(
         repository.databaseId,

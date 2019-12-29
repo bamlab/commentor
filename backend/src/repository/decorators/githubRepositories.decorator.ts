@@ -1,7 +1,6 @@
 import { createParamDecorator } from '@nestjs/common';
-import { GithubAnswer } from '../interfaces/repository.dto';
 import * as request from 'request-promise';
-import { GithubRepository } from '../interfaces/repository.dto';
+import { GithubRepositoriesAnswer, GithubRepository } from '../interfaces/GithubRepositoriesAnswer';
 
 const queryPaginatedGithubRepositories = async (
   userAccessToken: string,
@@ -28,7 +27,7 @@ const queryPaginatedGithubRepositories = async (
     }
   `;
 
-  const githubAnswer: GithubAnswer = await request({
+  const githubAnswer: GithubRepositoriesAnswer = await request({
     uri: 'https://api.github.com/graphql',
     headers: {
       Authorization: `bearer ${userAccessToken}`,

@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { Response } from 'express';
 import * as request from 'request-promise';
 
 @Injectable()
@@ -18,6 +17,7 @@ export class AuthService {
       },
       json: true,
     });
+    console.log('GITHUB OAUTH RESPONSE', githubOauthResponse);
     if (githubOauthResponse.access_token) {
       return githubOauthResponse.access_token;
     }

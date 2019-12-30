@@ -1,8 +1,8 @@
 import { Controller, Get } from '@nestjs/common';
 
 import { RepositoryService } from './repository.service';
-import { GithubRepository } from './interfaces/GithubRepositoriesAnswer';
-import { GithubRepositories } from './decorators/githubRepositories.decorator';
+import { GithubRepository } from '../auth/interfaces/GithubRepositoriesAnswer';
+import { GithubRepositories } from '../auth/decorators/githubRepositories.decorator';
 import { RepositoryDto } from './interfaces/Repository.dto';
 
 @Controller('repositories')

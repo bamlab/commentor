@@ -1,6 +1,9 @@
 {
   "name": "project",
   "version": "0.0.0",
+  "engines": {
+    "node": "12.11.0"
+  },
   "description": "description",
   "author": "AleBlondin",
   "license": "MIT",

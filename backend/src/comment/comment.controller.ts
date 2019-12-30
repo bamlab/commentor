@@ -5,9 +5,7 @@ import { CommentEvent } from './interfaces/comment.dto';
 import { Comment } from './comment.entity';
 import { CommentService } from './comment.service';
 import { Crud, CrudController, Override } from '@nestjsx/crud';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { GithubRepositories } from 'src/repository/decorators/GithubRepositories.decorator';
+import { GithubRepositories } from 'src/repository/decorators/githubRepositories.decorator';
 import { GithubRepository } from 'src/repository/interfaces/GithubRepositoriesAnswer';
 
 @Crud({

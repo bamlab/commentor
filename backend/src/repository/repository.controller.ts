@@ -2,7 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 
 import { RepositoryService } from './repository.service';
 import { GithubRepository } from './interfaces/GithubRepositoriesAnswer';
-import { GithubRepositories } from './decorators/GithubRepositories.decorator';
+import { GithubRepositories } from './decorators/githubRepositories.decorator';
 import { RepositoryDto } from './interfaces/Repository.dto';
 
 @Controller('repositories')

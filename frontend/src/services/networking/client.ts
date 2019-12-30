@@ -21,19 +21,9 @@ class Client {
     this.agent.withCredentials();
   }
 
-  async request(
-    method: Method,
-    endpoint: string,
-    data: object | null = null,
-    checkToken: boolean = true,
-  ) {
+  async request(method: Method, endpoint: string, data: object | null = null) {
     const url = /^https?:\/\//.test(endpoint) ? endpoint : `${this.baseUrl}${endpoint}`;
     let promise = this.agent[method](url);
-
-    const token = this.getToken();
-    if (token) {
-      promise = promise.set('Authorization', `Bearer ${token}`);
-    }
 
     if (['post', 'put', 'patch', 'delete'].includes(method) && data) {
       promise = promise.send(data);
@@ -41,10 +31,6 @@ class Client {
 
     const { body } = await promise;
     return body;
-  }
-
-  getToken() {
-    return localStorage.getItem(this.tokenKey);
   }
 
   updateToken(token: string) {

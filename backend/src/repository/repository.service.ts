@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-import { GithubRepository } from './interfaces/GithubRepositoriesAnswer';
+import { GithubRepository } from '../auth/interfaces/GithubRepositoriesAnswer';
 import { CommentService } from '../comment/comment.service';
 import { RepositoryDto } from './interfaces/Repository.dto';
 

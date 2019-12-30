@@ -12,16 +12,23 @@ export class AuthController {
   @Post('accessToken/create')
   async createJwt(@Body() body: { code: string }, @Res() res: Response) {
     const accessToken = await this.authService.createJwt(body.code);
+    console.log('ACCESS TOKEN', accessToken);
+
     if (accessToken) {
+      console.log('ABOUT TO SET COOKIES');
       res.cookie(ACCESS_TOKEN_COOKIE_KEY, accessToken, {
+        domain: process.env.ALLOWED_HOST,
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
       });
       res.cookie(IS_AUTHENTIFIED_COOKIE_KEY, true, {
+        domain: process.env.ALLOWED_HOST,
         httpOnly: false,
         secure: false,
       });
     }
+    console.log('ABOUT TO RETURN COOKIES', res);
+
     res.send();
   }
 

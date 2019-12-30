@@ -17,12 +17,12 @@ export class AuthController {
     if (accessToken) {
       console.log('ABOUT TO SET COOKIES');
       res.cookie(ACCESS_TOKEN_COOKIE_KEY, accessToken, {
-        domain: process.env.ALLOWED_HOST,
+        domain: process.env.ALLOWED_HOST.split('://')[1],
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
       });
       res.cookie(IS_AUTHENTIFIED_COOKIE_KEY, true, {
-        domain: process.env.ALLOWED_HOST,
+        domain: process.env.ALLOWED_HOST.split('://')[1],
         httpOnly: false,
         secure: false,
       });

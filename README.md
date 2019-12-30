@@ -20,6 +20,7 @@
 </p>
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ada2a7a0-9a03-4a75-b04d-9acee4239445/deploy-status)](https://app.netlify.com/sites/commentor/deploys)
 
 ## Features
 

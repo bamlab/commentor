@@ -1,7 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import * as request from 'request-promise';
 
 import { GithubRepository } from './interfaces/GithubRepositoriesAnswer';
 import { CommentService } from '../comment/comment.service';

@@ -19,7 +19,7 @@ export class AuthController {
       });
       res.cookie(IS_AUTHENTIFIED_COOKIE_KEY, true, {
         httpOnly: false,
-        secure: process.env.NODE_ENV === 'production',
+        secure: false,
       });
     }
     res.send();

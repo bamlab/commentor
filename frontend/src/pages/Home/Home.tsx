@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 import queryString from 'query-string';
-import client from '../../services/networking/client';
-import Cookies from 'universal-cookie';
 import {
   HomeContainer,
   Logo,
@@ -17,18 +15,18 @@ import logo from 'assets/final_low.png';
 
 type PropsType = {
   loadRepositories: () => void;
+  login: (code: string) => void;
+  isAuthenticated: boolean;
   location: { search: string };
 };
-const cookies = new Cookies();
 
 const Home = React.memo<PropsType>(props => {
-  const [isAuthentified, setIsAuthentified] = useState(!!cookies.get('is_authentified'));
+  const { login, location, loadRepositories, isAuthenticated } = props;
   useEffect(() => {
     const componentDidMount = async () => {
-      const params = queryString.parse(props.location.search);
-      if (params.code && typeof params.code === 'string') {
-        await client.createAccessToken(params.code);
-        setIsAuthentified(!!cookies.get('is_authentified'));
+      const params = queryString.parse(location.search);
+      if (params.code && typeof params.code === 'string' && !isAuthenticated) {
+        await login(params.code);
       }
     };
     componentDidMount();
@@ -36,11 +34,11 @@ const Home = React.memo<PropsType>(props => {
 
   useEffect(
     () => {
-      if (isAuthentified) {
-        props.loadRepositories();
+      if (isAuthenticated) {
+        loadRepositories();
       }
     },
-    [isAuthentified],
+    [isAuthenticated, loadRepositories],
   );
 
   return (
@@ -49,7 +47,7 @@ const Home = React.memo<PropsType>(props => {
       <WelcomeMessage>
         <FormattedMessage id="home.welcome-message" />
       </WelcomeMessage>
-      {!isAuthentified && (
+      {!isAuthenticated && (
         <GithubAuthentWrapper>
           <GithubAuthentTitleWrapper>
             <FormattedMessage id="home.authenticate-via-github" />
@@ -63,7 +61,7 @@ const Home = React.memo<PropsType>(props => {
           </GithubAuthentButton>
         </GithubAuthentWrapper>
       )}
-      {isAuthentified && (
+      {isAuthenticated && (
         <SelectRepositoryWrapper>
           <FormattedMessage id="home.select-repository-label" />
           <RepositoryIdsMultiSelect />

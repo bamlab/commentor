@@ -18,6 +18,11 @@ export const state: RootState = {
     isLoading: true,
     commentError: null,
   },
+  authentication: {
+    isLoading: false,
+    loginError: null,
+    isAuthenticated: false,
+  },
   tag: {
     tags: [
       {

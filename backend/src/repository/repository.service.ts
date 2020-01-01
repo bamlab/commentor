@@ -10,15 +10,17 @@ export class RepositoryService {
   getUserCommentedRepositories = async (
     githubRepositories: GithubRepository[],
   ): Promise<RepositoryDto[]> => {
-    const promiseList = githubRepositories.map(async repository => {
-      const isRepositoryLinkedToExistingComment = await this.commentService.checkIfCommentsExistForRepository(
-        repository.databaseId,
-      );
-      if (isRepositoryLinkedToExistingComment) {
-        return { id: repository.databaseId, name: repository.name };
-      }
-      return;
-    });
+    const promiseList = githubRepositories
+      ? githubRepositories.map(async repository => {
+          const isRepositoryLinkedToExistingComment = await this.commentService.checkIfCommentsExistForRepository(
+            repository.databaseId,
+          );
+          if (isRepositoryLinkedToExistingComment) {
+            return { id: repository.databaseId, name: repository.name };
+          }
+          return;
+        })
+      : [];
     const checksAnswers = await Promise.all(promiseList);
     const repositoriesWithComments = checksAnswers.filter(repository => repository);
     return repositoriesWithComments;

@@ -53,9 +53,9 @@ class Client {
     return this.request('delete', `${endpoint}/${id}/delete`);
   }
 
-  createAccessToken = async (code: string): Promise<void> => {
-    const result = await this.post('/auth/accessToken/create', { code });
-    return result;
+  createAccessToken = async (data: { code: string }): Promise<void> => {
+    await this.post('/auth/accessToken/create', { code: data.code });
+    return;
   };
 
   fetchComments = async (data: { repositoryIds: number[] }): Promise<CommentType[]> => {

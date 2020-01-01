@@ -17,7 +17,6 @@ export class AuthService {
       },
       json: true,
     });
-    console.log('GITHUB OAUTH RESPONSE', githubOauthResponse);
     if (githubOauthResponse.access_token) {
       return githubOauthResponse.access_token;
     }

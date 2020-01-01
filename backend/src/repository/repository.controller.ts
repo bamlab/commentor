@@ -13,6 +13,7 @@ export class RepositoryController {
   async getUserRepositories(
     @GithubRepositories() githubRepositories: GithubRepository[],
   ): Promise<RepositoryDto[]> {
+    console.log('githubRepositories', githubRepositories);
     return this.service.getUserCommentedRepositories(githubRepositories);
   }
 }

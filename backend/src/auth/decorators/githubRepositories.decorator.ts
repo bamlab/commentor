@@ -51,7 +51,6 @@ const queryPaginatedGithubRepositories = async (
 };
 
 export const GithubRepositories = createParamDecorator(async (_, req) => {
-  console.log('Access Token in Github Repositories decorator', req.cookies.access_token);
   if (req.cookies.access_token) {
     return queryPaginatedGithubRepositories(req.cookies.access_token);
   }

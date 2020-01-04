@@ -14,13 +14,16 @@ const colorPalette = {
   greyDark: '#222',
   amberLight: '#FFD54F',
   amber: '#FFC107',
-  amberDark: '#FF8F00',
+  amberDark: '#F24333', // 242 67 51
   blueLight: '#F4F9FB',
   white: '#FFFFFF',
   red: '#FF7373',
   blackTransparent: 'rgba(0, 0, 0, 0.24)',
 };
 
+const mainTheme = {
+  primary: '#F24333',
+};
 /**
  * Use this dictionnary in your components
  * Define a new key each time you use a colour if it's for a different use
@@ -30,7 +33,7 @@ export const colorUsage = {
   headerBackground: colorPalette.greyDark,
   primaryTextColor: colorPalette.greyDark,
   primaryLight: colorPalette.amberLight,
-  primary: colorPalette.amber,
+  primary: mainTheme.primary,
   primaryDark: colorPalette.amberDark,
   contentBackground: colorPalette.blueLight,
   linkColor: colorPalette.greyDark,

@@ -53,10 +53,10 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
                   key,
                   getValue(columnIndex, rowIndex),
                   valuesWithHeaders[rowIndex].id || null, // null for header or where object has no id
-                  style,
+                  { ...STYLE, ...style },
                   props.options,
                 )) ||
-              defaultCellRenderer(key, style)
+              defaultCellRenderer(key, { ...STYLE, ...style })
             }
             columnWidth={({ index }) =>
               props.columnsConfig[index] && props.columnsConfig[index].columnWidth

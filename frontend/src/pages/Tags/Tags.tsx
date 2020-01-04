@@ -39,7 +39,6 @@ const Tags = React.memo<IProps>(props => {
       <Button onClick={() => setAddTagModalValue(true)} disabled={props.isTagLoading}>
         <FormattedMessage id="tags.add-tag" />
       </Button>
-
       <GenericTable<TagTableOptionsType>
         columnsConfig={columnsConfig}
         values={props.tags}

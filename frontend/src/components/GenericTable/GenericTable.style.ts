@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colorUsage } from 'stylesheet';
 
 export const Cell = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ export const Cell = styled.div`
 `;
 
 export const STYLE = {
-  border: '1px solid #ddd',
+  border: `1px solid ${colorUsage.primary}`,
 };
 
 export const Wrapper = styled.div`

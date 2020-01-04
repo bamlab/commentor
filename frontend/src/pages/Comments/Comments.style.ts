@@ -12,10 +12,14 @@ export const LoaderContainer = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-  position: absolute;
-  bottom: 20px;
-  width: 50px;
+  position: fixed;
+  bottom: 5px;
+  width: 50em;
   left: 50%;
 `;
 
+export const GenericTableContainer = styled.div`
+  flex: 1;
+  height: 30px;
+`;
 export default StyledComments;

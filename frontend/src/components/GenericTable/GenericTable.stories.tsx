@@ -89,7 +89,13 @@ storiesOf('GenericTable', module)
   .addDecorator(withKnobs)
 
   .add('with empty comments', () => (
-    <GenericTable values={[]} fixedColumnCount={2} columnsConfig={columnsConfig} options={{}} />
+    <GenericTable
+      defaultLineHeight={500}
+      values={[]}
+      fixedColumnCount={2}
+      columnsConfig={columnsConfig}
+      options={{}}
+    />
   ))
   .add('playground', () => {
     const id = number('id', 1);
@@ -105,6 +111,7 @@ storiesOf('GenericTable', module)
     const fixedColumnCount = number('id', 1);
     return (
       <GenericTable
+        defaultLineHeight={500}
         columnsConfig={columnsConfig}
         fixedColumnCount={fixedColumnCount}
         options={{}}

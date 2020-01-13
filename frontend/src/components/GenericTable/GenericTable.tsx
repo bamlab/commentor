@@ -8,6 +8,7 @@ interface PropsType<T extends OptionsType> {
   columnsConfig: ColumnType<T>[];
   fixedColumnCount: number;
   options: T;
+  defaultLineHeight: number;
 }
 
 export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
@@ -63,7 +64,7 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
             columnCount={props.columnsConfig.length}
             enableFixedColumnScroll
             enableFixedRowScroll
-            height={500}
+            height={props.defaultLineHeight}
             rowHeight={40}
             // +1 is for empty value => will be used for lazy loading
             rowCount={valuesWithHeaders.length + 1}

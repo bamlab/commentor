@@ -17,9 +17,6 @@
     "fetch-github-avatar": "Show github avatar",
     "add-github-username": "Enter a github username"
   },
-  "comments": {
-    "tmp": "tmp"
-  },
   "tags": {
     "add-tag": "Add Tag",
     "update-tag": "Update Tag",

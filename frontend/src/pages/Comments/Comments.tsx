@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { FormattedMessage } from 'react-intl';
 import Loader from 'components/Loader';
 import StyledComments, { LoaderContainer, ButtonContainer } from './Comments.style';
 import { CommentType } from 'redux/Comment';
@@ -31,12 +30,6 @@ const Comments = React.memo<IProps>(props => {
 
   return (
     <StyledComments>
-      {props.isCommentLoading && (
-        <LoaderContainer>
-          <Loader />
-        </LoaderContainer>
-      )}
-      <FormattedMessage id="comments.tmp" />
       <GenericTable<CommentTableOptionsType>
         values={props.comments}
         fixedColumnCount={fixedColumnCount}
@@ -44,6 +37,11 @@ const Comments = React.memo<IProps>(props => {
         options={{}}
         defaultLineHeight={lineHeight}
       />
+      {props.isCommentLoading && (
+        <LoaderContainer>
+          <Loader />
+        </LoaderContainer>
+      )}
       <ButtonContainer>
         <Button disabled={props.isCommentLoading} onClick={loadComments}>
           Refresh Comments

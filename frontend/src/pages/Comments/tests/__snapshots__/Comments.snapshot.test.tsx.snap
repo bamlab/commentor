@@ -5,10 +5,6 @@ exports[`[Snapshot] <Comments /> should comments page 1`] = `
   <Commentsstyle__LoaderContainer>
     <Loader />
   </Commentsstyle__LoaderContainer>
-  <FormattedMessage
-    id="comments.tmp"
-    values={Object {}}
-  />
   <GenericTable
     columnsConfig={
       Array [

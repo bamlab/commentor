@@ -11,7 +11,7 @@ interface IHeaderProps {}
 const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = () => (
   <HeaderContainer>
     <RouterLink to={PATHS.HOME}>
-      <Logo alt="Forge logo" src={logo} />
+      <Logo alt="Commentor" src={logo} />
     </RouterLink>
     <Link as={RouterLink} to={PATHS.TAGS}>
       <FormattedMessage id="header.tag" />

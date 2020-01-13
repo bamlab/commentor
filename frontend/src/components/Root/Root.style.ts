@@ -5,6 +5,7 @@ export const RootContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: #5b855f;
   padding: 0 ${getSpacing(2)};
 `;
 RootContainer.displayName = 'RootContainer';

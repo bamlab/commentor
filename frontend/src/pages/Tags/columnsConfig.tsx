@@ -1,6 +1,8 @@
 import React from 'react';
 import { ColumnType } from 'components/GenericTable/GenericTable.type';
 import { Cell } from 'components/GenericTable/GenericTable.style';
+import { getSpacing } from 'stylesheet';
+
 import DeleteIcon from './components/DeleteIcon';
 import UpdateIcon from './components/UpdateIcon';
 
@@ -12,9 +14,9 @@ export type TagTableOptionsType = {
 export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
   {
     index: 0,
-    key: 'id',
-    name: 'id',
-    columnWidth: 75,
+    key: 'code',
+    name: 'Code',
+    columnWidth: 300,
     renderer: (
       key: string,
       value: any,
@@ -25,8 +27,8 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
   },
   {
     index: 1,
-    key: 'code',
-    name: 'code',
+    key: 'description',
+    name: 'Description',
     columnWidth: 300,
     renderer: (
       key: string,
@@ -38,34 +40,8 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
   },
   {
     index: 2,
-    key: 'description',
-    name: 'decription',
-    columnWidth: 300,
-    renderer: (
-      key: string,
-      value: any,
-      objectId: number | 'id',
-      style: Object,
-      options: TagTableOptionsType,
-    ): JSX.Element => defaultTagCellRenderer(key, value, objectId, style),
-  },
-  {
-    index: 3,
-    key: 'creationDate',
-    name: 'creationDate',
-    columnWidth: 200,
-    renderer: (
-      key: string,
-      value: any,
-      objectId: number | 'id',
-      style: Object,
-      options: TagTableOptionsType,
-    ): JSX.Element => defaultTagCellRenderer(key, value, objectId, style),
-  },
-  {
-    index: 4,
     key: 'color',
-    name: 'color',
+    name: 'Color',
     columnWidth: 100,
     renderer: (
       key: string,
@@ -76,7 +52,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
     ): JSX.Element => colorCellRenderer(key, value, style),
   },
   {
-    index: 5,
+    index: 3,
     key: 'delete',
     name: 'delete',
     columnWidth: 50,
@@ -89,7 +65,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
     ): JSX.Element => DeleteIconCellRenderer(key, objectId, style, options),
   },
   {
-    index: 6,
+    index: 4,
     key: 'update',
     name: 'update',
     columnWidth: 80,
@@ -109,12 +85,13 @@ const UpdateIconCellRenderer = (
   style: Object,
   options: TagTableOptionsType,
 ): JSX.Element => {
+  console.log('HAHA', objectId);
   return (
     <Cell key={key} style={style}>
-      {objectId !== 'id' ? (
+      {typeof objectId === 'number' ? (
         <UpdateIcon objectId={objectId} onIconClick={options.openUpdateTagModal} />
       ) : (
-        'Update ?'
+        'Update'
       )}
     </Cell>
   );
@@ -127,19 +104,32 @@ const DeleteIconCellRenderer = (
 ): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      {objectId !== 'id' ? (
+      {typeof objectId === 'number' ? (
         <DeleteIcon objectId={objectId} onIconClick={options.openDeleteTagModal} />
       ) : (
-        'Del ?'
+        'Delete'
       )}
     </Cell>
   );
 };
 
-const colorCellRenderer = (key: string, value: string, style: Object): JSX.Element => {
+const colorCellRenderer = (
+  key: string,
+  value: string,
+  style: any & { width: number },
+): JSX.Element => {
   return (
-    <Cell key={key} style={{ ...style, backgroundColor: value }}>
-      {value}
+    <Cell
+      key={key}
+      style={{
+        ...style,
+        backgroundColor: value,
+        borderRadius: style.height / 2,
+        width: style.height - 4,
+        height: style.height - 4,
+      }}
+    >
+      {value === 'Color' ? value : null}
     </Cell>
   );
 };

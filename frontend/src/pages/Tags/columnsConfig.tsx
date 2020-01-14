@@ -85,7 +85,6 @@ const UpdateIconCellRenderer = (
   style: Object,
   options: TagTableOptionsType,
 ): JSX.Element => {
-  console.log('HAHA', objectId);
   return (
     <Cell key={key} style={style}>
       {typeof objectId === 'number' ? (

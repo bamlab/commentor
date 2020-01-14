@@ -36,6 +36,12 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
     if (configKey) return valuesWithHeaders[rowIndex][configKey];
     return null;
   };
+  const getBackgroundColor = (index: number, color?: string) => {
+    if (color) return color;
+    console.log(index);
+    if (index % 2 === 0) return colorUsage.oddLineColor;
+    if (index % 2 === 1) return colorUsage.evenLineColor;
+  };
 
   const getColumnKey = (columnIndex: number): string | null =>
     props.columnsConfig[columnIndex].key || null;
@@ -57,11 +63,14 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
                   valuesWithHeaders[rowIndex].id || null, // null for header or where object has no id
                   {
                     ...style,
-                    backgroundColor: valuesWithHeaders[rowIndex].backgroundColor || 'white',
+                    backgroundColor: getBackgroundColor(
+                      rowIndex,
+                      valuesWithHeaders[rowIndex].backgroundColor,
+                    ),
                   },
                   props.options,
                 )) ||
-              defaultCellRenderer(key, style)
+              defaultCellRenderer(key, { ...style, backgroundColor: getBackgroundColor(rowIndex) })
             }
             columnWidth={({ index }) =>
               props.columnsConfig[index] && props.columnsConfig[index].columnWidth

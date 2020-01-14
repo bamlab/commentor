@@ -31,7 +31,7 @@ const Button = styled.button<IButton>`
     `}
 
   border: none;
-  border-radius: ${borderRadius.medium};
+  border-radius: ${borderRadius.large};
 
   text-decoration: none;
 

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { LoaderContainer, FloatingButtonContainer } from './Tags.style';
+import { FloatingButtonContainer } from './Tags.style';
 import Loader from 'components/Loader';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import { StyledTags, ErrorMessage } from './Tags.style';
 import { TagType } from 'redux/Tag';
 import { columnsConfig, fixedColumnCount, lineHeight, TagTableOptionsType } from './columnsConfig';
 import Button from 'components/Button';
-import { FormattedMessage } from 'react-intl';
+import { GoPlus } from 'react-icons/go';
 import AddTagModal from './components/AddTagModal';
 import UpdateTagModal from './components/UpdateTagModal';
 import DeleteTagModal from './components/DeleteTagModal';
@@ -41,14 +41,10 @@ const Tags = React.memo<IProps>(props => {
           openDeleteTagModal: () => setDeleteTagModalValue(true),
         }}
       />
-      {props.isTagLoading && (
-        <LoaderContainer>
-          <Loader />
-        </LoaderContainer>
-      )}
       <FloatingButtonContainer>
         <Button onClick={() => setAddTagModalValue(true)} disabled={props.isTagLoading}>
-          <FormattedMessage id="tags.add-tag" />
+          {/* to refacto with Icon component */}
+          {props.isTagLoading ? <Loader /> : <GoPlus size={25} />}
         </Button>
       </FloatingButtonContainer>
       <AddTagModal

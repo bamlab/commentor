@@ -8,6 +8,7 @@ export type ColumnType<T extends OptionsType> = {
   key: string;
   name: string;
   columnWidth: number;
+  backgroundColor?: string;
   renderer: (
     key: string,
     value: any,

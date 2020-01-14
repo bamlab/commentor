@@ -2,6 +2,7 @@ import * as React from 'react';
 import { AutoSizer, MultiGrid } from 'react-virtualized';
 import { ColumnType, OptionsType } from './GenericTable.type';
 import { STYLE, Wrapper, Cell } from './GenericTable.style';
+import { colorUsage } from 'stylesheet';
 
 interface PropsType<T extends OptionsType> {
   values: any[];
@@ -16,6 +17,7 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
   props.columnsConfig.forEach((column: ColumnType<T>) => {
     if (column) {
       header[`${column.key}`] = column.name;
+      header.backgroundColor = colorUsage.headerBackground;
     }
   });
 
@@ -53,7 +55,10 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
                   key,
                   getValue(columnIndex, rowIndex),
                   valuesWithHeaders[rowIndex].id || null, // null for header or where object has no id
-                  style,
+                  {
+                    ...style,
+                    backgroundColor: valuesWithHeaders[rowIndex].backgroundColor || 'white',
+                  },
                   props.options,
                 )) ||
               defaultCellRenderer(key, style)

@@ -2579,6 +2579,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-tooltip@^3.11.0":
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@types/react-tooltip/-/react-tooltip-3.11.0.tgz#e7e7e9c67629f2b6f75ea67752922c9de0b64468"
+  integrity sha512-TkXMgkZ5aAKkFE9Wvt8OlOiPtF9ufgBOL9xWlRSzLBaoL12qSOBiyMcU4/8TyED1fuWkm5VTVarScwOPLSArYw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-transition-group@*":
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-4.2.3.tgz#4924133f7268694058e415bf7aea2d4c21131470"
@@ -13048,6 +13055,14 @@ react-textarea-autosize@^7.1.0:
   integrity sha512-c2FlR/fP0qbxmlrW96SdrbgP/v0XZMTupqB90zybvmDVDutytUgPl7beU35klwcTeMepUIQEpQUn3P3bdshGPg==
   dependencies:
     "@babel/runtime" "^7.1.2"
+    prop-types "^15.6.0"
+
+react-tooltip@^3.11.2:
+  version "3.11.2"
+  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-3.11.2.tgz#78972910657d6184defdcdc9a0182c1e44e01ce6"
+  integrity sha512-7EJ7Cv7lgctw02j0hyp+PpJklIP3gyDbm4CvVQvq7U6zgZtuI+bFFnRzsQB1oTiHPkkhE2NU04EIkgBDiVNzxw==
+  dependencies:
+    classnames "^2.2.5"
     prop-types "^15.6.0"
 
 react-transition-group@^2.2.1:

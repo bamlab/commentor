@@ -27,7 +27,7 @@ const Root: React.FunctionComponent<Props> = ({ children, isAuthenticated }) => 
   return (
     <IntlProvider locale="fr" messages={locales.fr}>
       <RootContainer>
-        {isAuthenticated && <Header />}
+        {!isAuthenticated && <Header />}
         <PageContent>{children}</PageContent>
       </RootContainer>
     </IntlProvider>

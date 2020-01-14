@@ -13,3 +13,10 @@ export const LoaderContainer = styled.div`
 export const ErrorMessage = styled.div`
   color: red;
 `;
+
+export const FloatingButtonContainer = styled.div`
+  position: fixed;
+  bottom: 5px;
+  width: 50em;
+  left: 50%;
+`;

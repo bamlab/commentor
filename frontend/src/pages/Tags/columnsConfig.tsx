@@ -39,21 +39,8 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
   {
     index: 2,
     key: 'description',
-    name: 'decription',
-    columnWidth: 300,
-    renderer: (
-      key: string,
-      value: any,
-      objectId: number | 'id',
-      style: Object,
-      options: TagTableOptionsType,
-    ): JSX.Element => defaultTagCellRenderer(key, value, objectId, style),
-  },
-  {
-    index: 3,
-    key: 'creationDate',
-    name: 'creationDate',
-    columnWidth: 200,
+    name: 'description',
+    columnWidth: 600,
     renderer: (
       key: string,
       value: any,
@@ -100,6 +87,19 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
       style: Object,
       options: TagTableOptionsType,
     ): JSX.Element => UpdateIconCellRenderer(key, objectId, style, options),
+  },
+  {
+    index: 3,
+    key: 'creationDate',
+    name: 'creationDate',
+    columnWidth: 150,
+    renderer: (
+      key: string,
+      value: any,
+      objectId: number | 'id',
+      style: Object,
+      options: TagTableOptionsType,
+    ): JSX.Element => defaultTagCellRenderer(key, value, objectId, style),
   },
 ];
 
@@ -157,4 +157,4 @@ const defaultTagCellRenderer = (
   );
 };
 export const lineHeight = 500;
-export const fixedColumnCount = 0; // this is the reference
+export const fixedColumnCount = 2; // this is the reference

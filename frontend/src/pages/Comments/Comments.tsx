@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import Loader from 'components/Loader';
-import StyledComments, { LoaderContainer, FloatingButtonContainer } from './Comments.style';
+import StyledComments, { FloatingButtonContainer } from './Comments.style';
 import { CommentType } from 'redux/Comment';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import Button from 'components/Button';
+import { GoSync } from 'react-icons/go';
 import {
   fixedColumnCount,
   columnsConfig,
@@ -37,14 +38,11 @@ const Comments = React.memo<IProps>(props => {
         options={{}}
         defaultLineHeight={lineHeight}
       />
-      {props.isCommentLoading && (
-        <LoaderContainer>
-          <Loader />
-        </LoaderContainer>
-      )}
+
       <FloatingButtonContainer>
         <Button disabled={props.isCommentLoading} onClick={loadComments}>
-          Refresh Comments
+          {/* to refacto with Icon component */}
+          {props.isCommentLoading ? <Loader /> : <GoSync size={25} />}
         </Button>
       </FloatingButtonContainer>
     </StyledComments>

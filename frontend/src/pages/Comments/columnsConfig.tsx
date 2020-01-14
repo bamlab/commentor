@@ -23,7 +23,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     index: 0,
     key: 'body',
     name: 'Comment',
-    columnWidth: 400,
+    columnWidth: 450,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, value, objectId, style),
   },

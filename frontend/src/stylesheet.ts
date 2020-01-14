@@ -22,6 +22,7 @@ const colorPalette = {
 
 const mainTheme = {
   primary: '#F24333',
+  transparentPrimary: 'rgb(242, 42, 51, 0.24)',
 };
 /**
  * Use this dictionnary in your components
@@ -29,7 +30,7 @@ const mainTheme = {
  * Ex: fill, border-color, background-color, color ...
  */
 export const colorUsage = {
-  headerBackground: colorPalette.greyDark,
+  headerBackground: mainTheme.transparentPrimary,
   primaryTextColor: colorPalette.greyDark,
   primary: mainTheme.primary,
   linkColor: colorPalette.greyDark,

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LoaderContainer, ButtonContainer } from './Tags.style';
+import { LoaderContainer, FloatingButtonContainer } from './Tags.style';
 import Loader from 'components/Loader';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import { StyledTags, ErrorMessage } from './Tags.style';
@@ -46,11 +46,11 @@ const Tags = React.memo<IProps>(props => {
           <Loader />
         </LoaderContainer>
       )}
-      <ButtonContainer>
+      <FloatingButtonContainer>
         <Button onClick={() => setAddTagModalValue(true)} disabled={props.isTagLoading}>
           <FormattedMessage id="tags.add-tag" />
         </Button>
-      </ButtonContainer>
+      </FloatingButtonContainer>
       <AddTagModal
         id="addTagModal"
         isOpen={isAddTagModalOpen}

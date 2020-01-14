@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Loader from 'components/Loader';
-import StyledComments, { LoaderContainer, ButtonContainer } from './Comments.style';
+import StyledComments, { LoaderContainer, FloatingButtonContainer } from './Comments.style';
 import { CommentType } from 'redux/Comment';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import Button from 'components/Button';
@@ -42,11 +42,11 @@ const Comments = React.memo<IProps>(props => {
           <Loader />
         </LoaderContainer>
       )}
-      <ButtonContainer>
+      <FloatingButtonContainer>
         <Button disabled={props.isCommentLoading} onClick={loadComments}>
           Refresh Comments
         </Button>
-      </ButtonContainer>
+      </FloatingButtonContainer>
     </StyledComments>
   );
 });

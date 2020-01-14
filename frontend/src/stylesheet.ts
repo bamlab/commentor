@@ -14,11 +14,15 @@ const colorPalette = {
   greyDark: '#595959',
   white: '#FFFFFF',
   brown: '#4C3F36',
+  vermillon: '#F24333',
   blackTransparent: 'rgba(0, 0, 0, 0.24)',
   middleGreen: '#5b855f',
   grannySmithGreen: '#A0D891',
 };
 
+const mainTheme = {
+  primary: '#F24333',
+};
 /**
  * Use this dictionnary in your components
  * Define a new key each time you use a colour if it's for a different use
@@ -27,12 +31,12 @@ const colorPalette = {
 export const colorUsage = {
   headerBackground: colorPalette.greyDark,
   primaryTextColor: colorPalette.greyDark,
-  primary: colorPalette.middleGreen,
+  primary: mainTheme.primary,
   linkColor: colorPalette.greyDark,
   linkColorHover: colorPalette.grannySmithGreen,
   linkColorDisabled: colorPalette.greyLight,
   primaryButtonColor: colorPalette.white,
-  primaryButtonBackground: colorPalette.brown,
+  primaryButtonBackground: mainTheme.primary,
   primaryButtonBackgroundHover: colorPalette.grannySmithGreen,
   primaryButtonBackgroundDisabled: colorPalette.greyLight,
   loaderColorDefault: colorPalette.grannySmithGreen,

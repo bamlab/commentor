@@ -20,10 +20,10 @@ export const LoaderContainer = styled.div`
   left: 50%;
 `;
 
-export const ButtonContainer = styled.div`
-  position: absolute;
-  bottom: 20px;
-  width: 50px;
+export const FloatingButtonContainer = styled.div`
+  position: fixed;
+  bottom: 5px;
+  width: 50em;
   left: 50%;
 `;
 

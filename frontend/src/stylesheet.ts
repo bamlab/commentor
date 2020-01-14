@@ -23,6 +23,7 @@ const colorPalette = {
 const mainTheme = {
   primary: '#F24333',
   transparentPrimary: 'rgb(242, 42, 51, 0.24)',
+  translucidPrimary: 'rgb(242, 42, 51, 0.05)',
 };
 /**
  * Use this dictionnary in your components
@@ -33,6 +34,8 @@ export const colorUsage = {
   headerBackground: mainTheme.transparentPrimary,
   primaryTextColor: colorPalette.greyDark,
   primary: mainTheme.primary,
+  oddLineColor: mainTheme.translucidPrimary,
+  evenLineColor: colorPalette.white,
   linkColor: colorPalette.greyDark,
   linkColorHover: colorPalette.grannySmithGreen,
   linkColorDisabled: colorPalette.greyLight,

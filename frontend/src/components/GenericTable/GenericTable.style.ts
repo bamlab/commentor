@@ -1,14 +1,10 @@
 import styled from 'styled-components';
-import { colorUsage } from 'stylesheet';
 
 export const Cell = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   border-right: 1px solid #eee;
-  &:hover {
-    background-color: ${colorUsage.primary};
-  }
   background-color: white;
 `;
 

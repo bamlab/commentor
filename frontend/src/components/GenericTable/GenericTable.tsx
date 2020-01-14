@@ -66,8 +66,7 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
             enableFixedRowScroll
             height={props.defaultLineHeight}
             rowHeight={40}
-            // +1 is for empty value => will be used for lazy loading
-            rowCount={valuesWithHeaders.length + 1}
+            rowCount={valuesWithHeaders.length}
             style={STYLE}
             width={width}
             hideTopRightGridScrollbar

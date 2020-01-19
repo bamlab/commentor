@@ -6,19 +6,11 @@ export const StyledTags = styled.div`
   flex-direction: column;
 `;
 
-export const LoaderContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-`;
-
 export const ErrorMessage = styled.div`
   color: ${colorUsage.error};
 `;
-
-export const ButtonContainer = styled.div`
-  position: absolute;
-  bottom: 20px;
-  width: 50px;
-  left: 50%;
+export const FloatingButtonContainer = styled.div`
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
 `;

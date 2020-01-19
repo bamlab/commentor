@@ -2,6 +2,7 @@ import * as React from 'react';
 import { AutoSizer, MultiGrid } from 'react-virtualized';
 import { ColumnType, OptionsType } from './GenericTable.type';
 import { STYLE, Wrapper, Cell } from './GenericTable.style';
+import { colorUsage } from 'stylesheet';
 
 interface PropsType<T extends OptionsType> {
   values: any[];
@@ -16,6 +17,7 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
   props.columnsConfig.forEach((column: ColumnType<T>) => {
     if (column) {
       header[`${column.key}`] = column.name;
+      header.backgroundColor = colorUsage.headerBackground;
     }
   });
 
@@ -33,6 +35,12 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
     const configKey = getColumnKey(columnIndex);
     if (configKey) return valuesWithHeaders[rowIndex][configKey];
     return null;
+  };
+  const getBackgroundColor = (index: number, color?: string) => {
+    if (color) return color;
+    console.log(index);
+    if (index % 2 === 0) return colorUsage.oddLineColor;
+    if (index % 2 === 1) return colorUsage.evenLineColor;
   };
 
   const getColumnKey = (columnIndex: number): string | null =>
@@ -53,10 +61,16 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
                   key,
                   getValue(columnIndex, rowIndex),
                   valuesWithHeaders[rowIndex].id || null, // null for header or where object has no id
-                  style,
+                  {
+                    ...style,
+                    backgroundColor: getBackgroundColor(
+                      rowIndex,
+                      valuesWithHeaders[rowIndex].backgroundColor,
+                    ),
+                  },
                   props.options,
                 )) ||
-              defaultCellRenderer(key, style)
+              defaultCellRenderer(key, { ...style, backgroundColor: getBackgroundColor(rowIndex) })
             }
             columnWidth={({ index }) =>
               props.columnsConfig[index] && props.columnsConfig[index].columnWidth

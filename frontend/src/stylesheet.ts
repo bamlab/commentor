@@ -14,25 +14,33 @@ const colorPalette = {
   greyDark: '#595959',
   white: '#FFFFFF',
   brown: '#4C3F36',
+  vermillon: '#F24333',
   blackTransparent: 'rgba(0, 0, 0, 0.24)',
   middleGreen: '#5b855f',
   grannySmithGreen: '#A0D891',
 };
 
+const mainTheme = {
+  primary: '#F24333',
+  transparentPrimary: 'rgb(242, 42, 51, 0.24)',
+  translucidPrimary: 'rgb(242, 42, 51, 0.05)',
+};
 /**
  * Use this dictionnary in your components
  * Define a new key each time you use a colour if it's for a different use
  * Ex: fill, border-color, background-color, color ...
  */
 export const colorUsage = {
-  headerBackground: colorPalette.greyDark,
+  headerBackground: mainTheme.transparentPrimary,
   primaryTextColor: colorPalette.greyDark,
-  primary: colorPalette.middleGreen,
+  primary: mainTheme.primary,
+  oddLineColor: mainTheme.translucidPrimary,
+  evenLineColor: colorPalette.white,
   linkColor: colorPalette.greyDark,
   linkColorHover: colorPalette.grannySmithGreen,
   linkColorDisabled: colorPalette.greyLight,
   primaryButtonColor: colorPalette.white,
-  primaryButtonBackground: colorPalette.brown,
+  primaryButtonBackground: mainTheme.primary,
   primaryButtonBackgroundHover: colorPalette.grannySmithGreen,
   primaryButtonBackgroundDisabled: colorPalette.greyLight,
   loaderColorDefault: colorPalette.grannySmithGreen,

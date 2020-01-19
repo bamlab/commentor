@@ -14,17 +14,10 @@ export const HeaderCell = styled.div`
   background-color: ${colorUsage.headerBackground};
 `;
 
-export const LoaderContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-`;
-
-export const ButtonContainer = styled.div`
-  position: absolute;
-  bottom: 20px;
-  width: 50px;
-  left: 50%;
+export const FloatingButtonContainer = styled.div`
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
 `;
 
 export default StyledComments;

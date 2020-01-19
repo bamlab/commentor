@@ -29,7 +29,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
     index: 1,
     key: 'description',
     name: 'Description',
-    columnWidth: 300,
+    columnWidth: 900,
     renderer: (
       key: string,
       value: any,
@@ -85,7 +85,6 @@ const UpdateIconCellRenderer = (
   style: Object,
   options: TagTableOptionsType,
 ): JSX.Element => {
-  console.log('HAHA', objectId);
   return (
     <Cell key={key} style={style}>
       {typeof objectId === 'number' ? (
@@ -119,16 +118,7 @@ const colorCellRenderer = (
   style: any & { width: number },
 ): JSX.Element => {
   return (
-    <Cell
-      key={key}
-      style={{
-        ...style,
-        backgroundColor: value,
-        borderRadius: style.height / 2,
-        width: style.height - 4,
-        height: style.height - 4,
-      }}
-    >
+    <Cell key={key} style={style}>
       {value === 'Color' ? value : null}
     </Cell>
   );
@@ -147,4 +137,4 @@ const defaultTagCellRenderer = (
   );
 };
 export const lineHeight = 500;
-export const fixedColumnCount = 0; // this is the reference
+export const fixedColumnCount = 2; // this is the reference

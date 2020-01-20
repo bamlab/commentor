@@ -4,6 +4,7 @@ import { TagType } from 'redux/Tag';
 import { Doughnut } from 'react-chartjs-2';
 import { CommentType } from 'redux/Comment';
 import Toggle from 'components/Toggle';
+import BarChart from 'components/BarChart';
 
 interface IProps {
   tags: TagType[];
@@ -66,8 +67,8 @@ const Graphs = React.memo<IProps>(props => {
   };
   const renderGraph = () => {
     switch (graphToggle) {
-      case 'BAR_CHARTS':
-        return <div>bar</div>;
+      case 'BAR_CHART':
+        return <BarChart />
       case 'DONUT_CHART':
         return <Doughnut data={data} />;
       default:

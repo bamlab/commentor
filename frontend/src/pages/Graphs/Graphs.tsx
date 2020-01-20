@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyledGraphs } from './Graphs.style';
 import { TagType } from 'redux/Tag';
 import { Doughnut } from 'react-chartjs-2';
 import { CommentType } from 'redux/Comment';
+import Toggle from 'components/Toggle';
 
 interface IProps {
   tags: TagType[];
@@ -13,6 +14,8 @@ interface IProps {
 }
 
 const Graphs = React.memo<IProps>(props => {
+  const [graphToggle, useGraphToggle] = useState('BAR_CHART');
+
   useEffect(() => {
     props.loadTags();
     props.loadComments({ repositoryIds: props.repositoryIds });
@@ -61,10 +64,21 @@ const Graphs = React.memo<IProps>(props => {
       },
     ],
   };
+  const renderGraph = () => {
+    switch (graphToggle) {
+      case 'BAR_CHARTS':
+        return <div>bar</div>;
+      case 'DONUT_CHART':
+        return <Doughnut data={data} />;
+      default:
+        return <div>error lol</div>;
+    }
+  };
 
   return (
     <StyledGraphs>
-      <Doughnut data={data} />
+      <Toggle value={graphToggle} onSelect={useGraphToggle} />
+      {renderGraph()}
     </StyledGraphs>
   );
 });

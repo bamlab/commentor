@@ -2,27 +2,12 @@
 
 exports[`[Snapshot] <Tags /> should render Graphs page 1`] = `
 <Graphsstyle__StyledGraphs>
-  <Doughnut
-    data={
-      Object {
-        "datasets": Array [
-          Object {
-            "backgroundColor": Array [
-              "#000",
-            ],
-            "data": Array [
-              0,
-            ],
-            "hoverBackgroundColor": Array [
-              "#51d",
-            ],
-          },
-        ],
-        "labels": Array [
-          "⁉️",
-        ],
-      }
-    }
+  <Toggle
+    onSelect={[Function]}
+    value="BAR_CHART"
   />
+  <div>
+    error lol
+  </div>
 </Graphsstyle__StyledGraphs>
 `;

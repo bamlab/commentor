@@ -11,38 +11,40 @@ const MEASUREMENT_UNIT = 'px';
  */
 const colorPalette = {
   greyLight: '#e0e0e0',
-  greyDark: '#222',
-  amberLight: '#FFD54F',
-  amber: '#FFC107',
-  amberDark: '#FF8F00',
-  blueLight: '#F4F9FB',
+  greyDark: '#595959',
   white: '#FFFFFF',
-  red: '#FF7373',
+  brown: '#4C3F36',
+  vermillon: '#F24333',
   blackTransparent: 'rgba(0, 0, 0, 0.24)',
+  middleGreen: '#5b855f',
+  grannySmithGreen: '#A0D891',
 };
 
+const mainTheme = {
+  primary: '#F24333',
+  transparentPrimary: 'rgb(242, 42, 51, 0.24)',
+  translucidPrimary: 'rgb(242, 42, 51, 0.05)',
+};
 /**
  * Use this dictionnary in your components
  * Define a new key each time you use a colour if it's for a different use
  * Ex: fill, border-color, background-color, color ...
  */
 export const colorUsage = {
-  headerBackground: colorPalette.greyDark,
+  headerBackground: mainTheme.transparentPrimary,
   primaryTextColor: colorPalette.greyDark,
-  primaryLight: colorPalette.amberLight,
-  primary: colorPalette.amber,
-  primaryDark: colorPalette.amberDark,
-  contentBackground: colorPalette.blueLight,
+  primary: mainTheme.primary,
+  oddLineColor: mainTheme.translucidPrimary,
+  evenLineColor: colorPalette.white,
   linkColor: colorPalette.greyDark,
-  linkColorHover: colorPalette.amberDark,
+  linkColorHover: colorPalette.grannySmithGreen,
   linkColorDisabled: colorPalette.greyLight,
-  codeColor: colorPalette.amberDark,
   primaryButtonColor: colorPalette.white,
-  primaryButtonBackground: colorPalette.amberDark,
-  primaryButtonBackgroundHover: colorPalette.amber,
+  primaryButtonBackground: mainTheme.primary,
+  primaryButtonBackgroundHover: colorPalette.grannySmithGreen,
   primaryButtonBackgroundDisabled: colorPalette.greyLight,
-  loaderColorDefault: colorPalette.amberDark,
-  error: colorPalette.red,
+  loaderColorDefault: colorPalette.grannySmithGreen,
+  error: colorPalette.brown,
   inputBackground: colorPalette.white,
   inputBorderColor: colorPalette.blackTransparent,
   inputPlaceholderColor: colorPalette.blackTransparent,

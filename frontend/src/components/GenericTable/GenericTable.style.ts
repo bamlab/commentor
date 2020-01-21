@@ -4,15 +4,15 @@ export const Cell = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #eee;
   border-right: 1px solid #eee;
-  &:hover {
-    background-color: orange;
-  }
+  background-color: white;
 `;
 
 export const STYLE = {
   border: '1px solid #ddd',
+  backgroundColor: 'white',
+  borderRadius: '10px',
+  overflow: 'hidden',
 };
 
 export const Wrapper = styled.div`

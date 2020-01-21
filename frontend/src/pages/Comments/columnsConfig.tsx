@@ -1,6 +1,7 @@
 import React from 'react';
 import { ColumnType } from 'components/GenericTable/GenericTable.type';
 import { Cell } from 'components/GenericTable/GenericTable.style';
+import LinkCellIcon from './components/LinkCellIcon';
 
 export type CommentTableOptionsType = {};
 
@@ -20,68 +21,80 @@ const defaultCommentCellRenderer = (
 export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
   {
     index: 0,
-    key: 'id',
-    name: 'id',
-    columnWidth: 75,
+    key: 'body',
+    name: 'Comment',
+    columnWidth: 450,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, value, objectId, style),
   },
   {
     index: 1,
-    key: 'body',
-    name: 'body',
+    key: 'filePath',
+    name: 'File',
     columnWidth: 300,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, value, objectId, style),
   },
   {
     index: 2,
-    key: 'filePath',
-    name: 'filePath',
-    columnWidth: 300,
+    key: 'commentor',
+    name: 'Commentor',
+    columnWidth: 200,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, value, objectId, style),
   },
   {
     index: 3,
-    key: 'url',
-    name: 'url',
-    columnWidth: 300,
+    key: 'creationDate',
+    name: 'Creation Date',
+    columnWidth: 200,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, value, objectId, style),
   },
   {
     index: 4,
-    key: 'commentor',
-    name: 'commentor',
-    columnWidth: 200,
+    key: 'url',
+    name: 'url',
+    columnWidth: 150,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
+      LinkToComment(key, value, style),
   },
   {
-    index: 5,
+    index: 4,
     key: 'pullRequestUrl',
     name: 'pullRequestUrl',
-    columnWidth: 200,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
-  },
-  {
-    index: 6,
-    key: 'repositoryId',
-    name: 'repositoryId',
-    columnWidth: 200,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
-  },
-  {
-    index: 6,
-    key: 'creationDate',
-    name: 'creationDate',
-    columnWidth: 200,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
+    columnWidth: 150,
+    renderer: (key: string, value: string, objectId: number | 'id', style: Object): JSX.Element =>
+      LinkToPullRequest(key, value, style),
   },
 ];
+
+const LinkToPullRequest = (
+  key: string,
+  linkURL: string | 'pullRequestUrl',
+  style: Object,
+): JSX.Element => {
+  return (
+    <Cell key={key} style={style}>
+      {linkURL !== 'pullRequestUrl' ? (
+        <LinkCellIcon onIconClick={() => window.open(linkURL, '_blank')} />
+      ) : (
+        'Go to PR'
+      )}
+    </Cell>
+  );
+};
+
+const LinkToComment = (key: string, linkURL: string | 'url', style: Object): JSX.Element => {
+  return (
+    <Cell key={key} style={style}>
+      {linkURL !== 'url' ? (
+        <LinkCellIcon onIconClick={() => window.open(linkURL, '_blank')} />
+      ) : (
+        'Go to Comment'
+      )}
+    </Cell>
+  );
+};
 export const lineHeight = 1000;
 export const fixedColumnCount = 2; // this is the reference

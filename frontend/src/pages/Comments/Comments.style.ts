@@ -1,21 +1,23 @@
 import styled from 'styled-components';
+import { colorUsage } from 'stylesheet';
 
 const StyledComments = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-export const LoaderContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
+export const HeaderText = styled.p`
+  font-weight: bold;
 `;
 
-export const ButtonContainer = styled.div`
-  position: absolute;
-  bottom: 20px;
-  width: 50px;
-  left: 50%;
+export const HeaderCell = styled.div`
+  background-color: ${colorUsage.headerBackground};
+`;
+
+export const FloatingButtonContainer = styled.div`
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
 `;
 
 export default StyledComments;

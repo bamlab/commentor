@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrapper } from './DeleteIcon.style';
+import { GoTrashcan } from 'react-icons/go';
 
 type propsType = {
   objectId: number;
@@ -12,5 +12,5 @@ export const DeleteIcon: React.FunctionComponent<propsType> = props => {
     props.selectTag(props.objectId);
     props.onIconClick();
   };
-  return <Wrapper onClick={onClick} />;
+  return <GoTrashcan onClick={onClick} />;
 };

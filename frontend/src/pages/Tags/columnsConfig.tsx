@@ -1,7 +1,6 @@
 import React from 'react';
 import { ColumnType } from 'components/GenericTable/GenericTable.type';
 import { Cell } from 'components/GenericTable/GenericTable.style';
-import { getSpacing } from 'stylesheet';
 
 import DeleteIcon from './components/DeleteIcon';
 import UpdateIcon from './components/UpdateIcon';
@@ -118,7 +117,20 @@ const colorCellRenderer = (
   style: any & { width: number },
 ): JSX.Element => {
   return (
-    <Cell key={key} style={style}>
+    <Cell
+      key={key}
+      style={
+        value === 'Color'
+          ? style
+          : {
+              ...style,
+              background: value,
+              borderRadius: style.height / 2,
+              width: style.height - 4,
+              height: style.height - 4,
+            }
+      }
+    >
       {value === 'Color' ? value : null}
     </Cell>
   );

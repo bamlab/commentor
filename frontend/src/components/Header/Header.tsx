@@ -13,13 +13,13 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = () =
     <RouterLink to={PATHS.HOME}>
       <Logo alt="Commentor" src={logo} />
     </RouterLink>
-    <Link as={NavLink} to={PATHS.TAGS} activeStyle={{ backgroundColor: 'red' }}>
+    <Link as={NavLink} to={PATHS.TAGS} activeStyle={{ color: 'red' }}>
       <FormattedMessage id="header.tag" />
     </Link>
-    <Link as={NavLink} to={PATHS.COMMENTS} activeStyle={{ backgroundColor: 'blue' }}>
+    <Link as={NavLink} to={PATHS.COMMENTS} activeStyle={{ color: 'blue' }}>
       <FormattedMessage id="header.comment" />
     </Link>
-    <Link as={NavLink} to={PATHS.GRAPHS} activeStyle={{ backgroundColor: 'yellow' }}>
+    <Link as={NavLink} to={PATHS.GRAPHS} activeStyle={{ color: 'yellow' }}>
       <FormattedMessage id="header.graph" />
     </Link>
   </HeaderContainer>

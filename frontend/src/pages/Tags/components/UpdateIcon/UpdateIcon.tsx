@@ -1,6 +1,5 @@
 import React from 'react';
-import { Wrapper } from './UpdateIcon.style';
-
+import { GoPencil } from 'react-icons/go';
 type propsType = {
   objectId: number;
   onIconClick: () => void;
@@ -12,5 +11,5 @@ export const UpdateIcon: React.FunctionComponent<propsType> = props => {
     props.selectTag(props.objectId);
     props.onIconClick();
   };
-  return <Wrapper onClick={onClick} />;
+  return <GoPencil onClick={onClick} />;
 };

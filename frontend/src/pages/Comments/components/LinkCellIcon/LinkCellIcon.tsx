@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrapper } from './LinkCellIcon.style';
+import { GoLinkExternal } from 'react-icons/go';
 
 type propsType = {
   onIconClick: () => void;
@@ -9,5 +9,5 @@ export const LinkCellIcon: React.FunctionComponent<propsType> = props => {
   const onClick = () => {
     props.onIconClick();
   };
-  return <Wrapper onClick={onClick} />;
+  return <GoLinkExternal onClick={onClick} />;
 };

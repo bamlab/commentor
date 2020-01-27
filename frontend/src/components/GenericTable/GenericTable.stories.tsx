@@ -98,7 +98,10 @@ storiesOf('GenericTable', module)
   ))
   .add('playground', () => {
     const id = number('id', 1);
-    const body = text('body', '1232109378129073298473298472398472398472984723987');
+    const body = text(
+      'body',
+      '123210937812907329847329 fweifehwofewi fweohiewihfewo pihfiowheoifewhfewoihfewoih8472398472398472984723987',
+    );
     const filePath = text('body', 'filePath');
     const url = text('body', 'url');
     const commentor = text('body', 'commentor');
@@ -117,14 +120,25 @@ storiesOf('GenericTable', module)
         values={[
           {
             id,
-            body,
-            filePath,
-            url,
-            commentor,
-            requester,
-            pullRequestUrl,
-            repositoryId,
-            creationDate,
+            body: 'coucou',
+            filePath: 'vor',
+            url: 'vor',
+            commentor: 'vor',
+            requester: 'vor',
+            pullRequestUrl: 'vor',
+            repositoryId: 'vor',
+            creationDate: 'vor',
+          },
+          {
+            id,
+            body: 'coucou',
+            filePath: 'vor',
+            url: 'vor',
+            commentor: 'vor',
+            requester: 'vor',
+            pullRequestUrl: 'vor',
+            repositoryId: 'vor',
+            creationDate: 'vor',
           },
           {
             id,
@@ -136,6 +150,17 @@ storiesOf('GenericTable', module)
             pullRequestUrl,
             repositoryId,
             creationDate,
+          },
+          {
+            id,
+            body: 'coucou',
+            filePath: 'vor',
+            url: 'vor',
+            commentor: 'vor',
+            requester: 'vor',
+            pullRequestUrl: 'vor',
+            repositoryId: 'vor',
+            creationDate: 'vor',
           },
         ]}
       />

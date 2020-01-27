@@ -68,8 +68,8 @@ const Graphs = React.memo<IProps>(props => {
   const renderGraph = () => {
     switch (graphToggle) {
       case 'BAR_CHART':
-        return <BarChart />
-      case 'DONUT_CHART':
+        return <BarChart />;
+      case 'DOUGHNUT_CHART':
         return <Doughnut data={data} />;
       default:
         return <div>error lol</div>;
@@ -78,7 +78,12 @@ const Graphs = React.memo<IProps>(props => {
 
   return (
     <StyledGraphs>
-      <Toggle value={graphToggle} onSelect={useGraphToggle} />
+      <Toggle
+        firstOption={'BAR_CHART'}
+        secondOption={'DOUGHNUT_CHART'}
+        value={graphToggle}
+        onSelect={useGraphToggle}
+      />
       {renderGraph()}
     </StyledGraphs>
   );

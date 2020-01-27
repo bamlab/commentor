@@ -46,6 +46,9 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
   const getColumnKey = (columnIndex: number): string | null =>
     props.columnsConfig[columnIndex].key || null;
 
+  /**
+   * For future optimisation check at https://bvaughn.github.io/react-virtualized/#/components/CellMeasurer
+   */
   const cacheMeasure = new CellMeasurerCache({
     fixedWidth: true,
   });

@@ -63,6 +63,7 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
                   valuesWithHeaders[rowIndex].id || null, // null for header or where object has no id
                   {
                     ...style,
+                    wordBreak: 'break-word',
                     backgroundColor: getBackgroundColor(
                       rowIndex,
                       valuesWithHeaders[rowIndex].backgroundColor,

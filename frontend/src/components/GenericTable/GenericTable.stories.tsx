@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
 import { text, number, date, withKnobs } from '@storybook/addon-knobs';
 import { Cell } from 'components/GenericTable/GenericTable.style';
@@ -92,14 +91,14 @@ storiesOf('GenericTable', module)
     <GenericTable
       values={[]}
       fixedColumnCount={2}
-      defaultLineHeight={500}
       columnsConfig={columnsConfig}
       options={{}}
+      defaultLineHeight={300}
     />
   ))
   .add('playground', () => {
     const id = number('id', 1);
-    const body = text('body', 'body');
+    const body = text('body', '1232109378129073298473298472398472398472984723987');
     const filePath = text('body', 'filePath');
     const url = text('body', 'url');
     const commentor = text('body', 'commentor');
@@ -113,9 +112,20 @@ storiesOf('GenericTable', module)
       <GenericTable
         columnsConfig={columnsConfig}
         fixedColumnCount={fixedColumnCount}
+        defaultLineHeight={600}
         options={{}}
-        defaultLineHeight={500}
         values={[
+          {
+            id,
+            body,
+            filePath,
+            url,
+            commentor,
+            requester,
+            pullRequestUrl,
+            repositoryId,
+            creationDate,
+          },
           {
             id,
             body,

@@ -2,81 +2,65 @@
 
 exports[`[Snapshot] <Comments /> should comments page 1`] = `
 <Commentsstyle__StyledComments>
-  <Commentsstyle__LoaderContainer>
-    <Loader />
-  </Commentsstyle__LoaderContainer>
   <GenericTable
     columnsConfig={
       Array [
         Object {
-          "columnWidth": 75,
+          "columnWidth": 450,
           "index": 0,
-          "key": "id",
-          "name": "id",
+          "key": "body",
+          "name": "Comment",
           "renderer": [Function],
         },
         Object {
           "columnWidth": 300,
           "index": 1,
-          "key": "body",
-          "name": "body",
-          "renderer": [Function],
-        },
-        Object {
-          "columnWidth": 300,
-          "index": 2,
           "key": "filePath",
-          "name": "filePath",
+          "name": "File",
           "renderer": [Function],
         },
         Object {
-          "columnWidth": 300,
+          "columnWidth": 200,
+          "index": 2,
+          "key": "commentor",
+          "name": "Commentor",
+          "renderer": [Function],
+        },
+        Object {
+          "columnWidth": 200,
           "index": 3,
+          "key": "creationDate",
+          "name": "Creation Date",
+          "renderer": [Function],
+        },
+        Object {
+          "columnWidth": 150,
+          "index": 4,
           "key": "url",
           "name": "url",
           "renderer": [Function],
         },
         Object {
-          "columnWidth": 200,
+          "columnWidth": 150,
           "index": 4,
-          "key": "commentor",
-          "name": "commentor",
-          "renderer": [Function],
-        },
-        Object {
-          "columnWidth": 200,
-          "index": 5,
           "key": "pullRequestUrl",
           "name": "pullRequestUrl",
           "renderer": [Function],
         },
-        Object {
-          "columnWidth": 200,
-          "index": 6,
-          "key": "repositoryId",
-          "name": "repositoryId",
-          "renderer": [Function],
-        },
-        Object {
-          "columnWidth": 200,
-          "index": 6,
-          "key": "creationDate",
-          "name": "creationDate",
-          "renderer": [Function],
-        },
       ]
     }
+    defaultLineHeight={700}
     fixedColumnCount={2}
     options={Object {}}
     values={Array []}
   />
-  <Commentsstyle__ButtonContainer>
+  <Commentsstyle__FloatingButtonContainer>
     <Button
       disabled={true}
       onClick={[Function]}
     >
-      Refresh Comments
+      <Loader />
     </Button>
-  </Commentsstyle__ButtonContainer>
+  </Commentsstyle__FloatingButtonContainer>
 </Commentsstyle__StyledComments>
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, number, date, withKnobs } from '@storybook/addon-knobs';
-import { Cell } from 'components/GenericTable/GenericTable.style';
+import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTable.style';
 import { GenericTable } from './GenericTable';
 
 const defaultCellRenderer = (
@@ -12,7 +12,7 @@ const defaultCellRenderer = (
 ): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      {value + objectId}
+      <StandardTextContainer>{value}</StandardTextContainer>
     </Cell>
   );
 };

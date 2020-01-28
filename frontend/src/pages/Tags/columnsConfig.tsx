@@ -148,5 +148,5 @@ const defaultTagCellRenderer = (
     </Cell>
   );
 };
-export const lineHeight = 500;
+export const lineHeight = 700;
 export const fixedColumnCount = 2; // this is the reference

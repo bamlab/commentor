@@ -38,7 +38,6 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
   };
   const getBackgroundColor = (index: number, color?: string) => {
     if (color) return color;
-    console.log(index);
     if (index % 2 === 0) return colorUsage.oddLineColor;
     if (index % 2 === 1) return colorUsage.evenLineColor;
   };

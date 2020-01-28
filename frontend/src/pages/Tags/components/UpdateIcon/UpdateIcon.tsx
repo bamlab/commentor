@@ -1,5 +1,7 @@
 import React from 'react';
 import { GoPencil } from 'react-icons/go';
+import { HoverButtonContainer } from 'components/HoverButtonContainer';
+
 type propsType = {
   objectId: number;
   onIconClick: () => void;
@@ -11,5 +13,9 @@ export const UpdateIcon: React.FunctionComponent<propsType> = props => {
     props.selectTag(props.objectId);
     props.onIconClick();
   };
-  return <GoPencil onClick={onClick} />;
+  return (
+    <HoverButtonContainer>
+      <GoPencil onClick={onClick} />
+    </HoverButtonContainer>
+  );
 };

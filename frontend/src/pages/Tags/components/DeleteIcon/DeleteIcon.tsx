@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoTrashcan } from 'react-icons/go';
+import { HoverButtonContainer } from 'components/HoverButtonContainer';
 
 type propsType = {
   objectId: number;
@@ -12,5 +13,9 @@ export const DeleteIcon: React.FunctionComponent<propsType> = props => {
     props.selectTag(props.objectId);
     props.onIconClick();
   };
-  return <GoTrashcan onClick={onClick} />;
+  return (
+    <HoverButtonContainer>
+      <GoTrashcan onClick={onClick} />
+    </HoverButtonContainer>
+  );
 };

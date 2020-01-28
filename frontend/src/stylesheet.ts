@@ -61,6 +61,7 @@ export const fontSize = {
   medium: '16px',
   small: '14px',
   XSmall: '12px',
+  XXSmall: '8px',
 };
 
 export const fontWeight = {

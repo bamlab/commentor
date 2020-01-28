@@ -5,6 +5,8 @@ import { Doughnut } from 'react-chartjs-2';
 import { CommentType } from 'redux/Comment';
 import Toggle from 'components/Toggle';
 import BarChart from 'components/BarChart';
+import { map, chain } from 'lodash';
+import moment, { Moment } from 'moment';
 
 interface IProps {
   tags: TagType[];
@@ -65,10 +67,25 @@ const Graphs = React.memo<IProps>(props => {
       },
     ],
   };
+
+  const barChartFormattedData = chain(props.comments)
+    .groupBy((comment: CommentType) => moment(comment.creationDate).format('DD-MM-YYYY'))
+    .map((comments: CommentType[], date: Moment) =>
+      map(comments, (comment: CommentType) =>
+        chain(props.tags)
+          .filter((tag: TagType) => !!comment.body.match(tag.code))
+          .map((tag: TagType) => ({ x: date, y: 1, y0: 0, tag }))
+          .value(),
+      ),
+    )
+    .flattenDeep()
+    .value();
+
   const renderGraph = () => {
     switch (graphToggle) {
       case 'BAR_CHART':
-        return <BarChart />;
+        //@ts-ignore
+        return <BarChart data={barChartFormattedData} />;
       case 'DOUGHNUT_CHART':
         return <Doughnut data={data} />;
       default:

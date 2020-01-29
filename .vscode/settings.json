@@ -23,5 +23,10 @@
       "source.organizeImports": true
     },
     "editor.tabSize": 4
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#253202",
+    "titleBar.activeBackground": "#344603",
+    "titleBar.activeForeground": "#F4FEDC"
   }
 }

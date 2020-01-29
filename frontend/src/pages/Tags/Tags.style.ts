@@ -14,3 +14,10 @@ export const FloatingButtonContainer = styled.div`
   right: 2%;
   bottom: 2%;
 `;
+
+export const ColorContainer = styled.div`
+  background-color: ${({ color }: { color: string }) => color};
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+`;

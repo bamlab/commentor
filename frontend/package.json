@@ -88,7 +88,8 @@
     }
   ],
   "devDependencies": {
-    "@storybook/addon-actions": "^5.2.1",
+    "@storybook/addon-actions": "^5.3.9",
+    "@storybook/addon-console": "^1.2.1",
     "@storybook/addon-knobs": "^5.2.1",
     "@storybook/addon-links": "^5.2.1",
     "@storybook/addon-storyshots": "^5.2.1",

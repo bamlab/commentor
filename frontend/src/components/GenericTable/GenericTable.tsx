@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AutoSizer, MultiGrid } from 'react-virtualized';
+import { AutoSizer, MultiGrid, CellMeasurer, CellMeasurerCache } from 'react-virtualized';
 import { ColumnType, OptionsType } from './GenericTable.type';
 import { STYLE, Wrapper, Cell } from './GenericTable.style';
 import { colorUsage } from 'stylesheet';
@@ -38,13 +38,19 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
   };
   const getBackgroundColor = (index: number, color?: string) => {
     if (color) return color;
-    console.log(index);
     if (index % 2 === 0) return colorUsage.oddLineColor;
     if (index % 2 === 1) return colorUsage.evenLineColor;
   };
 
   const getColumnKey = (columnIndex: number): string | null =>
     props.columnsConfig[columnIndex].key || null;
+
+  /**
+   * For future optimisation check at https://bvaughn.github.io/react-virtualized/#/components/CellMeasurer
+   */
+  const cacheMeasure = new CellMeasurerCache({
+    fixedWidth: true,
+  });
 
   return (
     <Wrapper>
@@ -55,23 +61,35 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
             fixedRowCount={1}
             scrollToColumn={0}
             scrollToRow={0}
-            cellRenderer={({ columnIndex, key, rowIndex, style }) =>
-              (valuesWithHeaders[rowIndex] &&
-                props.columnsConfig[columnIndex].renderer(
-                  key,
-                  getValue(columnIndex, rowIndex),
-                  valuesWithHeaders[rowIndex].id || null, // null for header or where object has no id
-                  {
+            cellRenderer={({ columnIndex, key, parent, rowIndex, style }) => (
+              <CellMeasurer
+                cache={cacheMeasure}
+                columnIndex={columnIndex}
+                key={key}
+                parent={parent}
+                rowIndex={rowIndex}
+              >
+                {(valuesWithHeaders[rowIndex] &&
+                  props.columnsConfig[columnIndex].renderer(
+                    key,
+                    getValue(columnIndex, rowIndex),
+                    valuesWithHeaders[rowIndex].id || null, // null for header or where object has no id
+                    {
+                      ...style,
+                      wordBreak: 'break-word',
+                      backgroundColor: getBackgroundColor(
+                        rowIndex,
+                        valuesWithHeaders[rowIndex].backgroundColor,
+                      ),
+                    },
+                    props.options,
+                  )) ||
+                  defaultCellRenderer(key, {
                     ...style,
-                    backgroundColor: getBackgroundColor(
-                      rowIndex,
-                      valuesWithHeaders[rowIndex].backgroundColor,
-                    ),
-                  },
-                  props.options,
-                )) ||
-              defaultCellRenderer(key, { ...style, backgroundColor: getBackgroundColor(rowIndex) })
-            }
+                    backgroundColor: getBackgroundColor(rowIndex),
+                  })}
+              </CellMeasurer>
+            )}
             columnWidth={({ index }) =>
               props.columnsConfig[index] && props.columnsConfig[index].columnWidth
             }
@@ -79,7 +97,7 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
             enableFixedColumnScroll
             enableFixedRowScroll
             height={props.defaultLineHeight}
-            rowHeight={40}
+            rowHeight={cacheMeasure.rowHeight}
             rowCount={valuesWithHeaders.length}
             style={STYLE}
             width={width}

@@ -1,9 +1,10 @@
 import React from 'react';
 import { ColumnType } from 'components/GenericTable/GenericTable.type';
-import { Cell } from 'components/GenericTable/GenericTable.style';
+import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTable.style';
 
 import DeleteIcon from './components/DeleteIcon';
 import UpdateIcon from './components/UpdateIcon';
+import { ColorContainer } from './Tags.style';
 
 export type TagTableOptionsType = {
   openDeleteTagModal: () => void;
@@ -111,27 +112,14 @@ const DeleteIconCellRenderer = (
   );
 };
 
-const colorCellRenderer = (
-  key: string,
-  value: string,
-  style: any & { width: number },
-): JSX.Element => {
+const colorCellRenderer = (key: string, value: string, style: any): JSX.Element => {
   return (
-    <Cell
-      key={key}
-      style={
-        value === 'Color'
-          ? style
-          : {
-              ...style,
-              background: value,
-              borderRadius: style.height / 2,
-              width: style.height - 4,
-              height: style.height - 4,
-            }
-      }
-    >
-      {value === 'Color' ? value : null}
+    <Cell key={key} style={style}>
+      {value === 'Color' ? (
+        <StandardTextContainer>Color</StandardTextContainer>
+      ) : (
+        <ColorContainer color={value} />
+      )}
     </Cell>
   );
 };
@@ -144,9 +132,9 @@ const defaultTagCellRenderer = (
 ): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      {value}
+      <StandardTextContainer>{value}</StandardTextContainer>
     </Cell>
   );
 };
-export const lineHeight = 500;
+export const lineHeight = 700;
 export const fixedColumnCount = 2; // this is the reference

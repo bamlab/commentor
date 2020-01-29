@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
 import { text, number, date, withKnobs } from '@storybook/addon-knobs';
-import { Cell } from 'components/GenericTable/GenericTable.style';
+import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTable.style';
 import { GenericTable } from './GenericTable';
 
 const defaultCellRenderer = (
@@ -13,7 +12,7 @@ const defaultCellRenderer = (
 ): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      {value + objectId}
+      <StandardTextContainer>{value}</StandardTextContainer>
     </Cell>
   );
 };
@@ -92,14 +91,17 @@ storiesOf('GenericTable', module)
     <GenericTable
       values={[]}
       fixedColumnCount={2}
-      defaultLineHeight={500}
       columnsConfig={columnsConfig}
       options={{}}
+      defaultLineHeight={300}
     />
   ))
   .add('playground', () => {
     const id = number('id', 1);
-    const body = text('body', 'body');
+    const body = text(
+      'body',
+      '123210937812907329847329 fweifehwofewi fweohiewihfewo pihfiowheoifewhfewoihfewoih8472398472398472984723987',
+    );
     const filePath = text('body', 'filePath');
     const url = text('body', 'url');
     const commentor = text('body', 'commentor');
@@ -113,9 +115,31 @@ storiesOf('GenericTable', module)
       <GenericTable
         columnsConfig={columnsConfig}
         fixedColumnCount={fixedColumnCount}
+        defaultLineHeight={600}
         options={{}}
-        defaultLineHeight={500}
         values={[
+          {
+            id,
+            body: 'coucou',
+            filePath: 'vor',
+            url: 'vor',
+            commentor: 'vor',
+            requester: 'vor',
+            pullRequestUrl: 'vor',
+            repositoryId: 'vor',
+            creationDate: 'vor',
+          },
+          {
+            id,
+            body: 'coucou',
+            filePath: 'vor',
+            url: 'vor',
+            commentor: 'vor',
+            requester: 'vor',
+            pullRequestUrl: 'vor',
+            repositoryId: 'vor',
+            creationDate: 'vor',
+          },
           {
             id,
             body,
@@ -126,6 +150,17 @@ storiesOf('GenericTable', module)
             pullRequestUrl,
             repositoryId,
             creationDate,
+          },
+          {
+            id,
+            body: 'coucou',
+            filePath: 'vor',
+            url: 'vor',
+            commentor: 'vor',
+            requester: 'vor',
+            pullRequestUrl: 'vor',
+            repositoryId: 'vor',
+            creationDate: 'vor',
           },
         ]}
       />

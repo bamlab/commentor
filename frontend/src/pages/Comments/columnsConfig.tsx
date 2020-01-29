@@ -1,6 +1,6 @@
 import React from 'react';
 import { ColumnType } from 'components/GenericTable/GenericTable.type';
-import { Cell } from 'components/GenericTable/GenericTable.style';
+import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTable.style';
 import LinkCellIcon from './components/LinkCellIcon';
 
 export type CommentTableOptionsType = {};
@@ -13,7 +13,7 @@ const defaultCommentCellRenderer = (
 ): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      {value}
+      <StandardTextContainer>{value}</StandardTextContainer>
     </Cell>
   );
 };
@@ -96,5 +96,5 @@ const LinkToComment = (key: string, linkURL: string | 'url', style: Object): JSX
     </Cell>
   );
 };
-export const lineHeight = 1000;
+export const lineHeight = 700;
 export const fixedColumnCount = 2; // this is the reference

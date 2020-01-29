@@ -8,6 +8,10 @@ export const Cell = styled.div`
   background-color: white;
 `;
 
+export const StandardTextContainer = styled.div`
+  padding: 10px;
+`;
+
 export const STYLE = {
   border: '1px solid #ddd',
   backgroundColor: 'white',

@@ -2,74 +2,49 @@
 
 exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
 <Tagsstyle__StyledTags>
-  <Tagsstyle__LoaderContainer>
-    <Loader />
-  </Tagsstyle__LoaderContainer>
   <Tagsstyle__ErrorMessage />
-  <Button
-    disabled={true}
-    onClick={[Function]}
-  >
-    <FormattedMessage
-      id="tags.add-tag"
-      values={Object {}}
-    />
-  </Button>
   <GenericTable
     columnsConfig={
       Array [
         Object {
-          "columnWidth": 75,
+          "columnWidth": 300,
           "index": 0,
-          "key": "id",
-          "name": "id",
-          "renderer": [Function],
-        },
-        Object {
-          "columnWidth": 300,
-          "index": 1,
           "key": "code",
-          "name": "code",
+          "name": "Code",
           "renderer": [Function],
         },
         Object {
-          "columnWidth": 300,
-          "index": 2,
+          "columnWidth": 900,
+          "index": 1,
           "key": "description",
-          "name": "decription",
-          "renderer": [Function],
-        },
-        Object {
-          "columnWidth": 200,
-          "index": 3,
-          "key": "creationDate",
-          "name": "creationDate",
+          "name": "Description",
           "renderer": [Function],
         },
         Object {
           "columnWidth": 100,
-          "index": 4,
+          "index": 2,
           "key": "color",
-          "name": "color",
+          "name": "Color",
           "renderer": [Function],
         },
         Object {
           "columnWidth": 50,
-          "index": 5,
+          "index": 3,
           "key": "delete",
           "name": "delete",
           "renderer": [Function],
         },
         Object {
           "columnWidth": 80,
-          "index": 6,
+          "index": 4,
           "key": "update",
           "name": "update",
           "renderer": [Function],
         },
       ]
     }
-    fixedColumnCount={0}
+    defaultLineHeight={700}
+    fixedColumnCount={2}
     options={
       Object {
         "openDeleteTagModal": [Function],
@@ -78,6 +53,14 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
     }
     values={Array []}
   />
+  <Tagsstyle__FloatingButtonContainer>
+    <Button
+      disabled={true}
+      onClick={[Function]}
+    >
+      <Loader />
+    </Button>
+  </Tagsstyle__FloatingButtonContainer>
   <Connect(AddTagModal)
     closeAddTagModal={[Function]}
     id="addTagModal"

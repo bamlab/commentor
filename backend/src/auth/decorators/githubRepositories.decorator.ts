@@ -10,7 +10,7 @@ const queryPaginatedGithubRepositories = async (
   const query = `
     query {
       viewer {
-        repositories(first: 100, ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER] ${
+        repositories(first: 100, affiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER], ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER] ${
           previousPageCursor ? `, after:"${previousPageCursor}"` : ''
         }) {
           totalCount

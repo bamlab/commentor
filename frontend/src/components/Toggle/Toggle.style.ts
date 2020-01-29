@@ -5,7 +5,7 @@ export const ToggleContainer = styled.div`
   margin-top: ${getSpacing(5)};
   display: flex;
   flex-direction: row;
-  box-shadow: 2px 2px 2px 2px ${colorUsage.primaryTextColor};
+  box-shadow: 2px 2px 2px 2px ${colorUsage.shadow};
   border-radius: 5px;
 `;
 

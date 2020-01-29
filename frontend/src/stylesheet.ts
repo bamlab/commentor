@@ -16,8 +16,7 @@ const colorPalette = {
   brown: '#4C3F36',
   vermillon: '#F24333',
   blackTransparent: 'rgba(0, 0, 0, 0.24)',
-  middleGreen: '#5b855f',
-  grannySmithGreen: '#A0D891',
+  rajahOrange: '#FCAA67',
 };
 
 const mainTheme = {
@@ -33,17 +32,18 @@ const mainTheme = {
 export const colorUsage = {
   headerBackground: mainTheme.transparentPrimary,
   primaryTextColor: colorPalette.greyDark,
+  shadow: colorPalette.greyLight,
   primary: mainTheme.primary,
   oddLineColor: mainTheme.translucidPrimary,
   evenLineColor: colorPalette.white,
   linkColor: colorPalette.greyDark,
-  linkColorHover: colorPalette.grannySmithGreen,
+  linkColorHover: colorPalette.rajahOrange,
   linkColorDisabled: colorPalette.greyLight,
   primaryButtonColor: colorPalette.white,
   primaryButtonBackground: mainTheme.primary,
-  primaryButtonBackgroundHover: colorPalette.grannySmithGreen,
+  primaryButtonBackgroundHover: colorPalette.rajahOrange,
   primaryButtonBackgroundDisabled: colorPalette.greyLight,
-  loaderColorDefault: colorPalette.grannySmithGreen,
+  loaderColorDefault: colorPalette.rajahOrange,
   error: colorPalette.brown,
   inputBackground: colorPalette.white,
   inputBorderColor: colorPalette.blackTransparent,

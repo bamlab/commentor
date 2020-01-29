@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyledGraphs } from './Graphs.style';
 import { TagType } from 'redux/Tag';
-import { Doughnut } from 'react-chartjs-2';
 import { CommentType } from 'redux/Comment';
 import Toggle from 'components/Toggle';
 import BarChart from 'components/BarChart';

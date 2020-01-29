@@ -20,6 +20,7 @@ const Toggle: React.FunctionComponent<propTypes> = props => {
     <ToggleContainer>
       <FiBarChart2
         style={{
+          cursor: 'pointer',
           fontSize: fontSize.XXLarge,
           color: isSelected(props.firstOption) ? colorUsage.primary : colorUsage.primaryTextColor,
         }}
@@ -28,6 +29,7 @@ const Toggle: React.FunctionComponent<propTypes> = props => {
       <Spacer>|</Spacer>
       <FiPieChart
         style={{
+          cursor: 'pointer',
           fontSize: fontSize.XXLarge,
           color: isSelected(props.secondOption) ? colorUsage.primary : colorUsage.primaryTextColor,
         }}

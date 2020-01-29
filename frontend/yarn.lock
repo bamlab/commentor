@@ -13278,7 +13278,7 @@ react-app-rewired@2.1.0:
     dotenv "^6.2.0"
     semver "^5.6.0"
 
-react-clientside-effect@^1.2.0, react-clientside-effect@^1.2.2::
+react-clientside-effect@^1.2.0, react-clientside-effect@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/react-clientside-effect/-/react-clientside-effect-1.2.2.tgz#6212fb0e07b204e714581dd51992603d1accc837"
   integrity sha512-nRmoyxeok5PBO6ytPvSjKp9xwXg9xagoTK1mMjwnQxqM9Hd7MNPl+LS1bOSOe+CV2+4fnEquc7H/S8QD3q697A==

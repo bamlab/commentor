@@ -1,5 +1,7 @@
 import React from 'react';
-import { ToggleContainer } from './Toggle.style';
+import { ToggleContainer, Spacer } from './Toggle.style';
+import { colorUsage, fontSize } from 'stylesheet';
+import { FiPieChart, FiBarChart2 } from 'react-icons/fi';
 
 interface propTypes {
   onSelect: (value: string) => void;
@@ -16,12 +18,21 @@ const Toggle: React.FunctionComponent<propTypes> = props => {
   const isSelected = (containerValue: string): boolean => containerValue === value;
   return (
     <ToggleContainer>
-      <div onClick={selectFirstOption}>
-        {isSelected(props.firstOption) ? `${props.firstOption}-active` : `${props.firstOption}`}
-      </div>
-      <div onClick={selectSecondOption}>
-        {isSelected(props.secondOption) ? `${props.secondOption}-active` : `${props.secondOption}`}
-      </div>
+      <FiBarChart2
+        style={{
+          fontSize: fontSize.XXLarge,
+          color: isSelected(props.firstOption) ? colorUsage.primary : colorUsage.primaryTextColor,
+        }}
+        onClick={selectFirstOption}
+      />
+      <Spacer>|</Spacer>
+      <FiPieChart
+        style={{
+          fontSize: fontSize.XXLarge,
+          color: isSelected(props.secondOption) ? colorUsage.primary : colorUsage.primaryTextColor,
+        }}
+        onClick={selectSecondOption}
+      />
     </ToggleContainer>
   );
 };

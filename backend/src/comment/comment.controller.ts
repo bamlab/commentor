@@ -36,10 +36,10 @@ export class CommentController implements CrudController<Comment> {
     return this.service.createComment({
       body: commentEvent.comment.body,
       filePath: commentEvent.comment.path,
-      url: commentEvent.comment.url,
+      url: commentEvent.comment.html_url,
       commentor: commentEvent.comment.user.login,
       requester: commentEvent.pull_request.user.login,
-      pullRequestUrl: commentEvent.pull_request.url,
+      pullRequestUrl: commentEvent.pull_request.html_url,
       repositoryId: commentEvent.repository.id,
     });
   }

@@ -1,6 +1,13 @@
 import React from 'react';
 import { BarChartContainer } from './BarChart.style';
-import { VictoryChart, VictoryBar, VictoryTheme, VictoryAxis, VictoryStack } from 'victory';
+import {
+  VictoryChart,
+  VictoryBar,
+  VictoryTheme,
+  VictoryAxis,
+  VictoryStack,
+  VictoryLabel,
+} from 'victory';
 import { colorUsage, fontFamily, fontSize } from 'stylesheet';
 import { map, chain } from 'lodash';
 import { TagType } from 'redux/Tag';
@@ -41,9 +48,10 @@ const BarChart: React.FunctionComponent<propTypes> = props => {
                 .uniq()
                 .value().length
             }
+            tickLabelComponent={<VictoryLabel angle={-60} />}
             style={{
               axis: { stroke: 'none' },
-              tickLabels: ticksLabelsStyle,
+              tickLabels: { ...ticksLabelsStyle },
               grid: { stroke: colorUsage.primaryTextColor },
             }}
           />

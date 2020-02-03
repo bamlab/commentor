@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/bamlab/commentor">
-    <img alt="Commentor" src="./frontend/src/assets/final_low.png" width="60" />
+    <img alt="Commentor" src="./frontend/src/assets/logo.png" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -9,7 +9,7 @@
 
 <div align="center">
   <a href="https://github.com/bamlab/commentor">
-    <img alt="Commentor screenshot" src="./frontend/src/assets/final_low.png" width="600"/>
+    <img alt="Commentor screenshot" src="./frontend/src/assets/logo.png" width="600"/>
   </a>
 </div>
 

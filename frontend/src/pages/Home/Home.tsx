@@ -11,7 +11,7 @@ import {
   GithubAuthentButton,
 } from './Home.style';
 import { RepositoryIdsMultiSelect } from './components/RepositoryIdsMultiSelect';
-import logo from 'assets/final_low.png';
+import logo from 'assets/logo.png';
 
 type PropsType = {
   loadRepositories: () => void;

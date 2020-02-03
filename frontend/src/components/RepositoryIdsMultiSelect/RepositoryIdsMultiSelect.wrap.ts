@@ -3,8 +3,8 @@ import {
   MultiSelect,
   adaptRepositoryToMultiSelectOptions,
   adaptOptionFromId,
-} from '../../../../components/MultiSelect';
-import { ISelectedOptionsType } from '../../../../components/MultiSelect/MultiSelect.type';
+} from '../MultiSelect';
+import { ISelectedOptionsType } from '../MultiSelect/MultiSelect.type';
 import { Dispatch } from 'redux';
 import { RootState } from 'redux/types';
 import { getSelectedRepositoryIds } from 'redux/Filters';

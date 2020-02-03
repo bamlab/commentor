@@ -10,7 +10,7 @@ import {
   GithubAuthentButtonText,
   GithubAuthentButton,
 } from './Home.style';
-import { RepositoryIdsMultiSelect } from './components/RepositoryIdsMultiSelect';
+import { RepositoryIdsMultiSelect } from '../../components/RepositoryIdsMultiSelect';
 import logo from 'assets/logo.png';
 import githubLogo from 'assets/octocat.png';
 

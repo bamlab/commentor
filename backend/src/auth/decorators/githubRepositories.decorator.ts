@@ -47,7 +47,7 @@ const queryPaginatedGithubRepositories = async (
   if (pageInfo.hasNextPage) {
     return queryPaginatedGithubRepositories(userAccessToken, repositoriesList, pageInfo.endCursor);
   }
-  return repositoriesList;
+  return repositoriesList ? repositoriesList : [];
 };
 
 export const GithubRepositories = createParamDecorator(async (_, req) => {

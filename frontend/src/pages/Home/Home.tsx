@@ -11,12 +11,19 @@ import {
   FloatingButtonContainer,
   CommentTableContainer,
   GitHubAuthentContainer,
+  ChartsContainer,
+  AuthenticatedPageContainer,
 } from './Home.style';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import { CommentType } from 'redux/Comment';
+import { TagType } from 'redux/Tag';
 import { GoSync } from 'react-icons/go';
 import Button from 'components/Button';
 import Loader from 'components/Loader';
+import BarChart from 'components/BarChart';
+import PieChart from 'components/PieChart';
+import { map, chain } from 'lodash';
+import moment, { Moment } from 'moment';
 
 import {
   fixedColumnCount,
@@ -34,13 +41,23 @@ type PropsType = {
   isAuthenticated: boolean;
   location: { search: string };
   comments: CommentType[];
+  tags: TagType[];
+  loadTags: () => void;
   loadComments: (filters: { repositoryIds: number[] }) => void;
   isCommentLoading: boolean;
   repositoryIds: number[];
 };
 
 const Home = React.memo<PropsType>(props => {
-  const { login, location, loadRepositories, isAuthenticated, loadComments, repositoryIds } = props;
+  const {
+    login,
+    location,
+    loadRepositories,
+    isAuthenticated,
+    loadComments,
+    repositoryIds,
+    loadTags,
+  } = props;
   useEffect(() => {
     const componentDidMount = async () => {
       const params = queryString.parse(location.search);
@@ -54,12 +71,41 @@ const Home = React.memo<PropsType>(props => {
   useEffect(
     () => {
       if (isAuthenticated) {
+        loadTags();
         loadRepositories();
         loadComments({ repositoryIds: repositoryIds });
       }
     },
     [isAuthenticated, loadRepositories],
   );
+
+  const pieChartFormattedData = chain(props.tags)
+    .map((tag: TagType) => ({
+      x: tag.code,
+      y: props.comments.filter((comment: CommentType) => !!comment.body.match(tag.code)).length,
+      tag,
+    }))
+    .filter(chartDatum => chartDatum.y > 0)
+    .value();
+
+  const barChartFormattedData = chain(props.comments)
+    .groupBy((comment: CommentType) => moment(comment.creationDate).format('DD-MM-YYYY'))
+    .map((comments: CommentType[], date: Moment) =>
+      map(comments, (comment: CommentType) =>
+        chain(props.tags)
+          .filter((tag: TagType) => !!comment.body.match(tag.code))
+          .map((tag: TagType) => [
+            { x: date, y: 1, y0: 0, tag },
+            { x: '04-02-2020', y: 1, y0: 0, tag },
+            { x: '05-02-2020', y: 1, y0: 0, tag },
+            { x: '06-02-2020', y: 1, y0: 0, tag },
+            { x: '07-02-2020', y: 1, y0: 0, tag },
+          ])
+          .value(),
+      ),
+    )
+    .flattenDeep()
+    .value();
 
   return (
     <HomeContainer>
@@ -83,24 +129,33 @@ const Home = React.memo<PropsType>(props => {
           </GithubAuthentButton>
         </GitHubAuthentContainer>
       ) : (
-        <CommentTableContainer>
-          <GenericTable<CommentTableOptionsType>
-            values={props.comments}
-            fixedColumnCount={fixedColumnCount}
-            columnsConfig={columnsConfig}
-            options={{}}
-            defaultLineHeight={lineHeight}
-          />
-          <FloatingButtonContainer>
-            <Button
-              disabled={props.isCommentLoading}
-              onClick={() => loadComments({ repositoryIds: repositoryIds })}
-            >
-              {/* to refacto with Icon component */}
-              {props.isCommentLoading ? <Loader /> : <GoSync size={25} />}
-            </Button>
-          </FloatingButtonContainer>
-        </CommentTableContainer>
+        <AuthenticatedPageContainer>
+          <ChartsContainer>
+            {
+              // @ts-ignore
+              <BarChart data={barChartFormattedData} />
+            }
+            <PieChart data={pieChartFormattedData} />
+          </ChartsContainer>
+          <CommentTableContainer>
+            <GenericTable<CommentTableOptionsType>
+              values={props.comments}
+              fixedColumnCount={fixedColumnCount}
+              columnsConfig={columnsConfig}
+              options={{}}
+              defaultLineHeight={lineHeight}
+            />
+            <FloatingButtonContainer>
+              <Button
+                disabled={props.isCommentLoading}
+                onClick={() => loadComments({ repositoryIds: repositoryIds })}
+              >
+                {/* to refacto with Icon component */}
+                {props.isCommentLoading ? <Loader /> : <GoSync size={25} />}
+              </Button>
+            </FloatingButtonContainer>
+          </CommentTableContainer>
+        </AuthenticatedPageContainer>
       )}
     </HomeContainer>
   );

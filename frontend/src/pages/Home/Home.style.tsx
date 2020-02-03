@@ -21,6 +21,20 @@ export const CommentTableContainer = styled.div`
 `;
 CommentTableContainer.displayName = 'CommentTableContainer';
 
+export const ChartsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+ChartsContainer.displayName = 'ChartsContainer';
+
+export const AuthenticatedPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+AuthenticatedPageContainer.displayName = 'AuthenticatedPageContainer';
+
 export const Logo = styled.img`
   width: ${getSpacing(60)};
   margin-bottom: ${getSpacing(4)};

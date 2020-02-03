@@ -19,9 +19,6 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = () =
     <Link as={NavLink} to={PATHS.TAGS} activeStyle={{ color: 'red' }}>
       <FormattedMessage id="header.tag" />
     </Link>
-    <Link as={NavLink} to={PATHS.GRAPHS} activeStyle={{ color: 'yellow' }}>
-      <FormattedMessage id="header.graph" />
-    </Link>
   </HeaderContainer>
 );
 

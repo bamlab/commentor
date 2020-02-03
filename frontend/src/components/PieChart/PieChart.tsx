@@ -21,6 +21,8 @@ const PieChart: React.FunctionComponent<propTypes> = props => {
     <PieChartContainer>
       {props.data && props.data.length > 0 && (
         <VictoryPie
+          height={300}
+          width={300}
           theme={VictoryTheme.material}
           innerRadius={20}
           cornerRadius={5}

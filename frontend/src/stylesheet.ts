@@ -14,15 +14,14 @@ const colorPalette = {
   greyDark: '#595959',
   white: '#FFFFFF',
   brown: '#4C3F36',
-  vermillon: '#F24333',
+  darkCerulean: '#134074',
   blackTransparent: 'rgba(0, 0, 0, 0.24)',
-  rajahOrange: '#FCAA67',
 };
 
 const mainTheme = {
-  primary: '#F24333',
-  transparentPrimary: 'rgb(242, 42, 51, 0.24)',
-  translucidPrimary: 'rgb(242, 42, 51, 0.05)',
+  primary: '#134074',
+  transparentPrimary: 'rgb(19, 64, 116, 0.24)',
+  translucidPrimary: 'rgb(19, 64, 116, 0.05)',
 };
 /**
  * Use this dictionnary in your components
@@ -37,13 +36,13 @@ export const colorUsage = {
   oddLineColor: mainTheme.translucidPrimary,
   evenLineColor: colorPalette.white,
   linkColor: colorPalette.greyDark,
-  linkColorHover: colorPalette.rajahOrange,
+  linkColorHover: mainTheme.transparentPrimary,
   linkColorDisabled: colorPalette.greyLight,
   primaryButtonColor: colorPalette.white,
   primaryButtonBackground: mainTheme.primary,
-  primaryButtonBackgroundHover: colorPalette.rajahOrange,
+  primaryButtonBackgroundHover: mainTheme.transparentPrimary,
   primaryButtonBackgroundDisabled: colorPalette.greyLight,
-  loaderColorDefault: colorPalette.rajahOrange,
+  loaderColorDefault: mainTheme.transparentPrimary,
   error: colorPalette.brown,
   inputBackground: colorPalette.white,
   inputBorderColor: colorPalette.blackTransparent,

@@ -1,5 +1,5 @@
 import { TagTableOptionsType } from 'src/pages/Tags/columnsConfig';
-import { CommentTableOptionsType } from 'src/pages/Comments/columnsConfig';
+import { CommentTableOptionsType } from 'src/pages/Home/columnsConfig';
 
 export type OptionsType = TagTableOptionsType | CommentTableOptionsType;
 

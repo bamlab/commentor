@@ -1,7 +1,7 @@
 import React from 'react';
 import { ColumnType } from 'components/GenericTable/GenericTable.type';
 import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTable.style';
-import LinkCellIcon from './components/LinkCellIcon';
+import LinkCellIcon from '../../components/LinkCellIcon';
 
 export type CommentTableOptionsType = {};
 

@@ -4,10 +4,22 @@ import { fontFamily, fontSize, fontWeight, getSpacing, lineHeight, colorUsage } 
 export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
+`;
+HomeContainer.displayName = 'HomeContainer';
+
+export const GitHubAuthentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   align-items: center;
   padding: ${getSpacing(10)};
 `;
-HomeContainer.displayName = 'HomeContainer';
+GitHubAuthentContainer.displayName = 'GitHubAuthentContainer';
+
+export const CommentTableContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+CommentTableContainer.displayName = 'CommentTableContainer';
 
 export const Logo = styled.img`
   width: ${getSpacing(60)};
@@ -51,6 +63,12 @@ export const GithubAuthentButtonText = styled.p`
   font-size: ${fontSize.large};
   line-height: ${lineHeight.medium};
   color: ${colorUsage.white};
+`;
+
+export const FloatingButtonContainer = styled.div`
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
 `;
 
 export const SelectRepositoryWrapper = styled.div``;

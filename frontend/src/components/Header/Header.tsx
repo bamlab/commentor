@@ -15,6 +15,7 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = () =
     <RouterLink to={PATHS.HOME}>
       <Logo alt="Commentor" src={logo} />
     </RouterLink>
+    <RepositoryIdsMultiSelect />
     <Link as={NavLink} to={PATHS.TAGS} activeStyle={{ color: 'red' }}>
       <FormattedMessage id="header.tag" />
     </Link>

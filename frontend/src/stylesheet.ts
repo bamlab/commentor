@@ -13,6 +13,7 @@ const colorPalette = {
   greyLight: '#e0e0e0',
   greyDark: '#595959',
   white: '#FFFFFF',
+  black: '#000000',
   brown: '#4C3F36',
   darkCerulean: '#134074',
   blackTransparent: 'rgba(0, 0, 0, 0.24)',
@@ -29,6 +30,8 @@ const mainTheme = {
  * Ex: fill, border-color, background-color, color ...
  */
 export const colorUsage = {
+  white: colorPalette.white,
+  black: colorPalette.black,
   headerBackground: mainTheme.transparentPrimary,
   primaryTextColor: colorPalette.greyDark,
   shadow: colorPalette.greyLight,

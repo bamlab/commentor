@@ -13,7 +13,6 @@ export const HoverButtonContainerStyled = styled.div`
   align-items: center;
   :hover {
     box-shadow: 1px 2px 2px 1px ${colorUsage.shadow};
-
     border-radius: 5px;
     width: ${HOVER_SQUARE_SIZE}px;
     height: ${HOVER_SQUARE_SIZE}px;

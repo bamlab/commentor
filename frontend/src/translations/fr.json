@@ -8,7 +8,7 @@
   },
   "home": {
     "welcome-message": "Bienvenue sur commentor !",
-    "authenticate-via-github": "Veuillez vous authentifier via Github",
+    "authenticate-via-github": "Connectez vous avec Github",
     "select-repository-label": "Veuillez selectionner vos repos: "
   },
   "page": {

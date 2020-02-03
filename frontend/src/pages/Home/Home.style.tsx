@@ -24,26 +24,33 @@ export const WelcomeMessage = styled.div`
   margin-bottom: ${getSpacing(12)};
 `;
 
-export const GithubAuthentWrapper = styled.div`
+export const GithubAuthentButton = styled.div`
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin: ${getSpacing(12)};
+  flex-direction: row;
+  display: flex;
+  background-color: ${colorUsage.primaryTextColor};
+  :hover {
+    background-color: ${colorUsage.black};
+  }
+  padding: ${getSpacing(4)};
+  cursor: pointer;
+  box-shadow: 1px 2px 2px 1px ${colorUsage.shadow};
+  border-radius: 10px;
 `;
 
-export const GithubAuthentButton = styled.a`
-  justify-content: center;
-  align-items: center;
-  background-color: ${colorUsage.primaryButtonBackground};
-  padding: ${getSpacing(6)};
+export const GithubLogo = styled.img`
+  height: ${getSpacing(8)};
+  width: ${getSpacing(8)};
+  margin: ${getSpacing(2)};
 `;
 
-export const GithubAuthentTitleWrapper = styled.div`
+export const GithubAuthentButtonText = styled.p`
   font-weight: ${fontWeight.bold};
   font-family: ${fontFamily.main};
   font-size: ${fontSize.large};
   line-height: ${lineHeight.medium};
-  margin-bottom: ${getSpacing(12)};
+  color: ${colorUsage.white};
 `;
 
 export const SelectRepositoryWrapper = styled.div``;

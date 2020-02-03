@@ -6,12 +6,13 @@ import {
   Logo,
   WelcomeMessage,
   SelectRepositoryWrapper,
-  GithubAuthentWrapper,
-  GithubAuthentTitleWrapper,
+  GithubLogo,
+  GithubAuthentButtonText,
   GithubAuthentButton,
 } from './Home.style';
 import { RepositoryIdsMultiSelect } from './components/RepositoryIdsMultiSelect';
 import logo from 'assets/logo.png';
+import githubLogo from 'assets/octocat.png';
 
 type PropsType = {
   loadRepositories: () => void;
@@ -48,18 +49,18 @@ const Home = React.memo<PropsType>(props => {
         <FormattedMessage id="home.welcome-message" />
       </WelcomeMessage>
       {!isAuthenticated && (
-        <GithubAuthentWrapper>
-          <GithubAuthentTitleWrapper>
-            <FormattedMessage id="home.authenticate-via-github" />
-          </GithubAuthentTitleWrapper>
-          <GithubAuthentButton
-            href={`https://github.com/login/oauth/authorize?client_id=${
+        <GithubAuthentButton
+          onClick={() => {
+            window.location.href = `https://github.com/login/oauth/authorize?client_id=${
               process.env.REACT_APP_GITHUB_APP_CLIENT_ID
-            }`}
-          >
-            Login via Github
-          </GithubAuthentButton>
-        </GithubAuthentWrapper>
+            }`;
+          }}
+        >
+          <GithubLogo src={githubLogo} />
+          <GithubAuthentButtonText>
+            <FormattedMessage id="home.authenticate-via-github" />
+          </GithubAuthentButtonText>
+        </GithubAuthentButton>
       )}
       {isAuthenticated && (
         <SelectRepositoryWrapper>

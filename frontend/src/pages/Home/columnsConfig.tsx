@@ -37,7 +37,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     index: 0,
     key: 'body',
     name: 'Comment',
-    columnWidth: 450,
+    columnWidth: 650,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, value, objectId, style),
   },
@@ -45,7 +45,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     index: 1,
     key: 'filePath',
     name: 'File',
-    columnWidth: 300,
+    columnWidth: 100,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, value, objectId, style),
   },
@@ -77,7 +77,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     index: 4,
     key: 'pullRequestUrl',
     name: 'pullRequestUrl',
-    columnWidth: 150,
+    columnWidth: 120,
     renderer: (key: string, value: string, objectId: number | 'id', style: Object): JSX.Element =>
       LinkToPullRequest(key, value, style),
   },

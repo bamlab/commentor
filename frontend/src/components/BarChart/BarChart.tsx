@@ -60,6 +60,7 @@ const BarChart: React.FunctionComponent<propTypes> = props => {
               (barChartItem: { x: number | string; y: number; y0: number; tag: TagType }) => {
                 return (
                   <VictoryBar
+                    barWidth={10}
                     animate={{
                       duration: 2000,
                       onLoad: { duration: 1000 },

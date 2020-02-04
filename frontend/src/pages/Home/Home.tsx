@@ -14,6 +14,7 @@ import {
   ChartsContainer,
   AuthenticatedPageContainer,
 } from './Home.style';
+import TagsLegend from 'components/TagsLegend';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import { CommentType } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
@@ -131,6 +132,7 @@ const Home = React.memo<PropsType>(props => {
               // @ts-ignore
               <BarChart data={barChartFormattedData} />
             }
+            <TagsLegend tags={props.tags} />
             <PieChart data={pieChartFormattedData} />
           </ChartsContainer>
           <CommentTableContainer>

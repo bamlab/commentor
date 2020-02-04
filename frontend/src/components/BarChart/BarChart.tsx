@@ -26,7 +26,7 @@ const BarChart: React.FunctionComponent<propTypes> = props => {
   return (
     <BarChartContainer>
       {props.data && props.data.length > 0 && (
-        <VictoryChart theme={VictoryTheme.material} domainPadding={10}>
+        <VictoryChart theme={VictoryTheme.material} domainPadding={10} height={300} width={800}>
           <VictoryAxis
             dependentAxis
             tickCount={Math.max(
@@ -38,7 +38,7 @@ const BarChart: React.FunctionComponent<propTypes> = props => {
             style={{
               axis: { stroke: 'none' },
               tickLabels: ticksLabelsStyle,
-              grid: { stroke: colorUsage.primaryTextColor },
+              grid: { stroke: colorUsage.barChartGrid },
             }}
           />
           <VictoryAxis
@@ -50,9 +50,8 @@ const BarChart: React.FunctionComponent<propTypes> = props => {
             }
             tickLabelComponent={<VictoryLabel angle={-60} />}
             style={{
-              axis: { stroke: 'none' },
               tickLabels: { ...ticksLabelsStyle },
-              grid: { stroke: colorUsage.primaryTextColor },
+              grid: { stroke: colorUsage.barChartGrid },
             }}
           />
           <VictoryStack>
@@ -61,8 +60,6 @@ const BarChart: React.FunctionComponent<propTypes> = props => {
               (barChartItem: { x: number | string; y: number; y0: number; tag: TagType }) => {
                 return (
                   <VictoryBar
-                    height={300}
-                    width={300}
                     animate={{
                       duration: 2000,
                       onLoad: { duration: 1000 },

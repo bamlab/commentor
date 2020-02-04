@@ -94,13 +94,7 @@ const Home = React.memo<PropsType>(props => {
       map(comments, (comment: CommentType) =>
         chain(props.tags)
           .filter((tag: TagType) => !!comment.body.match(tag.code))
-          .map((tag: TagType) => [
-            { x: date, y: 1, y0: 0, tag },
-            { x: '04-02-2020', y: 1, y0: 0, tag },
-            { x: '05-02-2020', y: 1, y0: 0, tag },
-            { x: '06-02-2020', y: 1, y0: 0, tag },
-            { x: '07-02-2020', y: 1, y0: 0, tag },
-          ])
+          .map((tag: TagType) => [{ x: date, y: 1, y0: 0, tag }])
           .value(),
       ),
     )

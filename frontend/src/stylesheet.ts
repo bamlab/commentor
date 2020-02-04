@@ -32,6 +32,7 @@ const mainTheme = {
 export const colorUsage = {
   white: colorPalette.white,
   black: colorPalette.black,
+  barChartGrid: mainTheme.transparentPrimary,
   headerBackground: mainTheme.transparentPrimary,
   primaryTextColor: colorPalette.greyDark,
   shadow: colorPalette.greyLight,

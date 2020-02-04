@@ -18,6 +18,7 @@ GitHubAuthentContainer.displayName = 'GitHubAuthentContainer';
 export const CommentTableContainer = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 0 ${getSpacing(4)};
 `;
 CommentTableContainer.displayName = 'CommentTableContainer';
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { fontFamily } from 'stylesheet';
 
 export const Cell = styled.div`
   display: flex;
@@ -10,6 +11,7 @@ export const Cell = styled.div`
 
 export const StandardTextContainer = styled.div`
   padding: 10px;
+  font-family: ${fontFamily.main};
 `;
 
 export const STYLE = {

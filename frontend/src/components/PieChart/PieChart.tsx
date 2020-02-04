@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { PieChartContainer } from './PieChart.style';
 import { VictoryPie, VictoryTheme } from 'victory';
-import { colorUsage } from 'stylesheet';
 import { TagType } from 'redux/Tag';
+import { colorUsage, fontFamily, fontSize } from 'stylesheet';
 
 interface propTypes {
   data: { x: number | string; y: number; tag: TagType }[];
@@ -10,6 +10,12 @@ interface propTypes {
 
 const PieChart: React.FunctionComponent<propTypes> = props => {
   const [angle, setAngle] = useState(0);
+
+  const ticksLabelsStyle = {
+    fill: colorUsage.primaryTextColor,
+    fontSize: fontSize.XSmall,
+    fontFamily: fontFamily.main,
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -21,8 +27,8 @@ const PieChart: React.FunctionComponent<propTypes> = props => {
     <PieChartContainer>
       {props.data && props.data.length > 0 && (
         <VictoryPie
-          height={300}
-          width={300}
+          height={350}
+          width={350}
           theme={VictoryTheme.material}
           innerRadius={20}
           cornerRadius={5}
@@ -30,6 +36,7 @@ const PieChart: React.FunctionComponent<propTypes> = props => {
           animate={{ duration: 1000 }}
           endAngle={angle}
           style={{
+            labels: { ...ticksLabelsStyle },
             data: {
               fill: ({ datum }) => (datum.tag ? datum.tag.color : colorUsage.error),
             },

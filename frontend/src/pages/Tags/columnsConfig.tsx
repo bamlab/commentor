@@ -29,7 +29,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
     index: 1,
     key: 'description',
     name: 'Description',
-    columnWidth: 900,
+    columnWidth: 800,
     renderer: (
       key: string,
       value: any,
@@ -55,7 +55,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
     index: 3,
     key: 'delete',
     name: 'delete',
-    columnWidth: 50,
+    columnWidth: 80,
     renderer: (
       key: string,
       value: any,
@@ -90,7 +90,7 @@ const UpdateIconCellRenderer = (
       {typeof objectId === 'number' ? (
         <UpdateIcon objectId={objectId} onIconClick={options.openUpdateTagModal} />
       ) : (
-        'Update'
+        <StandardTextContainer>Update</StandardTextContainer>
       )}
     </Cell>
   );
@@ -106,7 +106,7 @@ const DeleteIconCellRenderer = (
       {typeof objectId === 'number' ? (
         <DeleteIcon objectId={objectId} onIconClick={options.openDeleteTagModal} />
       ) : (
-        'Delete'
+        <StandardTextContainer>Delete</StandardTextContainer>
       )}
     </Cell>
   );

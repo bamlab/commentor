@@ -26,7 +26,7 @@ const dateCellRenderer = (key: string, date: string, style: Object): JSX.Element
       {date !== 'Creation Date' ? (
         <StandardTextContainer>{moment(date).format('DD/MM/YYYY')}</StandardTextContainer>
       ) : (
-        'Creation Date'
+        <StandardTextContainer>{'Creation Date'}</StandardTextContainer>
       )}
     </Cell>
   );
@@ -93,7 +93,7 @@ const LinkToPullRequest = (
       {linkURL !== 'pullRequestUrl' ? (
         <LinkCellIcon onIconClick={() => window.open(linkURL, '_blank')} />
       ) : (
-        'Go to PR'
+        <StandardTextContainer>{'Go to PR'}</StandardTextContainer>
       )}
     </Cell>
   );
@@ -105,7 +105,7 @@ const LinkToComment = (key: string, linkURL: string | 'url', style: Object): JSX
       {linkURL !== 'url' ? (
         <LinkCellIcon onIconClick={() => window.open(linkURL, '_blank')} />
       ) : (
-        'Go to Comment'
+        <StandardTextContainer>{'Go to Comment'}</StandardTextContainer>
       )}
     </Cell>
   );

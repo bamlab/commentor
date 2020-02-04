@@ -54,7 +54,7 @@ export const colorUsage = {
 };
 
 export const fontFamily = {
-  main: `'Lato', 'Helvetica', 'Arial', sans-serif`,
+  main: 'GillSans-Light',
   code: 'Monospace',
 };
 

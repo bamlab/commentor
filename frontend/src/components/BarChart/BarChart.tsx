@@ -19,14 +19,14 @@ interface propTypes {
 const BarChart: React.FunctionComponent<propTypes> = props => {
   const ticksLabelsStyle = {
     fill: colorUsage.primaryTextColor,
-    fontSize: fontSize.XXSmall,
+    fontSize: fontSize.XSmall,
     fontFamily: fontFamily.main,
   };
 
   return (
     <BarChartContainer>
       {props.data && props.data.length > 0 && (
-        <VictoryChart theme={VictoryTheme.material} domainPadding={10} height={300} width={800}>
+        <VictoryChart theme={VictoryTheme.material} domainPadding={10} height={350} width={800}>
           <VictoryAxis
             dependentAxis
             tickCount={Math.max(

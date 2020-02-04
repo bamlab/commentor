@@ -1,6 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 import { SelectWrapper } from './MultiSelect.style';
+import { fontFamily } from 'stylesheet';
 import { ISelectedOptionsType } from './MultiSelect.type';
 
 type PropsType = {
@@ -21,6 +22,17 @@ export const MultiSelect = (props: PropsType) => {
         options={props.options}
         isMulti
         isSearchable
+        styles={{
+          option: styles => ({ ...styles, fontFamily: fontFamily.main }),
+          control: styles => ({ ...styles, fontFamily: fontFamily.main }),
+          multiValue: styles => ({ ...styles, fontFamily: fontFamily.main }),
+          multiValueLabel: styles => ({ ...styles, fontFamily: fontFamily.main }),
+          noOptionsMessage: styles => ({ ...styles, fontFamily: fontFamily.main }),
+          menuList: styles => ({ ...styles, fontFamily: fontFamily.main }),
+          menu: styles => ({ ...styles, fontFamily: fontFamily.main }),
+          multiValueRemove: styles => ({ ...styles, fontFamily: fontFamily.main }),
+          menuPortal: styles => ({ ...styles, fontFamily: fontFamily.main }),
+        }}
       />
     </SelectWrapper>
   );

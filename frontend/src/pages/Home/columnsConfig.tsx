@@ -2,6 +2,7 @@ import React from 'react';
 import { ColumnType } from 'components/GenericTable/GenericTable.type';
 import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTable.style';
 import LinkCellIcon from '../../components/LinkCellIcon';
+import moment from 'moment';
 
 export type CommentTableOptionsType = {};
 
@@ -14,6 +15,19 @@ const defaultCommentCellRenderer = (
   return (
     <Cell key={key} style={style}>
       <StandardTextContainer>{value}</StandardTextContainer>
+    </Cell>
+  );
+};
+
+const dateCellRenderer = (key: string, date: string, style: Object): JSX.Element => {
+  console.log('DATE', date);
+  return (
+    <Cell key={key} style={style}>
+      {date !== 'Creation Date' ? (
+        <StandardTextContainer>{moment(date).format('DD/MM/YYYY')}</StandardTextContainer>
+      ) : (
+        'Creation Date'
+      )}
     </Cell>
   );
 };
@@ -49,7 +63,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     name: 'Creation Date',
     columnWidth: 200,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
+      dateCellRenderer(key, value, style),
   },
   {
     index: 4,

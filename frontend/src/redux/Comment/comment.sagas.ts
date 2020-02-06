@@ -7,7 +7,12 @@ import { CommentType } from './comment.types';
 export function* loadCommentsSaga(action: ActionType<typeof loadComments.request>) {
   try {
     const comments: CommentType[] = yield call([client, client.fetchComments], action.payload);
-    yield put(loadComments.success({ comments }));
+
+    // not sure if right place
+    const filteredComments = comments.filter(comment =>
+      action.payload.devIds.includes(comment.requester),
+    );
+    yield put(loadComments.success({ comments: filteredComments }));
   } catch (error) {
     yield put(loadComments.failure({ errorMessage: error.message }));
   }

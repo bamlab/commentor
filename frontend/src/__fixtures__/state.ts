@@ -15,12 +15,7 @@ export const state: RootState = {
         creationDate: new Date(),
       },
     ],
-    availableDevs: [
-      {
-        id: 123,
-        name: 'amauryw',
-      },
-    ],
+    availableDevs: ['amauryw'],
     isLoading: true,
     commentError: null,
   },
@@ -44,7 +39,7 @@ export const state: RootState = {
     selectedTagId: null,
   },
   filters: {
-    devIds: [],
+    devIds: ['amauryw'],
     repositoryIds: [],
   },
   repository: {

@@ -9,7 +9,7 @@ export type FiltersAction =
 
 export type FiltersState = Readonly<{
   repositoryIds: number[];
-  devIds: number[];
+  devIds: string[];
 }>;
 
 const initialState: FiltersState = {
@@ -28,7 +28,7 @@ const reducer = (state: FiltersState = initialState, action: AnyAction) => {
     case getType(selectDevIds.request):
       return {
         ...state,
-        devIds: typedAction.payload.devIds.map(dev => parseInt(dev.value)),
+        devIds: typedAction.payload.devIds.map(dev => dev.value),
       };
     default:
       return state;

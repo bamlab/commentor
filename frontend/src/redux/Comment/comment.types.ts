@@ -10,7 +10,4 @@ export type CommentType = {
   creationDate: Date;
 };
 
-export type DevType = {
-  id: number;
-  name: string;
-};
+export type DevType = string;

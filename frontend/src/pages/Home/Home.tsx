@@ -45,7 +45,13 @@ type PropsType = {
   tags: TagType[];
   loadTags: () => void;
   loadComments: (
-    filters: { repositoryIds: number[]; requesterIds: string[]; commentorIds: string[] },
+    filters: {
+      repositoryIds: number[];
+      requesterIds: string[];
+      commentorIds: string[];
+      shouldFilterWithRequester: boolean;
+      shouldFilterWithCommentor: boolean;
+    },
   ) => void;
   isCommentLoading: boolean;
   repositoryIds: number[];
@@ -65,6 +71,16 @@ const Home = React.memo<PropsType>(props => {
     selectedCommentorIds,
     loadTags,
   } = props;
+
+  const loadCommentsWithFilters = () =>
+    loadComments({
+      repositoryIds: repositoryIds,
+      requesterIds: selectedRequesterIds,
+      commentorIds: selectedCommentorIds,
+      shouldFilterWithRequester: selectedRequesterIds.length > 0,
+      shouldFilterWithCommentor: selectedCommentorIds.length > 0,
+    });
+
   useEffect(() => {
     const componentDidMount = async () => {
       const params = queryString.parse(location.search);
@@ -80,11 +96,7 @@ const Home = React.memo<PropsType>(props => {
       if (isAuthenticated) {
         loadTags();
         loadRepositories();
-        loadComments({
-          repositoryIds: repositoryIds,
-          requesterIds: selectedRequesterIds,
-          commentorIds: selectedCommentorIds,
-        });
+        loadCommentsWithFilters();
       }
     },
     [isAuthenticated, loadRepositories],
@@ -154,16 +166,7 @@ const Home = React.memo<PropsType>(props => {
               defaultLineHeight={lineHeight}
             />
             <FloatingButtonContainer>
-              <Button
-                disabled={props.isCommentLoading}
-                onClick={() =>
-                  loadComments({
-                    repositoryIds: repositoryIds,
-                    requesterIds: selectedRequesterIds,
-                    commentorIds: selectedCommentorIds,
-                  })
-                }
-              >
+              <Button disabled={props.isCommentLoading} onClick={() => loadCommentsWithFilters()}>
                 {/* to refacto with Icon component */}
                 {props.isCommentLoading ? <Loader /> : <GoSync size={25} />}
               </Button>

@@ -16,6 +16,7 @@ export const state: RootState = {
       },
     ],
     availableRequesters: ['amauryw'],
+    availableCommentors: ['amauryw'],
     isLoading: true,
     commentError: null,
   },
@@ -41,6 +42,7 @@ export const state: RootState = {
   filters: {
     requesterIds: ['amauryw'],
     repositoryIds: [],
+    commentorIds:['amauryw'],
   },
   repository: {
     repositories: [],

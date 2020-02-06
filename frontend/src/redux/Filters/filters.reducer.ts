@@ -1,20 +1,23 @@
 import { ActionType, getType } from 'typesafe-actions';
 
 import { AnyAction } from 'redux';
-import { selectRepositoryIds, selectRequesterIds } from './filters.actions';
+import { selectRepositoryIds, selectRequesterIds, selectCommentorIds } from './filters.actions';
 
 export type FiltersAction =
   | ActionType<typeof selectRepositoryIds.request>
-  | ActionType<typeof selectRequesterIds.request>;
+  | ActionType<typeof selectRequesterIds.request>
+  | ActionType<typeof selectCommentorIds.request>;
 
 export type FiltersState = Readonly<{
   repositoryIds: number[];
   requesterIds: string[];
+  commentorIds: string[];
 }>;
 
 const initialState: FiltersState = {
   repositoryIds: [],
   requesterIds: [],
+  commentorIds: [],
 };
 
 const reducer = (state: FiltersState = initialState, action: AnyAction) => {
@@ -29,6 +32,11 @@ const reducer = (state: FiltersState = initialState, action: AnyAction) => {
       return {
         ...state,
         requesterIds: typedAction.payload.requesterIds.map(requester => requester.value),
+      };
+    case getType(selectCommentorIds.request):
+      return {
+        ...state,
+        commentorIds: typedAction.payload.commentorIds.map(commentor => commentor.value),
       };
     default:
       return state;

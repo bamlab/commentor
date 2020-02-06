@@ -1,6 +1,6 @@
 import { RepositoryType } from '../../redux/Repository/repository.types';
 import { ISelectedOptionsType } from './MultiSelect.type';
-import { RequesterType } from '../../redux/Comment';
+import { RequesterType, CommentorType } from '../../redux/Comment';
 
 export const adaptRepositoryToMultiSelectOptions = (
   repositories: RepositoryType[],
@@ -47,3 +47,25 @@ export const adaptRequesterToMultiSelectOptions = (requesters: RequesterType[]):
     value: requester,
     label: requester,
   }));
+
+  export const adaptSelectedCommentorsFromIds = (
+    selectedCommentors: string[],
+    commentors: CommentorType[],
+  ): ISelectedOptionsType[] => {
+    let result: ISelectedOptionsType[] = [];
+    commentors.forEach(commentor => {
+      if (selectedCommentors.includes(commentor)) {
+        result.push({
+          value: commentor,
+          label: commentor,
+        });
+      }
+    });
+    return result;
+  };
+  
+  export const adaptCommentorToMultiSelectOptions = (commentors: CommentorType[]): ISelectedOptionsType[] =>
+    commentors.map(commentor => ({
+      value: commentor,
+      label: commentor,
+    }));

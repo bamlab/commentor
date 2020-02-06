@@ -1,7 +1,7 @@
 import { ActionType, getType } from 'typesafe-actions';
 
 import { AnyAction } from 'redux';
-import { CommentType, RequesterType } from './comment.types';
+import { CommentType, RequesterType, CommentorType } from './comment.types';
 import { loadComments } from './comment.actions';
 
 export type CommentAction = ActionType<
@@ -10,6 +10,7 @@ export type CommentAction = ActionType<
 export type CommentState = Readonly<{
   comments: CommentType[];
   availableRequesters: RequesterType[];
+  availableCommentors: CommentorType[];
   commentError: string | null;
   isLoading: boolean;
 }>;
@@ -18,6 +19,7 @@ const initialState: CommentState = {
   comments: [],
   commentError: null,
   availableRequesters: ['wefwfe', 'fewfwe'],
+  availableCommentors: ['commentor1', 'commentor2'],
   isLoading: false,
 };
 
@@ -27,6 +29,9 @@ const removeDuplicate = (array: string[]): string[] =>
 const filterRequestersFromComment = (comments: CommentType[]): RequesterType[] =>
   removeDuplicate(comments.map(comment => comment.requester));
 
+const filterCommentorsFromComment = (comments: CommentType[]): RequesterType[] =>
+  removeDuplicate(comments.map(comment => comment.commentor));
+
 const reducer = (state: CommentState = initialState, action: AnyAction) => {
   const typedAction = action as CommentAction;
   switch (typedAction.type) {
@@ -35,6 +40,7 @@ const reducer = (state: CommentState = initialState, action: AnyAction) => {
         ...state,
         comments: typedAction.payload.comments,
         availableRequesters: filterRequestersFromComment(typedAction.payload.comments),
+        availableCommentors: filterCommentorsFromComment(typedAction.payload.comments),
         isLoading: false,
       };
     case getType(loadComments.failure):
@@ -42,6 +48,7 @@ const reducer = (state: CommentState = initialState, action: AnyAction) => {
         ...state,
         commentError: typedAction.payload.errorMessage,
         availableRequesters: [],
+        availableCommentors: [],
         isLoading: false,
       };
     case getType(loadComments.request):

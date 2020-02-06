@@ -47,10 +47,6 @@ type PropsType = {
   loadComments: (
     filters: {
       repositoryIds: number[];
-      requesterIds: string[];
-      commentorIds: string[];
-      shouldFilterWithRequester: boolean;
-      shouldFilterWithCommentor: boolean;
     },
   ) => void;
   isCommentLoading: boolean;
@@ -75,10 +71,6 @@ const Home = React.memo<PropsType>(props => {
   const loadCommentsWithFilters = () =>
     loadComments({
       repositoryIds: repositoryIds,
-      requesterIds: selectedRequesterIds,
-      commentorIds: selectedCommentorIds,
-      shouldFilterWithRequester: selectedRequesterIds.length > 0,
-      shouldFilterWithCommentor: selectedCommentorIds.length > 0,
     });
 
   useEffect(() => {
@@ -102,16 +94,33 @@ const Home = React.memo<PropsType>(props => {
     [isAuthenticated, loadRepositories],
   );
 
+  // should be extracted in wrapper
+  const getFilteredComments = (comments: CommentType[]): CommentType[] => {
+    const filteredByRequesterComments = comments.filter(
+      comment =>
+        selectedRequesterIds.includes(comment.requester) || !(selectedRequesterIds.length > 0),
+    );
+    const filteredByCommentorComments = filteredByRequesterComments.filter(
+      comment =>
+        selectedCommentorIds.includes(comment.commentor) || !(selectedCommentorIds.length > 0),
+    );
+    return filteredByCommentorComments;
+  };
+
+  const filteredByCommentorComments = getFilteredComments(props.comments);
+
   const pieChartFormattedData = chain(props.tags)
     .map((tag: TagType) => ({
       x: tag.code,
-      y: props.comments.filter((comment: CommentType) => !!comment.body.match(tag.code)).length,
+      y: filteredByCommentorComments.filter(
+        (comment: CommentType) => !!comment.body.match(tag.code),
+      ).length,
       tag,
     }))
     .filter(chartDatum => chartDatum.y > 0)
     .value();
 
-  const barChartFormattedData = chain(props.comments)
+  const barChartFormattedData = chain(filteredByCommentorComments)
     .groupBy((comment: CommentType) => moment(comment.creationDate).format('DD-MM-YYYY'))
     .map((comments: CommentType[], date: Moment) =>
       map(comments, (comment: CommentType) =>
@@ -159,7 +168,7 @@ const Home = React.memo<PropsType>(props => {
           </ChartsContainer>
           <CommentTableContainer>
             <GenericTable<CommentTableOptionsType>
-              values={props.comments}
+              values={filteredByCommentorComments}
               fixedColumnCount={fixedColumnCount}
               columnsConfig={columnsConfig}
               options={{}}

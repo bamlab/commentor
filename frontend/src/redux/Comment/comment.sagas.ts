@@ -8,16 +8,7 @@ export function* loadCommentsSaga(action: ActionType<typeof loadComments.request
   try {
     const comments: CommentType[] = yield call([client, client.fetchComments], action.payload);
 
-    // not sure if right place
-    const filteredByRequesterComments = comments.filter(comment =>
-      action.payload.requesterIds.includes(comment.requester) || !action.payload.shouldFilterWithRequester
-    );
-
-    // not sure if right place
-    const filteredByCommentorComments = filteredByRequesterComments.filter(comment =>
-      action.payload.commentorIds.includes(comment.commentor) || !action.payload.shouldFilterWithCommentor
-    );
-    yield put(loadComments.success({ comments: filteredByCommentorComments }));
+    yield put(loadComments.success({ comments }));
   } catch (error) {
     yield put(loadComments.failure({ errorMessage: error.message }));
   }

@@ -8,10 +8,6 @@ export const loadComments = createAsyncAction(
 )<
   {
     repositoryIds: number[];
-    requesterIds: string[];
-    commentorIds: string[];
-    shouldFilterWithRequester: boolean | undefined;
-    shouldFilterWithCommentor: boolean | undefined;
   },
   {
     comments: CommentType[];

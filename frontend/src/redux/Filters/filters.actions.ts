@@ -17,4 +17,20 @@ export const selectRepositoryIds = createAsyncAction(
   }
 >();
 
-export default { selectRepositoryIds };
+export const selectDevIds = createAsyncAction(
+  'Filters/SELECT_DEV_IDS_REQUEST',
+  'Filters/SELECT_DEV_IDS_SUCCESS',
+  'Filters/SELECT_DEV_IDS_FAILURE',
+)<
+  {
+    devIds: ISelectedOptionsType[];
+  },
+  {
+    // not used
+  },
+  {
+    // not used
+  }
+>();
+
+export default { selectRepositoryIds, selectDevIds };

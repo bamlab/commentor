@@ -9,3 +9,8 @@ export type CommentType = {
   repositoryId: number;
   creationDate: Date;
 };
+
+export type DevType = {
+  id: number;
+  name: string;
+};

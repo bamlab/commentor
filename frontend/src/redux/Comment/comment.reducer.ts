@@ -1,7 +1,7 @@
 import { ActionType, getType } from 'typesafe-actions';
 
 import { AnyAction } from 'redux';
-import { CommentType } from './comment.types';
+import { CommentType, DevType } from './comment.types';
 import { loadComments } from './comment.actions';
 
 export type CommentAction = ActionType<
@@ -9,6 +9,7 @@ export type CommentAction = ActionType<
 >;
 export type CommentState = Readonly<{
   comments: CommentType[];
+  availableDevs: DevType[];
   commentError: string | null;
   isLoading: boolean;
 }>;
@@ -16,6 +17,7 @@ export type CommentState = Readonly<{
 const initialState: CommentState = {
   comments: [],
   commentError: null,
+  availableDevs: [{ id: 1234, name: 'coucou' }, { id: 12334, name: 'cou123cou' }],
   isLoading: false,
 };
 
@@ -26,12 +28,14 @@ const reducer = (state: CommentState = initialState, action: AnyAction) => {
       return {
         ...state,
         comments: typedAction.payload.comments,
+        availableDevs: [{ id: 1234, name: 'coucou' }, { id: 1234, name: 'cou123cou' }],
         isLoading: false,
       };
     case getType(loadComments.failure):
       return {
         ...state,
         commentError: typedAction.payload.errorMessage,
+        availableDevs: [],
         isLoading: false,
       };
     case getType(loadComments.request):

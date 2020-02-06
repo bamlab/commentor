@@ -1,23 +1,23 @@
 import { connect } from 'react-redux';
-import { MultiSelect, adaptDevToMultiSelectOptions, adaptSelectedDevsFromIds } from '../MultiSelect';
+import { MultiSelect, adaptRequesterToMultiSelectOptions, adaptSelectedRequestersFromIds } from '../MultiSelect';
 import { ISelectedOptionsType } from '../MultiSelect/MultiSelect.type';
 import { Dispatch } from 'redux';
 import { RootState } from 'redux/types';
-import { getSelectedDevIds } from 'redux/Filters';
+import { getSelectedRequesterIds } from 'redux/Filters';
 import { getAvailableDevsFromComments } from 'redux/Comment';
-import { selectDevIds } from '../../redux/Filters/filters.actions';
+import { selectRequesterIds } from '../../redux/Filters/filters.actions';
 
 const mapStateToProps = (state: RootState) => ({
-  selectedOptions: adaptSelectedDevsFromIds(
-    getSelectedDevIds(state),
+  selectedOptions: adaptSelectedRequestersFromIds(
+    getSelectedRequesterIds(state),
     getAvailableDevsFromComments(state),
   ),
-  options: adaptDevToMultiSelectOptions(getAvailableDevsFromComments(state)),
+  options: adaptRequesterToMultiSelectOptions(getAvailableDevsFromComments(state)),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   selectOptions: (selectedOptions: ISelectedOptionsType[]) =>
-    dispatch(selectDevIds.request({ devIds: selectedOptions })),
+    dispatch(selectRequesterIds.request({ requesterIds: selectedOptions })),
 });
 
 

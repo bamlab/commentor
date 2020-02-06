@@ -1,6 +1,6 @@
 import { RepositoryType } from '../../redux/Repository/repository.types';
 import { ISelectedOptionsType } from './MultiSelect.type';
-import { DevType } from '../../redux/Comment';
+import { RequesterType } from '../../redux/Comment';
 
 export const adaptRepositoryToMultiSelectOptions = (
   repositories: RepositoryType[],
@@ -26,24 +26,24 @@ export const adaptOptionFromId = (
   return result;
 };
 
-export const adaptSelectedDevsFromIds = (
-  selectedDevs: string[],
-  devs: DevType[],
+export const adaptSelectedRequestersFromIds = (
+  selectedRequesters: string[],
+  requesters: RequesterType[],
 ): ISelectedOptionsType[] => {
   let result: ISelectedOptionsType[] = [];
-  devs.forEach(dev => {
-    if (selectedDevs.includes(dev)) {
+  requesters.forEach(requester => {
+    if (selectedRequesters.includes(requester)) {
       result.push({
-        value: dev,
-        label: dev,
+        value: requester,
+        label: requester,
       });
     }
   });
   return result;
 };
 
-export const adaptDevToMultiSelectOptions = (devs: DevType[]): ISelectedOptionsType[] =>
-  devs.map(dev => ({
-    value: dev,
-    label: dev,
+export const adaptRequesterToMultiSelectOptions = (requesters: RequesterType[]): ISelectedOptionsType[] =>
+  requesters.map(requester => ({
+    value: requester,
+    label: requester,
   }));

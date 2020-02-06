@@ -1,7 +1,7 @@
 import { ActionType, getType } from 'typesafe-actions';
 
 import { AnyAction } from 'redux';
-import { CommentType, DevType } from './comment.types';
+import { CommentType, RequesterType } from './comment.types';
 import { loadComments } from './comment.actions';
 
 export type CommentAction = ActionType<
@@ -9,7 +9,7 @@ export type CommentAction = ActionType<
 >;
 export type CommentState = Readonly<{
   comments: CommentType[];
-  availableDevs: DevType[];
+  availableRequesters: RequesterType[];
   commentError: string | null;
   isLoading: boolean;
 }>;
@@ -17,14 +17,14 @@ export type CommentState = Readonly<{
 const initialState: CommentState = {
   comments: [],
   commentError: null,
-  availableDevs: [],
+  availableRequesters: ['wefwfe', 'fewfwe'],
   isLoading: false,
 };
 
 const removeDuplicate = (array: string[]): string[] =>
   array.reduce((acc: string[], item: string) => (acc.includes(item) ? acc : [...acc, item]), []);
 
-const filterDevsFromComment = (comments: CommentType[]): DevType[] =>
+const filterRequestersFromComment = (comments: CommentType[]): RequesterType[] =>
   removeDuplicate(comments.map(comment => comment.requester));
 
 const reducer = (state: CommentState = initialState, action: AnyAction) => {
@@ -34,14 +34,14 @@ const reducer = (state: CommentState = initialState, action: AnyAction) => {
       return {
         ...state,
         comments: typedAction.payload.comments,
-        availableDevs: filterDevsFromComment(typedAction.payload.comments),
+        availableRequesters: filterRequestersFromComment(typedAction.payload.comments),
         isLoading: false,
       };
     case getType(loadComments.failure):
       return {
         ...state,
         commentError: typedAction.payload.errorMessage,
-        availableDevs: [],
+        availableRequesters: [],
         isLoading: false,
       };
     case getType(loadComments.request):

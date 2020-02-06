@@ -17,7 +17,7 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = () =
     </RouterLink>
     <div>Projets:</div>
     <RepositoryIdsMultiSelect />
-    <div>dev:</div>
+    <div>Requesters:</div>
     <DevMultiSelect />
     <Link as={NavLink} to={PATHS.TAGS} activeStyle={{ color: 'red' }}>
       <FormattedMessage id="header.tag" />

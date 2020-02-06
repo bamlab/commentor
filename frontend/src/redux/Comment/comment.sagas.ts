@@ -10,12 +10,12 @@ export function* loadCommentsSaga(action: ActionType<typeof loadComments.request
 
     // not sure if right place
     const filteredByRequesterComments = comments.filter(comment =>
-      action.payload.requesterIds.includes(comment.requester)
+      action.payload.requesterIds.includes(comment.requester) || !action.payload.shouldFilterWithRequester
     );
 
     // not sure if right place
     const filteredByCommentorComments = filteredByRequesterComments.filter(comment =>
-      action.payload.commentorIds.includes(comment.commentor)
+      action.payload.commentorIds.includes(comment.commentor) || !action.payload.shouldFilterWithCommentor
     );
     yield put(loadComments.success({ comments: filteredByCommentorComments }));
   } catch (error) {

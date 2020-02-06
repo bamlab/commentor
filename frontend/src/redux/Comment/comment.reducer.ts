@@ -17,9 +17,15 @@ export type CommentState = Readonly<{
 const initialState: CommentState = {
   comments: [],
   commentError: null,
-  availableDevs: [{ id: 1234, name: 'coucou' }, { id: 12334, name: 'cou123cou' }],
+  availableDevs: [],
   isLoading: false,
 };
+
+const removeDuplicate = (array: string[]): string[] =>
+  array.reduce((acc: string[], item: string) => (acc.includes(item) ? acc : [...acc, item]), []);
+
+const filterDevsFromComment = (comments: CommentType[]): DevType[] =>
+  removeDuplicate(comments.map(comment => comment.requester));
 
 const reducer = (state: CommentState = initialState, action: AnyAction) => {
   const typedAction = action as CommentAction;
@@ -28,7 +34,7 @@ const reducer = (state: CommentState = initialState, action: AnyAction) => {
       return {
         ...state,
         comments: typedAction.payload.comments,
-        availableDevs: [{ id: 1234, name: 'coucou' }, { id: 1234, name: 'cou123cou' }],
+        availableDevs: filterDevsFromComment(typedAction.payload.comments),
         isLoading: false,
       };
     case getType(loadComments.failure):

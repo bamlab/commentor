@@ -27,15 +27,15 @@ export const adaptOptionFromId = (
 };
 
 export const adaptSelectedDevsFromIds = (
-  devIds: number[],
+  selectedDevs: string[],
   devs: DevType[],
 ): ISelectedOptionsType[] => {
   let result: ISelectedOptionsType[] = [];
   devs.forEach(dev => {
-    if (devIds.includes(dev.id)) {
+    if (selectedDevs.includes(dev)) {
       result.push({
-        value: dev.id.toString(),
-        label: dev.name,
+        value: dev,
+        label: dev,
       });
     }
   });
@@ -44,6 +44,6 @@ export const adaptSelectedDevsFromIds = (
 
 export const adaptDevToMultiSelectOptions = (devs: DevType[]): ISelectedOptionsType[] =>
   devs.map(dev => ({
-    value: dev.id.toString(),
-    label: dev.name,
+    value: dev,
+    label: dev,
   }));

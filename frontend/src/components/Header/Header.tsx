@@ -4,7 +4,8 @@ import { Link as RouterLink, NavLink, RouteComponentProps, withRouter } from 're
 import logo from 'assets/logo.png';
 import Link from 'components/Link';
 import { RepositoryIdsMultiSelect } from 'components/RepositoryIdsMultiSelect';
-import { DevMultiSelect } from 'components/DevMultiSelect';
+import { RequesterMultiSelect } from 'components/RequesterMultiSelect';
+import { CommentorMultiSelect } from 'components/CommentorMultiSelect';
 import { PATHS } from 'routes';
 import { Logo, HeaderContainer } from './Header.style';
 
@@ -18,7 +19,9 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = () =
     <div>Projets:</div>
     <RepositoryIdsMultiSelect />
     <div>Requesters:</div>
-    <DevMultiSelect />
+    <RequesterMultiSelect />
+    <div>Commentors:</div>
+    <CommentorMultiSelect />
     <Link as={NavLink} to={PATHS.TAGS} activeStyle={{ color: 'red' }}>
       <FormattedMessage id="header.tag" />
     </Link>

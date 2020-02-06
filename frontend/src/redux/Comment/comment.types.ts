@@ -11,3 +11,4 @@ export type CommentType = {
 };
 
 export type RequesterType = string;
+export type CommentorType = string;

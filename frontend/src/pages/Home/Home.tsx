@@ -44,10 +44,13 @@ type PropsType = {
   comments: CommentType[];
   tags: TagType[];
   loadTags: () => void;
-  loadComments: (filters: { repositoryIds: number[]; requesterIds: string[] }) => void;
+  loadComments: (
+    filters: { repositoryIds: number[]; requesterIds: string[]; commentorIds: string[] },
+  ) => void;
   isCommentLoading: boolean;
   repositoryIds: number[];
   selectedRequesterIds: string[];
+  selectedCommentorIds: string[];
 };
 
 const Home = React.memo<PropsType>(props => {
@@ -59,6 +62,7 @@ const Home = React.memo<PropsType>(props => {
     loadComments,
     repositoryIds,
     selectedRequesterIds,
+    selectedCommentorIds,
     loadTags,
   } = props;
   useEffect(() => {
@@ -76,7 +80,11 @@ const Home = React.memo<PropsType>(props => {
       if (isAuthenticated) {
         loadTags();
         loadRepositories();
-        loadComments({ repositoryIds: repositoryIds, requesterIds: selectedRequesterIds });
+        loadComments({
+          repositoryIds: repositoryIds,
+          requesterIds: selectedRequesterIds,
+          commentorIds: selectedCommentorIds,
+        });
       }
     },
     [isAuthenticated, loadRepositories],
@@ -149,7 +157,11 @@ const Home = React.memo<PropsType>(props => {
               <Button
                 disabled={props.isCommentLoading}
                 onClick={() =>
-                  loadComments({ repositoryIds: repositoryIds, requesterIds: selectedRequesterIds })
+                  loadComments({
+                    repositoryIds: repositoryIds,
+                    requesterIds: selectedRequesterIds,
+                    commentorIds: selectedCommentorIds,
+                  })
                 }
               >
                 {/* to refacto with Icon component */}

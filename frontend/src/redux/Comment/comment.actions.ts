@@ -9,6 +9,7 @@ export const loadComments = createAsyncAction(
   {
     repositoryIds: number[];
     requesterIds: string[];
+    commentorIds: string[];
   },
   {
     comments: CommentType[];

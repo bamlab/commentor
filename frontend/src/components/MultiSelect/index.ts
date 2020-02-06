@@ -4,4 +4,6 @@ export {
   adaptOptionFromId,
   adaptSelectedRequestersFromIds,
   adaptRequesterToMultiSelectOptions,
+  adaptSelectedCommentorsFromIds,
+  adaptCommentorToMultiSelectOptions,
 } from './MultiSelect.adapter';

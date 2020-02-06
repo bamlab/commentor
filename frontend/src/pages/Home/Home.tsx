@@ -44,9 +44,10 @@ type PropsType = {
   comments: CommentType[];
   tags: TagType[];
   loadTags: () => void;
-  loadComments: (filters: { repositoryIds: number[] }) => void;
+  loadComments: (filters: { repositoryIds: number[]; devIds: string[] }) => void;
   isCommentLoading: boolean;
   repositoryIds: number[];
+  selectedDevIds: string[];
 };
 
 const Home = React.memo<PropsType>(props => {
@@ -57,6 +58,7 @@ const Home = React.memo<PropsType>(props => {
     isAuthenticated,
     loadComments,
     repositoryIds,
+    selectedDevIds,
     loadTags,
   } = props;
   useEffect(() => {
@@ -74,7 +76,7 @@ const Home = React.memo<PropsType>(props => {
       if (isAuthenticated) {
         loadTags();
         loadRepositories();
-        loadComments({ repositoryIds: repositoryIds });
+        loadComments({ repositoryIds: repositoryIds, devIds: selectedDevIds });
       }
     },
     [isAuthenticated, loadRepositories],
@@ -146,7 +148,9 @@ const Home = React.memo<PropsType>(props => {
             <FloatingButtonContainer>
               <Button
                 disabled={props.isCommentLoading}
-                onClick={() => loadComments({ repositoryIds: repositoryIds })}
+                onClick={() =>
+                  loadComments({ repositoryIds: repositoryIds, devIds: selectedDevIds })
+                }
               >
                 {/* to refacto with Icon component */}
                 {props.isCommentLoading ? <Loader /> : <GoSync size={25} />}

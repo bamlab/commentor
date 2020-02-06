@@ -17,13 +17,13 @@ export const selectRepositoryIds = createAsyncAction(
   }
 >();
 
-export const selectDevIds = createAsyncAction(
-  'Filters/SELECT_DEV_IDS_REQUEST',
-  'Filters/SELECT_DEV_IDS_SUCCESS',
-  'Filters/SELECT_DEV_IDS_FAILURE',
+export const selectRequesterIds = createAsyncAction(
+  'Filters/SELECT_REQUESTER_IDS_REQUEST',
+  'Filters/SELECT_REQUESTER_IDS_SUCCESS',
+  'Filters/SELECT_REQUESTER_IDS_FAILURE',
 )<
   {
-    devIds: ISelectedOptionsType[];
+    requesterIds: ISelectedOptionsType[];
   },
   {
     // not used
@@ -33,4 +33,4 @@ export const selectDevIds = createAsyncAction(
   }
 >();
 
-export default { selectRepositoryIds, selectDevIds };
+export default { selectRepositoryIds, selectRequesterIds };

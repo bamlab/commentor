@@ -10,7 +10,7 @@ export function* loadCommentsSaga(action: ActionType<typeof loadComments.request
 
     // not sure if right place
     const filteredComments = comments.filter(comment =>
-      action.payload.devIds.includes(comment.requester),
+      action.payload.requesterIds.includes(comment.requester),
     );
     yield put(loadComments.success({ comments: filteredComments }));
   } catch (error) {

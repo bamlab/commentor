@@ -1,8 +1,9 @@
 import { RootState } from 'redux/types';
-import { DevType } from './comment.types';
+import { RequesterType } from './comment.types';
 
 export const getComments = (store: RootState) => store.comment.comments;
 
 export const isCommentLoading = (store: RootState) => store.comment.isLoading;
 
-export const getAvailableDevsFromComments = (store: RootState): DevType[] => store.comment.availableDevs;
+export const getAvailableDevsFromComments = (store: RootState): RequesterType[] =>
+  store.comment.availableRequesters;

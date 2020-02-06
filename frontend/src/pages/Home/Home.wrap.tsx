@@ -32,8 +32,6 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
   login: (code: string) => dispatch(login.request({ code })),
   loadComments: (filters: {
     repositoryIds: number[];
-    requesterIds: string[];
-    commentorIds: string[];
   }) =>
     dispatch(
       loadComments.request({

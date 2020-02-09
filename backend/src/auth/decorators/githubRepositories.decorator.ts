@@ -1,4 +1,4 @@
-import { createParamDecorator } from '@nestjs/common';
+import { createParamDecorator, UnauthorizedException } from '@nestjs/common';
 import * as request from 'request-promise';
 import { GithubRepositoriesAnswer, GithubRepository } from '../interfaces/GithubRepositoriesAnswer';
 
@@ -8,24 +8,24 @@ const queryPaginatedGithubRepositories = async (
   previousPageCursor?: string,
 ): Promise<GithubRepository[]> => {
   const query = `
-    query {
-      viewer {
-        repositories(first: 100, affiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER], ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER] ${
-          previousPageCursor ? `, after:"${previousPageCursor}"` : ''
-        }) {
-          totalCount
-          pageInfo {
-            endCursor
-            hasNextPage
-          }
-          nodes {
-            databaseId,
-            name
+      query {
+        viewer {
+          repositories(first: 100, affiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER], ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER] ${
+            previousPageCursor ? `, after:"${previousPageCursor}"` : ''
+          }) {
+            totalCount
+            pageInfo {
+              endCursor
+              hasNextPage
+            }
+            nodes {
+              databaseId,
+              name
+            }
           }
         }
       }
-    }
-  `;
+    `;
 
   const githubAnswer: GithubRepositoriesAnswer = await request({
     uri: 'https://api.github.com/graphql',
@@ -52,6 +52,9 @@ const queryPaginatedGithubRepositories = async (
 
 export const GithubRepositories = createParamDecorator(async (_, req) => {
   if (req.cookies.access_token) {
+    console.log('ACCESS_TOKEN', req.cookies.access_token);
     return queryPaginatedGithubRepositories(req.cookies.access_token);
+  } else {
+    throw new UnauthorizedException();
   }
 });

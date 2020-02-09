@@ -26,9 +26,13 @@ export class CommentController implements CrudController<Comment> {
     @Body() filters: { repositoryIds: number[] },
     @GithubRepositories() githubRepositories: GithubRepository[],
   ): Promise<Comment[]> {
-    const githubRepositoriesIds = githubRepositories.map(repository => repository.databaseId);
-    const authorizedRepositoriesIds = intersection(githubRepositoriesIds, filters.repositoryIds);
-    return this.service.getCommentsFilteredByRepositoriesIds(authorizedRepositoriesIds);
+    if (githubRepositories) {
+      const githubRepositoriesIds = githubRepositories.map(repository => repository.databaseId);
+      const authorizedRepositoriesIds = intersection(githubRepositoriesIds, filters.repositoryIds);
+      return this.service.getCommentsFilteredByRepositoriesIds(authorizedRepositoriesIds);
+    } else {
+      return [];
+    }
   }
 
   @Override()

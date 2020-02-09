@@ -12,4 +12,16 @@ export const login = createAsyncAction(
   }
 >();
 
-export default { login };
+export const authentication = createAsyncAction(
+  'Authentication/AUTHENTICATION_REQUEST',
+  'Authentication/AUTHENTICATION_SUCCESS',
+  'Authentication/AUTHENTICATION_FAILURE',
+)<
+  { code: string },
+  {},
+  {
+    errorMessage: string;
+  }
+>();
+
+export default { login, authentication };

@@ -20,7 +20,6 @@ const defaultCommentCellRenderer = (
 };
 
 const dateCellRenderer = (key: string, date: string, style: Object): JSX.Element => {
-  console.log('DATE', date);
   return (
     <Cell key={key} style={style}>
       {date !== 'Creation Date' ? (

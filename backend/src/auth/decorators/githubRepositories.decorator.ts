@@ -40,7 +40,7 @@ const queryPaginatedGithubRepositories = async (
     },
   });
 
-  console.log('Github answer', githubAnswer);
+  console.log('Github answer', JSON.stringify(githubAnswer));
 
   const repositoriesList = previousPageRepositories.concat(
     githubAnswer.data.viewer.repositories.nodes,
@@ -49,6 +49,7 @@ const queryPaginatedGithubRepositories = async (
   if (pageInfo.hasNextPage) {
     return queryPaginatedGithubRepositories(userAccessToken, repositoriesList, pageInfo.endCursor);
   }
+  console.log('Repository List !', repositoriesList);
   return repositoriesList ? repositoriesList : [];
 };
 

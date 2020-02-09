@@ -18,8 +18,8 @@ export type CommentState = Readonly<{
 const initialState: CommentState = {
   comments: [],
   commentError: null,
-  availableRequesters: ['wefwfe', 'fewfwe'],
-  availableCommentors: ['commentor1', 'commentor2'],
+  availableRequesters: [],
+  availableCommentors: [],
   isLoading: false,
 };
 

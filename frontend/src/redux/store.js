@@ -1,11 +1,13 @@
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist';
+import { persistStore, persistReducer, createMigrate } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import createSagaMiddleware from 'redux-saga';
-
+import { storeMigrations } from './store.migration';
 import createReducer from './reducers';
 import rootSaga from './sagas';
+
+export const CURRENT_STORE_VERSION = 1;
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -29,6 +31,8 @@ export default function configureStore(history) {
     key: 'root',
     whitelist: ['authentication', 'filters'],
     storage,
+    version: CURRENT_STORE_VERSION,
+    migrate: createMigrate(storeMigrations, { debug: false }),
   };
   const persistedReducer = persistReducer(persistConfig, rootReducer);
 

@@ -9,6 +9,3 @@ export type CommentType = {
   repositoryId: number;
   creationDate: Date;
 };
-
-export type RequesterType = string;
-export type CommentorType = string;

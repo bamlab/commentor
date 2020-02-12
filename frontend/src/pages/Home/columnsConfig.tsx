@@ -19,24 +19,22 @@ const defaultCommentCellRenderer = (
   );
 };
 
-const dateCellRenderer = (key: string, date: string, style: Object): JSX.Element => {
-  return (
-    <Cell key={key} style={style}>
-      {date !== 'Creation Date' ? (
-        <StandardTextContainer>{moment(date).format('DD/MM/YYYY')}</StandardTextContainer>
-      ) : (
-        <StandardTextContainer>{'Creation Date'}</StandardTextContainer>
-      )}
-    </Cell>
-  );
-};
+const dateCellRenderer = (key: string, date: string, style: Object): JSX.Element => (
+  <Cell key={key} style={style}>
+    {date !== 'Creation Date' ? (
+      <StandardTextContainer>{moment(date).format('DD/MM/YYYY')}</StandardTextContainer>
+    ) : (
+      <StandardTextContainer>{'Creation Date'}</StandardTextContainer>
+    )}
+  </Cell>
+);
 
 export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
   {
     index: 0,
     key: 'body',
     name: 'Comment',
-    columnWidth: 650,
+    columnWidth: 34, // percentage
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, value, objectId, style),
   },
@@ -44,7 +42,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     index: 1,
     key: 'filePath',
     name: 'File',
-    columnWidth: 100,
+    columnWidth: 15,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, value, objectId, style),
   },
@@ -52,31 +50,39 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     index: 2,
     key: 'commentor',
     name: 'Commentor',
-    columnWidth: 200,
+    columnWidth: 10,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, value, objectId, style),
   },
   {
     index: 3,
+    key: 'requester',
+    name: 'Requester',
+    columnWidth: 10,
+    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
+      defaultCommentCellRenderer(key, value, objectId, style),
+  },
+  {
+    index: 4,
     key: 'creationDate',
     name: 'Creation Date',
-    columnWidth: 200,
+    columnWidth: 15,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       dateCellRenderer(key, value, style),
   },
   {
-    index: 4,
+    index: 5,
     key: 'url',
     name: 'url',
-    columnWidth: 150,
+    columnWidth: 8,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       LinkToComment(key, value, style),
   },
   {
-    index: 4,
+    index: 6,
     key: 'pullRequestUrl',
     name: 'pullRequestUrl',
-    columnWidth: 120,
+    columnWidth: 8,
     renderer: (key: string, value: string, objectId: number | 'id', style: Object): JSX.Element =>
       LinkToPullRequest(key, value, style),
   },
@@ -110,4 +116,4 @@ const LinkToComment = (key: string, linkURL: string | 'url', style: Object): JSX
   );
 };
 export const lineHeight = 700;
-export const fixedColumnCount = 2; // this is the reference
+export const fixedColumnCount = 0; // this is the reference

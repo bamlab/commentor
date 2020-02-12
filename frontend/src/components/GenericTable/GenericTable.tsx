@@ -52,6 +52,10 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
     fixedWidth: true,
   });
 
+  /**
+   * force rerender after resize
+   */
+  // window.onresize = () => console.log('resized');
   return (
     <Wrapper>
       <AutoSizer>
@@ -86,12 +90,14 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
                   )) ||
                   defaultCellRenderer(key, {
                     ...style,
+                    wordBreak: 'break-word',
                     backgroundColor: getBackgroundColor(rowIndex),
                   })}
               </CellMeasurer>
             )}
             columnWidth={({ index }) =>
-              props.columnsConfig[index] && props.columnsConfig[index].columnWidth
+              props.columnsConfig[index] &&
+              (props.columnsConfig[index].columnWidth * window.innerWidth) / 100
             }
             columnCount={props.columnsConfig.length}
             enableFixedColumnScroll

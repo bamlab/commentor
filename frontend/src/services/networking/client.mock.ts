@@ -4,7 +4,7 @@ import { CommentType } from '../../redux/Comment';
  * Mocked comment if, for "example", you [could not/don't want to] connect to backend
  * @requires mockedComments
  */
-export const MockedCommennt: CommentType[] = [
+export const MockedComment: CommentType[] = [
   {
     id: 123,
     body: 'ewffew',

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { AutoSizer, MultiGrid, CellMeasurer, CellMeasurerCache } from 'react-virtualized';
 import { ColumnType, OptionsType } from './GenericTable.type';
 import { STYLE, Wrapper, Cell } from './GenericTable.style';
+import Text from 'components/Text';
 import { colorUsage } from 'stylesheet';
 
 interface PropsType<T extends OptionsType> {
@@ -26,7 +27,7 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
   const defaultCellRenderer = (key: string, style: Object): JSX.Element => {
     return (
       <Cell key={key} style={style}>
-        Empty
+        <Text>Empty</Text>
       </Cell>
     );
   };

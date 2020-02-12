@@ -7,6 +7,7 @@ interface PropsType {
   isOpen: boolean;
   children: ReactNode;
   onRequestClose: () => void;
+  style?: Object;
 }
 
 export const Modal = React.memo<PropsType>(props => (
@@ -14,6 +15,7 @@ export const Modal = React.memo<PropsType>(props => (
     isOpen={props.isOpen}
     contentLabel={props.contentLabel}
     onRequestClose={props.onRequestClose}
+    style={props.style}
   >
     {props.children}
   </ReactModal>

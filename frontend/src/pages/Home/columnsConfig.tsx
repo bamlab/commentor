@@ -74,7 +74,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     index: 5,
     key: 'url',
     name: 'url',
-    columnWidth: 8,
+    columnWidth: 7,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
       LinkToComment(key, value, style),
   },
@@ -82,7 +82,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     index: 6,
     key: 'pullRequestUrl',
     name: 'pullRequestUrl',
-    columnWidth: 8,
+    columnWidth: 7,
     renderer: (key: string, value: string, objectId: number | 'id', style: Object): JSX.Element =>
       LinkToPullRequest(key, value, style),
   },

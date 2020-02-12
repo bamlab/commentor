@@ -1,5 +1,3 @@
-import { RootState } from './types';
-
 export const storeMigrations = {
   0: (state: StateTypeVersion0): StateTypeVersion1 => ({
     ...state,

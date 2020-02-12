@@ -113,20 +113,18 @@ const Home = React.memo<PropsType>(props => {
     return filteredByCommentorComments;
   };
 
-  const filteredByCommentorComments = getFilteredComments(props.comments);
+  const filteredComments = getFilteredComments(props.comments);
 
   const pieChartFormattedData = chain(props.tags)
     .map((tag: TagType) => ({
       x: tag.code,
-      y: filteredByCommentorComments.filter(
-        (comment: CommentType) => !!comment.body.match(tag.code),
-      ).length,
+      y: filteredComments.filter((comment: CommentType) => !!comment.body.match(tag.code)).length,
       tag,
     }))
     .filter(chartDatum => chartDatum.y > 0)
     .value();
 
-  const barChartFormattedData = chain(filteredByCommentorComments)
+  const barChartFormattedData = chain(filteredComments)
     .groupBy((comment: CommentType) => moment(comment.creationDate).format('DD-MM-YYYY'))
     .map((comments: CommentType[], date: Moment) =>
       map(comments, (comment: CommentType) =>

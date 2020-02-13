@@ -101,19 +101,18 @@ const Home = React.memo<PropsType>(props => {
   const [isFilterModalVisible, setFilterModalVisible] = useState(false);
 
   // should be extracted in wrapper
-  const getFilteredComments = (comments: CommentType[]): CommentType[] => {
-    const filteredByRequesterComments = comments.filter(
+
+  const filteredComments = chain(props.comments)
+    .filter(
       comment =>
         selectedRequesterIds.includes(comment.requester) || !(selectedRequesterIds.length > 0),
-    );
-    const filteredByCommentorComments = filteredByRequesterComments.filter(
+    )
+    .filter(
       comment =>
         selectedCommentorIds.includes(comment.commentor) || !(selectedCommentorIds.length > 0),
-    );
-    return filteredByCommentorComments;
-  };
-
-  const filteredComments = getFilteredComments(props.comments);
+    )
+    .orderBy('creationDate', 'desc')
+    .value();
 
   const pieChartFormattedData = chain(props.tags)
     .map((tag: TagType) => ({

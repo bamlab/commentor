@@ -172,7 +172,7 @@ const Home = React.memo<PropsType>(props => {
           </ChartsContainer>
           <CommentTableContainer>
             <GenericTable<CommentTableOptionsType>
-              values={filteredByCommentorComments}
+              values={filteredComments}
               fixedColumnCount={fixedColumnCount}
               columnsConfig={columnsConfig}
               options={{}}

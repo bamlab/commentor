@@ -86,4 +86,10 @@ export const FloatingButtonContainer = styled.div`
   bottom: 2%;
 `;
 
+export const FilterButtonContainer = styled.div`
+  position: fixed;
+  right: 50%;
+  bottom: 2%;
+`;
+
 export const SelectRepositoryWrapper = styled.div``;

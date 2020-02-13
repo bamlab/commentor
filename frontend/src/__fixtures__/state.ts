@@ -15,6 +15,8 @@ export const state: RootState = {
         creationDate: new Date(),
       },
     ],
+    availableRequesters: ['amauryw'],
+    availableCommentors: ['amauryw'],
     isLoading: true,
     commentError: null,
   },
@@ -38,7 +40,9 @@ export const state: RootState = {
     selectedTagId: null,
   },
   filters: {
+    requesterIds: ['amauryw'],
     repositoryIds: [],
+    commentorIds:['amauryw'],
   },
   repository: {
     repositories: [],

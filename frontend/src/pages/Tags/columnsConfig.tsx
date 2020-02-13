@@ -16,7 +16,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
     index: 0,
     key: 'code',
     name: 'Code',
-    columnWidth: 300,
+    columnWidth: 10,
     renderer: (
       key: string,
       value: any,
@@ -29,7 +29,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
     index: 1,
     key: 'description',
     name: 'Description',
-    columnWidth: 800,
+    columnWidth: 60,
     renderer: (
       key: string,
       value: any,
@@ -42,7 +42,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
     index: 2,
     key: 'color',
     name: 'Color',
-    columnWidth: 100,
+    columnWidth: 10,
     renderer: (
       key: string,
       value: any,
@@ -55,7 +55,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
     index: 3,
     key: 'delete',
     name: 'delete',
-    columnWidth: 80,
+    columnWidth: 10,
     renderer: (
       key: string,
       value: any,
@@ -68,7 +68,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
     index: 4,
     key: 'update',
     name: 'update',
-    columnWidth: 80,
+    columnWidth: 10,
     renderer: (
       key: string,
       value: any,
@@ -137,4 +137,4 @@ const defaultTagCellRenderer = (
   );
 };
 export const lineHeight = 700;
-export const fixedColumnCount = 2; // this is the reference
+export const fixedColumnCount = 0; // this is the reference

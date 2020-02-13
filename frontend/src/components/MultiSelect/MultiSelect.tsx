@@ -8,6 +8,7 @@ type PropsType = {
   selectedOptions: ISelectedOptionsType[];
   selectOptions: (selectedOptions: ISelectedOptionsType[]) => void;
   options: ISelectedOptionsType[];
+  placeholder: string;
 };
 
 export const MultiSelect = (props: PropsType) => {
@@ -20,8 +21,10 @@ export const MultiSelect = (props: PropsType) => {
         value={props.selectedOptions}
         onChange={selectOptions}
         options={props.options}
+        placeholder={props.placeholder}
         isMulti
         isSearchable
+        menuPortalTarget={document.body}
         styles={{
           option: styles => ({ ...styles, fontFamily: fontFamily.main }),
           control: styles => ({ ...styles, fontFamily: fontFamily.main }),

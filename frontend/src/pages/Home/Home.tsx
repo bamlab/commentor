@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 import queryString from 'query-string';
 import {
@@ -13,14 +13,16 @@ import {
   GitHubAuthentContainer,
   ChartsContainer,
   AuthenticatedPageContainer,
+  FilterButtonContainer,
 } from './Home.style';
 import TagsLegend from 'components/TagsLegend';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import { CommentType } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
-import { GoSync } from 'react-icons/go';
+import { GoSync, GoBeaker } from 'react-icons/go';
 import Button from 'components/Button';
 import Loader from 'components/Loader';
+import FilterModal from 'components/FilterModal';
 import BarChart from 'components/BarChart';
 import PieChart from 'components/PieChart';
 import { map, chain } from 'lodash';
@@ -44,10 +46,18 @@ type PropsType = {
   comments: CommentType[];
   tags: TagType[];
   loadTags: () => void;
-  loadComments: (filters: { repositoryIds: number[] }) => void;
+  loadComments: (
+    filters: {
+      repositoryIds: number[];
+    },
+  ) => void;
   isCommentLoading: boolean;
   repositoryIds: number[];
+  selectedRequesterIds: string[];
+  selectedCommentorIds: string[];
 };
+
+const ICON_SIZE = 25;
 
 const Home = React.memo<PropsType>(props => {
   const {
@@ -57,8 +67,16 @@ const Home = React.memo<PropsType>(props => {
     isAuthenticated,
     loadComments,
     repositoryIds,
+    selectedRequesterIds,
+    selectedCommentorIds,
     loadTags,
   } = props;
+
+  const loadCommentsWithFilters = () =>
+    loadComments({
+      repositoryIds: repositoryIds,
+    });
+
   useEffect(() => {
     const componentDidMount = async () => {
       const params = queryString.parse(location.search);
@@ -74,22 +92,39 @@ const Home = React.memo<PropsType>(props => {
       if (isAuthenticated) {
         loadTags();
         loadRepositories();
-        loadComments({ repositoryIds: repositoryIds });
+        loadCommentsWithFilters();
       }
     },
     [isAuthenticated, loadRepositories],
   );
 
+  const [isFilterModalVisible, setFilterModalVisible] = useState(false);
+
+  // should be extracted in wrapper
+  const getFilteredComments = (comments: CommentType[]): CommentType[] => {
+    const filteredByRequesterComments = comments.filter(
+      comment =>
+        selectedRequesterIds.includes(comment.requester) || !(selectedRequesterIds.length > 0),
+    );
+    const filteredByCommentorComments = filteredByRequesterComments.filter(
+      comment =>
+        selectedCommentorIds.includes(comment.commentor) || !(selectedCommentorIds.length > 0),
+    );
+    return filteredByCommentorComments;
+  };
+
+  const filteredComments = getFilteredComments(props.comments);
+
   const pieChartFormattedData = chain(props.tags)
     .map((tag: TagType) => ({
       x: tag.code,
-      y: props.comments.filter((comment: CommentType) => !!comment.body.match(tag.code)).length,
+      y: filteredComments.filter((comment: CommentType) => !!comment.body.match(tag.code)).length,
       tag,
     }))
     .filter(chartDatum => chartDatum.y > 0)
     .value();
 
-  const barChartFormattedData = chain(props.comments)
+  const barChartFormattedData = chain(filteredComments)
     .groupBy((comment: CommentType) => moment(comment.creationDate).format('DD-MM-YYYY'))
     .map((comments: CommentType[], date: Moment) =>
       map(comments, (comment: CommentType) =>
@@ -137,21 +172,28 @@ const Home = React.memo<PropsType>(props => {
           </ChartsContainer>
           <CommentTableContainer>
             <GenericTable<CommentTableOptionsType>
-              values={props.comments}
+              values={filteredByCommentorComments}
               fixedColumnCount={fixedColumnCount}
               columnsConfig={columnsConfig}
               options={{}}
               defaultLineHeight={lineHeight}
             />
             <FloatingButtonContainer>
-              <Button
-                disabled={props.isCommentLoading}
-                onClick={() => loadComments({ repositoryIds: repositoryIds })}
-              >
+              <Button disabled={props.isCommentLoading} onClick={() => loadCommentsWithFilters()}>
                 {/* to refacto with Icon component */}
-                {props.isCommentLoading ? <Loader /> : <GoSync size={25} />}
+                {props.isCommentLoading ? <Loader /> : <GoSync size={ICON_SIZE} />}
               </Button>
             </FloatingButtonContainer>
+            <FilterButtonContainer>
+              <Button onClick={() => setFilterModalVisible(true)}>
+                <GoBeaker size={ICON_SIZE} />
+              </Button>
+            </FilterButtonContainer>
+            <FilterModal
+              id="FilterModal"
+              isOpen={isFilterModalVisible}
+              closeFilterModal={() => setFilterModalVisible(false)}
+            />
           </CommentTableContainer>
         </AuthenticatedPageContainer>
       )}

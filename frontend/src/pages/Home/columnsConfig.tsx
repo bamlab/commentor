@@ -6,10 +6,10 @@ import moment from 'moment';
 
 export type CommentTableOptionsType = {};
 
-const defaultCommentCellRenderer = (key: string, value: string, style: Object): JSX.Element => {
+const defaultCommentCellRenderer = (key: string, displayString: string, style: Object): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      <StandardTextContainer>{value}</StandardTextContainer>
+      <StandardTextContainer>{displayString}</StandardTextContainer>
     </Cell>
   );
 };
@@ -30,56 +30,56 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     key: 'body',
     name: 'Comment',
     columnWidth: 34, // percentage
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, style),
+    renderer: (key: string, comment: any,  style: Object): JSX.Element =>
+      defaultCommentCellRenderer(key, comment.body, style),
   },
   {
     index: 1,
     key: 'filePath',
     name: 'File',
     columnWidth: 15,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, style),
+    renderer: (key: string, comment: any, style: Object): JSX.Element =>
+      defaultCommentCellRenderer(key, comment.filePath, style),
   },
   {
     index: 2,
     key: 'commentor',
     name: 'Commentor',
     columnWidth: 10,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, style),
+    renderer: (key: string, comment: any,  style: Object): JSX.Element =>
+      defaultCommentCellRenderer(key, comment.commentor, style),
   },
   {
     index: 3,
     key: 'requester',
     name: 'Requester',
     columnWidth: 10,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, style),
+    renderer: (key: string, comment: any, style: Object): JSX.Element =>
+      defaultCommentCellRenderer(key, comment.requester, style),
   },
   {
     index: 4,
     key: 'creationDate',
     name: 'Creation Date',
     columnWidth: 15,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      dateCellRenderer(key, value, style),
+    renderer: (key: string, comment: any, style: Object): JSX.Element =>
+      dateCellRenderer(key, comment.creationDate, style),
   },
   {
     index: 5,
     key: 'url',
     name: 'url',
     columnWidth: 7,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      LinkToComment(key, value, style),
+    renderer: (key: string, comment: any,  style: Object): JSX.Element =>
+      LinkToComment(key, comment.url, style),
   },
   {
     index: 6,
     key: 'pullRequestUrl',
     name: 'pullRequestUrl',
     columnWidth: 7,
-    renderer: (key: string, value: string, objectId: number | 'id', style: Object): JSX.Element =>
-      LinkToPullRequest(key, value, style),
+    renderer: (key: string, comment: any, style: Object): JSX.Element =>
+      LinkToPullRequest(key, comment.pullRequestUrl, style),
   },
 ];
 

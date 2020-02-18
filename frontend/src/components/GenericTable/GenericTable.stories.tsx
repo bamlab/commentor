@@ -4,15 +4,10 @@ import { text, number, date, withKnobs } from '@storybook/addon-knobs';
 import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTable.style';
 import { GenericTable } from './GenericTable';
 
-const defaultCellRenderer = (
-  key: string,
-  value: string,
-  objectId: number | 'id',
-  style?: Object,
-): JSX.Element => {
+const defaultCellRenderer = (key: string, displayString: string, style?: Object): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      <StandardTextContainer>{value}</StandardTextContainer>
+      <StandardTextContainer>{displayString}</StandardTextContainer>
     </Cell>
   );
 };
@@ -23,64 +18,64 @@ const columnsConfig = [
     key: 'id',
     name: 'id',
     columnWidth: 75,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.id, style),
   },
   {
     index: 1,
     key: 'body',
     name: 'body',
     columnWidth: 300,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.body, style),
   },
   {
     index: 2,
     key: 'filePath',
     name: 'filePath',
     columnWidth: 300,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.filePath, style),
   },
   {
     index: 3,
     key: 'url',
     name: 'url',
     columnWidth: 300,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.url, style),
   },
   {
     index: 4,
     key: 'commentor',
     name: 'commentor',
     columnWidth: 200,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.commentor, style),
   },
   {
     index: 5,
     key: 'pullRequestUrl',
     name: 'pullRequestUrl',
     columnWidth: 200,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.pullRequestUrl, style),
   },
   {
     index: 6,
     key: 'repositoryId',
     name: 'repositoryId',
     columnWidth: 200,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.repositoryId, style),
   },
   {
     index: 6,
     key: 'creationDate',
     name: 'creationDate',
     columnWidth: 200,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.creationDate, style),
   },
 ];
 

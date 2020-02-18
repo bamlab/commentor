@@ -12,7 +12,6 @@ export type ColumnType<T extends OptionsType> = {
   renderer: (
     key: string,
     value: any,
-    objectId: number | 'id',
     style: Object,
     options: T,
   ) => JSX.Element;

@@ -4,6 +4,7 @@ import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTabl
 
 import DeleteIcon from './components/DeleteIcon';
 import UpdateIcon from './components/UpdateIcon';
+import { GoLock } from 'react-icons/go';
 import { ColorContainer } from './Tags.style';
 import { TagType } from '../../redux/Tag';
 
@@ -83,7 +84,11 @@ const UpdateIconCellRenderer = (
 ): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      <UpdateIcon objectId={tag.id} onIconClick={options.openUpdateTagModal} />
+      {!tag.adminLock ? (
+        <UpdateIcon objectId={tag.id} onIconClick={options.openUpdateTagModal} />
+      ) : (
+        <GoLock />
+      )}
     </Cell>
   );
 };
@@ -95,7 +100,11 @@ const DeleteIconCellRenderer = (
 ): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      <DeleteIcon objectId={tag.id} onIconClick={options.openDeleteTagModal} />
+      {!tag.adminLock ? (
+        <DeleteIcon objectId={tag.id} onIconClick={options.openDeleteTagModal} />
+      ) : (
+        <GoLock />
+      )}
     </Cell>
   );
 };
@@ -113,7 +122,6 @@ const colorCellRenderer = (key: string, tag: TagType, style: any): JSX.Element =
 };
 
 const defaultTagCellRenderer = (key: string, displayString: string, style: Object): JSX.Element => {
-  console.log('Amo: displayString', displayString);
   return (
     <Cell key={key} style={style}>
       <StandardTextContainer>{displayString}</StandardTextContainer>

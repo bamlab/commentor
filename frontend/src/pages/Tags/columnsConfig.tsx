@@ -23,7 +23,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
       objectId: number | 'id',
       style: Object,
       options: TagTableOptionsType,
-    ): JSX.Element => defaultTagCellRenderer(key, value, objectId, style),
+    ): JSX.Element => defaultTagCellRenderer(key, value, style),
   },
   {
     index: 1,
@@ -36,7 +36,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
       objectId: number | 'id',
       style: Object,
       options: TagTableOptionsType,
-    ): JSX.Element => defaultTagCellRenderer(key, value, objectId, style),
+    ): JSX.Element => defaultTagCellRenderer(key, value, style),
   },
   {
     index: 2,
@@ -124,12 +124,7 @@ const colorCellRenderer = (key: string, value: string, style: any): JSX.Element 
   );
 };
 
-const defaultTagCellRenderer = (
-  key: string,
-  value: any,
-  objectId: number | 'id',
-  style: Object,
-): JSX.Element => {
+const defaultTagCellRenderer = (key: string, value: any, style: Object): JSX.Element => {
   return (
     <Cell key={key} style={style}>
       <StandardTextContainer>{value}</StandardTextContainer>

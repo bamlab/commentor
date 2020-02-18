@@ -5,6 +5,7 @@ import { fontFamily } from 'stylesheet';
 import { ISelectedOptionsType } from './MultiSelect.type';
 
 type PropsType = {
+  isLoading?: boolean,
   selectedOptions: ISelectedOptionsType[];
   selectOptions: (selectedOptions: ISelectedOptionsType[]) => void;
   options: ISelectedOptionsType[];
@@ -15,12 +16,16 @@ export const MultiSelect = (props: PropsType) => {
   const selectOptions = (selectedOptions: any) => {
     return props.selectOptions(selectedOptions || []);
   };
+  const getOptions = (): ISelectedOptionsType[] => {
+    if (!props.isLoading) return [{ value: 'loading', label: '💭Loading...' }];
+    return props.options;
+  };
   return (
     <SelectWrapper>
       <Select
         value={props.selectedOptions}
         onChange={selectOptions}
-        options={props.options}
+        options={getOptions()}
         placeholder={props.placeholder}
         isMulti
         isSearchable

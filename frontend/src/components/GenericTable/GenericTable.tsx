@@ -34,7 +34,7 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
 
   const getValue = (columnIndex: number, rowIndex: number): string | null => {
     const configKey = getColumnKey(columnIndex);
-    if (configKey) return valuesWithHeaders[rowIndex][configKey];
+    if (configKey) return valuesWithHeaders[rowIndex];
     return null;
   };
   const getBackgroundColor = (index: number, color?: string) => {
@@ -78,7 +78,6 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
                   props.columnsConfig[columnIndex].renderer(
                     key,
                     getValue(columnIndex, rowIndex),
-                    valuesWithHeaders[rowIndex].id || null, // null for header or where object has no id
                     {
                       ...style,
                       wordBreak: 'break-word',

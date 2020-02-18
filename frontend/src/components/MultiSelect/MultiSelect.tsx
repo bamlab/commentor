@@ -17,7 +17,7 @@ export const MultiSelect = (props: PropsType) => {
     return props.selectOptions(selectedOptions || []);
   };
   const getOptions = (): ISelectedOptionsType[] => {
-    if (!props.isLoading) return [{ value: 'loading', label: '💭Loading...' }];
+    if (props.isLoading) return [{ value: 'loading', label: '💭Loading...' }];
     return props.options;
   };
   return (

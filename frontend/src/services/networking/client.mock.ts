@@ -1,4 +1,5 @@
 import { CommentType } from '../../redux/Comment';
+import { TagType } from '../../redux/Tag';
 
 /**
  * Mocked comment if, for "example", you [could not/don't want to] connect to backend
@@ -7,7 +8,7 @@ import { CommentType } from '../../redux/Comment';
 export const MockedComment: CommentType[] = [
   {
     id: 123,
-    body: 'ewffew',
+    body: ' ♻️ ewffew',
     filePath: 'fefwf',
     url: 'ffew',
     commentor: 'amauryw',
@@ -29,7 +30,7 @@ export const MockedComment: CommentType[] = [
   },
   {
     id: 1233,
-    body: 'ewffew',
+    body: ' 🔥 ewffew',
     filePath: 'fefwf',
     url: 'ffew',
     commentor: 'maximes',
@@ -40,7 +41,7 @@ export const MockedComment: CommentType[] = [
   },
   {
     id: 1233,
-    body: 'ewffew',
+    body: ' 🎗 ewffew',
     filePath: 'fefwf',
     url: 'ffew',
     commentor: 'maximes21',
@@ -48,5 +49,35 @@ export const MockedComment: CommentType[] = [
     pullRequestUrl: 'fewfw',
     repositoryId: 1233,
     creationDate: new Date(),
+  },
+];
+
+export const MockedTags: TagType[] = [
+  {
+    id: 12,
+    code: '♻️',
+    color: 'red',
+    description: 'refacto',
+    creationDate: new Date(),
+    githubLogin: 'amauryw',
+    isDefault: true,
+  },
+  {
+    id: 13,
+    code: '🔥',
+    color: 'blue',
+    description: 'my description',
+    creationDate: new Date(),
+    githubLogin: 'amauryw',
+    isDefault: false,
+  },
+  {
+    id: 23,
+    code: '🎗',
+    color: 'white',
+    description: 'my description',
+    creationDate: new Date(),
+    githubLogin: null,
+    isDefault: false,
   },
 ];

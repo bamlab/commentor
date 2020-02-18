@@ -3,88 +3,80 @@ import { ColumnType } from 'components/GenericTable/GenericTable.type';
 import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTable.style';
 import LinkCellIcon from '../../components/LinkCellIcon';
 import moment from 'moment';
+import { CommentType } from '../../redux/Comment';
 
 export type CommentTableOptionsType = {};
 
-const defaultCommentCellRenderer = (
-  key: string,
-  value: string,
-  objectId: number | 'id',
-  style: Object,
-): JSX.Element => {
+const defaultCommentCellRenderer = (key: string, displayString: string, style: Object): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      <StandardTextContainer>{value}</StandardTextContainer>
+      <StandardTextContainer>{displayString}</StandardTextContainer>
     </Cell>
   );
 };
 
-const dateCellRenderer = (key: string, date: string, style: Object): JSX.Element => (
+const dateCellRenderer = (key: string, Comment: CommentType, style: Object): JSX.Element => (
   <Cell key={key} style={style}>
-    {date !== 'Creation Date' ? (
-      <StandardTextContainer>{moment(date).format('DD/MM/YYYY')}</StandardTextContainer>
-    ) : (
-      <StandardTextContainer>{'Creation Date'}</StandardTextContainer>
-    )}
+      <StandardTextContainer>{moment(Comment.creationDate).format('DD/MM/YYYY')}</StandardTextContainer>
   </Cell>
 );
 
-export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
+export const columnsConfig: ColumnType<CommentTableOptionsType, CommentType>[] = [
   {
     index: 0,
     key: 'body',
     name: 'Comment',
     columnWidth: 34, // percentage
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
+    renderer: (key: string, comment: CommentType,  style: Object): JSX.Element =>
+      defaultCommentCellRenderer(key, comment.body, style),
   },
   {
     index: 1,
     key: 'filePath',
     name: 'File',
     columnWidth: 15,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
+    renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
+      defaultCommentCellRenderer(key, comment.filePath, style),
   },
   {
     index: 2,
     key: 'commentor',
     name: 'Commentor',
     columnWidth: 10,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
+    renderer: (key: string, comment: CommentType,  style: Object): JSX.Element =>
+      defaultCommentCellRenderer(key, comment.commentor, style),
   },
   {
     index: 3,
     key: 'requester',
     name: 'Requester',
     columnWidth: 10,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
+    renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
+      defaultCommentCellRenderer(key, comment.requester, style),
   },
   {
     index: 4,
     key: 'creationDate',
     name: 'Creation Date',
     columnWidth: 15,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      dateCellRenderer(key, value, style),
+    renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
+      dateCellRenderer(key, comment, style),
   },
   {
     index: 5,
     key: 'url',
     name: 'url',
     columnWidth: 7,
-    renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      LinkToComment(key, value, style),
+    renderer: (key: string, comment: CommentType,  style: Object): JSX.Element =>
+      LinkToComment(key, comment.url, style),
   },
   {
     index: 6,
     key: 'pullRequestUrl',
     name: 'pullRequestUrl',
     columnWidth: 7,
-    renderer: (key: string, value: string, objectId: number | 'id', style: Object): JSX.Element =>
-      LinkToPullRequest(key, value, style),
+    renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
+      LinkToPullRequest(key, comment.pullRequestUrl, style),
   },
 ];
 

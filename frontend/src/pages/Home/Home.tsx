@@ -101,7 +101,6 @@ const Home = React.memo<PropsType>(props => {
   const [isFilterModalVisible, setFilterModalVisible] = useState(false);
 
   // should be extracted in wrapper
-
   const filteredComments = chain(props.comments)
     .filter(
       comment =>
@@ -170,7 +169,7 @@ const Home = React.memo<PropsType>(props => {
             <PieChart data={pieChartFormattedData} />
           </ChartsContainer>
           <CommentTableContainer>
-            <GenericTable<CommentTableOptionsType>
+            <GenericTable<CommentTableOptionsType, CommentType>
               values={filteredComments}
               fixedColumnCount={fixedColumnCount}
               columnsConfig={columnsConfig}

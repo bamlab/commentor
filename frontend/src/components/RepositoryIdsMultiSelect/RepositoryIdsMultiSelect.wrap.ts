@@ -7,11 +7,12 @@ import {
 import { ISelectedOptionsType } from '../MultiSelect/MultiSelect.type';
 import { Dispatch } from 'redux';
 import { RootState } from 'redux/types';
-import { getSelectedRepositoryIds } from 'redux/Filters';
+import { getSelectedRepositoryIds } from 'redux/Filters/filters.selectors';
 import { selectRepositoryIds } from 'redux/Filters/filters.actions';
-import { getRepositories } from 'redux/Repository';
+import { getRepositories, isRepositoriesLoading } from 'redux/Repository/repository.selectors';
 
 const mapStateToProps = (state: RootState) => ({
+  isLoading: isRepositoriesLoading(state),
   selectedOptions: adaptOptionFromId(getSelectedRepositoryIds(state), getRepositories(state)),
   options: adaptRepositoryToMultiSelectOptions(getRepositories(state)),
 });

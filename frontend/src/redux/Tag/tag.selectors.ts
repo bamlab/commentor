@@ -13,4 +13,6 @@ export const getSelectedTag = (store: RootState): TagType =>
     code: 'error',
     description: 'error',
     creationDate: new Date(),
+    isDefault: false,
+    githubLogin: null,
   };

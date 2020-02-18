@@ -33,6 +33,8 @@ export const state: RootState = {
         color: '#fff',
         description: 'this is refacto done with mistake',
         creationDate: new Date(),
+        isDefault: true,
+        githubLogin: 'amauryw',
       },
     ],
     isLoading: true,
@@ -42,7 +44,7 @@ export const state: RootState = {
   filters: {
     requesterIds: ['amauryw'],
     repositoryIds: [],
-    commentorIds:['amauryw'],
+    commentorIds: ['amauryw'],
   },
   repository: {
     repositories: [],

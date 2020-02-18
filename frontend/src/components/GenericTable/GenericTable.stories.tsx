@@ -4,15 +4,10 @@ import { text, number, date, withKnobs } from '@storybook/addon-knobs';
 import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTable.style';
 import { GenericTable } from './GenericTable';
 
-const defaultCellRenderer = (
-  key: string,
-  value: string,
-  objectId: number | 'id',
-  style?: Object,
-): JSX.Element => {
+const defaultCellRenderer = (key: string, displayString: string, style?: Object): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      <StandardTextContainer>{value}</StandardTextContainer>
+      <StandardTextContainer>{displayString}</StandardTextContainer>
     </Cell>
   );
 };
@@ -22,65 +17,65 @@ const columnsConfig = [
     index: 0,
     key: 'id',
     name: 'id',
-    columnWidth: 75,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    columnWidth: 10,
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.id, style),
   },
   {
     index: 1,
     key: 'body',
     name: 'body',
-    columnWidth: 300,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    columnWidth: 30,
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.body, style),
   },
   {
     index: 2,
     key: 'filePath',
     name: 'filePath',
-    columnWidth: 300,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    columnWidth: 20,
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.filePath, style),
   },
   {
     index: 3,
     key: 'url',
     name: 'url',
-    columnWidth: 300,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    columnWidth: 10,
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.url, style),
   },
   {
     index: 4,
     key: 'commentor',
     name: 'commentor',
-    columnWidth: 200,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    columnWidth: 20,
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.commentor, style),
   },
   {
     index: 5,
     key: 'pullRequestUrl',
     name: 'pullRequestUrl',
-    columnWidth: 200,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    columnWidth: 20,
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.pullRequestUrl, style),
   },
   {
     index: 6,
     key: 'repositoryId',
     name: 'repositoryId',
-    columnWidth: 200,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    columnWidth: 10,
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.repositoryId, style),
   },
   {
     index: 6,
     key: 'creationDate',
     name: 'creationDate',
-    columnWidth: 200,
-    renderer: (key: string, value: any, objectId: number | 'id', style?: Object): JSX.Element =>
-      defaultCellRenderer(key, value, objectId, style),
+    columnWidth: 10,
+    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+      defaultCellRenderer(key, genericRow.creationDate, style),
   },
 ];
 
@@ -88,7 +83,7 @@ storiesOf('GenericTable', module)
   .addDecorator(withKnobs)
 
   .add('with empty comments', () => (
-    <GenericTable
+    <GenericTable<any, any>
       values={[]}
       fixedColumnCount={2}
       columnsConfig={columnsConfig}
@@ -112,7 +107,7 @@ storiesOf('GenericTable', module)
     const creationDate: Date = date('creationDate', new Date('2019-10-09T20:35:55.068Z'));
     const fixedColumnCount = number('id', 1);
     return (
-      <GenericTable
+      <GenericTable<any, any>
         columnsConfig={columnsConfig}
         fixedColumnCount={fixedColumnCount}
         defaultLineHeight={600}
@@ -127,7 +122,7 @@ storiesOf('GenericTable', module)
             requester: 'vor',
             pullRequestUrl: 'vor',
             repositoryId: 'vor',
-            creationDate: 'vor',
+            creationDate: new Date(),
           },
           {
             id,
@@ -138,7 +133,7 @@ storiesOf('GenericTable', module)
             requester: 'vor',
             pullRequestUrl: 'vor',
             repositoryId: 'vor',
-            creationDate: 'vor',
+            creationDate: new Date(),
           },
           {
             id,
@@ -160,7 +155,7 @@ storiesOf('GenericTable', module)
             requester: 'vor',
             pullRequestUrl: 'vor',
             repositoryId: 'vor',
-            creationDate: 'vor',
+            creationDate: new Date(),
           },
         ]}
       />

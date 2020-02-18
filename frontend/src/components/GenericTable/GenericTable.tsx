@@ -34,7 +34,7 @@ export const GenericTable = <T extends OptionsType>(props: PropsType<T>) => {
 
   const getValue = (columnIndex: number, rowIndex: number): string | null => {
     const configKey = getColumnKey(columnIndex);
-    if (configKey) return valuesWithHeaders[rowIndex][configKey];
+    if (configKey) return JSON.stringify(valuesWithHeaders[rowIndex]);
     return null;
   };
   const getBackgroundColor = (index: number, color?: string) => {

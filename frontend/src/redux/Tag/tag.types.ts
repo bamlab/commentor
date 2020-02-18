@@ -5,7 +5,7 @@ export type TagType = {
   description: string;
   githubLogin: string | null;
   creationDate: Date;
-  isDefault: boolean; // to add in db
+  isDefault: boolean;
 };
 
 export type TagEvent = {

@@ -3,8 +3,9 @@ export type TagType = {
   code: string;
   color: string;
   description: string;
+  githubLogin: string | null;
   creationDate: Date;
-  adminLock?: boolean; // to add in db
+  isDefault: boolean; // to add in db
 };
 
 export type TagEvent = {

@@ -14,8 +14,11 @@ export class Tag {
   @Column({ nullable: false })
   color: string;
 
-  @Column({ nullable: false })
+  @Column({ nullable: true })
   githubLogin: string;
+
+  @Column({ nullable: false, default: () => false })
+  isDefault: boolean;
 
   @Column({ default: () => 'CURRENT_TIMESTAMP' })
   creationDate: Date;

@@ -18,7 +18,7 @@ export class TagService extends TypeOrmCrudService<TagEntity> {
   };
 
   getByGithubLogin = async (githubLogin: string) => {
-    return this.tagRepository.find({ githubLogin });
+    return this.tagRepository.find({ where: [{ githubLogin }, { isDefault: true }] });
   };
 
   updateById = async (

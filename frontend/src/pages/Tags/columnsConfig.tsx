@@ -84,7 +84,7 @@ const UpdateIconCellRenderer = (
 ): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      {!tag.adminLock ? (
+      {!tag.isDefault ? (
         <UpdateIcon objectId={tag.id} onIconClick={options.openUpdateTagModal} />
       ) : (
         <GoLock />
@@ -100,7 +100,7 @@ const DeleteIconCellRenderer = (
 ): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      {!tag.adminLock ? (
+      {!tag.isDefault ? (
         <DeleteIcon objectId={tag.id} onIconClick={options.openDeleteTagModal} />
       ) : (
         <GoLock />

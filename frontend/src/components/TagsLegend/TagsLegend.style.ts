@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 import { fontFamily, fontSize } from 'stylesheet';
 
-export const TagsLegendContainer = styled.div``;
+export const TagsLegendContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 20%;
+  align-items: flex-start;
+`;
 
 export const TagLegendItemContainer = styled.div`
   display: flex;

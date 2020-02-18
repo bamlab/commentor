@@ -6,12 +6,7 @@ import moment from 'moment';
 
 export type CommentTableOptionsType = {};
 
-const defaultCommentCellRenderer = (
-  key: string,
-  value: string,
-  objectId: number | 'id',
-  style: Object,
-): JSX.Element => {
+const defaultCommentCellRenderer = (key: string, value: string, style: Object): JSX.Element => {
   return (
     <Cell key={key} style={style}>
       <StandardTextContainer>{value}</StandardTextContainer>
@@ -36,7 +31,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     name: 'Comment',
     columnWidth: 34, // percentage
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
+      defaultCommentCellRenderer(key, value, style),
   },
   {
     index: 1,
@@ -44,7 +39,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     name: 'File',
     columnWidth: 15,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
+      defaultCommentCellRenderer(key, value, style),
   },
   {
     index: 2,
@@ -52,7 +47,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     name: 'Commentor',
     columnWidth: 10,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
+      defaultCommentCellRenderer(key, value, style),
   },
   {
     index: 3,
@@ -60,7 +55,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     name: 'Requester',
     columnWidth: 10,
     renderer: (key: string, value: any, objectId: number | 'id', style: Object): JSX.Element =>
-      defaultCommentCellRenderer(key, value, objectId, style),
+      defaultCommentCellRenderer(key, value, style),
   },
   {
     index: 4,

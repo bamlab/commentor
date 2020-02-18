@@ -4,6 +4,7 @@ export type TagType = {
   color: string;
   description: string;
   creationDate: Date;
+  adminLock?: boolean; // to add in db
 };
 
 export type TagEvent = {

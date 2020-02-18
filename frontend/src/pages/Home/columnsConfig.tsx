@@ -3,6 +3,7 @@ import { ColumnType } from 'components/GenericTable/GenericTable.type';
 import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTable.style';
 import LinkCellIcon from '../../components/LinkCellIcon';
 import moment from 'moment';
+import { CommentType } from '../../redux/Comment';
 
 export type CommentTableOptionsType = {};
 
@@ -14,23 +15,19 @@ const defaultCommentCellRenderer = (key: string, displayString: string, style: O
   );
 };
 
-const dateCellRenderer = (key: string, date: string, style: Object): JSX.Element => (
+const dateCellRenderer = (key: string, Comment: CommentType, style: Object): JSX.Element => (
   <Cell key={key} style={style}>
-    {date !== 'Creation Date' ? (
-      <StandardTextContainer>{moment(date).format('DD/MM/YYYY')}</StandardTextContainer>
-    ) : (
-      <StandardTextContainer>{'Creation Date'}</StandardTextContainer>
-    )}
+      <StandardTextContainer>{moment(Comment.creationDate).format('DD/MM/YYYY')}</StandardTextContainer>
   </Cell>
 );
 
-export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
+export const columnsConfig: ColumnType<CommentTableOptionsType, CommentType>[] = [
   {
     index: 0,
     key: 'body',
     name: 'Comment',
     columnWidth: 34, // percentage
-    renderer: (key: string, comment: any,  style: Object): JSX.Element =>
+    renderer: (key: string, comment: CommentType,  style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, comment.body, style),
   },
   {
@@ -38,7 +35,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     key: 'filePath',
     name: 'File',
     columnWidth: 15,
-    renderer: (key: string, comment: any, style: Object): JSX.Element =>
+    renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, comment.filePath, style),
   },
   {
@@ -46,7 +43,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     key: 'commentor',
     name: 'Commentor',
     columnWidth: 10,
-    renderer: (key: string, comment: any,  style: Object): JSX.Element =>
+    renderer: (key: string, comment: CommentType,  style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, comment.commentor, style),
   },
   {
@@ -54,7 +51,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     key: 'requester',
     name: 'Requester',
     columnWidth: 10,
-    renderer: (key: string, comment: any, style: Object): JSX.Element =>
+    renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, comment.requester, style),
   },
   {
@@ -62,15 +59,15 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     key: 'creationDate',
     name: 'Creation Date',
     columnWidth: 15,
-    renderer: (key: string, comment: any, style: Object): JSX.Element =>
-      dateCellRenderer(key, comment.creationDate, style),
+    renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
+      dateCellRenderer(key, comment, style),
   },
   {
     index: 5,
     key: 'url',
     name: 'url',
     columnWidth: 7,
-    renderer: (key: string, comment: any,  style: Object): JSX.Element =>
+    renderer: (key: string, comment: CommentType,  style: Object): JSX.Element =>
       LinkToComment(key, comment.url, style),
   },
   {
@@ -78,7 +75,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType>[] = [
     key: 'pullRequestUrl',
     name: 'pullRequestUrl',
     columnWidth: 7,
-    renderer: (key: string, comment: any, style: Object): JSX.Element =>
+    renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
       LinkToPullRequest(key, comment.pullRequestUrl, style),
   },
 ];

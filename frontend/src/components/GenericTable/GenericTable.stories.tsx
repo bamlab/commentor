@@ -17,7 +17,7 @@ const columnsConfig = [
     index: 0,
     key: 'id',
     name: 'id',
-    columnWidth: 75,
+    columnWidth: 10,
     renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
       defaultCellRenderer(key, genericRow.id, style),
   },
@@ -25,7 +25,7 @@ const columnsConfig = [
     index: 1,
     key: 'body',
     name: 'body',
-    columnWidth: 300,
+    columnWidth: 30,
     renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
       defaultCellRenderer(key, genericRow.body, style),
   },
@@ -33,7 +33,7 @@ const columnsConfig = [
     index: 2,
     key: 'filePath',
     name: 'filePath',
-    columnWidth: 300,
+    columnWidth: 20,
     renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
       defaultCellRenderer(key, genericRow.filePath, style),
   },
@@ -41,7 +41,7 @@ const columnsConfig = [
     index: 3,
     key: 'url',
     name: 'url',
-    columnWidth: 300,
+    columnWidth: 10,
     renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
       defaultCellRenderer(key, genericRow.url, style),
   },
@@ -49,7 +49,7 @@ const columnsConfig = [
     index: 4,
     key: 'commentor',
     name: 'commentor',
-    columnWidth: 200,
+    columnWidth: 20,
     renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
       defaultCellRenderer(key, genericRow.commentor, style),
   },
@@ -57,7 +57,7 @@ const columnsConfig = [
     index: 5,
     key: 'pullRequestUrl',
     name: 'pullRequestUrl',
-    columnWidth: 200,
+    columnWidth: 20,
     renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
       defaultCellRenderer(key, genericRow.pullRequestUrl, style),
   },
@@ -65,7 +65,7 @@ const columnsConfig = [
     index: 6,
     key: 'repositoryId',
     name: 'repositoryId',
-    columnWidth: 200,
+    columnWidth: 10,
     renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
       defaultCellRenderer(key, genericRow.repositoryId, style),
   },
@@ -73,7 +73,7 @@ const columnsConfig = [
     index: 6,
     key: 'creationDate',
     name: 'creationDate',
-    columnWidth: 200,
+    columnWidth: 10,
     renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
       defaultCellRenderer(key, genericRow.creationDate, style),
   },
@@ -83,7 +83,7 @@ storiesOf('GenericTable', module)
   .addDecorator(withKnobs)
 
   .add('with empty comments', () => (
-    <GenericTable
+    <GenericTable<any, any>
       values={[]}
       fixedColumnCount={2}
       columnsConfig={columnsConfig}
@@ -107,7 +107,7 @@ storiesOf('GenericTable', module)
     const creationDate: Date = date('creationDate', new Date('2019-10-09T20:35:55.068Z'));
     const fixedColumnCount = number('id', 1);
     return (
-      <GenericTable
+      <GenericTable<any, any>
         columnsConfig={columnsConfig}
         fixedColumnCount={fixedColumnCount}
         defaultLineHeight={600}
@@ -122,7 +122,7 @@ storiesOf('GenericTable', module)
             requester: 'vor',
             pullRequestUrl: 'vor',
             repositoryId: 'vor',
-            creationDate: 'vor',
+            creationDate: new Date(),
           },
           {
             id,
@@ -133,7 +133,7 @@ storiesOf('GenericTable', module)
             requester: 'vor',
             pullRequestUrl: 'vor',
             repositoryId: 'vor',
-            creationDate: 'vor',
+            creationDate: new Date(),
           },
           {
             id,
@@ -155,7 +155,7 @@ storiesOf('GenericTable', module)
             requester: 'vor',
             pullRequestUrl: 'vor',
             repositoryId: 'vor',
-            creationDate: 'vor',
+            creationDate: new Date(),
           },
         ]}
       />

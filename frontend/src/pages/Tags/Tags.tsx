@@ -31,7 +31,7 @@ const Tags = React.memo<IProps>(props => {
   return (
     <StyledTags>
       <ErrorMessage>{props.errorMessage || ''}</ErrorMessage>
-      <GenericTable<TagTableOptionsType>
+      <GenericTable<TagTableOptionsType, TagType>
         columnsConfig={columnsConfig}
         values={props.tags}
         fixedColumnCount={fixedColumnCount}

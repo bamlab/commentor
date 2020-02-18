@@ -5,89 +5,102 @@ import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTabl
 import DeleteIcon from './components/DeleteIcon';
 import UpdateIcon from './components/UpdateIcon';
 import { ColorContainer } from './Tags.style';
+import { TagType } from '../../redux/Tag';
 
 export type TagTableOptionsType = {
   openDeleteTagModal: () => void;
   openUpdateTagModal: () => void;
 };
 
-export const columnsConfig: ColumnType<TagTableOptionsType>[] = [
+export const columnsConfig: ColumnType<TagTableOptionsType, TagType>[] = [
   {
     index: 0,
     key: 'code',
     name: 'Code',
     columnWidth: 10,
-    renderer: (key: string, tag: any, style: Object, options: TagTableOptionsType): JSX.Element =>
-      defaultTagCellRenderer(key, tag.code, style),
+    renderer: (
+      key: string,
+      tag: TagType,
+      style: Object,
+      options: TagTableOptionsType,
+    ): JSX.Element => defaultTagCellRenderer(key, tag.code, style),
   },
   {
     index: 1,
     key: 'description',
     name: 'Description',
     columnWidth: 60,
-    renderer: (key: string, tag: any, style: Object, options: TagTableOptionsType): JSX.Element =>
-      defaultTagCellRenderer(key, tag.description, style),
+    renderer: (
+      key: string,
+      tag: TagType,
+      style: Object,
+      options: TagTableOptionsType,
+    ): JSX.Element => defaultTagCellRenderer(key, tag.description, style),
   },
   {
     index: 2,
     key: 'color',
     name: 'Color',
     columnWidth: 10,
-    renderer: (key: string, tag: any, style: Object, options: TagTableOptionsType): JSX.Element =>
-      colorCellRenderer(key, tag, style),
+    renderer: (
+      key: string,
+      tag: TagType,
+      style: Object,
+      options: TagTableOptionsType,
+    ): JSX.Element => colorCellRenderer(key, tag, style),
   },
   {
     index: 3,
     key: 'delete',
     name: 'delete',
     columnWidth: 10,
-    renderer: (key: string, tag: any, style: Object, options: TagTableOptionsType): JSX.Element =>
-      DeleteIconCellRenderer(key, tag, style, options),
+    renderer: (
+      key: string,
+      tag: TagType,
+      style: Object,
+      options: TagTableOptionsType,
+    ): JSX.Element => DeleteIconCellRenderer(key, tag, style, options),
   },
   {
     index: 4,
     key: 'update',
     name: 'update',
     columnWidth: 10,
-    renderer: (key: string, tag: any, style: Object, options: TagTableOptionsType): JSX.Element =>
-      UpdateIconCellRenderer(key, tag, style, options),
+    renderer: (
+      key: string,
+      tag: TagType,
+      style: Object,
+      options: TagTableOptionsType,
+    ): JSX.Element => UpdateIconCellRenderer(key, tag, style, options),
   },
 ];
 
 const UpdateIconCellRenderer = (
   key: string,
-  tag: any,
+  tag: TagType,
   style: Object,
   options: TagTableOptionsType,
 ): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      {tag && typeof tag.id === 'number' ? (
-        <UpdateIcon objectId={tag.id} onIconClick={options.openUpdateTagModal} />
-      ) : (
-        <StandardTextContainer>Update</StandardTextContainer>
-      )}
+      <UpdateIcon objectId={tag.id} onIconClick={options.openUpdateTagModal} />
     </Cell>
   );
 };
 const DeleteIconCellRenderer = (
   key: string,
-  tag: any,
+  tag: TagType,
   style: Object,
   options: TagTableOptionsType,
 ): JSX.Element => {
   return (
     <Cell key={key} style={style}>
-      {tag && typeof tag.id === 'number' ? (
-        <DeleteIcon objectId={tag.id} onIconClick={options.openDeleteTagModal} />
-      ) : (
-        <StandardTextContainer>Delete</StandardTextContainer>
-      )}
+      <DeleteIcon objectId={tag.id} onIconClick={options.openDeleteTagModal} />
     </Cell>
   );
 };
 
-const colorCellRenderer = (key: string, tag: any, style: any): JSX.Element => {
+const colorCellRenderer = (key: string, tag: TagType, style: any): JSX.Element => {
   return (
     <Cell key={key} style={style}>
       {tag && tag.color === 'Color' ? (

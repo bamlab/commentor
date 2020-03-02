@@ -18,7 +18,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType, TagType>[] = [
     index: 0,
     key: 'code',
     name: 'Code',
-    columnWidth: 10,
+    columnWidth: 5,
     renderer: (
       key: string,
       tag: TagType,
@@ -30,7 +30,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType, TagType>[] = [
     index: 1,
     key: 'description',
     name: 'Description',
-    columnWidth: 60,
+    columnWidth: 50,
     renderer: (
       key: string,
       tag: TagType,
@@ -40,6 +40,23 @@ export const columnsConfig: ColumnType<TagTableOptionsType, TagType>[] = [
   },
   {
     index: 2,
+    key: 'repositoryId',
+    name: 'repositoryId',
+    columnWidth: 15,
+    renderer: (
+      key: string,
+      tag: TagType,
+      style: Object,
+      options: TagTableOptionsType,
+    ): JSX.Element =>
+      defaultTagCellRenderer(
+        key,
+        (tag.repositoryId && tag.repositoryId.toString()) || 'None',
+        style,
+      ),
+  },
+  {
+    index: 3,
     key: 'color',
     name: 'Color',
     columnWidth: 10,
@@ -51,7 +68,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType, TagType>[] = [
     ): JSX.Element => colorCellRenderer(key, tag, style),
   },
   {
-    index: 3,
+    index: 4,
     key: 'delete',
     name: 'delete',
     columnWidth: 10,
@@ -63,7 +80,7 @@ export const columnsConfig: ColumnType<TagTableOptionsType, TagType>[] = [
     ): JSX.Element => DeleteIconCellRenderer(key, tag, style, options),
   },
   {
-    index: 4,
+    index: 5,
     key: 'update',
     name: 'update',
     columnWidth: 10,
@@ -73,6 +90,18 @@ export const columnsConfig: ColumnType<TagTableOptionsType, TagType>[] = [
       style: Object,
       options: TagTableOptionsType,
     ): JSX.Element => UpdateIconCellRenderer(key, tag, style, options),
+  },
+  {
+    index: 6,
+    key: 'doc',
+    name: 'doc',
+    columnWidth: 10,
+    renderer: (
+      key: string,
+      tag: TagType,
+      style: Object,
+      options: TagTableOptionsType,
+    ): JSX.Element => defaultTagCellRenderer(key, tag.externalLink, style),
   },
 ];
 

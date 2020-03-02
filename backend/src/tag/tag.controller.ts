@@ -21,6 +21,8 @@ export class TagController implements CrudController<TagEntity> {
       code: inputTag.code,
       description: inputTag.description,
       color: inputTag.color,
+      repositoryId: inputTag.repositoryId || null,
+      externalLink: inputTag.externalLink,
       githubLogin,
     });
   }
@@ -28,6 +30,14 @@ export class TagController implements CrudController<TagEntity> {
   @Get()
   getAuthenticatedTags(@GithubLogin() githubLogin: string) {
     return this.service.getByGithubLogin(githubLogin);
+  }
+
+  @Get('byRepositoryId')
+  getTagsByRepositories(@Body() repositoryIds: number[], @GithubLogin() githubLogin: string) {
+    if (githubLogin) {
+      return this.service.getByRepositoryIds(repositoryIds);
+    }
+    throw new Error('UNAUTHORIZED');
   }
 
   @Delete(':id/delete')

@@ -60,7 +60,9 @@ export const MockedTags: TagType[] = [
     description: 'refacto',
     creationDate: new Date(),
     githubLogin: 'amauryw',
+    repositoryId: 2133,
     isDefault: true,
+    externalLink: 'http',
   },
   {
     id: 13,
@@ -69,7 +71,9 @@ export const MockedTags: TagType[] = [
     description: 'my description',
     creationDate: new Date(),
     githubLogin: 'amauryw',
+    repositoryId: 2133,
     isDefault: false,
+    externalLink: 'http',
   },
   {
     id: 23,
@@ -78,6 +82,8 @@ export const MockedTags: TagType[] = [
     description: 'my description',
     creationDate: new Date(),
     githubLogin: null,
+    repositoryId: null,
     isDefault: false,
+    externalLink: 'http',
   },
 ];

@@ -14,5 +14,7 @@ export const getSelectedTag = (store: RootState): TagType =>
     description: 'error',
     creationDate: new Date(),
     isDefault: false,
+    repositoryId: null,
+    externalLink: '',
     githubLogin: null,
   };

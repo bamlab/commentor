@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Repository, In } from 'typeorm';
 
 import { Tag as TagEntity } from './tag.entity';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
@@ -12,13 +12,24 @@ export class TagService extends TypeOrmCrudService<TagEntity> {
     super(tagRepository);
   }
 
-  createTag = async (tag: Pick<TagEntity, 'code' | 'description' | 'color' | 'githubLogin'>) => {
+  createTag = async (
+    tag: Pick<
+      TagEntity,
+      'code' | 'description' | 'color' | 'githubLogin' | 'repositoryId' | 'externalLink'
+    >,
+  ) => {
     const createdTag = await this.tagRepository.save(tag);
     return createdTag;
   };
 
   getByGithubLogin = async (githubLogin: string) => {
     return this.tagRepository.find({ where: [{ githubLogin }, { isDefault: true }] });
+  };
+
+  getByRepositoryIds = async (repositoryIds: number[]) => {
+    return this.tagRepository.find({
+      where: [{ repositoryId: In(repositoryIds) }, { isDefault: true }],
+    });
   };
 
   updateById = async (

@@ -34,6 +34,8 @@ export const state: RootState = {
         description: 'this is refacto done with mistake',
         creationDate: new Date(),
         isDefault: true,
+        repositoryId: null,
+        externalLink: '',
         githubLogin: 'amauryw',
       },
     ],

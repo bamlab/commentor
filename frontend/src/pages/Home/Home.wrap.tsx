@@ -13,6 +13,7 @@ import {
   getSelectedRepositoryIds,
   getSelectedRequesterIds,
   getSelectedCommentords,
+  getSelectedTagIds,
 } from 'redux/Filters';
 
 const mapStateToProps = (state: RootState) => ({
@@ -23,6 +24,7 @@ const mapStateToProps = (state: RootState) => ({
   repositoryIds: getSelectedRepositoryIds(state),
   selectedRequesterIds: getSelectedRequesterIds(state),
   selectedCommentorIds: getSelectedCommentords(state),
+  selectedTagsId: getSelectedTagIds(state),
 });
 
 // @ts-ignore Generic type 'Dispatch' requires 1 type argument(s)
@@ -30,9 +32,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
   loadRepositories: () => dispatch(loadRepositories.request({})),
   loadTags: () => dispatch(loadTags.request({})),
   login: (code: string) => dispatch(login.request({ code })),
-  loadComments: (filters: {
-    repositoryIds: number[];
-  }) =>
+  loadComments: (filters: { repositoryIds: number[] }) =>
     dispatch(
       loadComments.request({
         ...filters,

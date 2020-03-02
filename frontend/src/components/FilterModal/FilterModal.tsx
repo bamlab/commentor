@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal } from 'components/Modal/Modal';
 import { RequesterMultiSelect } from 'components/RequesterMultiSelect';
 import { CommentorMultiSelect } from 'components/CommentorMultiSelect';
+import { TagMultiSelect } from 'components/TagMultiSelect';
 import Text from 'components/Text';
 import styled from 'styled-components';
 
@@ -57,6 +58,10 @@ const FilterModal = (props: PropsType) => {
         <Text>Commentors:</Text>
         <MultiSelectContainer>
           <CommentorMultiSelect placeholder="Select your commentor(s)..." />
+        </MultiSelectContainer>
+        <Text>Tags:</Text>
+        <MultiSelectContainer>
+          <TagMultiSelect placeholder="Select your tag(s)..." />
         </MultiSelectContainer>
       </FullPageModalContainer>
     </Modal>

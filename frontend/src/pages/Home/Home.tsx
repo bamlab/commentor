@@ -55,6 +55,7 @@ type PropsType = {
   repositoryIds: number[];
   selectedRequesterIds: string[];
   selectedCommentorIds: string[];
+  selectedTagsId: string[];
 };
 
 const ICON_SIZE = 25;
@@ -69,6 +70,7 @@ const Home = React.memo<PropsType>(props => {
     repositoryIds,
     selectedRequesterIds,
     selectedCommentorIds,
+    selectedTagsId,
     loadTags,
   } = props;
 
@@ -113,7 +115,11 @@ const Home = React.memo<PropsType>(props => {
     .orderBy('creationDate', 'desc')
     .value();
 
-  const pieChartFormattedData = chain(props.tags)
+  const filteredTags = props.tags.filter(
+    tag => selectedTagsId.includes(tag.id.toString()) || !(selectedTagsId.length > 0),
+  );
+
+  const pieChartFormattedData = chain(filteredTags)
     .map((tag: TagType) => ({
       x: tag.code,
       y: filteredComments.filter((comment: CommentType) => !!comment.body.match(tag.code)).length,
@@ -126,7 +132,7 @@ const Home = React.memo<PropsType>(props => {
     .groupBy((comment: CommentType) => moment(comment.creationDate).format('DD-MM-YYYY'))
     .map((comments: CommentType[], date: Moment) =>
       map(comments, (comment: CommentType) =>
-        chain(props.tags)
+        chain(filteredTags)
           .filter((tag: TagType) => !!comment.body.match(tag.code))
           .map((tag: TagType) => [
             { x: moment(comment.creationDate).format('DD-MM'), y: 1, y0: 0, tag },
@@ -165,7 +171,7 @@ const Home = React.memo<PropsType>(props => {
               // @ts-ignore
               <BarChart data={barChartFormattedData} />
             }
-            <TagsLegend tags={props.tags} />
+            <TagsLegend tags={filteredTags} />
             <PieChart data={pieChartFormattedData} />
           </ChartsContainer>
           <CommentTableContainer>

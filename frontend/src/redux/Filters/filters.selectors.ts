@@ -5,3 +5,5 @@ export const getSelectedRepositoryIds = (store: RootState): number[] => store.fi
 export const getSelectedRequesterIds = (store: RootState): string[] => store.filters.requesterIds;
 
 export const getSelectedCommentords = (store: RootState): string[] => store.filters.commentorIds;
+
+export const getSelectedTagIds = (store: RootState): string[] => store.filters.tagIds;

@@ -32,7 +32,7 @@ export default function configureStore(history) {
     whitelist: ['authentication', 'filters'],
     storage,
     version: CURRENT_STORE_VERSION,
-    migrate: createMigrate(storeMigrations, { debug: false }),
+    migrate: createMigrate(storeMigrations, { debug: true }),
   };
   const persistedReducer = persistReducer(persistConfig, rootReducer);
 

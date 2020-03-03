@@ -1,6 +1,7 @@
 import { RepositoryType } from '../../redux/Repository/repository.types';
 import { ISelectedOptionsType } from './MultiSelect.type';
 import { RequesterType, CommentorType } from '../../redux/Comment';
+import { TagType } from '../../redux/Tag';
 
 export const adaptRepositoryToMultiSelectOptions = (
   repositories: RepositoryType[],
@@ -73,3 +74,25 @@ export const adaptCommentorToMultiSelectOptions = (
     value: commentor,
     label: commentor,
   }));
+
+export const adaptTagToMultiSelectOptions = (tags: TagType[]): ISelectedOptionsType[] =>
+  tags.map(tag => ({
+    value: tag.id.toString(),
+    label: tag.code,
+  }));
+
+export const adaptSelectedTagsFromIds = (
+  selectedTagIds: string[],
+  tags: TagType[],
+): ISelectedOptionsType[] => {
+  let result: ISelectedOptionsType[] = [];
+  tags.forEach(tag => {
+    if (selectedTagIds.includes(tag.id.toString())) {
+      result.push({
+        value: tag.id.toString(),
+        label: tag.code,
+      });
+    }
+  });
+  return result;
+};

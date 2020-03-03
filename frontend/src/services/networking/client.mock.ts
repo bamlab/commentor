@@ -1,6 +1,9 @@
 import { CommentType } from '../../redux/Comment';
 import { TagType } from '../../redux/Tag';
 
+export const getMockedComments = (): Promise<CommentType[]> =>
+  new Promise(resolve => setTimeout(() => resolve(MockedComment), 1000));
+
 /**
  * Mocked comment if, for "example", you [could not/don't want to] connect to backend
  * @requires mockedComments
@@ -51,6 +54,9 @@ export const MockedComment: CommentType[] = [
     creationDate: new Date(),
   },
 ];
+
+export const getMockedTags = (): Promise<TagType[]> =>
+  new Promise(resolve => setTimeout(() => resolve(MockedTags), 2000));
 
 export const MockedTags: TagType[] = [
   {

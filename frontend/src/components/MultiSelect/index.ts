@@ -6,4 +6,6 @@ export {
   adaptRequesterToMultiSelectOptions,
   adaptSelectedCommentorsFromIds,
   adaptCommentorToMultiSelectOptions,
+  adaptTagToMultiSelectOptions,
+  adaptSelectedTagsFromIds,
 } from './MultiSelect.adapter';

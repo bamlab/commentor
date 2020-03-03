@@ -8,7 +8,7 @@ interface propTypes {
   data: { x: number | string; y: number; tag: TagType }[];
 }
 
-const PieChart: React.FunctionComponent<propTypes> = props => {
+const PieChart = React.memo<propTypes>(props => {
   const [angle, setAngle] = useState(0);
 
   const ticksLabelsStyle = {
@@ -46,6 +46,6 @@ const PieChart: React.FunctionComponent<propTypes> = props => {
       )}
     </PieChartContainer>
   );
-};
+});
 
 export default PieChart;

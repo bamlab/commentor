@@ -16,7 +16,7 @@ interface propTypes {
   data: { x: number | string; y: number; y0: number; tag: TagType }[];
 }
 
-const BarChart: React.FunctionComponent<propTypes> = props => {
+const BarChart = React.memo<propTypes>(props => {
   const ticksLabelsStyle = {
     fill: colorUsage.primaryTextColor,
     fontSize: fontSize.XSmall,
@@ -80,6 +80,6 @@ const BarChart: React.FunctionComponent<propTypes> = props => {
       )}
     </BarChartContainer>
   );
-};
+});
 
 export default BarChart;

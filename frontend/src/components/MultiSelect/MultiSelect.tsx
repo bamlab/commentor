@@ -5,7 +5,7 @@ import { fontFamily } from 'stylesheet';
 import { ISelectedOptionsType } from './MultiSelect.type';
 
 type PropsType = {
-  isLoading?: boolean;
+  isLoading?: boolean,
   selectedOptions: ISelectedOptionsType[];
   selectOptions: (selectedOptions: ISelectedOptionsType[]) => void;
   options: ISelectedOptionsType[];

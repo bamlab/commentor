@@ -27,19 +27,39 @@ import BarChart from 'components/BarChart';
 import PieChart from 'components/PieChart';
 import { map, chain } from 'lodash';
 import moment, { Moment } from 'moment';
+
 import {
   fixedColumnCount,
   columnsConfig,
   lineHeight,
   CommentTableOptionsType,
 } from './columnsConfig';
-import { HomePropsType } from './Home.type';
+
 import logo from 'assets/logo.png';
 import githubLogo from 'assets/octocat.png';
 
+type PropsType = {
+  loadRepositories: () => void;
+  login: (code: string) => void;
+  isAuthenticated: boolean;
+  location: { search: string };
+  comments: CommentType[];
+  tags: TagType[];
+  loadTags: () => void;
+  loadComments: (
+    filters: {
+      repositoryIds: number[];
+    },
+  ) => void;
+  isCommentLoading: boolean;
+  repositoryIds: number[];
+  selectedRequesterIds: string[];
+  selectedCommentorIds: string[];
+};
+
 const ICON_SIZE = 25;
 
-const Home = React.memo<HomePropsType>(props => {
+const Home = React.memo<PropsType>(props => {
   const {
     login,
     location,
@@ -47,6 +67,8 @@ const Home = React.memo<HomePropsType>(props => {
     isAuthenticated,
     loadComments,
     repositoryIds,
+    selectedRequesterIds,
+    selectedCommentorIds,
     loadTags,
   } = props;
 
@@ -78,16 +100,29 @@ const Home = React.memo<HomePropsType>(props => {
 
   const [isFilterModalVisible, setFilterModalVisible] = useState(false);
 
+  // should be extracted in wrapper
+  const filteredComments = chain(props.comments)
+    .filter(
+      comment =>
+        selectedRequesterIds.includes(comment.requester) || !(selectedRequesterIds.length > 0),
+    )
+    .filter(
+      comment =>
+        selectedCommentorIds.includes(comment.commentor) || !(selectedCommentorIds.length > 0),
+    )
+    .orderBy('creationDate', 'desc')
+    .value();
+
   const pieChartFormattedData = chain(props.tags)
     .map((tag: TagType) => ({
       x: tag.code,
-      y: props.comments.filter((comment: CommentType) => !!comment.body.match(tag.code)).length,
+      y: filteredComments.filter((comment: CommentType) => !!comment.body.match(tag.code)).length,
       tag,
     }))
     .filter(chartDatum => chartDatum.y > 0)
     .value();
 
-  const barChartFormattedData = chain(props.comments)
+  const barChartFormattedData = chain(filteredComments)
     .groupBy((comment: CommentType) => moment(comment.creationDate).format('DD-MM-YYYY'))
     .map((comments: CommentType[], date: Moment) =>
       map(comments, (comment: CommentType) =>
@@ -135,7 +170,7 @@ const Home = React.memo<HomePropsType>(props => {
           </ChartsContainer>
           <CommentTableContainer>
             <GenericTable<CommentTableOptionsType, CommentType>
-              values={props.comments}
+              values={filteredComments}
               fixedColumnCount={fixedColumnCount}
               columnsConfig={columnsConfig}
               options={{}}

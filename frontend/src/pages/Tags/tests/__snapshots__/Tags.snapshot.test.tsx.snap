@@ -7,35 +7,35 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
     columnsConfig={
       Array [
         Object {
-          "columnWidth": 10,
+          "columnWidth": 300,
           "index": 0,
           "key": "code",
           "name": "Code",
           "renderer": [Function],
         },
         Object {
-          "columnWidth": 60,
+          "columnWidth": 900,
           "index": 1,
           "key": "description",
           "name": "Description",
           "renderer": [Function],
         },
         Object {
-          "columnWidth": 10,
+          "columnWidth": 100,
           "index": 2,
           "key": "color",
           "name": "Color",
           "renderer": [Function],
         },
         Object {
-          "columnWidth": 10,
+          "columnWidth": 50,
           "index": 3,
           "key": "delete",
           "name": "delete",
           "renderer": [Function],
         },
         Object {
-          "columnWidth": 10,
+          "columnWidth": 80,
           "index": 4,
           "key": "update",
           "name": "update",
@@ -44,7 +44,7 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
       ]
     }
     defaultLineHeight={700}
-    fixedColumnCount={0}
+    fixedColumnCount={2}
     options={
       Object {
         "openDeleteTagModal": [Function],

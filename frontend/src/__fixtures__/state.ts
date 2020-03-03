@@ -45,7 +45,6 @@ export const state: RootState = {
     requesterIds: ['amauryw'],
     repositoryIds: [],
     commentorIds: ['amauryw'],
-    tagIds: [],
   },
   repository: {
     repositories: [],

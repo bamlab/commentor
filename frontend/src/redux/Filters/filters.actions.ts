@@ -49,20 +49,4 @@ export const selectCommentorIds = createAsyncAction(
   }
 >();
 
-export const selectTagIds = createAsyncAction(
-  'Filters/SELECT_TAG_IDS_REQUEST',
-  'Filters/SELECT_TAG_IDS_SUCCESS',
-  'Filters/SELECT_TAG_IDS_FAILURE',
-)<
-  {
-    tagIds: ISelectedOptionsType[];
-  },
-  {
-    // not used
-  },
-  {
-    // not used
-  }
->();
-
-export default { selectRepositoryIds, selectRequesterIds, selectCommentorIds, selectTagIds };
+export default { selectRepositoryIds, selectRequesterIds, selectCommentorIds };

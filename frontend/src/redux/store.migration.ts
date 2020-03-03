@@ -1,5 +1,5 @@
 export const storeMigrations = {
-  0: (state: StateTypeVersion0): StateTypeVersion1 => ({
+  1: (state: StateTypeVersion0): StateTypeVersion1 => ({
     ...state,
     comment: {
       ...state.comment,
@@ -12,7 +12,7 @@ export const storeMigrations = {
       commentorIds: [],
     },
   }),
-  1: (state: StateTypeVersion1): StateTypeVersion2 => ({
+  2: (state: StateTypeVersion1): StateTypeVersion2 => ({
     ...state,
     filters: {
       ...state.filters,

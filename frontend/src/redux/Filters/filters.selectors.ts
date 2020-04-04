@@ -9,4 +9,9 @@ export const getSelectedCommentords = (store: RootState): string[] => store.filt
 
 export const getSelectedTagIds = (store: RootState): string[] => store.filters.tagIds;
 
+export const getSelectedStartingDate = (store: RootState): Date | null =>
+  store.filters.startingDate;
+
+export const getSelectedEndingDate = (store: RootState): Date | null => store.filters.endingDate;
+
 export const getFilters = (store: RootState): FiltersState => store.filters;

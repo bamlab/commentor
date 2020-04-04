@@ -47,12 +47,16 @@ const Home = React.memo<HomePropsType>(props => {
     isAuthenticated,
     loadComments,
     repositoryIds,
+    startingDate,
+    endingDate,
     loadTags,
   } = props;
 
   const loadCommentsWithFilters = () =>
     loadComments({
       repositoryIds: repositoryIds,
+      startingDate,
+      endingDate,
     });
 
   useEffect(() => {

@@ -58,7 +58,11 @@ class Client {
     return;
   };
 
-  fetchComments = async (data: { repositoryIds: number[] }): Promise<CommentType[]> => {
+  fetchComments = async (data: {
+    repositoryIds: number[];
+    startingDate: Date | null;
+    endingDate: Date | null;
+  }): Promise<CommentType[]> => {
     const result = await this.post('/comments/filtered', data);
     return result;
   };

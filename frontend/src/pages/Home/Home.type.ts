@@ -13,9 +13,13 @@ export type HomePropsType = {
   loadComments: (
     filters: {
       repositoryIds: number[];
+      startingDate: Date | null;
+      endingDate: Date | null;
     },
   ) => void;
   isCommentLoading: boolean;
   repositoryIds: number[];
+  startingDate: Date | null;
+  endingDate: Date | null;
   filters: FiltersState;
 };

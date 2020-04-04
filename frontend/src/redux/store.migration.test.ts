@@ -9,9 +9,8 @@ import { CURRENT_STORE_VERSION } from './store';
 
 describe('it should apply correctly version state', () => {
   it('should match currentState', () => {
-    expect(CURRENT_STORE_VERSION).toEqual(23;
+    expect(CURRENT_STORE_VERSION).toEqual(3);
   });
-
 
   it('version 2 -> 3', () => {
     const result = storeMigrations[3](version2InitialState);

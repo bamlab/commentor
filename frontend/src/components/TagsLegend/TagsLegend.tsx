@@ -10,7 +10,7 @@ const TagsLegend: React.FunctionComponent<propTypes> = props => {
   return (
     <TagsLegendContainer>
       {props.tags.map(tag => (
-        <TagLegendItemContainer>
+        <TagLegendItemContainer key={tag.code}>
           <ColorDot color={tag.color} />
           <TagCode>{tag.code}</TagCode>
         </TagLegendItemContainer>

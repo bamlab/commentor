@@ -14,6 +14,7 @@ describe('[Snapshot] <Tags />', () => {
     loadTags: jest.fn(),
     isTagLoading: true,
     addTag: jest.fn(),
+    errorMessage: 'error',
   };
   it('should render Tags page', () => {
     const wrapper = shallow(<Tags {...props} />);

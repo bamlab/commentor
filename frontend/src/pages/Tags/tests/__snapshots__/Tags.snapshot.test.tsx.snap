@@ -2,7 +2,9 @@
 
 exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
 <Tagsstyle__StyledTags>
-  <Tagsstyle__ErrorMessage />
+  <Tagsstyle__ErrorMessage>
+    error
+  </Tagsstyle__ErrorMessage>
   <GenericTable
     columnsConfig={
       Array [

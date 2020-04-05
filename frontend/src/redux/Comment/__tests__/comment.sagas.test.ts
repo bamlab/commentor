@@ -8,7 +8,11 @@ import client from 'services/networking/client';
 import { loadComments } from '../comment.actions';
 import { loadCommentsSaga } from '../comment.sagas';
 
-const loadCommentsRequestAction = loadComments.request({});
+const loadCommentsRequestAction = loadComments.request({
+  repositoryIds: [],
+  endingDate: null,
+  startingDate: null,
+});
 
 const comments = [
   {

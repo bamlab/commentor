@@ -18,6 +18,8 @@ const checkUserHasAccessToRepo = async (
       },
     });
 
+    console.log(`RECEIVED ANSWER for repo ${repositoryId}`, githubUserAccessToRepoAnswer);
+
     if (githubUserAccessToRepoAnswer && githubUserAccessToRepoAnswer.permission) {
       console.log(
         `FOUND PERMISSION for repo ${repositoryId}`,

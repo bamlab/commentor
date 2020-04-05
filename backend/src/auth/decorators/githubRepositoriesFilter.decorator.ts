@@ -1,4 +1,5 @@
 import { createParamDecorator, UnauthorizedException } from '@nestjs/common';
+import { Logger } from '@nestjs/common';
 import * as request from 'request-promise';
 
 const checkUserHasAccessToRepo = async (
@@ -7,9 +8,7 @@ const checkUserHasAccessToRepo = async (
   accessToken: string,
 ): Promise<string> => {
   try {
-    console.log('ABOUT TO QUERY PERMISSION FOR REPO', repositoryId);
-    console.log('ABOUT TO QUERY PERMISSION WITH LOGIN', userGithubLogin);
-    console.log('ABOUT TO QUERY PERMISSION WITH ACCESS TOKEN', accessToken);
+    Logger.log(`About to check github user ${userGithubLogin} access to repo ${repositoryId}`);
     const githubUserAccessToRepoAnswer = await request({
       uri: `https://api.github.com/repositories/${repositoryId}/collaborators/${userGithubLogin}/permission`,
       headers: {
@@ -19,17 +18,19 @@ const checkUserHasAccessToRepo = async (
       json: true,
     });
 
-    console.log(`RECEIVED ANSWER for repo ${repositoryId}`, githubUserAccessToRepoAnswer);
-
     if (githubUserAccessToRepoAnswer && githubUserAccessToRepoAnswer.permission) {
-      console.log(
-        `FOUND PERMISSION for repo ${repositoryId}`,
-        githubUserAccessToRepoAnswer.permission,
+      Logger.log(
+        `Received permission ${
+          githubUserAccessToRepoAnswer.permission
+        } for user ${userGithubLogin} on repo ${repositoryId}`,
       );
       return repositoryId;
     }
   } catch (error) {
-    console.log(`ERROR for repo ${repositoryId}`, error);
+    Logger.error(
+      error,
+      `Error received while checking permission for user ${userGithubLogin} to repo ${repositoryId}`,
+    );
     return;
   }
 };

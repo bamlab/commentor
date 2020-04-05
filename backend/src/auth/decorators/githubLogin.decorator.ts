@@ -1,5 +1,6 @@
 import { createParamDecorator } from '@nestjs/common';
 import { GithubLoginAnswer } from '../interfaces/GithubAnswer';
+
 import * as request from 'request-promise';
 
 export const GithubLogin = createParamDecorator(async (_, req) => {

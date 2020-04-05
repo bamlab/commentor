@@ -7,6 +7,9 @@ const checkUserHasAccessToRepo = async (
   accessToken: string,
 ): Promise<string> => {
   try {
+    console.log('ABOUT TO QUERY PERMISSION FOR REPO', repositoryId);
+    console.log('ABOUT TO QUERY PERMISSION WITH LOGIN', userGithubLogin);
+    console.log('ABOUT TO QUERY PERMISSION WITH ACCESS TOKEN', accessToken);
     const githubUserAccessToRepoAnswer = await request({
       uri: `https://api.github.com/repositories/${repositoryId}/collaborators/${userGithubLogin}/permission`,
       headers: {
@@ -16,9 +19,14 @@ const checkUserHasAccessToRepo = async (
     });
 
     if (githubUserAccessToRepoAnswer && githubUserAccessToRepoAnswer.permission) {
+      console.log(
+        `FOUND PERMISSION for repo ${repositoryId}`,
+        githubUserAccessToRepoAnswer.permission,
+      );
       return repositoryId;
     }
-  } catch {
+  } catch (error) {
+    console.log(`ERROR for repo ${repositoryId}`, error);
     return;
   }
 };

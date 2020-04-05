@@ -1,9 +1,9 @@
-import moment from 'moment';
+import { format } from 'date-fns';
 
 export type FomattingFunctionType = (date: Date) => string;
 
-export const formatDateToDDMMYYYYSlash = (date: Date) => moment(date).format('DD/MM/YYYY');
+export const formatDateToDDMMYYYYSlash = (date: Date) => format(date, 'dd/MM/YYY');
 
-export const formatDateToDDMMYYYLined = (date: Date) => moment(date).format('DD-MM-YYYY');
+export const formatDateToDDMMYYYLined = (date: Date) => format(date, 'dd-MM-YYY');
 
-export const formatDateToDDMMLined = (date: Date) => moment(date).format('DD-MM');
+export const formatDateToDDMMLined = (date: Date) => format(date, 'dd-MM');

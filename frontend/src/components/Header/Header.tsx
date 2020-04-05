@@ -26,7 +26,7 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = prop
       <Text>Start Date</Text>
       <DatePickerContainer
         selected={props.startingDate}
-        onChange={props.setStartingDate}
+        onChange={(date: Date | null) => props.setStartingDate(date)}
         timeCaption="time"
         dateFormat="d MMMM yyyy"
         isClearable
@@ -36,7 +36,7 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = prop
       <Text>End Date</Text>
       <DatePickerContainer
         selected={props.endingDate}
-        onChange={props.setEndingDate}
+        onChange={(date: Date | null) => props.setEndingDate(date)}
         timeCaption="time"
         dateFormat="d MMMM yyyy"
         isClearable

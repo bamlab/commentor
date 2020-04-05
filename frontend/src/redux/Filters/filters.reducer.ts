@@ -22,8 +22,8 @@ export type FiltersState = Readonly<{
   repositoryIds: number[];
   requesterIds: string[];
   commentorIds: string[];
-  startingDate: Date | null;
-  endingDate: Date | null;
+  startingDate: Date | string | null; // string if value comes from local Storage after persisting
+  endingDate: Date | string | null; // string if value comes from local Storage after persisting
   tagIds: string[];
 }>;
 

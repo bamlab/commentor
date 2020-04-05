@@ -40,8 +40,6 @@ const queryPaginatedGithubRepositories = async (
     },
   });
 
-  console.log('Github answer', JSON.stringify(githubAnswer));
-
   const repositoriesList = previousPageRepositories.concat(
     githubAnswer.data.viewer.repositories.nodes,
   );
@@ -49,13 +47,11 @@ const queryPaginatedGithubRepositories = async (
   if (pageInfo.hasNextPage) {
     return queryPaginatedGithubRepositories(userAccessToken, repositoriesList, pageInfo.endCursor);
   }
-  console.log('Repository List !', repositoriesList);
   return repositoriesList ? repositoriesList : [];
 };
 
 export const GithubRepositories = createParamDecorator(async (_, req) => {
   if (req.cookies.access_token) {
-    console.log('ACCESS_TOKEN', req.cookies.access_token);
     return queryPaginatedGithubRepositories(req.cookies.access_token);
   } else {
     throw new UnauthorizedException();

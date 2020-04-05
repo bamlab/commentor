@@ -23,6 +23,7 @@ export class RepositoryService {
       : [];
     const checksAnswers = await Promise.all(promiseList);
     const repositoriesWithComments = checksAnswers.filter(repository => repository);
+
     return repositoriesWithComments;
   };
 }

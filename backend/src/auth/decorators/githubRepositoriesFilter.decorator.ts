@@ -16,6 +16,7 @@ const checkUserHasAccessToRepo = async (
         Authorization: `Bearer ${accessToken}`,
         'User-Agent': 'Request-Promise',
       },
+      json: true,
     });
 
     console.log(`RECEIVED ANSWER for repo ${repositoryId}`, githubUserAccessToRepoAnswer);

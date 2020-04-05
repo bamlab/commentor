@@ -10,7 +10,12 @@ import { getTags } from 'redux/Tag/tag.selectors';
 import { loadComments } from 'redux/Comment/comment.actions';
 import { loadTags } from 'redux/Tag/tag.actions';
 import { getComments, isCommentLoading } from 'redux/Comment/comment.selectors';
-import { getSelectedRepositoryIds, getFilters } from 'redux/Filters';
+import {
+  getSelectedRepositoryIds,
+  getFilters,
+  getSelectedStartingDate,
+  getSelectedEndingDate,
+} from 'redux/Filters';
 import { HomePropsType } from './Home.type';
 import { filterComments } from '../../redux/Comment/comment.adapter';
 import { filterTags } from '../../redux/Tag/tag.adapter';
@@ -22,6 +27,8 @@ const mapStateToProps = (state: RootState) => ({
   isCommentLoading: isCommentLoading(state),
   repositoryIds: getSelectedRepositoryIds(state),
   filters: getFilters(state),
+  startingDate: getSelectedStartingDate(state),
+  endingDate: getSelectedEndingDate(state),
 });
 
 // @ts-ignore Generic type 'Dispatch' requires 1 type argument(s)
@@ -29,7 +36,11 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
   loadRepositories: () => dispatch(loadRepositories.request({})),
   loadTags: () => dispatch(loadTags.request({})),
   login: (code: string) => dispatch(login.request({ code })),
-  loadComments: (filters: { repositoryIds: number[] }) =>
+  loadComments: (filters: {
+    repositoryIds: number[];
+    startingDate: Date | null;
+    endingDate: Date | null;
+  }) =>
     dispatch(
       loadComments.request({
         ...filters,

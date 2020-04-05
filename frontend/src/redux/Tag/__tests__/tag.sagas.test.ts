@@ -7,6 +7,7 @@ import client from 'services/networking/client';
 
 import { addTag, deleteTag, updateTag, loadTags } from '../tag.actions';
 import { addTagSaga, updateTagSaga, deleteTagSaga, loadTagsSaga } from '../tag.sagas';
+import { TagType } from '../tag.types';
 
 const loadTagsRequestAction = loadTags.request({});
 const addTagsRequestAction = addTag.request({
@@ -22,12 +23,14 @@ const updateTagsRequestAction = updateTag.request({
   color: '#fff',
 });
 
-const tag = {
+const tag: TagType = {
   id: 2,
   code: 'refacto',
   description: 'this is refacto done with mistake',
   color: '#fff',
   creationDate: new Date(),
+  isDefault: true,
+  githubLogin: '123',
 };
 const tags = [tag];
 

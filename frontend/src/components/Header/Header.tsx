@@ -6,19 +6,56 @@ import Link from 'components/Link';
 import { RepositoryIdsMultiSelect } from 'components/RepositoryIdsMultiSelect';
 import { PATHS } from 'routes';
 import { Logo, HeaderContainer } from './Header.style';
+import DatePicker from 'react-datepicker';
+import styled from 'styled-components';
+import Text from 'components/Text';
+import { colorUsage, borderRadius, getSpacing } from 'stylesheet';
 
-interface IHeaderProps {}
+import 'react-datepicker/dist/react-datepicker.css';
+import { WrapperProps } from './Header.wrap';
 
-const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = () => (
+type IHeaderProps = WrapperProps;
+
+const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = props => (
   <HeaderContainer>
     <RouterLink to={PATHS.HOME}>
       <Logo alt="Commentor" src={logo} />
     </RouterLink>
     <RepositoryIdsMultiSelect placeholder="Select your project(s)..." />
+    <LabelledDatePickerContainer>
+      <Text>Start Date</Text>
+      <DatePickerContainer
+        selected={props.startingDate}
+        onChange={(date: Date | null) => props.setStartingDate(date)}
+        timeCaption="time"
+        dateFormat="d MMMM yyyy"
+        isClearable
+      />
+    </LabelledDatePickerContainer>
+    <LabelledDatePickerContainer>
+      <Text>End Date</Text>
+      <DatePickerContainer
+        selected={props.endingDate}
+        onChange={(date: Date | null) => props.setEndingDate(date)}
+        timeCaption="time"
+        dateFormat="d MMMM yyyy"
+        isClearable
+      />
+    </LabelledDatePickerContainer>
     <Link as={NavLink} to={PATHS.TAGS} activeStyle={{ color: 'red' }}>
       <FormattedMessage id="header.tag" />
     </Link>
   </HeaderContainer>
 );
 
+const LabelledDatePickerContainer = styled.div`
+  text-align: center;
+`;
+const DatePickerContainer = styled(DatePicker)`
+  margin: ${getSpacing(1)};
+  padding: ${getSpacing(1)};
+  border-radius: ${borderRadius.medium};
+  color: ${colorUsage.primary};
+  background-color: ${colorUsage.oddLineColor};
+`;
 export default withRouter(Header);

@@ -3,7 +3,7 @@ import { getComments, isCommentLoading } from '../comment.selectors';
 import { CommentType } from '..';
 
 const comments: CommentType[] = [];
-const initialState = { ...state, comment: { comments, isLoading: true } };
+const initialState = { ...state, comment: { ...state.comment, comments, isLoading: true } };
 
 describe('Comments selectors', () => {
   describe('getComments function', () => {

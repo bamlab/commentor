@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, In } from 'typeorm';
+import { Repository, In, Between } from 'typeorm';
 
 import { Comment } from './comment.entity';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
@@ -21,10 +21,19 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     return createdComment;
   };
 
-  getCommentsFilteredByRepositoriesIds = async (repositoriesIds: number[]): Promise<Comment[]> => {
+  getCommentsWithFilters = async ({
+    repositoriesIds,
+    startingDate,
+    endingDate,
+  }: {
+    repositoriesIds: number[];
+    startingDate: Date;
+    endingDate: Date;
+  }): Promise<Comment[]> => {
     const filteredComments = await this.commentRepository.find({
       where: {
         repositoryId: repositoriesIds.length > 0 ? In(repositoriesIds) : null,
+        creationDate: Between(startingDate, endingDate),
       },
     });
 

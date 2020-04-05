@@ -2,6 +2,7 @@ import request from 'superagent';
 import { CommentType } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
 import { RepositoryType } from 'redux/Repository';
+import { formatFetchedCommentForAppType } from '../../redux/Comment/comment.adapter';
 
 const backendBaseUrl = process.env.REACT_APP_API_BASE_URL || '';
 
@@ -58,9 +59,14 @@ class Client {
     return;
   };
 
-  fetchComments = async (data: { repositoryIds: number[] }): Promise<CommentType[]> => {
+  fetchComments = async (data: {
+    repositoryIds: number[];
+    startingDate: Date | null;
+    endingDate: Date | null;
+  }): Promise<CommentType[]> => {
     const result = await this.post('/comments/filtered', data);
-    return result;
+    const adaptedResult = formatFetchedCommentForAppType(result);
+    return adaptedResult;
   };
 
   fetchTags = async (data: object): Promise<TagType[]> => {

@@ -1,14 +1,20 @@
 import { loadComments } from '../comment.actions';
 import reducer from '../comment.reducer';
 
-const initialState = { comments: [], isLoading: false, commentError: null };
+const initialState = {
+  comments: [],
+  isLoading: false,
+  commentError: null,
+  availableRequesters: [],
+  availableCommentors: [],
+};
 const defaultComment = {
   id: 2,
   body: 'ed',
   filePath: 'weff',
   url: 'wffew',
   commentor: 'Amaury',
-  requester: 'wfwef',
+  requester: 'MaximeS',
   pullRequestUrl: 'ewffew',
   repositoryId: 31312,
   creationDate: new Date(),
@@ -20,7 +26,12 @@ describe('Comment reducer', () => {
       const action = loadComments.success({
         comments: [defaultComment],
       });
-      const expectedState = { ...initialState, comments: [defaultComment] };
+      const expectedState = {
+        ...initialState,
+        comments: [defaultComment],
+        availableCommentors: ['Amaury'],
+        availableRequesters: ['MaximeS'],
+      };
 
       expect(reducer(initialState, action)).toEqual(expectedState);
     });
@@ -38,7 +49,11 @@ describe('Comment reducer', () => {
 
   describe('USER_LOGIN_REQUESt case', () => {
     it('Should return an initial state loading true', () => {
-      const action = loadComments.request({});
+      const action = loadComments.request({
+        repositoryIds: [],
+        startingDate: new Date(),
+        endingDate: new Date(),
+      });
       const expectedState = { ...initialState, isLoading: true };
 
       expect(reducer(initialState, action)).toEqual(expectedState);

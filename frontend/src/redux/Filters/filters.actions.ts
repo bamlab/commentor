@@ -65,4 +65,43 @@ export const selectTagIds = createAsyncAction(
   }
 >();
 
-export default { selectRepositoryIds, selectRequesterIds, selectCommentorIds, selectTagIds };
+export const selectStartingDate = createAsyncAction(
+  'Filters/SELECT_STARTING_DATE_REQUEST',
+  'Filters/SELECT_STARTING_DATE_SUCCESS',
+  'Filters/SELECT_STARTING_DATE_FAILURE',
+)<
+  {
+    startingDate: Date | null;
+  },
+  {
+    // not used
+  },
+  {
+    // not used
+  }
+>();
+
+export const selectEndingDate = createAsyncAction(
+  'Filters/SELECT_ENDING_DATE_REQUEST',
+  'Filters/SELECT_ENDING_DATE_SUCCESS',
+  'Filters/SELECT_ENDING_DATE_FAILURE',
+)<
+  {
+    endingDate: Date | null;
+  },
+  {
+    // not used
+  },
+  {
+    // not used
+  }
+>();
+
+export default {
+  selectRepositoryIds,
+  selectRequesterIds,
+  selectCommentorIds,
+  selectTagIds,
+  selectStartingDate,
+  selectEndingDate,
+};

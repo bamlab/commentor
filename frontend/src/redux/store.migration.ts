@@ -19,6 +19,64 @@ export const storeMigrations = {
       tagIds: [],
     },
   }),
+  3: (state: StateTypeVersion2): StateTypeVersion3 => ({
+    ...state,
+    filters: {
+      ...state.filters,
+      startingDate: null,
+      endingDate: null,
+    },
+  }),
+};
+
+export type StateTypeVersion3 = {
+  comment: {
+    comments: {
+      id: number;
+      body: string;
+      filePath: string;
+      url: string;
+      commentor: string;
+      requester: string;
+      pullRequestUrl: string;
+      repositoryId: number;
+      creationDate: Date;
+    }[];
+    availableRequesters: string[];
+    availableCommentors: string[];
+    commentError: string | null;
+    isLoading: boolean;
+  };
+  authentication: {
+    isAuthenticated: boolean;
+    loginError: string | null;
+    isLoading: boolean;
+  };
+  tag: {
+    tags: {
+      id: number;
+      code: string;
+      color: string;
+      description: string;
+      creationDate: Date;
+    }[];
+    tagError: string | null;
+    isLoading: boolean;
+    selectedTagId: number | null;
+  };
+  filters: {
+    requesterIds: string[];
+    repositoryIds: string[];
+    commentorIds: string[];
+    tagIds: string[];
+    startingDate: Date | null;
+    endingDate: Date | null;
+  };
+  repository: {
+    repositories: [];
+    isLoading: boolean;
+    repositoryError: string | null;
+  };
 };
 
 export type StateTypeVersion2 = {

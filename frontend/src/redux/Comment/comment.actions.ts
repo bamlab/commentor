@@ -8,6 +8,8 @@ export const loadComments = createAsyncAction(
 )<
   {
     repositoryIds: number[];
+    startingDate: Date | null;
+    endingDate: Date | null;
   },
   {
     comments: CommentType[];

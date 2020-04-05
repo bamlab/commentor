@@ -1,28 +1,35 @@
 import { loadTags, selectTag, addTag, deleteTag, updateTag } from '../tag.actions';
 import reducer from '../tag.reducer';
+import { TagType } from '../tag.types';
 
-const tag0 = {
+const tag0: TagType = {
   id: 0,
   code: 'refacto',
   color: '#fff',
   description: 'this is refacto done with mistake',
   creationDate: new Date(),
+  isDefault: true,
+  githubLogin: null,
 };
 
-const tag1 = {
+const tag1: TagType = {
   id: 1,
   color: '#fff',
   code: 'readable',
   description: 'This is elegant but remove it ',
   creationDate: new Date(),
+  isDefault: false,
+  githubLogin: null,
 };
 
-const newTag = {
+const newTag: TagType = {
   id: 2,
   code: 'code',
   color: '#fff',
   description: 'description',
   creationDate: new Date(),
+  isDefault: false,
+  githubLogin: 'githubLogin',
 };
 
 describe('Actions test', () => {

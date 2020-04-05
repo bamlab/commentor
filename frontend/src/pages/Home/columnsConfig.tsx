@@ -2,12 +2,16 @@ import React from 'react';
 import { ColumnType } from 'components/GenericTable/GenericTable.type';
 import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTable.style';
 import LinkCellIcon from '../../components/LinkCellIcon';
-import moment from 'moment';
 import { CommentType } from '../../redux/Comment';
+import { formatDateToDDMMYYYYSlash } from '../../services/date/dateFormatter';
 
 export type CommentTableOptionsType = {};
 
-const defaultCommentCellRenderer = (key: string, displayString: string, style: Object): JSX.Element => {
+const defaultCommentCellRenderer = (
+  key: string,
+  displayString: string,
+  style: Object,
+): JSX.Element => {
   return (
     <Cell key={key} style={style}>
       <StandardTextContainer>{displayString}</StandardTextContainer>
@@ -17,7 +21,7 @@ const defaultCommentCellRenderer = (key: string, displayString: string, style: O
 
 const dateCellRenderer = (key: string, Comment: CommentType, style: Object): JSX.Element => (
   <Cell key={key} style={style}>
-      <StandardTextContainer>{moment(Comment.creationDate).format('DD/MM/YYYY')}</StandardTextContainer>
+    <StandardTextContainer>{formatDateToDDMMYYYYSlash(Comment.creationDate)}</StandardTextContainer>
   </Cell>
 );
 
@@ -27,7 +31,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType, CommentType>[] =
     key: 'body',
     name: 'Comment',
     columnWidth: 34, // percentage
-    renderer: (key: string, comment: CommentType,  style: Object): JSX.Element =>
+    renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, comment.body, style),
   },
   {
@@ -43,7 +47,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType, CommentType>[] =
     key: 'commentor',
     name: 'Commentor',
     columnWidth: 10,
-    renderer: (key: string, comment: CommentType,  style: Object): JSX.Element =>
+    renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, comment.commentor, style),
   },
   {
@@ -67,7 +71,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType, CommentType>[] =
     key: 'url',
     name: 'url',
     columnWidth: 7,
-    renderer: (key: string, comment: CommentType,  style: Object): JSX.Element =>
+    renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
       LinkToComment(key, comment.url, style),
   },
   {

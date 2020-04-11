@@ -46,14 +46,17 @@ export class CommentController implements CrudController<Comment> {
 
   @Override()
   createOne(@Body() commentEvent: CommentEvent) {
-    return this.service.createComment({
-      body: commentEvent.comment.body,
-      filePath: commentEvent.comment.path,
-      url: commentEvent.comment.html_url,
-      commentor: commentEvent.comment.user.login,
-      requester: commentEvent.pull_request.user.login,
-      pullRequestUrl: commentEvent.pull_request.html_url,
-      repositoryId: commentEvent.repository.id,
+    return this.service.receiveCommentEvent({
+      action: commentEvent.action,
+      comment: {
+        body: commentEvent.comment.body,
+        filePath: commentEvent.comment.path,
+        url: commentEvent.comment.html_url,
+        commentor: commentEvent.comment.user.login,
+        requester: commentEvent.pull_request.user.login,
+        pullRequestUrl: commentEvent.pull_request.html_url,
+        repositoryId: commentEvent.repository.id,
+      },
     });
   }
 }

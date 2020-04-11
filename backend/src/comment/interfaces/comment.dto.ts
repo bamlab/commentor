@@ -1,5 +1,5 @@
 export interface CommentEvent {
-  action: string;
+  action: 'created' | 'edited' | 'deleted';
   comment: Comment;
   pull_request: PullRequest;
   repository: Repo;

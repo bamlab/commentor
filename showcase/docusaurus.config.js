@@ -1,6 +1,6 @@
 module.exports = {
   title: "Commentor",
-  tagline: "The tagline of my site",
+  tagline: "",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
   favicon: "img/favicon.ico",
@@ -8,10 +8,10 @@ module.exports = {
   projectName: "commentor",
   themeConfig: {
     navbar: {
-      title: "Commentor",
+      title: "COMMENTOR",
       logo: {
         alt: "Commentor Logo",
-        src: "img/logo.png"
+        src: "img/logo.svg"
       },
       links: [
         {
@@ -32,45 +32,11 @@ module.exports = {
       style: "dark",
       links: [
         {
-          title: "Docs",
-          items: [
-            {
-              label: "Style Guide",
-              to: "docs/doc1"
-            },
-            {
-              label: "Second Doc",
-              to: "docs/doc2"
-            }
-          ]
-        },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus"
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus"
-            }
-          ]
-        },
-        {
           title: "Social",
           items: [
             {
-              label: "Blog",
-              to: "blog"
-            },
-            {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus"
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus"
+              href: "https://github.com/bamlab/commentor"
             }
           ]
         }

@@ -33,7 +33,7 @@ import {
   CommentTableOptionsType,
 } from './columnsConfig';
 import { HomePropsType } from './Home.type';
-import logo from 'assets/logo.png';
+import logo from 'assets/logo-text.svg';
 import githubLogo from 'assets/octocat.png';
 import { formatDateToDDMMYYYLined, formatDateToDDMMLined } from '../../services/date/dateFormatter';
 

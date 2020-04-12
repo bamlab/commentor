@@ -11,14 +11,26 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     super(commentRepository);
   }
 
-  createComment = async (
+  receiveCommentEvent = async ({
+    action,
+    comment,
+  }: {
+    action: 'created' | 'edited' | 'deleted';
     comment: Pick<
       Comment,
       'body' | 'filePath' | 'url' | 'commentor' | 'requester' | 'pullRequestUrl' | 'repositoryId'
-    >,
-  ) => {
-    const createdComment = await this.commentRepository.save(comment);
-    return createdComment;
+    >;
+  }) => {
+    if (action === 'edited') {
+      await this.commentRepository.update({ url: comment.url }, { body: comment.body });
+      return;
+    } else if (action === 'deleted') {
+      await this.commentRepository.delete({ url: comment.url });
+      return;
+    } else {
+      await this.commentRepository.save(comment);
+      return;
+    }
   };
 
   getCommentsWithFilters = async ({

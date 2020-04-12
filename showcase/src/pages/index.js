@@ -8,34 +8,31 @@ import styles from "./styles.module.css";
 
 const features = [
   {
-    title: <>Easy to Use</>,
-    imageUrl: "img/undraw_docusaurus_mountain.svg",
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    )
+    title: <>Get started in 5min</>,
+    imageUrl: "img/get-started.svg",
+    description: <>Authenticate through your favorite versionning platform</>
   },
   {
-    title: <>Focus on What Matters</>,
-    imageUrl: "img/undraw_docusaurus_tree.svg",
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    )
+    title: (
+      <div>
+        <>Spot improvable</>
+        <br />
+        <>patterns</>
+      </div>
+    ),
+    imageUrl: "img/improve.svg",
+    description: <>In your team's code</>
   },
   {
-    title: <>Powered by React</>,
-    imageUrl: "img/undraw_docusaurus_react.svg",
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    )
+    title: (
+      <div>
+        <>Follow your team</>
+        <br />
+        <>improvement</>
+      </div>
+    ),
+    imageUrl: "img/follow-up.svg",
+    description: <>With date, tag and author filters</>
   }
 ];
 
@@ -44,11 +41,11 @@ function Feature({ imageUrl, title, description }) {
   return (
     <div className={classnames("col col--4", styles.feature)}>
       {imgUrl && (
-        <div className="text--center">
+        <div>
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
       )}
-      <h3>{title}</h3>
+      <h3 className={classnames(styles.featureTitle)}>{title}</h3>
       <p>{description}</p>
     </div>
   );
@@ -60,21 +57,24 @@ function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      description="This is the Commentor showcase web site"
     >
       <header className={classnames("hero hero--primary", styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <p className={classnames(styles.bannerTitle)}>
+            <div>{"Make the most".toUpperCase()}</div>
+            <div>{"out of your".toUpperCase()}</div>
+            <div>{"code reviews".toUpperCase()}</div>
+          </p>
           <div className={styles.buttons}>
             <Link
               className={classnames(
-                "button button--outline button--secondary button--lg",
+                "button button--lg button--primary",
                 styles.getStarted
               )}
               to={useBaseUrl("docs/doc1")}
             >
-              Get Started
+              {"Get Started".toUpperCase()}
             </Link>
           </div>
         </div>

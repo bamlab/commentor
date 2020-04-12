@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link as RouterLink, NavLink, RouteComponentProps, withRouter } from 'react-router-dom';
-import logo from 'assets/logo.png';
+import logo from 'assets/logo-text.svg';
 import Link from 'components/Link';
 import { RepositoryIdsMultiSelect } from 'components/RepositoryIdsMultiSelect';
 import { PATHS } from 'routes';

@@ -23,3 +23,22 @@
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
+
+@font-face {
+  font-family: "muli";
+  src: url("/fonts/Muli-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "muli-black";
+  src: url("/fonts/Muli-Black.ttf");
+}
+
+body {
+  font-family: "muli", sans-serif;
+}
+
+.navbar__title {
+  font-family: "muli-black", sans-serif;
+  font-size: 23px !important;
+}

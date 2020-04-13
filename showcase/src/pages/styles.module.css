@@ -5,7 +5,7 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 0 4rem 0 4rem;
   text-align: left;
   background-color: #ffffff !important;
   position: relative;
@@ -15,8 +15,13 @@
 .bannerTitle {
   font-family: "muli-black", sans-serif;
   font-size: 48px;
-  line-height: 54px;
+  line-height: 60px;
   color: #000000;
+}
+
+.bannerScreenshotImageContainer {
+  width: 454;
+  height: 428;
 }
 
 .getStarted {

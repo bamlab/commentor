@@ -78,6 +78,9 @@ function Home() {
             </Link>
           </div>
         </div>
+        <div className={styles.bannerScreenshotImageContainer}>
+          <img src={"img/banner-screenshot.png"} alt={"commentor screenshot"} />
+        </div>
       </header>
       <main>
         {features && features.length && (

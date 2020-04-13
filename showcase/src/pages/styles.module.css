@@ -62,3 +62,9 @@ html[data-theme="dark"] .features {
   height: 200px;
   width: 200px;
 }
+
+.users {
+  color: #ffffff;
+  padding: 40px 0 40px 0;
+  background-color: var(--ifm-color-primary);
+}

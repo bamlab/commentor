@@ -60,6 +60,11 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     if (commentorIds.length > 0) {
       query.andWhere('comments.commentor IN (:...commentors)', { commentors: commentorIds });
     }
+
+    query.orderBy({
+      'comments.creationDate': 'ASC',
+    });
+
     const filteredComments = await query.getMany();
     return filteredComments;
   };

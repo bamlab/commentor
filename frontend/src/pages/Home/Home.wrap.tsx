@@ -19,7 +19,6 @@ import {
   getSelectedCommentords,
 } from 'redux/Filters';
 import { HomePropsType } from './Home.type';
-import { filterComments } from '../../redux/Comment/comment.adapter';
 import { filterTags } from '../../redux/Tag/tag.adapter';
 
 const mapStateToProps = (state: RootState) => ({
@@ -54,16 +53,6 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     ),
 });
 
-const withFilteredComments = withProps(
-  (ownerProps: HomePropsType): HomePropsType => {
-    const filteredComments = filterComments(ownerProps.comments, ownerProps.filters);
-    return {
-      ...ownerProps,
-      comments: filteredComments,
-    };
-  },
-);
-
 const withFilteredTags = withProps(
   (ownerProps: HomePropsType): HomePropsType => {
     const filteredTags = filterTags(ownerProps.tags, ownerProps.filters);
@@ -80,6 +69,5 @@ export default compose(
     mapDispatchToProps,
   ),
   withFilteredTags,
-  withFilteredComments,
   // @ts-ignore
 )(Home);

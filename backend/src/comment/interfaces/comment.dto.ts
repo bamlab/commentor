@@ -188,3 +188,10 @@ export interface Repo {
   watchers: number;
   default_branch: string;
 }
+
+export interface FiltersType {
+  repositoryIds: number[];
+  startingDate: Date | null;
+  endingDate: Date | null;
+  requestersIds: string[];
+}

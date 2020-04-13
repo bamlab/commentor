@@ -1,7 +1,7 @@
 import { Controller, Body, Post } from '@nestjs/common';
 import { isNil } from 'lodash';
 
-import { CommentEvent } from './interfaces/comment.dto';
+import { CommentEvent, FiltersType } from './interfaces/comment.dto';
 import { Comment } from './comment.entity';
 import { CommentService } from './comment.service';
 import { Crud, CrudController, Override } from '@nestjsx/crud';
@@ -25,7 +25,7 @@ export class CommentController implements CrudController<Comment> {
   @Post('filtered')
   async getFilteredComments(
     @Body()
-    filters: { repositoryIds: number[]; startingDate: Date | null; endingDate: Date | null },
+    filters: FiltersType,
     @GithubRepositoriesFilter() filteredGithubRepositoriesIds: number[],
   ): Promise<Comment[]> {
     if (filteredGithubRepositoriesIds && filteredGithubRepositoriesIds.length > 0) {
@@ -33,11 +33,13 @@ export class CommentController implements CrudController<Comment> {
         ? FIRST_COMMENT_DATE
         : filters.startingDate;
       const endingDateFilter = isNil(filters.endingDate) ? new Date() : filters.endingDate;
+      console.log('Amo: CommentController -> constructor -> filters', filters);
 
       return this.service.getCommentsWithFilters({
         repositoriesIds: filteredGithubRepositoriesIds,
         startingDate: startingDateFilter,
         endingDate: endingDateFilter,
+        requestersIds: filters.requestersIds,
       });
     } else {
       return [];

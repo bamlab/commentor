@@ -53,6 +53,7 @@ describe('Comment reducer', () => {
         repositoryIds: [],
         startingDate: new Date(),
         endingDate: new Date(),
+        requesterIds: [],
       });
       const expectedState = { ...initialState, isLoading: true };
 

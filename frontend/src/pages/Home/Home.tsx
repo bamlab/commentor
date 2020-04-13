@@ -63,13 +63,15 @@ const Home = React.memo<HomePropsType>(props => {
     startingDate,
     endingDate,
     loadTags,
+    requestersIds,
   } = props;
 
   const loadCommentsWithFilters = () =>
     loadComments({
-      repositoryIds: repositoryIds,
+      repositoryIds,
       startingDate,
       endingDate,
+      requestersIds,
     });
 
   useEffect(() => {

@@ -12,6 +12,7 @@ const loadCommentsRequestAction = loadComments.request({
   repositoryIds: [],
   endingDate: null,
   startingDate: null,
+  requesterIds: [],
 });
 
 const comments = [

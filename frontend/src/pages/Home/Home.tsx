@@ -63,7 +63,7 @@ const Home = React.memo<HomePropsType>(props => {
     startingDate,
     endingDate,
     loadTags,
-    requestersIds,
+    requesterIds,
     commentorIds,
   } = props;
 
@@ -72,7 +72,7 @@ const Home = React.memo<HomePropsType>(props => {
       repositoryIds,
       startingDate,
       endingDate,
-      requestersIds,
+      requesterIds,
       commentorIds,
     });
 

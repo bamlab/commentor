@@ -33,30 +33,6 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     }
   };
 
-  /**
-   * @deprecated
-   */
-  getCommentsWithFiltersv2 = async ({
-    repositoriesIds,
-    startingDate,
-    endingDate,
-    requesterIds,
-  }: {
-    repositoriesIds: number[];
-    startingDate: Date;
-    endingDate: Date;
-    requesterIds: string[];
-  }): Promise<Comment[]> => {
-    const filteredComments = await this.commentRepository.find({
-      where: {
-        repositoryId: repositoriesIds.length > 0 ? In(repositoriesIds) : null,
-        creationDate: Between(startingDate, endingDate),
-        requesterId: requesterIds.length > 0 ? In(requesterIds) : undefined,
-      },
-    });
-    return filteredComments;
-  };
-
   getCommentsWithFilters = async ({
     repositoriesIds,
     startingDate,

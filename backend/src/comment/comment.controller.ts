@@ -33,13 +33,13 @@ export class CommentController implements CrudController<Comment> {
         ? FIRST_COMMENT_DATE
         : filters.startingDate;
       const endingDateFilter = isNil(filters.endingDate) ? new Date() : filters.endingDate;
-      console.log('Amo: CommentController -> constructor -> filters', filters);
 
       return this.service.getCommentsWithFilters({
         repositoriesIds: filteredGithubRepositoriesIds,
         startingDate: startingDateFilter,
         endingDate: endingDateFilter,
         requestersIds: filters.requestersIds,
+        commentorIds: filters.commentorIds,
       });
     } else {
       return [];

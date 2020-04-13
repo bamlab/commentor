@@ -16,11 +16,13 @@ export type HomePropsType = {
       startingDate: Date | null;
       endingDate: Date | null;
       requestersIds: string[];
+      commentorIds: string[];
     },
   ) => void;
   isCommentLoading: boolean;
   repositoryIds: number[];
   requestersIds: string[];
+  commentorIds: string[];
   startingDate: Date | null;
   endingDate: Date | null;
   filters: FiltersState;

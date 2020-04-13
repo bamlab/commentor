@@ -13,6 +13,7 @@ const loadCommentsRequestAction = loadComments.request({
   endingDate: null,
   startingDate: null,
   requesterIds: [],
+  commentorIds: [],
 });
 
 const comments = [

@@ -64,6 +64,7 @@ class Client {
     startingDate: Date | null;
     endingDate: Date | null;
     requesterIds: string[];
+    commentorIds: string[];
   }): Promise<CommentType[]> => {
     const result = await this.post('/comments/filtered', data);
     const adaptedResult = formatFetchedCommentForAppType(result);

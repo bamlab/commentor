@@ -11,6 +11,7 @@ export const loadComments = createAsyncAction(
     startingDate: Date | null;
     endingDate: Date | null;
     requesterIds: string[];
+    commentorIds: string[];
   },
   {
     comments: CommentType[];

@@ -62,11 +62,13 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     startingDate,
     endingDate,
     requestersIds,
+    commentorIds,
   }: {
     repositoriesIds: number[];
     startingDate: Date;
     endingDate: Date;
     requestersIds: string[];
+    commentorIds: string[];
   }): Promise<Comment[]> => {
     const query = this.commentRepository.createQueryBuilder('comments');
     query
@@ -78,6 +80,9 @@ export class CommentService extends TypeOrmCrudService<Comment> {
 
     if (requestersIds.length > 0) {
       query.andWhere('comments.requester IN (:...requesters)', { requesters: requestersIds });
+    }
+    if (requestersIds.length > 0) {
+      query.andWhere('comments.commentor IN (:...commentors)', { commentors: commentorIds });
     }
     const filteredComments = await query.getMany();
     return filteredComments;

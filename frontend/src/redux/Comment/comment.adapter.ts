@@ -6,10 +6,6 @@ import { formatStringOrDateToDate } from '../../services/date/dateFormatter';
 
 export const filterComments = (comments: CommentType[], filters: FiltersState): CommentType[] =>
   chain(comments)
-    .filter(
-      comment =>
-        filters.commentorIds.includes(comment.commentor) || !(filters.commentorIds.length > 0),
-    )
     .orderBy('creationDate', 'desc')
     .value();
 

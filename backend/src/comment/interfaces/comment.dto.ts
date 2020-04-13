@@ -194,4 +194,5 @@ export interface FiltersType {
   startingDate: Date | null;
   endingDate: Date | null;
   requestersIds: string[];
+  commentorIds: string[];
 }

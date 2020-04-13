@@ -40,18 +40,18 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     repositoriesIds,
     startingDate,
     endingDate,
-    requestersIds,
+    requesterIds,
   }: {
     repositoriesIds: number[];
     startingDate: Date;
     endingDate: Date;
-    requestersIds: string[];
+    requesterIds: string[];
   }): Promise<Comment[]> => {
     const filteredComments = await this.commentRepository.find({
       where: {
         repositoryId: repositoriesIds.length > 0 ? In(repositoriesIds) : null,
         creationDate: Between(startingDate, endingDate),
-        requesterId: requestersIds.length > 0 ? In(requestersIds) : undefined,
+        requesterId: requesterIds.length > 0 ? In(requesterIds) : undefined,
       },
     });
     return filteredComments;
@@ -61,13 +61,13 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     repositoriesIds,
     startingDate,
     endingDate,
-    requestersIds,
+    requesterIds,
     commentorIds,
   }: {
     repositoriesIds: number[];
     startingDate: Date;
     endingDate: Date;
-    requestersIds: string[];
+    requesterIds: string[];
     commentorIds: string[];
   }): Promise<Comment[]> => {
     const query = this.commentRepository.createQueryBuilder('comments');
@@ -78,10 +78,10 @@ export class CommentService extends TypeOrmCrudService<Comment> {
         endingDate,
       });
 
-    if (requestersIds.length > 0) {
-      query.andWhere('comments.requester IN (:...requesters)', { requesters: requestersIds });
+    if (requesterIds.length > 0) {
+      query.andWhere('comments.requester IN (:...requesters)', { requesters: requesterIds });
     }
-    if (requestersIds.length > 0) {
+    if (commentorIds.length > 0) {
       query.andWhere('comments.commentor IN (:...commentors)', { commentors: commentorIds });
     }
     const filteredComments = await query.getMany();

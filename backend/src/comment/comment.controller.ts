@@ -38,7 +38,7 @@ export class CommentController implements CrudController<Comment> {
         repositoriesIds: filteredGithubRepositoriesIds,
         startingDate: startingDateFilter,
         endingDate: endingDateFilter,
-        requestersIds: filters.requestersIds,
+        requesterIds: filters.requesterIds,
         commentorIds: filters.commentorIds,
       });
     } else {

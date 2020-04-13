@@ -193,6 +193,6 @@ export interface FiltersType {
   repositoryIds: number[];
   startingDate: Date | null;
   endingDate: Date | null;
-  requestersIds: string[];
+  requesterIds: string[];
   commentorIds: string[];
 }

@@ -28,7 +28,7 @@ const mapStateToProps = (state: RootState) => ({
   tags: getTags(state),
   isCommentLoading: isCommentLoading(state),
   repositoryIds: getSelectedRepositoryIds(state),
-  requestersIds: getSelectedRequesterIds(state),
+  requesterIds: getSelectedRequesterIds(state),
   commentorIds: getSelectedCommentords(state),
   filters: getFilters(state),
   startingDate: getSelectedStartingDate(state),

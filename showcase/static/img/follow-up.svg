@@ -7,21 +7,21 @@
 <rect x="13" y="25" width="8" height="46" rx="4" fill="#FCC760"/>
 <rect x="39" y="39" width="8" height="32" rx="4" fill="#FCC760"/>
 <rect x="65" y="51" width="8" height="20" rx="4" fill="#FCC760"/>
-<rect x="23" y="51" width="8" height="20" rx="4" fill="#4FC1BA"/>
-<rect x="49" y="57" width="8" height="14" rx="4" fill="#4FC1BA"/>
-<rect x="75" y="62" width="8" height="9" rx="4" fill="#4FC1BA"/>
+<rect x="23" y="51" width="8" height="20" rx="4" fill="#8968BA"/>
+<rect x="49" y="57" width="8" height="14" rx="4" fill="#8968BA"/>
+<rect x="75" y="62" width="8" height="9" rx="4" fill="#8968BA"/>
 <defs>
 <linearGradient id="paint0_linear" x1="6.5" y1="75" x2="23" y2="46.5" gradientUnits="userSpaceOnUse">
-<stop stop-color="#EBEBEB"/>
-<stop offset="1" stop-color="#EBEBEB" stop-opacity="0"/>
+<stop stop-color="#222222" stop-opacity="0.08"/>
+<stop offset="1" stop-color="#222222" stop-opacity="0"/>
 </linearGradient>
 <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(18.5 76) rotate(-20.3441) scale(47.4605 221.123)">
-<stop stop-color="#EBEBEB"/>
-<stop offset="1" stop-color="#F6F6F6" stop-opacity="0"/>
+<stop stop-color="#222222" stop-opacity="0.1"/>
+<stop offset="1" stop-color="#222222" stop-opacity="0"/>
 </radialGradient>
 <radialGradient id="paint2_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(53 87) rotate(90.0001) scale(4 53)">
-<stop stop-color="#E3E3E3" stop-opacity="0.9"/>
-<stop offset="1" stop-color="#E5E5E5" stop-opacity="0"/>
+<stop stop-color="#222222" stop-opacity="0.1"/>
+<stop offset="1" stop-color="#222222" stop-opacity="0"/>
 </radialGradient>
 </defs>
 </svg>

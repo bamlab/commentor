@@ -72,7 +72,7 @@ function Home() {
                 "button button--lg button--primary",
                 styles.getStarted
               )}
-              to={useBaseUrl("docs/doc1")}
+              to={useBaseUrl("docs/repositoryAccess")}
             >
               {"Get Started".toUpperCase()}
             </Link>
@@ -94,6 +94,35 @@ function Home() {
             </div>
           </section>
         )}
+        <section className={styles.users}>
+          <div className="container">
+            <div className="text--center">
+              <h2>Trusted By</h2>
+            </div>
+            <div className={classnames("row")}>
+              <div
+                className="col col--6"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: "30px"
+                }}
+              >
+                <img src={useBaseUrl("img/logo-BAM-white.svg")} alt="BAM" />
+              </div>
+              <div
+                className="col col--6"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: "30px"
+                }}
+              >
+                <img src={useBaseUrl("img/logo-Theodo.svg")} alt="Theodo" />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </Layout>
   );

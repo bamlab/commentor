@@ -10,7 +10,7 @@ const features = [
   {
     title: <>Get started in 5min</>,
     imageUrl: "img/get-started.svg",
-    description: <>Authenticate through your favorite versionning platform</>
+    description: <>Authenticate through your favorite versioning platform</>
   },
   {
     title: (

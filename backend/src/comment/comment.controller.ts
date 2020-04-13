@@ -28,6 +28,7 @@ export class CommentController implements CrudController<Comment> {
     filters: FiltersType,
     @GithubRepositoriesFilter() filteredGithubRepositoriesIds: number[],
   ): Promise<Comment[]> {
+    console.log('Amo: CommentController -> constructor -> filters', filters);
     if (filteredGithubRepositoriesIds && filteredGithubRepositoriesIds.length > 0) {
       const startingDateFilter = isNil(filters.startingDate)
         ? FIRST_COMMENT_DATE
@@ -40,6 +41,7 @@ export class CommentController implements CrudController<Comment> {
         endingDate: endingDateFilter,
         requesterIds: filters.requesterIds,
         commentorIds: filters.commentorIds,
+        tagCodes: filters.tagCodes,
       });
     } else {
       return [];

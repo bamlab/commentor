@@ -195,4 +195,5 @@ export interface FiltersType {
   endingDate: Date | null;
   requesterIds: string[];
   commentorIds: string[];
+  tagCodes: string[];
 }

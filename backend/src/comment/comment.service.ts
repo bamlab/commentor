@@ -39,32 +39,38 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     endingDate,
     requesterIds,
     commentorIds,
+    tagCodes,
   }: {
     repositoriesIds: number[];
     startingDate: Date;
     endingDate: Date;
     requesterIds: string[];
     commentorIds: string[];
+    tagCodes: string[];
   }): Promise<Comment[]> => {
     const query = this.commentRepository.createQueryBuilder('comments');
     query
       .where('comments.repositoryId IN (:...arr)', { arr: repositoriesIds })
-      .andWhere('comments.creationDate BETWEEN :startingDate AND :endingDate', {
+      .where('comments.creationDate BETWEEN :startingDate AND :endingDate', {
         startingDate,
         endingDate,
       });
 
     if (requesterIds.length > 0) {
-      query.andWhere('comments.requester IN (:...requesters)', { requesters: requesterIds });
+      query.where('comments.requester IN (:...requesters)', { requesters: requesterIds });
     }
     if (commentorIds.length > 0) {
-      query.andWhere('comments.commentor IN (:...commentors)', { commentors: commentorIds });
+      query.where('comments.commentor IN (:...commentors)', { commentors: commentorIds });
     }
-
-    query.orderBy({
-      'comments.creationDate': 'ASC',
-    });
-
+    if (tagCodes.length > 0) {
+      query.where(`comments.body ILIKE '%${tagCodes[0]}%'`);
+      if (tagCodes.length > 1) {
+        tagCodes.shift();
+        tagCodes.forEach(item => {
+          query.orWhere(`comments.body ILIKE '%${item}%'`);
+        });
+      }
+    }
     const filteredComments = await query.getMany();
     return filteredComments;
   };

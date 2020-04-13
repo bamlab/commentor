@@ -65,6 +65,7 @@ const Home = React.memo<HomePropsType>(props => {
     loadTags,
     requesterIds,
     commentorIds,
+    tagCodes,
   } = props;
 
   const loadCommentsWithFilters = () =>
@@ -74,6 +75,7 @@ const Home = React.memo<HomePropsType>(props => {
       endingDate,
       requesterIds,
       commentorIds,
+      tagCodes,
     });
 
   useEffect(() => {

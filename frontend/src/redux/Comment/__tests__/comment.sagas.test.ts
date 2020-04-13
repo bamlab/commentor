@@ -14,6 +14,7 @@ const loadCommentsRequestAction = loadComments.request({
   startingDate: null,
   requesterIds: [],
   commentorIds: [],
+  tagCodes: [],
 });
 
 const comments = [

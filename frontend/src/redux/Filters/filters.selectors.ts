@@ -10,6 +10,7 @@ export const getSelectedRequesterIds = (store: RootState): string[] => store.fil
 export const getSelectedCommentords = (store: RootState): string[] => store.filters.commentorIds;
 
 export const getSelectedTagIds = (store: RootState): string[] => store.filters.tagIds;
+export const getSelectedTagCodes = (store: RootState): string[] => store.filters.tagCodes || [];
 
 export const getSelectedStartingDate = (store: RootState): Date | null => {
   if (isNil(store.filters.startingDate)) return null;

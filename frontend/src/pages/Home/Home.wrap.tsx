@@ -17,6 +17,7 @@ import {
   getSelectedEndingDate,
   getSelectedRequesterIds,
   getSelectedCommentords,
+  getSelectedTagCodes,
 } from 'redux/Filters';
 import { HomePropsType } from './Home.type';
 import { filterTags } from '../../redux/Tag/tag.adapter';
@@ -29,6 +30,7 @@ const mapStateToProps = (state: RootState) => ({
   repositoryIds: getSelectedRepositoryIds(state),
   requesterIds: getSelectedRequesterIds(state),
   commentorIds: getSelectedCommentords(state),
+  tagCodes: getSelectedTagCodes(state),
   filters: getFilters(state),
   startingDate: getSelectedStartingDate(state),
   endingDate: getSelectedEndingDate(state),
@@ -45,6 +47,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     endingDate: Date | null;
     requesterIds: string[];
     commentorIds: string[];
+    tagCodes: string[];
   }) =>
     dispatch(
       loadComments.request({

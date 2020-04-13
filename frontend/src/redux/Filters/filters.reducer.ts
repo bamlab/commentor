@@ -24,6 +24,7 @@ export type FiltersState = Readonly<{
   commentorIds: string[];
   startingDate: Date | string | null; // string if value comes from local Storage after persisting
   endingDate: Date | string | null; // string if value comes from local Storage after persisting
+  tagCodes: string[]; // Best effort keys
   tagIds: string[];
 }>;
 
@@ -33,6 +34,7 @@ const initialState: FiltersState = {
   commentorIds: [],
   startingDate: null,
   endingDate: null,
+  tagCodes: [],
   tagIds: [],
 };
 
@@ -57,6 +59,7 @@ const reducer = (state: FiltersState = initialState, action: AnyAction) => {
     case getType(selectTagIds.request):
       return {
         ...state,
+        tagCodes: typedAction.payload.tagIds.map(tag => tag.label),
         tagIds: typedAction.payload.tagIds.map(tag => tag.value),
       };
     case getType(selectStartingDate.request):

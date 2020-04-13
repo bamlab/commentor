@@ -55,6 +55,7 @@ describe('Comment reducer', () => {
         endingDate: new Date(),
         requesterIds: [],
         commentorIds: [],
+        tagCodes: [],
       });
       const expectedState = { ...initialState, isLoading: true };
 

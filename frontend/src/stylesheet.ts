@@ -2,7 +2,7 @@
  * App spacing measurement convention
  * Use the getSpacing function below to compute padding and margin
  */
-const SPACING_UNIT = 5;
+const SPACING_UNIT = 8;
 const MEASUREMENT_UNIT = 'px';
 
 /**

@@ -30,7 +30,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType, CommentType>[] =
     index: 0,
     key: 'body',
     name: 'Comment',
-    columnWidth: 34, // percentage
+    columnWidth: 32, // percentage
     renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, comment.body, style),
   },
@@ -38,7 +38,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType, CommentType>[] =
     index: 1,
     key: 'filePath',
     name: 'File',
-    columnWidth: 15,
+    columnWidth: 16,
     renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
       defaultCommentCellRenderer(key, comment.filePath, style),
   },
@@ -62,7 +62,7 @@ export const columnsConfig: ColumnType<CommentTableOptionsType, CommentType>[] =
     index: 4,
     key: 'creationDate',
     name: 'Creation Date',
-    columnWidth: 15,
+    columnWidth: 10,
     renderer: (key: string, comment: CommentType, style: Object): JSX.Element =>
       dateCellRenderer(key, comment, style),
   },

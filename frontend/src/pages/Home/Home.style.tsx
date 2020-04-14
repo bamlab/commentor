@@ -6,7 +6,7 @@ const GRAPHS_HEADER_HEIGHT = 386;
 export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: ${getSpacing(1.5)} ${getSpacing(3.5)} ${getSpacing(1.5)} ${getSpacing(3.5)};
+  padding: ${getSpacing(1.5)} ${getSpacing(3.5)} ${getSpacing(1.5)} ${getSpacing(3.5)};
 `;
 HomeContainer.displayName = 'HomeContainer';
 
@@ -103,7 +103,8 @@ export const PieChartAndLegendCard = styled.div`
   height: ${GRAPHS_HEADER_HEIGHT}px;
   margin: ${getSpacing(1.5)};
   flex: 2;
-  background-color: ${colorUsage.oddLineColor};
+  box-shadow: 0px 0px 6px ${colorUsage.shadow};
+  background-color: ${colorUsage.white};
 `;
 
 export const PieChartAndTitleContainer = styled.div`
@@ -124,7 +125,8 @@ export const BarChartContainer = styled.div`
   height: ${GRAPHS_HEADER_HEIGHT}px;
   margin: ${getSpacing(1.5)};
   flex: 3;
-  background-color: ${colorUsage.oddLineColor};
+  box-shadow: 0px 0px 6px ${colorUsage.shadow};
+  background-color: ${colorUsage.white};
 `;
 
 export const SelectRepositoryWrapper = styled.div``;

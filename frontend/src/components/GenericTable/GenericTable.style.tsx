@@ -2,12 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { fontFamily, colorUsage } from 'stylesheet';
 
-const getBackgroundColor = (index: number) => {
-  if (index === 0) return colorUsage.headerBackground;
-  if (index % 2 === 0) return colorUsage.oddLineColor;
-  if (index % 2 === 1) return colorUsage.evenLineColor;
-};
-
 export const Cell = styled.div`
   display: flex;
   align-items: center;
@@ -32,7 +26,7 @@ export const defaultCellRenderer = (key: string, value: string, style: Object): 
 export const STYLE = {
   border: '1px solid #ddd',
   backgroundColor: 'white',
-  borderRadius: '10px',
+  borderRadius: '5px',
   overflow: 'hidden',
 };
 
@@ -45,5 +39,4 @@ export const Wrapper = styled.div`
 export const getDefaultCellStyle = (style: Object, rowIndex: number): Object => ({
   ...style,
   wordBreak: 'break-word',
-  backgroundColor: getBackgroundColor(rowIndex),
 });

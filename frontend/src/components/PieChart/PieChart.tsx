@@ -30,9 +30,8 @@ const PieChart = React.memo<propTypes>(props => {
           height={350}
           width={350}
           theme={VictoryTheme.material}
-          innerRadius={20}
-          cornerRadius={5}
-          padAngle={5}
+          innerRadius={70}
+          padAngle={3}
           animate={{ duration: 1000 }}
           endAngle={angle}
           style={{

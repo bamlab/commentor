@@ -14,7 +14,7 @@ Using gitmoji as tags will allow you to use th native autocompletion on these em
 
 ![Github autocompletion][github-autocompletion]
 
-[github-autocompletion]: ../static/img/github-autocompletion.png "Use the native autocompletion of your favorite versioning platform"
+[github-autocompletion]: /img/github-autocompletion.png "Use the native autocompletion of your favorite versioning platform"
 
 :::
 

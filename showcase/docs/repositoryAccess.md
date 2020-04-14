@@ -31,7 +31,7 @@ Commentor needs to be able to get your available repositories in order to allow 
 
 ![user level permissions][github-app-user-permissions]
 
-[github-app-user-permissions]: ../static/img/github-app-user-permissions.png "Grant the read access to the repo you want to access to through commentor."
+[github-app-user-permissions]: /img/github-app-user-permissions.png "Grant the read access to the repo you want to access to through commentor."
 
 :::important
 
@@ -45,7 +45,7 @@ Commentor needs to collect the comment your team add while performing code revie
 
 ![repository level permissions][github-app-repository-permissions]
 
-[github-app-repository-permissions]: ../static/img/github-app-repository-permissions.png "Grant the read access to the repo you want to start tracking the comments from."
+[github-app-repository-permissions]: /img/github-app-repository-permissions.png "Grant the read access to the repo you want to start tracking the comments from."
 
 :::important
 

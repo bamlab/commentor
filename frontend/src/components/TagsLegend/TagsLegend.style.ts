@@ -4,9 +4,14 @@ import { fontFamily, fontSize } from 'stylesheet';
 export const TagsLegendContainer = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   width: 20%;
   align-items: flex-start;
+`;
+
+export const TagsLegendColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px 0px 10px;
 `;
 
 export const TagLegendItemContainer = styled.div`
@@ -23,9 +28,9 @@ export const TagCode = styled.p`
 `;
 
 export const ColorDot = styled.div`
-  border-radius: 10px;
-  height: 20px;
-  width: 20px;
+  border-radius: 6px;
+  height: 12px;
+  width: 12px;
   margin: 0px 5px 0px 5px;
   background-color: ${({ color }) => color};
 `;

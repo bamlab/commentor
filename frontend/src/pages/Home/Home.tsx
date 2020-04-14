@@ -14,6 +14,10 @@ import {
   ChartsContainer,
   AuthenticatedPageContainer,
   FilterButtonContainer,
+  BarChartContainer,
+  PieChartAndLegendCard,
+  PieChartAndTitleContainer,
+  ChartTitle,
 } from './Home.style';
 import TagsLegend from 'components/TagsLegend';
 import { GenericTable } from 'components/GenericTable/GenericTable';
@@ -130,12 +134,19 @@ const Home = React.memo<HomePropsType>(props => {
       ) : (
         <AuthenticatedPageContainer>
           <ChartsContainer>
-            {
-              // @ts-ignore
-              <BarChart data={barChartFormattedData} />
-            }
-            <TagsLegend tags={props.tags} />
-            <PieChart data={pieChartFormattedData} />
+            <BarChartContainer>
+              {
+                // @ts-ignore
+                <BarChart data={barChartFormattedData} />
+              }
+            </BarChartContainer>
+            <PieChartAndLegendCard>
+              <PieChartAndTitleContainer>
+                <ChartTitle>Total over the period</ChartTitle>
+                <PieChart data={pieChartFormattedData} />
+              </PieChartAndTitleContainer>
+              <TagsLegend tags={props.tags} />
+            </PieChartAndLegendCard>
           </ChartsContainer>
           <CommentTableContainer>
             <GenericTable<CommentTableOptionsType, CommentType>

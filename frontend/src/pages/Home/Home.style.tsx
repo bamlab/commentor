@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 import { fontFamily, fontSize, fontWeight, getSpacing, lineHeight, colorUsage } from 'stylesheet';
 
+const GRAPHS_HEADER_HEIGHT = 386;
+
 export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
+  padding: ${getSpacing(1.5)} ${getSpacing(3.5)} ${getSpacing(1.5)} ${getSpacing(3.5)};
 `;
 HomeContainer.displayName = 'HomeContainer';
 
@@ -18,7 +21,7 @@ GitHubAuthentContainer.displayName = 'GitHubAuthentContainer';
 export const CommentTableContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 ${getSpacing(4)};
+  padding: ${getSpacing(1.5)};
 `;
 CommentTableContainer.displayName = 'CommentTableContainer';
 
@@ -90,6 +93,40 @@ export const FilterButtonContainer = styled.div`
   position: fixed;
   right: 50%;
   bottom: 2%;
+`;
+
+export const PieChartAndLegendCard = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 5px;
+  height: ${GRAPHS_HEADER_HEIGHT}px;
+  margin: ${getSpacing(1.5)};
+  flex: 2;
+  box-shadow: 0px 0px 6px ${colorUsage.shadow};
+  background-color: ${colorUsage.white};
+`;
+
+export const PieChartAndTitleContainer = styled.div`
+  display: flex;
+  margin: ${getSpacing(1.5)};
+  flex-direction: column;
+`;
+
+export const ChartTitle = styled.p`
+  font-family: ${fontFamily.main};
+  font-weight: 600;
+`;
+
+export const BarChartContainer = styled.div`
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  height: ${GRAPHS_HEADER_HEIGHT}px;
+  margin: ${getSpacing(1.5)};
+  flex: 3;
+  box-shadow: 0px 0px 6px ${colorUsage.shadow};
+  background-color: ${colorUsage.white};
 `;
 
 export const SelectRepositoryWrapper = styled.div``;

@@ -27,14 +27,13 @@ const PieChart = React.memo<propTypes>(props => {
     <PieChartContainer>
       {props.data && props.data.length > 0 && (
         <VictoryPie
-          height={350}
-          width={350}
-          theme={VictoryTheme.material}
-          innerRadius={20}
-          cornerRadius={5}
-          padAngle={5}
+          height={300}
+          width={300}
+          innerRadius={55}
+          padAngle={3}
           animate={{ duration: 1000 }}
           endAngle={angle}
+          labels={() => ''}
           style={{
             labels: { ...ticksLabelsStyle },
             data: {

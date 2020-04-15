@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import { fontSize, getSpacing, colorUsage } from 'stylesheet';
 
-const HEADER_HEIGHT = 80;
+const HEADER_HEIGHT = 68;
 
 export const HeaderContainer = styled.header`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   background-color: white;
   height: ${HEADER_HEIGHT}px;

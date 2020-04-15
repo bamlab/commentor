@@ -21,6 +21,7 @@ import {
   FiltersContainer,
 } from './Home.style';
 import { RepositoryIdsMultiSelect } from 'components/RepositoryIdsMultiSelect';
+import { DateRangeFilterSelector } from 'components/DateRangeFilterSelector';
 import TagsLegend from 'components/TagsLegend';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import { CommentType } from 'redux/Comment';
@@ -137,6 +138,7 @@ const Home = React.memo<HomePropsType>(props => {
         <AuthenticatedPageContainer>
           <FiltersContainer>
             <RepositoryIdsMultiSelect placeholder="Select your project(s)..." />
+            <DateRangeFilterSelector />
           </FiltersContainer>
           <ChartsContainer>
             <BarChartContainer>

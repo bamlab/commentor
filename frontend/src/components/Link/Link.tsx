@@ -12,7 +12,6 @@ interface ILink {
   href?: string;
   to?: string;
   disabled?: boolean;
-  activeStyle?: Object;
 }
 
 const Link = styled.a<ILink>`

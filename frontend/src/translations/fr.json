@@ -1,10 +1,7 @@
 {
   "header": {
-    "login": "Connexion",
     "tag": "Tags",
-    "comment": "Retours",
-    "graph": "Graphiques",
-    "logout": "Déconnexion"
+    "dashboard": "Dashboard"
   },
   "home": {
     "welcome-message": "Bienvenue sur commentor !",

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { Dispatch } from 'redux';
 import { RootState } from 'redux/types';
-import Header from './Header';
+import { DateRangeFilterSelector as DateRangeFilterSelectorComponent } from './DateRangeFilterSelector';
 import { getSelectedStartingDate, getSelectedEndingDate } from '../../redux/Filters';
 import { selectStartingDate, selectEndingDate } from '../../redux/Filters/filters.actions';
 
@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
   setEndingDate: (date: Date | null) => dispatch(selectEndingDate.request({ endingDate: date })),
 });
 
-export default connect(
+export const DateRangeFilterSelector = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Header);
+)(DateRangeFilterSelectorComponent);

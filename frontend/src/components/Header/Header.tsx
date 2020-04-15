@@ -1,9 +1,8 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Link as RouterLink, NavLink, RouteComponentProps, withRouter } from 'react-router-dom';
+import { NavLink, RouteComponentProps, withRouter } from 'react-router-dom';
 import logo from 'assets/logo.svg';
 import Link from 'components/Link';
-import { RepositoryIdsMultiSelect } from 'components/RepositoryIdsMultiSelect';
 import { PATHS } from 'routes';
 import { Logo, HeaderContainer } from './Header.style';
 import DatePicker from 'react-datepicker';
@@ -22,7 +21,6 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = prop
     <Link as={NavLink} to={PATHS.HOME}>
       <FormattedMessage id="header.dashboard" />
     </Link>
-    <RepositoryIdsMultiSelect placeholder="Select your project(s)..." />
     <LabelledDatePickerContainer>
       <Text>Start Date</Text>
       <DatePickerContainer

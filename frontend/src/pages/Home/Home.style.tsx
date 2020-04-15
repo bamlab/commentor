@@ -95,6 +95,12 @@ export const FilterButtonContainer = styled.div`
   bottom: 2%;
 `;
 
+export const FiltersContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: ${getSpacing(1.5)};
+`;
+
 export const PieChartAndLegendCard = styled.div`
   display: flex;
   align-items: center;

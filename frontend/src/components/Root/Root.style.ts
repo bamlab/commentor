@@ -10,6 +10,5 @@ RootContainer.displayName = 'RootContainer';
 
 export const PageContent = styled.main`
   flex-grow: 1;
-  box-shadow: 0.5em -0.3em 10em ${colorUsage.headerBackground};
 `;
 PageContent.displayName = 'PageContent';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link as RouterLink, NavLink, RouteComponentProps, withRouter } from 'react-router-dom';
-import logo from 'assets/logo-text.svg';
+import logo from 'assets/logo.svg';
 import Link from 'components/Link';
 import { RepositoryIdsMultiSelect } from 'components/RepositoryIdsMultiSelect';
 import { PATHS } from 'routes';
@@ -18,9 +18,10 @@ type IHeaderProps = WrapperProps;
 
 const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = props => (
   <HeaderContainer>
-    <RouterLink to={PATHS.HOME}>
-      <Logo alt="Commentor" src={logo} />
-    </RouterLink>
+    <Logo alt="Commentor" src={logo} />
+    <Link as={NavLink} to={PATHS.HOME}>
+      <FormattedMessage id="header.dashboard" />
+    </Link>
     <RepositoryIdsMultiSelect placeholder="Select your project(s)..." />
     <LabelledDatePickerContainer>
       <Text>Start Date</Text>
@@ -42,7 +43,7 @@ const Header: React.FunctionComponent<RouteComponentProps & IHeaderProps> = prop
         isClearable
       />
     </LabelledDatePickerContainer>
-    <Link as={NavLink} to={PATHS.TAGS} activeStyle={{ color: 'red' }}>
+    <Link as={NavLink} to={PATHS.TAGS}>
       <FormattedMessage id="header.tag" />
     </Link>
   </HeaderContainer>

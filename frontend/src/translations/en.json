@@ -1,10 +1,7 @@
 {
   "header": {
-    "login": "Login",
     "tag": "Tags",
-    "comment": "Comments",
-    "graph": "Graphics",
-    "logout": "Logout"
+    "dashboard": "Dashboard"
   },
   "home": {
     "welcome-message": "Welcome on commentor !",

@@ -1,0 +1,96 @@
+.DateRangePickerInput {
+  display: flex !important;
+  height: 35px;
+  align-items: center;
+}
+
+.DateInput__small {
+  width: 60px;
+}
+
+.DateRangePickerInput_arrow {
+  z-index: 1;
+}
+
+.DateRangePickerInput_clearDates {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+}
+
+.DateInput_input__focused {
+  border-color: #8968ba;
+}
+
+.CalendarDay__selected {
+  background-color: #8968ba;
+  border-color: #8968ba;
+  color: #ffffff;
+}
+
+.CalendarDay__selected:hover {
+  background-color: #8968ba;
+  border-color: #8968ba;
+  color: #ffffff;
+}
+
+.CalendarDay__selected_span {
+  background-color: #c7b8de;
+  border-color: #c7b8de;
+  color: #ffffff;
+}
+
+.CalendarDay__selected_span:hover {
+  background-color: #8968ba;
+  border-color: #8968ba;
+  color: #ffffff;
+}
+
+.CalendarDay__hovered_span {
+  background-color: #c7b8de;
+  border-color: #c7b8de;
+  color: #ffffff;
+}
+
+.CalendarDay__hovered_span:hover {
+  background-color: #8968ba;
+  border-color: #8968ba;
+  color: #ffffff;
+}
+
+.CalendarDay__hovered {
+  background-color: #8968ba;
+  border-color: #8968ba;
+  color: #ffffff;
+}
+
+.CalendarDay {
+  border-width: 0 0 2px 0;
+  padding-top: 10px;
+  font-family: 'Muli';
+}
+
+.CalendarMonth_caption {
+  font-family: 'Muli';
+}
+
+.DayPicker_weekHeader_li {
+  font-family: 'Muli';
+}
+
+.PresetsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 20px 20px;
+}
+
+.PresetsButton {
+  font-family: 'Muli';
+}
+
+.PresetsButton:hover {
+  cursor: pointer;
+  background-color: #e4e7e7;
+}

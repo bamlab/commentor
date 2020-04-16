@@ -55,4 +55,4 @@ Commentor does **not** need access to your code, you can check that by reviewing
 
 ### Authenticate with Github on the platform
 
-Head to [Commentor Platform](https://commentor.netlify.com) and authenticate with Github.
+Head to [Commentor Platform](https://commentor.netlify.app) and authenticate with Github.

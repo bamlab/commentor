@@ -54,7 +54,7 @@ export const colorUsage = {
 };
 
 export const fontFamily = {
-  main: 'GillSans-Light',
+  main: 'Muli',
   code: 'Monospace',
 };
 

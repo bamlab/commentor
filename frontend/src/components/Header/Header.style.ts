@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontSize, getSpacing, colorUsage } from 'stylesheet';
+import { fontStyles, getSpacing, colorUsage } from 'stylesheet';
 
 const HEADER_HEIGHT = 68;
 
@@ -10,7 +10,9 @@ export const HeaderContainer = styled.header`
   background-color: white;
   height: ${HEADER_HEIGHT}px;
   padding: 0 ${getSpacing(1)};
-  font-size: ${fontSize.large};
+  font-size: ${fontStyles.title.fontSize};
+  font-weight: ${fontStyles.title.fontWeight};
+  font-size: ${fontStyles.title.fontSize};
   box-shadow: 0px 0px 6px ${colorUsage.shadow};
 `;
 

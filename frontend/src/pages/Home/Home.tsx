@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 import queryString from 'query-string';
 import {
@@ -13,7 +13,6 @@ import {
   GitHubAuthentContainer,
   ChartsContainer,
   AuthenticatedPageContainer,
-  FilterButtonContainer,
   BarChartContainer,
   PieChartAndLegendCard,
   PieChartAndTitleContainer,
@@ -32,10 +31,9 @@ import TagsLegend from 'components/TagsLegend';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import { CommentType } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
-import { GoSync, GoBeaker } from 'react-icons/go';
+import { GoSync } from 'react-icons/go';
 import Button from 'components/Button';
 import Loader from 'components/Loader';
-import FilterModal from 'components/FilterModal';
 import BarChart from 'components/BarChart';
 import PieChart from 'components/PieChart';
 import { map, chain } from 'lodash';
@@ -92,8 +90,6 @@ const Home = React.memo<HomePropsType>(props => {
     },
     [isAuthenticated, loadRepositories],
   );
-
-  const [isFilterModalVisible, setFilterModalVisible] = useState(false);
 
   const pieChartFormattedData = chain(props.tags)
     .map((tag: TagType) => ({
@@ -184,16 +180,6 @@ const Home = React.memo<HomePropsType>(props => {
                 {props.isCommentLoading ? <Loader /> : <GoSync size={ICON_SIZE} />}
               </Button>
             </FloatingButtonContainer>
-            <FilterButtonContainer>
-              <Button onClick={() => setFilterModalVisible(true)}>
-                <GoBeaker size={ICON_SIZE} />
-              </Button>
-            </FilterButtonContainer>
-            <FilterModal
-              id="FilterModal"
-              isOpen={isFilterModalVisible}
-              closeFilterModal={() => setFilterModalVisible(false)}
-            />
           </CommentTableContainer>
         </AuthenticatedPageContainer>
       )}

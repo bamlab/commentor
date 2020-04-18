@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { fontFamily, colorUsage } from 'stylesheet';
+import { fontStyles } from 'stylesheet';
 
 export const Cell = styled.div`
   display: flex;
@@ -12,7 +12,9 @@ export const Cell = styled.div`
 
 export const StandardTextContainer = styled.div`
   padding: 10px;
-  font-family: ${fontFamily.main};
+  font-family: ${fontStyles.regular.fontFamily};
+  font-weight: ${fontStyles.regular.fontWeight};
+  font-size: ${fontStyles.regular.fontSize};
 `;
 
 export const defaultCellRenderer = (key: string, value: string, style: Object): JSX.Element => {

@@ -30,7 +30,7 @@ export const LoaderContainer = styled.div`
     position: absolute;
     width: 5px;
     height: 5px;
-    background: ${colorUsage.loaderColorDefault};
+    background: ${colorUsage.highlight};
     border-radius: 50%;
     animation: ${loaderAnimation} 1.2s linear infinite;
   }

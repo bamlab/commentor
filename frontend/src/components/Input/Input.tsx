@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { borderRadius, colorUsage, fontFamily, fontSize, getSpacing } from 'stylesheet';
+import { borderRadius, colorUsage, fontStyles, getSpacing } from 'stylesheet';
 
 const getBorderColor = (originalColor: string, hasError?: boolean): string =>
   hasError ? colorUsage.error : originalColor;
@@ -9,26 +9,27 @@ interface Props {
 }
 
 const Input = styled.input<Props>`
-  font-family: ${fontFamily.main};
-  font-size: ${fontSize.medium};
+  font-family: ${fontStyles.regular.fontFamily};
+  font-size: ${fontStyles.regular.fontSize};
+  font-weight: ${fontStyles.regular.fontWeight};
   width: 100%;
   height: 60px;
-  background-color: ${colorUsage.inputBackground};
+  background-color: ${colorUsage.background};
   padding: 0 ${getSpacing(3)};
-  border-radius: ${borderRadius.medium};
+  border-radius: ${borderRadius};
   border: 1px solid;
-  border-color: ${props => getBorderColor(colorUsage.inputBorderColor, props.hasError)};
+  border-color: ${props => getBorderColor(colorUsage.lines, props.hasError)};
 
   :hover {
-    border-color: ${props => getBorderColor(colorUsage.primaryTextColor, props.hasError)};
+    border-color: ${props => getBorderColor(colorUsage.lines, props.hasError)};
   }
 
   :focus {
-    border-color: ${props => getBorderColor(colorUsage.primary, props.hasError)};
+    border-color: ${props => getBorderColor(colorUsage.lines, props.hasError)};
   }
 
   ::placeholder {
-    color: ${colorUsage.inputPlaceholderColor};
+    color: ${colorUsage.placeHolderText};
   }
 `;
 Input.displayName = 'Input';

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontFamily, fontSize, fontWeight, getSpacing, lineHeight, colorUsage } from 'stylesheet';
+import { fontStyles, getSpacing, colorUsage } from 'stylesheet';
 
 const GRAPHS_HEADER_HEIGHT = 386;
 
@@ -47,10 +47,9 @@ export const Logo = styled.img`
 Logo.displayName = 'Logo';
 
 export const WelcomeMessage = styled.div`
-  font-weight: ${fontWeight.bold};
-  font-family: ${fontFamily.main};
-  font-size: ${fontSize.large};
-  line-height: ${lineHeight.medium};
+  font-family: ${fontStyles.title.fontFamily};
+  font-weight: ${fontStyles.title.fontWeight};
+  font-size: ${fontStyles.title.fontSize};
   margin-bottom: ${getSpacing(12)};
 `;
 
@@ -59,9 +58,9 @@ export const GithubAuthentButton = styled.div`
   align-items: center;
   flex-direction: row;
   display: flex;
-  background-color: ${colorUsage.primaryTextColor};
+  background-color: ${colorUsage.text};
   :hover {
-    background-color: ${colorUsage.black};
+    background-color: black;
   }
   padding: ${getSpacing(4)};
   cursor: pointer;
@@ -76,22 +75,15 @@ export const GithubLogo = styled.img`
 `;
 
 export const GithubAuthentButtonText = styled.p`
-  font-weight: ${fontWeight.bold};
-  font-family: ${fontFamily.main};
-  font-size: ${fontSize.large};
-  line-height: ${lineHeight.medium};
-  color: ${colorUsage.white};
+  font-family: ${fontStyles.title.fontFamily};
+  font-weight: ${fontStyles.title.fontWeight};
+  font-size: ${fontStyles.title.fontSize};
+  color: white;
 `;
 
 export const FloatingButtonContainer = styled.div`
   position: fixed;
   right: 2%;
-  bottom: 2%;
-`;
-
-export const FilterButtonContainer = styled.div`
-  position: fixed;
-  right: 50%;
   bottom: 2%;
 `;
 
@@ -106,17 +98,18 @@ export const FiltersContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: ${colorUsage.white};
+  background-color: white;
   margin: 0 ${getSpacing(1.5)} 0 ${getSpacing(1.5)};
-  padding: ${getSpacing(1.5)};
+  padding: ${getSpacing(1)};
   border: 1px solid #ddd;
   border-radius: 4px;
 `;
 
 export const FiltersPrefix = styled.p`
-  font-family: ${fontFamily.main};
+  font-family: ${fontStyles.regular.fontFamily};
+  font-weight: ${fontStyles.regular.fontWeight};
+  font-size: ${fontStyles.regular.fontSize};
   margin-right: ${getSpacing(1.5)};
-  font-weight: ${fontWeight.light};
 `;
 
 export const FilterSpacer = styled.div`
@@ -132,7 +125,7 @@ export const PieChartAndLegendCard = styled.div`
   margin: ${getSpacing(1.5)};
   flex: 2;
   box-shadow: 0px 0px 6px ${colorUsage.shadow};
-  background-color: ${colorUsage.white};
+  background-color: white;
 `;
 
 export const PieChartAndTitleContainer = styled.div`
@@ -142,8 +135,9 @@ export const PieChartAndTitleContainer = styled.div`
 `;
 
 export const ChartTitle = styled.p`
-  font-family: ${fontFamily.main};
-  font-weight: 600;
+  font-family: ${fontStyles.bold.fontFamily};
+  font-weight: ${fontStyles.bold.fontWeight};
+  font-size: ${fontStyles.bold.fontSize};
 `;
 
 export const BarChartContainer = styled.div`
@@ -154,7 +148,7 @@ export const BarChartContainer = styled.div`
   margin: ${getSpacing(1.5)};
   flex: 3;
   box-shadow: 0px 0px 6px ${colorUsage.shadow};
-  background-color: ${colorUsage.white};
+  background-color: white;
 `;
 
 export const SelectRepositoryWrapper = styled.div``;

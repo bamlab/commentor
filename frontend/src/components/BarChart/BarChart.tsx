@@ -8,7 +8,7 @@ import {
   VictoryStack,
   VictoryLabel,
 } from 'victory';
-import { colorUsage, fontFamily, fontSize } from 'stylesheet';
+import { colorUsage, fontStyles } from 'stylesheet';
 import { map, chain } from 'lodash';
 import { TagType } from 'redux/Tag';
 
@@ -18,9 +18,8 @@ interface propTypes {
 
 const BarChart = React.memo<propTypes>(props => {
   const ticksLabelsStyle = {
-    fill: colorUsage.primaryTextColor,
-    fontSize: fontSize.XSmall,
-    fontFamily: fontFamily.main,
+    fill: colorUsage.text,
+    ...fontStyles.small,
   };
 
   return (
@@ -38,7 +37,7 @@ const BarChart = React.memo<propTypes>(props => {
             style={{
               axis: { stroke: 'none' },
               tickLabels: ticksLabelsStyle,
-              grid: { stroke: colorUsage.barChartGrid },
+              grid: { stroke: colorUsage.lines },
             }}
           />
           <VictoryAxis
@@ -51,7 +50,7 @@ const BarChart = React.memo<propTypes>(props => {
             tickLabelComponent={<VictoryLabel angle={-60} />}
             style={{
               tickLabels: { ...ticksLabelsStyle },
-              grid: { stroke: colorUsage.barChartGrid },
+              grid: { stroke: colorUsage.lines },
             }}
           />
           <VictoryStack>

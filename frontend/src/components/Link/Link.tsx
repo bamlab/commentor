@@ -1,10 +1,11 @@
-import styled, { css } from 'styled-components';
-import { borderRadius, colorUsage, getSpacing, fontStyles } from 'stylesheet';
+import styled from 'styled-components';
+import { colorUsage, getSpacing, fontStyles } from 'stylesheet';
 
 interface ILink {
   href?: string;
   to?: string;
-  disabled?: boolean;
+  activeStyle?: Object;
+  isActive?: (match: any, location: any) => boolean;
 }
 
 const Link = styled.p<ILink>`
@@ -12,21 +13,11 @@ const Link = styled.p<ILink>`
   font-weight: ${fontStyles.bold.fontWeight};
   font-family: ${fontStyles.bold.fontFamily};
   font-size: ${fontStyles.bold.fontSize};
-  color: ${props => (props.disabled ? colorUsage.disabled : colorUsage.text)};
+  color: ${colorUsage.placeHolderText};
   transition: color 0.3s ease-in-out;
-
-  cursor: ${props => (props.disabled ? 'default' : 'pointer')};
-  ${props =>
-    props.disabled &&
-    css`
-      pointer-events: none;
-    `}
-
-  border: none;
-  border-radius: ${borderRadius};
-
+  cursor: 'pointer';
   :hover {
-    color: ${props => (props.disabled ? colorUsage.disabled : colorUsage.highlight)};
+    color: ${colorUsage.text};
   }
 `;
 

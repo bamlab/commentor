@@ -9,7 +9,7 @@ import {
   VictoryLabel,
 } from 'victory';
 import { colorUsage, fontStyles } from 'stylesheet';
-import { map, chain } from 'lodash';
+import { map, chain, sortBy } from 'lodash';
 import { TagType } from 'redux/Tag';
 
 interface propTypes {
@@ -22,14 +22,16 @@ const BarChart = React.memo<propTypes>(props => {
     ...fontStyles.small,
   };
 
+  const data = sortBy(props.data, 'x');
+
   return (
     <BarChartContainer>
-      {props.data && props.data.length > 0 && (
+      {data && data.length > 0 && (
         <VictoryChart theme={VictoryTheme.material} domainPadding={10} height={350} width={800}>
           <VictoryAxis
             dependentAxis
             tickCount={Math.max(
-              ...chain(props.data)
+              ...chain(data)
                 .countBy('x')
                 .map((countByDate: number) => countByDate)
                 .value(),
@@ -42,7 +44,7 @@ const BarChart = React.memo<propTypes>(props => {
           />
           <VictoryAxis
             tickCount={
-              chain(props.data)
+              chain(data)
                 .map('x')
                 .uniq()
                 .value().length
@@ -50,12 +52,11 @@ const BarChart = React.memo<propTypes>(props => {
             tickLabelComponent={<VictoryLabel angle={-60} />}
             style={{
               tickLabels: { ...ticksLabelsStyle },
-              grid: { stroke: colorUsage.lines },
             }}
           />
           <VictoryStack>
             {map(
-              props.data,
+              data,
               (barChartItem: { x: number | string; y: number; y0: number; tag: TagType }) => {
                 return (
                   <VictoryBar

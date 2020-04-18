@@ -135,9 +135,9 @@ export const PieChartAndTitleContainer = styled.div`
 `;
 
 export const ChartTitle = styled.p`
-  font-family: ${fontStyles.subTitle.fontFamily};
-  font-weight: ${fontStyles.subTitle.fontWeight};
-  font-size: ${fontStyles.subTitle.fontSize};
+  font-family: ${fontStyles.bold.fontFamily};
+  font-weight: ${fontStyles.bold.fontWeight};
+  font-size: ${fontStyles.bold.fontSize};
 `;
 
 export const BarChartContainer = styled.div`

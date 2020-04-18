@@ -11,10 +11,10 @@ import 'react-datepicker/dist/react-datepicker.css';
 const Header: React.FunctionComponent<RouteComponentProps> = () => (
   <HeaderContainer>
     <Logo alt="Commentor" src={logo} />
-    <Link as={NavLink} to={PATHS.HOME}>
+    <Link as={NavLink} style={{ textDecoration: 'none' }} to={PATHS.HOME}>
       <FormattedMessage id="header.dashboard" />
     </Link>
-    <Link as={NavLink} to={PATHS.TAGS}>
+    <Link as={NavLink} style={{ textDecoration: 'none' }} to={PATHS.TAGS}>
       <FormattedMessage id="header.tag" />
     </Link>
   </HeaderContainer>

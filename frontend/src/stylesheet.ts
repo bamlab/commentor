@@ -37,7 +37,7 @@ export const fontStyles = {
   },
   subTitle: {
     fontFamily,
-    fontWeight: 600,
+    fontWeight: 800,
     fontSize: '24px',
   },
   small: {
@@ -47,12 +47,12 @@ export const fontStyles = {
   },
   regular: {
     fontFamily,
-    fontWeight: 300,
+    fontWeight: 400,
     fontSize: '16px',
   },
   bold: {
     fontFamily,
-    fontWeight: 600,
+    fontWeight: 700,
     fontSize: '16px',
   },
 };

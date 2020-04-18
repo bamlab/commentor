@@ -8,7 +8,7 @@ interface ILink {
 }
 
 const Link = styled.p<ILink>`
-  padding: ${getSpacing(2)} ${getSpacing(4)};
+  padding: ${getSpacing(2)} ${getSpacing(4)} ${getSpacing(2)} 0;
   font-weight: ${fontStyles.bold.fontWeight};
   font-family: ${fontStyles.bold.fontFamily};
   font-size: ${fontStyles.bold.fontSize};

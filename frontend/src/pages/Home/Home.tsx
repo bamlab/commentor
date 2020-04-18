@@ -18,9 +18,15 @@ import {
   PieChartAndLegendCard,
   PieChartAndTitleContainer,
   ChartTitle,
+  FiltersHeader,
+  FilterSpacer,
+  FiltersPrefix,
   FiltersContainer,
 } from './Home.style';
 import { RepositoryIdsMultiSelect } from 'components/RepositoryIdsMultiSelect';
+import { RequesterMultiSelect } from 'components/RequesterMultiSelect';
+import { CommentorMultiSelect } from 'components/CommentorMultiSelect';
+import { TagMultiSelect } from 'components/TagMultiSelect';
 import { DateRangeFilterSelector } from 'components/DateRangeFilterSelector';
 import TagsLegend from 'components/TagsLegend';
 import { GenericTable } from 'components/GenericTable/GenericTable';
@@ -136,10 +142,19 @@ const Home = React.memo<HomePropsType>(props => {
         </GitHubAuthentContainer>
       ) : (
         <AuthenticatedPageContainer>
-          <FiltersContainer>
-            <RepositoryIdsMultiSelect placeholder="Select your project(s)..." />
+          <FiltersHeader>
             <DateRangeFilterSelector />
-          </FiltersContainer>
+            <FiltersContainer>
+              <FiltersPrefix>Filter by :</FiltersPrefix>
+              <RepositoryIdsMultiSelect placeholder="Projects" />
+              <FilterSpacer />
+              <TagMultiSelect placeholder="Tags" />
+              <FilterSpacer />
+              <RequesterMultiSelect placeholder="Requester" />
+              <FilterSpacer />
+              <CommentorMultiSelect placeholder="Commentors" />
+            </FiltersContainer>
+          </FiltersHeader>
           <ChartsContainer>
             <BarChartContainer>
               {

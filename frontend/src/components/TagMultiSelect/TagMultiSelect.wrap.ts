@@ -10,10 +10,13 @@ import { RootState } from 'redux/types';
 import { getSelectedTagIds } from 'redux/Filters';
 import { getTags } from 'redux/Tag';
 import { selectTagIds } from '../../redux/Filters/filters.actions';
+import tagIcon from './assets/tag-icon.svg';
 
 const mapStateToProps = (state: RootState) => ({
   selectedOptions: adaptSelectedTagsFromIds(getSelectedTagIds(state), getTags(state)),
   options: adaptTagToMultiSelectOptions(getTags(state)),
+  icon: tagIcon,
+  title: 'Tag',
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

@@ -10,6 +10,7 @@ import { RootState } from 'redux/types';
 import { getSelectedCommentords } from 'redux/Filters';
 import { getAvailableCommentorsFromComments } from 'redux/Comment';
 import { selectCommentorIds } from '../../redux/Filters/filters.actions';
+import userIcon from './assets/user-icon.svg';
 
 const mapStateToProps = (state: RootState) => ({
   selectedOptions: adaptSelectedCommentorsFromIds(
@@ -17,6 +18,8 @@ const mapStateToProps = (state: RootState) => ({
     getAvailableCommentorsFromComments(state),
   ),
   options: adaptCommentorToMultiSelectOptions(getAvailableCommentorsFromComments(state)),
+  icon: userIcon,
+  title: 'Commentor',
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

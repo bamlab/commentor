@@ -95,9 +95,31 @@ export const FilterButtonContainer = styled.div`
   bottom: 2%;
 `;
 
+export const FiltersHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: ${getSpacing(1.5)};
+`;
+
 export const FiltersContainer = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  background-color: ${colorUsage.white};
+  margin: 0 ${getSpacing(1.5)} 0 ${getSpacing(1.5)};
+  padding: ${getSpacing(1.5)};
+  border: 1px solid #ddd;
+  border-radius: 4px;
+`;
+
+export const FiltersPrefix = styled.p`
+  font-family: ${fontFamily.main};
+  margin-right: ${getSpacing(1.5)};
+  font-weight: ${fontWeight.light};
+`;
+
+export const FilterSpacer = styled.div`
   margin: ${getSpacing(1.5)};
 `;
 

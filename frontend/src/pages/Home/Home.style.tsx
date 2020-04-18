@@ -118,7 +118,6 @@ export const FilterSpacer = styled.div`
 
 export const PieChartAndLegendCard = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: row;
   border-radius: 5px;
   height: ${GRAPHS_HEADER_HEIGHT}px;
@@ -130,8 +129,16 @@ export const PieChartAndLegendCard = styled.div`
 
 export const PieChartAndTitleContainer = styled.div`
   display: flex;
-  margin: ${getSpacing(1.5)};
+  margin: ${getSpacing(3)};
   flex-direction: column;
+`;
+
+export const BarChartAndTitleContainer = styled.div`
+  margin: ${getSpacing(3)};
+`;
+
+export const TagsLegendContainer = styled.div`
+  margin: ${getSpacing(3)};
 `;
 
 export const ChartTitle = styled.p`
@@ -140,9 +147,9 @@ export const ChartTitle = styled.p`
   font-size: ${fontStyles.bold.fontSize};
 `;
 
-export const BarChartContainer = styled.div`
+export const BarChartCard = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
   border-radius: 5px;
   height: ${GRAPHS_HEADER_HEIGHT}px;
   margin: ${getSpacing(1.5)};

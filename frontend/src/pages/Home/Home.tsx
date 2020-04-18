@@ -13,9 +13,11 @@ import {
   GitHubAuthentContainer,
   ChartsContainer,
   AuthenticatedPageContainer,
-  BarChartContainer,
+  BarChartCard,
+  BarChartAndTitleContainer,
   PieChartAndLegendCard,
   PieChartAndTitleContainer,
+  TagsLegendContainer,
   ChartTitle,
   FiltersHeader,
   FilterSpacer,
@@ -152,18 +154,23 @@ const Home = React.memo<HomePropsType>(props => {
             </FiltersContainer>
           </FiltersHeader>
           <ChartsContainer>
-            <BarChartContainer>
-              {
-                // @ts-ignore
-                <BarChart data={barChartFormattedData} />
-              }
-            </BarChartContainer>
+            <BarChartCard>
+              <BarChartAndTitleContainer>
+                <ChartTitle># Tag over time</ChartTitle>
+                {
+                  // @ts-ignore
+                  <BarChart data={barChartFormattedData} />
+                }
+              </BarChartAndTitleContainer>
+            </BarChartCard>
             <PieChartAndLegendCard>
               <PieChartAndTitleContainer>
                 <ChartTitle>Total over the period</ChartTitle>
                 <PieChart data={pieChartFormattedData} />
               </PieChartAndTitleContainer>
-              <TagsLegend tags={props.tags} />
+              <TagsLegendContainer>
+                <TagsLegend tags={props.tags} />
+              </TagsLegendContainer>
             </PieChartAndLegendCard>
           </ChartsContainer>
           <CommentTableContainer>

@@ -10,7 +10,7 @@ This is the basic feature of Commentor. The principle is to define a set of reco
 
 :::tip
 
-Using gitmoji as tags will allow you to use th native autocompletion on these emojis on your favorite versioning platform.
+Using gitmoji as tags will allow you to use the native autocompletion on these emojis on your favorite versioning platform.
 
 ![Github autocompletion][github-autocompletion]
 

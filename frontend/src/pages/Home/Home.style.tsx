@@ -102,7 +102,7 @@ export const FiltersContainer = styled.div`
   align-items: center;
   background-color: ${colorUsage.white};
   margin: 0 ${getSpacing(1.5)} 0 ${getSpacing(1.5)};
-  padding: ${getSpacing(1.5)};
+  padding: ${getSpacing(1)};
   border: 1px solid #ddd;
   border-radius: 4px;
 `;

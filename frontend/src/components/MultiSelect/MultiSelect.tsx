@@ -42,9 +42,12 @@ export const MultiSelect = (props: PropsType) => {
   };
   return (
     <div>
-      <IconAndTitleContainer onClick={() => setIsSelectDisplayed(!isSelectDisplayed)}>
+      <IconAndTitleContainer
+        selected={isSelectDisplayed}
+        onClick={() => setIsSelectDisplayed(!isSelectDisplayed)}
+      >
         <Icon src={props.icon} />
-        <Title>{props.title}</Title>
+        <Title selected={isSelectDisplayed}>{props.title}</Title>
       </IconAndTitleContainer>
       {isSelectDisplayed && (
         <SelectWrapper>

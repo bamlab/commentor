@@ -11,6 +11,7 @@ const MEASUREMENT_UNIT = 'px';
  */
 const colorPalette = {
   greyLight: '#e0e0e0',
+  grey: '#c4c4c4',
   greyDark: '#595959',
   white: '#FFFFFF',
   black: '#000000',
@@ -30,6 +31,7 @@ const mainTheme = {
  * Ex: fill, border-color, background-color, color ...
  */
 export const colorUsage = {
+  grey: colorPalette.grey,
   white: colorPalette.white,
   black: colorPalette.black,
   barChartGrid: mainTheme.transparentPrimary,

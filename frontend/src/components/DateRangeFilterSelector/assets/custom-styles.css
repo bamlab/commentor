@@ -1,7 +1,7 @@
 .DateRangePickerInput {
   display: flex !important;
-  height: 35px;
   align-items: center;
+  border-radius: 4px;
 }
 
 .DateInput__small {

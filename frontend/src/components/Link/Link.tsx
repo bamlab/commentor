@@ -7,13 +7,11 @@ interface ILink {
   disabled?: boolean;
 }
 
-const Link = styled.a<ILink>`
+const Link = styled.p<ILink>`
   padding: ${getSpacing(2)} ${getSpacing(4)};
-
   font-weight: ${fontStyles.bold.fontWeight};
   font-family: ${fontStyles.bold.fontFamily};
   font-size: ${fontStyles.bold.fontSize};
-
   color: ${props => (props.disabled ? colorUsage.disabled : colorUsage.text)};
   transition: color 0.3s ease-in-out;
 

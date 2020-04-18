@@ -6,6 +6,7 @@ import {
   IconAndTitleContainer,
   Title,
   Icon,
+  Badge,
 } from './MultiSelect.style';
 import { fontFamily } from 'stylesheet';
 import { ISelectedOptionsType } from './MultiSelect.type';
@@ -43,9 +44,13 @@ export const MultiSelect = (props: PropsType) => {
   return (
     <div>
       <IconAndTitleContainer
+        hasSelectedOptions={props.selectedOptions && props.selectedOptions.length > 0}
         selected={isSelectDisplayed}
         onClick={() => setIsSelectDisplayed(!isSelectDisplayed)}
       >
+        {!props.isLoading && props.selectedOptions && props.selectedOptions.length > 0 && (
+          <Badge>{props.selectedOptions.length}</Badge>
+        )}
         <Icon src={props.icon} />
         <Title selected={isSelectDisplayed}>{props.title}</Title>
       </IconAndTitleContainer>

@@ -28,8 +28,10 @@ export const Title = styled.p<{ selected: boolean }>`
 export const Icon = styled.img`
   padding-right: 5px;
 `;
-export const IconAndTitleContainer = styled.div<{ selected: boolean }>`
-  background-color: ${props => (props.selected ? colorUsage.background : 'transparent')};
+export const IconAndTitleContainer = styled.div<{ selected: boolean; hasSelectedOptions: boolean }>`
+  position: relative;
+  background-color: ${props =>
+    props.selected || props.hasSelectedOptions ? colorUsage.background : 'transparent'};
   padding: ${getSpacing(1)};
   border-radius: 4px;
   display: flex;
@@ -38,4 +40,21 @@ export const IconAndTitleContainer = styled.div<{ selected: boolean }>`
     cursor: pointer;
     background-color: ${colorUsage.background};
   }
+`;
+
+export const Badge = styled.p`
+  position: absolute;
+  top: -${getSpacing(0.5)};
+  left: -${getSpacing(0.5)};
+  background-color: ${colorUsage.highlight};
+  font-family: ${fontStyles.small.fontFamily};
+  font-weight: ${fontStyles.small.fontWeight};
+  font-size: ${fontStyles.small.fontSize};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  width: 18px;
+  border-radius: 9px;
+  color: white;
 `;

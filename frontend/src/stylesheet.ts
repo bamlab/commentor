@@ -42,8 +42,8 @@ export const fontStyles = {
   },
   small: {
     fontFamily,
-    fontWeight: 300,
-    fontSize: '8px',
+    fontWeight: 400,
+    fontSize: '12px',
   },
   regular: {
     fontFamily,

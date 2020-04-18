@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontFamily, fontWeight, colorUsage, getSpacing } from 'stylesheet';
+import { fontStyles, colorUsage, getSpacing } from 'stylesheet';
 
 const DEFAULT_WIDTH = 300;
 
@@ -19,22 +19,23 @@ export const SelectModalOverlay = styled.div`
 `;
 
 export const Title = styled.p<{ selected: boolean }>`
-  font-family: ${fontFamily.main};
-  font-weight: ${fontWeight.light};
-  color: ${props => (props.selected ? colorUsage.black : colorUsage.grey)};
+  font-family: ${fontStyles.regular.fontFamily};
+  font-weight: ${fontStyles.regular.fontWeight};
+  font-size: ${fontStyles.regular.fontSize};
+  color: ${props => (props.selected ? colorUsage.text : colorUsage.placeHolderText)};
 `;
 
 export const Icon = styled.img`
   padding-right: 5px;
 `;
 export const IconAndTitleContainer = styled.div<{ selected: boolean }>`
-  background-color: ${props => (props.selected ? colorUsage.grey : colorUsage.white)};
+  background-color: ${props => (props.selected ? colorUsage.background : 'transparent')};
   padding: ${getSpacing(1)};
   border-radius: 4px;
   display: flex;
   flex-direction: row;
   :hover {
     cursor: pointer;
-    background-color: ${colorUsage.grey};
+    background-color: ${colorUsage.background};
   }
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontFamily, fontSize } from 'stylesheet';
+import { fontStyles } from 'stylesheet';
 
 export const TagsLegendContainer = styled.div`
   display: flex;
@@ -23,8 +23,9 @@ export const TagLegendItemContainer = styled.div`
 `;
 
 export const TagCode = styled.p`
-  font-family: ${fontFamily.main};
-  font-size: ${fontSize.medium};
+  font-family: ${fontStyles.regular.fontFamily};
+  font-weight: ${fontStyles.regular.fontWeight};
+  font-size: ${fontStyles.regular.fontSize};
 `;
 
 export const ColorDot = styled.div`

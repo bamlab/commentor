@@ -68,15 +68,15 @@ export const MultiSelect = (props: PropsType) => {
             isSearchable
             menuPortalTarget={document.body}
             styles={{
-              option: styles => ({ ...styles, fontFamily: fontFamily.main }),
-              control: styles => ({ ...styles, fontFamily: fontFamily.main }),
-              multiValue: styles => ({ ...styles, fontFamily: fontFamily.main }),
-              multiValueLabel: styles => ({ ...styles, fontFamily: fontFamily.main }),
-              noOptionsMessage: styles => ({ ...styles, fontFamily: fontFamily.main }),
-              menuList: styles => ({ ...styles, fontFamily: fontFamily.main }),
-              menu: styles => ({ ...styles, fontFamily: fontFamily.main }),
-              multiValueRemove: styles => ({ ...styles, fontFamily: fontFamily.main }),
-              menuPortal: styles => ({ ...styles, fontFamily: fontFamily.main }),
+              option: styles => ({ ...styles, fontFamily: fontFamily }),
+              control: styles => ({ ...styles, fontFamily: fontFamily }),
+              multiValue: styles => ({ ...styles, fontFamily: fontFamily }),
+              multiValueLabel: styles => ({ ...styles, fontFamily: fontFamily }),
+              noOptionsMessage: styles => ({ ...styles, fontFamily: fontFamily }),
+              menuList: styles => ({ ...styles, fontFamily: fontFamily }),
+              menu: styles => ({ ...styles, fontFamily: fontFamily }),
+              multiValueRemove: styles => ({ ...styles, fontFamily: fontFamily }),
+              menuPortal: styles => ({ ...styles, fontFamily: fontFamily }),
             }}
           />
         </SelectWrapper>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { PieChartContainer } from './PieChart.style';
-import { VictoryPie, VictoryTheme } from 'victory';
+import { VictoryPie } from 'victory';
 import { TagType } from 'redux/Tag';
-import { colorUsage, fontFamily, fontSize } from 'stylesheet';
+import { colorUsage, fontStyles } from 'stylesheet';
 
 interface propTypes {
   data: { x: number | string; y: number; tag: TagType }[];
@@ -12,9 +12,8 @@ const PieChart = React.memo<propTypes>(props => {
   const [angle, setAngle] = useState(0);
 
   const ticksLabelsStyle = {
-    fill: colorUsage.primaryTextColor,
-    fontSize: fontSize.XSmall,
-    fontFamily: fontFamily.main,
+    fill: colorUsage.text,
+    ...fontStyles.small,
   };
 
   useEffect(() => {

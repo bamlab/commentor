@@ -1,6 +1,6 @@
 import React from 'react';
 import { ToggleContainer, Spacer } from './Toggle.style';
-import { colorUsage, fontSize } from 'stylesheet';
+import { colorUsage, fontStyles } from 'stylesheet';
 import { FiPieChart, FiBarChart2 } from 'react-icons/fi';
 
 interface propTypes {
@@ -21,8 +21,10 @@ const Toggle: React.FunctionComponent<propTypes> = props => {
       <FiBarChart2
         style={{
           cursor: 'pointer',
-          fontSize: fontSize.XXLarge,
-          color: isSelected(props.firstOption) ? colorUsage.primary : colorUsage.primaryTextColor,
+          fontSize: fontStyles.title.fontSize,
+          fontFamily: fontStyles.title.fontFamily,
+          fontWeight: fontStyles.title.fontWeight,
+          color: isSelected(props.firstOption) ? colorUsage.highlight : colorUsage.text,
         }}
         onClick={selectFirstOption}
       />
@@ -30,8 +32,10 @@ const Toggle: React.FunctionComponent<propTypes> = props => {
       <FiPieChart
         style={{
           cursor: 'pointer',
-          fontSize: fontSize.XXLarge,
-          color: isSelected(props.secondOption) ? colorUsage.primary : colorUsage.primaryTextColor,
+          fontSize: fontStyles.title.fontSize,
+          fontFamily: fontStyles.title.fontFamily,
+          fontWeight: fontStyles.title.fontWeight,
+          color: isSelected(props.secondOption) ? colorUsage.highlight : colorUsage.text,
         }}
         onClick={selectSecondOption}
       />

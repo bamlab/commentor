@@ -1,12 +1,5 @@
 import styled, { css } from 'styled-components';
-import {
-  borderRadius,
-  colorUsage,
-  fontFamily,
-  fontWeight,
-  getSpacing,
-  lineHeight,
-} from 'stylesheet';
+import { borderRadius, colorUsage, getSpacing, fontStyles } from 'stylesheet';
 
 interface ILink {
   href?: string;
@@ -17,13 +10,11 @@ interface ILink {
 const Link = styled.a<ILink>`
   padding: ${getSpacing(2)} ${getSpacing(4)};
 
-  font-weight: ${fontWeight.bold};
-  font-family: ${fontFamily.main};
-  font-size: inherit;
-  line-height: ${lineHeight.medium};
-  text-decoration: none;
+  font-weight: ${fontStyles.bold.fontWeight};
+  font-family: ${fontStyles.bold.fontFamily};
+  font-size: ${fontStyles.bold.fontSize};
 
-  color: ${props => (props.disabled ? colorUsage.linkColorDisabled : colorUsage.linkColor)};
+  color: ${props => (props.disabled ? colorUsage.disabled : colorUsage.text)};
   transition: color 0.3s ease-in-out;
 
   cursor: ${props => (props.disabled ? 'default' : 'pointer')};
@@ -34,10 +25,10 @@ const Link = styled.a<ILink>`
     `}
 
   border: none;
-  border-radius: ${borderRadius.medium};
+  border-radius: ${borderRadius};
 
   :hover {
-    color: ${props => (props.disabled ? colorUsage.linkColorDisabled : colorUsage.linkColorHover)};
+    color: ${props => (props.disabled ? colorUsage.disabled : colorUsage.highlight)};
   }
 `;
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getSpacing, fontSize, colorUsage } from 'stylesheet';
+import { getSpacing, fontStyles, colorUsage } from 'stylesheet';
 
 export const ToggleContainer = styled.div`
   margin-top: ${getSpacing(5)};
@@ -12,6 +12,8 @@ export const ToggleContainer = styled.div`
 export const Spacer = styled.div`
   margin-right: ${getSpacing(5)};
   margin-left: ${getSpacing(5)};
-  font-size: ${fontSize.XXLarge};
-  color: ${colorUsage.primaryTextColor};
+  font-size: ${fontStyles.title.fontSize};
+  font-family: ${fontStyles.title.fontFamily};
+  font-weight: ${fontStyles.title.fontWeight};
+  color: ${colorUsage.text};
 `;

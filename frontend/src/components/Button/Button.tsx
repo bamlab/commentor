@@ -1,13 +1,5 @@
 import styled, { css } from 'styled-components';
-import {
-  borderRadius,
-  colorUsage,
-  fontFamily,
-  fontSize,
-  fontWeight,
-  getSpacing,
-  lineHeight,
-} from 'stylesheet';
+import { borderRadius, colorUsage, fontStyles, getSpacing } from 'stylesheet';
 
 interface IButton {
   href?: string;
@@ -17,11 +9,9 @@ interface IButton {
 
 const Button = styled.button<IButton>`
   padding: ${getSpacing(2)} ${getSpacing(4)};
-
-  font-weight: ${fontWeight.bold};
-  font-family: ${fontFamily.main};
-  font-size: ${fontSize.medium};
-  line-height: ${lineHeight.medium};
+  font-family: ${fontStyles.bold.fontFamily};
+  font-weight: ${fontStyles.bold.fontWeight};
+  font-size: ${fontStyles.bold.fontSize};
 
   cursor: ${props => (props.disabled ? 'default' : 'pointer')};
   ${props =>
@@ -31,23 +21,13 @@ const Button = styled.button<IButton>`
     `}
 
   border: none;
-  border-radius: ${borderRadius.large};
+  border-radius: ${borderRadius};
 
   text-decoration: none;
 
-  color: ${colorUsage.primaryButtonColor};
-  background-color: ${props =>
-    props.disabled
-      ? colorUsage.primaryButtonBackgroundDisabled
-      : colorUsage.primaryButtonBackground};
+  color: ${colorUsage.text};
+  background-color: ${props => (props.disabled ? colorUsage.disabled : colorUsage.highlight)};
   transition: background-color 0.3s ease-in-out;
-
-  &:hover {
-    background-color: ${props =>
-      props.disabled
-        ? colorUsage.primaryButtonBackgroundDisabled
-        : colorUsage.primaryButtonBackgroundHover};
-  }
 `;
 
 export default Button;

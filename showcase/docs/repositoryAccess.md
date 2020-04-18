@@ -27,7 +27,8 @@ We plan to support shortly:
 
 ### Install Github App on your user account
 
-Commentor needs to be able to get your available repositories in order to allow you to select the one you want to analyze. The Github API let us ask for the repos a user has access to only if you have installed the Github app on your account.
+Commentor needs to be able to get your available repositories in order to allow you to select the one you want to analyze.
+Github is migrating many data accessible from its API to **Github Apps**. It's the **only way** for us to ask you for access to your repositories list **without** getting read access to your **code**. Therefore **you have to** install the [Commentor Github App](https://github.com/apps/commentor) on your personnal account before starting analyzing your comments.
 
 ![user level permissions][github-app-user-permissions]
 
@@ -56,3 +57,5 @@ Commentor does **not** need access to your code, you can check that by reviewing
 ### Authenticate with Github on the platform
 
 Head to [Commentor Platform](https://commentor.netlify.app) and authenticate with Github.
+
+You're all set and ready to start analyzing :)

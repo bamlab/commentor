@@ -39,14 +39,18 @@ const features = [
 function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={classnames("col col--4", styles.feature)}>
+    <div className={classnames(styles.featureContainer)}>
       {imgUrl && (
-        <div>
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
+        <div className={classnames(styles.featureImageContainer)}>
+          <img
+            className={classnames(styles.featureImage)}
+            src={imgUrl}
+            alt={title}
+          />
         </div>
       )}
       <h3 className={classnames(styles.featureTitle)}>{title}</h3>
-      <p>{description}</p>
+      <p className={classnames(styles.featureDescription)}>{description}</p>
     </div>
   );
 }
@@ -84,9 +88,22 @@ function Home() {
       </header>
       <main>
         {features && features.length && (
-          <section className={styles.features}>
+          <section className={classnames(styles.featuresSection)}>
             <div className="container">
-              <div className="row">
+              <div
+                className={classnames(styles.featureSectionSubtitleContainer)}
+              >
+                <div className={classnames(styles.featureSectionSubtitle)}>
+                  Commentor automates for you the analysis of your
+                </div>
+                <div className={classnames(styles.featureSectionSubtitle)}>
+                  code reviews so that you can focus on what you do
+                </div>
+                <div className={classnames(styles.featureSectionSubtitle)}>
+                  best: your code
+                </div>
+              </div>
+              <div className={classnames(styles.featuresList)}>
                 {features.map((props, idx) => (
                   <Feature key={idx} {...props} />
                 ))}

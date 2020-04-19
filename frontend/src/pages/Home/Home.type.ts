@@ -10,16 +10,7 @@ export type HomePropsType = {
   comments: CommentType[];
   tags: TagType[];
   loadTags: () => void;
-  loadComments: (
-    filters: {
-      repositoryIds: number[];
-      startingDate: Date | null;
-      endingDate: Date | null;
-      requesterIds: string[];
-      commentorIds: string[];
-      tagCodes: string[];
-    },
-  ) => void;
+  loadComments: () => void;
   isCommentLoading: boolean;
   repositoryIds: number[];
   requesterIds: string[];

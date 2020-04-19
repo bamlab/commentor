@@ -53,30 +53,7 @@ import { formatDateToDDMMYYYLined, formatDateToDDMMLined } from '../../services/
 const ICON_SIZE = 25;
 
 const Home = React.memo<HomePropsType>(props => {
-  const {
-    login,
-    location,
-    loadRepositories,
-    isAuthenticated,
-    loadComments,
-    repositoryIds,
-    startingDate,
-    endingDate,
-    loadTags,
-    requesterIds,
-    commentorIds,
-    tagCodes,
-  } = props;
-
-  const loadCommentsWithFilters = () =>
-    loadComments({
-      repositoryIds,
-      startingDate,
-      endingDate,
-      requesterIds,
-      commentorIds,
-      tagCodes,
-    });
+  const { login, location, loadRepositories, isAuthenticated, loadComments, loadTags } = props;
 
   useEffect(() => {
     const componentDidMount = async () => {
@@ -93,7 +70,7 @@ const Home = React.memo<HomePropsType>(props => {
       if (isAuthenticated) {
         loadTags();
         loadRepositories();
-        loadCommentsWithFilters();
+        loadComments();
       }
     },
     [isAuthenticated, loadRepositories],
@@ -150,19 +127,13 @@ const Home = React.memo<HomePropsType>(props => {
             <DateRangeFilterSelector />
             <FiltersContainer>
               <FiltersPrefix>Filter by :</FiltersPrefix>
-              <RepositoryIdsMultiSelect
-                placeholder="Projects"
-                refreshData={loadCommentsWithFilters}
-              />
+              <RepositoryIdsMultiSelect placeholder="Projects" refreshData={loadComments} />
               <FilterSpacer />
-              <TagMultiSelect placeholder="Tags" refreshData={loadCommentsWithFilters} />
+              <TagMultiSelect placeholder="Tags" refreshData={loadComments} />
               <FilterSpacer />
-              <RequesterMultiSelect placeholder="Requester" refreshData={loadCommentsWithFilters} />
+              <RequesterMultiSelect placeholder="Requester" refreshData={loadComments} />
               <FilterSpacer />
-              <CommentorMultiSelect
-                placeholder="Commentors"
-                refreshData={loadCommentsWithFilters}
-              />
+              <CommentorMultiSelect placeholder="Commentors" refreshData={loadComments} />
             </FiltersContainer>
           </FiltersHeader>
           <ChartsContainer>
@@ -194,7 +165,7 @@ const Home = React.memo<HomePropsType>(props => {
               defaultLineHeight={lineHeight}
             />
             <FloatingButtonContainer>
-              <Button disabled={props.isCommentLoading} onClick={() => loadCommentsWithFilters()}>
+              <Button disabled={props.isCommentLoading} onClick={() => loadComments()}>
                 {/* to refacto with Icon component */}
                 {props.isCommentLoading ? <Loader /> : <GoSync size={ICON_SIZE} />}
               </Button>

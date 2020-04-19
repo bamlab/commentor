@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { colorUsage } from 'stylesheet';
 
-export const StyledTags = styled.div`
+export const Container = styled.div`
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
 `;
 

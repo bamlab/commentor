@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FloatingButtonContainer } from './Tags.style';
 import Loader from 'components/Loader';
 import { GenericTable } from 'components/GenericTable/GenericTable';
-import { StyledTags, ErrorMessage } from './Tags.style';
+import { Container, ErrorMessage } from './Tags.style';
 import { TagType } from 'redux/Tag';
 import { columnsConfig, fixedColumnCount, lineHeight, TagTableOptionsType } from './columnsConfig';
 import Button from 'components/Button';
@@ -29,7 +29,7 @@ const Tags = React.memo<IProps>(props => {
   }, []);
 
   return (
-    <StyledTags>
+    <Container>
       <ErrorMessage>{props.errorMessage || ''}</ErrorMessage>
       <GenericTable<TagTableOptionsType, TagType>
         columnsConfig={columnsConfig}
@@ -62,7 +62,7 @@ const Tags = React.memo<IProps>(props => {
         isOpen={isDeleteTagModalOpen}
         closeRemoveTageModal={() => setDeleteTagModalValue(false)}
       />
-    </StyledTags>
+    </Container>
   );
 });
 

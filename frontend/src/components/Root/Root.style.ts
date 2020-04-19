@@ -9,5 +9,6 @@ RootContainer.displayName = 'RootContainer';
 
 export const PageContent = styled.main`
   flex-grow: 1;
+  display: flex;
 `;
 PageContent.displayName = 'PageContent';

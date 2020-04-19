@@ -17,11 +17,30 @@ export const StandardTextContainer = styled.div`
   font-size: ${fontStyles.regular.fontSize};
 `;
 
+export const HeaderTextContainer = styled(StandardTextContainer)`
+  font-weight: ${fontStyles.bold.fontWeight};
+  font-family: ${fontStyles.bold.fontFamily};
+  font-size: ${fontStyles.bold.fontSize};
+`;
+
+export const HeaderCell = styled(Cell)``;
 export const defaultCellRenderer = (key: string, value: string, style: Object): JSX.Element => {
   return (
     <Cell key={key} style={style}>
       <StandardTextContainer>{value}</StandardTextContainer>
     </Cell>
+  );
+};
+
+export const defaultHeaderCellRenderer = (
+  key: string,
+  value: string,
+  style: Object,
+): JSX.Element => {
+  return (
+    <HeaderCell key={key} style={style}>
+      <HeaderTextContainer>{value}</HeaderTextContainer>
+    </HeaderCell>
   );
 };
 

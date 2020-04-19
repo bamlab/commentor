@@ -63,7 +63,7 @@ export class CommentService extends TypeOrmCrudService<Comment> {
       query.where('comments.commentor IN (:...commentors)', { commentors: commentorIds });
     }
     if (tagCodes.length > 0) {
-      query.where(`comments.body ILIKE '%${tagCodes[0]}%'`);
+      query.andWhere(`comments.body ILIKE '%${tagCodes[0]}%'`);
       if (tagCodes.length > 1) {
         tagCodes.shift();
         tagCodes.forEach(item => {

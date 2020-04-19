@@ -4,12 +4,18 @@ import {
   version1InitialState,
   version2InitialState,
   version3InitialState,
+  version4InitialState,
 } from './initialStateHistory';
 import { CURRENT_STORE_VERSION } from './store';
 
 describe('it should apply correctly version state', () => {
   it('should match currentState', () => {
-    expect(CURRENT_STORE_VERSION).toEqual(3);
+    expect(CURRENT_STORE_VERSION).toEqual(4);
+  });
+
+  it('version 3 -> 4', () => {
+    const result = storeMigrations[4](version3InitialState);
+    expect(result).toEqual(version4InitialState);
   });
 
   it('version 2 -> 3', () => {

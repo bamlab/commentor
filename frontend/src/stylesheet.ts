@@ -40,6 +40,11 @@ export const fontStyles = {
     fontWeight: 800,
     fontSize: '24px',
   },
+  buttons: {
+    fontFamily,
+    fontWeight: 800,
+    fontSize: '18px',
+  },
   small: {
     fontFamily,
     fontWeight: 400,

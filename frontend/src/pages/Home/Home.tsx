@@ -1,16 +1,8 @@
 import React, { useEffect } from 'react';
-import { FormattedMessage } from 'react-intl';
-import queryString from 'query-string';
 import {
   HomeContainer,
-  Logo,
-  WelcomeMessage,
-  GithubLogo,
-  GithubAuthentButtonText,
-  GithubAuthentButton,
   FloatingButtonContainer,
   CommentTableContainer,
-  GitHubAuthentContainer,
   ChartsContainer,
   AuthenticatedPageContainer,
   BarChartCard,
@@ -39,6 +31,7 @@ import Loader from 'components/Loader';
 import BarChart from 'components/BarChart';
 import PieChart from 'components/PieChart';
 import { map, chain } from 'lodash';
+import Login from '../Login';
 import {
   fixedColumnCount,
   columnsConfig,
@@ -46,24 +39,12 @@ import {
   CommentTableOptionsType,
 } from './columnsConfig';
 import { HomePropsType } from './Home.type';
-import logo from 'assets/logo-text.svg';
-import githubLogo from 'assets/octocat.png';
 import { formatDateToDDMMYYYLined, formatDateToDDMMLined } from '../../services/date/dateFormatter';
 
 const ICON_SIZE = 25;
 
 const Home = React.memo<HomePropsType>(props => {
-  const { login, location, loadRepositories, isAuthenticated, loadComments, loadTags } = props;
-
-  useEffect(() => {
-    const componentDidMount = async () => {
-      const params = queryString.parse(location.search);
-      if (params.code && typeof params.code === 'string' && !isAuthenticated) {
-        await login(params.code);
-      }
-    };
-    componentDidMount();
-  }, []);
+  const { loadRepositories, isAuthenticated, loadComments, loadTags } = props;
 
   useEffect(
     () => {
@@ -103,24 +84,7 @@ const Home = React.memo<HomePropsType>(props => {
   return (
     <HomeContainer>
       {!isAuthenticated ? (
-        <GitHubAuthentContainer>
-          <Logo alt="commentorlogo" src={logo} />
-          <WelcomeMessage>
-            <FormattedMessage id="home.welcome-message" />
-          </WelcomeMessage>
-          <GithubAuthentButton
-            onClick={() => {
-              window.location.href = `https://github.com/login/oauth/authorize?client_id=${
-                process.env.REACT_APP_GITHUB_APP_CLIENT_ID
-              }`;
-            }}
-          >
-            <GithubLogo src={githubLogo} />
-            <GithubAuthentButtonText>
-              <FormattedMessage id="home.authenticate-via-github" />
-            </GithubAuthentButtonText>
-          </GithubAuthentButton>
-        </GitHubAuthentContainer>
+        <Login />
       ) : (
         <AuthenticatedPageContainer>
           <FiltersHeader>

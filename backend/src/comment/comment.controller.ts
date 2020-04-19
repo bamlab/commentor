@@ -4,23 +4,13 @@ import { isNil } from 'lodash';
 import { CommentEvent, FiltersType } from './interfaces/comment.dto';
 import { Comment } from './comment.entity';
 import { CommentService } from './comment.service';
-import { Crud, CrudController, Override } from '@nestjsx/crud';
 import { GithubRepositoriesFilter } from '../auth/decorators/githubRepositoriesFilter.decorator';
 
 const FIRST_COMMENT_DATE = new Date('November 03, 1994 09:24:00');
 
-@Crud({
-  model: {
-    type: Comment,
-  },
-})
 @Controller('comments')
-export class CommentController implements CrudController<Comment> {
+export class CommentController {
   constructor(public readonly service: CommentService) {}
-
-  get base(): CrudController<Comment> {
-    return this;
-  }
 
   @Post('filtered')
   async getFilteredComments(
@@ -47,7 +37,7 @@ export class CommentController implements CrudController<Comment> {
     }
   }
 
-  @Override()
+  @Post()
   createOne(@Body() commentEvent: CommentEvent) {
     return this.service.receiveCommentEvent({
       action: commentEvent.action,

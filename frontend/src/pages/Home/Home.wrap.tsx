@@ -3,7 +3,6 @@ import { compose, withProps } from 'recompose';
 import Home from './Home';
 import { loadRepositories } from 'redux/Repository/repository.actions';
 import { isAuthenticated } from 'redux/Authentication/authentication.selectors';
-import { login } from 'redux/Authentication/authentication.actions';
 import { RootState } from 'redux/types';
 import { Dispatch } from 'react';
 import { getTags } from 'redux/Tag/tag.selectors';
@@ -26,7 +25,6 @@ const mapStateToProps = (state: RootState) => ({
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   loadRepositories: () => dispatch(loadRepositories.request({})),
   loadTags: () => dispatch(loadTags.request({})),
-  login: (code: string) => dispatch(login.request({ code })),
   loadComments: () => dispatch(loadComments.request({})),
 });
 

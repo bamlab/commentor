@@ -3,28 +3,16 @@
     "tag": "Tags",
     "dashboard": "Dashboard"
   },
-  "home": {
-    "welcome-message": "Bienvenue sur commentor !",
-    "authenticate-via-github": "Connectez vous avec Github",
-    "select-repository-label": "Veuillez selectionner vos repos: "
-  },
-  "page": {
-    "back": "Retour",
-    "api-to-translate-example": "Ce message est traduit en utilisant directement l'API react-intl",
-    "fetch-github-avatar": "Affiche l'avatar github",
-    "add-github-username": "Entrer un username github"
-  },
+  "home": {},
   "tags": {
     "add-tag": "Ajouter un Tag",
     "update-tag": "Mettre à jour ce Tag",
     "delete-tag": "Supprimer Tag"
   },
   "login": {
-    "title": "Démarrer un projet en quelques secondes",
-    "login-button": "Connexion",
-    "email": "E-mail",
-    "email-placeholder": "ex: email@example.fr",
-    "password": "Mot de passe",
-    "password-placeholder": "xxxxxxxxxxx"
+    "title": "Connexion",
+    "description": "Authentifiez vous à l'aide de votre plate forme de versionning préférée pour commencer à analyser vos commentaires",
+    "authenticate-via-github": "Connexion Github",
+    "onboarding": "Commentor automatise la récupération et la classification de vos codes reviews pour que vous puissiez vous concentrer sur l'analyse"
   }
 }

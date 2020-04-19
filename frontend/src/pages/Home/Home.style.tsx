@@ -6,6 +6,7 @@ const GRAPHS_HEADER_HEIGHT = 386;
 export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   padding: ${getSpacing(1.5)} ${getSpacing(3.5)} ${getSpacing(1.5)} ${getSpacing(3.5)};
 `;
 HomeContainer.displayName = 'HomeContainer';

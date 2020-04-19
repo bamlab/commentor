@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import queryString from 'query-string';
 import {
   HomeContainer,
   FloatingButtonContainer,
@@ -45,17 +44,7 @@ import { formatDateToDDMMYYYLined, formatDateToDDMMLined } from '../../services/
 const ICON_SIZE = 25;
 
 const Home = React.memo<HomePropsType>(props => {
-  const { login, location, loadRepositories, isAuthenticated, loadComments, loadTags } = props;
-
-  useEffect(() => {
-    const componentDidMount = async () => {
-      const params = queryString.parse(location.search);
-      if (params.code && typeof params.code === 'string' && !isAuthenticated) {
-        await login(params.code);
-      }
-    };
-    componentDidMount();
-  }, []);
+  const { loadRepositories, isAuthenticated, loadComments, loadTags } = props;
 
   useEffect(
     () => {

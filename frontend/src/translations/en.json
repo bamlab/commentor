@@ -3,28 +3,16 @@
     "tag": "Tags",
     "dashboard": "Dashboard"
   },
-  "home": {
-    "welcome-message": "Welcome on commentor !",
-    "authenticate-via-github": "Login with Github",
-    "select-repository-label": "Select your repositories : "
-  },
-  "page": {
-    "back": "Back",
-    "api-to-translate-example": "This message is translated using directly react-intl API",
-    "fetch-github-avatar": "Show github avatar",
-    "add-github-username": "Enter a github username"
-  },
+  "home": {},
   "tags": {
     "add-tag": "Add Tag",
     "update-tag": "Update Tag",
     "delete-tag": "Delete Tag"
   },
   "login": {
-    "title": "Launch your project in seconds",
-    "login-button": "Connexion",
-    "email": "Email",
-    "email-placeholder": "ex: email@example.fr",
-    "password": "Password",
-    "password-placeholder": "xxxxxxxxxxx"
+    "title": "Log in",
+    "description": "Authenticate through your favorite versioning platform in order to see and analyse all your comments",
+    "authenticate-via-github": "Login with Github",
+    "onboarding": "Commentor automates for you the recuperation and the classification of your code reviews so that you can focus on the analysis"
   }
 }

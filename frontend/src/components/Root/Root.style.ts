@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colorUsage } from 'stylesheet';
 
 export const RootContainer = styled.div`
   display: flex;

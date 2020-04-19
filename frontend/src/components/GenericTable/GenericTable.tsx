@@ -1,7 +1,13 @@
 import * as React from 'react';
 import { AutoSizer, MultiGrid, CellMeasurer, CellMeasurerCache } from 'react-virtualized';
 import { ColumnType, OptionsType, GenericRowObjectType } from './GenericTable.type';
-import { STYLE, Wrapper, defaultCellRenderer, getDefaultCellStyle } from './GenericTable.style';
+import {
+  STYLE,
+  Wrapper,
+  defaultCellRenderer,
+  getDefaultCellStyle,
+  defaultHeaderCellRenderer,
+} from './GenericTable.style';
 
 interface PropsType<T extends OptionsType, O extends GenericRowObjectType> {
   values: O[];
@@ -36,7 +42,7 @@ export const GenericTable = <T extends OptionsType, O extends GenericRowObjectTy
 
   const renderRows = (columnIndex: number, key: string, rowIndex: number, style: Object) => {
     if (rowIndex === 0) {
-      return defaultCellRenderer(
+      return defaultHeaderCellRenderer(
         key,
         getHeaderRow()[columnIndex],
         getDefaultCellStyle(style, rowIndex),

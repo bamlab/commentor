@@ -49,18 +49,19 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     tagCodes: string[];
   }): Promise<Comment[]> => {
     const query = this.commentRepository.createQueryBuilder('comments');
+    console.log('Amo: CommentService -> repositoriesIds', repositoriesIds);
     query
-      .where('comments.repositoryId IN (:...arr)', { arr: repositoriesIds })
-      .where('comments.creationDate BETWEEN :startingDate AND :endingDate', {
+      .andWhere('comments.repositoryId IN (:...arr)', { arr: repositoriesIds })
+      .andWhere('comments.creationDate BETWEEN :startingDate AND :endingDate', {
         startingDate,
         endingDate,
       });
 
     if (requesterIds.length > 0) {
-      query.where('comments.requester IN (:...requesters)', { requesters: requesterIds });
+      query.andWhere('comments.requester IN (:...requesters)', { requesters: requesterIds });
     }
     if (commentorIds.length > 0) {
-      query.where('comments.commentor IN (:...commentors)', { commentors: commentorIds });
+      query.andWhere('comments.commentor IN (:...commentors)', { commentors: commentorIds });
     }
     if (tagCodes.length > 0) {
       query.andWhere(`comments.body ILIKE '%${tagCodes[0]}%'`);

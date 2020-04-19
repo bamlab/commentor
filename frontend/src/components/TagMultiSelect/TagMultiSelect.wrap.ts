@@ -2,18 +2,18 @@ import { connect } from 'react-redux';
 import {
   MultiSelect,
   adaptTagToMultiSelectOptions,
-  adaptSelectedTagsFromIds,
+  adaptSelectedTagsFromCodes,
 } from '../MultiSelect';
 import { ISelectedOptionsType } from '../MultiSelect/MultiSelect.type';
 import { Dispatch } from 'redux';
 import { RootState } from 'redux/types';
-import { getSelectedTagIds } from 'redux/Filters';
+import { getSelectedTagCodes } from 'redux/Filters';
 import { getTags } from 'redux/Tag';
-import { selectTagIds } from '../../redux/Filters/filters.actions';
+import { selectTagCodes } from '../../redux/Filters/filters.actions';
 import tagIcon from './assets/tag-icon.svg';
 
 const mapStateToProps = (state: RootState) => ({
-  selectedOptions: adaptSelectedTagsFromIds(getSelectedTagIds(state), getTags(state)),
+  selectedOptions: adaptSelectedTagsFromCodes(getSelectedTagCodes(state), getTags(state)),
   options: adaptTagToMultiSelectOptions(getTags(state)),
   icon: tagIcon,
   title: 'Tag',
@@ -21,7 +21,7 @@ const mapStateToProps = (state: RootState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   selectOptions: (selectedOptions: ISelectedOptionsType[]) =>
-    dispatch(selectTagIds.request({ tagIds: selectedOptions })),
+    dispatch(selectTagCodes.request({ tagCodes: selectedOptions })),
 });
 
 export const TagMultiSelect = connect(

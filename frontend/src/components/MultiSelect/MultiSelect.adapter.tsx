@@ -81,13 +81,13 @@ export const adaptTagToMultiSelectOptions = (tags: TagType[]): ISelectedOptionsT
     label: tag.code,
   }));
 
-export const adaptSelectedTagsFromIds = (
-  selectedTagIds: string[],
+export const adaptSelectedTagsFromCodes = (
+  selectedTagCodes: string[],
   tags: TagType[],
 ): ISelectedOptionsType[] => {
   let result: ISelectedOptionsType[] = [];
   tags.forEach(tag => {
-    if (selectedTagIds.includes(tag.id.toString())) {
+    if (selectedTagCodes.includes(tag.code)) {
       result.push({
         value: tag.id.toString(),
         label: tag.code,

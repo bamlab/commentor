@@ -59,6 +59,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 const withFilteredTags = withProps(
   (ownerProps: HomePropsType): HomePropsType => {
     const filteredTags = filterTags(ownerProps.tags, ownerProps.filters);
+
     return {
       ...ownerProps,
       tags: filteredTags,

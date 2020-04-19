@@ -39,8 +39,6 @@ const presets = [
 
 const renderDatePresets = (
   presets: { text: string; start: Moment; end: Moment }[],
-  startDate: Date | null,
-  endDate: Date | null,
   onDatesChange: (dateRange: { startDate: Moment; endDate: Moment }) => void,
 ) => {
   return (
@@ -71,8 +69,6 @@ export const DateRangeFilterSelector: React.FunctionComponent<
         renderCalendarInfo={() =>
           renderDatePresets(
             presets,
-            props.startingDate,
-            props.endingDate,
             ({ startDate, endDate }: { startDate: Moment; endDate: Moment }) => {
               props.setStartingDate(startDate ? startDate.toDate() : null);
               props.setEndingDate(endDate ? endDate.toDate() : null);

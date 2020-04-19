@@ -49,7 +49,6 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     tagCodes: string[];
   }): Promise<Comment[]> => {
     const query = this.commentRepository.createQueryBuilder('comments');
-    console.log('Amo: CommentService -> repositoriesIds', repositoriesIds);
     query
       .andWhere('comments.repositoryId IN (:...arr)', { arr: repositoriesIds })
       .andWhere('comments.creationDate BETWEEN :startingDate AND :endingDate', {

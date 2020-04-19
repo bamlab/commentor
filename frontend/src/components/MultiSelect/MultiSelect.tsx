@@ -62,12 +62,12 @@ export const MultiSelect = (props: PropsType) => {
   return (
     <div>
       <IconAndTitleContainer
-        hasSelectedOptions={locallySelectedOptions && locallySelectedOptions.length > 0}
+        hasSelectedOptions={props.selectedOptions && props.selectedOptions.length > 0}
         selected={isSelectDisplayed}
         onClick={toggleDropdown}
       >
-        {!props.isLoading && locallySelectedOptions && locallySelectedOptions.length > 0 && (
-          <Badge>{locallySelectedOptions.length}</Badge>
+        {!props.isLoading && props.selectedOptions && props.selectedOptions.length > 0 && (
+          <Badge>{props.selectedOptions.length}</Badge>
         )}
         <Icon src={props.icon} />
         <Title selected={isSelectDisplayed}>{props.title}</Title>

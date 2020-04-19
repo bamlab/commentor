@@ -35,20 +35,25 @@ type PropsType = {
 
 export const MultiSelect = (props: PropsType) => {
   const [isSelectDisplayed, setIsSelectDisplayed] = useState(false);
+  const [locallySelectedOptions, locallySelectOptions] = useState(props.selectedOptions);
+
   const selectOptions = (selectedOptions: any) => {
-    return props.selectOptions(selectedOptions || []);
+    return locallySelectOptions(selectedOptions || []);
   };
+
   const getOptions = (): ISelectedOptionsType[] => {
     if (props.isLoading) return [{ value: 'loading', label: '💭Loading...' }];
     return props.options;
   };
 
   const closeDropdown = () => {
+    props.selectOptions(locallySelectedOptions);
     setIsSelectDisplayed(false);
     props.refreshData();
   };
 
   const openDropdown = () => {
+    locallySelectOptions(props.selectedOptions);
     setIsSelectDisplayed(true);
   };
 
@@ -59,12 +64,12 @@ export const MultiSelect = (props: PropsType) => {
   return (
     <div>
       <IconAndTitleContainer
-        hasSelectedOptions={props.selectedOptions && props.selectedOptions.length > 0}
+        hasSelectedOptions={locallySelectedOptions && locallySelectedOptions.length > 0}
         selected={isSelectDisplayed}
         onClick={toggleDropdown}
       >
-        {!props.isLoading && props.selectedOptions && props.selectedOptions.length > 0 && (
-          <Badge>{props.selectedOptions.length}</Badge>
+        {!props.isLoading && locallySelectedOptions && locallySelectedOptions.length > 0 && (
+          <Badge>{locallySelectedOptions.length}</Badge>
         )}
         <Icon src={props.icon} />
         <Title selected={isSelectDisplayed}>{props.title}</Title>
@@ -75,7 +80,7 @@ export const MultiSelect = (props: PropsType) => {
           <Select
             menuIsOpen={true}
             autoFocus={true}
-            value={props.selectedOptions}
+            value={locallySelectedOptions}
             onChange={selectOptions}
             options={getOptions()}
             closeMenuOnSelect={false}

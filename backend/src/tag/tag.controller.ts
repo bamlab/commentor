@@ -1,21 +1,15 @@
-import { Controller, Body, Delete, Param, Put, Get } from '@nestjs/common';
+import { Controller, Body, Delete, Param, Put, Get, Post } from '@nestjs/common';
 import { GithubLogin } from '../auth/decorators/githubLogin.decorator';
 
 import { InputTag } from './interfaces/tag.dto';
 import { Tag as TagEntity } from './tag.entity';
 import { TagService } from './tag.service';
-import { Crud, CrudController, Override } from '@nestjsx/crud';
 
-@Crud({
-  model: {
-    type: TagEntity,
-  },
-})
 @Controller('tags')
-export class TagController implements CrudController<TagEntity> {
+export class TagController {
   constructor(public readonly service: TagService) {}
 
-  @Override()
+  @Post()
   createOne(@Body() inputTag: InputTag, @GithubLogin() githubLogin: string) {
     return this.service.createTag({
       code: inputTag.code,

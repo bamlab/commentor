@@ -53,8 +53,8 @@ export const MultiSelect = (props: PropsType) => {
   };
 
   const openDropdown = () => {
-    locallySelectOptions(props.selectedOptions);
     setIsSelectDisplayed(true);
+    locallySelectOptions(props.selectedOptions);
   };
 
   const toggleDropdown = () => {

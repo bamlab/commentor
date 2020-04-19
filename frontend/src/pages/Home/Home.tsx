@@ -150,13 +150,19 @@ const Home = React.memo<HomePropsType>(props => {
             <DateRangeFilterSelector />
             <FiltersContainer>
               <FiltersPrefix>Filter by :</FiltersPrefix>
-              <RepositoryIdsMultiSelect placeholder="Projects" />
+              <RepositoryIdsMultiSelect
+                placeholder="Projects"
+                refreshData={loadCommentsWithFilters}
+              />
               <FilterSpacer />
-              <TagMultiSelect placeholder="Tags" />
+              <TagMultiSelect placeholder="Tags" refreshData={loadCommentsWithFilters} />
               <FilterSpacer />
-              <RequesterMultiSelect placeholder="Requester" />
+              <RequesterMultiSelect placeholder="Requester" refreshData={loadCommentsWithFilters} />
               <FilterSpacer />
-              <CommentorMultiSelect placeholder="Commentors" />
+              <CommentorMultiSelect
+                placeholder="Commentors"
+                refreshData={loadCommentsWithFilters}
+              />
             </FiltersContainer>
           </FiltersHeader>
           <ChartsContainer>

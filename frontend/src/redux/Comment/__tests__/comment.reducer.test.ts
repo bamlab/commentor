@@ -49,11 +49,7 @@ describe('Comment reducer', () => {
 
   describe('USER_LOGIN_REQUESt case', () => {
     it('Should return an initial state loading true', () => {
-      const action = loadComments.request({
-        repositoryIds: [],
-        startingDate: new Date(),
-        endingDate: new Date(),
-      });
+      const action = loadComments.request({});
       const expectedState = { ...initialState, isLoading: true };
 
       expect(reducer(initialState, action)).toEqual(expectedState);

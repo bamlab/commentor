@@ -53,24 +53,7 @@ import { formatDateToDDMMYYYLined, formatDateToDDMMLined } from '../../services/
 const ICON_SIZE = 25;
 
 const Home = React.memo<HomePropsType>(props => {
-  const {
-    login,
-    location,
-    loadRepositories,
-    isAuthenticated,
-    loadComments,
-    repositoryIds,
-    startingDate,
-    endingDate,
-    loadTags,
-  } = props;
-
-  const loadCommentsWithFilters = () =>
-    loadComments({
-      repositoryIds: repositoryIds,
-      startingDate,
-      endingDate,
-    });
+  const { login, location, loadRepositories, isAuthenticated, loadComments, loadTags } = props;
 
   useEffect(() => {
     const componentDidMount = async () => {
@@ -87,7 +70,7 @@ const Home = React.memo<HomePropsType>(props => {
       if (isAuthenticated) {
         loadTags();
         loadRepositories();
-        loadCommentsWithFilters();
+        loadComments();
       }
     },
     [isAuthenticated, loadRepositories],
@@ -182,7 +165,7 @@ const Home = React.memo<HomePropsType>(props => {
               defaultLineHeight={lineHeight}
             />
             <FloatingButtonContainer>
-              <Button disabled={props.isCommentLoading} onClick={() => loadCommentsWithFilters()}>
+              <Button disabled={props.isCommentLoading} onClick={() => loadComments()}>
                 {/* to refacto with Icon component */}
                 {props.isCommentLoading ? <Loader /> : <GoSync size={ICON_SIZE} />}
               </Button>

@@ -49,13 +49,13 @@ export const selectCommentorIds = createAsyncAction(
   }
 >();
 
-export const selectTagIds = createAsyncAction(
-  'Filters/SELECT_TAG_IDS_REQUEST',
-  'Filters/SELECT_TAG_IDS_SUCCESS',
-  'Filters/SELECT_TAG_IDS_FAILURE',
+export const selectTagCodes = createAsyncAction(
+  'Filters/SELECT_TAG_CODES_REQUEST',
+  'Filters/SELECT_TAG_CODES_SUCCESS',
+  'Filters/SELECT_TAG_CODES_FAILURE',
 )<
   {
-    tagIds: ISelectedOptionsType[];
+    tagCodes: ISelectedOptionsType[];
   },
   {
     // not used
@@ -101,7 +101,7 @@ export default {
   selectRepositoryIds,
   selectRequesterIds,
   selectCommentorIds,
-  selectTagIds,
+  selectTagCodes,
   selectStartingDate,
   selectEndingDate,
 };

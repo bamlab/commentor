@@ -34,19 +34,37 @@ type PropsType = {
 
 export const MultiSelect = (props: PropsType) => {
   const [isSelectDisplayed, setIsSelectDisplayed] = useState(false);
+  const [locallySelectedOptions, locallySelectOptions] = useState(props.selectedOptions);
+
   const selectOptions = (selectedOptions: any) => {
-    return props.selectOptions(selectedOptions || []);
+    return locallySelectOptions(selectedOptions || []);
   };
+
   const getOptions = (): ISelectedOptionsType[] => {
     if (props.isLoading) return [{ value: 'loading', label: '💭Loading...' }];
     return props.options;
   };
+
+  const closeDropdown = () => {
+    props.selectOptions(locallySelectedOptions);
+    setIsSelectDisplayed(false);
+  };
+
+  const openDropdown = () => {
+    setIsSelectDisplayed(true);
+    locallySelectOptions(props.selectedOptions);
+  };
+
+  const toggleDropdown = () => {
+    isSelectDisplayed ? closeDropdown() : openDropdown();
+  };
+
   return (
     <div>
       <IconAndTitleContainer
         hasSelectedOptions={props.selectedOptions && props.selectedOptions.length > 0}
         selected={isSelectDisplayed}
-        onClick={() => setIsSelectDisplayed(!isSelectDisplayed)}
+        onClick={toggleDropdown}
       >
         {!props.isLoading && props.selectedOptions && props.selectedOptions.length > 0 && (
           <Badge>{props.selectedOptions.length}</Badge>
@@ -56,11 +74,11 @@ export const MultiSelect = (props: PropsType) => {
       </IconAndTitleContainer>
       {isSelectDisplayed && (
         <SelectWrapper>
-          <SelectModalOverlay onClick={() => setIsSelectDisplayed(false)} />
+          <SelectModalOverlay onClick={closeDropdown} />
           <Select
             menuIsOpen={true}
             autoFocus={true}
-            value={props.selectedOptions}
+            value={locallySelectedOptions}
             onChange={selectOptions}
             options={getOptions()}
             closeMenuOnSelect={false}

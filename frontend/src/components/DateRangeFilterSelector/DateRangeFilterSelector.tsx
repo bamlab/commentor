@@ -5,7 +5,6 @@ import 'react-dates/lib/css/_datepicker.css';
 import './assets/custom-styles.css';
 import { DateRangePicker } from 'react-dates';
 import calendarIcon from './assets/calendar-icon.svg';
-import dashIcon from './assets/dash.svg';
 import moment, { Moment } from 'moment';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -40,18 +39,11 @@ const presets = [
 
 const renderDatePresets = (
   presets: { text: string; start: Moment; end: Moment }[],
-  startDate: Date | null,
-  endDate: Date | null,
   onDatesChange: (dateRange: { startDate: Moment; endDate: Moment }) => void,
 ) => {
   return (
     <div className="PresetsContainer">
       {presets.map(({ text, start, end }) => {
-        const isSelected =
-          startDate &&
-          endDate &&
-          start.isSame(moment(startDate), 'day') &&
-          end.isSame(moment(endDate), 'day');
         return (
           <button
             key={text}
@@ -77,8 +69,6 @@ export const DateRangeFilterSelector: React.FunctionComponent<
         renderCalendarInfo={() =>
           renderDatePresets(
             presets,
-            props.startingDate,
-            props.endingDate,
             ({ startDate, endDate }: { startDate: Moment; endDate: Moment }) => {
               props.setStartingDate(startDate ? startDate.toDate() : null);
               props.setEndingDate(endDate ? endDate.toDate() : null);
@@ -93,7 +83,7 @@ export const DateRangeFilterSelector: React.FunctionComponent<
         displayFormat={'DD MMM'}
         hideKeyboardShortcutsPanel={true}
         isOutsideRange={() => false}
-        customInputIcon={<img src={calendarIcon} />}
+        customInputIcon={<img src={calendarIcon} alt="calendar-icon" />}
         minDate={moment('01/12/2019')}
         startDate={props.startingDate ? moment(props.startingDate) : null} // momentPropTypes.momentObj or null,
         startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,

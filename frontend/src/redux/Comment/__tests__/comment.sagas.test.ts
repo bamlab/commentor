@@ -7,13 +7,17 @@ import client from 'services/networking/client';
 
 import { loadComments } from '../comment.actions';
 import { loadCommentsSaga } from '../comment.sagas';
+import { getFilters } from '../../Filters';
 
-const loadCommentsRequestAction = loadComments.request({
+const loadCommentsRequestAction = loadComments.request({});
+const mockedFilters = {
   repositoryIds: [],
   endingDate: null,
   startingDate: null,
-});
-
+  requesterIds: [],
+  commentorIds: [],
+  tagCodes: [],
+};
 const comments = [
   {
     id: 2,
@@ -33,7 +37,10 @@ describe('[Saga] Comment redux', () => {
     describe('when request is a success', () => {
       it('should call the success action when request is a success', async () => {
         return expectSaga(loadCommentsSaga, loadCommentsRequestAction)
-          .provide([[matchers.call.fn(client.fetchComments), comments]])
+          .provide([
+            [matchers.call.fn(client.fetchComments), comments],
+            [matchers.select(getFilters), mockedFilters],
+          ])
           .put(loadComments.success({ comments }))
           .run();
       });
@@ -43,7 +50,10 @@ describe('[Saga] Comment redux', () => {
       it('should call the error action', async () => {
         const error = new Error();
         return expectSaga(loadCommentsSaga, loadCommentsRequestAction)
-          .provide([[matchers.call.fn(client.fetchComments), throwError(error)]])
+          .provide([
+            [matchers.call.fn(client.fetchComments), throwError(error)],
+            [matchers.select(getFilters), mockedFilters],
+          ])
           .put(loadComments.failure({ errorMessage: error.message }))
           .not.put.actionType(getType(loadComments.success))
           .run();

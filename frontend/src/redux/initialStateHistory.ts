@@ -3,7 +3,42 @@ import {
   StateTypeVersion1,
   StateTypeVersion2,
   StateTypeVersion3,
+  StateTypeVersion4,
 } from './store.migration';
+
+export const version4InitialState: StateTypeVersion4 = {
+  comment: {
+    comments: [],
+    availableRequesters: [],
+    availableCommentors: [],
+    isLoading: false,
+    commentError: null,
+  },
+  authentication: {
+    isLoading: false,
+    loginError: null,
+    isAuthenticated: false,
+  },
+  tag: {
+    tags: [],
+    isLoading: false,
+    tagError: null,
+    selectedTagId: null,
+  },
+  filters: {
+    requesterIds: [],
+    repositoryIds: [],
+    commentorIds: [],
+    startingDate: null,
+    endingDate: null,
+    tagCodes: [],
+  },
+  repository: {
+    repositories: [],
+    isLoading: false,
+    repositoryError: null,
+  },
+};
 
 export const version3InitialState: StateTypeVersion3 = {
   comment: {

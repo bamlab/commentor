@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorUsage, fontFamily, fontStyles, getSpacing } from 'stylesheet';
+import { colorUsage, fontStyles, getSpacing } from 'stylesheet';
 
 export const Label = styled.label`
   display: block;

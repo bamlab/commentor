@@ -7,7 +7,7 @@ import {
   selectCommentorIds,
   selectStartingDate,
   selectEndingDate,
-  selectTagIds,
+  selectTagCodes,
 } from './filters.actions';
 
 export type FiltersAction =
@@ -16,7 +16,7 @@ export type FiltersAction =
   | ActionType<typeof selectCommentorIds.request>
   | ActionType<typeof selectStartingDate.request>
   | ActionType<typeof selectEndingDate.request>
-  | ActionType<typeof selectTagIds.request>;
+  | ActionType<typeof selectTagCodes.request>;
 
 export type FiltersState = Readonly<{
   repositoryIds: number[];
@@ -24,7 +24,7 @@ export type FiltersState = Readonly<{
   commentorIds: string[];
   startingDate: Date | string | null; // string if value comes from local Storage after persisting
   endingDate: Date | string | null; // string if value comes from local Storage after persisting
-  tagIds: string[];
+  tagCodes: string[]; // Best effort keys
 }>;
 
 const initialState: FiltersState = {
@@ -33,7 +33,7 @@ const initialState: FiltersState = {
   commentorIds: [],
   startingDate: null,
   endingDate: null,
-  tagIds: [],
+  tagCodes: [],
 };
 
 const reducer = (state: FiltersState = initialState, action: AnyAction) => {
@@ -54,10 +54,10 @@ const reducer = (state: FiltersState = initialState, action: AnyAction) => {
         ...state,
         commentorIds: typedAction.payload.commentorIds.map(commentor => commentor.value),
       };
-    case getType(selectTagIds.request):
+    case getType(selectTagCodes.request):
       return {
         ...state,
-        tagIds: typedAction.payload.tagIds.map(tag => tag.value),
+        tagCodes: typedAction.payload.tagCodes.map(tag => tag.label),
       };
     case getType(selectStartingDate.request):
       return {

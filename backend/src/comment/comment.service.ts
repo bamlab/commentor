@@ -37,18 +37,41 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     repositoriesIds,
     startingDate,
     endingDate,
+    requesterIds,
+    commentorIds,
+    tagCodes,
   }: {
     repositoriesIds: number[];
     startingDate: Date;
     endingDate: Date;
+    requesterIds: string[];
+    commentorIds: string[];
+    tagCodes: string[];
   }): Promise<Comment[]> => {
-    const filteredComments = await this.commentRepository.find({
-      where: {
-        repositoryId: repositoriesIds.length > 0 ? In(repositoriesIds) : null,
-        creationDate: Between(startingDate, endingDate),
-      },
-    });
+    const query = this.commentRepository.createQueryBuilder('comments');
+    query
+      .where('comments.repositoryId IN (:...arr)', { arr: repositoriesIds })
+      .where('comments.creationDate BETWEEN :startingDate AND :endingDate', {
+        startingDate,
+        endingDate,
+      });
 
+    if (requesterIds.length > 0) {
+      query.where('comments.requester IN (:...requesters)', { requesters: requesterIds });
+    }
+    if (commentorIds.length > 0) {
+      query.where('comments.commentor IN (:...commentors)', { commentors: commentorIds });
+    }
+    if (tagCodes.length > 0) {
+      query.where(`comments.body ILIKE '%${tagCodes[0]}%'`);
+      if (tagCodes.length > 1) {
+        tagCodes.shift();
+        tagCodes.forEach(item => {
+          query.orWhere(`comments.body ILIKE '%${item}%'`);
+        });
+      }
+    }
+    const filteredComments = await query.getMany();
     return filteredComments;
   };
 

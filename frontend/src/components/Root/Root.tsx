@@ -10,6 +10,7 @@ import enMessages from 'translations/en.json';
 import frMessages from 'translations/fr.json';
 
 import { PageContent, RootContainer } from './Root.style';
+import Login from '../../pages/Login';
 
 const locales = {
   fr: flattenMessages(frMessages),
@@ -28,7 +29,7 @@ const Root: React.FunctionComponent<Props> = ({ children, isAuthenticated }) => 
     <IntlProvider locale="fr" messages={locales.fr}>
       <RootContainer>
         {isAuthenticated && <Header />}
-        <PageContent>{children}</PageContent>
+        <PageContent>{isAuthenticated ? children : <Login />}</PageContent>
       </RootContainer>
     </IntlProvider>
   );

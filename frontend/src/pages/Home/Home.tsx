@@ -31,8 +31,8 @@ import Button from 'components/Button';
 import Loader from 'components/Loader';
 import BarChart from 'components/BarChart';
 import PieChart from 'components/PieChart';
-import Login from '../Login';
 import { map, chain } from 'lodash';
+import Login from '../Login';
 import {
   fixedColumnCount,
   columnsConfig,

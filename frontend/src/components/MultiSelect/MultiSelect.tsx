@@ -27,7 +27,6 @@ type PropsType = {
   selectedOptions: ISelectedOptionsType[];
   selectOptions: (selectedOptions: ISelectedOptionsType[]) => void;
   options: ISelectedOptionsType[];
-  refreshData: () => void;
   placeholder: string;
   icon: string;
   title: string;
@@ -49,7 +48,6 @@ export const MultiSelect = (props: PropsType) => {
   const closeDropdown = () => {
     props.selectOptions(locallySelectedOptions);
     setIsSelectDisplayed(false);
-    props.refreshData();
   };
 
   const openDropdown = () => {

@@ -127,13 +127,13 @@ const Home = React.memo<HomePropsType>(props => {
             <DateRangeFilterSelector />
             <FiltersContainer>
               <FiltersPrefix>Filter by :</FiltersPrefix>
-              <RepositoryIdsMultiSelect placeholder="Projects" refreshData={loadComments} />
+              <RepositoryIdsMultiSelect placeholder="Projects" />
               <FilterSpacer />
-              <TagMultiSelect placeholder="Tags" refreshData={loadComments} />
+              <TagMultiSelect placeholder="Tags" />
               <FilterSpacer />
-              <RequesterMultiSelect placeholder="Requester" refreshData={loadComments} />
+              <RequesterMultiSelect placeholder="Requester" />
               <FilterSpacer />
-              <CommentorMultiSelect placeholder="Commentors" refreshData={loadComments} />
+              <CommentorMultiSelect placeholder="Commentors" />
             </FiltersContainer>
           </FiltersHeader>
           <ChartsContainer>

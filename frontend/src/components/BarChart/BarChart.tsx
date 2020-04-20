@@ -24,8 +24,6 @@ const BarChart = React.memo<propTypes>(props => {
     ...fontStyles.small,
   };
 
-  console.log(props.data);
-
   return (
     <BarChartContainer>
       {props.data && props.data.length > 0 && (

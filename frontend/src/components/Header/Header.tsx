@@ -1,17 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { NavLink, RouteComponentProps, withRouter } from 'react-router-dom';
 import logo from 'assets/logo.svg';
 import Link from 'components/Link';
 import { PATHS } from 'routes';
-import { Logo, HeaderContainer } from './Header.style';
+import {
+  Logo,
+  AnimatedLogo,
+  HeaderContainer,
+  AnimatedLogoContainer,
+  LogoContainer,
+} from './Header.style';
 import { colorUsage } from 'stylesheet';
+import logoAnimation from 'assets/logoAnimation.json';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
-const Header: React.FunctionComponent<RouteComponentProps> = () => (
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: logoAnimation,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+};
+
+type PropsType = RouteComponentProps & { isFetchingData: boolean };
+
+const Header: React.FunctionComponent<PropsType> = props => (
   <HeaderContainer>
-    <Logo alt="Commentor" src={logo} />
+    <LogoContainer>
+      {props.isFetchingData ? (
+        <AnimatedLogoContainer>
+          <AnimatedLogo options={defaultOptions} height={45} width={45} />
+        </AnimatedLogoContainer>
+      ) : (
+        <Logo alt="Commentor" src={logo} />
+      )}
+    </LogoContainer>
     <Link
       as={NavLink}
       style={{ textDecoration: 'none' }}

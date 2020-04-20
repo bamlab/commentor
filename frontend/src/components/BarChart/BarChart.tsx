@@ -11,6 +11,7 @@ import {
 import { colorUsage, fontStyles } from 'stylesheet';
 import { map, chain, sortBy } from 'lodash';
 import { TagType } from 'redux/Tag';
+import moment from 'moment';
 
 interface propTypes {
   data: { x: number | string; y: number; y0: number; tag: TagType }[];
@@ -22,7 +23,9 @@ const BarChart = React.memo<propTypes>(props => {
     ...fontStyles.small,
   };
 
-  const data = sortBy(props.data, 'x');
+  const data = sortBy(props.data, datum => {
+    return moment(datum.x, 'DD-MM').toDate();
+  });
 
   return (
     <BarChartContainer>

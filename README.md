@@ -7,7 +7,7 @@
   Commentor · an Open Source pull request comments analyzer
 </h1>
 
-<div align="center" width="100%">
+<div align="center">
   <a href="https://github.com/bamlab/commentor">
     <img alt="Commentor screenshot" src="./frontend/src/assets/onboarding-illustration.png" width="100%"/>
   </a>

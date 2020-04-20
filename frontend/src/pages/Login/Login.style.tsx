@@ -20,6 +20,7 @@ export const LeftCardContainer = styled.div`
   flex-direction: column;
   background-color: white;
   padding: ${getSpacing(4)};
+  min-height: 400px;
 `;
 
 export const Header = styled.div`
@@ -95,6 +96,7 @@ export const GithubAuthentButtonText = styled.p`
 
 export const IllustrationContainer = styled.div`
   flex: 3;
+  min-height: 600px;
 `;
 
 export const OnboardingIllustration = styled.img`

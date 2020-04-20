@@ -24,7 +24,7 @@ const defaultOptions = {
   },
 };
 
-type PropsType = RouteComponentProps & { isFetchingData: boolean };
+type PropsType = RouteComponentProps & { isFetchingData: boolean; refreshData: () => void };
 
 const Header: React.FunctionComponent<PropsType> = props => {
   const [isAnimating, setAnimating] = useState(props.isFetchingData);
@@ -36,7 +36,7 @@ const Header: React.FunctionComponent<PropsType> = props => {
   );
   return (
     <HeaderContainer>
-      <LogoContainer>
+      <LogoContainer onClick={props.refreshData}>
         <AnimatedLogoContainer>
           <AnimatedLogo
             options={defaultOptions}

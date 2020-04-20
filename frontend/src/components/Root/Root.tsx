@@ -22,13 +22,20 @@ addLocaleData([...fr, ...en]);
 interface Props {
   children: ReactNode;
   isAuthenticated: boolean;
+  isCommentLoading: boolean;
+  loadComments: () => void;
 }
 
-const Root: React.FunctionComponent<Props> = ({ children, isAuthenticated }) => {
+const Root: React.FunctionComponent<Props> = ({
+  children,
+  isAuthenticated,
+  isCommentLoading,
+  loadComments,
+}) => {
   return (
     <IntlProvider locale="fr" messages={locales.fr}>
       <RootContainer>
-        {isAuthenticated && <Header />}
+        {isAuthenticated && <Header isFetchingData={isCommentLoading} refreshData={loadComments} />}
         <PageContent>{isAuthenticated ? children : <Login />}</PageContent>
       </RootContainer>
     </IntlProvider>

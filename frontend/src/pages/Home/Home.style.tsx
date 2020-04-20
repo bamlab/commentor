@@ -32,12 +32,6 @@ export const AuthenticatedPageContainer = styled.div`
 `;
 AuthenticatedPageContainer.displayName = 'AuthenticatedPageContainer';
 
-export const FloatingButtonContainer = styled.div`
-  position: fixed;
-  right: 2%;
-  bottom: 2%;
-`;
-
 export const FiltersHeader = styled.div`
   display: flex;
   flex-direction: row;

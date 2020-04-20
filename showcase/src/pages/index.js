@@ -94,13 +94,13 @@ function Home() {
                 className={classnames(styles.featureSectionSubtitleContainer)}
               >
                 <div className={classnames(styles.featureSectionSubtitle)}>
-                  Commentor automates for you the analysis of your
+                  Commentor automates for you the recuperation and
                 </div>
                 <div className={classnames(styles.featureSectionSubtitle)}>
-                  code reviews so that you can focus on what you do
+                  the classification of your code reviews so that
                 </div>
                 <div className={classnames(styles.featureSectionSubtitle)}>
-                  best: your code
+                  you can focus on the analysis
                 </div>
               </div>
               <div className={classnames(styles.featuresList)}>

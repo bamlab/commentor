@@ -24,6 +24,7 @@ HeaderContainer.displayName = 'HeaderContainer';
 
 export const LogoContainer = styled.div`
   padding: 0 ${getSpacing(1)};
+  cursor: pointer;
 `;
 
 export const AnimatedLogoContainer = styled.div`

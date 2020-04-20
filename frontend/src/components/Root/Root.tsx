@@ -23,13 +23,19 @@ interface Props {
   children: ReactNode;
   isAuthenticated: boolean;
   isCommentLoading: boolean;
+  loadComments: () => void;
 }
 
-const Root: React.FunctionComponent<Props> = ({ children, isAuthenticated, isCommentLoading }) => {
+const Root: React.FunctionComponent<Props> = ({
+  children,
+  isAuthenticated,
+  isCommentLoading,
+  loadComments,
+}) => {
   return (
     <IntlProvider locale="fr" messages={locales.fr}>
       <RootContainer>
-        {isAuthenticated && <Header isFetchingData={isCommentLoading} />}
+        {isAuthenticated && <Header isFetchingData={isCommentLoading} refreshData={loadComments} />}
         <PageContent>{isAuthenticated ? children : <Login />}</PageContent>
       </RootContainer>
     </IntlProvider>

@@ -8,6 +8,8 @@ import {
   HeaderContainer,
   AnimatedLogoContainer,
   LogoContainer,
+  LOGO_SIZE,
+  ANIMATION_SPEED,
 } from './Header.style';
 import { colorUsage } from 'stylesheet';
 import logoAnimation from 'assets/logoAnimation.json';
@@ -38,9 +40,9 @@ const Header: React.FunctionComponent<PropsType> = props => {
         <AnimatedLogoContainer>
           <AnimatedLogo
             options={defaultOptions}
-            height={50}
-            width={50}
-            speed={1.4}
+            height={LOGO_SIZE}
+            width={LOGO_SIZE}
+            speed={ANIMATION_SPEED}
             isStopped={!isAnimating}
             eventListeners={[
               {

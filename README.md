@@ -9,7 +9,7 @@
 
 <div align="center">
   <a href="https://github.com/bamlab/commentor">
-    <img alt="Commentor screenshot" src="./frontend/src/assets/onboarding-illustration.png" width="500"/>
+    <img alt="Commentor screenshot" src="./frontend/src/assets/onboarding-illustration.png" width="100%"/>
   </a>
 </div>
 

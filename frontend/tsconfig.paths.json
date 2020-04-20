@@ -9,8 +9,7 @@
       "routes": ["src/routes"],
       "services/*": ["src/services/*"],
       "stylesheet": ["src/stylesheet"],
-      "translations/*": ["src/translations/*"],
-      "assets/*": ["src/assets/*"]
+      "translations/*": ["src/translations/*"]
     }
   }
 }

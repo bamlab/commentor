@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import {
   HomeContainer,
+  FloatingButtonContainer,
   CommentTableContainer,
   ChartsContainer,
   AuthenticatedPageContainer,
@@ -24,6 +25,9 @@ import TagsLegend from 'components/TagsLegend';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import { CommentType } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
+import { GoSync } from 'react-icons/go';
+import Button from 'components/Button';
+import Loader from 'components/Loader';
 import BarChart from 'components/BarChart';
 import PieChart from 'components/PieChart';
 import { map, chain } from 'lodash';
@@ -35,6 +39,8 @@ import {
   CommentTableOptionsType,
 } from './columnsConfig';
 import { HomePropsType } from './Home.type';
+
+const ICON_SIZE = 25;
 
 const Home = React.memo<HomePropsType>(props => {
   const { loadRepositories, isAuthenticated, loadComments, loadTags } = props;
@@ -126,6 +132,12 @@ const Home = React.memo<HomePropsType>(props => {
               options={{}}
               defaultLineHeight={lineHeight}
             />
+            <FloatingButtonContainer>
+              <Button disabled={props.isCommentLoading} onClick={() => loadComments()}>
+                {/* to refacto with Icon component */}
+                {props.isCommentLoading ? <Loader /> : <GoSync size={ICON_SIZE} />}
+              </Button>
+            </FloatingButtonContainer>
           </CommentTableContainer>
         </AuthenticatedPageContainer>
       )}

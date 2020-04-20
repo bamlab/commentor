@@ -9,12 +9,13 @@ import {
   VictoryLabel,
 } from 'victory';
 import { colorUsage, fontStyles } from 'stylesheet';
-import { map, chain, sortBy } from 'lodash';
+import { map, chain } from 'lodash';
+import { eachDayOfInterval } from 'date-fns';
+import { formatDateToDDMMLined } from '../../services/date/dateFormatter';
 import { TagType } from 'redux/Tag';
-import moment from 'moment';
 
 interface propTypes {
-  data: { x: number | string; y: number; y0: number; tag: TagType }[];
+  data: { x: Date; y: number; y0: number; tag: TagType }[];
 }
 
 const BarChart = React.memo<propTypes>(props => {
@@ -23,18 +24,16 @@ const BarChart = React.memo<propTypes>(props => {
     ...fontStyles.small,
   };
 
-  const data = sortBy(props.data, datum => {
-    return moment(datum.x, 'DD-MM').toDate();
-  });
+  console.log(props.data);
 
   return (
     <BarChartContainer>
-      {data && data.length > 0 && (
+      {props.data && props.data.length > 0 && (
         <VictoryChart theme={VictoryTheme.material} domainPadding={10} height={350} width={800}>
           <VictoryAxis
             dependentAxis
             tickCount={Math.max(
-              ...chain(data)
+              ...chain(props.data)
                 .countBy('x')
                 .map((countByDate: number) => countByDate)
                 .value(),
@@ -46,12 +45,14 @@ const BarChart = React.memo<propTypes>(props => {
             }}
           />
           <VictoryAxis
-            tickCount={
-              chain(data)
-                .map('x')
-                .uniq()
-                .value().length
-            }
+            scale="time"
+            tickValues={eachDayOfInterval({
+              start: props.data[0].x,
+              end: props.data[props.data.length - 1].x,
+            })}
+            tickFormat={date => {
+              return formatDateToDDMMLined(date);
+            }}
             tickLabelComponent={<VictoryLabel angle={-60} />}
             style={{
               tickLabels: { ...ticksLabelsStyle },
@@ -59,7 +60,7 @@ const BarChart = React.memo<propTypes>(props => {
           />
           <VictoryStack>
             {map(
-              data,
+              props.data,
               (barChartItem: { x: number | string; y: number; y0: number; tag: TagType }) => {
                 return (
                   <VictoryBar

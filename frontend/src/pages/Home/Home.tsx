@@ -39,7 +39,6 @@ import {
   CommentTableOptionsType,
 } from './columnsConfig';
 import { HomePropsType } from './Home.type';
-import { formatDateToDDMMYYYLined, formatDateToDDMMLined } from '../../services/date/dateFormatter';
 
 const ICON_SIZE = 25;
 
@@ -67,18 +66,23 @@ const Home = React.memo<HomePropsType>(props => {
     .value();
 
   const barChartFormattedData = chain(props.comments)
-    .groupBy((comment: CommentType) => formatDateToDDMMYYYLined(comment.creationDate))
+    .groupBy((comment: CommentType) => {
+      comment.creationDate.setHours(0, 0, 0, 0);
+      return comment.creationDate;
+    })
     .map((comments: CommentType[], date: Date) =>
       map(comments, (comment: CommentType) =>
         chain(props.tags)
           .filter((tag: TagType) => !!comment.body.match(tag.code))
-          .map((tag: TagType) => [
-            { x: formatDateToDDMMLined(comment.creationDate), y: 1, y0: 0, tag },
-          ])
+          .map((tag: TagType) => {
+            comment.creationDate.setHours(0, 0, 0, 0);
+            return [{ x: comment.creationDate, y: 1, y0: 0, tag }];
+          })
           .value(),
       ),
     )
     .flattenDeep()
+    .sortBy('x')
     .value();
 
   return (

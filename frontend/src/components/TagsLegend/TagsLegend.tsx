@@ -16,8 +16,8 @@ const TagsLegend: React.FunctionComponent<propTypes> = props => {
   const tagsColumns = [props.tags.slice(0, 8), props.tags.slice(8, 16)];
   return (
     <TagsLegendContainer>
-      {tagsColumns.map(tagColumn => (
-        <TagsLegendColumn>
+      {tagsColumns.map((tagColumn, index) => (
+        <TagsLegendColumn key={`${index}-${tagColumn.length}`}>
           {tagColumn.map(tag => (
             <TagLegendItemContainer key={tag.code}>
               <ColorDot color={tag.color} />

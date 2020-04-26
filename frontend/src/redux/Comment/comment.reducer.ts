@@ -32,7 +32,7 @@ const filterRequestersFromComment = (comments: CommentType[]): RequesterType[] =
 const filterCommentorsFromComment = (comments: CommentType[]): RequesterType[] =>
   removeDuplicate(comments.map(comment => comment.commentor));
 
-const reducer = (state: CommentState = initialState, action: AnyAction) => {
+const reducer = (state: CommentState = initialState, action: AnyAction): CommentState => {
   const typedAction = action as CommentAction;
   switch (typedAction.type) {
     case getType(loadComments.success):

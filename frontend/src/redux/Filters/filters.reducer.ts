@@ -40,7 +40,7 @@ const initialState: FiltersState = {
   tagCodes: [],
 };
 
-const reducer = (state: FiltersState = initialState, action: AnyAction) => {
+const reducer = (state: FiltersState = initialState, action: AnyAction): FiltersState => {
   const typedAction = action as FiltersAction;
   switch (typedAction.type) {
     case getType(selectRepositoryIds.request):

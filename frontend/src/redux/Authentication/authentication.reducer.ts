@@ -19,7 +19,10 @@ const initialState: AuthenticationState = {
   isLoading: false,
 };
 
-const reducer = (state: AuthenticationState = initialState, action: AnyAction) => {
+const reducer = (
+  state: AuthenticationState = initialState,
+  action: AnyAction,
+): AuthenticationState => {
   const typedAction = action as LoginAction | AuthenticationAction;
   switch (typedAction.type) {
     case getType(login.success):

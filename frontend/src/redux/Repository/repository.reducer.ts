@@ -20,7 +20,7 @@ const initialState: RepositoryState = {
   isLoading: false,
 };
 
-const reducer = (state: RepositoryState = initialState, action: AnyAction) => {
+const reducer = (state: RepositoryState = initialState, action: AnyAction): RepositoryState => {
   const typedAction = action as RepositoryAction;
   switch (typedAction.type) {
     case getType(loadRepositories.success):

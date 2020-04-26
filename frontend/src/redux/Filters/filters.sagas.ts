@@ -9,10 +9,12 @@ import {
   selectEndingDate,
 } from './filters.actions';
 import { loadComments } from '../Comment/comment.actions';
+import { loadTagsOverTime } from '../GraphData/graphData.actions';
 
 export function* loadCommentsOnFilterChangeSaga() {
   try {
     yield put(loadComments.request({}));
+    yield put(loadTagsOverTime.request({}));
   } catch (error) {
     yield put(loadComments.failure({ errorMessage: error.message }));
   }

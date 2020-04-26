@@ -34,7 +34,7 @@ const initialState: TagState = {
   selectedTagId: null,
 };
 
-const reducer = (state: TagState = initialState, action: AnyAction) => {
+const reducer = (state: TagState = initialState, action: AnyAction): TagState => {
   const typedAction = action as TagAction;
   switch (typedAction.type) {
     case getType(selectTag.request):

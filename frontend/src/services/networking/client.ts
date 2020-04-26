@@ -3,6 +3,9 @@ import { CommentType } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
 import { RepositoryType } from 'redux/Repository';
 import { formatFetchedCommentForAppType } from '../../redux/Comment/comment.adapter';
+import { formatFetchedTagsOverTimeForAppType } from '../../redux/GraphData/graphData.adapter';
+import { TagsOverTimeType } from '../../redux/GraphData';
+import { FiltersType } from '../../redux/Filters/filters.type';
 
 const backendBaseUrl = process.env.REACT_APP_API_BASE_URL || '';
 
@@ -69,6 +72,12 @@ class Client {
   }): Promise<CommentType[]> => {
     const result = await this.post('/comments/filtered', data);
     const adaptedResult = formatFetchedCommentForAppType(result);
+    return adaptedResult;
+  };
+
+  fetchTagOverTime = async (data: FiltersType): Promise<TagsOverTimeType> => {
+    const result = await this.post('/tags/date', data);
+    const adaptedResult = formatFetchedTagsOverTimeForAppType(result);
     return adaptedResult;
   };
 

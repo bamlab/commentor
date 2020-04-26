@@ -1,3 +1,5 @@
+import { TagsOverTimeType } from '../../redux/GraphData';
+
 export interface FetchedCommentType {
   id: number;
   body: string;
@@ -9,3 +11,5 @@ export interface FetchedCommentType {
   repositoryId: number;
   creationDate: Date | string;
 }
+
+export type FetchedTagsOverTime = TagsOverTimeType;

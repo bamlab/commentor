@@ -3,6 +3,7 @@ import { TagAction, TagState } from './Tag';
 import { RepositoryAction, RepositoryState } from './Repository';
 import { FiltersAction, FiltersState } from './Filters';
 import { LoginAction, AuthenticationState } from './Authentication';
+import { GraphDataAction, GraphDataState } from './GraphData';
 
 export type RootState = Readonly<{
   comment: CommentState;
@@ -10,5 +11,12 @@ export type RootState = Readonly<{
   authentication: AuthenticationState;
   repository: RepositoryState;
   filters: FiltersState;
+  graphData: GraphDataState;
 }>;
-export type RootAction = CommentAction | TagAction | FiltersAction | RepositoryAction | LoginAction;
+export type RootAction =
+  | CommentAction
+  | TagAction
+  | FiltersAction
+  | RepositoryAction
+  | LoginAction
+  | GraphDataAction;

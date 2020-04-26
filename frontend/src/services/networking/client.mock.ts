@@ -1,5 +1,6 @@
 import { CommentType } from '../../redux/Comment';
 import { TagType } from '../../redux/Tag';
+import { TagsOverTimeType } from '../../redux/GraphData';
 
 export const getMockedComments = (): Promise<CommentType[]> =>
   new Promise(resolve => setTimeout(() => resolve(MockedComment), 1000));
@@ -55,8 +56,8 @@ export const MockedComment: CommentType[] = [
   },
 ];
 
-export const getMockedTags = (): Promise<TagType[]> =>
-  new Promise(resolve => setTimeout(() => resolve(MockedTags), 2000));
+export const getMockedValues = <T>(values: T): Promise<T> =>
+  new Promise(resolve => setTimeout(() => resolve(values), 2000));
 
 export const MockedTags: TagType[] = [
   {
@@ -85,5 +86,29 @@ export const MockedTags: TagType[] = [
     creationDate: new Date(),
     githubLogin: null,
     isDefault: false,
+  },
+];
+
+export const MockedTagsOverTime: TagsOverTimeType = [
+  {
+    '2014-05-12T00:00:00.000Z': {
+      '✅': 12,
+      '♻️': 15,
+    },
+    '2014-07-12T00:00:00.000Z': {
+      '📦': 12,
+      '♻️': 15,
+      '⚠️': 19,
+      '🍍': 9,
+      test: 2,
+    },
+    '2014-02-24T00:00:00.000Z': {
+      '✅': 12,
+      refacto: 15,
+    },
+    '2014-05-23T00:00:00.000Z': {
+      '✅': 12,
+      '🏗': 15,
+    },
   },
 ];

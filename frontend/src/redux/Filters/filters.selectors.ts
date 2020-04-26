@@ -1,7 +1,7 @@
 import { RootState } from 'redux/types';
-import { FiltersState } from './filters.reducer';
 import { formatStringOrDateToDate } from '../../services/date/dateFormatter';
 import { isNil } from 'lodash';
+import { FiltersType } from './filters.type';
 
 export const getSelectedRepositoryIds = (store: RootState): number[] => store.filters.repositoryIds;
 
@@ -21,4 +21,4 @@ export const getSelectedEndingDate = (store: RootState): Date | null => {
   return formatStringOrDateToDate(store.filters.endingDate);
 };
 
-export const getFilters = (store: RootState): FiltersState => store.filters;
+export const getFilters = (store: RootState): FiltersType => store.filters;

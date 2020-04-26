@@ -54,4 +54,9 @@ export const state: RootState = {
     isLoading: false,
     repositoryError: null,
   },
+  graphData: {
+    isLoading: false,
+    tagsOverTime: [],
+    tagsOverTimeError: null,
+  },
 };

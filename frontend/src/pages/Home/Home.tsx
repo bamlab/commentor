@@ -4,16 +4,8 @@ import {
   CommentTableContainer,
   ChartsContainer,
   AuthenticatedPageContainer,
-  FiltersHeader,
-  FilterSpacer,
-  FiltersPrefix,
-  FiltersContainer,
 } from './Home.style';
-import { RepositoryIdsMultiSelect } from 'components/RepositoryIdsMultiSelect';
-import { RequesterMultiSelect } from 'components/RequesterMultiSelect';
-import { CommentorMultiSelect } from 'components/CommentorMultiSelect';
-import { TagMultiSelect } from 'components/TagMultiSelect';
-import { DateRangeFilterSelector } from 'components/DateRangeFilterSelector';
+import { FilterHeader } from './components/FilterHeader';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import { CommentType } from 'redux/Comment';
 import { BarChartCard } from './components/BarChartCard';
@@ -47,22 +39,7 @@ const Home = React.memo<HomePropsType>(props => {
         <Login />
       ) : (
         <AuthenticatedPageContainer>
-          <FiltersHeader>
-            <DateRangeFilterSelector />
-            <FiltersContainer>
-              <FiltersPrefix>Filter by :</FiltersPrefix>
-              <RepositoryIdsMultiSelect
-                placeholder="Projects"
-                noOptionsMessage="Nous ne trouvons pas de projets. Avez vous bien installé l'app commentor sur votre compte et sur votre repository ?"
-              />
-              <FilterSpacer />
-              <TagMultiSelect placeholder="Tags" />
-              <FilterSpacer />
-              <RequesterMultiSelect placeholder="Requester" />
-              <FilterSpacer />
-              <CommentorMultiSelect placeholder="Commentors" />
-            </FiltersContainer>
-          </FiltersHeader>
+          <FilterHeader />
           <ChartsContainer>
             <BarChartCard comments={props.comments} tags={props.tags} />
             <PieChartAndLegendCard comments={props.comments} tags={props.tags} />

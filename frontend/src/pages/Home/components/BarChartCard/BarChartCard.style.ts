@@ -1,0 +1,19 @@
+import styled from 'styled-components';
+import { getSpacing, colorUsage, fontStyles } from '../../../../stylesheet';
+
+const GRAPHS_HEADER_HEIGHT = 386;
+
+export const BarChartCardWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  height: ${GRAPHS_HEADER_HEIGHT}px;
+  margin: ${getSpacing(1.5)};
+  flex: 3;
+  box-shadow: 0px 0px 6px ${colorUsage.shadow};
+  background-color: white;
+`;
+
+export const BarChartAndTitleContainer = styled.div`
+  margin: ${getSpacing(3)};
+`;

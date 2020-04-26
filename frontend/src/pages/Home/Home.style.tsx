@@ -78,10 +78,6 @@ export const PieChartAndTitleContainer = styled.div`
   flex-direction: column;
 `;
 
-export const BarChartAndTitleContainer = styled.div`
-  margin: ${getSpacing(3)};
-`;
-
 export const TagsLegendContainer = styled.div`
   margin: ${getSpacing(3)};
 `;
@@ -90,17 +86,6 @@ export const ChartTitle = styled.p`
   font-family: ${fontStyles.bold.fontFamily};
   font-weight: ${fontStyles.bold.fontWeight};
   font-size: ${fontStyles.bold.fontSize};
-`;
-
-export const BarChartCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  height: ${GRAPHS_HEADER_HEIGHT}px;
-  margin: ${getSpacing(1.5)};
-  flex: 3;
-  box-shadow: 0px 0px 6px ${colorUsage.shadow};
-  background-color: white;
 `;
 
 export const SelectRepositoryWrapper = styled.div``;

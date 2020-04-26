@@ -30,7 +30,7 @@ import Button from 'components/Button';
 import Loader from 'components/Loader';
 import BarChart from 'components/BarChart';
 import PieChart from 'components/PieChart';
-import { map, chain } from 'lodash';
+import { map, chain, sortBy } from 'lodash';
 import Login from '../Login';
 import {
   fixedColumnCount,
@@ -126,7 +126,10 @@ const Home = React.memo<HomePropsType>(props => {
           </ChartsContainer>
           <CommentTableContainer>
             <GenericTable<CommentTableOptionsType, CommentType>
-              values={props.comments}
+              values={chain(props.comments)
+                .sortBy('creationDate')
+                .reverse()
+                .value()}
               fixedColumnCount={fixedColumnCount}
               columnsConfig={columnsConfig}
               options={{}}

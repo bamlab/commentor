@@ -20,9 +20,28 @@ const initialState: GraphDataState = {
   isLoading: false,
 };
 
-const reducer = (state: GraphDataState = initialState, action: AnyAction) => {
+const reducer = (state: GraphDataState = initialState, action: AnyAction): GraphDataState => {
   const typedAction = action as GraphDataAction;
   switch (typedAction.type) {
+    case getType(loadTagsOverTime.request):
+      return {
+        ...state,
+        isLoading: true,
+        tagsOverTimeError: null,
+      };
+    case getType(loadTagsOverTime.success):
+      return {
+        ...state,
+        isLoading: false,
+        tagsOverTimeError: null,
+        tagsOverTime: typedAction.payload.tagsOverTime,
+      };
+    case getType(loadTagsOverTime.failure):
+      return {
+        ...state,
+        tagsOverTimeError: 'Error',
+        isLoading: false,
+      };
     default:
       return state;
   }

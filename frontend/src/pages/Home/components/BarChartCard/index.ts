@@ -1,1 +1,1 @@
-export { BarChartCard } from './BarChartCard';
+export { BarChartCard } from './BarChartCard.wrap';

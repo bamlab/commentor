@@ -33,9 +33,10 @@ export const BarChartCard = React.memo<BarChartCartPropsType>(props => {
     <BarChartCardWrap>
       <BarChartAndTitleContainer>
         <ChartTitle># Tag over time</ChartTitle>
-        {/*
-        // @ts-ignore */}
-        <BarChart data={barChartFormattedData} />
+        <BarChart
+          // @ts-ignore
+          data={barChartFormattedData}
+        />
       </BarChartAndTitleContainer>
     </BarChartCardWrap>
   );

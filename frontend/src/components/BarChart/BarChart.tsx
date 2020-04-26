@@ -53,9 +53,7 @@ const BarChart = React.memo<propTypes>(props => {
               start: props.data[0].x,
               end: props.data[props.data.length - 1].x,
             })}
-            tickFormat={date => {
-              return formatDateToDDMMLined(date);
-            }}
+            tickFormat={formatDateToDDMMLined}
             tickLabelComponent={<VictoryLabel angle={-60} />}
             style={{
               tickLabels: { ...ticksLabelsStyle },

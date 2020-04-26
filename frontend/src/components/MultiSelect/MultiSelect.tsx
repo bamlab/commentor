@@ -30,6 +30,7 @@ type PropsType = {
   placeholder: string;
   icon: string;
   title: string;
+  noOptionsMessage?: string;
 };
 
 export const MultiSelect = (props: PropsType) => {
@@ -83,6 +84,7 @@ export const MultiSelect = (props: PropsType) => {
             options={getOptions()}
             closeMenuOnSelect={false}
             hideSelectedOptions={false}
+            noOptionsMessage={() => props.noOptionsMessage || null}
             components={{
               Option,
             }}

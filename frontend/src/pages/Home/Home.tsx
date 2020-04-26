@@ -30,7 +30,7 @@ import Button from 'components/Button';
 import Loader from 'components/Loader';
 import BarChart from 'components/BarChart';
 import PieChart from 'components/PieChart';
-import { map, chain, sortBy } from 'lodash';
+import { map, chain } from 'lodash';
 import Login from '../Login';
 import {
   fixedColumnCount,
@@ -95,7 +95,10 @@ const Home = React.memo<HomePropsType>(props => {
             <DateRangeFilterSelector />
             <FiltersContainer>
               <FiltersPrefix>Filter by :</FiltersPrefix>
-              <RepositoryIdsMultiSelect placeholder="Projects" />
+              <RepositoryIdsMultiSelect
+                placeholder="Projects"
+                noOptionsMessage="Nous ne trouvons pas de projets. Avez vous bien installé l'app commentor sur votre compte et sur votre repository ?"
+              />
               <FilterSpacer />
               <TagMultiSelect placeholder="Tags" />
               <FilterSpacer />

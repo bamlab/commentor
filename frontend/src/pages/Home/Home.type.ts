@@ -8,6 +8,5 @@ export type HomePropsType = {
   comments: CommentType[];
   tags: TagType[];
   loadTags: () => void;
-  loadComments: () => void;
   filters: FiltersState;
 };

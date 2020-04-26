@@ -25,7 +25,6 @@ const mapStateToProps = (state: RootState) => ({
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   loadRepositories: () => dispatch(loadRepositories.request({})),
   loadTags: () => dispatch(loadTags.request({})),
-  loadComments: () => dispatch(loadComments.request({})),
 });
 
 const withFilteredTags = withProps(

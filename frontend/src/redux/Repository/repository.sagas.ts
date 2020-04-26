@@ -4,6 +4,8 @@ import { ActionType, getType } from 'typesafe-actions';
 import { loadRepositories } from './repository.actions';
 import { authentication } from '../Authentication/authentication.actions';
 import { RepositoryType } from './repository.types';
+import { loadComments } from '../Comment/comment.actions';
+import { loadTagsOverTime } from '../GraphData/graphData.actions';
 
 export function* loadRepositoriesSaga(action: ActionType<typeof loadRepositories.request>) {
   try {
@@ -12,6 +14,8 @@ export function* loadRepositoriesSaga(action: ActionType<typeof loadRepositories
       action.payload,
     );
     yield put(loadRepositories.success({ repositories }));
+    yield put(loadComments.request({}));
+    yield put(loadTagsOverTime.request({}));
   } catch (error) {
     if (error.status && error.status === 401) {
       yield put(authentication.failure({ errorMessage: error.message }));

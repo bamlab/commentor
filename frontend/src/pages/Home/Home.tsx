@@ -20,14 +20,13 @@ import { HomePropsType } from './Home.type';
 import { PieChartAndLegendCard } from './components/PieChartAndLegendCard';
 
 const Home = React.memo<HomePropsType>(props => {
-  const { loadRepositories, isAuthenticated, loadComments, loadTags } = props;
+  const { loadRepositories, isAuthenticated, loadTags } = props;
 
   useEffect(
     () => {
       if (isAuthenticated) {
         loadTags();
         loadRepositories();
-        loadComments();
       }
     },
     [isAuthenticated, loadRepositories],

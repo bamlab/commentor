@@ -4,10 +4,6 @@ import {
   CommentTableContainer,
   ChartsContainer,
   AuthenticatedPageContainer,
-  PieChartAndLegendCard,
-  PieChartAndTitleContainer,
-  TagsLegendContainer,
-  ChartTitle,
   FiltersHeader,
   FilterSpacer,
   FiltersPrefix,
@@ -18,13 +14,9 @@ import { RequesterMultiSelect } from 'components/RequesterMultiSelect';
 import { CommentorMultiSelect } from 'components/CommentorMultiSelect';
 import { TagMultiSelect } from 'components/TagMultiSelect';
 import { DateRangeFilterSelector } from 'components/DateRangeFilterSelector';
-import TagsLegend from 'components/TagsLegend';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import { CommentType } from 'redux/Comment';
-import { TagType } from 'redux/Tag';
 import { BarChartCard } from './components/BarChartCard';
-import PieChart from 'components/PieChart';
-import { chain } from 'lodash';
 import Login from '../Login';
 import {
   fixedColumnCount,
@@ -33,6 +25,7 @@ import {
   CommentTableOptionsType,
 } from './columnsConfig';
 import { HomePropsType } from './Home.type';
+import { PieChartAndLegendCard } from './components/PieChartAndLegendCard';
 
 const Home = React.memo<HomePropsType>(props => {
   const { loadRepositories, isAuthenticated, loadComments, loadTags } = props;
@@ -47,15 +40,6 @@ const Home = React.memo<HomePropsType>(props => {
     },
     [isAuthenticated, loadRepositories],
   );
-
-  const pieChartFormattedData = chain(props.tags)
-    .map((tag: TagType) => ({
-      x: tag.code,
-      y: props.comments.filter((comment: CommentType) => !!comment.body.match(tag.code)).length,
-      tag,
-    }))
-    .filter(chartDatum => chartDatum.y > 0)
-    .value();
 
   return (
     <HomeContainer>
@@ -81,15 +65,7 @@ const Home = React.memo<HomePropsType>(props => {
           </FiltersHeader>
           <ChartsContainer>
             <BarChartCard comments={props.comments} tags={props.tags} />
-            <PieChartAndLegendCard>
-              <PieChartAndTitleContainer>
-                <ChartTitle>Total over the period</ChartTitle>
-                <PieChart data={pieChartFormattedData} />
-              </PieChartAndTitleContainer>
-              <TagsLegendContainer>
-                <TagsLegend tags={props.tags} />
-              </TagsLegendContainer>
-            </PieChartAndLegendCard>
+            <PieChartAndLegendCard comments={props.comments} tags={props.tags} />
           </ChartsContainer>
           <CommentTableContainer>
             <GenericTable<CommentTableOptionsType, CommentType>

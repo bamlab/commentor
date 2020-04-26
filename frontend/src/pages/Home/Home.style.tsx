@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { fontStyles, getSpacing, colorUsage } from 'stylesheet';
+import { fontStyles, getSpacing } from 'stylesheet';
 
-const GRAPHS_HEADER_HEIGHT = 386;
+export const GRAPHS_HEADER_HEIGHT = 386;
 
 export const HomeContainer = styled.div`
   display: flex;
@@ -59,27 +59,6 @@ export const FiltersPrefix = styled.p`
 
 export const FilterSpacer = styled.div`
   margin: ${getSpacing(1.5)};
-`;
-
-export const PieChartAndLegendCard = styled.div`
-  display: flex;
-  flex-direction: row;
-  border-radius: 5px;
-  height: ${GRAPHS_HEADER_HEIGHT}px;
-  margin: ${getSpacing(1.5)};
-  flex: 2;
-  box-shadow: 0px 0px 6px ${colorUsage.shadow};
-  background-color: white;
-`;
-
-export const PieChartAndTitleContainer = styled.div`
-  display: flex;
-  margin: ${getSpacing(3)};
-  flex-direction: column;
-`;
-
-export const TagsLegendContainer = styled.div`
-  margin: ${getSpacing(3)};
 `;
 
 export const ChartTitle = styled.p`

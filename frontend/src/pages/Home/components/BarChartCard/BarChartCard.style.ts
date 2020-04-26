@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { getSpacing, colorUsage, fontStyles } from '../../../../stylesheet';
-
-const GRAPHS_HEADER_HEIGHT = 386;
+import { getSpacing, colorUsage } from '../../../../stylesheet';
+import { GRAPHS_HEADER_HEIGHT } from '../../Home.style';
 
 export const BarChartCardWrap = styled.div`
   display: flex;

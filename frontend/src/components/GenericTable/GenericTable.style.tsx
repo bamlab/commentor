@@ -45,7 +45,7 @@ export const defaultHeaderCellRenderer = (
 };
 
 export const STYLE = {
-  border: '1px solid #ddd',
+  boxShadow: '0px 0px 6px rgba(34,34,34,0.1)',
   backgroundColor: 'white',
   borderRadius: '5px',
   overflow: 'hidden',

@@ -27,12 +27,16 @@ export type FiltersState = Readonly<{
   tagCodes: string[]; // Best effort keys
 }>;
 
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const lastWeek = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+
 const initialState: FiltersState = {
   repositoryIds: [],
   requesterIds: [],
   commentorIds: [],
-  startingDate: null,
-  endingDate: null,
+  startingDate: lastWeek,
+  endingDate: today,
   tagCodes: [],
 };
 

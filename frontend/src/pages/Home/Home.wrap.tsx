@@ -6,7 +6,6 @@ import { isAuthenticated } from 'redux/Authentication/authentication.selectors';
 import { RootState } from 'redux/types';
 import { Dispatch } from 'react';
 import { getTags } from 'redux/Tag/tag.selectors';
-import { loadComments } from 'redux/Comment/comment.actions';
 import { loadTags } from 'redux/Tag/tag.actions';
 import { getComments, isCommentLoading } from 'redux/Comment/comment.selectors';
 import { getFilters } from 'redux/Filters';

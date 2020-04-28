@@ -7,6 +7,7 @@ chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
   const input = document.createElement("input");
   input.setAttribute("id", "tagInput");
   const inputButton = document.createElement("button");
+  inputButton.textContent = "Add tag";
   inputButton.addEventListener("click", () => {
     const inputValue = document.getElementById("tagInput").value;
     if (inputValue) {

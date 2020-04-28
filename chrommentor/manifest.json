@@ -1,0 +1,27 @@
+{
+  "name": "Chrommentor",
+  "version": "1.0",
+  "description": "The official chrome extension for Commentor",
+  "background": {
+    "scripts": ["index.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "tagsPopUp.html",
+    "default_icon": {
+      "16": "images/icon.png",
+      "32": "images/icon.png",
+      "48": "images/icon.png",
+      "128": "images/icon.png"
+    }
+  },
+  "options_page": "tagsOptions.html",
+  "icons": {
+    "16": "images/icon.png",
+    "32": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+  "permissions": ["declarativeContent", "activeTab", "storage"],
+  "manifest_version": 2
+}

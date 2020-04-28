@@ -4,7 +4,7 @@
   "description": "The official chrome extension for Commentor",
   "background": {
     "scripts": ["index.js"],
-    "persistent": false
+    "persistent": true
   },
   "options_page": "tagsOptions.html",
   "icons": {
@@ -13,6 +13,13 @@
     "48": "images/icon.png",
     "128": "images/icon.png"
   },
+  "content_scripts": [
+    {
+      "matches": ["*://github.com/*"],
+      "js": ["mainScript.js"],
+      "run_at": "document_idle"
+    }
+  ],
   "permissions": ["declarativeContent", "activeTab", "storage"],
   "manifest_version": 2
 }

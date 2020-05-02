@@ -20,11 +20,6 @@ chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
       const lastWord = textWords.length ? textWords[textWords.length - 1] : "";
       const lastWordFirstCharacter = lastWord.charAt(0);
       if (lastWordFirstCharacter === "$") {
-        const existingMenu = document.getElementById("comment-tag-id");
-        if (existingMenu) {
-          return;
-        }
-
         // Create menu element
         const menu = document.createElement("ul");
         menu.setAttribute("role", "listbox");
@@ -45,41 +40,64 @@ chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
           "style",
           `top: ${menuTopOffset}px; left: ${menuLeftOffset}px;`
         );
+        const filteredTagsOptions = tagsOptions.filter(tag =>
+          tag.includes(lastWord.substring(1))
+        );
 
-        // Create list items elements
-        for (let tag of tagsOptions) {
-          const item = document.createElement("li");
-          item.setAttribute("role", "option");
-          const clickEventListener = item.addEventListener("click", () => {
-            if (textWords.length === 1) {
-              textArea.value = tag;
-            } else if (textWords.length === 2) {
-              textArea.value = `${textWords[0]} ${tag}`;
-            } else {
-              let updatedText = textWords[0];
-              for (let i = 1; i < textWords.length - 1; i++) {
-                updatedText = `${updatedText} ${textWords[i]}`;
+        if (filteredTagsOptions.length > 0) {
+          // Create list items elements
+          for (let tag of filteredTagsOptions) {
+            const item = document.createElement("li");
+            item.setAttribute("role", "option");
+            const clickEventListener = item.addEventListener("click", () => {
+              if (textWords.length === 1) {
+                textArea.value = tag;
+              } else if (textWords.length === 2) {
+                textArea.value = `${textWords[0]} ${tag}`;
+              } else {
+                let updatedText = textWords[0];
+                for (let i = 1; i < textWords.length - 1; i++) {
+                  updatedText = `${updatedText} ${textWords[i]}`;
+                }
+                textArea.value = `${updatedText} ${tag}`;
               }
-              textArea.value = `${updatedText} ${tag}`;
-            }
-            item.removeEventListener("click", clickEventListener);
-          });
-          item.textContent = tag;
-          menu.append(item);
-        }
-
-        // Make sure the menu disappears if the text area blurs
-        const blurEventListener = textArea.addEventListener("blur", () => {
-          const menuElement = document.getElementById("comment-tag-id");
-          textArea.removeEventListener("blur", blurEventListener);
-          if (menuElement && menuElement.parentNode) {
-            setTimeout(
-              () => menuElement.parentNode.removeChild(menuElement),
-              500
-            );
+              item.removeEventListener("click", clickEventListener);
+            });
+            item.textContent = tag;
+            menu.append(item);
           }
-        });
-        event.target.append(menu);
+
+          // Dismiss the select when clicking the text area
+          textArea.onclick = () => {
+            const menuElement = document.getElementById("comment-tag-id");
+            if (menuElement && menuElement.parentNode) {
+              menuElement.parentNode.removeChild(menuElement);
+            }
+          };
+
+          // Make sure the menu disappears if the text area blurs
+          const blurEventListener = textArea.addEventListener("blur", () => {
+            const menuElement = document.getElementById("comment-tag-id");
+            textArea.removeEventListener("blur", blurEventListener);
+            if (menuElement && menuElement.parentNode) {
+              setTimeout(
+                () => menuElement.parentNode.removeChild(menuElement),
+                500
+              );
+            }
+          });
+          const existingMenu = document.getElementById("comment-tag-id");
+          if (existingMenu) {
+            existingMenu.parentNode.replaceChild(menu, existingMenu);
+          } else {
+            event.target.append(menu);
+          }
+        } else {
+          const menuElement = document.getElementById("comment-tag-id");
+          if (menuElement && menuElement.parentNode) {
+            menuElement.parentNode.removeChild(menuElement);
+          }
+        }
       }
     });
   }

@@ -40,8 +40,10 @@ chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
           "style",
           `top: ${menuTopOffset}px; left: ${menuLeftOffset}px;`
         );
-        const filteredTagsOptions = tagsOptions.filter(tag =>
-          tag.includes(lastWord.substring(1))
+        const filteredTagsOptions = tagsOptions.filter(
+          tag =>
+            tag.label.includes(lastWord.substring(1)) ||
+            tag.description.includes(lastWord.substring(1))
         );
 
         if (filteredTagsOptions.length > 0) {
@@ -51,19 +53,19 @@ chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
             item.setAttribute("role", "option");
             const clickEventListener = item.addEventListener("click", () => {
               if (textWords.length === 1) {
-                textArea.value = tag;
+                textArea.value = tag.label;
               } else if (textWords.length === 2) {
-                textArea.value = `${textWords[0]} ${tag}`;
+                textArea.value = `${textWords[0]} ${tag.label}`;
               } else {
                 let updatedText = textWords[0];
                 for (let i = 1; i < textWords.length - 1; i++) {
                   updatedText = `${updatedText} ${textWords[i]}`;
                 }
-                textArea.value = `${updatedText} ${tag}`;
+                textArea.value = `${updatedText} ${tag.label}`;
               }
               item.removeEventListener("click", clickEventListener);
             });
-            item.textContent = tag;
+            item.textContent = tag.description;
             menu.append(item);
           }
 

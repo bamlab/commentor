@@ -1,15 +1,24 @@
+const defaultTagsOptions = [
+  { label: "✅", description: "Tests" },
+  { label: "♻️", description: "Refactoring" },
+  { label: "📱", description: "Front Architecture" },
+  { label: "🏗", description: "Back Architecture" },
+  { label: "⚡️", description: "Performance" },
+  { label: "✂️", description: "Commits" },
+  { label: "🏷", description: "Typing" },
+  { label: "🔖", description: "Namming" },
+  { label: ":readable:", description: "Readable" },
+  { label: ":solid:", description: "SOLID principles" },
+  { label: "🔨", description: "Other" },
+  { label: ":todo:", description: "Todo" }
+];
+
 chrome.runtime.onInstalled.addListener(function() {
-  chrome.storage.sync.set({ tagsOptions: [] });
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-    chrome.declarativeContent.onPageChanged.addRules([
-      {
-        conditions: [
-          new chrome.declarativeContent.PageStateMatcher({
-            pageUrl: { hostEquals: "developer.chrome.com" }
-          })
-        ],
-        actions: [new chrome.declarativeContent.ShowPageAction()]
-      }
-    ]);
+  chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
+    if (tagsOptions.length === 0) {
+      chrome.storage.sync.set({
+        tagsOptions: defaultTagsOptions
+      });
+    }
   });
 });

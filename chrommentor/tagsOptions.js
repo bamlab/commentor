@@ -1,41 +1,75 @@
 let page = document.getElementById("optionsDiv");
 let storedTagsOptions = [];
 
+const defaultTagsOptions = [
+  { label: "✅", description: "Tests" },
+  { label: "♻️", description: "Refactoring" },
+  { label: "📱", description: "Front Architecture" },
+  { label: "🏗", description: "Back Architecture" },
+  { label: "⚡️", description: "Performance" },
+  { label: "✂️", description: "Commits" },
+  { label: "🏷", description: "Typing" },
+  { label: "🔖", description: "Namming" },
+  { label: ":readable:", description: "Readable" },
+  { label: ":solid:", description: "SOLID principles" },
+  { label: "🔨", description: "Other" },
+  { label: ":todo:", description: "Todo" }
+];
+
 chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
-  storedTagsOptions = tagsOptions;
-  constructOptions(storedTagsOptions);
-  const tagLabelInput = document.createElement("input");
-  tagLabelInput.setAttribute("id", "tagLabelInput");
-  const tagDescriptionInput = document.createElement("input");
-  tagDescriptionInput.setAttribute("id", "tagDescriptionInput");
-  const inputButton = document.createElement("button");
-  inputButton.textContent = "Add tag";
-  inputButton.addEventListener("click", () => {
-    const descriptionInputValue = document.getElementById("tagDescriptionInput")
-      .value;
-    const labelInputValue = document.getElementById("tagLabelInput").value;
-    if (descriptionInputValue && labelInputValue) {
-      document.getElementById("tagDescriptionInput").value = null;
-      document.getElementById("tagLabelInput").value = null;
-      chrome.storage.sync.set(
-        {
-          tagsOptions: [
-            ...storedTagsOptions,
-            { description: descriptionInputValue, label: labelInputValue }
-          ]
-        },
-        () => {
-          chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
-            storedTagsOptions = tagsOptions;
-            constructOptions(storedTagsOptions);
+  if (tagsOptions.length === 0) {
+    chrome.storage.sync.set(
+      {
+        tagsOptions: defaultTagsOptions
+      },
+      () => {
+        chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
+          console.log("tagsOptions", tagsOptions);
+          storedTagsOptions = tagsOptions;
+          constructOptions(storedTagsOptions);
+          const tagLabelInput = document.createElement("input");
+          tagLabelInput.setAttribute("id", "tagLabelInput");
+          const tagDescriptionInput = document.createElement("input");
+          tagDescriptionInput.setAttribute("id", "tagDescriptionInput");
+          const inputButton = document.createElement("button");
+          inputButton.textContent = "Add tag";
+          inputButton.addEventListener("click", () => {
+            const descriptionInputValue = document.getElementById(
+              "tagDescriptionInput"
+            ).value;
+            const labelInputValue = document.getElementById("tagLabelInput")
+              .value;
+            if (descriptionInputValue && labelInputValue) {
+              document.getElementById("tagDescriptionInput").value = null;
+              document.getElementById("tagLabelInput").value = null;
+              console.log("before setting tags options", labelInputValue);
+              chrome.storage.sync.set(
+                {
+                  tagsOptions: [
+                    ...storedTagsOptions,
+                    {
+                      description: descriptionInputValue,
+                      label: labelInputValue
+                    }
+                  ]
+                },
+                () => {
+                  chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
+                    console.log("gotten tags options", tagsOptions);
+                    storedTagsOptions = tagsOptions;
+                    constructOptions(storedTagsOptions);
+                  });
+                }
+              );
+            }
           });
-        }
-      );
-    }
-  });
-  page.appendChild(tagLabelInput);
-  page.appendChild(tagDescriptionInput);
-  page.appendChild(inputButton);
+          page.appendChild(tagLabelInput);
+          page.appendChild(tagDescriptionInput);
+          page.appendChild(inputButton);
+        });
+      }
+    );
+  }
 });
 
 function constructOptions(tagsOptions) {

@@ -32,6 +32,7 @@ function setupExpander(expander, tagsOptions) {
     if (!textArea) {
       return;
     }
+    textArea.addEventListener("keydown", keydownEventListener);
     if (tagsOptions.length === 0) {
       return;
     }
@@ -107,10 +108,9 @@ function setupExpander(expander, tagsOptions) {
           const menuElement = document.getElementById("comment-tag-id");
           textArea.removeEventListener("blur", blurEventListener);
           if (menuElement && menuElement.parentNode) {
-            setTimeout(
-              () => menuElement.parentNode.removeChild(menuElement),
-              500
-            );
+            setTimeout(() => {
+              menuElement.parentNode.removeChild(menuElement);
+            }, 500);
           }
         });
         const existingMenu = document.getElementById("comment-tag-id");
@@ -128,3 +128,36 @@ function setupExpander(expander, tagsOptions) {
     }
   });
 }
+
+const keydownEventListener = event => {
+  console.log("EVENT", event);
+  const selectedTag = { description: "description", label: "label" };
+  if (event.key === "ArrowDown") {
+    console.log("ARROW DOWN");
+  } else if (event.key === "ArrowUp") {
+    console.log("ARROW UP");
+  } else {
+    if (event.key === "Enter") {
+      const existingMenu = document.getElementById("comment-tag-id");
+      if (existingMenu) {
+        const textWords = event.target.value.split(" ");
+        if (textWords.length === 1) {
+          event.target.value = selectedTag.label;
+        } else if (textWords.length === 2) {
+          event.target.value = `${textWords[0]} ${selectedTag.label}`;
+        } else {
+          let updatedText = textWords[0];
+          for (let i = 1; i < textWords.length - 1; i++) {
+            updatedText = `${updatedText} ${textWords[i]}`;
+          }
+          event.target.value = `${updatedText} ${selectedTag.label}`;
+        }
+        event.target.focus();
+        if (existingMenu.parentNode) {
+          existingMenu.parentNode.removeChild(existingMenu);
+        }
+      }
+    }
+    event.target.removeEventListener("keydown", keydownEventListener);
+  }
+};

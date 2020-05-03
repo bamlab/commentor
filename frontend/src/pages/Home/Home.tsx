@@ -16,6 +16,7 @@ import {
   lineHeight,
   CommentTableOptionsType,
 } from './columnsConfig';
+import { chain } from 'lodash';
 import { HomePropsType } from './Home.type';
 import { PieChartAndLegendCard } from './components/PieChartAndLegendCard';
 

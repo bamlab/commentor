@@ -3,6 +3,9 @@ const addCommentButtonsList = document.querySelectorAll(
   "button.add-line-comment"
 );
 
+let selectedTagOptionIndex = 0;
+let globalFilteredTagsOptions = [];
+
 chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
   for (let expander of expanderList) {
     setupExpander(expander, tagsOptions);
@@ -32,7 +35,6 @@ function setupExpander(expander, tagsOptions) {
     if (!textArea) {
       return;
     }
-    textArea.addEventListener("keydown", keydownEventListener);
     if (tagsOptions.length === 0) {
       return;
     }
@@ -72,10 +74,17 @@ function setupExpander(expander, tagsOptions) {
       );
 
       if (filteredTagsOptions.length > 0) {
+        globalFilteredTagsOptions = filteredTagsOptions;
+        textArea.addEventListener("keydown", keydownEventListener);
         // Create list items elements
         for (let tag of filteredTagsOptions) {
           const item = document.createElement("li");
           item.setAttribute("role", "option");
+          item.setAttribute("id", `chrommentor-tag-${tag.label}`);
+          if (tag.label === filteredTagsOptions[0].label) {
+            selectedTagOptionIndex = 0;
+            item.setAttribute("aria-selected", true);
+          }
           const clickEventListener = item.addEventListener("click", () => {
             if (textWords.length === 1) {
               textArea.value = tag.label;
@@ -94,7 +103,6 @@ function setupExpander(expander, tagsOptions) {
           item.textContent = tag.description;
           menu.append(item);
         }
-
         // Dismiss the select when clicking the text area
         textArea.onclick = () => {
           const menuElement = document.getElementById("comment-tag-id");
@@ -130,12 +138,33 @@ function setupExpander(expander, tagsOptions) {
 }
 
 const keydownEventListener = event => {
-  console.log("EVENT", event);
-  const selectedTag = { description: "description", label: "label" };
+  const selectedTag = globalFilteredTagsOptions[selectedTagOptionIndex];
   if (event.key === "ArrowDown") {
-    console.log("ARROW DOWN");
+    const selectedElement = document.getElementById(
+      `chrommentor-tag-${globalFilteredTagsOptions[selectedTagOptionIndex].label}`
+    );
+    selectedTagOptionIndex =
+      (((selectedTagOptionIndex + 1) % globalFilteredTagsOptions.length) +
+        globalFilteredTagsOptions.length) %
+      globalFilteredTagsOptions.length;
+    selectedElement.setAttribute("aria-selected", false);
+    const toSelectElement = document.getElementById(
+      `chrommentor-tag-${globalFilteredTagsOptions[selectedTagOptionIndex].label}`
+    );
+    toSelectElement.setAttribute("aria-selected", true);
   } else if (event.key === "ArrowUp") {
-    console.log("ARROW UP");
+    const selectedElement = document.getElementById(
+      `chrommentor-tag-${globalFilteredTagsOptions[selectedTagOptionIndex].label}`
+    );
+    selectedTagOptionIndex =
+      (((selectedTagOptionIndex - 1) % globalFilteredTagsOptions.length) +
+        globalFilteredTagsOptions.length) %
+      globalFilteredTagsOptions.length;
+    selectedElement.setAttribute("aria-selected", false);
+    const toSelectElement = document.getElementById(
+      `chrommentor-tag-${globalFilteredTagsOptions[selectedTagOptionIndex].label}`
+    );
+    toSelectElement.setAttribute("aria-selected", true);
   } else {
     if (event.key === "Enter") {
       const existingMenu = document.getElementById("comment-tag-id");

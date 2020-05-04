@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { PieChartContainer } from './PieChart.style';
 import { VictoryPie } from 'victory';
-import { TagType } from 'redux/Tag';
 import { colorUsage, fontStyles } from 'stylesheet';
+import { PieChartData } from '../../redux/Comment';
 
 interface propTypes {
-  data: { x: number | string; y: number; tag: TagType }[];
+  data: PieChartData[];
 }
 
 const PieChart = React.memo<propTypes>(props => {

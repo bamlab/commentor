@@ -1,16 +1,19 @@
-import { Controller, Body, Post } from '@nestjs/common';
-import { isNil } from 'lodash';
+import { Controller, Body, Post, Logger } from '@nestjs/common';
+import { isNil, chain } from 'lodash';
 
-import { CommentEvent, FiltersType } from './interfaces/comment.dto';
+import { CommentEvent, FiltersType, PieChartData } from './interfaces/comment.dto';
 import { Comment } from './comment.entity';
 import { CommentService } from './comment.service';
 import { GithubRepositoriesFilter } from '../auth/decorators/githubRepositoriesFilter.decorator';
+import { Tag } from '../tag/tag.entity';
+import { TagService } from '../tag/tag.service';
+import { GithubLogin } from '../auth/decorators/githubLogin.decorator';
 
 const FIRST_COMMENT_DATE = new Date('November 03, 1994 09:24:00');
 
 @Controller('comments')
 export class CommentController {
-  constructor(public readonly service: CommentService) {}
+  constructor(public readonly service: CommentService, public readonly tagService: TagService) {}
 
   @Post('filtered')
   async getFilteredComments(
@@ -34,6 +37,37 @@ export class CommentController {
       });
     } else {
       return [];
+    }
+  }
+
+  /**
+   * Need to be improved by improving design
+   *  2 github call -> login + github repository check
+   *  could be resolved with one db query
+   */
+  @Post('pieChartData')
+  async getPieChartFormattedComments(
+    @Body()
+    filters: FiltersType,
+    @GithubRepositoriesFilter() filteredGithubRepositoriesIds: number[],
+    @GithubLogin() githubLogin: string,
+  ): Promise<PieChartData[]> {
+    try {
+      const comments = await this.getFilteredComments(filters, filteredGithubRepositoriesIds);
+      const userTags = await this.tagService.getByGithubLogin(githubLogin);
+      const pieChartFormattedData = chain(userTags)
+        .map((tag: Tag) => ({
+          x: tag.code,
+          y: comments.filter((comment: Comment) => !!comment.body.match(tag.code)).length,
+          tag,
+        }))
+        .filter(chartDatum => chartDatum.y > 0)
+        .value();
+
+      return pieChartFormattedData;
+    } catch (error) {
+      Logger.error(error, `Error on getPieChartFormattedComments`);
+      throw error;
     }
   }
 

@@ -1,5 +1,5 @@
 import request from 'superagent';
-import { CommentType } from 'redux/Comment';
+import { CommentType, PieChartData } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
 import { RepositoryType } from 'redux/Repository';
 import { formatFetchedCommentForAppType } from '../../redux/Comment/comment.adapter';
@@ -70,6 +70,18 @@ class Client {
     const result = await this.post('/comments/filtered', data);
     const adaptedResult = formatFetchedCommentForAppType(result);
     return adaptedResult;
+  };
+
+  fetchPieChartDataComments = async (data: {
+    repositoryIds: number[];
+    startingDate: Date | null;
+    endingDate: Date | null;
+    requesterIds: string[];
+    commentorIds: string[];
+    tagCodes: string[];
+  }): Promise<PieChartData[]> => {
+    const result = await this.post('/comments/pieChartData', data);
+    return result;
   };
 
   fetchTags = async (data: object): Promise<TagType[]> => {

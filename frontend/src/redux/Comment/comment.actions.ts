@@ -1,5 +1,5 @@
 import { createAsyncAction } from 'typesafe-actions';
-import { CommentType, PieChartData } from './comment.types';
+import { CommentType, PieChartData, BarChartData } from './comment.types';
 
 export const loadComments = createAsyncAction(
   'Comment/GET_COMMENTS_REQUEST',
@@ -28,4 +28,19 @@ export const loadPieChartData = createAsyncAction(
     errorMessage: string;
   }
 >();
+
+export const loadBarChartData = createAsyncAction(
+  'Comment/GET_BAR_CHART_DATA_REQUEST',
+  'Comment/GET_BAR_CHART_DATA_SUCCESS',
+  'Comment/GET_BAR_CHART_DATA_FAILURE',
+)<
+  {},
+  {
+    barChartData: BarChartData[];
+  },
+  {
+    errorMessage: string;
+  }
+>();
+
 export default { loadComments };

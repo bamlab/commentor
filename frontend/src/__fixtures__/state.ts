@@ -19,6 +19,7 @@ export const state: RootState = {
     availableCommentors: ['amauryw'],
     isLoading: true,
     pieChartData: [],
+    barChartData: [],
     commentError: null,
   },
   authentication: {

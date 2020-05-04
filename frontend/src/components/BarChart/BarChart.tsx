@@ -13,10 +13,10 @@ import { map, chain } from 'lodash';
 import { eachDayOfInterval } from 'date-fns';
 import { formatDateToDDMMLined } from '../../services/date/dateFormatter';
 import { TagType } from 'redux/Tag';
+import { BarChartData } from '../../redux/Comment';
 
-export type BarChartDataType = { x: Date; y: number; y0: number; tag: TagType };
 interface propTypes {
-  data: BarChartDataType[];
+  data: BarChartData[];
 }
 
 const BarChart = React.memo<propTypes>(props => {

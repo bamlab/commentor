@@ -21,7 +21,7 @@ import {
 } from './columnsConfig';
 import { HomePropsType } from './Home.type';
 import { FilterSection } from './components/FilterSection';
-import { BarChartSection } from './components/BarChartSection/BarChartSection';
+import { BarChartSection } from './components/BarChartSection';
 import { PieChartSection } from './components/PieChartSection';
 
 const ICON_SIZE = 25;
@@ -48,7 +48,7 @@ const Home = React.memo<HomePropsType>(props => {
         <AuthenticatedPageContainer>
           <FilterSection />
           <ChartsContainer>
-            <BarChartSection comments={props.comments} tags={props.tags} />
+            <BarChartSection />
             <PieChartSection tags={props.tags} />
           </ChartsContainer>
           <CommentTableContainer>

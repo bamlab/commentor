@@ -1,7 +1,12 @@
 import { Controller, Body, Post, Logger } from '@nestjs/common';
-import { isNil, chain } from 'lodash';
+import { isNil, chain, map } from 'lodash';
 
-import { CommentEvent, FiltersType, GetFilteredCommentsAnswer } from './interfaces/comment.dto';
+import {
+  CommentEvent,
+  FiltersType,
+  GetFilteredCommentsAnswer,
+  BarChartData,
+} from './interfaces/comment.dto';
 import { Comment } from './comment.entity';
 import { CommentService } from './comment.service';
 import { GithubRepositoriesFilter } from '../auth/decorators/githubRepositoriesFilter.decorator';
@@ -52,7 +57,7 @@ export class CommentController {
   ): Promise<GetFilteredCommentsAnswer> {
     try {
       if (filteredGithubRepositoriesIds && filteredGithubRepositoriesIds.length > 0) {
-        const comments = await this.service.getCommentsWithFilters({
+        const fetchedComments = await this.service.getCommentsWithFilters({
           repositoriesIds: filteredGithubRepositoriesIds,
           startingDate: isNil(filters.startingDate) ? FIRST_COMMENT_DATE : filters.startingDate,
           endingDate: isNil(filters.endingDate) ? new Date() : filters.endingDate,
@@ -64,18 +69,41 @@ export class CommentController {
         const pieChartFormattedData = chain(userTags)
           .map((tag: Tag) => ({
             x: tag.code,
-            y: comments.filter((comment: Comment) => !!comment.body.match(tag.code)).length,
+            y: fetchedComments.filter((comment: Comment) => !!comment.body.match(tag.code)).length,
             tag,
           }))
           .filter(chartDatum => chartDatum.y > 0)
           .value();
 
+        // @ts-ignore well looks like lodash typing failed on this
+        const barChartFormattedData: BarChartData[] = chain(fetchedComments)
+          .groupBy((comment: Comment) => {
+            comment.creationDate.setHours(0, 0, 0, 0);
+            return comment.creationDate;
+          })
+          .map((comments: Comment[]) =>
+            map(comments, (comment: Comment) =>
+              chain(userTags)
+                .filter((tag: Tag) => !!comment.body.match(tag.code))
+                .map((tag: Tag) => {
+                  comment.creationDate.setHours(0, 0, 0, 0);
+                  return [{ x: comment.creationDate, y: 1, y0: 0, tag }];
+                })
+                .value(),
+            ),
+          )
+          .flattenDeep()
+          .sortBy('x')
+          .value();
+
         return {
+          barChartData: barChartFormattedData,
           pieChartData: pieChartFormattedData,
-          comments,
+          comments: fetchedComments,
         };
       } else {
         return {
+          barChartData: [],
           pieChartData: [],
           comments: [],
         };

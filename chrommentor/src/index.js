@@ -10,14 +10,14 @@ const defaultTagsOptions = [
   { label: ":readable:", description: "Readable" },
   { label: ":solid:", description: "SOLID principles" },
   { label: "🔨", description: "Other" },
-  { label: ":todo:", description: "Todo" }
+  { label: ":todo:", description: "Todo" },
 ];
 
-chrome.runtime.onInstalled.addListener(function() {
+chrome.runtime.onInstalled.addListener(function () {
   chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
-    if (tagsOptions.length === 0) {
+    if (!tagsOptions || tagsOptions.length === 0) {
       chrome.storage.sync.set({
-        tagsOptions: defaultTagsOptions
+        tagsOptions: defaultTagsOptions,
       });
     }
   });

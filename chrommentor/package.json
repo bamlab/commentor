@@ -4,8 +4,20 @@
   "description": "The official chrome extension for Commentor",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist && parcel build src/manifest.json",
+    "test": "jest"
   },
   "author": "Maxime Sraïki",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-jest": "^25.5.1",
+    "jest": "^25.5.4",
+    "parcel": "^1.12.4",
+    "parcel-plugin-web-extension": "^1.6.1"
+  },
+  "browserslist": [
+    "since 2017-06"
+  ]
 }

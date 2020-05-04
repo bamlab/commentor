@@ -1,3 +1,5 @@
+import { getTagsOptions } from "./utils/getTagsOptions";
+
 let page = document.getElementById("optionsDiv");
 
 chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
@@ -5,22 +7,21 @@ chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
   constructTagInput(page);
 });
 
-function constructTagInput(container) {
-  chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {
-    const tagLabelInput = document.createElement("input");
-    tagLabelInput.setAttribute("id", "tagLabelInput");
-    const tagDescriptionInput = document.createElement("input");
-    tagDescriptionInput.setAttribute("id", "tagDescriptionInput");
-    const inputButton = document.createElement("button");
-    inputButton.textContent = "Add tag";
-    inputButton.addEventListener("click", () => {
-      addTag(tagsOptions);
-    });
-    container.appendChild(tagLabelInput);
-    container.appendChild(tagDescriptionInput);
-    container.appendChild(inputButton);
+const constructTagInput = async (container) => {
+  const tagsOptions = await getTagsOptions();
+  const tagLabelInput = document.createElement("input");
+  tagLabelInput.setAttribute("id", "tagLabelInput");
+  const tagDescriptionInput = document.createElement("input");
+  tagDescriptionInput.setAttribute("id", "tagDescriptionInput");
+  const inputButton = document.createElement("button");
+  inputButton.textContent = "Add tag";
+  inputButton.addEventListener("click", () => {
+    addTag(tagsOptions);
   });
-}
+  container.appendChild(tagLabelInput);
+  container.appendChild(tagDescriptionInput);
+  container.appendChild(inputButton);
+};
 
 function addTag(existingTagsOptions) {
   const descriptionInputValue = document.getElementById("tagDescriptionInput")
@@ -35,9 +36,9 @@ function addTag(existingTagsOptions) {
           ...existingTagsOptions,
           {
             description: descriptionInputValue,
-            label: labelInputValue
-          }
-        ]
+            label: labelInputValue,
+          },
+        ],
       },
       () => {
         chrome.storage.sync.get("tagsOptions", ({ tagsOptions }) => {

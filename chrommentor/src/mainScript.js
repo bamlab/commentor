@@ -1,3 +1,5 @@
+import { sortAndFilterLabels } from "./utils/sortAndFilterLabels";
+
 const expanderList = document.querySelectorAll("text-expander");
 const addCommentButtonsList = document.querySelectorAll(
   "button.add-line-comment"
@@ -28,9 +30,9 @@ function setupExpander(expander, tagsOptions) {
     expander.setAttribute("keys", `${existingKeys} $`);
   }
 
-  expander.addEventListener("text-expander-change", event => {
+  expander.addEventListener("text-expander-change", (event) => {
     const textArea = Array.from(event.target.childNodes).find(
-      childNode => childNode.name === "comment[body]"
+      (childNode) => childNode.name === "comment[body]"
     );
     if (!textArea) {
       return;
@@ -63,14 +65,9 @@ function setupExpander(expander, tagsOptions) {
         "style",
         `top: ${menuTopOffset}px; left: ${menuLeftOffset}px;`
       );
-      const filteredTagsOptions = tagsOptions.filter(
-        tag =>
-          tag.label
-            .toLowerCase()
-            .includes(lastWord.substring(1).toLowerCase()) ||
-          tag.description
-            .toLowerCase()
-            .includes(lastWord.substring(1).toLowerCase())
+      const filteredTagsOptions = sortAndFilterLabels(
+        tagsOptions,
+        lastWord.substring(1)
       );
 
       if (filteredTagsOptions.length > 0) {
@@ -137,7 +134,7 @@ function setupExpander(expander, tagsOptions) {
   });
 }
 
-const keydownEventListener = event => {
+const keydownEventListener = (event) => {
   const selectedTag = globalFilteredTagsOptions[selectedTagOptionIndex];
   if (event.key === "ArrowDown") {
     const selectedElement = document.getElementById(

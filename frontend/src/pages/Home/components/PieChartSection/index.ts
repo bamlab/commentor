@@ -1,1 +1,1 @@
-export { PieChartSection } from './PieChartSection';
+export { PieChartSection } from './PieChartSection.wrap';

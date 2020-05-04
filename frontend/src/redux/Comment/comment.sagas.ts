@@ -13,7 +13,6 @@ export function* loadCommentsSaga(action: ActionType<typeof loadComments.request
       [client, client.fetchPieChartDataComments],
       filters,
     );
-    console.log('Amo: function*loadCommentsSaga -> pieChartData', pieChartData);
 
     yield put(loadComments.success({ comments }));
     yield put(loadPieChartData.success({ pieChartData }));

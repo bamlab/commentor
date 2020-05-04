@@ -13,5 +13,8 @@
     "jest": "^25.5.4",
     "parcel": "^1.12.4",
     "parcel-plugin-web-extension": "^1.6.1"
-  }
+  },
+  "browserslist": [
+    "since 2017-06"
+  ]
 }

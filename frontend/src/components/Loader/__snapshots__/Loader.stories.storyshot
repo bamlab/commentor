@@ -197,10 +197,10 @@ exports[`Storyshots Loader playground 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Loaderstyle__LoaderContainer-sc-1gq6nz9-1",
                         "isStatic": true,
-                        "lastClassName": "lmBNPP",
+                        "lastClassName": "kkqVIU",
                         "rules": Array [
                           "display:inline-block;position:relative;width:64px;height:64px;div{position:absolute;width:5px;height:5px;background:",
-                          "#A0D891",
+                          "#8968BA",
                           ";border-radius:50%;animation:",
                           Keyframes {
                             "id": "sc-keyframes-kRtcHe",
@@ -227,7 +227,7 @@ exports[`Storyshots Loader playground 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="Loaderstyle__LoaderContainer-sc-1gq6nz9-1 lmBNPP"
+                    className="Loaderstyle__LoaderContainer-sc-1gq6nz9-1 kkqVIU"
                   >
                     <div />
                     <div />
@@ -261,7 +261,7 @@ exports[`Storyshots Loader playground 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -473,10 +473,10 @@ exports[`Storyshots Loader with no props 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Loaderstyle__LoaderContainer-sc-1gq6nz9-1",
                         "isStatic": true,
-                        "lastClassName": "lmBNPP",
+                        "lastClassName": "kkqVIU",
                         "rules": Array [
                           "display:inline-block;position:relative;width:64px;height:64px;div{position:absolute;width:5px;height:5px;background:",
-                          "#A0D891",
+                          "#8968BA",
                           ";border-radius:50%;animation:",
                           Keyframes {
                             "id": "sc-keyframes-kRtcHe",
@@ -503,7 +503,7 @@ exports[`Storyshots Loader with no props 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="Loaderstyle__LoaderContainer-sc-1gq6nz9-1 lmBNPP"
+                    className="Loaderstyle__LoaderContainer-sc-1gq6nz9-1 kkqVIU"
                   >
                     <div />
                     <div />
@@ -537,7 +537,7 @@ exports[`Storyshots Loader with no props 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,

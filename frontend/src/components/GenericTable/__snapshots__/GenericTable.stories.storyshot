@@ -80,56 +80,56 @@ exports[`Storyshots GenericTable playground 1`] = `
         columnsConfig={
           Array [
             Object {
-              "columnWidth": 75,
+              "columnWidth": 10,
               "index": 0,
               "key": "id",
               "name": "id",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 300,
+              "columnWidth": 30,
               "index": 1,
               "key": "body",
               "name": "body",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 300,
+              "columnWidth": 20,
               "index": 2,
               "key": "filePath",
               "name": "filePath",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 300,
+              "columnWidth": 10,
               "index": 3,
               "key": "url",
               "name": "url",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 20,
               "index": 4,
               "key": "commentor",
               "name": "commentor",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 20,
               "index": 5,
               "key": "pullRequestUrl",
               "name": "pullRequestUrl",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 10,
               "index": 6,
               "key": "repositoryId",
               "name": "repositoryId",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 10,
               "index": 6,
               "key": "creationDate",
               "name": "creationDate",
@@ -145,7 +145,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             Object {
               "body": "coucou",
               "commentor": "vor",
-              "creationDate": "vor",
+              "creationDate": 2020-05-04T10:47:12.116Z,
               "filePath": "vor",
               "id": 1,
               "pullRequestUrl": "vor",
@@ -156,7 +156,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             Object {
               "body": "coucou",
               "commentor": "vor",
-              "creationDate": "vor",
+              "creationDate": 2020-05-04T10:47:12.116Z,
               "filePath": "vor",
               "id": 1,
               "pullRequestUrl": "vor",
@@ -178,7 +178,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             Object {
               "body": "coucou",
               "commentor": "vor",
-              "creationDate": "vor",
+              "creationDate": 2020-05-04T10:47:12.116Z,
               "filePath": "vor",
               "id": 1,
               "pullRequestUrl": "vor",
@@ -275,56 +275,56 @@ exports[`Storyshots GenericTable playground 1`] = `
         columnsConfig={
           Array [
             Object {
-              "columnWidth": 75,
+              "columnWidth": 10,
               "index": 0,
               "key": "id",
               "name": "id",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 300,
+              "columnWidth": 30,
               "index": 1,
               "key": "body",
               "name": "body",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 300,
+              "columnWidth": 20,
               "index": 2,
               "key": "filePath",
               "name": "filePath",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 300,
+              "columnWidth": 10,
               "index": 3,
               "key": "url",
               "name": "url",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 20,
               "index": 4,
               "key": "commentor",
               "name": "commentor",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 20,
               "index": 5,
               "key": "pullRequestUrl",
               "name": "pullRequestUrl",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 10,
               "index": 6,
               "key": "repositoryId",
               "name": "repositoryId",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 10,
               "index": 6,
               "key": "creationDate",
               "name": "creationDate",
@@ -340,7 +340,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             Object {
               "body": "coucou",
               "commentor": "vor",
-              "creationDate": "vor",
+              "creationDate": 2020-05-04T10:47:12.116Z,
               "filePath": "vor",
               "id": 1,
               "pullRequestUrl": "vor",
@@ -351,7 +351,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             Object {
               "body": "coucou",
               "commentor": "vor",
-              "creationDate": "vor",
+              "creationDate": 2020-05-04T10:47:12.116Z,
               "filePath": "vor",
               "id": 1,
               "pullRequestUrl": "vor",
@@ -373,7 +373,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             Object {
               "body": "coucou",
               "commentor": "vor",
-              "creationDate": "vor",
+              "creationDate": 2020-05-04T10:47:12.116Z,
               "filePath": "vor",
               "id": 1,
               "pullRequestUrl": "vor",
@@ -391,16 +391,16 @@ exports[`Storyshots GenericTable playground 1`] = `
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": Array [],
                 "componentStyle": ComponentStyle {
-                  "componentId": "GenericTablestyle__Wrapper-sc-13rcpxg-2",
+                  "componentId": "GenericTablestyle__Wrapper-x62i1-4",
                   "isStatic": true,
-                  "lastClassName": "ejMihY",
+                  "lastClassName": "hThILP",
                   "rules": Array [
                     "flex:1 1 auto;display:flex;flex-direction:column;",
                   ],
                 },
                 "displayName": "GenericTablestyle__Wrapper",
                 "render": [Function],
-                "styledComponentId": "GenericTablestyle__Wrapper-sc-13rcpxg-2",
+                "styledComponentId": "GenericTablestyle__Wrapper-x62i1-4",
                 "target": "div",
                 "toString": [Function],
                 "warnTooManyClasses": [Function],
@@ -410,7 +410,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             forwardedRef={null}
           >
             <div
-              className="GenericTablestyle__Wrapper-sc-13rcpxg-2 ejMihY"
+              className="GenericTablestyle__Wrapper-x62i1-4 hThILP"
             >
               <AutoSizer
                 disableHeight={false}
@@ -449,8 +449,8 @@ exports[`Storyshots GenericTable playground 1`] = `
                     style={
                       Object {
                         "backgroundColor": "white",
-                        "border": "1px solid #ddd",
-                        "borderRadius": "10px",
+                        "borderRadius": "5px",
+                        "boxShadow": "0px 0px 6px rgba(34,34,34,0.1)",
                         "overflow": "hidden",
                       }
                     }
@@ -479,7 +479,7 @@ exports[`Storyshots GenericTable playground 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -574,56 +574,56 @@ exports[`Storyshots GenericTable with empty comments 1`] = `
         columnsConfig={
           Array [
             Object {
-              "columnWidth": 75,
+              "columnWidth": 10,
               "index": 0,
               "key": "id",
               "name": "id",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 300,
+              "columnWidth": 30,
               "index": 1,
               "key": "body",
               "name": "body",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 300,
+              "columnWidth": 20,
               "index": 2,
               "key": "filePath",
               "name": "filePath",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 300,
+              "columnWidth": 10,
               "index": 3,
               "key": "url",
               "name": "url",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 20,
               "index": 4,
               "key": "commentor",
               "name": "commentor",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 20,
               "index": 5,
               "key": "pullRequestUrl",
               "name": "pullRequestUrl",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 10,
               "index": 6,
               "key": "repositoryId",
               "name": "repositoryId",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 10,
               "index": 6,
               "key": "creationDate",
               "name": "creationDate",
@@ -722,56 +722,56 @@ exports[`Storyshots GenericTable with empty comments 1`] = `
         columnsConfig={
           Array [
             Object {
-              "columnWidth": 75,
+              "columnWidth": 10,
               "index": 0,
               "key": "id",
               "name": "id",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 300,
+              "columnWidth": 30,
               "index": 1,
               "key": "body",
               "name": "body",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 300,
+              "columnWidth": 20,
               "index": 2,
               "key": "filePath",
               "name": "filePath",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 300,
+              "columnWidth": 10,
               "index": 3,
               "key": "url",
               "name": "url",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 20,
               "index": 4,
               "key": "commentor",
               "name": "commentor",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 20,
               "index": 5,
               "key": "pullRequestUrl",
               "name": "pullRequestUrl",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 10,
               "index": 6,
               "key": "repositoryId",
               "name": "repositoryId",
               "renderer": [Function],
             },
             Object {
-              "columnWidth": 200,
+              "columnWidth": 10,
               "index": 6,
               "key": "creationDate",
               "name": "creationDate",
@@ -791,16 +791,16 @@ exports[`Storyshots GenericTable with empty comments 1`] = `
                 "$$typeof": Symbol(react.forward_ref),
                 "attrs": Array [],
                 "componentStyle": ComponentStyle {
-                  "componentId": "GenericTablestyle__Wrapper-sc-13rcpxg-2",
+                  "componentId": "GenericTablestyle__Wrapper-x62i1-4",
                   "isStatic": true,
-                  "lastClassName": "ejMihY",
+                  "lastClassName": "hThILP",
                   "rules": Array [
                     "flex:1 1 auto;display:flex;flex-direction:column;",
                   ],
                 },
                 "displayName": "GenericTablestyle__Wrapper",
                 "render": [Function],
-                "styledComponentId": "GenericTablestyle__Wrapper-sc-13rcpxg-2",
+                "styledComponentId": "GenericTablestyle__Wrapper-x62i1-4",
                 "target": "div",
                 "toString": [Function],
                 "warnTooManyClasses": [Function],
@@ -810,7 +810,7 @@ exports[`Storyshots GenericTable with empty comments 1`] = `
             forwardedRef={null}
           >
             <div
-              className="GenericTablestyle__Wrapper-sc-13rcpxg-2 ejMihY"
+              className="GenericTablestyle__Wrapper-x62i1-4 hThILP"
             >
               <AutoSizer
                 disableHeight={false}
@@ -849,8 +849,8 @@ exports[`Storyshots GenericTable with empty comments 1`] = `
                     style={
                       Object {
                         "backgroundColor": "white",
-                        "border": "1px solid #ddd",
-                        "borderRadius": "10px",
+                        "borderRadius": "5px",
+                        "boxShadow": "0px 0px 6px rgba(34,34,34,0.1)",
                         "overflow": "hidden",
                       }
                     }
@@ -879,7 +879,7 @@ exports[`Storyshots GenericTable with empty comments 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,

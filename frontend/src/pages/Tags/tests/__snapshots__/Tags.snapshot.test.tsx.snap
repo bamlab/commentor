@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
-<Tagsstyle__StyledTags>
+<Tagsstyle__Container>
   <Tagsstyle__ErrorMessage>
     error
   </Tagsstyle__ErrorMessage>
@@ -78,5 +78,5 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
     id="deleteTagModal"
     isOpen={false}
   />
-</Tagsstyle__StyledTags>
+</Tagsstyle__Container>
 `;

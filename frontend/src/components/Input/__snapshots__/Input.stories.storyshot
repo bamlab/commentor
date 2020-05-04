@@ -172,16 +172,18 @@ exports[`Storyshots Input CheckBox 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -191,7 +193,7 @@ exports[`Storyshots Input CheckBox 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -208,7 +210,7 @@ exports[`Storyshots Input CheckBox 1`] = `
           type="checkbox"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="checkbox"
           />
         </StyledComponent>
@@ -226,7 +228,7 @@ exports[`Storyshots Input CheckBox 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -413,16 +415,18 @@ exports[`Storyshots Input Color 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -432,7 +436,7 @@ exports[`Storyshots Input Color 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -449,7 +453,7 @@ exports[`Storyshots Input Color 1`] = `
           type="color"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="color"
           />
         </StyledComponent>
@@ -467,7 +471,7 @@ exports[`Storyshots Input Color 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -654,16 +658,18 @@ exports[`Storyshots Input Date: 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -673,7 +679,7 @@ exports[`Storyshots Input Date: 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -690,7 +696,7 @@ exports[`Storyshots Input Date: 1`] = `
           type="date"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="date"
           />
         </StyledComponent>
@@ -708,7 +714,7 @@ exports[`Storyshots Input Date: 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -895,16 +901,18 @@ exports[`Storyshots Input Datetime-local 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -914,7 +922,7 @@ exports[`Storyshots Input Datetime-local 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -931,7 +939,7 @@ exports[`Storyshots Input Datetime-local 1`] = `
           type="datetime-local"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="datetime-local"
           />
         </StyledComponent>
@@ -949,7 +957,7 @@ exports[`Storyshots Input Datetime-local 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1136,16 +1144,18 @@ exports[`Storyshots Input Email 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -1155,7 +1165,7 @@ exports[`Storyshots Input Email 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -1172,7 +1182,7 @@ exports[`Storyshots Input Email 1`] = `
           type="email"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="email"
           />
         </StyledComponent>
@@ -1190,7 +1200,7 @@ exports[`Storyshots Input Email 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1377,16 +1387,18 @@ exports[`Storyshots Input File 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -1396,7 +1408,7 @@ exports[`Storyshots Input File 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -1413,7 +1425,7 @@ exports[`Storyshots Input File 1`] = `
           type="file"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="file"
           />
         </StyledComponent>
@@ -1431,7 +1443,7 @@ exports[`Storyshots Input File 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1618,16 +1630,18 @@ exports[`Storyshots Input Hidden 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -1637,7 +1651,7 @@ exports[`Storyshots Input Hidden 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -1654,7 +1668,7 @@ exports[`Storyshots Input Hidden 1`] = `
           type="hidden"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="hidden"
           />
         </StyledComponent>
@@ -1672,7 +1686,7 @@ exports[`Storyshots Input Hidden 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1859,16 +1873,18 @@ exports[`Storyshots Input Image 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -1878,7 +1894,7 @@ exports[`Storyshots Input Image 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -1895,7 +1911,7 @@ exports[`Storyshots Input Image 1`] = `
           type="image"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="image"
           />
         </StyledComponent>
@@ -1913,7 +1929,7 @@ exports[`Storyshots Input Image 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2100,16 +2116,18 @@ exports[`Storyshots Input Month 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -2119,7 +2137,7 @@ exports[`Storyshots Input Month 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -2136,7 +2154,7 @@ exports[`Storyshots Input Month 1`] = `
           type="month"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="month"
           />
         </StyledComponent>
@@ -2154,7 +2172,7 @@ exports[`Storyshots Input Month 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2341,16 +2359,18 @@ exports[`Storyshots Input Number 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -2360,7 +2380,7 @@ exports[`Storyshots Input Number 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -2377,7 +2397,7 @@ exports[`Storyshots Input Number 1`] = `
           type="number"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="number"
           />
         </StyledComponent>
@@ -2395,7 +2415,7 @@ exports[`Storyshots Input Number 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2582,16 +2602,18 @@ exports[`Storyshots Input Password 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -2601,7 +2623,7 @@ exports[`Storyshots Input Password 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -2618,7 +2640,7 @@ exports[`Storyshots Input Password 1`] = `
           type="password"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="password"
           />
         </StyledComponent>
@@ -2636,7 +2658,7 @@ exports[`Storyshots Input Password 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2823,16 +2845,18 @@ exports[`Storyshots Input Radio 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -2842,7 +2866,7 @@ exports[`Storyshots Input Radio 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -2859,7 +2883,7 @@ exports[`Storyshots Input Radio 1`] = `
           type="radio"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="radio"
           />
         </StyledComponent>
@@ -2877,7 +2901,7 @@ exports[`Storyshots Input Radio 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -3064,16 +3088,18 @@ exports[`Storyshots Input Range 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -3083,7 +3109,7 @@ exports[`Storyshots Input Range 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -3100,7 +3126,7 @@ exports[`Storyshots Input Range 1`] = `
           type="range"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="range"
           />
         </StyledComponent>
@@ -3118,7 +3144,7 @@ exports[`Storyshots Input Range 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -3305,16 +3331,18 @@ exports[`Storyshots Input Reset 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -3324,7 +3352,7 @@ exports[`Storyshots Input Reset 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -3341,7 +3369,7 @@ exports[`Storyshots Input Reset 1`] = `
           type="reset"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="reset"
           />
         </StyledComponent>
@@ -3359,7 +3387,7 @@ exports[`Storyshots Input Reset 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -3546,16 +3574,18 @@ exports[`Storyshots Input Search 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -3565,7 +3595,7 @@ exports[`Storyshots Input Search 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -3582,7 +3612,7 @@ exports[`Storyshots Input Search 1`] = `
           type="search"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="search"
           />
         </StyledComponent>
@@ -3600,7 +3630,7 @@ exports[`Storyshots Input Search 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -3787,16 +3817,18 @@ exports[`Storyshots Input Submit 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -3806,7 +3838,7 @@ exports[`Storyshots Input Submit 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -3823,7 +3855,7 @@ exports[`Storyshots Input Submit 1`] = `
           type="submit"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="submit"
           />
         </StyledComponent>
@@ -3841,7 +3873,7 @@ exports[`Storyshots Input Submit 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -4028,16 +4060,18 @@ exports[`Storyshots Input Tel 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -4047,7 +4081,7 @@ exports[`Storyshots Input Tel 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -4064,7 +4098,7 @@ exports[`Storyshots Input Tel 1`] = `
           type="tel"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="tel"
           />
         </StyledComponent>
@@ -4082,7 +4116,7 @@ exports[`Storyshots Input Tel 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -4269,16 +4303,18 @@ exports[`Storyshots Input Text 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -4288,7 +4324,7 @@ exports[`Storyshots Input Text 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -4305,7 +4341,7 @@ exports[`Storyshots Input Text 1`] = `
           type="text"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="text"
           />
         </StyledComponent>
@@ -4323,7 +4359,7 @@ exports[`Storyshots Input Text 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -4510,16 +4546,18 @@ exports[`Storyshots Input Time 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -4529,7 +4567,7 @@ exports[`Storyshots Input Time 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -4546,7 +4584,7 @@ exports[`Storyshots Input Time 1`] = `
           type="time"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="time"
           />
         </StyledComponent>
@@ -4564,7 +4602,7 @@ exports[`Storyshots Input Time 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -4751,16 +4789,18 @@ exports[`Storyshots Input Url 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -4770,7 +4810,7 @@ exports[`Storyshots Input Url 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -4787,7 +4827,7 @@ exports[`Storyshots Input Url 1`] = `
           type="url"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="url"
           />
         </StyledComponent>
@@ -4805,7 +4845,7 @@ exports[`Storyshots Input Url 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -4992,16 +5032,18 @@ exports[`Storyshots Input Week 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gWusiE",
+                "lastClassName": "bewRLi",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -5011,7 +5053,7 @@ exports[`Storyshots Input Week 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -5028,7 +5070,7 @@ exports[`Storyshots Input Week 1`] = `
           type="week"
         >
           <input
-            className="Input-lswqho-0 gWusiE"
+            className="Input-lswqho-0 bewRLi"
             type="week"
           />
         </StyledComponent>
@@ -5046,7 +5088,7 @@ exports[`Storyshots Input Week 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -5233,16 +5275,18 @@ exports[`Storyshots Input hasError 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gkQebw",
+                "lastClassName": "cCTqce",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -5252,7 +5296,7 @@ exports[`Storyshots Input hasError 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -5269,7 +5313,7 @@ exports[`Storyshots Input hasError 1`] = `
           hasError={true}
         >
           <input
-            className="Input-lswqho-0 gkQebw"
+            className="Input-lswqho-0 cCTqce"
           />
         </StyledComponent>
       </Input>
@@ -5286,7 +5330,7 @@ exports[`Storyshots Input hasError 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -5475,16 +5519,18 @@ exports[`Storyshots Input playground 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Input-lswqho-0",
                 "isStatic": false,
-                "lastClassName": "gkQebw",
+                "lastClassName": "cCTqce",
                 "rules": Array [
                   "font-family:",
-                  "'Lato', 'Helvetica', 'Arial', sans-serif",
+                  "Muli",
                   ";font-size:",
                   "16px",
+                  ";font-weight:",
+                  "400",
                   ";width:100%;height:60px;background-color:",
-                  "#FFFFFF",
+                  "#f7f7f7",
                   ";padding:0 ",
-                  "15px",
+                  "24px",
                   ";border-radius:",
                   "4px",
                   ";border:1px solid;border-color:",
@@ -5494,7 +5540,7 @@ exports[`Storyshots Input playground 1`] = `
                   ";}:focus{border-color:",
                   [Function],
                   ";}::placeholder{color:",
-                  "rgba(0, 0, 0, 0.24)",
+                  "#979797",
                   ";}",
                 ],
               },
@@ -5512,7 +5558,7 @@ exports[`Storyshots Input playground 1`] = `
           type="text"
         >
           <input
-            className="Input-lswqho-0 gkQebw"
+            className="Input-lswqho-0 cCTqce"
             type="text"
           />
         </StyledComponent>
@@ -5530,7 +5576,7 @@ exports[`Storyshots Input playground 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,

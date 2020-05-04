@@ -191,10 +191,10 @@ exports[`Storyshots InputRow disabled 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "InputRowstyle__Row-jt7egi-2",
                   "isStatic": true,
-                  "lastClassName": "cqfxRi",
+                  "lastClassName": "dOntYq",
                   "rules": Array [
                     "margin-bottom:",
-                    "25px",
+                    "40px",
                     ";width:100%;",
                   ],
                 },
@@ -210,7 +210,7 @@ exports[`Storyshots InputRow disabled 1`] = `
             forwardedRef={null}
           >
             <div
-              className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+              className="InputRowstyle__Row-jt7egi-2 dOntYq"
             >
               <Input
                 disabled={true}
@@ -230,16 +230,18 @@ exports[`Storyshots InputRow disabled 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Input-lswqho-0",
                         "isStatic": false,
-                        "lastClassName": "gWusiE",
+                        "lastClassName": "bewRLi",
                         "rules": Array [
                           "font-family:",
-                          "'Lato', 'Helvetica', 'Arial', sans-serif",
+                          "Muli",
                           ";font-size:",
                           "16px",
+                          ";font-weight:",
+                          "400",
                           ";width:100%;height:60px;background-color:",
-                          "#FFFFFF",
+                          "#f7f7f7",
                           ";padding:0 ",
-                          "15px",
+                          "24px",
                           ";border-radius:",
                           "4px",
                           ";border:1px solid;border-color:",
@@ -249,7 +251,7 @@ exports[`Storyshots InputRow disabled 1`] = `
                           ";}:focus{border-color:",
                           [Function],
                           ";}::placeholder{color:",
-                          "rgba(0, 0, 0, 0.24)",
+                          "#979797",
                           ";}",
                         ],
                       },
@@ -271,7 +273,7 @@ exports[`Storyshots InputRow disabled 1`] = `
                   value="value"
                 >
                   <input
-                    className="Input-lswqho-0 gWusiE"
+                    className="Input-lswqho-0 bewRLi"
                     disabled={true}
                     name="Name"
                     onBlur={[Function]}
@@ -298,7 +300,7 @@ exports[`Storyshots InputRow disabled 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -504,10 +506,10 @@ exports[`Storyshots InputRow error 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "InputRowstyle__Row-jt7egi-2",
                   "isStatic": true,
-                  "lastClassName": "cqfxRi",
+                  "lastClassName": "dOntYq",
                   "rules": Array [
                     "margin-bottom:",
-                    "25px",
+                    "40px",
                     ";width:100%;",
                   ],
                 },
@@ -523,7 +525,7 @@ exports[`Storyshots InputRow error 1`] = `
             forwardedRef={null}
           >
             <div
-              className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+              className="InputRowstyle__Row-jt7egi-2 dOntYq"
             >
               <Input
                 hasError={true}
@@ -541,16 +543,18 @@ exports[`Storyshots InputRow error 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Input-lswqho-0",
                         "isStatic": false,
-                        "lastClassName": "gkQebw",
+                        "lastClassName": "cCTqce",
                         "rules": Array [
                           "font-family:",
-                          "'Lato', 'Helvetica', 'Arial', sans-serif",
+                          "Muli",
                           ";font-size:",
                           "16px",
+                          ";font-weight:",
+                          "400",
                           ";width:100%;height:60px;background-color:",
-                          "#FFFFFF",
+                          "#f7f7f7",
                           ";padding:0 ",
-                          "15px",
+                          "24px",
                           ";border-radius:",
                           "4px",
                           ";border:1px solid;border-color:",
@@ -560,7 +564,7 @@ exports[`Storyshots InputRow error 1`] = `
                           ";}:focus{border-color:",
                           [Function],
                           ";}::placeholder{color:",
-                          "rgba(0, 0, 0, 0.24)",
+                          "#979797",
                           ";}",
                         ],
                       },
@@ -582,7 +586,7 @@ exports[`Storyshots InputRow error 1`] = `
                   value="value"
                 >
                   <input
-                    className="Input-lswqho-0 gkQebw"
+                    className="Input-lswqho-0 cCTqce"
                     name="Name"
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -600,18 +604,18 @@ exports[`Storyshots InputRow error 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "InputRowstyle__Error-jt7egi-1",
                         "isStatic": true,
-                        "lastClassName": "kSEEqn",
+                        "lastClassName": "fFLVnQ",
                         "rules": Array [
                           "color:",
-                          "#4C3F36",
+                          "#E55E5E",
                           ";font-family:",
-                          "'Lato', 'Helvetica', 'Arial', sans-serif",
+                          "Muli",
                           ";font-weight:",
                           "400",
                           ";font-size:",
-                          "14px",
+                          "16px",
                           ";margin-top:",
-                          "5px",
+                          "8px",
                           ";",
                         ],
                       },
@@ -627,7 +631,7 @@ exports[`Storyshots InputRow error 1`] = `
                   forwardedRef={null}
                 >
                   <p
-                    className="InputRowstyle__Error-jt7egi-1 kSEEqn"
+                    className="InputRowstyle__Error-jt7egi-1 fFLVnQ"
                   >
                     error message
                   </p>
@@ -650,7 +654,7 @@ exports[`Storyshots InputRow error 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -854,10 +858,10 @@ exports[`Storyshots InputRow field 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "InputRowstyle__Row-jt7egi-2",
                   "isStatic": true,
-                  "lastClassName": "cqfxRi",
+                  "lastClassName": "dOntYq",
                   "rules": Array [
                     "margin-bottom:",
-                    "25px",
+                    "40px",
                     ";width:100%;",
                   ],
                 },
@@ -873,7 +877,7 @@ exports[`Storyshots InputRow field 1`] = `
             forwardedRef={null}
           >
             <div
-              className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+              className="InputRowstyle__Row-jt7egi-2 dOntYq"
             >
               <Input
                 hasError={false}
@@ -891,16 +895,18 @@ exports[`Storyshots InputRow field 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Input-lswqho-0",
                         "isStatic": false,
-                        "lastClassName": "gWusiE",
+                        "lastClassName": "bewRLi",
                         "rules": Array [
                           "font-family:",
-                          "'Lato', 'Helvetica', 'Arial', sans-serif",
+                          "Muli",
                           ";font-size:",
                           "16px",
+                          ";font-weight:",
+                          "400",
                           ";width:100%;height:60px;background-color:",
-                          "#FFFFFF",
+                          "#f7f7f7",
                           ";padding:0 ",
-                          "15px",
+                          "24px",
                           ";border-radius:",
                           "4px",
                           ";border:1px solid;border-color:",
@@ -910,7 +916,7 @@ exports[`Storyshots InputRow field 1`] = `
                           ";}:focus{border-color:",
                           [Function],
                           ";}::placeholder{color:",
-                          "rgba(0, 0, 0, 0.24)",
+                          "#979797",
                           ";}",
                         ],
                       },
@@ -932,7 +938,7 @@ exports[`Storyshots InputRow field 1`] = `
                   value="value"
                 >
                   <input
-                    className="Input-lswqho-0 gWusiE"
+                    className="Input-lswqho-0 bewRLi"
                     name="Name"
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -958,7 +964,7 @@ exports[`Storyshots InputRow field 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1164,10 +1170,10 @@ exports[`Storyshots InputRow label 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "InputRowstyle__Row-jt7egi-2",
                   "isStatic": true,
-                  "lastClassName": "cqfxRi",
+                  "lastClassName": "dOntYq",
                   "rules": Array [
                     "margin-bottom:",
-                    "25px",
+                    "40px",
                     ";width:100%;",
                   ],
                 },
@@ -1183,7 +1189,7 @@ exports[`Storyshots InputRow label 1`] = `
             forwardedRef={null}
           >
             <div
-              className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+              className="InputRowstyle__Row-jt7egi-2 dOntYq"
             >
               <InputRowstyle__Label>
                 <StyledComponent
@@ -1194,18 +1200,18 @@ exports[`Storyshots InputRow label 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "InputRowstyle__Label-jt7egi-0",
                         "isStatic": true,
-                        "lastClassName": "dWxJyN",
+                        "lastClassName": "Smnmb",
                         "rules": Array [
                           "display:block;font-family:",
-                          "'Lato', 'Helvetica', 'Arial', sans-serif",
+                          "Muli",
                           ";font-weight:",
-                          "700",
+                          "400",
                           ";font-size:",
                           "16px",
                           ";color:",
-                          "#595959",
+                          "#222222",
                           ";margin-bottom:",
-                          "5px",
+                          "8px",
                           ";",
                         ],
                       },
@@ -1221,7 +1227,7 @@ exports[`Storyshots InputRow label 1`] = `
                   forwardedRef={null}
                 >
                   <label
-                    className="InputRowstyle__Label-jt7egi-0 dWxJyN"
+                    className="InputRowstyle__Label-jt7egi-0 Smnmb"
                   >
                     Label
                   </label>
@@ -1243,16 +1249,18 @@ exports[`Storyshots InputRow label 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Input-lswqho-0",
                         "isStatic": false,
-                        "lastClassName": "gWusiE",
+                        "lastClassName": "bewRLi",
                         "rules": Array [
                           "font-family:",
-                          "'Lato', 'Helvetica', 'Arial', sans-serif",
+                          "Muli",
                           ";font-size:",
                           "16px",
+                          ";font-weight:",
+                          "400",
                           ";width:100%;height:60px;background-color:",
-                          "#FFFFFF",
+                          "#f7f7f7",
                           ";padding:0 ",
-                          "15px",
+                          "24px",
                           ";border-radius:",
                           "4px",
                           ";border:1px solid;border-color:",
@@ -1262,7 +1270,7 @@ exports[`Storyshots InputRow label 1`] = `
                           ";}:focus{border-color:",
                           [Function],
                           ";}::placeholder{color:",
-                          "rgba(0, 0, 0, 0.24)",
+                          "#979797",
                           ";}",
                         ],
                       },
@@ -1284,7 +1292,7 @@ exports[`Storyshots InputRow label 1`] = `
                   value="value"
                 >
                   <input
-                    className="Input-lswqho-0 gWusiE"
+                    className="Input-lswqho-0 bewRLi"
                     name="Name"
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -1310,7 +1318,7 @@ exports[`Storyshots InputRow label 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1516,10 +1524,10 @@ exports[`Storyshots InputRow placeholder 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "InputRowstyle__Row-jt7egi-2",
                   "isStatic": true,
-                  "lastClassName": "cqfxRi",
+                  "lastClassName": "dOntYq",
                   "rules": Array [
                     "margin-bottom:",
-                    "25px",
+                    "40px",
                     ";width:100%;",
                   ],
                 },
@@ -1535,7 +1543,7 @@ exports[`Storyshots InputRow placeholder 1`] = `
             forwardedRef={null}
           >
             <div
-              className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+              className="InputRowstyle__Row-jt7egi-2 dOntYq"
             >
               <Input
                 hasError={false}
@@ -1554,16 +1562,18 @@ exports[`Storyshots InputRow placeholder 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Input-lswqho-0",
                         "isStatic": false,
-                        "lastClassName": "gWusiE",
+                        "lastClassName": "bewRLi",
                         "rules": Array [
                           "font-family:",
-                          "'Lato', 'Helvetica', 'Arial', sans-serif",
+                          "Muli",
                           ";font-size:",
                           "16px",
+                          ";font-weight:",
+                          "400",
                           ";width:100%;height:60px;background-color:",
-                          "#FFFFFF",
+                          "#f7f7f7",
                           ";padding:0 ",
-                          "15px",
+                          "24px",
                           ";border-radius:",
                           "4px",
                           ";border:1px solid;border-color:",
@@ -1573,7 +1583,7 @@ exports[`Storyshots InputRow placeholder 1`] = `
                           ";}:focus{border-color:",
                           [Function],
                           ";}::placeholder{color:",
-                          "rgba(0, 0, 0, 0.24)",
+                          "#979797",
                           ";}",
                         ],
                       },
@@ -1596,7 +1606,7 @@ exports[`Storyshots InputRow placeholder 1`] = `
                   value=""
                 >
                   <input
-                    className="Input-lswqho-0 gWusiE"
+                    className="Input-lswqho-0 bewRLi"
                     name="Name"
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -1623,7 +1633,7 @@ exports[`Storyshots InputRow placeholder 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -1835,10 +1845,10 @@ exports[`Storyshots InputRow playground 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "InputRowstyle__Row-jt7egi-2",
                   "isStatic": true,
-                  "lastClassName": "cqfxRi",
+                  "lastClassName": "dOntYq",
                   "rules": Array [
                     "margin-bottom:",
-                    "25px",
+                    "40px",
                     ";width:100%;",
                   ],
                 },
@@ -1854,7 +1864,7 @@ exports[`Storyshots InputRow playground 1`] = `
             forwardedRef={null}
           >
             <div
-              className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+              className="InputRowstyle__Row-jt7egi-2 dOntYq"
             >
               <InputRowstyle__Label>
                 <StyledComponent
@@ -1865,18 +1875,18 @@ exports[`Storyshots InputRow playground 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "InputRowstyle__Label-jt7egi-0",
                         "isStatic": true,
-                        "lastClassName": "dWxJyN",
+                        "lastClassName": "Smnmb",
                         "rules": Array [
                           "display:block;font-family:",
-                          "'Lato', 'Helvetica', 'Arial', sans-serif",
+                          "Muli",
                           ";font-weight:",
-                          "700",
+                          "400",
                           ";font-size:",
                           "16px",
                           ";color:",
-                          "#595959",
+                          "#222222",
                           ";margin-bottom:",
-                          "5px",
+                          "8px",
                           ";",
                         ],
                       },
@@ -1892,7 +1902,7 @@ exports[`Storyshots InputRow playground 1`] = `
                   forwardedRef={null}
                 >
                   <label
-                    className="InputRowstyle__Label-jt7egi-0 dWxJyN"
+                    className="InputRowstyle__Label-jt7egi-0 Smnmb"
                   >
                     example
                   </label>
@@ -1917,16 +1927,18 @@ exports[`Storyshots InputRow playground 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Input-lswqho-0",
                         "isStatic": false,
-                        "lastClassName": "gkQebw",
+                        "lastClassName": "cCTqce",
                         "rules": Array [
                           "font-family:",
-                          "'Lato', 'Helvetica', 'Arial', sans-serif",
+                          "Muli",
                           ";font-size:",
                           "16px",
+                          ";font-weight:",
+                          "400",
                           ";width:100%;height:60px;background-color:",
-                          "#FFFFFF",
+                          "#f7f7f7",
                           ";padding:0 ",
-                          "15px",
+                          "24px",
                           ";border-radius:",
                           "4px",
                           ";border:1px solid;border-color:",
@@ -1936,7 +1948,7 @@ exports[`Storyshots InputRow playground 1`] = `
                           ";}:focus{border-color:",
                           [Function],
                           ";}::placeholder{color:",
-                          "rgba(0, 0, 0, 0.24)",
+                          "#979797",
                           ";}",
                         ],
                       },
@@ -1959,7 +1971,7 @@ exports[`Storyshots InputRow playground 1`] = `
                   value="value"
                 >
                   <input
-                    className="Input-lswqho-0 gkQebw"
+                    className="Input-lswqho-0 cCTqce"
                     disabled={true}
                     name="Name"
                     onBlur={[Function]}
@@ -1979,18 +1991,18 @@ exports[`Storyshots InputRow playground 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "InputRowstyle__Error-jt7egi-1",
                         "isStatic": true,
-                        "lastClassName": "kSEEqn",
+                        "lastClassName": "fFLVnQ",
                         "rules": Array [
                           "color:",
-                          "#4C3F36",
+                          "#E55E5E",
                           ";font-family:",
-                          "'Lato', 'Helvetica', 'Arial', sans-serif",
+                          "Muli",
                           ";font-weight:",
                           "400",
                           ";font-size:",
-                          "14px",
+                          "16px",
                           ";margin-top:",
-                          "5px",
+                          "8px",
                           ";",
                         ],
                       },
@@ -2006,7 +2018,7 @@ exports[`Storyshots InputRow playground 1`] = `
                   forwardedRef={null}
                 >
                   <p
-                    className="InputRowstyle__Error-jt7egi-1 kSEEqn"
+                    className="InputRowstyle__Error-jt7egi-1 fFLVnQ"
                   >
                     error
                   </p>
@@ -2029,7 +2041,7 @@ exports[`Storyshots InputRow playground 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,
@@ -2255,10 +2267,10 @@ exports[`Storyshots InputRow type 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "InputRowstyle__Row-jt7egi-2",
                   "isStatic": true,
-                  "lastClassName": "cqfxRi",
+                  "lastClassName": "dOntYq",
                   "rules": Array [
                     "margin-bottom:",
-                    "25px",
+                    "40px",
                     ";width:100%;",
                   ],
                 },
@@ -2274,7 +2286,7 @@ exports[`Storyshots InputRow type 1`] = `
             forwardedRef={null}
           >
             <div
-              className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+              className="InputRowstyle__Row-jt7egi-2 dOntYq"
             >
               <Input
                 hasError={false}
@@ -2292,16 +2304,18 @@ exports[`Storyshots InputRow type 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Input-lswqho-0",
                         "isStatic": false,
-                        "lastClassName": "gWusiE",
+                        "lastClassName": "bewRLi",
                         "rules": Array [
                           "font-family:",
-                          "'Lato', 'Helvetica', 'Arial', sans-serif",
+                          "Muli",
                           ";font-size:",
                           "16px",
+                          ";font-weight:",
+                          "400",
                           ";width:100%;height:60px;background-color:",
-                          "#FFFFFF",
+                          "#f7f7f7",
                           ";padding:0 ",
-                          "15px",
+                          "24px",
                           ";border-radius:",
                           "4px",
                           ";border:1px solid;border-color:",
@@ -2311,7 +2325,7 @@ exports[`Storyshots InputRow type 1`] = `
                           ";}:focus{border-color:",
                           [Function],
                           ";}::placeholder{color:",
-                          "rgba(0, 0, 0, 0.24)",
+                          "#979797",
                           ";}",
                         ],
                       },
@@ -2333,7 +2347,7 @@ exports[`Storyshots InputRow type 1`] = `
                   value="value"
                 >
                   <input
-                    className="Input-lswqho-0 gWusiE"
+                    className="Input-lswqho-0 bewRLi"
                     name="Name"
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -2369,10 +2383,10 @@ exports[`Storyshots InputRow type 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "InputRowstyle__Row-jt7egi-2",
                   "isStatic": true,
-                  "lastClassName": "cqfxRi",
+                  "lastClassName": "dOntYq",
                   "rules": Array [
                     "margin-bottom:",
-                    "25px",
+                    "40px",
                     ";width:100%;",
                   ],
                 },
@@ -2388,7 +2402,7 @@ exports[`Storyshots InputRow type 1`] = `
             forwardedRef={null}
           >
             <div
-              className="InputRowstyle__Row-jt7egi-2 cqfxRi"
+              className="InputRowstyle__Row-jt7egi-2 dOntYq"
             >
               <Input
                 hasError={false}
@@ -2406,16 +2420,18 @@ exports[`Storyshots InputRow type 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Input-lswqho-0",
                         "isStatic": false,
-                        "lastClassName": "gWusiE",
+                        "lastClassName": "bewRLi",
                         "rules": Array [
                           "font-family:",
-                          "'Lato', 'Helvetica', 'Arial', sans-serif",
+                          "Muli",
                           ";font-size:",
                           "16px",
+                          ";font-weight:",
+                          "400",
                           ";width:100%;height:60px;background-color:",
-                          "#FFFFFF",
+                          "#f7f7f7",
                           ";padding:0 ",
-                          "15px",
+                          "24px",
                           ";border-radius:",
                           "4px",
                           ";border:1px solid;border-color:",
@@ -2425,7 +2441,7 @@ exports[`Storyshots InputRow type 1`] = `
                           ";}:focus{border-color:",
                           [Function],
                           ";}::placeholder{color:",
-                          "rgba(0, 0, 0, 0.24)",
+                          "#979797",
                           ";}",
                         ],
                       },
@@ -2447,7 +2463,7 @@ exports[`Storyshots InputRow type 1`] = `
                   value="value"
                 >
                   <input
-                    className="Input-lswqho-0 gWusiE"
+                    className="Input-lswqho-0 bewRLi"
                     name="Name"
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -2473,7 +2489,7 @@ exports[`Storyshots InputRow type 1`] = `
           "cursor": "pointer",
           "display": "block",
           "fontFamily": "sans-serif",
-          "fontSize": "12px",
+          "fontSize": 12,
           "padding": "5px 15px",
           "position": "fixed",
           "right": 0,

@@ -53,10 +53,7 @@ const Home = React.memo<HomePropsType>(props => {
           </ChartsContainer>
           <CommentTableContainer>
             <GenericTable<CommentTableOptionsType, CommentType>
-              values={chain(props.comments)
-                .sortBy('creationDate')
-                .reverse()
-                .value()}
+              values={props.comments}
               fixedColumnCount={fixedColumnCount}
               columnsConfig={columnsConfig}
               options={{}}

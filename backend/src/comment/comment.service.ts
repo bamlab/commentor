@@ -61,6 +61,7 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     requesterIdsCommentQueryDecorator(query, requesterIds);
     commentorIdsCommentQueryDecorator(query, commentorIds);
     tagCodesCommentQueryDecorator(query, tagCodes);
+    query.orderBy('comments.creationDate', 'DESC');
 
     const sql = query.getSql();
     console.log('SQL', sql);

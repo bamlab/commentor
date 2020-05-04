@@ -1,10 +1,10 @@
 #!/bin/sh
 
 mkdir dist/
-cp -R images dist/
-cp index.js dist/
-cp mainScript.js dist/
-cp manifest.json dist/
+cp -R src/images dist/
+cp src/index.js dist/
+cp src/mainScript.js dist/
+cp src/manifest.json dist/
 cp package.json dist/
-cp tagsOptions.js dist/
-cp tagsOptions.html dist/
+cp src/tagsOptions.js dist/
+cp src/tagsOptions.html dist/

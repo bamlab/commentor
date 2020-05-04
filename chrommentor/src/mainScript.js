@@ -28,9 +28,9 @@ function setupExpander(expander, tagsOptions) {
     expander.setAttribute("keys", `${existingKeys} $`);
   }
 
-  expander.addEventListener("text-expander-change", event => {
+  expander.addEventListener("text-expander-change", (event) => {
     const textArea = Array.from(event.target.childNodes).find(
-      childNode => childNode.name === "comment[body]"
+      (childNode) => childNode.name === "comment[body]"
     );
     if (!textArea) {
       return;
@@ -141,7 +141,7 @@ function setupExpander(expander, tagsOptions) {
   });
 }
 
-const keydownEventListener = event => {
+const keydownEventListener = (event) => {
   const selectedTag = globalFilteredTagsOptions[selectedTagOptionIndex];
   if (event.key === "ArrowDown") {
     const selectedElement = document.getElementById(

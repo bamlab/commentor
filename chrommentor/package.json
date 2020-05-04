@@ -10,6 +10,9 @@
   "author": "Maxime Sraïki",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-jest": "^25.5.1",
     "jest": "^25.5.4",
     "parcel": "^1.12.4",
     "parcel-plugin-web-extension": "^1.6.1"

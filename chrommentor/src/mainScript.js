@@ -1,3 +1,5 @@
+import { sortAndFilterLabels } from "./utils/sortAndFilterLabels";
+
 const expanderList = document.querySelectorAll("text-expander");
 const addCommentButtonsList = document.querySelectorAll(
   "button.add-line-comment"
@@ -63,19 +65,10 @@ function setupExpander(expander, tagsOptions) {
         "style",
         `top: ${menuTopOffset}px; left: ${menuLeftOffset}px;`
       );
-      const filteredTagsOptions = [
-        ...tagsOptions.filter((tag) =>
-          tag.description.match(new RegExp(`^${lastWord.substring(1)}`, "i"))
-        ),
-        ...tagsOptions.filter((tag) =>
-          tag.description.match(
-            new RegExp(
-              `^(?!${lastWord.substring(1)}).*${lastWord.substring(1)}.*`, // Does not start with the query, but contains the query
-              "i"
-            )
-          )
-        ),
-      ];
+      const filteredTagsOptions = sortAndFilterLabels(
+        tagsOptions,
+        lastWord.substring(1)
+      );
 
       if (filteredTagsOptions.length > 0) {
         globalFilteredTagsOptions = filteredTagsOptions;

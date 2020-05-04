@@ -199,6 +199,7 @@ export interface FiltersType {
   requesterIds: string[];
   commentorIds: string[];
   tagCodes: string[];
+  githubLogin: string | null;
 }
 
 interface PieChartData {

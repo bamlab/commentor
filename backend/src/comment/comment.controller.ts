@@ -12,7 +12,6 @@ import { CommentService } from './comment.service';
 import { GithubRepositoriesFilter } from '../auth/decorators/githubRepositoriesFilter.decorator';
 import { Tag } from '../tag/tag.entity';
 import { TagService } from '../tag/tag.service';
-import { GithubLogin } from '../auth/decorators/githubLogin.decorator';
 
 const FIRST_COMMENT_DATE = new Date('November 03, 1994 09:24:00');
 
@@ -53,10 +52,13 @@ export class CommentController {
     @Body()
     filters: FiltersType,
     @GithubRepositoriesFilter() filteredGithubRepositoriesIds: number[],
-    @GithubLogin() githubLogin: string,
   ): Promise<GetFilteredCommentsAnswer> {
     try {
-      if (filteredGithubRepositoriesIds && filteredGithubRepositoriesIds.length > 0) {
+      if (
+        filteredGithubRepositoriesIds &&
+        filteredGithubRepositoriesIds.length > 0 &&
+        !isNil(filters.githubLogin)
+      ) {
         const fetchedComments = await this.service.getCommentsWithFilters({
           repositoriesIds: filteredGithubRepositoriesIds,
           startingDate: isNil(filters.startingDate) ? FIRST_COMMENT_DATE : filters.startingDate,
@@ -65,7 +67,7 @@ export class CommentController {
           commentorIds: filters.commentorIds,
           tagCodes: filters.tagCodes,
         });
-        const userTags = await this.tagService.getByGithubLogin(githubLogin);
+        const userTags = await this.tagService.getByGithubLogin(filters.githubLogin);
         const pieChartFormattedData = chain(userTags)
           .map((tag: Tag) => ({
             x: tag.code,

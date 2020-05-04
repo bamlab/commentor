@@ -63,6 +63,11 @@ class Client {
     return;
   };
 
+  getUser = async (): Promise<{ githubLogin: string }> => {
+    const user = await this.get('/auth/user');
+    return user;
+  };
+
   fetchComments = async (data: {
     repositoryIds: number[];
     startingDate: Date | null;
@@ -83,6 +88,7 @@ class Client {
     requesterIds: string[];
     commentorIds: string[];
     tagCodes: string[];
+    githubLogin: string | null;
   }): Promise<{
     comments: CommentType[];
     pieChartData: PieChartData[];

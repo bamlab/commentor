@@ -2,6 +2,7 @@ import { ActionType, getType } from 'typesafe-actions';
 
 import { AnyAction } from 'redux';
 import { login, authentication } from './authentication.actions';
+import { UserType } from './authentication.type';
 
 export type LoginAction = ActionType<typeof login.success | typeof login.failure | typeof login>;
 export type AuthenticationAction = ActionType<
@@ -11,12 +12,14 @@ export type AuthenticationState = Readonly<{
   isAuthenticated: boolean;
   loginError: string | null;
   isLoading: boolean;
+  user: UserType | null;
 }>;
 
 const initialState: AuthenticationState = {
   isAuthenticated: false,
   loginError: null,
   isLoading: false,
+  user: null,
 };
 
 const reducer = (state: AuthenticationState = initialState, action: AnyAction) => {
@@ -27,6 +30,7 @@ const reducer = (state: AuthenticationState = initialState, action: AnyAction) =
         ...state,
         isAuthenticated: true,
         isLoading: false,
+        user: typedAction.payload.user,
       };
     case getType(authentication.failure):
       return {

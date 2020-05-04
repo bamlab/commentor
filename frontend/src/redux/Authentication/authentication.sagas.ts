@@ -6,7 +6,8 @@ import { login } from './authentication.actions';
 export function* loginSaga(action: ActionType<typeof login.request>) {
   try {
     yield call([client, client.createAccessToken], action.payload);
-    yield put(login.success({}));
+    const user = yield call([client, client.getUser]);
+    yield put(login.success({ user }));
   } catch (error) {
     yield put(login.failure({ errorMessage: error.message }));
   }

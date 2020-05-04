@@ -1,6 +1,7 @@
-import { Controller, Post, Body, Res } from '@nestjs/common';
+import { Controller, Post, Body, Res, Get } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { Response } from 'express';
+import { GithubLogin } from './decorators/githubLogin.decorator';
 
 const ACCESS_TOKEN_COOKIE_KEY = 'access_token';
 const IS_AUTHENTIFIED_COOKIE_KEY = 'is_authentified';
@@ -21,6 +22,13 @@ export class AuthController {
     }
 
     res.send();
+  }
+
+  @Get('user')
+  async getMe(@GithubLogin() githubLogin: string) {
+    return {
+      githubLogin,
+    };
   }
 
   @Post('accessToken/logout')

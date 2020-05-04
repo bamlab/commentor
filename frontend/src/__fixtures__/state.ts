@@ -26,6 +26,9 @@ export const state: RootState = {
     isLoading: false,
     loginError: null,
     isAuthenticated: false,
+    user: {
+      githubLogin: 'amauryw',
+    },
   },
   tag: {
     tags: [

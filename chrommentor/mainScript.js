@@ -63,15 +63,19 @@ function setupExpander(expander, tagsOptions) {
         "style",
         `top: ${menuTopOffset}px; left: ${menuLeftOffset}px;`
       );
-      const filteredTagsOptions = tagsOptions.filter(
-        tag =>
-          tag.label
-            .toLowerCase()
-            .includes(lastWord.substring(1).toLowerCase()) ||
-          tag.description
-            .toLowerCase()
-            .includes(lastWord.substring(1).toLowerCase())
-      );
+      const filteredTagsOptions = [
+        ...tagsOptions.filter((tag) =>
+          tag.description.match(new RegExp(`^${lastWord.substring(1)}`, "i"))
+        ),
+        ...tagsOptions.filter((tag) =>
+          tag.description.match(
+            new RegExp(
+              `^(?!${lastWord.substring(1)}).*${lastWord.substring(1)}.*`, // Does not start with the query, but contains the query
+              "i"
+            )
+          )
+        ),
+      ];
 
       if (filteredTagsOptions.length > 0) {
         globalFilteredTagsOptions = filteredTagsOptions;

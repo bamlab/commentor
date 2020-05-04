@@ -1,7 +1,7 @@
 import { Controller, Body, Post, Logger } from '@nestjs/common';
 import { isNil, chain } from 'lodash';
 
-import { CommentEvent, FiltersType, PieChartData } from './interfaces/comment.dto';
+import { CommentEvent, FiltersType, GetFilteredCommentsAnswer } from './interfaces/comment.dto';
 import { Comment } from './comment.entity';
 import { CommentService } from './comment.service';
 import { GithubRepositoriesFilter } from '../auth/decorators/githubRepositoriesFilter.decorator';
@@ -15,6 +15,9 @@ const FIRST_COMMENT_DATE = new Date('November 03, 1994 09:24:00');
 export class CommentController {
   constructor(public readonly service: CommentService, public readonly tagService: TagService) {}
 
+  /**
+   * @deprecated not used anymore
+   */
   @Post('filtered')
   async getFilteredComments(
     @Body()
@@ -40,13 +43,13 @@ export class CommentController {
    *  2 github call -> login + github repository check
    *  could be resolved with one db query
    */
-  @Post('pieChartData')
+  @Post('filteredData')
   async getPieChartFormattedComments(
     @Body()
     filters: FiltersType,
     @GithubRepositoriesFilter() filteredGithubRepositoriesIds: number[],
     @GithubLogin() githubLogin: string,
-  ): Promise<PieChartData[]> {
+  ): Promise<GetFilteredCommentsAnswer> {
     try {
       if (filteredGithubRepositoriesIds && filteredGithubRepositoriesIds.length > 0) {
         const comments = await this.service.getCommentsWithFilters({
@@ -67,9 +70,15 @@ export class CommentController {
           .filter(chartDatum => chartDatum.y > 0)
           .value();
 
-        return pieChartFormattedData;
+        return {
+          pieChartData: pieChartFormattedData,
+          comments,
+        };
       } else {
-        return [];
+        return {
+          pieChartData: [],
+          comments: [],
+        };
       }
     } catch (error) {
       Logger.error(error, `Error on getPieChartFormattedComments`);

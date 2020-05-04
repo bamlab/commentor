@@ -1,4 +1,4 @@
-import { CommentType } from './comment.types';
+import { CommentType, PieChartData } from './comment.types';
 import { FetchedCommentType } from '../../services/networking/client.interface';
 import { formatStringOrDateToDate } from '../../services/date/dateFormatter';
 
@@ -8,3 +8,6 @@ export const formatFetchedCommentForAppType = (comments: FetchedCommentType[]): 
     creationDate: formatStringOrDateToDate(comment.creationDate),
   }));
 };
+
+export const formatFetchedPieChartDataForAppType = (pieChartData: PieChartData[]): PieChartData[] =>
+  pieChartData;

@@ -2,7 +2,10 @@ import request from 'superagent';
 import { CommentType, PieChartData } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
 import { RepositoryType } from 'redux/Repository';
-import { formatFetchedCommentForAppType } from '../../redux/Comment/comment.adapter';
+import {
+  formatFetchedCommentForAppType,
+  formatFetchedPieChartDataForAppType,
+} from '../../redux/Comment/comment.adapter';
 
 const backendBaseUrl = process.env.REACT_APP_API_BASE_URL || '';
 
@@ -72,16 +75,20 @@ class Client {
     return adaptedResult;
   };
 
-  fetchPieChartDataComments = async (data: {
+  fetchCommentData = async (data: {
     repositoryIds: number[];
     startingDate: Date | null;
     endingDate: Date | null;
     requesterIds: string[];
     commentorIds: string[];
     tagCodes: string[];
-  }): Promise<PieChartData[]> => {
-    const result = await this.post('/comments/pieChartData', data);
-    return result;
+  }): Promise<{ comments: CommentType[]; pieChartData: PieChartData[] }> => {
+    const result = await this.post('/comments/filteredData', data);
+    const adaptedResult = {
+      comments: formatFetchedCommentForAppType(result.comments),
+      pieChartData: formatFetchedPieChartDataForAppType(result.pieChartData),
+    };
+    return adaptedResult;
   };
 
   fetchTags = async (data: object): Promise<TagType[]> => {

@@ -11,6 +11,8 @@ import PieChart from 'components/PieChart';
 import TagsLegend from 'components/TagsLegend';
 
 export const PieChartSection = React.memo<PieChartSectionPropsType>(props => {
+  console.log('renderPie Chart', props);
+
   return (
     <PieChartSectionWrap>
       <PieChartAndTitleContainer>
@@ -18,7 +20,7 @@ export const PieChartSection = React.memo<PieChartSectionPropsType>(props => {
         <PieChart data={props.pieChartData} />
       </PieChartAndTitleContainer>
       <TagsLegendContainer>
-        <TagsLegend tags={props.tags} />
+        <TagsLegend />
       </TagsLegendContainer>
     </PieChartSectionWrap>
   );

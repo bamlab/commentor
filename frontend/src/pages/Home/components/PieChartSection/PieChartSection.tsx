@@ -11,8 +11,6 @@ import PieChart from 'components/PieChart';
 import TagsLegend from 'components/TagsLegend';
 
 export const PieChartSection = React.memo<PieChartSectionPropsType>(props => {
-  console.log('renderPie Chart', props);
-
   return (
     <PieChartSectionWrap>
       <PieChartAndTitleContainer>

@@ -47,7 +47,9 @@ export const MultiSelect = (props: PropsType) => {
   };
 
   const closeDropdown = () => {
-    props.selectOptions(locallySelectedOptions);
+    if (locallySelectedOptions !== props.selectedOptions) {
+      props.selectOptions(locallySelectedOptions);
+    }
     setIsSelectDisplayed(false);
   };
 

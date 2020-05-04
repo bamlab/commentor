@@ -11,7 +11,6 @@ import { CommentType } from 'redux/Comment';
 import { GoSync } from 'react-icons/go';
 import Button from 'components/Button';
 import Loader from 'components/Loader';
-import { chain } from 'lodash';
 import Login from '../Login';
 import {
   fixedColumnCount,

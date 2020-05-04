@@ -4,5 +4,8 @@
 # dependencies
 /node_modules
 
-/chrommentor/dist
 /chrommentor/node_modules
+
+# Parcel build and cache
+/chrommentor/dist
+/chrommentor/.cache

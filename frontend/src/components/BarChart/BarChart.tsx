@@ -1,5 +1,5 @@
 import React from 'react';
-import { BarChartContainer } from './BarChart.style';
+import { BarChartContainer, CHART_WIDTH, CHART_HEIGHT } from './BarChart.style';
 import {
   VictoryChart,
   VictoryBar,
@@ -14,8 +14,9 @@ import { eachDayOfInterval } from 'date-fns';
 import { formatDateToDDMMLined } from '../../services/date/dateFormatter';
 import { TagType } from 'redux/Tag';
 
+export type BarChartDataType = { x: Date; y: number; y0: number; tag: TagType };
 interface propTypes {
-  data: { x: Date; y: number; y0: number; tag: TagType }[];
+  data: BarChartDataType[];
 }
 
 const BarChart = React.memo<propTypes>(props => {
@@ -24,12 +25,15 @@ const BarChart = React.memo<propTypes>(props => {
     ...fontStyles.small,
   };
 
-  console.log(props.data);
-
   return (
     <BarChartContainer>
       {props.data && props.data.length > 0 && (
-        <VictoryChart theme={VictoryTheme.material} domainPadding={10} height={350} width={800}>
+        <VictoryChart
+          theme={VictoryTheme.material}
+          domainPadding={10}
+          height={CHART_HEIGHT}
+          width={CHART_WIDTH}
+        >
           <VictoryAxis
             dependentAxis
             tickCount={Math.max(
@@ -50,9 +54,7 @@ const BarChart = React.memo<propTypes>(props => {
               start: props.data[0].x,
               end: props.data[props.data.length - 1].x,
             })}
-            tickFormat={date => {
-              return formatDateToDDMMLined(date);
-            }}
+            tickFormat={formatDateToDDMMLined}
             tickLabelComponent={<VictoryLabel angle={-60} />}
             style={{
               tickLabels: { ...ticksLabelsStyle },

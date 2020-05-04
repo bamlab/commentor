@@ -59,10 +59,6 @@ export const GenericTable = <T extends OptionsType, O extends GenericRowObjectTy
     );
   };
 
-  /**
-   * force rerender after resize
-   */
-  // window.onresize = () => console.log('resized');
   return (
     <Wrapper>
       <AutoSizer>

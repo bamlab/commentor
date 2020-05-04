@@ -16,9 +16,7 @@ import { filterTags } from '../../redux/Tag/tag.adapter';
 const mapStateToProps = (state: RootState) => ({
   isAuthenticated: isAuthenticated(state),
   comments: getComments(state),
-  tags: getTags(state),
   isCommentLoading: isCommentLoading(state),
-  filters: getFilters(state),
 });
 
 // @ts-ignore Generic type 'Dispatch' requires 1 type argument(s)

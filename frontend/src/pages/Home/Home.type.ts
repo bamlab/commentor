@@ -6,9 +6,7 @@ export type HomePropsType = {
   loadRepositories: () => void;
   isAuthenticated: boolean;
   comments: CommentType[];
-  tags: TagType[];
   loadTags: () => void;
   loadComments: () => void;
   isCommentLoading: boolean;
-  filters: FiltersState;
 };

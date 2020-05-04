@@ -49,7 +49,7 @@ const Home = React.memo<HomePropsType>(props => {
           <FilterSection />
           <ChartsContainer>
             <BarChartSection />
-            <PieChartSection tags={props.tags} />
+            <PieChartSection />
           </ChartsContainer>
           <CommentTableContainer>
             <GenericTable<CommentTableOptionsType, CommentType>

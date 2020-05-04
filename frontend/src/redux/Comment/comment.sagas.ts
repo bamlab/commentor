@@ -1,11 +1,9 @@
 import { call, put, takeEvery, select } from 'redux-saga/effects';
 import client from 'services/networking/client';
 import { ActionType, getType } from 'typesafe-actions';
-import { isNil } from 'lodash';
 import { loadComments, loadPieChartData, loadBarChartData } from './comment.actions';
 import { getFilters } from '../Filters';
 import { getUser } from '../Authentication';
-import { login } from '../Authentication/authentication.actions';
 
 // @ts-ignore typing generator
 export function* loadCommentsSaga(action: ActionType<typeof loadComments.request>) {

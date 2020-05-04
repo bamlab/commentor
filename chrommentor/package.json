@@ -4,7 +4,7 @@
   "description": "The official chrome extension for Commentor",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build src/manifest.json",
+    "build": "rm -rf dist && parcel build src/manifest.json",
     "test": "jest"
   },
   "author": "Maxime Sraïki",

@@ -22,15 +22,10 @@ export class CommentController {
     @GithubRepositoriesFilter() filteredGithubRepositoriesIds: number[],
   ): Promise<Comment[]> {
     if (filteredGithubRepositoriesIds && filteredGithubRepositoriesIds.length > 0) {
-      const startingDateFilter = isNil(filters.startingDate)
-        ? FIRST_COMMENT_DATE
-        : filters.startingDate;
-      const endingDateFilter = isNil(filters.endingDate) ? new Date() : filters.endingDate;
-
       return this.service.getCommentsWithFilters({
         repositoriesIds: filteredGithubRepositoriesIds,
-        startingDate: startingDateFilter,
-        endingDate: endingDateFilter,
+        startingDate: isNil(filters.startingDate) ? FIRST_COMMENT_DATE : filters.startingDate,
+        endingDate: isNil(filters.endingDate) ? new Date() : filters.endingDate,
         requesterIds: filters.requesterIds,
         commentorIds: filters.commentorIds,
         tagCodes: filters.tagCodes,
@@ -53,18 +48,29 @@ export class CommentController {
     @GithubLogin() githubLogin: string,
   ): Promise<PieChartData[]> {
     try {
-      const comments = await this.getFilteredComments(filters, filteredGithubRepositoriesIds);
-      const userTags = await this.tagService.getByGithubLogin(githubLogin);
-      const pieChartFormattedData = chain(userTags)
-        .map((tag: Tag) => ({
-          x: tag.code,
-          y: comments.filter((comment: Comment) => !!comment.body.match(tag.code)).length,
-          tag,
-        }))
-        .filter(chartDatum => chartDatum.y > 0)
-        .value();
+      if (filteredGithubRepositoriesIds && filteredGithubRepositoriesIds.length > 0) {
+        const comments = await this.service.getCommentsWithFilters({
+          repositoriesIds: filteredGithubRepositoriesIds,
+          startingDate: isNil(filters.startingDate) ? FIRST_COMMENT_DATE : filters.startingDate,
+          endingDate: isNil(filters.endingDate) ? new Date() : filters.endingDate,
+          requesterIds: filters.requesterIds,
+          commentorIds: filters.commentorIds,
+          tagCodes: filters.tagCodes,
+        });
+        const userTags = await this.tagService.getByGithubLogin(githubLogin);
+        const pieChartFormattedData = chain(userTags)
+          .map((tag: Tag) => ({
+            x: tag.code,
+            y: comments.filter((comment: Comment) => !!comment.body.match(tag.code)).length,
+            tag,
+          }))
+          .filter(chartDatum => chartDatum.y > 0)
+          .value();
 
-      return pieChartFormattedData;
+        return pieChartFormattedData;
+      } else {
+        return [];
+      }
     } catch (error) {
       Logger.error(error, `Error on getPieChartFormattedComments`);
       throw error;

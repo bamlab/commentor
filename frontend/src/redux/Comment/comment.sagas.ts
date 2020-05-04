@@ -4,6 +4,7 @@ import { ActionType, getType } from 'typesafe-actions';
 import { loadComments, loadPieChartData } from './comment.actions';
 import { getFilters } from '../Filters';
 
+// @ts-ignore typing generator
 export function* loadCommentsSaga(action: ActionType<typeof loadComments.request>) {
   try {
     let filters = yield select(getFilters);

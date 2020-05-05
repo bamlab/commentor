@@ -1,6 +1,6 @@
 {
   "name": "Chrommentor",
-  "version": "0.0.0.3",
+  "version": "0.0.0.4",
   "description": "The official chrome extension for Commentor",
   "background": {
     "scripts": ["index.js"],

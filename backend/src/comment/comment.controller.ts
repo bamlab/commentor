@@ -44,7 +44,6 @@ export class CommentController {
 
   /**
    * Need to be improved by improving design
-   *  2 github call -> login + github repository check
    *  could be resolved with one db query
    */
   @Post('filteredData')
@@ -111,7 +110,7 @@ export class CommentController {
         };
       }
     } catch (error) {
-      Logger.error(error, `Error on getPieChartFormattedComments`);
+      Logger.error(error, `Error on getting filtered data`);
       throw error;
     }
   }

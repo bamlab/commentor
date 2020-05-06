@@ -28,7 +28,14 @@ We plan to support shortly:
 ### Install Github App on your user account
 
 Commentor needs to be able to get your available repositories in order to allow you to select the one you want to analyze.
-Github is migrating many data accessible from its API to **Github Apps**. It's the **only way** for us to ask you for access to your repositories list **without** getting read access to your **code**. Therefore **you have to** install the [Commentor Github App](https://github.com/apps/commentor) on your personnal account before starting analyzing your comments.
+Github is migrating many data accessible from its API to **Github Apps**. It's the **only way** for us to ask you for access to your repositories list **without** getting read access to your **code**.
+
+source:
+
+- The [github doc on the available scopes for github API](https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/#available-scopes)
+- The [fine grained permissions you can define on Github Apps configuration](https://developer.github.com/v3/apps/permissions/#metadata-permissions).
+
+Therefore **you have to** install the [Commentor Github App](https://github.com/apps/commentor) on your personnal account before starting analyzing your comments.
 
 ![user level permissions][github-app-user-permissions]
 

@@ -37,6 +37,10 @@ Full documentation for Commentor lives on [the docs website](https://commentor-d
 
 Thanks for your interest in contributing! There are many ways to contribute to this project. Get started [here](./CONTRIBUTING.md).
 
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
 <table>
   <tr>
     <td align="center"><a href="https://github.com/sraikimaxime"><img src="https://avatars0.githubusercontent.com/u/15715425?v=4" width="100px;" alt=""/><br /><sub><b>Maxime Sraïki</b></sub></a><br /><a href="#design-sraikimaxime" title="Design">🎨</a><a href="https://github.com/bamlab/commentor/commits?author=sraikimaxime" title="Code">💻</a><a href="#content-sraikimaxime" title="Content">🖋</a><a href="#infra-sraikimaxime" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a><a href="https://github.com/bamlab/commentor/commits?author=sraikimaxime" title="Documentation">📖</a></td>

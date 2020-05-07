@@ -12,6 +12,7 @@ import { CommentService } from './comment.service';
 import { GithubRepositoriesFilter } from '../auth/decorators/githubRepositoriesFilter.decorator';
 import { Tag } from '../tag/tag.entity';
 import { TagService } from '../tag/tag.service';
+import { filterTagsWithCodes } from './comment.utils';
 
 const FIRST_COMMENT_DATE = new Date('November 03, 1994 09:24:00');
 
@@ -67,7 +68,8 @@ export class CommentController {
           tagCodes: filters.tagCodes,
         });
         const userTags = await this.tagService.getByGithubLogin(filters.githubLogin);
-        const pieChartFormattedData = chain(userTags)
+        const filteredTags = filterTagsWithCodes(userTags, filters.tagCodes);
+        const pieChartFormattedData = chain(filteredTags)
           .map((tag: Tag) => ({
             x: tag.code,
             y: fetchedComments.filter((comment: Comment) => !!comment.body.match(tag.code)).length,
@@ -84,7 +86,7 @@ export class CommentController {
           })
           .map((comments: Comment[]) =>
             map(comments, (comment: Comment) =>
-              chain(userTags)
+              chain(filteredTags)
                 .filter((tag: Tag) => !!comment.body.match(tag.code))
                 .map((tag: Tag) => {
                   comment.creationDate.setHours(0, 0, 0, 0);

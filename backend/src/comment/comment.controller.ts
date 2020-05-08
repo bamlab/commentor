@@ -12,7 +12,6 @@ import { CommentService } from './comment.service';
 import { GithubRepositoriesFilter } from '../auth/decorators/githubRepositoriesFilter.decorator';
 import { Tag } from '../tag/tag.entity';
 import { TagService } from '../tag/tag.service';
-import { filterTagsWithCodes } from './comment.utils';
 
 const FIRST_COMMENT_DATE = new Date('November 03, 1994 09:24:00');
 

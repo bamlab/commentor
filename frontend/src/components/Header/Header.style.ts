@@ -3,7 +3,6 @@ import { fontStyles, getSpacing, colorUsage } from 'stylesheet';
 import Lottie from 'react-lottie';
 
 const HEADER_HEIGHT = 68;
-const ANIMATION_HORIZONTAL_OFFSET = 18;
 export const ANIMATION_SPEED = 1.4;
 export const LOGO_SIZE = 55;
 

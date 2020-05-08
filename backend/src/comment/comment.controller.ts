@@ -71,6 +71,7 @@ export class CommentController {
         const filteredTags = filters.tagCodes.length
           ? userTags.filter((tag: Tag) => filters.tagCodes.includes(tag.code))
           : userTags;
+
         const pieChartFormattedData = chain(filteredTags)
           .map((tag: Tag) => ({
             x: tag.code,

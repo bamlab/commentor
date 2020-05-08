@@ -68,7 +68,9 @@ export class CommentController {
           tagCodes: filters.tagCodes,
         });
         const userTags = await this.tagService.getByGithubLogin(filters.githubLogin);
-        const filteredTags = filterTagsWithCodes(userTags, filters.tagCodes);
+        const filteredTags = filters.tagCodes.length
+          ? userTags.filter((tag: Tag) => filters.tagCodes.includes(tag.code))
+          : userTags;
         const pieChartFormattedData = chain(filteredTags)
           .map((tag: Tag) => ({
             x: tag.code,

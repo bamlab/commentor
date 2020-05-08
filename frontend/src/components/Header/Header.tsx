@@ -27,7 +27,7 @@ const defaultOptions = {
 type PropsType = RouteComponentProps & { isFetchingData: boolean; refreshData: () => void };
 
 const Header: React.FunctionComponent<PropsType> = props => {
-  const [isAnimating, setAnimating] = useState(props.isFetchingData);
+  const [isAnimating, setAnimating] = useState(true);
   useEffect(
     () => {
       props.isFetchingData && setAnimating(true);
@@ -47,7 +47,11 @@ const Header: React.FunctionComponent<PropsType> = props => {
             eventListeners={[
               {
                 eventName: 'loopComplete',
-                callback: () => setAnimating(false),
+                callback: () => {
+                  if (!props.isFetchingData) {
+                    return setAnimating(false);
+                  }
+                },
               },
             ]}
           />

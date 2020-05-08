@@ -12,6 +12,7 @@ import { CommentService } from './comment.service';
 import { GithubRepositoriesFilter } from '../auth/decorators/githubRepositoriesFilter.decorator';
 import { Tag } from '../tag/tag.entity';
 import { TagService } from '../tag/tag.service';
+import { filterTagsWithCodes } from './comment.utils';
 
 const FIRST_COMMENT_DATE = new Date('November 03, 1994 09:24:00');
 
@@ -58,18 +59,20 @@ export class CommentController {
         filteredGithubRepositoriesIds.length > 0 &&
         !isNil(filters.githubLogin)
       ) {
+        // Make a copy of filters.tagCode to avoid shiftin reference array in children
+        const TagCodeFilters = filters.tagCodes.filter(() => true);
         const fetchedComments = await this.service.getCommentsWithFilters({
           repositoriesIds: filteredGithubRepositoriesIds,
           startingDate: isNil(filters.startingDate) ? FIRST_COMMENT_DATE : filters.startingDate,
           endingDate: isNil(filters.endingDate) ? new Date() : filters.endingDate,
           requesterIds: filters.requesterIds,
           commentorIds: filters.commentorIds,
-          tagCodes: filters.tagCodes,
+          tagCodes: TagCodeFilters,
         });
+
         const userTags = await this.tagService.getByGithubLogin(filters.githubLogin);
-        const filteredTags = filters.tagCodes.length
-          ? userTags.filter((tag: Tag) => filters.tagCodes.includes(tag.code))
-          : userTags;
+
+        const filteredTags = filterTagsWithCodes(userTags, filters.tagCodes);
 
         const pieChartFormattedData = chain(filteredTags)
           .map((tag: Tag) => ({

@@ -1,9 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, Brackets } from 'typeorm';
+import { Repository } from 'typeorm';
 
 import { Comment } from './comment.entity';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
+import {
+  tagCodesCommentQueryDecorator,
+  requesterIdsCommentQueryDecorator,
+  commentorIdsCommentQueryDecorator,
+  dateFilterCommentQueryDecorator,
+  repositoriesIdsFilterCommentQueryDecorator,
+} from './comment.decorator';
 
 @Injectable()
 export class CommentService extends TypeOrmCrudService<Comment> {
@@ -49,32 +56,13 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     tagCodes: string[];
   }): Promise<Comment[]> => {
     const query = this.commentRepository.createQueryBuilder('comments');
-    query
-      .andWhere('comments.repositoryId IN (:...arr)', { arr: repositoriesIds })
-      .andWhere('comments.creationDate BETWEEN :startingDate AND :endingDate', {
-        startingDate,
-        endingDate,
-      });
+    repositoriesIdsFilterCommentQueryDecorator(query, repositoriesIds);
+    dateFilterCommentQueryDecorator(query, startingDate, endingDate);
+    requesterIdsCommentQueryDecorator(query, requesterIds);
+    commentorIdsCommentQueryDecorator(query, commentorIds);
+    tagCodesCommentQueryDecorator(query, tagCodes);
+    query.orderBy('comments.creationDate', 'DESC');
 
-    if (requesterIds.length > 0) {
-      query.andWhere('comments.requester IN (:...requesters)', { requesters: requesterIds });
-    }
-    if (commentorIds.length > 0) {
-      query.andWhere('comments.commentor IN (:...commentors)', { commentors: commentorIds });
-    }
-    if (tagCodes.length > 0) {
-      query.andWhere(
-        new Brackets(qb => {
-          qb.where(`comments.body ILIKE '%${tagCodes[0]}%'`);
-          if (tagCodes.length > 1) {
-            tagCodes.shift();
-            tagCodes.forEach(item => {
-              qb.orWhere(`comments.body ILIKE '%${item}%'`);
-            });
-          }
-        }),
-      );
-    }
     const sql = query.getSql();
     console.log('SQL', sql);
     const filteredComments = await query.getMany();

@@ -18,12 +18,17 @@ export const state: RootState = {
     availableRequesters: ['amauryw'],
     availableCommentors: ['amauryw'],
     isLoading: true,
+    pieChartData: [],
+    barChartData: [],
     commentError: null,
   },
   authentication: {
     isLoading: false,
     loginError: null,
     isAuthenticated: false,
+    user: {
+      githubLogin: 'amauryw',
+    },
   },
   tag: {
     tags: [

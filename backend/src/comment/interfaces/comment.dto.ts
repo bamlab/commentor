@@ -1,3 +1,6 @@
+import { Tag } from '../../tag/tag.entity';
+import { Comment as CommentEntity } from '../comment.entity';
+
 export interface CommentEvent {
   action: 'created' | 'edited' | 'deleted';
   comment: Comment;
@@ -196,4 +199,24 @@ export interface FiltersType {
   requesterIds: string[];
   commentorIds: string[];
   tagCodes: string[];
+  githubLogin: string | null;
+}
+
+interface PieChartData {
+  x: number | string;
+  y: number;
+  tag: Tag;
+}
+
+export interface BarChartData {
+  x: Date;
+  y: number;
+  y0: number;
+  tag: Tag;
+}
+
+export interface GetFilteredCommentsAnswer {
+  comments: CommentEntity[];
+  pieChartData: PieChartData[];
+  barChartData: BarChartData[];
 }

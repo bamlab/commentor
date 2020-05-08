@@ -1,8 +1,12 @@
 import request from 'superagent';
-import { CommentType } from 'redux/Comment';
+import { CommentType, PieChartData, BarChartData } from 'redux/Comment';
 import { TagType } from 'redux/Tag';
 import { RepositoryType } from 'redux/Repository';
-import { formatFetchedCommentForAppType } from '../../redux/Comment/comment.adapter';
+import {
+  formatFetchedCommentForAppType,
+  formatFetchedPieChartDataForAppType,
+  formatFetchedBarChartDataForAppType,
+} from '../../redux/Comment/comment.adapter';
 
 const backendBaseUrl = process.env.REACT_APP_API_BASE_URL || '';
 
@@ -59,6 +63,11 @@ class Client {
     return;
   };
 
+  getUser = async (): Promise<{ githubLogin: string }> => {
+    const user = await this.get('/auth/user');
+    return user;
+  };
+
   fetchComments = async (data: {
     repositoryIds: number[];
     startingDate: Date | null;
@@ -69,6 +78,28 @@ class Client {
   }): Promise<CommentType[]> => {
     const result = await this.post('/comments/filtered', data);
     const adaptedResult = formatFetchedCommentForAppType(result);
+    return adaptedResult;
+  };
+
+  fetchCommentData = async (data: {
+    repositoryIds: number[];
+    startingDate: Date | null;
+    endingDate: Date | null;
+    requesterIds: string[];
+    commentorIds: string[];
+    tagCodes: string[];
+    githubLogin: string | null;
+  }): Promise<{
+    comments: CommentType[];
+    pieChartData: PieChartData[];
+    barChartData: BarChartData[];
+  }> => {
+    const result = await this.post('/comments/filteredData', data);
+    const adaptedResult = {
+      pieChartData: formatFetchedPieChartDataForAppType(result.pieChartData),
+      barChartData: formatFetchedBarChartDataForAppType(result.barChartData),
+      comments: formatFetchedCommentForAppType(result.comments),
+    };
     return adaptedResult;
   };
 

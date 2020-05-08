@@ -1,7 +1,5 @@
-import { CommentType } from '../../../../redux/Comment';
-import { TagType } from '../../../../redux/Tag';
+import { PieChartData } from '../../../../redux/Comment';
 
 export type PieChartSectionPropsType = {
-  tags: TagType[];
-  comments: CommentType[];
+  pieChartData: PieChartData[];
 };

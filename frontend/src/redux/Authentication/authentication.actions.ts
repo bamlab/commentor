@@ -1,4 +1,5 @@
 import { createAsyncAction } from 'typesafe-actions';
+import { UserType } from './authentication.type';
 
 export const login = createAsyncAction(
   'Authentication/LOGIN_REQUEST',
@@ -6,7 +7,9 @@ export const login = createAsyncAction(
   'Authentication/LOGIN_FAILURE',
 )<
   { code: string },
-  {},
+  {
+    user: UserType;
+  },
   {
     errorMessage: string;
   }

@@ -7,6 +7,7 @@ const initialState = {
   commentError: null,
   availableRequesters: [],
   availableCommentors: [],
+  pieChartData: [],
 };
 const defaultComment = {
   id: 2,

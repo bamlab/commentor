@@ -1,5 +1,5 @@
 import { RootState } from '../types';
-import { RequesterType, CommentorType } from './comment.types';
+import { RequesterType, CommentorType, PieChartData, BarChartData } from './comment.types';
 
 export const getComments = (store: RootState) => store.comment.comments || [];
 
@@ -10,3 +10,9 @@ export const getAvailableRequestersFromComments = (store: RootState): RequesterT
 
 export const getAvailableCommentorsFromComments = (store: RootState): CommentorType[] =>
   store.comment.availableCommentors || [];
+
+export const getPieChartData = (store: RootState): PieChartData[] =>
+  store.comment.pieChartData || [];
+
+export const getBarChartData = (store: RootState): BarChartData[] =>
+  store.comment.barChartData || [];

@@ -1,7 +1,5 @@
-import { CommentType } from '../../../../redux/Comment';
-import { TagType } from '../../../../redux/Tag';
+import { BarChartData } from '../../../../redux/Comment';
 
 export type BarChartSectionPropsType = {
-  comments: CommentType[];
-  tags: TagType[];
+  barChartData: BarChartData[];
 };

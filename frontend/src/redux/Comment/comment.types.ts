@@ -1,3 +1,5 @@
+import { TagType } from '../../redux/Tag';
+
 export type CommentType = {
   id: number;
   body: string;
@@ -12,3 +14,15 @@ export type CommentType = {
 
 export type RequesterType = string;
 export type CommentorType = string;
+
+export interface PieChartData {
+  x: number | string;
+  y: number;
+  tag: TagType;
+}
+export interface BarChartData {
+  x: Date;
+  y: number;
+  y0: number;
+  tag: TagType;
+}

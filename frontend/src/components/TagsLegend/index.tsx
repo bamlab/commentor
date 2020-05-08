@@ -1,1 +1,1 @@
-export { default } from './TagsLegend';
+export { default } from './TagsLegend.wrap';

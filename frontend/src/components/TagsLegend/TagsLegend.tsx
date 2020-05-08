@@ -6,13 +6,9 @@ import {
   ColorDot,
   TagsLegendColumn,
 } from './TagsLegend.style';
-import { TagType } from 'redux/Tag';
+import { TagLegendsPropsTypes } from './TagsLegend.type';
 
-interface propTypes {
-  tags: TagType[];
-}
-
-const TagsLegend: React.FunctionComponent<propTypes> = props => {
+export const TagsLegend: React.FunctionComponent<TagLegendsPropsTypes> = props => {
   const tagsColumns = [props.tags.slice(0, 8), props.tags.slice(8, 16)];
   return (
     <TagsLegendContainer>
@@ -29,5 +25,3 @@ const TagsLegend: React.FunctionComponent<propTypes> = props => {
     </TagsLegendContainer>
   );
 };
-
-export default TagsLegend;

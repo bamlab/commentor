@@ -32,11 +32,6 @@ export const AuthenticatedPageContainer = styled.div`
 `;
 AuthenticatedPageContainer.displayName = 'AuthenticatedPageContainer';
 
-export const FloatingButtonContainer = styled.div`
-  position: fixed;
-  right: 2%;
-  bottom: 2%;
-`;
 export const ChartTitle = styled.p`
   font-family: ${fontStyles.bold.fontFamily};
   font-weight: ${fontStyles.bold.fontWeight};

@@ -36,12 +36,6 @@ const BarChart = React.memo<propTypes>(props => {
         >
           <VictoryAxis
             dependentAxis
-            tickCount={Math.max(
-              ...chain(props.data)
-                .countBy('x')
-                .map((countByDate: number) => countByDate)
-                .value(),
-            )}
             style={{
               axis: { stroke: 'none' },
               tickLabels: ticksLabelsStyle,
@@ -57,7 +51,7 @@ const BarChart = React.memo<propTypes>(props => {
             tickFormat={formatDateToDDMMLined}
             tickLabelComponent={<VictoryLabel angle={-60} />}
             style={{
-              tickLabels: { ...ticksLabelsStyle },
+              tickLabels: ticksLabelsStyle,
             }}
           />
           <VictoryStack>

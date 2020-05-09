@@ -199,7 +199,7 @@ export interface FiltersType {
   requesterIds: string[];
   commentorIds: string[];
   tagCodes: string[];
-  githubLogin: string | null;
+  oAuthLogin: string | null;
 }
 
 interface PieChartData {

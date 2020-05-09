@@ -73,7 +73,20 @@ export const GithubAuthentButton = styled.div`
   display: flex;
   width: 100%;
   margin: ${getSpacing(1.5)} 0 ${getSpacing(1.5)} 0;
-  background-color: ${colorUsage.highlight};
+  background-color: #25292e;
+  padding: ${getSpacing(1)} 0 ${getSpacing(1)} 0;
+  cursor: pointer;
+  border-radius: ${borderRadius};
+`;
+
+export const GitlabAuthentButton = styled.div`
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  margin: ${getSpacing(1.5)} 0 ${getSpacing(1.5)} 0;
+  background-color: #684ec4;
   padding: ${getSpacing(1)} 0 ${getSpacing(1)} 0;
   cursor: pointer;
   border-radius: ${borderRadius};
@@ -85,7 +98,22 @@ export const GithubLogo = styled.img`
   margin: 0 ${getSpacing(1)} 0 0;
 `;
 
+export const GitlabLogo = styled.img`
+  height: ${VERSIONNING_PLATFORMS_LOGO_HEIGHT}px;
+  width: ${VERSIONNING_PLATFORMS_LOGO_HEIGHT}px;
+  margin: 0 ${getSpacing(1)} 0 0;
+`;
+
 export const GithubAuthentButtonText = styled.p`
+  text-transform: uppercase;
+  font-family: ${fontStyles.buttons.fontFamily};
+  font-weight: ${fontStyles.buttons.fontWeight};
+  font-size: ${fontStyles.buttons.fontSize};
+  margin: 0 ${getSpacing(1)} 0 ${getSpacing(1)};
+  color: white;
+`;
+
+export const GitlabAuthentButtonText = styled.p`
   text-transform: uppercase;
   font-family: ${fontStyles.buttons.fontFamily};
   font-weight: ${fontStyles.buttons.fontWeight};

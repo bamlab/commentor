@@ -1,3 +1,3 @@
 export interface UserType {
-  githubLogin: string;
+  oAuthLogin: string;
 }

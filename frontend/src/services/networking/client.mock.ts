@@ -65,7 +65,7 @@ export const MockedTags: TagType[] = [
     color: 'red',
     description: 'refacto',
     creationDate: new Date(),
-    githubLogin: 'amauryw',
+    oAuthLogin: 'amauryw',
     isDefault: true,
   },
   {
@@ -74,7 +74,7 @@ export const MockedTags: TagType[] = [
     color: 'blue',
     description: 'my description',
     creationDate: new Date(),
-    githubLogin: 'amauryw',
+    oAuthLogin: 'amauryw',
     isDefault: false,
   },
   {
@@ -83,7 +83,7 @@ export const MockedTags: TagType[] = [
     color: 'white',
     description: 'my description',
     creationDate: new Date(),
-    githubLogin: null,
+    oAuthLogin: null,
     isDefault: false,
   },
 ];

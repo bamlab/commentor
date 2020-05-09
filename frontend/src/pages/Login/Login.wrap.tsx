@@ -13,7 +13,8 @@ const mapStateToProps = (state: RootState) => ({
 
 // @ts-ignore Generic type 'Dispatch' requires 1 type argument(s)
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  login: (code: string) => dispatch(login.request({ code })),
+  login: (code: string, provider: 'github' | 'gitlab') =>
+    dispatch(login.request({ code, provider })),
 });
 
 export default compose(

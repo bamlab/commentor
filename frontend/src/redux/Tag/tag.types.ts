@@ -3,7 +3,7 @@ export type TagType = {
   code: string;
   color: string;
   description: string;
-  githubLogin: string | null;
+  oAuthLogin: string | null;
   creationDate: Date;
   isDefault: boolean;
 };

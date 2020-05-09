@@ -12,6 +12,7 @@ import { CommentService } from './comment.service';
 import { GithubRepositoriesFilter } from '../auth/decorators/githubRepositoriesFilter.decorator';
 import { Tag } from '../tag/tag.entity';
 import { TagService } from '../tag/tag.service';
+import { filterTagsWithCodes } from './comment.utils';
 
 const FIRST_COMMENT_DATE = new Date('November 03, 1994 09:24:00');
 
@@ -53,10 +54,12 @@ export class CommentController {
     @GithubRepositoriesFilter() filteredGithubRepositoriesIds: number[],
   ): Promise<GetFilteredCommentsAnswer> {
     try {
+      console.log('filteredGithubRepositoriesIds', filteredGithubRepositoriesIds);
+      console.log('filters', filters);
       if (
         filteredGithubRepositoriesIds &&
         filteredGithubRepositoriesIds.length > 0 &&
-        !isNil(filters.githubLogin)
+        !isNil(filters.oAuthLogin)
       ) {
         // Make a copy of filters.tagCode to avoid shiftin reference array in children
         const TagCodeFilters = filters.tagCodes.filter(() => true);
@@ -69,7 +72,7 @@ export class CommentController {
           tagCodes: TagCodeFilters,
         });
 
-        const userTags = await this.tagService.getByGithubLogin(filters.githubLogin);
+        const userTags = await this.tagService.getByLogin(filters.oAuthLogin);
 
         const filteredTags = filterTagsWithCodes(userTags, filters.tagCodes);
 

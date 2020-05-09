@@ -9,7 +9,7 @@ const tag0: TagType = {
   description: 'this is refacto done with mistake',
   creationDate: new Date(),
   isDefault: true,
-  githubLogin: null,
+  oAuthLogin: null,
 };
 
 const tag1: TagType = {
@@ -19,7 +19,7 @@ const tag1: TagType = {
   description: 'This is elegant but remove it ',
   creationDate: new Date(),
   isDefault: false,
-  githubLogin: null,
+  oAuthLogin: null,
 };
 
 const newTag: TagType = {
@@ -29,7 +29,7 @@ const newTag: TagType = {
   description: 'description',
   creationDate: new Date(),
   isDefault: false,
-  githubLogin: 'githubLogin',
+  oAuthLogin: 'oAuthLogin',
 };
 
 describe('Actions test', () => {

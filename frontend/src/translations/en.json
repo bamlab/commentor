@@ -7,7 +7,7 @@
   "tags": {
     "title": "Create a new tag",
     "add-tag": "CREATE NEW TAG",
-    "update-tag": "Update Tag",
+    "update-tag": "UPDATE TAG",
     "delete-tag": "Delete Tag"
   },
   "login": {

@@ -31,10 +31,17 @@ export const Modal = styled(ModalComponent)`
 
 export const Button = styled(But)``;
 
+export const ButtonContainer = styled.div`
+  flex: 1;
+  display: flex;
+  margin-top: ${getSpacing(4)};
+  justify-content: flex-end;
+`;
+
 export const HeaderTitle = styled.div`
-  font-family: ${fontStyles.bold.fontFamily};
-  font-weight: ${fontStyles.bold.fontWeight};
-  font-size: ${fontStyles.bold.fontSize};
+  font-family: ${fontStyles.subTitle.fontFamily};
+  font-weight: ${fontStyles.subTitle.fontWeight};
+  font-size: ${fontStyles.subTitle.fontSize};
 `;
 
 export const InputContainer = styled.div`

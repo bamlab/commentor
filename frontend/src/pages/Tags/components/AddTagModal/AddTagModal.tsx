@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   Modal,
   Button,
+  ButtonContainer,
   HeaderTitle,
   InputContainer,
   TextInputsContainer,
@@ -38,7 +39,7 @@ export const AddTagModal = (props: PropsType) => {
   return (
     <Modal
       id={props.id}
-      isOpen={true}
+      isOpen={props.isOpen}
       contentLabel="Add Tag Modal"
       onRequestClose={props.closeAddTagModal}
       className="AddTagModal"
@@ -46,7 +47,6 @@ export const AddTagModal = (props: PropsType) => {
       <HeaderTitle>
         <FormattedMessage id="tags.title" />
       </HeaderTitle>
-
       <InputContainer>
         <TextInputsContainer>
           <TagInput
@@ -76,9 +76,11 @@ export const AddTagModal = (props: PropsType) => {
           ))}
         </ColorPickerContainer>
       </InputContainer>
-      <Button onClick={addTag} disabled={props.isTagLoading}>
-        <FormattedMessage id="tags.add-tag" />
-      </Button>
+      <ButtonContainer>
+        <Button onClick={addTag} disabled={props.isTagLoading}>
+          <FormattedMessage id="tags.add-tag" />
+        </Button>
+      </ButtonContainer>
     </Modal>
   );
 };

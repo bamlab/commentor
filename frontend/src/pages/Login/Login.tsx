@@ -75,7 +75,7 @@ const Login = React.memo<LoginPropsType>(props => {
             </GithubAuthentButton>
             <GitlabAuthentButton
               onClick={() => {
-                window.location.href = `https://gitlab.com/oauth/authorize?state=gitlab&response_type=code&scope=read_user&redirect_uri=http://localhost:3000&state=gitlab&client_id=${
+                window.location.href = `https://gitlab.com/oauth/authorize?state=gitlab&response_type=code&scope=read_user+api&redirect_uri=http://localhost:3000&state=gitlab&client_id=${
                   process.env.REACT_APP_GITLAB_APP_CLIENT_ID
                 }`;
               }}

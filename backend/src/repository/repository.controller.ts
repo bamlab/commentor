@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 
 import { RepositoryService } from './repository.service';
-import { GithubRepositories } from '../auth/decorators/githubRepositories.decorator';
+import { ProviderRepositories } from '../auth/decorators/providerRepositories.decorator';
 import { RepositoryDto } from './interfaces/Repository.dto';
 
 @Controller('repositories')
@@ -10,8 +10,8 @@ export class RepositoryController {
 
   @Get()
   async getUserRepositories(
-    @GithubRepositories() githubRepositories: any[],
+    @ProviderRepositories() providerRepositories: any[],
   ): Promise<RepositoryDto[]> {
-    return this.service.getUserCommentedRepositories(githubRepositories);
+    return this.service.getUserCommentedRepositories(providerRepositories);
   }
 }

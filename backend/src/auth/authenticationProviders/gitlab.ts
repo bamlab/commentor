@@ -47,54 +47,6 @@ export const getLogin = async (cookies: { gitlab_access_token?: string }): Promi
   }
 };
 
-// const queryPaginatedGitlabRepositories = async (
-//   userAccessToken: string,
-//   previousPageRepositories: GitlabRepository[] = [],
-//   previousPageCursor?: string,
-// ): Promise<GitlabRepository[]> => {
-//   const query = `
-//         query {
-//           viewer {
-//             repositories(first: 100, affiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER], ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER] ${
-//               previousPageCursor ? `, after:"${previousPageCursor}"` : ''
-//             }) {
-//               totalCount
-//               pageInfo {
-//                 endCursor
-//                 hasNextPage
-//               }
-//               nodes {
-//                 databaseId,
-//                 name
-//               }
-//             }
-//           }
-//         }
-//       `;
-
-//   const gitlabAnswer: GitlabRepositoriesAnswer = await request({
-//     uri: 'https://api.gitlab.com/graphql',
-//     headers: {
-//       Authorization: `bearer ${userAccessToken}`,
-//       'User-Agent': 'Request-Promise',
-//     },
-//     method: 'POST',
-//     json: true,
-//     body: {
-//       query,
-//     },
-//   });
-
-//   const repositoriesList = previousPageRepositories.concat(
-//     gitlabAnswer.data.viewer.repositories.nodes,
-//   );
-//   const pageInfo = gitlabAnswer.data.viewer.repositories.pageInfo;
-//   if (pageInfo.hasNextPage) {
-//     return queryPaginatedGitlabRepositories(userAccessToken, repositoriesList, pageInfo.endCursor);
-//   }
-//   return repositoriesList ? repositoriesList : [];
-// };
-
 export const getRepositories = async (
   accessToken: string,
 ): Promise<Array<{ name: string; id: number }>> => {
@@ -143,6 +95,48 @@ export const checkUserHasAccessToRepo = async (
   } catch (error) {
     Logger.error(error, `Error received while checking permission to repo ${repositoryId}`);
     return;
+  }
+};
+
+export const formatComment = (
+  commentEvent: any,
+): {
+  body: string;
+  filePath: string;
+  url: string;
+  commentor: string;
+  requester: string;
+  pullRequestUrl: string;
+  repositoryId: number;
+} => {
+  console.log('GITLAB COMMENT EVENT', commentEvent);
+  if (
+    commentEvent.object_attributes &&
+    commentEvent.object_attributes.noteable_type &&
+    (commentEvent.object_attributes.noteable_type === 'Commit' ||
+      commentEvent.object_attributes.noteable_type === 'MergeRequest')
+  ) {
+    let authorUserName: string = null;
+    let commentedObjectUrl: string = null;
+    if (commentEvent.object_attributes.noteable_type === 'Commit') {
+      authorUserName = commentEvent.commit.author.name;
+      commentedObjectUrl = commentEvent.commit.url;
+    } else if (commentEvent.object_attributes.noteable_type === 'MergeRequest') {
+      authorUserName = commentEvent.merge_request.last_commit.author.name;
+      commentedObjectUrl = commentEvent.merge_request.last_commit.url;
+    }
+    return {
+      body: commentEvent.object_attributes.note,
+      url: commentEvent.object_attributes.url,
+      repositoryId: commentEvent.object_attributes.project_id,
+      commentor: commentEvent.user.username,
+      pullRequestUrl: commentedObjectUrl,
+      requester: authorUserName,
+      filePath:
+        commentEvent.object_attributes.st_diff && commentEvent.object_attributes.st_diff.newPath
+          ? commentEvent.object_attributes.st_diff.newPath
+          : 'NA',
+    };
   }
 };
 

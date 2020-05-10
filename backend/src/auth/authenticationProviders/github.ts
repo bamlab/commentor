@@ -136,6 +136,28 @@ export const checkUserHasAccessToRepo = async (
   }
 };
 
+export const formatComment = (
+  commentEvent: any,
+): {
+  body: string;
+  filePath: string;
+  url: string;
+  commentor: string;
+  requester: string;
+  pullRequestUrl: string;
+  repositoryId: number;
+} => {
+  return {
+    body: commentEvent.comment.body,
+    filePath: commentEvent.comment.path ? commentEvent.comment.path : 'NA',
+    url: commentEvent.comment.html_url,
+    commentor: commentEvent.comment.user.login,
+    requester: commentEvent.pull_request.user.login,
+    pullRequestUrl: commentEvent.pull_request.html_url,
+    repositoryId: commentEvent.repository.id,
+  };
+};
+
 interface GithubRepositoriesAnswer {
   data: {
     viewer: {

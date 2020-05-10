@@ -13,6 +13,8 @@ import { ProviderRepositoriesFilter } from '../auth/decorators/providerRepositor
 import { Tag } from '../tag/tag.entity';
 import { TagService } from '../tag/tag.service';
 import { filterTagsWithCodes } from './comment.utils';
+import { formatComment as formatGitlabComment } from '../auth/authenticationProviders/gitlab';
+import { formatComment as formatGithubComment } from '../auth/authenticationProviders/github';
 
 const FIRST_COMMENT_DATE = new Date('November 03, 1994 09:24:00');
 
@@ -123,18 +125,20 @@ export class CommentController {
   }
 
   @Post()
-  createOne(@Body() commentEvent: CommentEvent) {
+  createOne(@Body() commentEvent: CommentEvent & { object_kind: string }) {
+    let comment: Pick<
+      Comment,
+      'body' | 'filePath' | 'url' | 'commentor' | 'requester' | 'pullRequestUrl' | 'repositoryId'
+    >;
+    if (commentEvent.object_kind && commentEvent.object_kind === 'note') {
+      comment = formatGitlabComment(commentEvent);
+      console.log('comment', comment);
+    } else {
+      comment = formatGithubComment(commentEvent);
+    }
     return this.service.receiveCommentEvent({
-      action: commentEvent.action,
-      comment: {
-        body: commentEvent.comment.body,
-        filePath: commentEvent.comment.path,
-        url: commentEvent.comment.html_url,
-        commentor: commentEvent.comment.user.login,
-        requester: commentEvent.pull_request.user.login,
-        pullRequestUrl: commentEvent.pull_request.html_url,
-        repositoryId: commentEvent.repository.id,
-      },
+      action: commentEvent.action ? commentEvent.action : 'created',
+      comment,
     });
   }
 }

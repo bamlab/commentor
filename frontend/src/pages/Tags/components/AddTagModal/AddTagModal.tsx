@@ -8,7 +8,10 @@ import {
   ColorPickerContainer,
   TagInput,
   DescriptionInput,
+  colorBase,
+  CircleColorContainer,
 } from './AddTagModal.style';
+import { CircledColor } from 'components/CircledColor';
 import { FormattedMessage } from 'react-intl';
 
 type PropsType = {
@@ -22,14 +25,14 @@ type PropsType = {
 export const AddTagModal = (props: PropsType) => {
   const [newCode, setNewCode] = useState('');
   const [newDescription, setNewDescription] = useState('');
-  const [newColor, setNewColor] = useState('#000000');
+  const [newColorIndex, setNewColorIndex] = useState(0);
 
   const addTag = async () => {
-    props.addTag(newCode, newDescription, newColor);
+    props.addTag(newCode, newDescription, colorBase[newColorIndex]);
     props.closeAddTagModal();
     setNewCode('');
     setNewDescription('');
-    setNewColor('#000000');
+    setNewColorIndex(0);
   };
 
   return (
@@ -61,7 +64,17 @@ export const AddTagModal = (props: PropsType) => {
             }}
           />
         </TextInputsContainer>
-        <ColorPickerContainer>345</ColorPickerContainer>
+        <ColorPickerContainer>
+          {colorBase.map((color, index) => (
+            <CircleColorContainer key={index}>
+              <CircledColor
+                onClick={() => setNewColorIndex(index)}
+                color={color}
+                isSelected={index === newColorIndex}
+              />
+            </CircleColorContainer>
+          ))}
+        </ColorPickerContainer>
       </InputContainer>
       <Button onClick={addTag} disabled={props.isTagLoading}>
         <FormattedMessage id="tags.add-tag" />

@@ -20,6 +20,7 @@ export const Modal = React.memo<PropsType>(props => (
     portalClassName={`${props.className}`}
     className={`${props.className}_content`}
     overlayClassName={`${props.className}_overlay`}
+    ariaHideApp={false}
   >
     {props.children}
   </ReactModal>

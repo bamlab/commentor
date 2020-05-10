@@ -15,7 +15,7 @@ import {
   ANIMATION_SPEED,
 } from './Header.style';
 import { colorUsage } from 'stylesheet';
-import logoAnimation from 'assets/logoAnimation.json';
+import logoAnimation from '../../assets/logoAnimation.json';
 import { HeaderPropsType } from './Header.type';
 
 import 'react-datepicker/dist/react-datepicker.css';

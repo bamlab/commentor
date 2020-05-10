@@ -6,10 +6,22 @@ export const login = createAsyncAction(
   'Authentication/LOGIN_SUCCESS',
   'Authentication/LOGIN_FAILURE',
 )<
-  { code: string },
+  { code: string; provider: 'gitlab' | 'github' },
   {
     user: UserType;
   },
+  {
+    errorMessage: string;
+  }
+>();
+
+export const logout = createAsyncAction(
+  'Authentication/LOGOUT_REQUEST',
+  'Authentication/LOGOUT_SUCCESS',
+  'Authentication/LOGOUT_FAILURE',
+)<
+  {},
+  {},
   {
     errorMessage: string;
   }

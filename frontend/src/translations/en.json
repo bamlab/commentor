@@ -1,7 +1,8 @@
 {
   "header": {
     "tag": "Tags",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "logout": "Disconnect"
   },
   "home": {},
   "tags": {
@@ -13,6 +14,7 @@
     "title": "Log in",
     "description": "Authenticate through your favorite versioning platform in order to see and analyse all your comments",
     "authenticate-via-github": "Login with Github",
+    "authenticate-via-gitlab": "Login with Gitlab",
     "onboarding": "Commentor automates for you the recuperation and the classification of your code reviews so that you can focus on the analysis"
   }
 }

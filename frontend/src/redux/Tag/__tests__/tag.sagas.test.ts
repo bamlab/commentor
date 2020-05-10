@@ -30,7 +30,7 @@ const tag: TagType = {
   color: '#fff',
   creationDate: new Date(),
   isDefault: true,
-  githubLogin: '123',
+  oAuthLogin: '123',
 };
 const tags = [tag];
 

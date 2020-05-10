@@ -58,12 +58,15 @@ class Client {
     return this.request('delete', `${endpoint}/${id}/delete`);
   }
 
-  createAccessToken = async (data: { code: string }): Promise<void> => {
-    await this.post('/auth/accessToken/create', { code: data.code });
+  createAccessToken = async (data: {
+    code: string;
+    provider: 'gitlab' | 'github';
+  }): Promise<void> => {
+    await this.post('/auth/accessToken/create', { code: data.code, provider: data.provider });
     return;
   };
 
-  getUser = async (): Promise<{ githubLogin: string }> => {
+  getUser = async (): Promise<{ oAuthLogin: string }> => {
     const user = await this.get('/auth/user');
     return user;
   };
@@ -88,7 +91,7 @@ class Client {
     requesterIds: string[];
     commentorIds: string[];
     tagCodes: string[];
-    githubLogin: string | null;
+    oAuthLogin: string | null;
   }): Promise<{
     comments: CommentType[];
     pieChartData: PieChartData[];
@@ -138,10 +141,10 @@ class Client {
     return result;
   };
 
-  async logout() {
+  logout = async () => {
     const result = await this.post('/auth/accessToken/logout', {});
     return result;
-  }
+  };
 }
 
 const client = new Client(backendBaseUrl);

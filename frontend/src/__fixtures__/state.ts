@@ -27,7 +27,7 @@ export const state: RootState = {
     loginError: null,
     isAuthenticated: false,
     user: {
-      githubLogin: 'amauryw',
+      oAuthLogin: 'amauryw',
     },
   },
   tag: {
@@ -39,7 +39,7 @@ export const state: RootState = {
         description: 'this is refacto done with mistake',
         creationDate: new Date(),
         isDefault: true,
-        githubLogin: 'amauryw',
+        oAuthLogin: 'amauryw',
       },
     ],
     isLoading: true,

@@ -1,39 +1,56 @@
 import { Controller, Post, Body, Res, Get } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { Response } from 'express';
-import { GithubLogin } from './decorators/githubLogin.decorator';
+import { OAuthLogin } from './decorators/oAuthLogin.decorator';
 
-const ACCESS_TOKEN_COOKIE_KEY = 'access_token';
-const IS_AUTHENTIFIED_COOKIE_KEY = 'is_authentified';
+const AUTHENTICATION_PROVIDER_STORAGE_KEYS = {
+  GITLAB: 'gitlab_access_token',
+  GITHUB: 'github_access_token',
+};
 
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('accessToken/create')
-  async createJwt(@Body() body: { code: string }, @Res() res: Response) {
-    const accessToken = await this.authService.createJwt(body.code);
-
+  async createJwt(
+    @Body() body: { code: string; provider: 'github' | 'gitlab' },
+    @Res() res: Response,
+  ) {
+    const accessToken = await this.authService.generateAccessToken(body.code, body.provider);
     if (accessToken) {
-      res.cookie(ACCESS_TOKEN_COOKIE_KEY, accessToken, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-      });
+      switch (body.provider) {
+        case 'github':
+          res.cookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITHUB, accessToken, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+          });
+          break;
+        case 'gitlab':
+          res.cookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITLAB, accessToken, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+          });
+          break;
+        default:
+          break;
+      }
     }
 
     res.send();
   }
 
   @Get('user')
-  async getMe(@GithubLogin() githubLogin: string) {
+  async getMe(@OAuthLogin() oAuthLogin: string) {
     return {
-      githubLogin,
+      oAuthLogin,
     };
   }
 
   @Post('accessToken/logout')
   async logout(@Res() res: Response) {
-    res.clearCookie(ACCESS_TOKEN_COOKIE_KEY);
+    res.clearCookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITHUB);
+    res.clearCookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITLAB);
     res.sendStatus(200);
   }
 }

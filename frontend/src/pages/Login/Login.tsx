@@ -11,8 +11,11 @@ import {
   Title,
   Subtitle,
   GithubAuthentButton,
+  GitlabAuthentButton,
   GithubLogo,
+  GitlabLogo,
   GithubAuthentButtonText,
+  GitlabAuthentButtonText,
   IllustrationContainer,
   OnboardingIllustration,
   OnbooardingTextContainer,
@@ -21,6 +24,7 @@ import {
 import logoText from 'assets/logo-text.svg';
 import onboardingIllustration from 'assets/onboarding-illustration.png';
 import githubLogo from 'assets/octocat.png';
+import gitlabLogo from 'assets/gitlab-logo.png';
 
 import { LoginPropsType } from './Login.type';
 
@@ -29,8 +33,14 @@ const Login = React.memo<LoginPropsType>(props => {
   useEffect(() => {
     const componentDidMount = async () => {
       const params = queryString.parse(location.search);
-      if (params.code && typeof params.code === 'string' && !isAuthenticated) {
-        await login(params.code);
+      if (
+        params.state &&
+        typeof params.state === 'string' &&
+        (params.state === 'gitlab' || params.state === 'github')
+      ) {
+        if (params.code && typeof params.code === 'string' && !isAuthenticated) {
+          await login(params.code, params.state);
+        }
       }
     };
     componentDidMount();
@@ -52,7 +62,7 @@ const Login = React.memo<LoginPropsType>(props => {
             </Subtitle>
             <GithubAuthentButton
               onClick={() => {
-                window.location.href = `https://github.com/login/oauth/authorize?client_id=${
+                window.location.href = `https://github.com/login/oauth/authorize?state=github&client_id=${
                   process.env.REACT_APP_GITHUB_APP_CLIENT_ID
                 }`;
               }}
@@ -62,6 +72,18 @@ const Login = React.memo<LoginPropsType>(props => {
                 <FormattedMessage id="login.authenticate-via-github" />
               </GithubAuthentButtonText>
             </GithubAuthentButton>
+            <GitlabAuthentButton
+              onClick={() => {
+                window.location.href = `https://gitlab.com/oauth/authorize?state=gitlab&response_type=code&scope=read_user+api&redirect_uri=${
+                  process.env.REACT_APP_OAUTH_REDIRECT_URL
+                }&state=gitlab&client_id=${process.env.REACT_APP_GITLAB_APP_CLIENT_ID}`;
+              }}
+            >
+              <GitlabLogo src={gitlabLogo} />
+              <GitlabAuthentButtonText>
+                <FormattedMessage id="login.authenticate-via-gitlab" />
+              </GitlabAuthentButtonText>
+            </GitlabAuthentButton>
           </ContentContainer>
         </ContentPositioner>
       </LeftCardContainer>

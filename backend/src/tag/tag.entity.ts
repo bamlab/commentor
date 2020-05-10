@@ -15,7 +15,7 @@ export class Tag {
   color: string;
 
   @Column({ nullable: true })
-  githubLogin: string;
+  oAuthLogin: string;
 
   @Column({ nullable: false, default: () => false })
   isDefault: boolean;

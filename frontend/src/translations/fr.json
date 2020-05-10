@@ -1,7 +1,8 @@
 {
   "header": {
     "tag": "Tags",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "logout": "Déconnexion"
   },
   "home": {},
   "tags": {
@@ -13,6 +14,7 @@
     "title": "Connexion",
     "description": "Authentifiez vous à l'aide de votre plate forme de versionning préférée pour commencer à analyser vos commentaires",
     "authenticate-via-github": "Connexion Github",
+    "authenticate-via-gitlab": "Connexion Gitlab",
     "onboarding": "Commentor automatise la récupération et la classification de vos codes reviews pour que vous puissiez vous concentrer sur l'analyse"
   }
 }

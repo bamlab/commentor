@@ -12,7 +12,7 @@ export function* loadCommentsSaga(action: ActionType<typeof loadComments.request
     let user = yield select(getUser);
     const { comments, pieChartData, barChartData } = yield call([client, client.fetchCommentData], {
       ...filters,
-      githubLogin: user.githubLogin,
+      oAuthLogin: user.oAuthLogin,
     });
 
     yield put(loadComments.success({ comments }));

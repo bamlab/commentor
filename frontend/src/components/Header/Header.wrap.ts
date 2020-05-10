@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import { RootState } from 'redux/types';
 import { compose } from 'recompose';
 import { Dispatch } from 'react';
-import { login } from 'redux/Authentication/authentication.actions';
+import { logout } from 'redux/Authentication/authentication.actions';
 import { isAuthenticated } from 'redux/Authentication/authentication.selectors';
 import { withRouter } from 'react-router-dom';
-import Login from './Login';
+import Header from './Header';
 
 const mapStateToProps = (state: RootState) => ({
   isAuthenticated: isAuthenticated(state),
@@ -13,8 +13,7 @@ const mapStateToProps = (state: RootState) => ({
 
 // @ts-ignore Generic type 'Dispatch' requires 1 type argument(s)
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  login: (code: string, provider: 'github' | 'gitlab') =>
-    dispatch(login.request({ code, provider })),
+  logout: () => dispatch(logout.request({})),
 });
 
 export default compose(
@@ -24,4 +23,4 @@ export default compose(
   ),
   withRouter,
   // @ts-ignore
-)(Login);
+)(Header);

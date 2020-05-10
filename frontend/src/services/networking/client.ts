@@ -141,10 +141,10 @@ class Client {
     return result;
   };
 
-  async logout() {
+  logout = async () => {
     const result = await this.post('/auth/accessToken/logout', {});
     return result;
-  }
+  };
 }
 
 const client = new Client(backendBaseUrl);

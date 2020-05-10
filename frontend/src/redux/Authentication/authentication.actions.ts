@@ -15,6 +15,18 @@ export const login = createAsyncAction(
   }
 >();
 
+export const logout = createAsyncAction(
+  'Authentication/LOGOUT_REQUEST',
+  'Authentication/LOGOUT_SUCCESS',
+  'Authentication/LOGOUT_FAILURE',
+)<
+  {},
+  {},
+  {
+    errorMessage: string;
+  }
+>();
+
 export const authentication = createAsyncAction(
   'Authentication/AUTHENTICATION_REQUEST',
   'Authentication/AUTHENTICATION_SUCCESS',

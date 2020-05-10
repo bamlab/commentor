@@ -1,7 +1,8 @@
 {
   "header": {
     "tag": "Tags",
-    "dashboard": "Dashboard"
+    "dashboard": "Dashboard",
+    "logout": "Disconnect"
   },
   "home": {},
   "tags": {

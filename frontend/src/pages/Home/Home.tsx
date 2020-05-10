@@ -7,6 +7,7 @@ import {
 } from './Home.style';
 import { GenericTable } from 'components/GenericTable/GenericTable';
 import { CommentType } from 'redux/Comment';
+import queryString from 'query-string';
 import Login from '../Login';
 import {
   fixedColumnCount,
@@ -28,6 +29,20 @@ const Home = React.memo<HomePropsType>(props => {
         loadTags();
         loadRepositories();
         loadComments();
+        const params = queryString.parse(window.location.search);
+        if (
+          params.state &&
+          typeof params.state === 'string' &&
+          (params.state === 'gitlab' || params.state === 'github')
+        ) {
+          if (params.code && typeof params.code === 'string') {
+            window.location.replace(
+              process.env.REACT_APP_OAUTH_REDIRECT_URL
+                ? process.env.REACT_APP_OAUTH_REDIRECT_URL
+                : '',
+            );
+          }
+        }
       }
     },
     [isAuthenticated, loadRepositories],

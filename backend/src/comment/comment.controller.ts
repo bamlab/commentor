@@ -9,7 +9,7 @@ import {
 } from './interfaces/comment.dto';
 import { Comment } from './comment.entity';
 import { CommentService } from './comment.service';
-import { GithubRepositoriesFilter } from '../auth/decorators/githubRepositoriesFilter.decorator';
+import { ProviderRepositoriesFilter } from '../auth/decorators/providerRepositoriesFilter.decorator';
 import { Tag } from '../tag/tag.entity';
 import { TagService } from '../tag/tag.service';
 import { filterTagsWithCodes } from './comment.utils';
@@ -27,7 +27,7 @@ export class CommentController {
   async getFilteredComments(
     @Body()
     filters: FiltersType,
-    @GithubRepositoriesFilter() filteredGithubRepositoriesIds: number[],
+    @ProviderRepositoriesFilter() filteredGithubRepositoriesIds: number[],
   ): Promise<Comment[]> {
     if (filteredGithubRepositoriesIds && filteredGithubRepositoriesIds.length > 0) {
       return this.service.getCommentsWithFilters({
@@ -51,11 +51,9 @@ export class CommentController {
   async getPieChartFormattedComments(
     @Body()
     filters: FiltersType,
-    @GithubRepositoriesFilter() filteredGithubRepositoriesIds: number[],
+    @ProviderRepositoriesFilter() filteredGithubRepositoriesIds: number[],
   ): Promise<GetFilteredCommentsAnswer> {
     try {
-      console.log('filteredGithubRepositoriesIds', filteredGithubRepositoriesIds);
-      console.log('filters', filters);
       if (
         filteredGithubRepositoriesIds &&
         filteredGithubRepositoriesIds.length > 0 &&

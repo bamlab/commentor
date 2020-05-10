@@ -115,13 +115,12 @@ export const getRepositories = async (
 
 export const checkUserHasAccessToRepo = async (
   repositoryId: string,
-  userGitlabLogin: string,
   accessToken: string,
 ): Promise<string> => {
   try {
-    Logger.log(`About to check github user ${userGitlabLogin} access to repo ${repositoryId}`);
+    Logger.log(`About to check gitlab access to repo ${repositoryId}`);
     const gitlabUserAccessToRepoAnswer = await request({
-      uri: `https://api.github.com/repositories/${repositoryId}/collaborators/${userGitlabLogin}/permission`,
+      uri: `https://gitlab.com/api/v4/projects/${repositoryId}?min_access_level=10`,
       headers: {
         Authorization: `Bearer ${accessToken}`,
         'User-Agent': 'Request-Promise',
@@ -129,19 +128,20 @@ export const checkUserHasAccessToRepo = async (
       json: true,
     });
 
-    if (gitlabUserAccessToRepoAnswer && gitlabUserAccessToRepoAnswer.permission) {
+    if (
+      gitlabUserAccessToRepoAnswer &&
+      gitlabUserAccessToRepoAnswer.permissions &&
+      gitlabUserAccessToRepoAnswer.permissions.project_access &&
+      gitlabUserAccessToRepoAnswer.permissions.project_access.access_level &&
+      gitlabUserAccessToRepoAnswer.permissions.project_access.access_level >= 10
+    ) {
       Logger.log(
-        `Received permission ${
-          gitlabUserAccessToRepoAnswer.permission
-        } for user ${userGitlabLogin} on repo ${repositoryId}`,
+        `Received permission ${gitlabUserAccessToRepoAnswer.permissions} on repo ${repositoryId}`,
       );
       return repositoryId;
     }
   } catch (error) {
-    Logger.error(
-      error,
-      `Error received while checking permission for user ${userGitlabLogin} to repo ${repositoryId}`,
-    );
+    Logger.error(error, `Error received while checking permission to repo ${repositoryId}`);
     return;
   }
 };

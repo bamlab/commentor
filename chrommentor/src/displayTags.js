@@ -1,6 +1,5 @@
 export function constructOptions(tagsOptions) {
   const table = document.getElementById("tags-options-table");
-  console.log(table);
   const newTable = document.createElement("table");
   newTable.setAttribute("id", "tags-options-table");
   const tagTableHeader = document.createElement("tr");

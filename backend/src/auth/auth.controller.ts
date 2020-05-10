@@ -19,17 +19,14 @@ export class AuthController {
   ) {
     const accessToken = await this.authService.generateAccessToken(body.code, body.provider);
     if (accessToken) {
-      console.log('PROVIDER', body.provider);
       switch (body.provider) {
         case 'github':
-          console.log('GITHUB');
           res.cookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITHUB, accessToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
           });
           break;
         case 'gitlab':
-          console.log('GITLAB');
           res.cookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITLAB, accessToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',

@@ -33,7 +33,6 @@ const Login = React.memo<LoginPropsType>(props => {
   useEffect(() => {
     const componentDidMount = async () => {
       const params = queryString.parse(location.search);
-      console.log('PARAMS', params);
       if (
         params.state &&
         typeof params.state === 'string' &&

@@ -5,6 +5,7 @@
   },
   "home": {},
   "tags": {
+    "title": "Create a new tag",
     "add-tag": "CREATE NEW TAG",
     "update-tag": "Update Tag",
     "delete-tag": "Delete Tag"

@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
-import { Modal } from 'components/Modal/Modal';
-import InputRow from 'components/InputRow';
-import Button from 'components/Button';
+import {
+  Modal,
+  Button,
+  HeaderTitle,
+  InputContainer,
+  TextInputsContainer,
+  ColorPickerContainer,
+  TagInput,
+  DescriptionInput,
+} from './AddTagModal.style';
 import { FormattedMessage } from 'react-intl';
 
 type PropsType = {
@@ -28,46 +35,34 @@ export const AddTagModal = (props: PropsType) => {
   return (
     <Modal
       id={props.id}
-      isOpen={props.isOpen}
+      isOpen={true}
       contentLabel="Add Tag Modal"
       onRequestClose={props.closeAddTagModal}
+      className="AddTagModal"
     >
-      <InputRow
-        label="code"
-        type="text"
-        placeholder="Code..."
-        field={{
-          name: 'code',
-          value: newCode,
-          onChange: event => {
-            setNewCode(event.target.value);
-          },
-        }}
-      />
-      <InputRow
-        label="description"
-        type="text"
-        placeholder="Description..."
-        field={{
-          name: 'description',
-          value: newDescription,
-          onChange: event => {
-            setNewDescription(event.target.value);
-          },
-        }}
-      />
-      <InputRow
-        label="color"
-        type="color"
-        placeholder="Color..."
-        field={{
-          name: 'color',
-          value: newColor,
-          onChange: event => {
-            setNewColor(event.target.value);
-          },
-        }}
-      />
+      <HeaderTitle>
+        <FormattedMessage id="tags.title" />
+      </HeaderTitle>
+
+      <InputContainer>
+        <TextInputsContainer>
+          <TagInput
+            type="Text"
+            placeholder="Enter your tag here"
+            onChange={event => {
+              setNewCode(event.target.value);
+            }}
+          />
+          <DescriptionInput
+            placeholder="Description"
+            rows={3}
+            onChange={event => {
+              setNewDescription(event.target.value);
+            }}
+          />
+        </TextInputsContainer>
+        <ColorPickerContainer>345</ColorPickerContainer>
+      </InputContainer>
       <Button onClick={addTag} disabled={props.isTagLoading}>
         <FormattedMessage id="tags.add-tag" />
       </Button>

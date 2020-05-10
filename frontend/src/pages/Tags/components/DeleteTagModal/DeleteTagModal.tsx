@@ -29,6 +29,10 @@ export const DeleteTagModal = (props: PropsType) => {
       <Button onClick={confirmDeletion} disabled={props.isTagLoading}>
         <FormattedMessage id="tags.delete-tag" />
       </Button>
+      -
+      <Button onClick={props.closeRemoveTageModal} disabled={props.isTagLoading}>
+        Non
+      </Button>
     </Modal>
   );
 };

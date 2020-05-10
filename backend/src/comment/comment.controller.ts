@@ -132,7 +132,6 @@ export class CommentController {
     >;
     if (commentEvent.object_kind && commentEvent.object_kind === 'note') {
       comment = formatGitlabComment(commentEvent);
-      console.log('comment', comment);
     } else {
       comment = formatGithubComment(commentEvent);
     }

@@ -121,7 +121,6 @@ export const formatComment = (
       authorUserName = commentEvent.commit.author.name;
       commentedObjectUrl = commentEvent.commit.url;
     } else if (commentEvent.object_attributes.noteable_type === 'MergeRequest') {
-      console.log('GITLAB COMMENT EVENT', commentEvent.merge_request.last_commit.author);
       authorUserName = commentEvent.merge_request.last_commit.author.name;
       commentedObjectUrl = commentEvent.merge_request.last_commit.url;
     }

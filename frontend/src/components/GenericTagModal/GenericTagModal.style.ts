@@ -1,8 +1,8 @@
 import { Modal as ModalComponent } from 'components/Modal/Modal';
 import styled from 'styled-components';
 import But from 'components/Button';
-import { fontStyles, getSpacing, borderRadius, colorUsage } from '../../../../stylesheet';
 import Input, { InputCssStyle } from 'components/Input/Input';
+import { borderRadius, getSpacing, fontStyles, colorUsage } from '../../stylesheet';
 
 export const Modal = styled(ModalComponent)`
   &_overlay {

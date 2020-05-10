@@ -7,7 +7,7 @@ describe('AppController', () => {
     code: '1',
     description: 'babla',
     color: 'red',
-    githubLogin: 'amauryw',
+    oAuthLogin: 'amauryw',
     isDefault: false,
     creationDate: new Date(),
   };
@@ -17,7 +17,7 @@ describe('AppController', () => {
     code: '♻️',
     description: 'refacto',
     color: 'red',
-    githubLogin: null,
+    oAuthLogin: null,
     isDefault: true,
     creationDate: new Date(),
   };
@@ -27,7 +27,7 @@ describe('AppController', () => {
     code: '🔥',
     description: 'fire',
     color: 'red',
-    githubLogin: 'maximes',
+    oAuthLogin: 'maximes',
     isDefault: false,
     creationDate: new Date(),
   };

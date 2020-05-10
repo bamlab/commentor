@@ -93,8 +93,14 @@ const queryPaginatedGithubRepositories = async (
   return repositoriesList ? repositoriesList : [];
 };
 
-export const getRepositories = (accessToken: string): Promise<GithubRepository[]> => {
-  return queryPaginatedGithubRepositories(accessToken);
+export const getRepositories = async (
+  accessToken: string,
+): Promise<Array<{ name: string; id: number }>> => {
+  const githubRepositories = await queryPaginatedGithubRepositories(accessToken);
+  return githubRepositories.map((repository: GithubRepository) => ({
+    name: repository.name,
+    id: repository.databaseId,
+  }));
 };
 
 export const checkUserHasAccessToRepo = async (

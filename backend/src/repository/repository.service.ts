@@ -7,13 +7,14 @@ import { RepositoryDto } from './interfaces/Repository.dto';
 export class RepositoryService {
   constructor(private readonly commentService: CommentService) {}
   getUserCommentedRepositories = async (githubRepositories: any[]): Promise<RepositoryDto[]> => {
+    console.log('HAHAHA', githubRepositories);
     const promiseList = githubRepositories
       ? githubRepositories.map(async repository => {
           const isRepositoryLinkedToExistingComment = await this.commentService.checkIfCommentsExistForRepository(
-            repository.databaseId,
+            repository.id,
           );
-          if (isRepositoryLinkedToExistingComment) {
-            return { id: repository.databaseId, name: repository.name };
+          if (true) {
+            return { id: repository.id, name: repository.name };
           }
           return;
         })

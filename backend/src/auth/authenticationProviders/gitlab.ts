@@ -95,9 +95,22 @@ export const getLogin = async (cookies: { gitlab_access_token?: string }): Promi
 //   return repositoriesList ? repositoriesList : [];
 // };
 
-export const getRepositories = async (accessToken: string): Promise<any[]> => {
-  // const repositories = await queryPaginatedGitlabRepositories(accessToken);
-  return [];
+export const getRepositories = async (
+  accessToken: string,
+): Promise<Array<{ name: string; id: number }>> => {
+  const gitlabRepositoriesAnswer = await request({
+    uri: `https://gitlab.com/api/v4/projects?min_access_level=10`,
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      'User-Agent': 'Request-Promise',
+    },
+    json: true,
+  });
+
+  return gitlabRepositoriesAnswer.map((repository: { name: string; id: number }) => ({
+    name: repository.name,
+    id: repository.id,
+  }));
 };
 
 export const checkUserHasAccessToRepo = async (

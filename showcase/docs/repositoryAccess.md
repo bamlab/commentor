@@ -11,12 +11,12 @@ Commentor plugs itself directly to your versioning platform in order to collect 
 So far, commentor supports:
 
 - Github
+- Gitlab
 
 :::note
 
 We plan to support shortly:
 
-- Gitlab
 - Bitbucket
 
 :::
@@ -64,5 +64,48 @@ Commentor does **not** need access to your code, you can check that by reviewing
 ### Authenticate with Github on the platform
 
 Head to [Commentor Platform](https://commentor.netlify.app) and authenticate with Github.
+
+You're all set and ready to start analyzing :)
+
+---
+
+## Integrate with Gitlab
+
+### Setup the commentor webhook on yoour project
+
+Commentor needs to collect the comment your team add while performing code reviews. By setuping our webhook, you allow us to get the comments as you write them so that they are available for analysis on our platform.
+
+- Head to Settings > Webhooks.
+- Setup the webhook url to
+
+```
+https://commentor-api-prod.herokuapp.com/comments
+```
+
+- Tick the "Comments" checkbox
+- Enable SSl verification
+- Save the webhook
+
+You're all set !
+
+![webhook setup][gitlab-webhook-setup]
+
+[gitlab-webhook-setup]: /img/gitlab-webhook-setup.png "Setup the webhook to be triggered by every comments"
+
+:::important
+
+Commentor does **not** need access to your code at any time.
+
+:::
+
+### Authenticate with Github on the platform
+
+Head to [Commentor Platform](https://commentor.netlify.app) and authenticate with Gitlab.
+
+:::important
+
+The permissions we request during the OAuth process are the minimum permissions we could ask through Gitlab API so that we could access the list of project you have access to. We never access to your code.
+
+:::
 
 You're all set and ready to start analyzing :)

@@ -20,6 +20,10 @@
   --ifm-color-secondary: #fcc760;
 }
 
+.copyButton_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
+  color: white !important;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;

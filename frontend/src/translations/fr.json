@@ -6,8 +6,9 @@
   },
   "home": {},
   "tags": {
-    "add-tag": "Ajouter un Tag",
-    "update-tag": "Mettre à jour ce Tag",
+    "title": "Ajouter un nouveau tag",
+    "add-tag": "AJOUTER UN TAG",
+    "update-tag": "METTRE A JOUR CE TAG",
     "delete-tag": "Supprimer Tag"
   },
   "login": {

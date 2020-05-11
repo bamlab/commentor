@@ -50,7 +50,7 @@ const Tags = React.memo<IProps>(props => {
       <AddTagModal
         id="addTagModal"
         isOpen={isAddTagModalOpen}
-        closeAddTagModal={() => setAddTagModalValue(false)}
+        closeModal={() => setAddTagModalValue(false)}
       />
       <UpdateTagModal
         id="updateTagModal"

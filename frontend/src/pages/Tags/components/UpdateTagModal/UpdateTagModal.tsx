@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Modal } from 'components/Modal/Modal';
 import InputRow from 'components/InputRow';
 import Button from 'components/Button';
 import { FormattedMessage } from 'react-intl';
 import { TagType } from 'redux/Tag';
+import { Modal } from './UpdateTagModal.style';
 
 type PropsType = {
   id: string;
@@ -41,7 +41,7 @@ export const UpdateTagModal = (props: PropsType) => {
       onRequestClose={props.closeUpdateModal}
     >
       <InputRow
-        label="code"
+        label="Code:"
         type="text"
         placeholder="Code..."
         field={{
@@ -53,7 +53,7 @@ export const UpdateTagModal = (props: PropsType) => {
         }}
       />
       <InputRow
-        label="description"
+        label="Description:"
         type="text"
         placeholder="Description..."
         field={{
@@ -65,7 +65,7 @@ export const UpdateTagModal = (props: PropsType) => {
         }}
       />
       <InputRow
-        label="color"
+        label="Color:"
         type="color"
         placeholder="Color..."
         field={{

@@ -1,0 +1,1 @@
+export { GenericTagModal } from './GenericTagModal';

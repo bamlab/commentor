@@ -14,6 +14,7 @@ const Button = styled.button<IButton>`
   font-size: ${fontStyles.bold.fontSize};
 
   cursor: ${props => (props.disabled ? 'default' : 'pointer')};
+
   ${props =>
     props.disabled &&
     css`
@@ -22,12 +23,14 @@ const Button = styled.button<IButton>`
 
   border: none;
   border-radius: ${borderRadius};
-
   text-decoration: none;
-
-  color: ${colorUsage.text};
+  color: ${colorUsage.buttonText};
   background-color: ${props => (props.disabled ? colorUsage.disabled : colorUsage.highlight)};
   transition: background-color 0.3s ease-in-out;
+  :hover {
+    background-color: red;
+    ${props => (props.disabled ? '' : `background-color: ${colorUsage.hoverButtonColor};`)}
+  }
 `;
 
 export default Button;

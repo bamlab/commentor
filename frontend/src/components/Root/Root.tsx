@@ -24,6 +24,8 @@ interface Props {
   isAuthenticated: boolean;
   isCommentLoading: boolean;
   loadComments: () => void;
+  isTagLoading: boolean;
+  isRepositoriesLoading: boolean;
 }
 
 const Root: React.FunctionComponent<Props> = ({
@@ -31,11 +33,18 @@ const Root: React.FunctionComponent<Props> = ({
   isAuthenticated,
   isCommentLoading,
   loadComments,
+  isTagLoading,
+  isRepositoriesLoading,
 }) => {
   return (
     <IntlProvider locale="fr" messages={locales.fr}>
       <RootContainer>
-        {isAuthenticated && <Header isFetchingData={isCommentLoading} refreshData={loadComments} />}
+        {isAuthenticated && (
+          <Header
+            isFetchingData={isCommentLoading || isTagLoading || isRepositoriesLoading}
+            refreshData={loadComments}
+          />
+        )}
         <PageContent>{isAuthenticated ? children : <Login />}</PageContent>
       </RootContainer>
     </IntlProvider>

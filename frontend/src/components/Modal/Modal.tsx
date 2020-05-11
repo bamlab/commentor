@@ -8,6 +8,7 @@ interface PropsType {
   children: ReactNode;
   onRequestClose: () => void;
   style?: Object;
+  className?: string;
 }
 
 export const Modal = React.memo<PropsType>(props => (
@@ -16,6 +17,10 @@ export const Modal = React.memo<PropsType>(props => (
     contentLabel={props.contentLabel}
     onRequestClose={props.onRequestClose}
     style={props.style}
+    portalClassName={`${props.className}`}
+    className={`${props.className}_content`}
+    overlayClassName={`${props.className}_overlay`}
+    ariaHideApp={false}
   >
     {props.children}
   </ReactModal>

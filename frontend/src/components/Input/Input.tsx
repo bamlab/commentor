@@ -1,37 +1,38 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { borderRadius, colorUsage, fontStyles, getSpacing } from 'stylesheet';
-
-const getBorderColor = (originalColor: string, hasError?: boolean): string =>
-  hasError ? colorUsage.error : originalColor;
 
 interface Props {
   hasError?: boolean;
 }
 
-const Input = styled.input<Props>`
+export const InputCssStyle = css`
   font-family: ${fontStyles.regular.fontFamily};
   font-size: ${fontStyles.regular.fontSize};
   font-weight: ${fontStyles.regular.fontWeight};
-  width: 100%;
-  height: 60px;
   background-color: ${colorUsage.background};
-  padding: 0 ${getSpacing(3)};
+  padding:  ${getSpacing(1)} ${getSpacing(2)};
   border-radius: ${borderRadius};
-  border: 1px solid;
-  border-color: ${props => getBorderColor(colorUsage.lines, props.hasError)};
-
-  :hover {
-    border-color: ${props => getBorderColor(colorUsage.lines, props.hasError)};
-  }
-
-  :focus {
-    border-color: ${props => getBorderColor(colorUsage.lines, props.hasError)};
-  }
-
+  border: 0;
+  outline: none;
   ::placeholder {
     color: ${colorUsage.placeHolderText};
   }
+  :hover {
+    border-color: ${colorUsage.lines};
+  }
+  border-color: ${colorUsage.lines};
 `;
+
+export const ErrorCssDiff = css`
+  border-color: ${colorUsage.error};
+`;
+
+const Input = styled.input<Props>`
+  ${InputCssStyle};
+  height: 30px;
+  ${props => (props.hasError ? `${ErrorCssDiff}` : '')};
+`;
+
 Input.displayName = 'Input';
 
 export default Input;

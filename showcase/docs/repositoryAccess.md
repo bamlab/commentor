@@ -83,7 +83,7 @@ https://commentor-api-prod.herokuapp.com/comments
 ```
 
 - Tick the "Comments" checkbox
-- Enable SSl verification
+- Enable SSL verification
 - Save the webhook
 
 You're all set !

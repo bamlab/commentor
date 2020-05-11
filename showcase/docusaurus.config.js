@@ -1,7 +1,7 @@
 module.exports = {
   title: "Commentor",
   tagline: "",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://commentor-doc.netlify.app",
   baseUrl: "/",
   favicon: "img/favicon.ico",
   organizationName: "bamlab",

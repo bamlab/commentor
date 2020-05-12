@@ -1,4 +1,5 @@
-import { createParamDecorator, UnauthorizedException } from '@nestjs/common';
+import { createParamDecorator, UnauthorizedException, Logger } from '@nestjs/common';
+
 import {
   getLogin as getGithubLogin,
   checkUserHasAccessToRepo as checkUserHasAccessToGithubRepo,
@@ -32,6 +33,7 @@ export const ProviderRepositoriesFilter = createParamDecorator(async (_, req) =>
           checkUserHasAccessToGitlabRepo(repositoryId, req.cookies.gitlab_access_token),
         ),
       );
+      Logger.error(checkedRepositoryIds, `Checked repository ids`);
       filteredRepositoriesIds = filteredRepositoriesIds.concat(
         checkedRepositoryIds.filter(repositoryId => !!repositoryId),
       );

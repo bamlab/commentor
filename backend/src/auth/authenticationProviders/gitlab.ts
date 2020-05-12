@@ -80,6 +80,8 @@ export const checkUserHasAccessToRepo = async (
       json: true,
     });
 
+    Logger.error(gitlabUserAccessToRepoAnswer, `RESPONSE !`);
+
     if (
       gitlabUserAccessToRepoAnswer &&
       gitlabUserAccessToRepoAnswer.permissions &&

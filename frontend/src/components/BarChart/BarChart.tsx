@@ -67,10 +67,7 @@ const BarChart = React.memo<propTypes>(props => {
                 return (
                   <VictoryBar
                     barWidth={10}
-                    animate={{
-                      duration: 2000,
-                      onLoad: { duration: 1000 },
-                    }}
+                    animate={false}
                     style={{
                       data: {
                         fill: ({ datum }) => (datum.tag ? datum.tag.color : colorUsage.error),

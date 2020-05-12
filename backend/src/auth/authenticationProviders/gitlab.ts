@@ -1,5 +1,6 @@
 import * as request from 'request-promise';
 import { Logger } from '@nestjs/common';
+import { EmojiConvertor } from 'emoji-js';
 
 export const generateAccessToken = async (code: string): Promise<string> => {
   const gitlabOauthResponse = await request({
@@ -115,6 +116,9 @@ export const formatComment = (
     (commentEvent.object_attributes.noteable_type === 'Commit' ||
       commentEvent.object_attributes.noteable_type === 'MergeRequest')
   ) {
+    const emojiConvertor = new EmojiConvertor();
+    emojiConvertor.replace_mode = 'unified';
+    emojiConvertor.allow_native = true;
     let authorUserName: string = null;
     let commentedObjectUrl: string = null;
     if (commentEvent.object_attributes.noteable_type === 'Commit') {
@@ -124,8 +128,9 @@ export const formatComment = (
       authorUserName = commentEvent.merge_request.last_commit.author.name;
       commentedObjectUrl = commentEvent.merge_request.last_commit.url;
     }
+
     return {
-      body: commentEvent.object_attributes.note,
+      body: emojiConvertor.replace_colons(commentEvent.object_attributes.note),
       url: commentEvent.object_attributes.url,
       repositoryId: commentEvent.object_attributes.project_id,
       commentor: commentEvent.user.username,

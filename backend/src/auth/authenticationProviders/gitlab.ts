@@ -87,8 +87,8 @@ export const checkUserHasAccessToRepo = async (
         gitlabUserAccessToRepoAnswer.permissions.project_access.access_level &&
         gitlabUserAccessToRepoAnswer.permissions.project_access.access_level >= 10) ||
         (gitlabUserAccessToRepoAnswer.permissions.group_access &&
-          gitlabUserAccessToRepoAnswer.permissions.project_access.access_level &&
-          gitlabUserAccessToRepoAnswer.permissions.project_access.access_level >= 10))
+          gitlabUserAccessToRepoAnswer.permissions.group_access.access_level &&
+          gitlabUserAccessToRepoAnswer.permissions.group_access.access_level >= 10))
     ) {
       return repositoryId;
     }

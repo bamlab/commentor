@@ -130,7 +130,6 @@ export class CommentController {
       Comment,
       'body' | 'filePath' | 'url' | 'commentor' | 'requester' | 'pullRequestUrl' | 'repositoryId'
     >;
-    Logger.log(comment, 'Receiving comment from webhook !');
     if (commentEvent.object_kind && commentEvent.object_kind === 'note') {
       comment = formatGitlabComment(commentEvent);
     } else {

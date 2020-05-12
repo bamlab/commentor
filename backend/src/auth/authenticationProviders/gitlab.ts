@@ -80,18 +80,16 @@ export const checkUserHasAccessToRepo = async (
       json: true,
     });
 
-    Logger.error(gitlabUserAccessToRepoAnswer, `RESPONSE !`);
-
     if (
       gitlabUserAccessToRepoAnswer &&
       gitlabUserAccessToRepoAnswer.permissions &&
-      gitlabUserAccessToRepoAnswer.permissions.project_access &&
-      gitlabUserAccessToRepoAnswer.permissions.project_access.access_level &&
-      gitlabUserAccessToRepoAnswer.permissions.project_access.access_level >= 10
+      ((gitlabUserAccessToRepoAnswer.permissions.project_access &&
+        gitlabUserAccessToRepoAnswer.permissions.project_access.access_level &&
+        gitlabUserAccessToRepoAnswer.permissions.project_access.access_level >= 10) ||
+        (gitlabUserAccessToRepoAnswer.permissions.group_access &&
+          gitlabUserAccessToRepoAnswer.permissions.project_access.access_level &&
+          gitlabUserAccessToRepoAnswer.permissions.project_access.access_level >= 10))
     ) {
-      Logger.log(
-        `Received permission ${gitlabUserAccessToRepoAnswer.permissions} on repo ${repositoryId}`,
-      );
       return repositoryId;
     }
   } catch (error) {

@@ -37,7 +37,6 @@ Input.displayName = 'Input';
 
 export const TextArea = styled.textarea<Props>`
   ${InputCssStyle};
-  height: 30px;
   ${props => (props.hasError ? `${ErrorCssDiff}` : '')};
 `;
 export default Input;

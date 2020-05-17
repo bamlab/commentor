@@ -4,19 +4,6 @@ import But from 'components/Button';
 import Input, { TextArea } from 'components/Input/Input';
 import { borderRadius, getSpacing, fontStyles, colorUsage } from '../../stylesheet';
 
-export const Background = styled.div`
-  position: absolute;
-  flex: 1;
-  height: 100%;
-  width: 100%;
-  background: url('/logo.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 200%;
-  opacity: 0.15;
-  z-index: -1;
-`;
-
 export const Modal = styled(ModalComponent)`
   &_overlay {
     position: fixed;

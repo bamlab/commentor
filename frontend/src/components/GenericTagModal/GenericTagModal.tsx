@@ -11,11 +11,11 @@ import {
   DescriptionInput,
   colorBase,
   CircleColorContainer,
-  Background,
   Container,
 } from './GenericTagModal.style';
 import { CircledColor } from 'components/CircledColor';
 import { FormattedMessage } from 'react-intl';
+import { Background } from 'components/Background';
 
 type PropsType = {
   id: string;

@@ -4,7 +4,7 @@ import Button from 'components/Button';
 import { FormattedMessage } from 'react-intl';
 import { TagType } from 'redux/Tag';
 import { Modal, Container } from './UpdateTagModal.style';
-import { Background } from '../../../../components/GenericTagModal/GenericTagModal.style';
+import { Background } from 'components/Background';
 
 type PropsType = {
   id: string;

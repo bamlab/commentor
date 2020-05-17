@@ -18,8 +18,8 @@ export const Modal = styled(ModalComponent)`
     position: absolute;
     left: 20rem;
     right: 20rem;
-    top: 10rem;
-    bottom: 10rem;
+    top: 20%;
+    bottom: auto;
     padding: 20px;
     background-color: white;
     overflow: auto;

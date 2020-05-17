@@ -12,6 +12,7 @@ interface propTypes {
   field: {
     name?: string;
     onBlur?: () => void;
+    rows: number;
     onChange: (
       event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
     ) => void;

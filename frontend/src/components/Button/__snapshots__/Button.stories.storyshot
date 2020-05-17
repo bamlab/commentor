@@ -173,7 +173,7 @@ exports[`Storyshots Button disabled 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Button-sc-1age22d-0",
                 "isStatic": false,
-                "lastClassName": "hKZwO",
+                "lastClassName": "bpQMtY",
                 "rules": Array [
                   "padding:",
                   "16px",
@@ -192,10 +192,12 @@ exports[`Storyshots Button disabled 1`] = `
                   " border:none;border-radius:",
                   "4px",
                   ";text-decoration:none;color:",
-                  "#222222",
+                  "#FFF",
                   ";background-color:",
                   [Function],
-                  ";transition:background-color 0.3s ease-in-out;",
+                  ";transition:background-color 0.3s ease-in-out;:hover{background-color:red;",
+                  [Function],
+                  "}",
                 ],
               },
               "displayName": "Button",
@@ -210,7 +212,7 @@ exports[`Storyshots Button disabled 1`] = `
           forwardedRef={null}
         >
           <button
-            className="Button-sc-1age22d-0 hKZwO"
+            className="Button-sc-1age22d-0 bpQMtY"
             disabled={true}
           />
         </StyledComponent>
@@ -413,7 +415,7 @@ exports[`Storyshots Button label 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Button-sc-1age22d-0",
                 "isStatic": false,
-                "lastClassName": "dyxcmx",
+                "lastClassName": "hUgKig",
                 "rules": Array [
                   "padding:",
                   "16px",
@@ -432,10 +434,12 @@ exports[`Storyshots Button label 1`] = `
                   " border:none;border-radius:",
                   "4px",
                   ";text-decoration:none;color:",
-                  "#222222",
+                  "#FFF",
                   ";background-color:",
                   [Function],
-                  ";transition:background-color 0.3s ease-in-out;",
+                  ";transition:background-color 0.3s ease-in-out;:hover{background-color:red;",
+                  [Function],
+                  "}",
                 ],
               },
               "displayName": "Button",
@@ -450,7 +454,7 @@ exports[`Storyshots Button label 1`] = `
           forwardedRef={null}
         >
           <button
-            className="Button-sc-1age22d-0 dyxcmx"
+            className="Button-sc-1age22d-0 hUgKig"
           >
             Coucou
           </button>
@@ -656,7 +660,7 @@ exports[`Storyshots Button onClick 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Button-sc-1age22d-0",
                 "isStatic": false,
-                "lastClassName": "dyxcmx",
+                "lastClassName": "hUgKig",
                 "rules": Array [
                   "padding:",
                   "16px",
@@ -675,10 +679,12 @@ exports[`Storyshots Button onClick 1`] = `
                   " border:none;border-radius:",
                   "4px",
                   ";text-decoration:none;color:",
-                  "#222222",
+                  "#FFF",
                   ";background-color:",
                   [Function],
-                  ";transition:background-color 0.3s ease-in-out;",
+                  ";transition:background-color 0.3s ease-in-out;:hover{background-color:red;",
+                  [Function],
+                  "}",
                 ],
               },
               "displayName": "Button",
@@ -694,7 +700,7 @@ exports[`Storyshots Button onClick 1`] = `
           onClick={[Function]}
         >
           <button
-            className="Button-sc-1age22d-0 dyxcmx"
+            className="Button-sc-1age22d-0 hUgKig"
             onClick={[Function]}
           />
         </StyledComponent>
@@ -904,7 +910,7 @@ exports[`Storyshots Button playground 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Button-sc-1age22d-0",
                 "isStatic": false,
-                "lastClassName": "hKZwO",
+                "lastClassName": "bpQMtY",
                 "rules": Array [
                   "padding:",
                   "16px",
@@ -923,10 +929,12 @@ exports[`Storyshots Button playground 1`] = `
                   " border:none;border-radius:",
                   "4px",
                   ";text-decoration:none;color:",
-                  "#222222",
+                  "#FFF",
                   ";background-color:",
                   [Function],
-                  ";transition:background-color 0.3s ease-in-out;",
+                  ";transition:background-color 0.3s ease-in-out;:hover{background-color:red;",
+                  [Function],
+                  "}",
                 ],
               },
               "displayName": "Button",
@@ -942,7 +950,7 @@ exports[`Storyshots Button playground 1`] = `
           onClick={[Function]}
         >
           <button
-            className="Button-sc-1age22d-0 hKZwO"
+            className="Button-sc-1age22d-0 bpQMtY"
             disabled={true}
             onClick={[Function]}
           >
@@ -1146,7 +1154,7 @@ exports[`Storyshots Button with no props 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Button-sc-1age22d-0",
                 "isStatic": false,
-                "lastClassName": "dyxcmx",
+                "lastClassName": "hUgKig",
                 "rules": Array [
                   "padding:",
                   "16px",
@@ -1165,10 +1173,12 @@ exports[`Storyshots Button with no props 1`] = `
                   " border:none;border-radius:",
                   "4px",
                   ";text-decoration:none;color:",
-                  "#222222",
+                  "#FFF",
                   ";background-color:",
                   [Function],
-                  ";transition:background-color 0.3s ease-in-out;",
+                  ";transition:background-color 0.3s ease-in-out;:hover{background-color:red;",
+                  [Function],
+                  "}",
                 ],
               },
               "displayName": "Button",
@@ -1183,7 +1193,7 @@ exports[`Storyshots Button with no props 1`] = `
           forwardedRef={null}
         >
           <button
-            className="Button-sc-1age22d-0 dyxcmx"
+            className="Button-sc-1age22d-0 hUgKig"
           />
         </StyledComponent>
       </Button>

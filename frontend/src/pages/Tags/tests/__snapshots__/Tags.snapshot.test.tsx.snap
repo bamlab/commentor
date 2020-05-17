@@ -63,8 +63,8 @@ exports[`[Snapshot] <Tags /> should render Tags page 1`] = `
       <Loader />
     </Button>
   </Tagsstyle__FloatingButtonContainer>
-  <Connect(AddTagModal)
-    closeAddTagModal={[Function]}
+  <Connect(GenericTagModal)
+    closeModal={[Function]}
     id="addTagModal"
     isOpen={false}
   />

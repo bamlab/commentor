@@ -4,7 +4,6 @@ import Button from 'components/Button';
 import { FormattedMessage } from 'react-intl';
 import { TagType } from 'redux/Tag';
 import { Modal, Container } from './UpdateTagModal.style';
-import { Background } from 'components/Background';
 
 type PropsType = {
   id: string;
@@ -41,7 +40,6 @@ export const UpdateTagModal = (props: PropsType) => {
       contentLabel="Update Tag Modal"
       onRequestClose={props.closeUpdateModal}
     >
-      <Background />
       <Container>
         <InputRow
           label="Code:"
@@ -50,6 +48,7 @@ export const UpdateTagModal = (props: PropsType) => {
           field={{
             name: 'code',
             value: newCode,
+            rows: 2,
             onChange: event => {
               setNewCode(event.target.value);
             },
@@ -62,6 +61,7 @@ export const UpdateTagModal = (props: PropsType) => {
           field={{
             name: 'description',
             value: newDescription,
+            rows: 5,
             onChange: event => {
               setNewDescription(event.target.value);
             },
@@ -74,6 +74,7 @@ export const UpdateTagModal = (props: PropsType) => {
           field={{
             name: 'color',
             value: newColor,
+            rows: 3,
             onChange: event => {
               setNewColor(event.target.value);
             },

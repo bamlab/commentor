@@ -11,7 +11,7 @@ export const Background = styled.div`
   background: url('/logo.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 200%;
-  opacity: 0.15;
+  background-size: 400%;
+  opacity: 0.1;
   z-index: -1;
 `;

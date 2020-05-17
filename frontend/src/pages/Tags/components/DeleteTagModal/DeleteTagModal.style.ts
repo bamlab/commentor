@@ -86,6 +86,6 @@ export const CancelButton = styled.div`
   color: ${colorUsage.error};
   :hover {
     background-color: transparent;
-    text-shadow: 0px 0px 10px red;
+    opacity: 0.5;
   }
 `;

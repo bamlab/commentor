@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal } from 'components/Modal/Modal';
+import { Modal } from './DeleteTagModal.style';
 import Button from 'components/Button';
 import { FormattedMessage } from 'react-intl';
 

@@ -3,7 +3,8 @@ import InputRow from 'components/InputRow';
 import Button from 'components/Button';
 import { FormattedMessage } from 'react-intl';
 import { TagType } from 'redux/Tag';
-import { Modal } from './UpdateTagModal.style';
+import { Modal, Container } from './UpdateTagModal.style';
+import { Background } from '../../../../components/GenericTagModal/GenericTagModal.style';
 
 type PropsType = {
   id: string;
@@ -40,45 +41,48 @@ export const UpdateTagModal = (props: PropsType) => {
       contentLabel="Update Tag Modal"
       onRequestClose={props.closeUpdateModal}
     >
-      <InputRow
-        label="Code:"
-        type="text"
-        placeholder="Code..."
-        field={{
-          name: 'code',
-          value: newCode,
-          onChange: event => {
-            setNewCode(event.target.value);
-          },
-        }}
-      />
-      <InputRow
-        label="Description:"
-        type="text"
-        placeholder="Description..."
-        field={{
-          name: 'description',
-          value: newDescription,
-          onChange: event => {
-            setNewDescription(event.target.value);
-          },
-        }}
-      />
-      <InputRow
-        label="Color:"
-        type="color"
-        placeholder="Color..."
-        field={{
-          name: 'color',
-          value: newColor,
-          onChange: event => {
-            setNewColor(event.target.value);
-          },
-        }}
-      />
-      <Button onClick={updateTag} disabled={props.isTagLoading}>
-        <FormattedMessage id="tags.update-tag" />
-      </Button>
+      <Background />
+      <Container>
+        <InputRow
+          label="Code:"
+          type="text"
+          placeholder="Code..."
+          field={{
+            name: 'code',
+            value: newCode,
+            onChange: event => {
+              setNewCode(event.target.value);
+            },
+          }}
+        />
+        <InputRow
+          label="Description:"
+          type="area"
+          placeholder="Description..."
+          field={{
+            name: 'description',
+            value: newDescription,
+            onChange: event => {
+              setNewDescription(event.target.value);
+            },
+          }}
+        />
+        <InputRow
+          label="Color:"
+          type="color"
+          placeholder="Color..."
+          field={{
+            name: 'color',
+            value: newColor,
+            onChange: event => {
+              setNewColor(event.target.value);
+            },
+          }}
+        />
+        <Button onClick={updateTag} disabled={props.isTagLoading} hoverColor="green">
+          <FormattedMessage id="tags.update-tag" />
+        </Button>
+      </Container>
     </Modal>
   );
 };

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { Modal as ModalComponent} from 'components/Modal/Modal';
-import { borderRadius } from "../../../../stylesheet";
+import styled from 'styled-components';
+import { Modal as ModalComponent } from 'components/Modal/Modal';
+import { borderRadius } from '../../../../stylesheet';
 
 export const Modal = styled(ModalComponent)`
   &_overlay {
@@ -14,15 +14,17 @@ export const Modal = styled(ModalComponent)`
 
   &_content {
     position: absolute;
-    left: 20rem;
-    right: 20rem;
-    top: 10rem;
-    bottom: 10rem;
-    padding: 20px;
+    left: 40rem;
+    top: 20%;
+    z-index: -2;
     background-color: white;
     overflow: auto;
     border-radius: ${borderRadius};
     outline: none;
     -webkit-overflow-scrolling: touch;
   }
+`;
+
+export const Container = styled.div`
+  padding: 20px;
 `;

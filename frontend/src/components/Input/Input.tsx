@@ -5,12 +5,12 @@ interface Props {
   hasError?: boolean;
 }
 
-export const InputCssStyle = css`
+const InputCssStyle = css`
   font-family: ${fontStyles.regular.fontFamily};
   font-size: ${fontStyles.regular.fontSize};
   font-weight: ${fontStyles.regular.fontWeight};
   background-color: ${colorUsage.background};
-  padding:  ${getSpacing(1)} ${getSpacing(2)};
+  padding: ${getSpacing(1)} ${getSpacing(2)};
   border-radius: ${borderRadius};
   border: 0;
   outline: none;
@@ -35,4 +35,9 @@ const Input = styled.input<Props>`
 
 Input.displayName = 'Input';
 
+export const TextArea = styled.textarea<Props>`
+  ${InputCssStyle};
+  height: 30px;
+  ${props => (props.hasError ? `${ErrorCssDiff}` : '')};
+`;
 export default Input;

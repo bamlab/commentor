@@ -5,6 +5,7 @@ interface IButton {
   href?: string;
   to?: string;
   disabled?: boolean;
+  hoverColor?: string;
 }
 
 const Button = styled.button<IButton>`
@@ -29,7 +30,10 @@ const Button = styled.button<IButton>`
   transition: background-color 0.3s ease-in-out;
   :hover {
     background-color: red;
-    ${props => (props.disabled ? '' : `background-color: ${colorUsage.hoverButtonColor};`)}
+    ${props =>
+      props.disabled
+        ? ''
+        : `background-color: ${props.hoverColor ? props.hoverColor : colorUsage.hoverButtonColor};`}
   }
 `;
 

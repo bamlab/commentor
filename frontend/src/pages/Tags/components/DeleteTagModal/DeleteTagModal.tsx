@@ -7,11 +7,14 @@ import {
   Code,
   Description,
   Color,
+  ButtonContainer,
+  CancelButton,
 } from './DeleteTagModal.style';
 import Button from 'components/Button';
 import { FormattedMessage } from 'react-intl';
 import { TagType } from '../../../../redux/Tag';
-import { GoTrashcan, GoVerified } from 'react-icons/go';
+import { GoTrashcan } from 'react-icons/go';
+import { Background } from '../../../../components/GenericTagModal/GenericTagModal.style';
 
 type PropsType = {
   id: string;
@@ -36,6 +39,7 @@ export const DeleteTagModal = (props: PropsType) => {
       contentLabel="Delete Tag Modal"
       onRequestClose={props.closeRemoveTageModal}
     >
+      <Background />
       <ContentContainer>
         <HeaderTitle>
           <FormattedMessage id="tags.delete-tag-confirmation" />
@@ -45,15 +49,14 @@ export const DeleteTagModal = (props: PropsType) => {
           <Description>{props.selectedTag.description}</Description>
           <Color color={props.selectedTag.color} />
         </TagContainer>
-        <Button onClick={confirmDeletion} disabled={props.isTagLoading} hoverColor="green">
-          <GoTrashcan /> <FormattedMessage id="tags.delete-tag" />
-          {props.selectedTag.code}
-        </Button>
-        -
-        <Button onClick={props.closeRemoveTageModal} disabled={props.isTagLoading} hoverColor="red">
-          <GoVerified /> <FormattedMessage id="tags.delete-tag-cancel" />
-          {props.selectedTag.code}
-        </Button>
+        <ButtonContainer>
+          <Button onClick={confirmDeletion} disabled={props.isTagLoading} hoverColor="green">
+            <GoTrashcan /> <FormattedMessage id="tags.delete-tag" />
+          </Button>
+          <CancelButton onClick={props.closeRemoveTageModal}>
+            <FormattedMessage id="tags.delete-tag-cancel" />
+          </CancelButton>
+        </ButtonContainer>
       </ContentContainer>
     </Modal>
   );

@@ -11,7 +11,7 @@
     "update-tag": "METTRE A JOUR CE TAG",
     "delete-tag": "Supprimer le tag ",
     "delete-tag-confirmation": "Etes vous sur de vouloir supprimer ce tag ?",
-    "delete-tag-cancel": "Conserver le tag "
+    "delete-tag-cancel": "Annuler"
   },
   "login": {
     "title": "Connexion",

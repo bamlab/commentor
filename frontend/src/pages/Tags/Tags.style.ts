@@ -5,6 +5,9 @@ export const Container = styled.div`
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+  background-image: url('/logo.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
 `;
 
 export const ErrorMessage = styled.div`

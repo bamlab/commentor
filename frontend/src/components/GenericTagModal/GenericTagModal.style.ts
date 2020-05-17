@@ -4,6 +4,19 @@ import But from 'components/Button';
 import Input, { InputCssStyle } from 'components/Input/Input';
 import { borderRadius, getSpacing, fontStyles, colorUsage } from '../../stylesheet';
 
+export const Background = styled.div`
+  position: absolute;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  background: url('/logo.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200%;
+  opacity: 0.15;
+  z-index: -1;
+`;
+
 export const Modal = styled(ModalComponent)`
   &_overlay {
     position: fixed;
@@ -20,8 +33,8 @@ export const Modal = styled(ModalComponent)`
     right: 20rem;
     top: 20%;
     bottom: auto;
-    padding: 20px;
     background-color: white;
+    z-index: -2;
     overflow: auto;
     border-radius: ${borderRadius};
     outline: none;
@@ -30,6 +43,10 @@ export const Modal = styled(ModalComponent)`
 `;
 
 export const Button = styled(But)``;
+
+export const Container = styled.div`
+  padding: 10px;
+`;
 
 export const ButtonContainer = styled.div`
   flex: 1;

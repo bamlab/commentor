@@ -11,9 +11,11 @@ import {
   DescriptionInput,
   colorBase,
   CircleColorContainer,
+  Container,
 } from './GenericTagModal.style';
 import { CircledColor } from 'components/CircledColor';
 import { FormattedMessage } from 'react-intl';
+import { Background } from 'components/Background';
 
 type PropsType = {
   id: string;
@@ -44,43 +46,46 @@ export const GenericTagModal = (props: PropsType) => {
       onRequestClose={props.closeModal}
       className="AddTagModal"
     >
-      <HeaderTitle>
-        <FormattedMessage id="tags.title" />
-      </HeaderTitle>
-      <InputContainer>
-        <TextInputsContainer>
-          <TagInput
-            type="Text"
-            placeholder="Enter your tag here"
-            onChange={event => {
-              setNewCode(event.target.value);
-            }}
-          />
-          <DescriptionInput
-            placeholder="Description"
-            rows={3}
-            onChange={event => {
-              setNewDescription(event.target.value);
-            }}
-          />
-        </TextInputsContainer>
-        <ColorPickerContainer>
-          {colorBase.map((color, index) => (
-            <CircleColorContainer key={index}>
-              <CircledColor
-                onClick={() => setNewColorIndex(index)}
-                color={color}
-                isSelected={index === newColorIndex}
-              />
-            </CircleColorContainer>
-          ))}
-        </ColorPickerContainer>
-      </InputContainer>
-      <ButtonContainer>
-        <Button onClick={onConfirmAction} disabled={props.isTagLoading}>
-          <FormattedMessage id="tags.add-tag" />
-        </Button>
-      </ButtonContainer>
+      <Background />
+      <Container>
+        <HeaderTitle>
+          <FormattedMessage id="tags.title" />
+        </HeaderTitle>
+        <InputContainer>
+          <TextInputsContainer>
+            <TagInput
+              type="Text"
+              placeholder="Enter your tag here"
+              onChange={event => {
+                setNewCode(event.target.value);
+              }}
+            />
+            <DescriptionInput
+              placeholder="Description"
+              rows={3}
+              onChange={event => {
+                setNewDescription(event.target.value);
+              }}
+            />
+          </TextInputsContainer>
+          <ColorPickerContainer>
+            {colorBase.map((color, index) => (
+              <CircleColorContainer key={index}>
+                <CircledColor
+                  onClick={() => setNewColorIndex(index)}
+                  color={color}
+                  isSelected={index === newColorIndex}
+                />
+              </CircleColorContainer>
+            ))}
+          </ColorPickerContainer>
+        </InputContainer>
+        <ButtonContainer>
+          <Button onClick={onConfirmAction} disabled={props.isTagLoading}>
+            <FormattedMessage id="tags.add-tag" />
+          </Button>
+        </ButtonContainer>
+      </Container>
     </Modal>
   );
 };

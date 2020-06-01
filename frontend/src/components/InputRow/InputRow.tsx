@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import Input from 'components/Input';
 import { Label, Error, Row } from './InputRow.style';
+import { TextArea } from '../Input/Input';
 
 interface propTypes {
   label?: string | null;
@@ -11,6 +12,7 @@ interface propTypes {
   field: {
     name?: string;
     onBlur?: () => void;
+    rows: number;
     onChange: (
       event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
     ) => void;
@@ -25,13 +27,17 @@ const InputRow: React.FunctionComponent<propTypes> = props => {
   return (
     <Row>
       {label && <Label>{label}</Label>}
-      <Input
-        disabled={disabled}
-        type={type}
-        placeholder={placeholder}
-        hasError={hasError}
-        {...field}
-      />
+      {type === 'area' ? (
+        <TextArea disabled={disabled} placeholder={placeholder} hasError={hasError} {...field} />
+      ) : (
+        <Input
+          disabled={disabled}
+          type={type}
+          placeholder={placeholder}
+          hasError={hasError}
+          {...field}
+        />
+      )}
       {hasError && <Error>{error}</Error>}
     </Row>
   );

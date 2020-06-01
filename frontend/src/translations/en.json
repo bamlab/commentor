@@ -9,7 +9,9 @@
     "title": "Create a new tag",
     "add-tag": "CREATE NEW TAG",
     "update-tag": "UPDATE TAG",
-    "delete-tag": "Delete Tag"
+    "delete-tag": "Delete tag ",
+    "delete-tag-confirmation": "Do you confirm this tag deletion?",
+    "delete-tag-cancel": "Cancel"
   },
   "login": {
     "title": "Log in",

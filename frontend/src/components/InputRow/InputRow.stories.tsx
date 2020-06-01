@@ -11,6 +11,7 @@ const defaultField = {
   onBlur: action('onBlur'),
   onChange: action('onChange'),
   value: text('value', 'value'),
+  rows: 2,
 };
 
 storiesOf('InputRow', module)

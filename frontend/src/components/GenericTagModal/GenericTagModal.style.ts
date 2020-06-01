@@ -1,7 +1,7 @@
 import { Modal as ModalComponent } from 'components/Modal/Modal';
 import styled from 'styled-components';
 import But from 'components/Button';
-import Input, { InputCssStyle } from 'components/Input/Input';
+import Input, { TextArea } from 'components/Input/Input';
 import { borderRadius, getSpacing, fontStyles, colorUsage } from '../../stylesheet';
 
 export const Modal = styled(ModalComponent)`
@@ -18,10 +18,10 @@ export const Modal = styled(ModalComponent)`
     position: absolute;
     left: 20rem;
     right: 20rem;
-    top: 10rem;
-    bottom: 10rem;
-    padding: 20px;
+    top: 20%;
+    bottom: auto;
     background-color: white;
+    z-index: -2;
     overflow: auto;
     border-radius: ${borderRadius};
     outline: none;
@@ -30,6 +30,10 @@ export const Modal = styled(ModalComponent)`
 `;
 
 export const Button = styled(But)``;
+
+export const Container = styled.div`
+  padding: 10px;
+`;
 
 export const ButtonContainer = styled.div`
   flex: 1;
@@ -70,8 +74,7 @@ export const TagInput = styled(Input)`
   margin-top: ${getSpacing(4)};
 `;
 
-export const DescriptionInput = styled.textarea`
-  ${InputCssStyle};
+export const DescriptionInput = styled(TextArea)`
   resize: none;
   margin-top: ${getSpacing(4)};
 `;

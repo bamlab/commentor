@@ -9,7 +9,9 @@
     "title": "Ajouter un nouveau tag",
     "add-tag": "AJOUTER UN TAG",
     "update-tag": "METTRE A JOUR CE TAG",
-    "delete-tag": "Supprimer Tag"
+    "delete-tag": "Supprimer le tag ",
+    "delete-tag-confirmation": "Etes vous sur de vouloir supprimer ce tag ?",
+    "delete-tag-cancel": "Annuler"
   },
   "login": {
     "title": "Connexion",

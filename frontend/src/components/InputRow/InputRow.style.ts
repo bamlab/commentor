@@ -3,9 +3,9 @@ import { colorUsage, fontStyles, getSpacing } from 'stylesheet';
 
 export const Label = styled.label`
   display: block;
-  font-family: ${fontStyles.regular.fontFamily};
-  font-weight: ${fontStyles.regular.fontWeight};
-  font-size: ${fontStyles.regular.fontSize};
+  font-family: ${fontStyles.bold.fontFamily};
+  font-weight: ${fontStyles.bold.fontWeight};
+  font-size: ${fontStyles.bold.fontSize};
   color: ${colorUsage.text};
   margin-bottom: ${getSpacing(1)};
 `;

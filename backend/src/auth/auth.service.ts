@@ -11,7 +11,7 @@ export class AuthService {
       case 'github':
         return generateGithubAccessToken(code);
       default:
-        throw new Error('UNKNOW_PROCIDER');
+        throw new Error('UNKNOW_PROVIDER');
     }
   }
 }

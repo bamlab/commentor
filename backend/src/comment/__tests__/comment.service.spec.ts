@@ -13,7 +13,7 @@ let commentService: CommentService;
 
 const query = {
   orderBy: jest.fn(),
-  getMany: jest.fn().mockImplementation(() => Promise.resolve('Hello')),
+  getMany: jest.fn(),
 };
 
 const mockedCommentRepository: {
@@ -43,58 +43,21 @@ jest.mock('../comment.decorator', () => {
   };
 });
 
+const repositoriesIds = [789, 123];
+const startingDate = new Date('2020-01-01T11:00:00.000Z');
+const endingDate = new Date('2021-06-03T10:00:00.000Z');
+const requesterIds = ['Hello', 'world'];
+const commentorIds = ['My', 'name', 'is', 'Brian'];
+const tagCodes = ['Tag1', 'Tag2'];
+
 describe('Comment Service', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-    commentService = new CommentService((mockedCommentRepository as unknown) as Repository<
-      Comment
-    >);
-  });
-  describe('[Method] getCommentsWithFilters', () => {
-    it('should build a query without filter', async () => {
-      const repositoriesIds = [123, 456];
-      const startingDate = new Date('2019-01-01T11:00:00.000Z');
-      const endingDate = new Date('2020-06-03T10:00:00.000Z');
-      const returnValue = await commentService.getCommentsWithFilters({
-        repositoriesIds,
-        startingDate,
-        endingDate,
-        requesterIds: [],
-        commentorIds: [],
-        tagCodes: [],
-      });
-      expect(repositoriesIdsFilterCommentQueryDecorator).toHaveBeenCalledTimes(1);
-      expect(repositoriesIdsFilterCommentQueryDecorator).toHaveBeenCalledWith(
-        query,
-        repositoriesIds,
-      );
-
-      expect(dateFilterCommentQueryDecorator).toHaveBeenCalledTimes(1);
-      expect(dateFilterCommentQueryDecorator).toHaveBeenCalledWith(query, startingDate, endingDate);
-
-      expect(requesterIdsCommentQueryDecorator).toHaveBeenCalledTimes(1);
-      expect(requesterIdsCommentQueryDecorator).toHaveBeenCalledWith(query, []);
-
-      expect(commentorIdsCommentQueryDecorator).toHaveBeenCalledTimes(1);
-      expect(commentorIdsCommentQueryDecorator).toHaveBeenCalledWith(query, []);
-
-      expect(tagCodesCommentQueryDecorator).toHaveBeenCalledTimes(1);
-      expect(tagCodesCommentQueryDecorator).toHaveBeenCalledWith(query, []);
-
-      expect(query.orderBy).toHaveBeenCalledTimes(1);
-      expect(query.orderBy).toHaveBeenCalledWith('comments.creationDate', 'DESC');
-
-      expect(returnValue).toBe('Hello');
-    });
-
-    it('should build a query with all filters', async () => {
-      const repositoriesIds = [789, 123];
-      const startingDate = new Date('2020-01-01T11:00:00.000Z');
-      const endingDate = new Date('2021-06-03T10:00:00.000Z');
-      const requesterIds = ['Hello', 'world'];
-      const commentorIds = ['My', 'name', 'is', 'Brian'];
-      const tagCodes = ['Tag1', 'Tag2'];
-      const returnValue = await commentService.getCommentsWithFilters({
+  describe('[Method] getCommentsWithFilters', async () => {
+    beforeAll(async () => {
+      jest.clearAllMocks();
+      commentService = new CommentService((mockedCommentRepository as unknown) as Repository<
+        Comment
+      >);
+      await commentService.getCommentsWithFilters({
         repositoriesIds,
         startingDate,
         endingDate,
@@ -102,28 +65,41 @@ describe('Comment Service', () => {
         commentorIds,
         tagCodes,
       });
+    });
+    it('should filter the comments by repository ids', () => {
       expect(repositoriesIdsFilterCommentQueryDecorator).toHaveBeenCalledTimes(1);
       expect(repositoriesIdsFilterCommentQueryDecorator).toHaveBeenCalledWith(
         query,
         repositoriesIds,
       );
-
+    });
+    it('should filter the comments by date', () => {
       expect(dateFilterCommentQueryDecorator).toHaveBeenCalledTimes(1);
       expect(dateFilterCommentQueryDecorator).toHaveBeenCalledWith(query, startingDate, endingDate);
+    });
 
+    it('should filter the comments by requesters', () => {
       expect(requesterIdsCommentQueryDecorator).toHaveBeenCalledTimes(1);
       expect(requesterIdsCommentQueryDecorator).toHaveBeenCalledWith(query, requesterIds);
+    });
 
+    it('should filter the comments by reviewers', () => {
       expect(commentorIdsCommentQueryDecorator).toHaveBeenCalledTimes(1);
       expect(commentorIdsCommentQueryDecorator).toHaveBeenCalledWith(query, commentorIds);
+    });
 
+    it('should filter the comments by tags', () => {
       expect(tagCodesCommentQueryDecorator).toHaveBeenCalledTimes(1);
       expect(tagCodesCommentQueryDecorator).toHaveBeenCalledWith(query, tagCodes);
+    });
 
+    it('should order the comments by creation date in descending order', () => {
       expect(query.orderBy).toHaveBeenCalledTimes(1);
       expect(query.orderBy).toHaveBeenCalledWith('comments.creationDate', 'DESC');
+    });
 
-      expect(returnValue).toBe('Hello');
+    it('should execute the query with a get many', () => {
+      expect(query.getMany).toHaveBeenCalledTimes(1);
     });
   });
 });

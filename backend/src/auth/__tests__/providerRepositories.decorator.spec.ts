@@ -26,7 +26,7 @@ jest.mock('../authenticationProviders/gitlab', () => {
   };
 });
 
-describe('oAuth Login decorator', () => {
+describe('provider repositories decorator', () => {
   const providerRepositoriesFunction = getParamDecoratorFactory(ProviderRepositories);
 
   beforeEach(() => {

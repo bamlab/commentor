@@ -1,6 +1,7 @@
 import {
   tagCodesCommentQueryDecorator,
   requesterIdsCommentQueryDecorator,
+  commentorIdsCommentQueryDecorator,
 } from '../comment.decorator';
 import { SelectQueryBuilder } from 'typeorm';
 import { Comment } from '../comment.entity';
@@ -90,6 +91,23 @@ describe('Comment decorator', () => {
       expect(query.andWhere).toHaveBeenCalledTimes(1);
       expect(query.andWhere).toHaveBeenCalledWith('comments.requester IN (:...requesters)', {
         requesters: requesterIds,
+      });
+    });
+  });
+
+  describe('[Method] commentorIdsCommentQueryDecorator', () => {
+    it('should not call andWhere when no commentor id is provided', () => {
+      commentorIdsCommentQueryDecorator(query, []);
+      expect(query.andWhere).toHaveBeenCalledTimes(0);
+    });
+
+    it('should filter commentors with andWhere when there are commentors ids', () => {
+      const commentorIds = ['commentor1', 'commentor2'];
+      commentorIdsCommentQueryDecorator(query, commentorIds);
+
+      expect(query.andWhere).toHaveBeenCalledTimes(1);
+      expect(query.andWhere).toHaveBeenCalledWith('comments.commentor IN (:...commentors)', {
+        commentors: commentorIds,
       });
     });
   });

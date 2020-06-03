@@ -2,6 +2,7 @@ import {
   tagCodesCommentQueryDecorator,
   requesterIdsCommentQueryDecorator,
   commentorIdsCommentQueryDecorator,
+  dateFilterCommentQueryDecorator,
 } from '../comment.decorator';
 import { SelectQueryBuilder } from 'typeorm';
 import { Comment } from '../comment.entity';
@@ -109,6 +110,23 @@ describe('Comment decorator', () => {
       expect(query.andWhere).toHaveBeenCalledWith('comments.commentor IN (:...commentors)', {
         commentors: commentorIds,
       });
+    });
+  });
+
+  describe('[Method] dateFilterCommentQueryDecorator', () => {
+    it('should filter dates', () => {
+      const startingDate = new Date('2020-01-01T11:00:00.000Z');
+      const endingDate = new Date('2021-06-03T10:00:00.000Z');
+      dateFilterCommentQueryDecorator(query, startingDate, endingDate);
+
+      expect(query.andWhere).toHaveBeenCalledTimes(1);
+      expect(query.andWhere).toHaveBeenCalledWith(
+        'comments.creationDate BETWEEN :startingDate AND :endingDate',
+        {
+          startingDate,
+          endingDate,
+        },
+      );
     });
   });
 });

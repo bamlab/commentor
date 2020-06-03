@@ -49,14 +49,46 @@ const endingDate = new Date('2021-06-03T10:00:00.000Z');
 const requesterIds = ['Hello', 'world'];
 const commentorIds = ['My', 'name', 'is', 'Brian'];
 const tagCodes = ['Tag1', 'Tag2'];
+const comment: Pick<
+  Comment,
+  'body' | 'filePath' | 'url' | 'commentor' | 'requester' | 'pullRequestUrl' | 'repositoryId'
+> = {
+  body: 'body',
+  filePath: 'filePath',
+  url: 'url',
+  commentor: 'commentor',
+  requester: 'requester',
+  pullRequestUrl: 'pullRequestUrl',
+  repositoryId: 1,
+};
 
 describe('Comment Service', () => {
+  beforeAll(async () => {
+    jest.clearAllMocks();
+    commentService = new CommentService(mockedCommentRepository as Repository<Comment>);
+  });
+  describe('[Method] receiveCommentEvent', () => {
+    it("if action === 'edited', should call commentRepository.update", async () => {
+      await commentService.receiveCommentEvent({ action: 'edited', comment });
+      expect(mockedCommentRepository.update).toHaveBeenCalledTimes(1);
+      expect(mockedCommentRepository.update).toHaveBeenCalledWith(
+        { url: comment.url },
+        { body: comment.body },
+      );
+    });
+    it("if action === 'deleted', should call commentRepository.delete", async () => {
+      await commentService.receiveCommentEvent({ action: 'deleted', comment });
+      expect(mockedCommentRepository.delete).toHaveBeenCalledTimes(1);
+      expect(mockedCommentRepository.delete).toHaveBeenCalledWith({ url: comment.url });
+    });
+    it("if action === 'created', should call commentRepository.save", async () => {
+      await commentService.receiveCommentEvent({ action: 'created', comment });
+      expect(mockedCommentRepository.save).toHaveBeenCalledTimes(1);
+      expect(mockedCommentRepository.save).toHaveBeenCalledWith(comment);
+    });
+  });
   describe('[Method] getCommentsWithFilters', async () => {
     beforeAll(async () => {
-      jest.clearAllMocks();
-      commentService = new CommentService((mockedCommentRepository as unknown) as Repository<
-        Comment
-      >);
       await commentService.getCommentsWithFilters({
         repositoriesIds,
         startingDate,
@@ -100,6 +132,16 @@ describe('Comment Service', () => {
 
     it('should execute the query with a get many', () => {
       expect(query.getMany).toHaveBeenCalledTimes(1);
+    });
+  });
+  describe('[Method] checkIfCommentsExistForRepository', () => {
+    it('should call commentRepository.findOne', async () => {
+      const repositoryId = 1;
+      await commentService.checkIfCommentsExistForRepository(repositoryId);
+      expect(mockedCommentRepository.findOne).toHaveBeenCalledTimes(1);
+      expect(mockedCommentRepository.findOne).toHaveBeenCalledWith({
+        where: { repositoryId },
+      });
     });
   });
 });

@@ -3,6 +3,7 @@ import {
   requesterIdsCommentQueryDecorator,
   commentorIdsCommentQueryDecorator,
   dateFilterCommentQueryDecorator,
+  repositoriesIdsFilterCommentQueryDecorator,
 } from '../comment.decorator';
 import { SelectQueryBuilder } from 'typeorm';
 import { Comment } from '../comment.entity';
@@ -127,6 +128,18 @@ describe('Comment decorator', () => {
           endingDate,
         },
       );
+    });
+  });
+
+  describe('[Method] repositoriesIdsFilterCommentQueryDecorator', () => {
+    it('should filter repositories', () => {
+      const repositoriesIds = [123, 456];
+      repositoriesIdsFilterCommentQueryDecorator(query, repositoriesIds);
+
+      expect(query.andWhere).toHaveBeenCalledTimes(1);
+      expect(query.andWhere).toHaveBeenCalledWith('comments.repositoryId IN (:...arr)', {
+        arr: repositoriesIds,
+      });
     });
   });
 });

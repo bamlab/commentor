@@ -18,7 +18,7 @@ export const ProviderRepositoriesFilter = createParamDecorator(async (_, req) =>
     const login = await getGithubLogin(req.cookies);
 
     const checkedRepositoryIds: number[] = await Promise.all(
-      req.body.repositoryIds.map((repositoryId: string) =>
+      req.body.repositoryIds.map((repositoryId: number) =>
         checkUserHasAccessToGithubRepo(repositoryId, login, req.cookies.github_access_token),
       ),
     );
@@ -28,7 +28,7 @@ export const ProviderRepositoriesFilter = createParamDecorator(async (_, req) =>
   }
   if (req.cookies.gitlab_access_token) {
     const checkedRepositoryIds: number[] = await Promise.all(
-      req.body.repositoryIds.map((repositoryId: string) =>
+      req.body.repositoryIds.map((repositoryId: number) =>
         checkUserHasAccessToGitlabRepo(repositoryId, req.cookies.gitlab_access_token),
       ),
     );

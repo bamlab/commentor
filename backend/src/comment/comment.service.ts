@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { Comment } from './comment.entity';
+import { Comment as CommentEntity } from './comment.entity';
+import { Comment, CommentAction } from './interfaces/comment.dto';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import {
   tagCodesCommentQueryDecorator,
@@ -13,8 +14,10 @@ import {
 } from './comment.decorator';
 
 @Injectable()
-export class CommentService extends TypeOrmCrudService<Comment> {
-  constructor(@InjectRepository(Comment) private readonly commentRepository: Repository<Comment>) {
+export class CommentService extends TypeOrmCrudService<CommentEntity> {
+  constructor(
+    @InjectRepository(CommentEntity) private readonly commentRepository: Repository<CommentEntity>,
+  ) {
     super(commentRepository);
   }
 
@@ -22,11 +25,8 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     action,
     comment,
   }: {
-    action: 'created' | 'edited' | 'deleted';
-    comment: Pick<
-      Comment,
-      'body' | 'filePath' | 'url' | 'commentor' | 'requester' | 'pullRequestUrl' | 'repositoryId'
-    >;
+    action: CommentAction;
+    comment: Comment;
   }) => {
     if (action === 'edited') {
       await this.commentRepository.update({ url: comment.url }, { body: comment.body });
@@ -54,7 +54,7 @@ export class CommentService extends TypeOrmCrudService<Comment> {
     requesterIds: string[];
     commentorIds: string[];
     tagCodes: string[];
-  }): Promise<Comment[]> => {
+  }): Promise<CommentEntity[]> => {
     const query = this.commentRepository.createQueryBuilder('comments');
     repositoriesIdsFilterCommentQueryDecorator(query, repositoriesIds);
     dateFilterCommentQueryDecorator(query, startingDate, endingDate);

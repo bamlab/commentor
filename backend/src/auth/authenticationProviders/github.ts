@@ -1,8 +1,10 @@
 import * as request from 'request-promise';
 import { Logger } from '@nestjs/common';
+import { Repository } from '../interfaces/auth.dto';
+import { GithubCommentEvent, GithubSender, Comment } from 'src/comment/interfaces/comment.dto';
 
 export const generateAccessToken = async (code: string): Promise<string> => {
-  const githubOauthResponse = await request({
+  const githubOauthResponse: GithubOauthTokenAnswer = await request({
     uri: 'https://github.com/login/oauth/access_token',
     method: 'GET',
     qs: {
@@ -93,9 +95,7 @@ const queryPaginatedGithubRepositories = async (
   return repositoriesList ? repositoriesList : [];
 };
 
-export const getRepositories = async (
-  accessToken: string,
-): Promise<Array<{ name: string; id: number }>> => {
+export const getRepositories = async (accessToken: string): Promise<Repository[]> => {
   const githubRepositories = await queryPaginatedGithubRepositories(accessToken);
   return githubRepositories.map((repository: GithubRepository) => ({
     name: repository.name,
@@ -104,13 +104,13 @@ export const getRepositories = async (
 };
 
 export const checkUserHasAccessToRepo = async (
-  repositoryId: string,
+  repositoryId: number,
   userGithubLogin: string,
   accessToken: string,
-): Promise<string> => {
+): Promise<number | undefined> => {
   try {
     Logger.log(`About to check github user ${userGithubLogin} access to repo ${repositoryId}`);
-    const githubUserAccessToRepoAnswer = await request({
+    const githubUserAccessToRepoAnswer: GithubUserAccessToRepoAnswer = await request({
       uri: `https://api.github.com/repositories/${repositoryId}/collaborators/${userGithubLogin}/permission`,
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -136,17 +136,7 @@ export const checkUserHasAccessToRepo = async (
   }
 };
 
-export const formatComment = (
-  commentEvent: any,
-): {
-  body: string;
-  filePath: string;
-  url: string;
-  commentor: string;
-  requester: string;
-  pullRequestUrl: string;
-  repositoryId: number;
-} => {
+export const formatComment = (commentEvent: GithubCommentEvent): Comment => {
   return {
     body: commentEvent.comment.body,
     filePath: commentEvent.comment.path ? commentEvent.comment.path : 'NA',
@@ -157,6 +147,12 @@ export const formatComment = (
     repositoryId: commentEvent.repository.id,
   };
 };
+
+interface GithubOauthTokenAnswer {
+  access_token: string;
+  token_type: string;
+  scope: string;
+}
 
 interface GithubRepositoriesAnswer {
   data: {
@@ -186,4 +182,9 @@ interface GithubLoginAnswer {
       login: string;
     };
   };
+}
+
+interface GithubUserAccessToRepoAnswer {
+  permission: string;
+  user: GithubSender;
 }

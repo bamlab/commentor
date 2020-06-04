@@ -2,12 +2,16 @@ import { Controller, Body, Post, Logger } from '@nestjs/common';
 import { isNil, chain, map } from 'lodash';
 
 import {
-  CommentEvent,
+  Comment,
   FiltersType,
   GetFilteredCommentsAnswer,
   BarChartData,
+  GitlabCommentEvent,
+  CommentEvent,
+  GithubCommentEvent,
+  CommentAction,
 } from './interfaces/comment.dto';
-import { Comment } from './comment.entity';
+import { Comment as CommentEntity } from './comment.entity';
 import { CommentService } from './comment.service';
 import { ProviderRepositoriesFilter } from '../auth/decorators/providerRepositoriesFilter.decorator';
 import { Tag } from '../tag/tag.entity';
@@ -30,7 +34,7 @@ export class CommentController {
     @Body()
     filters: FiltersType,
     @ProviderRepositoriesFilter() filteredGithubRepositoriesIds: number[],
-  ): Promise<Comment[]> {
+  ): Promise<CommentEntity[]> {
     if (filteredGithubRepositoriesIds && filteredGithubRepositoriesIds.length > 0) {
       return this.service.getCommentsWithFilters({
         repositoriesIds: filteredGithubRepositoriesIds,
@@ -79,7 +83,8 @@ export class CommentController {
         const pieChartFormattedData = chain(filteredTags)
           .map((tag: Tag) => ({
             x: tag.code,
-            y: fetchedComments.filter((comment: Comment) => !!comment.body.match(tag.code)).length,
+            y: fetchedComments.filter((comment: CommentEntity) => !!comment.body.match(tag.code))
+              .length,
             tag,
           }))
           .filter(chartDatum => chartDatum.y > 0)
@@ -87,12 +92,12 @@ export class CommentController {
 
         // @ts-ignore well looks like lodash typing failed on this
         const barChartFormattedData: BarChartData[] = chain(fetchedComments)
-          .groupBy((comment: Comment) => {
+          .groupBy((comment: CommentEntity) => {
             comment.creationDate.setHours(0, 0, 0, 0);
             return comment.creationDate;
           })
-          .map((comments: Comment[]) =>
-            map(comments, (comment: Comment) =>
+          .map((comments: CommentEntity[]) =>
+            map(comments, (comment: CommentEntity) =>
               chain(filteredTags)
                 .filter((tag: Tag) => !!comment.body.match(tag.code))
                 .map((tag: Tag) => {
@@ -125,18 +130,22 @@ export class CommentController {
   }
 
   @Post()
-  createOne(@Body() commentEvent: CommentEvent & { object_kind: string }) {
-    let comment: Pick<
-      Comment,
-      'body' | 'filePath' | 'url' | 'commentor' | 'requester' | 'pullRequestUrl' | 'repositoryId'
-    >;
-    if (commentEvent.object_kind && commentEvent.object_kind === 'note') {
+  createOne(@Body() commentEvent: CommentEvent) {
+    const isGitlabCommentEvent = (event: CommentEvent): event is GitlabCommentEvent =>
+      (commentEvent as GitlabCommentEvent).object_kind !== undefined &&
+      (commentEvent as GitlabCommentEvent).object_kind === 'note';
+
+    let comment: Comment;
+    let action: CommentAction;
+    if (isGitlabCommentEvent(commentEvent)) {
       comment = formatGitlabComment(commentEvent);
+      action = 'created';
     } else {
       comment = formatGithubComment(commentEvent);
+      action = commentEvent.action;
     }
     return this.service.receiveCommentEvent({
-      action: commentEvent.action ? commentEvent.action : 'created',
+      action,
       comment,
     });
   }

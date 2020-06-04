@@ -97,6 +97,7 @@ export class CommentService extends TypeOrmCrudService<Comment> {
           )
           .flattenDeep()
           .sortBy('x')
+          .sortBy('tag.code')
           .value();
 
         return {

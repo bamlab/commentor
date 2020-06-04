@@ -1,7 +1,7 @@
 import * as request from 'request-promise';
 import { Logger } from '@nestjs/common';
-import { Repository } from '../interfaces/auth.dto';
 import { GithubCommentEvent, GithubSender, Comment } from 'src/comment/interfaces/comment.dto';
+import { RepositoryDto } from 'src/repository/interfaces/Repository.dto';
 
 export const generateAccessToken = async (code: string): Promise<string> => {
   const githubOauthResponse: GithubOauthTokenAnswer = await request({
@@ -95,7 +95,7 @@ const queryPaginatedGithubRepositories = async (
   return repositoriesList ? repositoriesList : [];
 };
 
-export const getRepositories = async (accessToken: string): Promise<Repository[]> => {
+export const getRepositories = async (accessToken: string): Promise<RepositoryDto[]> => {
   const githubRepositories = await queryPaginatedGithubRepositories(accessToken);
   return githubRepositories.map((repository: GithubRepository) => ({
     name: repository.name,

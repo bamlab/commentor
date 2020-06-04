@@ -1,8 +1,8 @@
 import * as request from 'request-promise';
 import { Logger } from '@nestjs/common';
 import { EmojiConvertor } from 'emoji-js';
-import { Repository } from '../interfaces/auth.dto';
 import { Comment, GitlabCommentEvent } from 'src/comment/interfaces/comment.dto';
+import { RepositoryDto } from 'src/repository/interfaces/Repository.dto';
 
 export const generateAccessToken = async (code: string): Promise<string> => {
   const gitlabOauthResponse: GitlabOauthTokenAnswer = await request({
@@ -50,7 +50,7 @@ export const getLogin = async (cookies: { gitlab_access_token?: string }): Promi
   }
 };
 
-export const getRepositories = async (accessToken: string): Promise<Repository[]> => {
+export const getRepositories = async (accessToken: string): Promise<RepositoryDto[]> => {
   const gitlabRepositoriesAnswer: GitlabRepository[] = await request({
     uri: `https://gitlab.com/api/v4/projects?min_access_level=10`,
     headers: {

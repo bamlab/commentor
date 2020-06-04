@@ -6,7 +6,7 @@ const defaultTagsOptions = [
   { label: "⚡️", description: "Performance" },
   { label: "✂️", description: "Commits" },
   { label: "🏷", description: "Typing" },
-  { label: "🔖", description: "Namming" },
+  { label: "🔖", description: "Naming" },
   { label: ":readable:", description: "Readable" },
   { label: ":solid:", description: "SOLID principles" },
   { label: "🔨", description: "Other" },

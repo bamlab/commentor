@@ -194,8 +194,8 @@ export interface Repo {
 
 export interface FiltersType {
   repositoryIds: number[];
-  startingDate: Date | null;
-  endingDate: Date | null;
+  startingDate: string | null;
+  endingDate: string | null;
   requesterIds: string[];
   commentorIds: string[];
   tagCodes: string[];

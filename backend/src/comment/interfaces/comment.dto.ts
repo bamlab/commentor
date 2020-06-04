@@ -91,15 +91,15 @@ export interface GithubPullRequest {
   body: string;
   created_at: string;
   updated_at: string;
-  closed_at: null;
-  merged_at: null;
+  closed_at: string;
+  merged_at: string;
   merge_commit_sha: string;
-  assignee: null;
-  assignees: any[];
-  requested_reviewers: any[];
-  requested_teams: any[];
-  labels: any[];
-  milestone: null;
+  assignee: GithubSender;
+  assignees: GithubSender[];
+  requested_reviewers: GithubSender[];
+  requested_teams: GithubTeam[];
+  labels: GithubLabel[];
+  milestone: GithubMilestone;
   commits_url: string;
   review_comments_url: string;
   review_comment_url: string;
@@ -109,6 +109,50 @@ export interface GithubPullRequest {
   base: GithubBase;
   _links: GithubPullRequestLinks;
   author_association: string;
+}
+
+export interface GithubTeam {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: GithubTeam;
+}
+
+export interface GithubMilestone {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: GithubSender;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+}
+
+export interface GithubLabel {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
 }
 
 export interface GithubPullRequestLinks {
@@ -138,7 +182,7 @@ export interface GithubRepo {
   private: boolean;
   owner: GithubSender;
   html_url: string;
-  description: null;
+  description: string;
   fork: boolean;
   url: string;
   forks_url: string;
@@ -184,7 +228,7 @@ export interface GithubRepo {
   ssh_url: string;
   clone_url: string;
   svn_url: string;
-  homepage: null;
+  homepage: string;
   size: number;
   stargazers_count: number;
   watchers_count: number;
@@ -195,15 +239,23 @@ export interface GithubRepo {
   has_wiki: boolean;
   has_pages: boolean;
   forks_count: number;
-  mirror_url: null;
+  mirror_url: string;
   archived: boolean;
   disabled: boolean;
   open_issues_count: number;
-  license: null;
+  license: GithubLicence;
   forks: number;
   open_issues: number;
   watchers: number;
   default_branch: string;
+}
+
+export interface GithubLicence {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id: string;
 }
 
 export interface GitlabCommentEvent {
@@ -272,7 +324,7 @@ export interface GitlabProject {
   name: string;
   description: string;
   web_url: string;
-  avatar_url: null;
+  avatar_url: string;
   git_ssh_url: string;
   git_http_url: string;
   namespace: string;
@@ -295,7 +347,7 @@ export interface GitlabObjectAttributes {
   updated_at: string;
   project_id: number;
   attachment: null;
-  line_code: null;
+  line_code: string;
   commit_id: string;
   noteable_id: number;
   system: boolean;

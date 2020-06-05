@@ -1,9 +1,9 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { isNil, chain, map } from 'lodash';
+import { isNil } from 'lodash';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import { Repository } from 'typeorm';
-import { BarChartData, FiltersType } from './interfaces/comment.dto';
+import { FiltersType } from './interfaces/comment.dto';
 import { Comment } from './comment.entity';
 import {
   tagCodesCommentQueryDecorator,
@@ -12,7 +12,11 @@ import {
   dateFilterCommentQueryDecorator,
   repositoriesIdsFilterCommentQueryDecorator,
 } from './comment.decorator';
-import { filterTagsWithCodes } from './comment.utils';
+import {
+  filterTagsWithCodes,
+  getPieChartFormattedData,
+  getBarChartFormattedData,
+} from './comment.utils';
 import { Tag } from '../tag/tag.entity';
 
 export const FIRST_COMMENT_DATE = new Date('November 03, 1994 09:24:00');
@@ -69,36 +73,8 @@ export class CommentService extends TypeOrmCrudService<Comment> {
 
         const filteredTags = filterTagsWithCodes(userTags, filters.tagCodes);
 
-        const pieChartFormattedData = chain(filteredTags)
-          .map((tag: Tag) => ({
-            x: tag.code,
-            y: fetchedComments.filter((comment: Comment) => !!comment.body.match(tag.code)).length,
-            tag,
-          }))
-          .filter(chartDatum => chartDatum.y > 0)
-          .value();
-
-        // @ts-ignore well looks like lodash typing failed on this
-        const barChartFormattedData: BarChartData[] = chain(fetchedComments)
-          .groupBy((comment: Comment) => {
-            comment.creationDate.setHours(0, 0, 0, 0);
-            return comment.creationDate;
-          })
-          .map((comments: Comment[]) =>
-            map(comments, (comment: Comment) =>
-              chain(filteredTags)
-                .filter((tag: Tag) => !!comment.body.match(tag.code))
-                .map((tag: Tag) => {
-                  comment.creationDate.setHours(0, 0, 0, 0);
-                  return [{ x: comment.creationDate, y: 1, y0: 0, tag }];
-                })
-                .value(),
-            ),
-          )
-          .flattenDeep()
-          .sortBy('x')
-          .sortBy('tag.code')
-          .value();
+        const pieChartFormattedData = getPieChartFormattedData(fetchedComments, filteredTags);
+        const barChartFormattedData = getBarChartFormattedData(fetchedComments, filteredTags);
 
         return {
           barChartData: barChartFormattedData,

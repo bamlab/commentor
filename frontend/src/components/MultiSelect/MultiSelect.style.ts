@@ -8,6 +8,7 @@ export const SelectWrapper = styled.div`
   position: absolute;
   margin-top: 10px;
   width: ${DEFAULT_WIDTH}px;
+  z-index: 1;
 `;
 
 export const SelectModalOverlay = styled.div`

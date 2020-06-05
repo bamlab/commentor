@@ -4,6 +4,7 @@ import { GRAPHS_HEADER_HEIGHT } from '../../Home.style';
 
 export const BarChartSectionWrap = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   border-radius: 5px;
   height: ${GRAPHS_HEADER_HEIGHT}px;

@@ -20,7 +20,8 @@
 </p>
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributing)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ada2a7a0-9a03-4a75-b04d-9acee4239445/deploy-status)](https://app.netlify.com/sites/commentor/deploys)
+
+<!-- [![Netlify Status](https://api.netlify.com/api/v1/badges/ada2a7a0-9a03-4a75-b04d-9acee4239445/deploy-status)](https://app.netlify.com/sites/commentor/deploys)  | Netlify displays failure badges if it auto cancels the deploy because of no changes. We will re enable it when they change that behaviour-->
 
 ## Features
 

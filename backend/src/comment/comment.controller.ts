@@ -38,8 +38,10 @@ export class CommentController {
     if (filteredGithubRepositoriesIds && filteredGithubRepositoriesIds.length > 0) {
       return this.service.getCommentsWithFilters({
         repositoriesIds: filteredGithubRepositoriesIds,
-        startingDate: isNil(filters.startingDate) ? FIRST_COMMENT_DATE : filters.startingDate,
-        endingDate: isNil(filters.endingDate) ? new Date() : filters.endingDate,
+        startingDate: isNil(filters.startingDate)
+          ? FIRST_COMMENT_DATE
+          : new Date(filters.startingDate),
+        endingDate: isNil(filters.endingDate) ? new Date() : new Date(filters.endingDate),
         requesterIds: filters.requesterIds,
         commentorIds: filters.commentorIds,
         tagCodes: filters.tagCodes,
@@ -69,8 +71,10 @@ export class CommentController {
         const TagCodeFilters = filters.tagCodes.filter(() => true);
         const fetchedComments = await this.service.getCommentsWithFilters({
           repositoriesIds: filteredGithubRepositoriesIds,
-          startingDate: isNil(filters.startingDate) ? FIRST_COMMENT_DATE : filters.startingDate,
-          endingDate: isNil(filters.endingDate) ? new Date() : filters.endingDate,
+          startingDate: isNil(filters.startingDate)
+            ? FIRST_COMMENT_DATE
+            : new Date(filters.startingDate),
+          endingDate: isNil(filters.endingDate) ? new Date() : new Date(filters.endingDate),
           requesterIds: filters.requesterIds,
           commentorIds: filters.commentorIds,
           tagCodes: TagCodeFilters,

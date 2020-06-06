@@ -70,8 +70,8 @@ export const DateRangeFilterSelector: React.FunctionComponent<
           renderDatePresets(
             presets,
             ({ startDate, endDate }: { startDate: Moment; endDate: Moment }) => {
-              props.setStartingDate(startDate ? startDate.toDate() : null);
-              props.setEndingDate(endDate ? endDate.toDate() : null);
+              props.setStartingDate(startDate ? startDate.startOf('day').toDate() : null);
+              props.setEndingDate(endDate ? endDate.endOf('day').toDate() : null);
             },
           )
         }
@@ -90,8 +90,8 @@ export const DateRangeFilterSelector: React.FunctionComponent<
         endDate={props.endingDate ? moment(props.endingDate) : null} // momentPropTypes.momentObj or null,
         endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
         onDatesChange={({ startDate, endDate }) => {
-          props.setStartingDate(startDate ? startDate.toDate() : null);
-          props.setEndingDate(endDate ? endDate.toDate() : null);
+          props.setStartingDate(startDate ? startDate.startOf('day').toDate() : null);
+          props.setEndingDate(endDate ? endDate.endOf('day').toDate() : null);
         }} // PropTypes.func.isRequired,
         focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
         onFocusChange={focusedInput => setFocusedInput(focusedInput)} // PropTypes.func.isRequired,

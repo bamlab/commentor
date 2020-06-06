@@ -18,7 +18,7 @@ export class insertDefaultTags1582024286636 implements MigrationInterface {
       `INSERT INTO "tags" ("code", "description", "color", "isDefault") values ('♻️', '[shortcut: :recycle:] If the refacto commit is wrong', '#faf320', true)`,
     );
     await queryRunner.query(
-      `INSERT INTO "tags" ("code", "description", "color", "isDefault") values ('🔖', '[shortcut: :bookmark:] If the namming feels wrong', '#fc1ed0', true)`,
+      `INSERT INTO "tags" ("code", "description", "color", "isDefault") values ('🔖', '[shortcut: :bookmark:] If the naming feels wrong', '#fc1ed0', true)`,
     );
     await queryRunner.query(
       `INSERT INTO "tags" ("code", "description", "color", "isDefault") values (':readable:', 'If something can improve readability', '#f5972c', true)`,

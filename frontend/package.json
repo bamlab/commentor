@@ -36,7 +36,7 @@
     "redux-saga": "^1.0.2",
     "styled-components": "4.1.1",
     "superagent": "4.0.0",
-    "typesafe-actions": "^3.0.0",
+    "typesafe-actions": "^5.1.0",
     "victory": "^34.0.1"
   },
   "scripts": {

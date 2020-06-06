@@ -10,7 +10,7 @@ There are many ways to contribute, from writing tutorials or blog posts, improvi
 
 ## Improving the docs
 
-The Commentor docs are stored in the `docs/` folder in this very repository. The actual documentation is written in [GitHub Flavoured Markdown](https://github.github.com/gfm/) in individual files in the `docs/docs/` subfolder. You can edit individual files right inside the GitHub editor, which does not require any local setup.
+The Commentor docs are stored in the `showcase/` folder in this very repository. The actual documentation is written in [GitHub Flavoured Markdown](https://github.github.com/gfm/) in individual files in the `showcase/docs/` subfolder. You can edit individual files right inside the GitHub editor, which does not require any local setup.
 
 ## Local development on Commentor
 

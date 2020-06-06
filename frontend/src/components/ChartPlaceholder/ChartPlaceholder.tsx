@@ -1,21 +1,21 @@
 import React from 'react';
 import {
-  OverChartMessageContainer,
+  ChartPlaceholderContainer,
   OverChartBasicText,
   OverChartLegendImage,
   OverChartTitle,
   OverChartWraper,
-} from './OverChartMessage.style';
-import { OverChartMessagePropsType } from './OverChartMessage.type';
+} from './ChartPlaceholder.style';
+import { ChartPlaceholderPropsType } from './ChartPlaceholder.type';
 
-export const OverChartMessage = React.memo<OverChartMessagePropsType>(props => {
+export const ChartPlaceholder = React.memo<ChartPlaceholderPropsType>(props => {
   return (
-    <OverChartMessageContainer backgroundImage={props.backgroundImage}>
+    <ChartPlaceholderContainer backgroundImage={props.backgroundImage}>
       <OverChartWraper>
         <OverChartLegendImage src={props.legendImage} />
         <OverChartTitle>{props.title}</OverChartTitle>
         <OverChartBasicText>{props.text}</OverChartBasicText>
       </OverChartWraper>
-    </OverChartMessageContainer>
+    </ChartPlaceholderContainer>
   );
 });

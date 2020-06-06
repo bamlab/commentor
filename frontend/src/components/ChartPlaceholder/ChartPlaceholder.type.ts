@@ -1,10 +1,10 @@
-export type OverChartMessagePropsType = {
+export type ChartPlaceholderPropsType = {
   backgroundImage: string;
   legendImage: string;
   title: string;
   text: string;
 };
 
-export type OverChartMessageContainerProps = {
+export type ChartPlaceholderContainerProps = {
   backgroundImage: string;
 };

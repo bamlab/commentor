@@ -10,8 +10,9 @@ import {
 import { ChartTitle } from '../../Home.style';
 import PieChart from 'components/PieChart';
 import TagsLegend from 'components/TagsLegend';
-import { OverChartMessage } from 'components/OverChartMessage';
-import noDataPieChartLogo from 'assets/no-data-pie-chart.png';
+import { ChartPlaceholder } from 'components/ChartPlaceholder';
+import noDataPieChartIcon from 'assets/noDataPieChartIcon.png';
+import noDataPieChartPlaceholder from 'assets/noDataPieChartPlaceholder.png';
 
 export const PieChartSection = React.memo<PieChartSectionPropsType>(props => {
   return (
@@ -27,9 +28,9 @@ export const PieChartSection = React.memo<PieChartSectionPropsType>(props => {
         />
       </PieChartSectionContainer>
       {props.pieChartData.length === 0 && (
-        <OverChartMessage
-          legendImage={noDataPieChartLogo}
-          backgroundImage={'To complete'}
+        <ChartPlaceholder
+          legendImage={noDataPieChartIcon}
+          backgroundImage={noDataPieChartPlaceholder}
           title="To add tag to your comments:"
           text={`1. Open your comment in Github (comment URL in the table below)
             2. Add the tag directly in the comment

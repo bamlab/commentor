@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { fontStyles, getSpacing } from 'stylesheet';
-import { OverChartMessageContainerProps } from './OverChartMessage.type';
+import { ChartPlaceholderContainerProps } from './ChartPlaceholder.type';
 
-export const OverChartMessageContainer = styled.div`
+export const ChartPlaceholderContainer = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
@@ -11,7 +11,9 @@ export const OverChartMessageContainer = styled.div`
   justify-content: center;
 
   background-color: white;
-  /*background-image: url(${(props: OverChartMessageContainerProps) => props.backgroundImage});*/
+  background-image: url(${(props: ChartPlaceholderContainerProps) => props.backgroundImage});
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
 export const OverChartWraper = styled.div`

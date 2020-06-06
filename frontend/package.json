@@ -31,7 +31,7 @@
     "react-select": "^3.0.8",
     "react-virtualized": "^9.21.1",
     "recompose": "^0.30.0",
-    "redux": "4.0.1",
+    "redux": "4.0.5",
     "redux-persist": "5.10.0",
     "redux-saga": "^1.0.2",
     "styled-components": "4.1.1",

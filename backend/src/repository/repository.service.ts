@@ -6,14 +6,16 @@ import { RepositoryDto } from './interfaces/Repository.dto';
 @Injectable()
 export class RepositoryService {
   constructor(private readonly commentService: CommentService) {}
-  getUserCommentedRepositories = async (providerRepositories?: any[]): Promise<RepositoryDto[]> => {
+  getUserCommentedRepositories = async (
+    providerRepositories?: RepositoryDto[],
+  ): Promise<RepositoryDto[]> => {
     const promiseList = providerRepositories
       ? providerRepositories.map(async repository => {
           const isRepositoryLinkedToExistingComment = await this.commentService.checkIfCommentsExistForRepository(
             repository.id,
           );
           if (isRepositoryLinkedToExistingComment) {
-            return { id: repository.id, name: repository.name };
+            return repository;
           }
           return;
         })

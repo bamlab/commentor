@@ -10,7 +10,7 @@ export class RepositoryController {
 
   @Get()
   async getUserRepositories(
-    @ProviderRepositories() providerRepositories: any[],
+    @ProviderRepositories() providerRepositories: RepositoryDto[],
   ): Promise<RepositoryDto[]> {
     return this.service.getUserCommentedRepositories(providerRepositories);
   }

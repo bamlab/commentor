@@ -1,9 +1,11 @@
 import * as request from 'request-promise';
 import { Logger } from '@nestjs/common';
 import { EmojiConvertor } from 'emoji-js';
+import { Comment, GitlabCommentEvent } from 'src/comment/interfaces/comment.dto';
+import { RepositoryDto } from 'src/repository/interfaces/Repository.dto';
 
 export const generateAccessToken = async (code: string): Promise<string> => {
-  const gitlabOauthResponse = await request({
+  const gitlabOauthResponse: GitlabOauthTokenAnswer = await request({
     uri: 'https://gitlab.com/oauth/token',
     method: 'POST',
     body: {
@@ -48,10 +50,8 @@ export const getLogin = async (cookies: { gitlab_access_token?: string }): Promi
   }
 };
 
-export const getRepositories = async (
-  accessToken: string,
-): Promise<Array<{ name: string; id: number }>> => {
-  const gitlabRepositoriesAnswer = await request({
+export const getRepositories = async (accessToken: string): Promise<RepositoryDto[]> => {
+  const gitlabRepositoriesAnswer: GitlabRepository[] = await request({
     uri: `https://gitlab.com/api/v4/projects?min_access_level=10`,
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -60,19 +60,19 @@ export const getRepositories = async (
     json: true,
   });
 
-  return gitlabRepositoriesAnswer.map((repository: { name: string; id: number }) => ({
+  return gitlabRepositoriesAnswer.map(repository => ({
     name: repository.name,
     id: repository.id,
   }));
 };
 
 export const checkUserHasAccessToRepo = async (
-  repositoryId: string,
+  repositoryId: number,
   accessToken: string,
-): Promise<string> => {
+): Promise<number | undefined> => {
   try {
     Logger.log(`About to check gitlab access to repo ${repositoryId}`);
-    const gitlabUserAccessToRepoAnswer = await request({
+    const gitlabUserAccessToRepoAnswer: GitlabUserAccessToRepoAnswer = await request({
       uri: `https://gitlab.com/api/v4/projects/${repositoryId}?min_access_level=10`,
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -99,17 +99,7 @@ export const checkUserHasAccessToRepo = async (
   }
 };
 
-export const formatComment = (
-  commentEvent: any,
-): {
-  body: string;
-  filePath: string;
-  url: string;
-  commentor: string;
-  requester: string;
-  pullRequestUrl: string;
-  repositoryId: number;
-} => {
+export const formatComment = (commentEvent: GitlabCommentEvent): Comment => {
   if (
     commentEvent.object_attributes &&
     commentEvent.object_attributes.noteable_type &&
@@ -137,19 +127,24 @@ export const formatComment = (
       pullRequestUrl: commentedObjectUrl,
       requester: authorUserName,
       filePath:
-        commentEvent.object_attributes.st_diff && commentEvent.object_attributes.st_diff.newPath
-          ? commentEvent.object_attributes.st_diff.newPath
+        commentEvent.object_attributes.st_diff && commentEvent.object_attributes.st_diff.new_path
+          ? commentEvent.object_attributes.st_diff.new_path
           : 'NA',
     };
   }
 };
 
-interface GitlabRepository {
-  truc: string;
+interface GitlabOauthTokenAnswer {
+  access_token: string;
+  token_type: string;
+  refresh_token: string;
+  scope: string;
+  created_at: number;
 }
 
-interface GitlabRepositoriesAnswer {
-  machin: string;
+interface GitlabRepository {
+  name: string;
+  id: number;
 }
 
 interface GitlabLoginAnswer {
@@ -157,5 +152,16 @@ interface GitlabLoginAnswer {
     currentUser: {
       username: string;
     };
+  };
+}
+
+interface GitlabUserAccessToRepoAnswer {
+  permissions: {
+    project_access: {
+      access_level: number | null;
+    } | null;
+    group_access: {
+      access_level: number | null;
+    } | null;
   };
 }

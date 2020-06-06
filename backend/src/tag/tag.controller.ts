@@ -34,7 +34,7 @@ export class TagController {
     @Param('id') id: string,
     @Body() inputTag: InputTag,
     @OAuthLogin() oAuthLogin: string,
-  ): Promise<any> {
+  ) {
     return this.service.updateById(inputTag, Number(id), oAuthLogin);
   }
 }

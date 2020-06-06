@@ -60,7 +60,7 @@
     "typescript": "^3.5.1"
   },
   "devDependencies": {
-    "@nestjs/testing": "^6.3.1",
+    "@nestjs/testing": "^7.0.0",
     "@types/bcrypt": "^3.0.0",
     "@types/cookie-parser": "^1.4.1",
     "@types/emoji-js": "^3.4.0",

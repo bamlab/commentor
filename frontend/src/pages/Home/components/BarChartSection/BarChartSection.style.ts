@@ -17,3 +17,9 @@ export const BarChartSectionWrap = styled.div`
 export const BarChartAndTitleContainer = styled.div`
   margin: ${getSpacing(3)};
 `;
+
+export const BarChartHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;

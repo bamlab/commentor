@@ -7,6 +7,7 @@ import {
   selectTagCodes,
   selectStartingDate,
   selectEndingDate,
+  selectGroupBy,
 } from './filters.actions';
 import { loadComments } from '../Comment/comment.actions';
 
@@ -25,6 +26,7 @@ export default function* filtersSagas() {
       getType(selectRepositoryIds.request),
       getType(selectCommentorIds.request),
       getType(selectRequesterIds.request),
+      getType(selectGroupBy.request),
       getType(selectStartingDate.request),
       getType(selectEndingDate.request),
     ],

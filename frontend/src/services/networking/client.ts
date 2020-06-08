@@ -7,6 +7,7 @@ import {
   formatFetchedPieChartDataForAppType,
   formatFetchedBarChartDataForAppType,
 } from '../../redux/Comment/comment.adapter';
+import { GroupByType } from 'redux/Filters/filters.type';
 
 const backendBaseUrl = process.env.REACT_APP_API_BASE_URL || '';
 
@@ -91,6 +92,7 @@ class Client {
     requesterIds: string[];
     commentorIds: string[];
     tagCodes: string[];
+    groupBy: GroupByType;
     oAuthLogin: string | null;
   }): Promise<{
     comments: CommentType[];

@@ -7,6 +7,7 @@ import {
   VictoryAxis,
   VictoryStack,
   VictoryLabel,
+  VictoryTooltip,
 } from 'victory';
 import { colorUsage, fontStyles } from 'stylesheet';
 import { map, chain } from 'lodash';
@@ -68,12 +69,20 @@ const BarChart = React.memo<propTypes>(props => {
                   <VictoryBar
                     barWidth={10}
                     animate={false}
+                    labelComponent={<VictoryTooltip style={{ ...fontStyles.small }} />}
                     style={{
                       data: {
                         fill: ({ datum }) => (datum.tag ? datum.tag.color : colorUsage.error),
                       },
                     }}
-                    data={[barChartItem]}
+                    data={[
+                      {
+                        x: barChartItem.x,
+                        y: barChartItem.y,
+                        tag: barChartItem.tag,
+                        label: barChartItem.tag.code,
+                      },
+                    ]}
                   />
                 );
               },

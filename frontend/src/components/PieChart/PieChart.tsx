@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PieChartContainer } from './PieChart.style';
-import { VictoryPie } from 'victory';
+import { VictoryPie, VictoryTooltip } from 'victory';
 import { colorUsage, fontStyles } from 'stylesheet';
 import { PieChartData } from '../../redux/Comment';
 
@@ -26,6 +26,7 @@ const PieChart = React.memo<propTypes>(props => {
     <PieChartContainer>
       {props.data && props.data.length > 0 && (
         <VictoryPie
+          labelComponent={<VictoryTooltip style={{ ...fontStyles.small }} />}
           height={300}
           width={300}
           innerRadius={55}
@@ -39,7 +40,7 @@ const PieChart = React.memo<propTypes>(props => {
               fill: ({ datum }) => (datum.tag ? datum.tag.color : colorUsage.error),
             },
           }}
-          data={props.data}
+          data={props.data.map(pie => ({ ...pie, label: pie.tag.code }))}
         />
       )}
     </PieChartContainer>

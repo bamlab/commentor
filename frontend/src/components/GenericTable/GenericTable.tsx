@@ -48,6 +48,7 @@ export const GenericTable = <T extends OptionsType, O extends GenericRowObjectTy
         getDefaultCellStyle(style, rowIndex),
       );
     }
+
     if (rowIndex >= valuesWithHeaders.length) {
       return defaultCellRenderer(key, 'Empty', getDefaultCellStyle(style, rowIndex));
     }

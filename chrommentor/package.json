@@ -12,7 +12,7 @@
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.9.6",
-    "babel-jest": "^25.5.1",
+    "babel-jest": "^26.0.1",
     "jest": "^26.0.1",
     "parcel": "^1.12.4",
     "parcel-plugin-web-extension": "^1.6.1"

@@ -122,7 +122,7 @@ storiesOf('GenericTable', module)
             requester: 'vor',
             pullRequestUrl: 'vor',
             repositoryId: 'vor',
-            creationDate: new Date(),
+            creationDate: new Date('2019-10-09T20:35:55.068Z'),
           },
           {
             id,
@@ -133,7 +133,7 @@ storiesOf('GenericTable', module)
             requester: 'vor',
             pullRequestUrl: 'vor',
             repositoryId: 'vor',
-            creationDate: new Date(),
+            creationDate: new Date('2019-10-09T20:35:55.068Z'),
           },
           {
             id,
@@ -155,7 +155,7 @@ storiesOf('GenericTable', module)
             requester: 'vor',
             pullRequestUrl: 'vor',
             repositoryId: 'vor',
-            creationDate: new Date(),
+            creationDate: new Date('2019-10-09T20:35:55.068Z'),
           },
         ]}
       />

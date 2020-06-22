@@ -5,11 +5,15 @@ import { getType } from 'typesafe-actions';
 
 import client from 'services/networking/client';
 
-import { loadComments } from '../comment.actions';
+import { loadComments, loadPieChartData, loadBarChartData } from '../comment.actions';
 import { loadCommentsSaga } from '../comment.sagas';
 import { getFilters } from '../../Filters';
+import { getUser } from '../../Authentication';
 
 const loadCommentsRequestAction = loadComments.request({});
+const mockedUser = {
+  oAuthLogin: 'amauryw',
+};
 const mockedFilters = {
   repositoryIds: [],
   endingDate: null,
@@ -38,10 +42,16 @@ describe('[Saga] Comment redux', () => {
       it('should call the success action when request is a success', async () => {
         return expectSaga(loadCommentsSaga, loadCommentsRequestAction)
           .provide([
-            [matchers.call.fn(client.fetchComments), comments],
+            [
+              matchers.call.fn(client.fetchCommentData),
+              { comments, pieChartData: [], barChartData: [] },
+            ],
             [matchers.select(getFilters), mockedFilters],
+            [matchers.select(getUser), mockedFilters],
           ])
           .put(loadComments.success({ comments }))
+          .put(loadPieChartData.success({ pieChartData: [] }))
+          .put(loadBarChartData.success({ barChartData: [] }))
           .run();
       });
     });
@@ -51,11 +61,14 @@ describe('[Saga] Comment redux', () => {
         const error = new Error();
         return expectSaga(loadCommentsSaga, loadCommentsRequestAction)
           .provide([
-            [matchers.call.fn(client.fetchComments), throwError(error)],
+            [matchers.call.fn(client.fetchCommentData), throwError(error)],
             [matchers.select(getFilters), mockedFilters],
+            [matchers.select(getUser), mockedFilters],
           ])
           .put(loadComments.failure({ errorMessage: error.message }))
           .not.put.actionType(getType(loadComments.success))
+          .not.put.actionType(getType(loadPieChartData.success))
+          .not.put.actionType(getType(loadBarChartData.success))
           .run();
       });
     });

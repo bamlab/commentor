@@ -145,7 +145,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             Object {
               "body": "coucou",
               "commentor": "vor",
-              "creationDate": 2020-05-17T16:19:28.047Z,
+              "creationDate": 2019-10-09T20:35:55.068Z,
               "filePath": "vor",
               "id": 1,
               "pullRequestUrl": "vor",
@@ -156,7 +156,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             Object {
               "body": "coucou",
               "commentor": "vor",
-              "creationDate": 2020-05-17T16:19:28.047Z,
+              "creationDate": 2019-10-09T20:35:55.068Z,
               "filePath": "vor",
               "id": 1,
               "pullRequestUrl": "vor",
@@ -178,7 +178,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             Object {
               "body": "coucou",
               "commentor": "vor",
-              "creationDate": 2020-05-17T16:19:28.047Z,
+              "creationDate": 2019-10-09T20:35:55.068Z,
               "filePath": "vor",
               "id": 1,
               "pullRequestUrl": "vor",
@@ -340,7 +340,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             Object {
               "body": "coucou",
               "commentor": "vor",
-              "creationDate": 2020-05-17T16:19:28.047Z,
+              "creationDate": 2019-10-09T20:35:55.068Z,
               "filePath": "vor",
               "id": 1,
               "pullRequestUrl": "vor",
@@ -351,7 +351,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             Object {
               "body": "coucou",
               "commentor": "vor",
-              "creationDate": 2020-05-17T16:19:28.047Z,
+              "creationDate": 2019-10-09T20:35:55.068Z,
               "filePath": "vor",
               "id": 1,
               "pullRequestUrl": "vor",
@@ -373,7 +373,7 @@ exports[`Storyshots GenericTable playground 1`] = `
             Object {
               "body": "coucou",
               "commentor": "vor",
-              "creationDate": 2020-05-17T16:19:28.047Z,
+              "creationDate": 2019-10-09T20:35:55.068Z,
               "filePath": "vor",
               "id": 1,
               "pullRequestUrl": "vor",

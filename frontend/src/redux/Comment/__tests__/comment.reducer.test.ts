@@ -3,11 +3,12 @@ import reducer from '../comment.reducer';
 
 const initialState = {
   comments: [],
-  isLoading: false,
   commentError: null,
+  pieChartData: [],
+  barChartData: [],
   availableRequesters: [],
   availableCommentors: [],
-  pieChartData: [],
+  isLoading: false,
 };
 const defaultComment = {
   id: 2,

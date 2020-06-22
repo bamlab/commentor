@@ -13,6 +13,7 @@ export const TagsLegend: React.FunctionComponent<TagLegendsPropsTypes> = props =
   return (
     <TagsLegendContainer>
       {tagsColumns.map((tagColumn, index) => (
+        // eslint-disable-next-line react/no-array-index-key
         <TagsLegendColumn key={`${index}-${tagColumn.length}`}>
           {tagColumn.map(tag => (
             <TagLegendItemContainer key={tag.code}>

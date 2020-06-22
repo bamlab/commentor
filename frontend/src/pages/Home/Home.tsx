@@ -45,7 +45,7 @@ const Home = React.memo<HomePropsType>(props => {
         }
       }
     },
-    [isAuthenticated, loadRepositories],
+    [isAuthenticated, loadComments, loadRepositories, loadTags],
   );
 
   return (

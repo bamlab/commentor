@@ -1,1 +1,1 @@
-export type FilterSectionPropsType = {};
+export interface FilterSectionPropsType {}

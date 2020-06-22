@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import { PieChartData, BarChartData } from './Comment';
 import { UserType } from './Authentication/authentication.type';
 
@@ -56,7 +57,7 @@ export const storeMigrations = {
   }),
 };
 
-export type StateTypeVersion5 = {
+export interface StateTypeVersion5 {
   comment: {
     comments: {
       id: number;
@@ -107,9 +108,9 @@ export type StateTypeVersion5 = {
     isLoading: boolean;
     repositoryError: string | null;
   };
-};
+}
 
-export type StateTypeVersion4 = {
+export interface StateTypeVersion4 {
   comment: {
     comments: {
       id: number;
@@ -157,8 +158,8 @@ export type StateTypeVersion4 = {
     isLoading: boolean;
     repositoryError: string | null;
   };
-};
-export type StateTypeVersion3 = {
+}
+export interface StateTypeVersion3 {
   comment: {
     comments: {
       id: number;
@@ -206,9 +207,9 @@ export type StateTypeVersion3 = {
     isLoading: boolean;
     repositoryError: string | null;
   };
-};
+}
 
-export type StateTypeVersion2 = {
+export interface StateTypeVersion2 {
   comment: {
     comments: {
       id: number;
@@ -254,9 +255,9 @@ export type StateTypeVersion2 = {
     isLoading: boolean;
     repositoryError: string | null;
   };
-};
+}
 
-export type StateTypeVersion1 = {
+export interface StateTypeVersion1 {
   comment: {
     comments: {
       id: number;
@@ -301,9 +302,9 @@ export type StateTypeVersion1 = {
     isLoading: boolean;
     repositoryError: string | null;
   };
-};
+}
 
-export type StateTypeVersion0 = {
+export interface StateTypeVersion0 {
   comment: {
     comments: {
       id: number;
@@ -344,4 +345,4 @@ export type StateTypeVersion0 = {
     isLoading: boolean;
     repositoryError: string | null;
   };
-};
+}

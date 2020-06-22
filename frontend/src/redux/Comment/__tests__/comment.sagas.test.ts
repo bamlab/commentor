@@ -47,7 +47,7 @@ describe('[Saga] Comment redux', () => {
               { comments, pieChartData: [], barChartData: [] },
             ],
             [matchers.select(getFilters), mockedFilters],
-            [matchers.select(getUser), mockedFilters],
+            [matchers.select(getUser), mockedUser],
           ])
           .put(loadComments.success({ comments }))
           .put(loadPieChartData.success({ pieChartData: [] }))

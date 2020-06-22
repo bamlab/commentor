@@ -4,7 +4,11 @@ import { text, number, date, withKnobs } from '@storybook/addon-knobs';
 import { Cell, StandardTextContainer } from 'components/GenericTable/GenericTable.style';
 import { GenericTable } from './GenericTable';
 
-const defaultCellRenderer = (key: string, displayString: string, style?: Object): JSX.Element => {
+const defaultCellRenderer = (
+  key: string,
+  displayString: string,
+  style?: Record<string, any>,
+): JSX.Element => {
   return (
     <Cell key={key} style={style}>
       <StandardTextContainer>{displayString}</StandardTextContainer>
@@ -18,7 +22,7 @@ const columnsConfig = [
     key: 'id',
     name: 'id',
     columnWidth: 10,
-    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+    renderer: (key: string, genericRow: any, style?: Record<string, any>): JSX.Element =>
       defaultCellRenderer(key, genericRow.id, style),
   },
   {
@@ -26,7 +30,7 @@ const columnsConfig = [
     key: 'body',
     name: 'body',
     columnWidth: 30,
-    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+    renderer: (key: string, genericRow: any, style?: Record<string, any>): JSX.Element =>
       defaultCellRenderer(key, genericRow.body, style),
   },
   {
@@ -34,7 +38,7 @@ const columnsConfig = [
     key: 'filePath',
     name: 'filePath',
     columnWidth: 20,
-    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+    renderer: (key: string, genericRow: any, style?: Record<string, any>): JSX.Element =>
       defaultCellRenderer(key, genericRow.filePath, style),
   },
   {
@@ -42,7 +46,7 @@ const columnsConfig = [
     key: 'url',
     name: 'url',
     columnWidth: 10,
-    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+    renderer: (key: string, genericRow: any, style?: Record<string, any>): JSX.Element =>
       defaultCellRenderer(key, genericRow.url, style),
   },
   {
@@ -50,7 +54,7 @@ const columnsConfig = [
     key: 'commentor',
     name: 'commentor',
     columnWidth: 20,
-    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+    renderer: (key: string, genericRow: any, style?: Record<string, any>): JSX.Element =>
       defaultCellRenderer(key, genericRow.commentor, style),
   },
   {
@@ -58,7 +62,7 @@ const columnsConfig = [
     key: 'pullRequestUrl',
     name: 'pullRequestUrl',
     columnWidth: 20,
-    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+    renderer: (key: string, genericRow: any, style?: Record<string, any>): JSX.Element =>
       defaultCellRenderer(key, genericRow.pullRequestUrl, style),
   },
   {
@@ -66,7 +70,7 @@ const columnsConfig = [
     key: 'repositoryId',
     name: 'repositoryId',
     columnWidth: 10,
-    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+    renderer: (key: string, genericRow: any, style?: Record<string, any>): JSX.Element =>
       defaultCellRenderer(key, genericRow.repositoryId, style),
   },
   {
@@ -74,7 +78,7 @@ const columnsConfig = [
     key: 'creationDate',
     name: 'creationDate',
     columnWidth: 10,
-    renderer: (key: string, genericRow: any, style?: Object): JSX.Element =>
+    renderer: (key: string, genericRow: any, style?: Record<string, any>): JSX.Element =>
       defaultCellRenderer(key, genericRow.creationDate, style),
   },
 ];

@@ -40,7 +40,12 @@ export const GenericTable = <T extends OptionsType, O extends GenericRowObjectTy
     fixedWidth: true,
   });
 
-  const renderRows = (columnIndex: number, key: string, rowIndex: number, style: Object) => {
+  const renderRows = (
+    columnIndex: number,
+    key: string,
+    rowIndex: number,
+    style: Record<string, any>,
+  ) => {
     if (rowIndex === 0) {
       return defaultHeaderCellRenderer(
         key,

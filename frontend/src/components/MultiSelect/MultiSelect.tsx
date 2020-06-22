@@ -22,7 +22,7 @@ const Option = (props: any) => {
   );
 };
 
-type PropsType = {
+interface PropsType {
   isLoading?: boolean;
   selectedOptions: ISelectedOptionsType[];
   selectOptions: (selectedOptions: ISelectedOptionsType[]) => void;
@@ -31,7 +31,7 @@ type PropsType = {
   icon: string;
   title: string;
   noOptionsMessage?: string;
-};
+}
 
 export const MultiSelect = (props: PropsType) => {
   const [isSelectDisplayed, setIsSelectDisplayed] = useState(false);

@@ -1,6 +1,6 @@
 import { TagType } from '../../redux/Tag';
 
-export type CommentType = {
+export interface CommentType {
   id: number;
   body: string;
   filePath: string;
@@ -10,7 +10,7 @@ export type CommentType = {
   pullRequestUrl: string;
   repositoryId: number;
   creationDate: Date;
-};
+}
 
 export type RequesterType = string;
 export type CommentorType = string;

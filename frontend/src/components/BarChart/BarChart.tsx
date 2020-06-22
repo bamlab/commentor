@@ -16,11 +16,11 @@ import { formatDateToDDMMLined } from '../../services/date/dateFormatter';
 import { TagType } from 'redux/Tag';
 import { BarChartData } from '../../redux/Comment';
 
-interface propTypes {
+interface PropsType {
   data: BarChartData[];
 }
 
-const BarChart = React.memo<propTypes>(props => {
+const BarChart = React.memo<PropsType>(props => {
   const ticksLabelsStyle = {
     fill: colorUsage.text,
     ...fontStyles.small,

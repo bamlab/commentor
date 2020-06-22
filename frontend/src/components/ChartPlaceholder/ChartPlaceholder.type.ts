@@ -1,10 +1,10 @@
-export type ChartPlaceholderPropsType = {
+export interface ChartPlaceholderPropsType {
   backgroundImage: string;
   legendImage: string;
   title: string;
   text: string;
-};
+}
 
-export type ChartPlaceholderContainerProps = {
+export interface ChartPlaceholderContainerProps {
   backgroundImage: string;
-};
+}

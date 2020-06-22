@@ -5,6 +5,7 @@ import 'react-dates/lib/css/_datepicker.css';
 import './assets/custom-styles.css';
 import { DateRangePicker } from 'react-dates';
 import calendarIcon from './assets/calendar-icon.svg';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import moment, { Moment } from 'moment';
 
 import 'react-datepicker/dist/react-datepicker.css';

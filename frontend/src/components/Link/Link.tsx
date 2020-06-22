@@ -4,7 +4,7 @@ import { colorUsage, getSpacing, fontStyles } from 'stylesheet';
 interface ILink {
   href?: string;
   to?: string;
-  activeStyle?: Object;
+  activeStyle?: Record<string, any>;
   isActive?: (match: any, location: any) => boolean;
 }
 

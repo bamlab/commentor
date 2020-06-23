@@ -148,7 +148,7 @@
     "mockdate": "^2.0.5",
     "plop": "2.1.0",
     "prettier": "1.15.1",
-    "react-app-rewire-webpack-bundle-analyzer": "1.0.1",
+    "react-app-rewire-webpack-bundle-analyzer": "1.1.0",
     "react-app-rewired": "2.1.0",
     "react-test-renderer": "16.6.3",
     "redux-saga-test-plan": "^4.0.0-beta.2",

@@ -12,9 +12,9 @@ const colorPalette = {
   mercury: '#e3e3e3',
   purple: '#8968BA',
   red: '#E55E5E',
-  lightBlue:'#BCCEE0',
+  lightBlue: '#BCCEE0',
   transparentMineShaft: 'rgba(34,34,34,0.1)',
-  white: '#FFF'
+  white: '#FFF',
 };
 
 export const colorUsage = {

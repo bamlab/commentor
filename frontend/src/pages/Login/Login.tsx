@@ -30,21 +30,24 @@ import { LoginPropsType } from './Login.type';
 
 const Login = React.memo<LoginPropsType>(props => {
   const { login, location, isAuthenticated } = props;
-  useEffect(() => {
-    const componentDidMount = async () => {
-      const params = queryString.parse(location.search);
-      if (
-        params.state &&
-        typeof params.state === 'string' &&
-        (params.state === 'gitlab' || params.state === 'github')
-      ) {
-        if (params.code && typeof params.code === 'string' && !isAuthenticated) {
-          await login(params.code, params.state);
+  useEffect(
+    () => {
+      const componentDidMount = async () => {
+        const params = queryString.parse(location.search);
+        if (
+          params.state &&
+          typeof params.state === 'string' &&
+          (params.state === 'gitlab' || params.state === 'github')
+        ) {
+          if (params.code && typeof params.code === 'string' && !isAuthenticated) {
+            await login(params.code, params.state);
+          }
         }
-      }
-    };
-    componentDidMount();
-  }, []);
+      };
+      componentDidMount();
+    },
+    [isAuthenticated, location.search, login],
+  );
 
   return (
     <Container>

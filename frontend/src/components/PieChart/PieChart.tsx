@@ -4,12 +4,12 @@ import { VictoryPie, VictoryLabel } from 'victory';
 import { colorUsage, fontStyles } from 'stylesheet';
 import { PieChartData } from '../../redux/Comment';
 
-interface propTypes {
+interface PropsType {
   data: PieChartData[];
 }
 
 const PIE_INNER_RADIUS = 55;
-const PieChart = React.memo<propTypes>(props => {
+const PieChart = React.memo<PropsType>(props => {
   const [angle, setAngle] = useState(0);
 
   const ticksLabelsStyle = {

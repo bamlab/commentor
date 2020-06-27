@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Modal as ModalComponent } from 'components/Modal/Modal';
 import { borderRadius, fontStyles, getSpacing, colorUsage } from '../../../../stylesheet';
 

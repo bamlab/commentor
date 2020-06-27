@@ -1,3 +1,5 @@
+/* eslint-disable max-lines */
+
 import {
   StateTypeVersion0,
   StateTypeVersion1,

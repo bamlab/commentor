@@ -2,11 +2,11 @@ import React from 'react';
 import { GoLinkExternal } from 'react-icons/go';
 import { HoverButtonContainer } from 'components/HoverButtonContainer';
 
-type propsType = {
+interface PropsType {
   onIconClick: () => void;
-};
+}
 
-export const LinkCellIcon: React.FunctionComponent<propsType> = props => {
+export const LinkCellIcon: React.FunctionComponent<PropsType> = props => {
   const onClick = () => {
     props.onIconClick();
   };

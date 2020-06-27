@@ -1,5 +1,5 @@
 import { PieChartData } from '../../../../redux/Comment';
 
-export type PieChartSectionPropsType = {
+export interface PieChartSectionPropsType {
   pieChartData: PieChartData[];
-};
+}

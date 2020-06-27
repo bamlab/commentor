@@ -16,7 +16,7 @@ import { TagType } from '../../../../redux/Tag';
 import { GoTrashcan } from 'react-icons/go';
 import { Background } from 'components/Background';
 
-type PropsType = {
+interface PropsType {
   id: string;
   isOpen: boolean;
   closeRemoveTageModal: () => void;
@@ -24,7 +24,7 @@ type PropsType = {
   isTagLoading: boolean;
   selectedTagId: number | null;
   selectedTag: TagType;
-};
+}
 
 export const DeleteTagModal = (props: PropsType) => {
   const confirmDeletion = async () => {

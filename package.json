@@ -5,6 +5,10 @@
   "author": "BAM",
   "license": "MIT",
   "scripts": {
+    "install:frontend": "(cd frontend && yarn install)",
+    "test:frontend": "(cd frontend && yarn test)",
+    "type:frontend": "(cd frontend && yarn type-check)",
+    "quality:frontend": "(cd frontend && yarn lint)",
     "deploy:api:staging": "git subtree push --prefix backend api-staging master",
     "deploy:api:prod": "git subtree push --prefix backend api-prod master"
   },

@@ -54,7 +54,8 @@
     "@typescript-eslint/explicit-member-accessibility": 0,
     "@typescript-eslint/camelcase": 0,
     "@typescript-eslint/interface-name-prefix": 0,
-    "complexity": ["error", 8],
+    "@typescript-eslint/no-empty-interface": 0,
+    "complexity": ["warn", 8],
     "max-lines": ["error", 200],
     "max-depth": ["error", 3],
     "max-params": ["error", 4]

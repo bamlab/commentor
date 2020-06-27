@@ -1,4 +1,4 @@
-export type TagType = {
+export interface TagType {
   id: number;
   code: string;
   color: string;
@@ -6,10 +6,10 @@ export type TagType = {
   oAuthLogin: string | null;
   creationDate: Date;
   isDefault: boolean;
-};
+}
 
-export type TagEvent = {
+export interface TagEvent {
   code: string;
   color: string;
   description: string;
-};
+}

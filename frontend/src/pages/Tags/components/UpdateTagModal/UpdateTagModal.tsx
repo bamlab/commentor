@@ -5,14 +5,14 @@ import { FormattedMessage } from 'react-intl';
 import { TagType } from 'redux/Tag';
 import { Modal, Container } from './UpdateTagModal.style';
 
-type PropsType = {
+interface PropsType {
   id: string;
   isOpen: boolean;
   closeUpdateModal: () => void;
   updateTag: (tagId: number, code: string, description: string, color: string) => void;
   isTagLoading: boolean;
   selectedTag: TagType;
-};
+}
 
 export const UpdateTagModal = (props: PropsType) => {
   const [newCode, setNewCode] = useState('');

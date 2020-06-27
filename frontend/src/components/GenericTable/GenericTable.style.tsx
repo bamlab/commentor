@@ -24,7 +24,11 @@ export const HeaderTextContainer = styled(StandardTextContainer)`
 `;
 
 export const HeaderCell = styled(Cell)``;
-export const defaultCellRenderer = (key: string, value: string, style: Object): JSX.Element => {
+export const defaultCellRenderer = (
+  key: string,
+  value: string,
+  style: Record<string, any>,
+): JSX.Element => {
   return (
     <Cell key={key} style={style}>
       <StandardTextContainer>{value}</StandardTextContainer>
@@ -35,7 +39,7 @@ export const defaultCellRenderer = (key: string, value: string, style: Object): 
 export const defaultHeaderCellRenderer = (
   key: string,
   value: string,
-  style: Object,
+  style: Record<string, any>,
 ): JSX.Element => {
   return (
     <HeaderCell key={key} style={style}>
@@ -57,7 +61,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-export const getDefaultCellStyle = (style: Object, rowIndex: number): Object => ({
+export const getDefaultCellStyle = (
+  style: Record<string, any>,
+  rowIndex: number,
+): Record<string, any> => ({
   ...style,
   wordBreak: 'break-word',
 });

@@ -6,12 +6,12 @@ import { DateRangeFilterSelector as DateRangeFilterSelectorComponent } from './D
 import { getSelectedStartingDate, getSelectedEndingDate } from '../../redux/Filters';
 import { selectStartingDate, selectEndingDate } from '../../redux/Filters/filters.actions';
 
-export type WrapperProps = {
+export interface WrapperProps {
   startingDate: Date | null;
   endingDate: Date | null;
   setStartingDate: (date: Date | null) => void;
   setEndingDate: (date: Date | null) => void;
-};
+}
 const mapStateToProps = (state: RootState) => ({
   startingDate: getSelectedStartingDate(state),
   endingDate: getSelectedEndingDate(state),

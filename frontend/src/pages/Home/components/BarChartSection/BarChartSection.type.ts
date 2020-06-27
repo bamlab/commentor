@@ -1,5 +1,5 @@
 import { BarChartData } from '../../../../redux/Comment';
 
-export type BarChartSectionPropsType = {
+export interface BarChartSectionPropsType {
   barChartData: BarChartData[];
-};
+}

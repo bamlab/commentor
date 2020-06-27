@@ -17,13 +17,13 @@ import { CircledColor } from 'components/CircledColor';
 import { FormattedMessage } from 'react-intl';
 import { Background } from 'components/Background';
 
-type PropsType = {
+interface PropsType {
   id: string;
   isOpen: boolean;
   closeModal: () => void;
   onConfirmAction: (code: string, description: string, color: string) => void;
   isTagLoading: boolean;
-};
+}
 
 export const GenericTagModal = (props: PropsType) => {
   const [newCode, setNewCode] = useState('');
@@ -70,6 +70,7 @@ export const GenericTagModal = (props: PropsType) => {
           </TextInputsContainer>
           <ColorPickerContainer>
             {colorBase.map((color, index) => (
+              // eslint-disable-next-line react/no-array-index-key
               <CircleColorContainer key={index}>
                 <CircledColor
                   onClick={() => setNewColorIndex(index)}

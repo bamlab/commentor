@@ -7,7 +7,7 @@ interface PropsType {
   isOpen: boolean;
   children: ReactNode;
   onRequestClose: () => void;
-  style?: Object;
+  style?: Record<string, any>;
   className?: string;
 }
 

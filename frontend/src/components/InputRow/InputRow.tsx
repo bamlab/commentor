@@ -3,7 +3,7 @@ import Input from 'components/Input';
 import { Label, Error, Row } from './InputRow.style';
 import { TextArea } from '../Input/Input';
 
-interface propTypes {
+interface PropsType {
   label?: string | null;
   error?: string | null;
   type: string;
@@ -20,7 +20,7 @@ interface propTypes {
   };
 }
 
-const InputRow: React.FunctionComponent<propTypes> = props => {
+const InputRow: React.FunctionComponent<PropsType> = props => {
   const { error, field, label, disabled, type, placeholder } = props;
   const hasError = !!error;
 

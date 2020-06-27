@@ -1,176 +1,84 @@
 version: 2.1
+orbs:
+  node: circleci/node@1.1.6
 
-executors:
-  defaults_typescript:
-    docker:
-      - image: circleci/node:10.13.0
-      - image: circleci/postgres:9.6-alpine-ram
-        environment:
-          - POSTGRES_DB=seed
-          - POSTGRES_USER=seed
-          - POSTGRES_PASSWORD=APasswordForYourTests
-          - PGPORT=5434
+defaults: &defaults
+  working_directory: ~/commentor
+  executor:
+    name: node/default
+    tag: "10.4"
 
 commands:
-  yarn-install:
-    parameters:
-      workspace:
-        type: string
+  frontend-test:
+    description: "Launching front end unit test"
     steps:
-      - checkout
-      - skip/skip_unchanged:
-          paths: << parameters.workspace >>
-      - attach_workspace:
-          at: ~/commentor/<< parameters.workspace >>
-      - restore_cache:
-          key: node-modules-cache-{{ checksum "<< parameters.workspace >>/yarn.lock" }}
-      - run:
-          working_directory: << parameters.workspace >>
-          name: Install front dependencies
-          command: yarn
-      - save_cache:
-          key: node-modules-cache-{{ checksum "<< parameters.workspace >>/yarn.lock" }}
-          paths:
-            - << parameters.workspace >>/node_modules
-      - persist_to_workspace:
-          root: ~/commentor/<< parameters.workspace >>
-          paths:
-            - node_modules
-            - .env
-
-  yarn-tests:
-    parameters:
-      workspace:
-        type: string
+      - run: yarn test:frontend
+  frontend-type:
+    description: "Launching typecheck on frontend"
     steps:
-      - checkout
-      - skip/skip_unchanged:
-          paths: << parameters.workspace >>
-      - attach_workspace:
-          at: ~/commentor/<< parameters.workspace >>
-      - run:
-          working_directory: << parameters.workspace >>
-          name: Unit test with coverage
-          command: yarn test:coverage
-      - store_artifacts:
-          path: << parameters.workspace >>/coverage
-      - run:
-          working_directory: << parameters.workspace >>
-          name: Run Typescript checker
-          command: yarn tsc
-
-  yarn-linter:
-    parameters:
-      workspace:
-        type: string
+      - run: yarn type:frontend
+  frontend-lint:
+    description: "Launching linter check onf frontend"
     steps:
-      - checkout
-      - skip/skip_unchanged:
-          paths: << parameters.workspace >>
-      - attach_workspace:
-          at: ~/commentor/<< parameters.workspace >>
-      - run:
-          working_directory: << parameters.workspace >>
-          name: Run linter
-          command: yarn lint
-      - store_artifacts:
-          path: << parameters.workspace >>/coverage
+      - run: yarn quality:frontend
 
 jobs:
-  yarn-install-front:
-    executor: defaults_typescript
-    working_directory: ~/commentor
-    steps:
-      - yarn-install:
-          workspace: frontend
-
-  react-tests:
-    executor: defaults_typescript
-    working_directory: ~/commentor
-    environment:
-      NODE_ENV: test
-    steps:
-      - yarn-tests:
-          workspace: frontend
-
-  react-bundlesize:
-    executor: defaults_typescript
-    working_directory: ~/commentor
-    environment:
-      NODE_ENV: prod
+  install-front:
+    <<: *defaults
     steps:
       - checkout
-      - skip/skip_unchanged:
-          paths: frontend
-      - attach_workspace:
-          at: ~/commentor/frontend
-      - run:
-          working_directory: frontend
-          name: Check bundle size
-          command: yarn build && ./node_modules/.bin/bundlesize
-      - store_artifacts:
-          path: frontend/coverage
-
-  react-linter:
-    executor: defaults_typescript
-    working_directory: ~/commentor
-    environment:
-      NODE_ENV: prod
+      - restore_cache:
+          keys:
+            - node-modules-cache-{{ checksum "frontend/package.json" }}
+            - node-modules-cache-
+      - run: yarn install:frontend
+      - save_cache:
+          key: node-modules-cache-{{ checksum "frontend/package.json" }}
+          paths:
+            - frontend/node_modules
+      - persist_to_workspace:
+          root: ~/commentor
+          paths:
+            - frontend/node_modules
+  test-frontend:
+    <<: *defaults
     steps:
-      - skip/skip_unchanged:
-          paths: frontend
-      - yarn-linter:
-          workspace: frontend
-      - run:
-          working_directory: frontend
-          name: Run css linter
-          command: yarn lint-style
-      - store_artifacts:
-          path: frontend/coverage
-
-  yarn-install-back:
-    executor: defaults_typescript
-    working_directory: ~/commentor
+      - checkout
+      - restore_cache:
+          keys:
+            - node-modules-cache-{{ checksum "frontend/package.json" }}
+            - node-modules-cache-
+      - frontend-test
+  type-frontend:
+    <<: *defaults
     steps:
-      - yarn-install:
-          workspace: backend
-
-  nest-tests:
-    executor: defaults_typescript
-    working_directory: ~/commentor
-    environment:
-      NODE_ENV: test
+      - checkout
+      - restore_cache:
+          keys:
+            - node-modules-cache-{{ checksum "frontend/package.json" }}
+            - node-modules-cache-
+      - frontend-type
+  quality-frontend:
+    <<: *defaults
     steps:
-      - yarn-tests:
-          workspace: backend
-
-  nest-linter:
-    executor: defaults_typescript
-    working_directory: ~/commentor
-    environment:
-      NODE_ENV: prod
-    steps:
-      - yarn-linter:
-          workspace: backend
+      - checkout
+      - restore_cache:
+          keys:
+            - node-modules-cache-{{ checksum "frontend/package.json" }}
+            - node-modules-cache-
+      - frontend-type
 
 workflows:
   version: 2
-  stack:
+  checks-front:
     jobs:
-      - yarn-install-back
-      - nest-tests:
+      - install-front
+      - test-frontend:
           requires:
-            - yarn-install-back
-      - nest-linter:
+            - install-front
+      - type-frontend:
           requires:
-            - yarn-install-back
-      - yarn-install-front
-      - react-tests:
+            - install-front
+      - quality-frontend:
           requires:
-            - yarn-install-front
-      - react-bundlesize:
-          requires:
-            - yarn-install-front
-      - react-linter:
-          requires:
-            - yarn-install-front
+            - install-front

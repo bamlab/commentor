@@ -7,7 +7,7 @@ import { storeMigrations } from './store.migration';
 import createReducer from './reducers';
 import rootSaga from './sagas';
 
-export const CURRENT_STORE_VERSION = 5;
+export const CURRENT_STORE_VERSION = 6;
 
 const sagaMiddleware = createSagaMiddleware();
 

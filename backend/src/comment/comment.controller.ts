@@ -112,6 +112,7 @@ export class CommentController {
             ),
           )
           .flattenDeep()
+          .sortBy('tag.code')
           .sortBy('x')
           .value();
 

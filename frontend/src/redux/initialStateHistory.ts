@@ -7,8 +7,46 @@ import {
   StateTypeVersion3,
   StateTypeVersion4,
   StateTypeVersion5,
+  StateTypeVersion6,
 } from './store.migration';
 
+export const version6InitialState: StateTypeVersion6 = {
+  comment: {
+    comments: [],
+    availableRequesters: [],
+    availableCommentors: [],
+    isLoading: false,
+    commentError: null,
+    barChartData: [],
+    pieChartData: [],
+  },
+  authentication: {
+    isLoading: false,
+    loginError: null,
+    isAuthenticated: false,
+    user: null,
+  },
+  tag: {
+    tags: [],
+    isLoading: false,
+    tagError: null,
+    selectedTagId: null,
+  },
+  filters: {
+    requesterIds: [],
+    repositoryIds: [],
+    commentorIds: [],
+    startingDate: null,
+    endingDate: null,
+    tagCodes: [],
+    groupBy: 'day',
+  },
+  repository: {
+    repositories: [],
+    isLoading: false,
+    repositoryError: null,
+  },
+};
 export const version5InitialState: StateTypeVersion5 = {
   comment: {
     comments: [],

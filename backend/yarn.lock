@@ -82,9 +82,11 @@
   integrity sha512-KG2yozuJkuE5IZNMlQDHFXt0wRCHOQpOgJLn42UTwes/Oj/y/8yIwAyPs5QkkY2puMQKeQugJ9YmAdhWiIODtg==
 
 "@nestjsx/crud-typeorm@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@nestjsx/crud-typeorm/-/crud-typeorm-4.0.0.tgz#1947bfd785fd63d7212ed754a82817000f30934d"
-  integrity sha512-X8P5UHQUy/cR0KK5TUH/V+0hgy8QnU8X4p34u4vdQhvFeTjIygdz0/yFFJZAvCAAWli8hCEPupyJyeQd1DnYqA==
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/@nestjsx/crud-typeorm/-/crud-typeorm-4.6.2.tgz#8d36b07b139489133545673af2209d2f1ce3d4fa"
+  integrity sha512-RHJlxz9QrLauaCtgRp0C2o38WVLbcZzvFWjHOpsSa8Pti74lUppphiAvlSaOnoMjOtlSCYcHJ954ynKcy0GwLA==
+  dependencies:
+    "@zmotivat0r/o0" "^1.0.2"
 
 "@nestjsx/crud@^4.0.0":
   version "4.0.0"
@@ -305,6 +307,11 @@
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-2.3.6.tgz#c880579e087d7a0db13777ff8af689f4ffc7b0d5"
   integrity sha512-wHNBMnkoEBiRAd3s8KTKwIuO9biFtTf0LehITzBhSco+HQI0xkXZbLOD55SW3Aqw3oUkHstkm5SPv58yaAdFPQ==
+
+"@zmotivat0r/o0@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@zmotivat0r/o0/-/o0-1.0.2.tgz#5eb069a631678736234d4c34b07c3a2bae8f8e4b"
+  integrity sha512-wQ/sHqJEtYb+QtgxtWlBpGASFZ2avpoRWbvpginEuy7howZHTZTy3zYMRMaBKok4bZwIGU5bjmzE59+m1IWqKQ==
 
 abab@^2.0.0:
   version "2.0.0"

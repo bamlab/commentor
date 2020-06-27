@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontStyles, getSpacing, colorUsage, borderRadius } from 'stylesheet';
+import { fontStyles, getSpacing, borderRadius } from 'stylesheet';
 
 const LOGO_HEIGHT = 24;
 

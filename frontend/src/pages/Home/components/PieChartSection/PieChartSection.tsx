@@ -25,7 +25,6 @@ export const PieChartSection = React.memo<PieChartSectionPropsType>(props => {
         <TagsLegendContainer>
           <TagsLegend />
         </TagsLegendContainer>
-        />
       </PieChartSectionContainer>
       {props.pieChartData.length === 0 && (
         <ChartPlaceholder

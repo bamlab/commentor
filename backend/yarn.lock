@@ -52,15 +52,16 @@
   resolved "https://registry.yarnpkg.com/@nestjs/passport/-/passport-6.1.0.tgz#80da326cc976a82530648d8025b04c8e2d41c10e"
   integrity sha512-V4KdtFFLsdZQ/HlIECpiK6byzGz57Y12TAc+Iatykk8jWuVFE1jq8RJbpTfB0zG0PTfcGm9crQ6Ut2Rwdmis4Q==
 
-"@nestjs/platform-express@^6.3.1":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-6.3.1.tgz#8adb602a5bb9571b9d58646bd52141a26ea8ba3e"
-  integrity sha512-vPOkcqhYS+qw5ZJNOp19YnT2uKXB6Phgu5P11AiylE+Cc0eoTSdouVDK4e3I8Lja91VuNN5WSYsODYlJzpMVpA==
+"@nestjs/platform-express@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-7.0.0.tgz#b7ed68fbf1bb5d20d06df75800a551b17f2bc5f5"
+  integrity sha512-+CbK6tfYeX/L5EB9hR3Z9LdSE1yCQ3xduTXaFsg4EvF2rTK1VhEKTRw2QozYMjog6IvxqAxZq95+5MMAN1O2NQ==
   dependencies:
     body-parser "1.19.0"
     cors "2.8.5"
     express "4.17.1"
-    multer "1.4.1"
+    multer "1.4.2"
+    tslib "1.11.1"
 
 "@nestjs/testing@^6.3.1":
   version "6.3.1"
@@ -3634,10 +3635,10 @@ ms@2.1.1, ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
   integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
 
-multer@1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/multer/-/multer-1.4.1.tgz#24b12a416a22fec2ade810539184bf138720159e"
-  integrity sha512-zzOLNRxzszwd+61JFuAo0fxdQfvku12aNJgnla0AQ+hHxFmfc/B7jBVuPr5Rmvu46Jze/iJrFpSOsD7afO8SDw==
+multer@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/multer/-/multer-1.4.2.tgz#2f1f4d12dbaeeba74cb37e623f234bf4d3d2057a"
+  integrity sha512-xY8pX7V+ybyUpbYMxtjM9KAiD9ixtg5/JkeKUTD6xilfDv0vzzOFcCp4Ljb1UU3tSOM3VTZtKo63OmzOrGi3Cg==
   dependencies:
     append-field "^1.0.0"
     busboy "^0.2.11"
@@ -5296,10 +5297,10 @@ tsconfig-paths@^3.5.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
-  version "1.9.3"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
-  integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+tslib@1.11.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
+  integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
 
 tslint@^5.11.0:
   version "5.17.0"

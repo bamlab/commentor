@@ -53,6 +53,7 @@ export const state: RootState = {
     tagCodes: [],
     startingDate: null,
     endingDate: null,
+    groupBy: 'day',
   },
   repository: {
     repositories: [],

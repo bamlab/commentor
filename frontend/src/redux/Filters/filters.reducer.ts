@@ -8,13 +8,16 @@ import {
   selectStartingDate,
   selectEndingDate,
   selectTagCodes,
+  selectGroupBy,
 } from './filters.actions';
+import { GroupByType } from './filters.type';
 
 export type FiltersAction =
   | ActionType<typeof selectRepositoryIds.request>
   | ActionType<typeof selectRequesterIds.request>
   | ActionType<typeof selectCommentorIds.request>
   | ActionType<typeof selectStartingDate.request>
+  | ActionType<typeof selectGroupBy.request>
   | ActionType<typeof selectEndingDate.request>
   | ActionType<typeof selectTagCodes.request>;
 
@@ -25,6 +28,7 @@ export type FiltersState = Readonly<{
   startingDate: Date | string | null; // string if value comes from local Storage after persisting
   endingDate: Date | string | null; // string if value comes from local Storage after persisting
   tagCodes: string[]; // Best effort keys
+  groupBy: GroupByType;
 }>;
 
 const today = new Date();
@@ -38,6 +42,7 @@ const initialState: FiltersState = {
   startingDate: lastWeek,
   endingDate: today,
   tagCodes: [],
+  groupBy: 'day',
 };
 
 const reducer = (state: FiltersState = initialState, action: AnyAction) => {
@@ -62,6 +67,11 @@ const reducer = (state: FiltersState = initialState, action: AnyAction) => {
       return {
         ...state,
         tagCodes: typedAction.payload.tagCodes.map(tag => tag.label),
+      };
+    case getType(selectGroupBy.request):
+      return {
+        ...state,
+        groupBy: typedAction.payload.groupBy.value as GroupByType,
       };
     case getType(selectStartingDate.request):
       return {

@@ -65,6 +65,22 @@ export const selectTagCodes = createAsyncAction(
   }
 >();
 
+export const selectGroupBy = createAsyncAction(
+  'Filters/SELECT_GROUP_BY_REQUEST',
+  'Filters/SELECT_GROUP_BY_SUCCESS',
+  'Filters/SELECT_GROUP_BY_FAILURE',
+)<
+  {
+    groupBy: ISelectedOptionsType;
+  },
+  {
+    // not used
+  },
+  {
+    // not used
+  }
+>();
+
 export const selectStartingDate = createAsyncAction(
   'Filters/SELECT_STARTING_DATE_REQUEST',
   'Filters/SELECT_STARTING_DATE_SUCCESS',

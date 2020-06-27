@@ -11,13 +11,19 @@ import {
 } from 'victory';
 import { colorUsage, fontStyles } from 'stylesheet';
 import { map, chain } from 'lodash';
-import { eachDayOfInterval } from 'date-fns';
-import { formatDateToDDMMLined } from '../../services/date/dateFormatter';
+import { eachDayOfInterval, eachWeekOfInterval, eachMonthOfInterval } from 'date-fns';
+import {
+  formatDateToDDMMLined,
+  formatDateToWeek,
+  formatDateToMonthLined,
+} from '../../services/date/dateFormatter';
 import { TagType } from 'redux/Tag';
 import { BarChartData } from '../../redux/Comment';
+import { GroupByType } from 'redux/Filters/filters.type';
 
 interface PropsType {
   data: BarChartData[];
+  groupBy: GroupByType;
 }
 
 const BarChart = React.memo<PropsType>(props => {
@@ -25,6 +31,42 @@ const BarChart = React.memo<PropsType>(props => {
     fill: colorUsage.text,
     ...fontStyles.small,
   };
+
+  let tickValues: Date[] = [];
+  let tickFormat: (date: Date) => string = date => '';
+  let angle = -60;
+  if (props.data && props.data.length > 0) {
+    switch (props.groupBy) {
+      case 'day':
+        tickValues = eachDayOfInterval({
+          start: props.data[0].x,
+          end: props.data[props.data.length - 1].x,
+        });
+        tickFormat = formatDateToDDMMLined;
+        break;
+
+      case 'week':
+        tickValues = eachWeekOfInterval(
+          {
+            start: props.data[0].x,
+            end: props.data[props.data.length - 1].x,
+          },
+          { weekStartsOn: 1 },
+        );
+        tickFormat = formatDateToWeek;
+        angle = 0;
+        break;
+
+      case 'month':
+        tickValues = eachMonthOfInterval({
+          start: props.data[0].x,
+          end: props.data[props.data.length - 1].x,
+        });
+        tickFormat = formatDateToMonthLined;
+        angle = -45;
+        break;
+    }
+  }
 
   return (
     <BarChartContainer>
@@ -51,12 +93,9 @@ const BarChart = React.memo<PropsType>(props => {
           />
           <VictoryAxis
             scale="time"
-            tickValues={eachDayOfInterval({
-              start: props.data[0].x,
-              end: props.data[props.data.length - 1].x,
-            })}
-            tickFormat={formatDateToDDMMLined}
-            tickLabelComponent={<VictoryLabel angle={-60} />}
+            tickValues={tickValues}
+            tickFormat={tickFormat}
+            tickLabelComponent={<VictoryLabel angle={angle} />}
             style={{
               tickLabels: { ...ticksLabelsStyle },
             }}

@@ -380,6 +380,7 @@ export interface FiltersType {
   requesterIds: string[];
   commentorIds: string[];
   tagCodes: string[];
+  groupBy: 'day' | 'week' | 'month';
   oAuthLogin: string | null;
 }
 

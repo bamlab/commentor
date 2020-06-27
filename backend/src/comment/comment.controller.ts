@@ -8,7 +8,6 @@ import {
   BarChartData,
   GitlabCommentEvent,
   CommentEvent,
-  GithubCommentEvent,
   CommentAction,
 } from './interfaces/comment.dto';
 import { Comment as CommentEntity } from './comment.entity';
@@ -19,6 +18,7 @@ import { TagService } from '../tag/tag.service';
 import { filterTagsWithCodes } from './comment.utils';
 import { formatComment as formatGitlabComment } from '../auth/authenticationProviders/gitlab';
 import { formatComment as formatGithubComment } from '../auth/authenticationProviders/github';
+import { convertToDateRange } from '../lib/dateManipulator';
 
 const FIRST_COMMENT_DATE = new Date('November 03, 1994 09:24:00');
 
@@ -105,8 +105,8 @@ export class CommentController {
               chain(filteredTags)
                 .filter((tag: Tag) => !!comment.body.match(tag.code))
                 .map((tag: Tag) => {
-                  comment.creationDate.setHours(0, 0, 0, 0);
-                  return [{ x: comment.creationDate, y: 1, y0: 0, tag }];
+                  const filteredDate = convertToDateRange(comment.creationDate, filters.groupBy);
+                  return [{ x: filteredDate, y: 1, y0: 0, tag }];
                 })
                 .value(),
             ),

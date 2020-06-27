@@ -2,6 +2,7 @@ import { RootState } from 'redux/types';
 import { FiltersState } from './filters.reducer';
 import { formatStringOrDateToDate } from '../../services/date/dateFormatter';
 import { isNil } from 'lodash';
+import { GroupByType } from './filters.type';
 
 export const getSelectedRepositoryIds = (store: RootState): number[] => store.filters.repositoryIds;
 
@@ -10,6 +11,8 @@ export const getSelectedRequesterIds = (store: RootState): string[] => store.fil
 export const getSelectedCommentords = (store: RootState): string[] => store.filters.commentorIds;
 
 export const getSelectedTagCodes = (store: RootState): string[] => store.filters.tagCodes || [];
+
+export const getGroupBy = (store: RootState): GroupByType => store.filters.groupBy;
 
 export const getSelectedStartingDate = (store: RootState): Date | null => {
   if (isNil(store.filters.startingDate)) return null;

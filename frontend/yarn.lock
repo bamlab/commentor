@@ -1538,6 +1538,41 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
+"@formatjs/intl-displaynames@^2.2.7":
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-displaynames/-/intl-displaynames-2.2.7.tgz#45b88f2c659743d22ac0f3a1ef1d0fdadf3cedef"
+  integrity sha512-KcUty8JETiKZ59rld7xsSBLGIKTYbMTaI/04pb0PuZlSqlJJvd+cPzm0pEK6TK7VXX4K7tcTVuY/rvntHgoz9w==
+  dependencies:
+    "@formatjs/intl-utils" "^3.4.0"
+
+"@formatjs/intl-listformat@^2.2.7":
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-listformat/-/intl-listformat-2.2.7.tgz#dde9648bfa30723a64335391b66d5196d98761f3"
+  integrity sha512-sY9Dpk1PqJ+i+pr9GAclbhGhMU2q7eFHwUCL+UcdXml8ypxo+SYsD5eE3FmVOpKT9JZQDvUuG6j5XnOLPuZB0Q==
+  dependencies:
+    "@formatjs/intl-utils" "^3.4.0"
+
+"@formatjs/intl-numberformat@^4.2.7":
+  version "4.2.7"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-numberformat/-/intl-numberformat-4.2.7.tgz#7c4976312a0cbfc174a5902281dde50cd3719cd1"
+  integrity sha512-eXBWegYQUANkPqHSAZ1cQ2ajYGBscQ3Aue+xVl1Fc9jEUmQSR4LBgAv0+GEHTlwtqAVaRQ+NYSDbOk7SORnESA==
+  dependencies:
+    "@formatjs/intl-utils" "^3.4.0"
+
+"@formatjs/intl-relativetimeformat@^5.2.7":
+  version "5.2.7"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-relativetimeformat/-/intl-relativetimeformat-5.2.7.tgz#16febdf868c1c0cbfdbb5a3a4da770d0c1cf369a"
+  integrity sha512-Z7lAoih861T/8YIyh30yEcc9XaMwxcHaj3OOyOfT6hDlB3hxsuAu2mOoZPf128a32hW3oOzQqfdo5ytT+jfX3A==
+  dependencies:
+    "@formatjs/intl-utils" "^3.4.0"
+
+"@formatjs/intl-utils@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-utils/-/intl-utils-3.4.0.tgz#91fcaffcf3925feab888b4a9bad08a51bd0365be"
+  integrity sha512-rP79Y0e6tWXYO+DBddfIi3TFBh0/wE4x+XCDf43nDcnXD5OUTwLBDX521+e0wwDByq6rc/9Bu/W5llwaBsy6bQ==
+  dependencies:
+    emojis-list "^3.0.0"
+
 "@hapi/address@2.x.x":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.0.0.tgz#9f05469c88cb2fd3dcd624776b54ee95c312126a"
@@ -2866,6 +2901,19 @@
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
   integrity sha512-ui3WwXmjTaY73fOQ3/m3nnajU/Orhi6cEu5rzX+BrAAJxa3eITXZ5ch9suPqtM03OWhAHhPSyBGCN4UKoxO20Q==
 
+"@types/hoist-non-react-statics@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
+  integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
+  dependencies:
+    "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
+
+"@types/invariant@^2.2.31":
+  version "2.2.33"
+  resolved "https://registry.yarnpkg.com/@types/invariant/-/invariant-2.2.33.tgz#ec5eec29c63bf5e4ca164e9feb3ef7337cdcbadb"
+  integrity sha512-/jUNmS8d4bCKdqslfxW6dg/9Gksfzxz67IYfqApHn+HvHlMVXwYv2zpTDnS/yaK9BB0i0GlBTaYci0EFE62Hmw==
+
 "@types/is-function@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/is-function/-/is-function-1.0.0.tgz#1b0b819b1636c7baf0d6785d030d12edf70c3e83"
@@ -2983,10 +3031,12 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-intl@^2.3.15":
-  version "2.3.18"
-  resolved "https://registry.yarnpkg.com/@types/react-intl/-/react-intl-2.3.18.tgz#fd2d8b7f4d0a1dd05b5f1784ab0d7fe1786a690d"
-  integrity sha512-DVNJs49zUxKRZng8VuILE886Yihdsf3yLr5vHk9zJrmF8SyRSK3sxNSvikAKxNkv9hX55XBTJShz6CkJnbNjgg==
+"@types/react-intl@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/react-intl/-/react-intl-3.0.0.tgz#a2cce0024b6cfe403be28ccf67f49d720fa810ec"
+  integrity sha512-k8F3d05XQGEqSWIfK97bBjZe4z9RruXU9Wa7OZ2iUC5pdeIpzuQDZe/9C2J3Xir5//ZtAkhcv08Wfx3n5TBTQg==
+  dependencies:
+    react-intl "*"
 
 "@types/react-lottie@^1.2.3":
   version "1.2.3"
@@ -6679,6 +6729,11 @@ emojis-list@^2.0.0:
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
   integrity sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
 
+emojis-list@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-3.0.0.tgz#5570662046ad29e2e916e71aae260abdff4f6a78"
+  integrity sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==
+
 emotion-theming@^10.0.14:
   version "10.0.19"
   resolved "https://registry.yarnpkg.com/emotion-theming/-/emotion-theming-10.0.19.tgz#66d13db74fccaefad71ba57c915b306cf2250295"
@@ -8542,7 +8597,7 @@ hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0:
   dependencies:
     react-is "^16.7.0"
 
-hoist-non-react-statics@^3.2.1:
+hoist-non-react-statics@^3.2.1, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -9012,10 +9067,22 @@ intl-format-cache@^2.0.5:
   resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-2.2.9.tgz#fb560de20c549cda20b569cf1ffb6dc62b5b93b4"
   integrity sha512-Zv/u8wRpekckv0cLkwpVdABYST4hZNTDaX7reFetrYTJwxExR2VyTqQm+l0WmL0Qo8Mjb9Tf33qnfj0T7pjxdQ==
 
+intl-format-cache@^4.2.39:
+  version "4.2.39"
+  resolved "https://registry.yarnpkg.com/intl-format-cache/-/intl-format-cache-4.2.39.tgz#c23eca561d48e72d9ee018344ecf5eeb77cea4d1"
+  integrity sha512-vhqfBlvmYPovKSSqYlTOB0eX+/GvFRTezylMc/S9B0Oo86J5Wve/SkZ6fdwTGFYG7mtPuplaFQwMBA59wbOj5A==
+
 intl-messageformat-parser@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-1.4.0.tgz#b43d45a97468cadbe44331d74bb1e8dea44fc075"
   integrity sha1-tD1FqXRoytvkQzHXS7Ho3qRPwHU=
+
+intl-messageformat-parser@^5.1.4:
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-5.1.4.tgz#53b8a2bbe2b615c5d3d643ad8beba024d8bb1554"
+  integrity sha512-q0SRG8eSbQ1ET1heE9DjyvzFjMALrAN84G5Xx02R7ArpSeRpXn5347++akxCJL7tgpF1csrlYlqiizHzjGIX0Q==
+  dependencies:
+    "@formatjs/intl-numberformat" "^4.2.7"
 
 intl-messageformat@^2.0.0, intl-messageformat@^2.1.0:
   version "2.2.0"
@@ -9023,6 +9090,14 @@ intl-messageformat@^2.0.0, intl-messageformat@^2.1.0:
   integrity sha1-NFvNRt5jC3aDMwwuUhd/9eq0hPw=
   dependencies:
     intl-messageformat-parser "1.4.0"
+
+intl-messageformat@^8.3.24:
+  version "8.3.24"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-8.3.24.tgz#f1f4422e6a27ea13de4bd7a8e05edb14aabf0056"
+  integrity sha512-513pFNaQdyFpJ4FRRyUcszy395E6UUPRYZHlKy/uuIbw476ZuhO1nmZ62rLyj9nVDYtpafknmZQApJg3z/fbYQ==
+  dependencies:
+    intl-format-cache "^4.2.39"
+    intl-messageformat-parser "^5.1.4"
 
 intl-relativeformat@^2.1.0:
   version "2.2.0"
@@ -13922,6 +13997,24 @@ react-inspector@^4.0.0:
     prop-types "^15.6.1"
     storybook-chromatic "^2.2.2"
 
+react-intl@*:
+  version "4.6.10"
+  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-4.6.10.tgz#7fa2e3f476fbe214e1994dd28e24ab62dc658b05"
+  integrity sha512-xDi+n81mVBMjvgCE0Il7Fw3KRLlsOQUaeb7wOURaPXv2NSYe23guqjQ34meUxhaKi0lBNEqdRR9Fqk5gfHiD+g==
+  dependencies:
+    "@formatjs/intl-displaynames" "^2.2.7"
+    "@formatjs/intl-listformat" "^2.2.7"
+    "@formatjs/intl-numberformat" "^4.2.7"
+    "@formatjs/intl-relativetimeformat" "^5.2.7"
+    "@formatjs/intl-utils" "^3.4.0"
+    "@types/hoist-non-react-statics" "^3.3.1"
+    "@types/invariant" "^2.2.31"
+    hoist-non-react-statics "^3.3.2"
+    intl-format-cache "^4.2.39"
+    intl-messageformat "^8.3.24"
+    intl-messageformat-parser "^5.1.4"
+    shallow-equal "^1.2.1"
+
 react-intl@2.7.2:
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-2.7.2.tgz#efe97e3fc0e99b4e88a6e6150854d3d1852a4381"
@@ -15224,6 +15317,11 @@ shallow-equal@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/shallow-equal/-/shallow-equal-1.2.0.tgz#fd828d2029ff4e19569db7e19e535e94e2d1f5cc"
   integrity sha512-Z21pVxR4cXsfwpMKMhCEIO1PCi5sp7KEp+CmOpBQ+E8GpHwKOw2sEzk7sgblM3d/j4z4gakoWEoPcjK0VJQogA==
+
+shallow-equal@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/shallow-equal/-/shallow-equal-1.2.1.tgz#4c16abfa56043aa20d050324efa68940b0da79da"
+  integrity sha512-S4vJDjHHMBaiZuT9NPb616CSmLf618jawtv3sufLl6ivK8WocjAo58cXwbRV1cgqxH0Qbv+iUt6m05eqEa2IRA==
 
 shallowequal@1.1.0, shallowequal@^1.1.0:
   version "1.1.0"

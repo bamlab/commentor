@@ -8,7 +8,6 @@ import {
   BarChartData,
   GitlabCommentEvent,
   CommentEvent,
-  GithubCommentEvent,
   CommentAction,
 } from './interfaces/comment.dto';
 import { Comment as CommentEntity } from './comment.entity';
@@ -16,9 +15,10 @@ import { CommentService } from './comment.service';
 import { ProviderRepositoriesFilter } from '../auth/decorators/providerRepositoriesFilter.decorator';
 import { Tag } from '../tag/tag.entity';
 import { TagService } from '../tag/tag.service';
-import { filterTagsWithCodes, convertToDateRange } from './comment.utils';
+import { filterTagsWithCodes } from './comment.utils';
 import { formatComment as formatGitlabComment } from '../auth/authenticationProviders/gitlab';
 import { formatComment as formatGithubComment } from '../auth/authenticationProviders/github';
+import { convertToDateRange } from '../lib/dateManipulator';
 
 const FIRST_COMMENT_DATE = new Date('November 03, 1994 09:24:00');
 

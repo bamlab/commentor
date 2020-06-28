@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PieChartContainer } from './PieChart.style';
-import { VictoryPie, VictoryLabel } from 'victory';
+import { VictoryPie, VictoryTooltip } from 'victory';
 import { colorUsage, fontStyles } from 'stylesheet';
 import { PieChartData } from '../../redux/Comment';
 
@@ -30,7 +30,7 @@ const PieChart = React.memo<PropsType>(props => {
     <PieChartContainer>
       {props.data && props.data.length > 0 && (
         <VictoryPie
-          labelComponent={<VictoryLabel />}
+          labelComponent={<VictoryTooltip />}
           height={300}
           width={300}
           innerRadius={PIE_INNER_RADIUS}
@@ -38,7 +38,6 @@ const PieChart = React.memo<PropsType>(props => {
           animate={{ duration: 1000 }}
           endAngle={angle}
           labels={() => ''}
-          labelRadius={PIE_INNER_RADIUS + 8}
           style={{
             labels: { ...ticksLabelsStyle },
             data: {

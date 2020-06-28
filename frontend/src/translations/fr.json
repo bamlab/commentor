@@ -18,6 +18,8 @@
     "description": "Authentifiez vous à l'aide de votre plate forme de versionning préférée pour commencer à analyser vos commentaires",
     "authenticate-via-github": "Connexion Github",
     "authenticate-via-gitlab": "Connexion Gitlab",
+    "authenticate-via-gitlab-public": "Gitlab public",
+    "authenticate-via-gitlab-on-premise": "Gitlab privé",
     "onboarding": "Commentor automatise la récupération et la classification de vos codes reviews pour que vous puissiez vous concentrer sur l'analyse"
   }
 }

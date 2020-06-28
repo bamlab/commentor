@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 import queryString from 'query-string';
 import {
@@ -10,34 +10,27 @@ import {
   ContentContainer,
   Title,
   Subtitle,
-  GithubAuthentButton,
-  GitlabAuthentButton,
-  GithubLogo,
-  GitlabLogo,
-  GithubAuthentButtonText,
-  GitlabAuthentButtonText,
   IllustrationContainer,
   OnboardingIllustration,
   OnbooardingTextContainer,
   OnboardingText,
 } from './Login.style';
+import { GithubButton } from './components/GithubButton';
+import { GitlabButton } from './components/GitlabButton';
 import logoText from 'assets/logo-text.svg';
 import onboardingIllustration from 'assets/onboarding-illustration.png';
-import githubLogo from 'assets/octocat.png';
-import gitlabLogo from 'assets/gitlab-logo.png';
 
 import { LoginPropsType } from './Login.type';
+import { GitlabModal } from './components/GitlabModal';
 
 const Login = React.memo<LoginPropsType>(props => {
   const { login, location, isAuthenticated } = props;
+  const [isGitlabLoginModalOpen, setGitlabLoginModalOpen] = useState(false);
+
   useEffect(() => {
     const componentDidMount = async () => {
       const params = queryString.parse(location.search);
-      if (
-        params.state &&
-        typeof params.state === 'string' &&
-        (params.state === 'gitlab' || params.state === 'github')
-      ) {
+      if (params.state && typeof params.state === 'string') {
         if (params.code && typeof params.code === 'string' && !isAuthenticated) {
           await login(params.code, params.state);
         }
@@ -60,30 +53,12 @@ const Login = React.memo<LoginPropsType>(props => {
             <Subtitle>
               <FormattedMessage id="login.description" />
             </Subtitle>
-            <GithubAuthentButton
+            <GithubButton />
+            <GitlabButton
               onClick={() => {
-                window.location.href = `https://github.com/login/oauth/authorize?state=github&client_id=${
-                  process.env.REACT_APP_GITHUB_APP_CLIENT_ID
-                }`;
+                setGitlabLoginModalOpen(true);
               }}
-            >
-              <GithubLogo src={githubLogo} />
-              <GithubAuthentButtonText>
-                <FormattedMessage id="login.authenticate-via-github" />
-              </GithubAuthentButtonText>
-            </GithubAuthentButton>
-            <GitlabAuthentButton
-              onClick={() => {
-                window.location.href = `https://gitlab.com/oauth/authorize?response_type=code&scope=read_user+api+read_repository&redirect_uri=${
-                  process.env.REACT_APP_OAUTH_REDIRECT_URL
-                }&state=gitlab&client_id=${process.env.REACT_APP_GITLAB_APP_CLIENT_ID}`;
-              }}
-            >
-              <GitlabLogo src={gitlabLogo} />
-              <GitlabAuthentButtonText>
-                <FormattedMessage id="login.authenticate-via-gitlab" />
-              </GitlabAuthentButtonText>
-            </GitlabAuthentButton>
+            />
           </ContentContainer>
         </ContentPositioner>
       </LeftCardContainer>
@@ -95,6 +70,7 @@ const Login = React.memo<LoginPropsType>(props => {
           </OnboardingText>
         </OnbooardingTextContainer>
       </IllustrationContainer>
+      <GitlabModal onClose={() => setGitlabLoginModalOpen(false)} isOpen={isGitlabLoginModalOpen} />
     </Container>
   );
 });

@@ -58,10 +58,7 @@ class Client {
     return this.request('delete', `${endpoint}/${id}/delete`);
   }
 
-  createAccessToken = async (data: {
-    code: string;
-    provider: 'gitlab' | 'github';
-  }): Promise<void> => {
+  createAccessToken = async (data: { code: string; provider: string }): Promise<void> => {
     await this.post('/auth/accessToken/create', { code: data.code, provider: data.provider });
     return;
   };

@@ -11,5 +11,8 @@ export const OAuthLogin = createParamDecorator(
     if (req.cookies.gitlab_access_token) {
       return getGitlabLogin(req.cookies);
     }
+    if (req.cookies.gitlab_premise_access_token && req.cookies.gitlab_premise_domain) {
+      return getGitlabLogin(req.cookies);
+    }
   },
 );

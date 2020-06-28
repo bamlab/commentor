@@ -18,6 +18,13 @@ export const ProviderRepositories = createParamDecorator(
       const gitlabRepositories = await getGitlabRepositories(req.cookies.gitlab_access_token);
       providersRepositories = providersRepositories.concat(gitlabRepositories);
     }
+    if (req.cookies.gitlab_premise_access_token && req.cookies.gitlab_premise_domain) {
+      const gitlabRepositories = await getGitlabRepositories(
+        req.cookies.gitlab_premise_access_token,
+        req.cookies.gitlab_premise_domain,
+      );
+      providersRepositories = providersRepositories.concat(gitlabRepositories);
+    }
     return providersRepositories;
   },
 );

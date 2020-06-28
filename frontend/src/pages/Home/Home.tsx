@@ -33,7 +33,9 @@ const Home = React.memo<HomePropsType>(props => {
         if (
           params.state &&
           typeof params.state === 'string' &&
-          (params.state === 'gitlab' || params.state === 'github')
+          (params.state === 'gitlab' ||
+            params.state === 'github' ||
+            params.state.includes('gitlab-premise'))
         ) {
           if (params.code && typeof params.code === 'string') {
             window.location.replace(

@@ -12,7 +12,11 @@ export const ProviderRepositoriesFilter = createParamDecorator(
     if (!req.body.repositoryIds || req.body.repositoryIds.length === 0) {
       return [];
     }
-    if (!req.cookies.github_access_token && !req.cookies.gitlab_access_token) {
+    if (
+      !req.cookies.github_access_token &&
+      !req.cookies.gitlab_access_token &&
+      !(req.cookies.gitlab_premise_domain && req.cookies.gitlab_premise_access_token)
+    ) {
       throw new UnauthorizedException();
     }
     let filteredRepositoriesIds: number[] = [];
@@ -32,6 +36,21 @@ export const ProviderRepositoriesFilter = createParamDecorator(
       const checkedRepositoryIds: number[] = await Promise.all(
         req.body.repositoryIds.map((repositoryId: number) =>
           checkUserHasAccessToGitlabRepo(repositoryId, req.cookies.gitlab_access_token),
+        ),
+      );
+      Logger.error(checkedRepositoryIds, `Checked repository ids`);
+      filteredRepositoriesIds = filteredRepositoriesIds.concat(
+        checkedRepositoryIds.filter(repositoryId => !!repositoryId),
+      );
+    }
+    if (req.cookies.gitlab_premise_domain && req.cookies.gitlab_premise_access_token) {
+      const checkedRepositoryIds: number[] = await Promise.all(
+        req.body.repositoryIds.map((repositoryId: number) =>
+          checkUserHasAccessToGitlabRepo(
+            repositoryId,
+            req.cookies.gitlab_premise_access_token,
+            req.cookies.gitlab_premise_domain,
+          ),
         ),
       );
       Logger.error(checkedRepositoryIds, `Checked repository ids`);

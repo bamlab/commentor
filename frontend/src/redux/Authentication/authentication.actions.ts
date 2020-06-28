@@ -6,7 +6,7 @@ export const login = createAsyncAction(
   'Authentication/LOGIN_SUCCESS',
   'Authentication/LOGIN_FAILURE',
 )<
-  { code: string; provider: 'gitlab' | 'github' },
+  { code: string; provider: string },
   {
     user: UserType;
   },

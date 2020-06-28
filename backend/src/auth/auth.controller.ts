@@ -5,6 +5,8 @@ import { OAuthLogin } from './decorators/oAuthLogin.decorator';
 
 const AUTHENTICATION_PROVIDER_STORAGE_KEYS = {
   GITLAB: 'gitlab_access_token',
+  GITLAB_PREMISE_DOMAIN: 'gitlab_premise_domain',
+  GITLAB_PREMISE_TOKEN: 'gitlab_premise_access_token',
   GITHUB: 'github_access_token',
 };
 
@@ -13,27 +15,39 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('accessToken/create')
-  async createJwt(
-    @Body() body: { code: string; provider: 'github' | 'gitlab' },
-    @Res() res: Response,
-  ) {
+  async createJwt(@Body() body: { code: string; provider: string }, @Res() res: Response) {
     const accessToken = await this.authService.generateAccessToken(body.code, body.provider);
     if (accessToken) {
-      switch (body.provider) {
-        case 'github':
+      if (body.provider) {
+        if (body.provider === 'github') {
           res.cookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITHUB, accessToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
           });
-          break;
-        case 'gitlab':
+        } else if (body.provider === 'gitlab') {
           res.cookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITLAB, accessToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
           });
-          break;
-        default:
-          break;
+        } else if (body.provider.includes('gitlab-premise')) {
+          res.cookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITLAB_PREMISE_TOKEN, accessToken, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+          });
+          const insideParenthesesRegexp = /\(([^)]+)\)/;
+          const insideParenthesesMatches = insideParenthesesRegexp.exec(body.provider);
+
+          if (insideParenthesesMatches.length > 0) {
+            res.cookie(
+              AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITLAB_PREMISE_DOMAIN,
+              insideParenthesesMatches[1],
+              {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+              },
+            );
+          }
+        }
       }
     }
 
@@ -51,6 +65,8 @@ export class AuthController {
   async logout(@Res() res: Response) {
     res.clearCookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITHUB);
     res.clearCookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITLAB);
+    res.clearCookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITLAB_PREMISE_DOMAIN);
+    res.clearCookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITLAB_PREMISE_TOKEN);
     res.sendStatus(200);
   }
 }

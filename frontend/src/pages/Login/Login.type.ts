@@ -1,5 +1,5 @@
 export type LoginPropsType = {
-  login: (code: string, provider: 'github' | 'gitlab') => void;
+  login: (code: string, provider: string) => void;
   isAuthenticated: boolean;
   location: { search: string };
 };

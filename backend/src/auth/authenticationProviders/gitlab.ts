@@ -4,9 +4,12 @@ import { EmojiConvertor } from 'emoji-js';
 import { Comment, GitlabCommentEvent } from 'src/comment/interfaces/comment.dto';
 import { RepositoryDto } from 'src/repository/interfaces/Repository.dto';
 
-export const generateAccessToken = async (code: string): Promise<string> => {
+export const generateAccessToken = async (
+  code: string,
+  customOnPremiseDomain?: string,
+): Promise<string> => {
   const gitlabOauthResponse: GitlabOauthTokenAnswer = await request({
-    uri: 'https://gitlab.com/oauth/token',
+    uri: `https://${customOnPremiseDomain ? customOnPremiseDomain : 'gitlab.com'}/oauth/token`,
     method: 'POST',
     body: {
       client_id: process.env.GITLAB_APP_CLIENT_ID,
@@ -25,8 +28,15 @@ export const generateAccessToken = async (code: string): Promise<string> => {
   }
 };
 
-export const getLogin = async (cookies: { gitlab_access_token?: string }): Promise<string> => {
-  if (cookies.gitlab_access_token) {
+export const getLogin = async (cookies: {
+  gitlab_access_token?: string;
+  gitlab_premise_access_token?: string;
+  gitlab_premise_domain?: string;
+}): Promise<string> => {
+  if (
+    cookies.gitlab_access_token ||
+    (cookies.gitlab_premise_access_token && cookies.gitlab_premise_domain)
+  ) {
     const query = `
             query {
               currentUser {
@@ -35,9 +45,17 @@ export const getLogin = async (cookies: { gitlab_access_token?: string }): Promi
             }
         `;
     const gitlabAnswer: GitlabLoginAnswer = await request({
-      uri: 'https://gitlab.com/api/graphql',
+      uri: `https://${
+        cookies.gitlab_premise_domain && cookies.gitlab_premise_access_token
+          ? cookies.gitlab_premise_domain
+          : 'gitlab.com'
+      }/api/graphql`,
       headers: {
-        Authorization: `bearer ${cookies.gitlab_access_token}`,
+        Authorization: `bearer ${
+          cookies.gitlab_premise_domain && cookies.gitlab_premise_access_token
+            ? cookies.gitlab_premise_access_token
+            : cookies.gitlab_access_token
+        }`,
         'User-Agent': 'Request-Promise',
       },
       method: 'POST',
@@ -50,9 +68,14 @@ export const getLogin = async (cookies: { gitlab_access_token?: string }): Promi
   }
 };
 
-export const getRepositories = async (accessToken: string): Promise<RepositoryDto[]> => {
+export const getRepositories = async (
+  accessToken: string,
+  customOnPremiseDomain?: string,
+): Promise<RepositoryDto[]> => {
   const gitlabRepositoriesAnswer: GitlabRepository[] = await request({
-    uri: `https://gitlab.com/api/v4/projects?min_access_level=10`,
+    uri: `https://${
+      customOnPremiseDomain ? customOnPremiseDomain : 'gitlab.com'
+    }/api/v4/projects?min_access_level=10`,
     headers: {
       Authorization: `Bearer ${accessToken}`,
       'User-Agent': 'Request-Promise',
@@ -69,11 +92,14 @@ export const getRepositories = async (accessToken: string): Promise<RepositoryDt
 export const checkUserHasAccessToRepo = async (
   repositoryId: number,
   accessToken: string,
+  customOnPremiseDomain?: string,
 ): Promise<number | undefined> => {
   try {
     Logger.log(`About to check gitlab access to repo ${repositoryId}`);
     const gitlabUserAccessToRepoAnswer: GitlabUserAccessToRepoAnswer = await request({
-      uri: `https://gitlab.com/api/v4/projects/${repositoryId}?min_access_level=10`,
+      uri: `https://${
+        customOnPremiseDomain ? customOnPremiseDomain : 'gitlab.com'
+      }/api/v4/projects/${repositoryId}?min_access_level=10`,
       headers: {
         Authorization: `Bearer ${accessToken}`,
         'User-Agent': 'Request-Promise',

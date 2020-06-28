@@ -87,8 +87,10 @@ export class CommentController {
         const pieChartFormattedData = chain(filteredTags)
           .map((tag: Tag) => ({
             x: tag.code,
-            y: fetchedComments.filter((comment: CommentEntity) => !!comment.body.match(tag.code))
-              .length,
+            y: fetchedComments.filter(
+              (comment: CommentEntity) =>
+                !!comment.body.match(tag.code.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+            ).length,
             tag,
           }))
           .filter(chartDatum => chartDatum.y > 0)
@@ -103,7 +105,10 @@ export class CommentController {
           .map((comments: CommentEntity[]) =>
             map(comments, (comment: CommentEntity) =>
               chain(filteredTags)
-                .filter((tag: Tag) => !!comment.body.match(tag.code))
+                .filter(
+                  (tag: Tag) =>
+                    !!comment.body.match(tag.code.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+                )
                 .map((tag: Tag) => {
                   const filteredDate = convertToDateRange(comment.creationDate, filters.groupBy);
                   return [{ x: filteredDate, y: 1, y0: 0, tag }];

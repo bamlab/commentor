@@ -52,6 +52,8 @@ export const getLogin = async (cookies: { gitlab_access_token?: string }): Promi
 };
 
 export const getRepositories = async (accessToken: string): Promise<RepositoryDto[]> => {
+  Logger.log(accessToken, 'Gitlab Access token');
+
   const gitlabRepositoriesAnswer: GitlabRepository[] = await request({
     uri: `https://gitlab.com/api/v4/projects?min_access_level=10`,
     headers: {
@@ -60,8 +62,6 @@ export const getRepositories = async (accessToken: string): Promise<RepositoryDt
     },
     json: true,
   });
-
-  Logger.log(JSON.stringify(gitlabRepositoriesAnswer), 'Gitlab Repositories Answer');
 
   return gitlabRepositoriesAnswer.map(repository => ({
     name: repository.name,

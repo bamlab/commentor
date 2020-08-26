@@ -85,6 +85,8 @@ const queryPaginatedGithubRepositories = async (
     },
   });
 
+  Logger.log(JSON.stringify(githubAnswer), 'Github Repositories Answer');
+
   const repositoriesList = previousPageRepositories.concat(
     githubAnswer.data.viewer.repositories.nodes,
   );

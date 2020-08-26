@@ -46,6 +46,7 @@ export const getLogin = async (cookies: { gitlab_access_token?: string }): Promi
         query,
       },
     });
+
     return gitlabAnswer.data.currentUser.username;
   }
 };
@@ -59,6 +60,8 @@ export const getRepositories = async (accessToken: string): Promise<RepositoryDt
     },
     json: true,
   });
+
+  Logger.log(JSON.stringify(gitlabRepositoriesAnswer), 'Gitlab Repositories Answer');
 
   return gitlabRepositoriesAnswer.map(repository => ({
     name: repository.name,

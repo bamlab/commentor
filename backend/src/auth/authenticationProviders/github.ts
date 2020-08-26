@@ -52,8 +52,6 @@ const queryPaginatedGithubRepositories = async (
   previousPageRepositories: GithubRepository[] = [],
   previousPageCursor?: string,
 ): Promise<GithubRepository[]> => {
-  Logger.log(userAccessToken, 'Github Access token');
-
   const query = `
         query {
           viewer {

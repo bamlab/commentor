@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Res, Get } from '@nestjs/common';
+import { Controller, Post, Body, Res, Get, Logger } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { Response } from 'express';
 import { OAuthLogin } from './decorators/oAuthLogin.decorator';
@@ -24,12 +24,14 @@ export class AuthController {
           res.cookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITHUB, accessToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
+            sameSite: 'None',
           });
           break;
         case 'gitlab':
           res.cookie(AUTHENTICATION_PROVIDER_STORAGE_KEYS.GITLAB, accessToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
+            sameSite: 'None',
           });
           break;
         default:

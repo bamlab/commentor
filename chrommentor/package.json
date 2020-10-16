@@ -10,7 +10,7 @@
   "author": "Maxime Sraïki",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.10.2",
+    "@babel/core": "^7.12.1",
     "@babel/preset-env": "^7.9.6",
     "babel-jest": "^26.0.1",
     "jest": "^26.0.1",

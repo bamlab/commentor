@@ -32,7 +32,7 @@
 
 ## Quick start & Docs
 
-Full documentation for Commentor lives on [the docs website](https://commentor-doc.netlify.app).
+Full documentation for Commentor lives on [the docs website](https://docs.commentor.app).
 
 ## Contributing
 

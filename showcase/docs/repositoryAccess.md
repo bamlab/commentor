@@ -63,7 +63,7 @@ Commentor does **not** need access to your code, you can check that by reviewing
 
 ### Authenticate with Github on the platform
 
-Head to [Commentor Platform](https://commentor.netlify.app) and authenticate with Github.
+Head to [Commentor Platform](https://commentor.app) and authenticate with Github.
 
 You're all set and ready to start analyzing :)
 
@@ -79,7 +79,7 @@ Commentor needs to collect the comment your team add while performing code revie
 - Setup the webhook url to
 
 ```
-https://commentor-api-prod.herokuapp.com/comments
+https://backend.commentor.app/comments
 ```
 
 - Tick the "Comments" checkbox
@@ -100,7 +100,7 @@ Commentor does **not** need access to your code at any time.
 
 ### Authenticate with Github on the platform
 
-Head to [Commentor Platform](https://commentor.netlify.app) and authenticate with Gitlab.
+Head to [Commentor Platform](https://commentor.app) and authenticate with Gitlab.
 
 :::important
 

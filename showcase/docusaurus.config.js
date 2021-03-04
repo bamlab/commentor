@@ -1,7 +1,7 @@
 module.exports = {
   title: "Commentor",
   tagline: "",
-  url: "https://commentor-doc.netlify.app",
+  url: "https://docs.commentor.app",
   baseUrl: "/",
   favicon: "img/favicon.ico",
   organizationName: "bamlab",
@@ -11,21 +11,21 @@ module.exports = {
       title: "COMMENTOR",
       logo: {
         alt: "Commentor Logo",
-        src: "img/logo.svg"
+        src: "img/logo.svg",
       },
       links: [
         {
           to: "docs/repositoryAccess",
           activeBasePath: "docs",
           label: "Docs",
-          position: "left"
+          position: "left",
         },
         {
           href: "https://github.com/bamlab/commentor",
           label: "GitHub",
-          position: "right"
-        }
-      ]
+          position: "right",
+        },
+      ],
     },
     footer: {
       style: "dark",
@@ -35,13 +35,13 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/bamlab/commentor"
-            }
-          ]
-        }
+              href: "https://github.com/bamlab/commentor",
+            },
+          ],
+        },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Commentor, Inc. Built with Docusaurus.`
-    }
+      copyright: `Copyright © ${new Date().getFullYear()} Commentor, Inc. Built with Docusaurus.`,
+    },
   },
   presets: [
     [
@@ -49,12 +49,13 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/facebook/docusaurus/edit/master/website/"
+          editUrl:
+            "https://github.com/facebook/docusaurus/edit/master/website/",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css")
-        }
-      }
-    ]
-  ]
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+      },
+    ],
+  ],
 };

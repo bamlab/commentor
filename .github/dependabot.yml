@@ -1,0 +1,120 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/backend"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: typescript
+    versions:
+    - 4.1.3
+    - 4.1.4
+    - 4.1.5
+    - 4.2.2
+    - 4.2.3
+  - dependency-name: rxjs
+    versions:
+    - 6.6.3
+    - 6.6.6
+  - dependency-name: typeorm
+    versions:
+    - 0.2.30
+    - 0.2.31
+  - dependency-name: "@types/passport-jwt"
+    versions:
+    - 3.0.3
+    - 3.0.4
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+- package-ecosystem: npm
+  directory: "/frontend"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: cypress
+    versions:
+    - 5.3.0
+    - 6.4.0
+  - dependency-name: "@types/jest"
+    versions:
+    - 26.0.19
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
+- package-ecosystem: npm
+  directory: "/showcase"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@docusaurus/preset-classic"
+    versions:
+    - 2.0.0-alpha.70
+    - 2.0.0-alpha.71
+    - 2.0.0-alpha.72
+    - 2.0.0-alpha.73
+  - dependency-name: "@docusaurus/core"
+    versions:
+    - 2.0.0-alpha.70
+    - 2.0.0-alpha.71
+    - 2.0.0-alpha.72
+    - 2.0.0-alpha.73
+  - dependency-name: classnames
+    versions:
+    - 2.3.0
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
+- package-ecosystem: npm
+  directory: "/chrommentor"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.12.10
+    - 7.12.13
+    - 7.12.16
+    - 7.12.17
+    - 7.13.1
+    - 7.13.10
+    - 7.13.13
+    - 7.13.14
+    - 7.13.15
+    - 7.13.8
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+    - 4.0.2
+  - dependency-name: "@babel/preset-env"
+    versions:
+    - 7.12.11
+    - 7.12.13
+    - 7.12.16
+    - 7.12.17
+    - 7.13.0
+    - 7.13.10
+    - 7.13.12
+    - 7.13.5
+    - 7.13.8
+    - 7.13.9
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3

@@ -7,7 +7,7 @@
     "@sentry/browser": "^5.4.3",
     "@types/victory": "^33.1.4",
     "babel-polyfill": "6.26.0",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "connected-react-router": "^6.3.2",
     "date-fns": "^2.11.1",
     "env-cmd": "8.0.2",

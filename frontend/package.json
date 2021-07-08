@@ -102,7 +102,7 @@
     "@storybook/addon-storyshots": "^5.2.1",
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
-    "@types/cheerio": "^0.22.10",
+    "@types/cheerio": "^0.22.30",
     "@types/date-fns": "^2.6.0",
     "@types/enzyme": "^3.1.15",
     "@types/history": "^4.7.2",
